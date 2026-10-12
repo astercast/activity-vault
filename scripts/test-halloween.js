@@ -15,7 +15,7 @@ function ok(cond, label, extra) {
 
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const actIds = new Set(acts.map(a => a.id));
-ok(acts.length === 308, '308 activities total', String(acts.length));
+ok(acts.length === 326, '326 activities total', String(acts.length));
 ok(actIds.size === acts.length, 'all activity ids unique');
 
 // 1. Tag vocabulary: holiday:halloween predates this wave (wave 4); confirm it is
@@ -41,7 +41,8 @@ const tagKey = id => JSON.stringify((byId[id].tags || []).slice().sort());
 ok(W13.filter(id => tagKey(id) === JSON.stringify(['holiday:halloween'])).length === 8, '8 halloween-only');
 ok(W13.filter(id => tagKey(id) === JSON.stringify(['holiday:halloween','theme:spooky'])).length === 7, '7 halloween+spooky');
 ok(W13.filter(id => tagKey(id) === JSON.stringify(['holiday:halloween','season:fall'])).length === 4, '4 fall+halloween');
-ok(W13.filter(id => tagKey(id) === JSON.stringify(['season:fall'])).length === 1, '1 fall-only');
+// wave 14 retro-tagged harvest-gratitude-circle with holiday:thanksgiving (was the 1 fall-only)
+ok(tagKey('harvest-gratitude-circle') === JSON.stringify(['holiday:thanksgiving','season:fall']), 'harvest-gratitude-circle now fall+thanksgiving');
 W13.forEach(id => ok((byId[id].tags || []).includes('holiday:halloween') || id === 'harvest-gratitude-circle',
   'halloween-tagged or harvest: ' + id));
 // quality bar: steps + both variations + sane ages + honest time floors on every new activity
@@ -75,8 +76,8 @@ ok(JSON.stringify((byId['pumpkin-letter-hunt'].tags || []).slice().sort()) ===
 
 // 4. Collections: 11 total, haunted-halls valid
 const colls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/collections.json'), 'utf8')).collections;
-ok(colls.length === 11, '11 collections', String(colls.length));
-ok(new Set(colls.map(c => c.id)).size === 11, 'collection ids unique');
+ok(colls.length === 12, '12 collections', String(colls.length));
+ok(new Set(colls.map(c => c.id)).size === 12, 'collection ids unique');
 const halls = colls.find(c => c.id === 'haunted-halls');
 ok(!!halls, 'haunted-halls exists');
 ok(halls.glyph === '👻', 'haunted-halls glyph');
@@ -170,16 +171,16 @@ ok(samplePage.includes('../halloween.html'), 'generated activity page nav links 
 const tagOpts = JSON.parse(fs.readFileSync(path.join(ROOT, 'api/v1/filters.json'), 'utf8')).filters.tags.options;
 ok(tagOpts.includes('holiday:halloween'), 'filters.json has holiday:halloween');
 const apiColls = JSON.parse(fs.readFileSync(path.join(ROOT, 'api/v1/collections.json'), 'utf8'));
-ok(apiColls.count === 11 && apiColls.collections.length === 11, 'api collections.json count 11');
+ok(apiColls.count === 12 && apiColls.collections.length === 12, 'api collections.json count 12');
 ok(apiColls.collections.some(c => c.id === 'haunted-halls'), 'api has haunted-halls');
 const hh = apiColls.collections.find(c => c.id === 'haunted-halls');
 ok(hh.page === 'collections.html#haunted-halls', 'haunted-halls deep link');
 ok(hh.age_span.length === 2 && hh.time_span.length === 2, 'haunted-halls spans computed');
 const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'api/v1/index.json'), 'utf8'));
 const collEp = manifest.endpoints.find(e => e.path === 'api/v1/collections.json');
-ok(collEp && collEp.records === 11, 'manifest collections records=11');
+ok(collEp && collEp.records === 12, 'manifest collections records=12');
 const actEp = manifest.endpoints.find(e => e.path === 'api/v1/activities.json');
-ok(actEp && actEp.records === 308, 'manifest activities records=308', String(actEp && actEp.records));
+ok(actEp && actEp.records === 326, 'manifest activities records=326', String(actEp && actEp.records));
 const schema = JSON.parse(fs.readFileSync(path.join(ROOT, 'api/v1/schema/activity.schema.json'), 'utf8'));
 ok(JSON.stringify(schema).includes('holiday:halloween'), 'activity schema enum has holiday:halloween');
 const sitemap = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');

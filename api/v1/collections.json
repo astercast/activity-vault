@@ -706,8 +706,73 @@
     60
    ],
    "page": "collections.html#haunted-halls"
+  },
+  {
+   "id": "grateful-gathering",
+   "title": "Grateful gathering",
+   "glyph": "🦃",
+   "when_to_use": "November is here and the program needs its Thanksgiving spine: the Thanksgiving 2026 pack's greatest hits plus the Vault's best older gratitude picks — crafts, harvest games, Thanksgiving STEM, gratitude practices, friendsgiving plans, and giving-back projects. Inclusive by design: not every family celebrates Thanksgiving, and these work for everyone.",
+   "picks": [
+    {
+     "activity_id": "thankful-turkey-handprints",
+     "curator_note": "The handprint turkey with a feather for every thankful thought — the pack's signature craft."
+    },
+    {
+     "activity_id": "paper-cornucopia-build",
+     "curator_note": "A paper horn of plenty for the middle of the friendsgiving table."
+    },
+    {
+     "activity_id": "cranberry-toothpick-towers",
+     "curator_note": "The Thanksgiving STEM anchor: real engineering with toothpicks and cranberries."
+    },
+    {
+     "activity_id": "shake-jar-butter",
+     "curator_note": "Ten minutes of shaking and the kids made actual butter — the crowd-pleaser."
+    },
+    {
+     "activity_id": "turkey-tag-chase",
+     "curator_note": "Burn off the pre-feast wiggles with the gobble-and-dodge classic."
+    },
+    {
+     "activity_id": "harvest-basket-relay",
+     "curator_note": "Teamwork disguised as a race — baskets fill fast when the whole crew runs."
+    },
+    {
+     "activity_id": "gratitude-alphabet-circle",
+     "curator_note": "Zero prep, whole group, A-to-Z gratitude in fifteen minutes."
+    },
+    {
+     "activity_id": "thankful-jar-shares",
+     "curator_note": "The quiet close to a loud week — slips of thanks, read aloud."
+    },
+    {
+     "activity_id": "friendsgiving-potluck-plan",
+     "curator_note": "Let the kids plan the feast: sign-up sheets, ingredient cards, jobs for everyone."
+    },
+    {
+     "activity_id": "food-drive-planning",
+     "curator_note": "Gratitude with a job to do — the giving-back anchor of the pack."
+    },
+    {
+     "activity_id": "staff-thank-you-cards",
+     "curator_note": "The holiday heroes get their cards: custodians, cafeteria crew, bus drivers."
+    },
+    {
+     "activity_id": "gratitude-tree",
+     "curator_note": "The Vault's gratitude classic — every thankful thought becomes a leaf."
+    }
+   ],
+   "age_span": [
+    4,
+    12
+   ],
+   "time_span": [
+    15,
+    45
+   ],
+   "page": "collections.html#grateful-gathering"
   }
  ],
- "count": 11,
+ "count": 12,
  "updated": "2026-10-12"
 }

@@ -607,6 +607,62 @@
      "note": "Deliver treats instead of collecting them — the kindness flip."
     }
    ]
+  },
+  {
+   "id": "grateful-gathering",
+   "title": "Grateful gathering",
+   "glyph": "🦃",
+   "when_to_use": "November is here and the program needs its Thanksgiving spine: the Thanksgiving 2026 pack's greatest hits plus the Vault's best older gratitude picks — crafts, harvest games, Thanksgiving STEM, gratitude practices, friendsgiving plans, and giving-back projects. Inclusive by design: not every family celebrates Thanksgiving, and these work for everyone.",
+   "picks": [
+    {
+     "id": "thankful-turkey-handprints",
+     "note": "The handprint turkey with a feather for every thankful thought — the pack's signature craft."
+    },
+    {
+     "id": "paper-cornucopia-build",
+     "note": "A paper horn of plenty for the middle of the friendsgiving table."
+    },
+    {
+     "id": "cranberry-toothpick-towers",
+     "note": "The Thanksgiving STEM anchor: real engineering with toothpicks and cranberries."
+    },
+    {
+     "id": "shake-jar-butter",
+     "note": "Ten minutes of shaking and the kids made actual butter — the crowd-pleaser."
+    },
+    {
+     "id": "turkey-tag-chase",
+     "note": "Burn off the pre-feast wiggles with the gobble-and-dodge classic."
+    },
+    {
+     "id": "harvest-basket-relay",
+     "note": "Teamwork disguised as a race — baskets fill fast when the whole crew runs."
+    },
+    {
+     "id": "gratitude-alphabet-circle",
+     "note": "Zero prep, whole group, A-to-Z gratitude in fifteen minutes."
+    },
+    {
+     "id": "thankful-jar-shares",
+     "note": "The quiet close to a loud week — slips of thanks, read aloud."
+    },
+    {
+     "id": "friendsgiving-potluck-plan",
+     "note": "Let the kids plan the feast: sign-up sheets, ingredient cards, jobs for everyone."
+    },
+    {
+     "id": "food-drive-planning",
+     "note": "Gratitude with a job to do — the giving-back anchor of the pack."
+    },
+    {
+     "id": "staff-thank-you-cards",
+     "note": "The holiday heroes get their cards: custodians, cafeteria crew, bus drivers."
+    },
+    {
+     "id": "gratitude-tree",
+     "note": "The Vault's gratitude classic — every thankful thought becomes a leaf."
+    }
+   ]
   }
  ]
 }

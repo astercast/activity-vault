@@ -19,7 +19,8 @@ ID_RE = re.compile(r'^[a-z0-9-]+$')
 
 # Optional tag vocabulary. Tags drive the "Season / occasion" filter.
 # New tags must be added here AND to assets/app.js (TAG_LABELS) AND api docs.
-TAG_IDS = ["season:fall", "season:winter", "season:spring", "season:summer", "holiday:halloween", "holiday:dia-de-muertos",
+TAG_IDS = ["season:fall", "season:winter", "season:spring", "season:summer", "holiday:halloween", "holiday:thanksgiving",
+           "holiday:dia-de-muertos",
            "holiday:christmas", "holiday:hanukkah", "holiday:kwanzaa", "holiday:new-year",
            "holiday:easter", "holiday:earth-day", "holiday:july-4th",
            "theme:spooky"]
@@ -29,6 +30,7 @@ TAG_LABELS = {
     "season:spring": "🌷 Spring",
     "season:summer": "☀️ Summer",
     "holiday:halloween": "👻 Halloween",
+    "holiday:thanksgiving": "🦃 Thanksgiving",
     "holiday:dia-de-muertos": "💀 Día de los Muertos",
     "holiday:christmas": "🎄 Christmas",
     "holiday:hanukkah": "🕎 Hanukkah",
@@ -208,6 +210,7 @@ ACTIVITY_TEMPLATE = """<!DOCTYPE html>
       <a href="../party.html">Party Planner 🎃</a>
       <a href="../collections.html">Collections 📚</a>
       <a href="../halloween.html">Halloween 🎃</a>
+      <a href="../thanksgiving.html">Thanksgiving 🦃</a>
       <a href="../spring.html">Spring 🌷</a>
       <a href="../summer.html">Summer ☀️</a>
     </nav>
@@ -444,7 +447,7 @@ def main():
         sys.exit(1)
     actmap = {a['id']: a for a in acts}
     # Wave 9 explicit assert: every collection pick resolves to a real activity id.
-    assert len(colls) == 11, f"expected 11 collections, got {len(colls)}"
+    assert len(colls) == 12, f"expected 12 collections, got {len(colls)}"
     assert all(p['id'] in actmap for c in colls for p in c['picks']), \
         "collection pick does not resolve to a real activity id"
     # Wave 10 explicit assert: balance-buckets covers all 11 categories.
@@ -794,7 +797,7 @@ def main():
               "- sub.html — Sub Tub: the substitute-teacher rescue kit.",
               "  Pick grade band, minutes to fill, materials on hand, location —",
               "  generates a sequenced print-ready emergency plan plus a 'Dear sub' note template.",
-              "- party.html — Party Planner (Halloween, winter, spring, and summer presets).",
+              "- party.html — Party Planner (Halloween, Thanksgiving, winter, spring, and summer presets).",
               "  Pick a theme, class size, minutes, stations, and budget — generates a timed",
               "  station-rotation plan from seasonal activities, plus a setup list and a",
               "  print-ready run sheet.",
@@ -808,13 +811,17 @@ def main():
               "- summer.html — Summer hub: the summer 2027 pack's water play, outdoor games,",
               "  summer crafts, beat-the-heat indoor backups, and camp + July 4th activities,",
               "  plus the Summer Splash collection and a summer party-theme shortcut.",
+              "- thanksgiving.html — Thanksgiving hub: the Thanksgiving 2026 pack's gratitude",
+              "  crafts, harvest games, Thanksgiving STEM, gratitude and friendsgiving activities,",
+              "  and giving-back projects, plus the Grateful Gathering collection and a",
+              "  Thanksgiving party-theme shortcut.",
               "- planner.html — Smart Weekly Planner 2.0: program presets (after-school / camp /",
               "  classroom), age bands, auto-built no-repeat weeks with a per-day energy balance meter,",
               "  drag-and-drop reorder, per-slot swap, surprise gap-fill, prep-level caps, collection",
               "  seeding (?from=collection:<id>), named saved plans, .ics calendar export, shareable",
               "  ?plan= links, and a print-ready card deck.",
-              "- collections.html — Curated collections: 11 teacher-ready bundles (rainy-day",
-              "  rescue, first day, sub tub, winter party, spring burst, summer splash, haunted halls…)",
+              "- collections.html — Curated collections: 12 teacher-ready bundles (rainy-day",
+              "  rescue, first day, sub tub, winter party, spring burst, summer splash, haunted halls, grateful gathering…)",
               "  each with a curator's note per pick; printable and copy-able per collection.",
               "- api.html — API docs with a Try-the-API console (endpoint picker, fetch, pretty JSON).",
               "", "## Docs", "- API.md — full API reference", "- PIPELINE.md — how the library grows",
@@ -834,7 +841,7 @@ def main():
     open(os.path.join(SITE, 'llms-full.txt'), 'w').write('\n'.join(full) + '\n')
 
     # 4. sitemap.xml
-    urls = ["", "planner.html", "sub.html", "party.html", "collections.html", "api.html", "halloween.html", "spring.html", "summer.html"] + [f"activity/{a['id']}.html" for a in acts]
+    urls = ["", "planner.html", "sub.html", "party.html", "collections.html", "api.html", "halloween.html", "thanksgiving.html", "spring.html", "summer.html"] + [f"activity/{a['id']}.html" for a in acts]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:

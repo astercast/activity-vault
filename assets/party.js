@@ -1,4 +1,4 @@
-/* Activity Vault — class-party planner (Halloween, winter, spring + summer presets).
+/* Activity Vault — class-party planner (Halloween, Thanksgiving, winter, spring + summer presets).
    Fetches data/activities.json, builds a timed station-rotation plan
    from seasonal activities for theme + class size + minutes + stations + budget. */
 (function () {
@@ -18,6 +18,19 @@
       breakMin: 0,
       closingIntro: '0:05 — Welcome & costume parade (5 min). Then rotate on the timer.',
       closingRegroup: 'Regroup: costume category vote or group photo, hand out take-homes, clean stations'
+    },
+    thanksgiving: {
+      label: 'Thanksgiving',
+      tags: ['holiday:thanksgiving', 'season:fall'],
+      groupNames: ['Turkeys', 'Harvesters', 'Cornucopias', 'Acorns', 'Gourds', 'Sunflowers'],
+      heroKicker: '🦃 Party Planner',
+      heroTitle: 'The Thanksgiving<br>class-party planner.',
+      heroLede: 'Tell it your class size, how long the party runs, how many stations you can staff, and your budget — it builds a timed station-rotation plan from the Vault\'s Thanksgiving and fall activities (gratitude crafts, harvest games, Thanksgiving STEM, and giving-back stations), with a merged setup list and a print-ready run sheet.',
+      planKicker: '🦃 Thanksgiving class-party run sheet',
+      planTitle: 'Thanksgiving party',
+      breakMin: 0,
+      closingIntro: '0:05 — Welcome & gratitude circle (5 min). Then rotate on the timer.',
+      closingRegroup: 'Regroup: share one thankful thought, hand out take-homes, clean stations'
     },
     winter: {
       label: 'Winter',
