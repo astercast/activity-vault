@@ -901,8 +901,73 @@
     60
    ],
    "page": "collections.html#winter-lights"
+  },
+  {
+   "id": "the-whole-calendar",
+   "title": "The whole calendar",
+   "glyph": "🗓️",
+   "when_to_use": "One shelf for the whole school year: twelve holidays, one strong pick each, in calendar order. Plan the year in January or rescue a holiday week the night before — it works both ways.",
+   "picks": [
+    {
+     "activity_id": "new-year-noise-parade",
+     "curator_note": "January opens loud — shakers and one hallway lap to start the year like you mean it."
+    },
+    {
+     "activity_id": "dream-for-our-community",
+     "curator_note": "MLK Day with the real speech at the center: hear his dream, then state yours for your own street."
+    },
+    {
+     "activity_id": "paper-lantern-festival",
+     "curator_note": "Lunar New Year lanterns — make them first, then hang the riddle walk on them later in the week."
+    },
+    {
+     "activity_id": "valentine-card-exchange",
+     "curator_note": "February's rule is nobody skipped: every kid makes one card and gets one card."
+    },
+    {
+     "activity_id": "shamrock-shapes-hunt",
+     "curator_note": "St. Patrick's Day for the youngest kids — shapes, counting, and a hunt set at knee height."
+    },
+    {
+     "activity_id": "natural-dye-easter-eggs",
+     "curator_note": "Spring eggs dyed with onion skins and beets — the pantry does the chemistry."
+    },
+    {
+     "activity_id": "flag-folding-ceremony",
+     "curator_note": "July 4th handled with care: the real 13-fold ceremony, practiced respectfully."
+    },
+    {
+     "activity_id": "indigenous-innovators-spotlight",
+     "curator_note": "October's history slot done right — real Indigenous scientists and artists, researched by the kids."
+    },
+    {
+     "activity_id": "teal-pumpkin-project",
+     "curator_note": "Halloween that includes every kid: the allergy-aware anchor of the whole month."
+    },
+    {
+     "activity_id": "rangoli-pattern-art",
+     "curator_note": "Diwali's welcome, made in chalk — dot grid, mirrored pattern, hung by the door."
+    },
+    {
+     "activity_id": "thankful-turkey-handprints",
+     "curator_note": "Thanksgiving's signature craft: a feather for every thankful thought."
+    },
+    {
+     "activity_id": "homemade-christmas-ornaments",
+     "curator_note": "December closes with the take-home gift parents actually keep."
+    }
+   ],
+   "age_span": [
+    3,
+    14
+   ],
+   "time_span": [
+    15,
+    60
+   ],
+   "page": "collections.html#the-whole-calendar"
   }
  ],
- "count": 14,
+ "count": 15,
  "updated": "2026-10-12"
 }

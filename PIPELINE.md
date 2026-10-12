@@ -62,7 +62,9 @@ Every activity is one JSON object in `data/activities.json`. All fields required
 activity ideas for **human review** — it never publishes anything on its own.
 
 - `pipeline/feeds.json` — curated feeds (WeAreTeachers, Hands On As We Grow,
-  Teach Beside Me). All verified working 2026-10-11.
+  Teach Beside Me, Little Bins for Little Hands, Kids Activities Blog,
+  Buggy and Buddy). First three verified 2026-10-11; the wave-24 additions
+  verified responding 2026-10-12.
 - `pipeline/scan.py` — stdlib-only RSS scanner. Keyword-filters for
   activity-relevant posts, dedupes via `pipeline/seen.json`, appends candidates
   to `pipeline/review-queue.json` with `status: "pending"`. Exits 0 on feed

@@ -67,7 +67,7 @@ Full activity library.
 | `steps` | string[] | Ordered instructions |
 | `variations` | object | `{"easier": "...", "harder": "..."}` |
 | `safety` | string\|null | Common-sense safety notes, or null |
-| `tags` | string[] (optional) | Season/occasion tags: `season:fall`, `season:winter`, `season:spring`, `holiday:halloween`, `holiday:thanksgiving`, `holiday:dia-de-muertos`, `holiday:christmas`, `holiday:hanukkah`, `holiday:kwanzaa`, `holiday:new-year`, `holiday:easter`, `holiday:earth-day`, `holiday:july-4th`, `theme:spooky` |
+| `tags` | string[] (optional) | Season/occasion tags: `season:fall`, `season:winter`, `season:spring`, `holiday:halloween`, `holiday:thanksgiving`, `holiday:dia-de-muertos`, `holiday:christmas`, `holiday:hanukkah`, `holiday:kwanzaa`, `holiday:new-year`, `holiday:easter`, `holiday:earth-day`, `holiday:july-4th`, `holiday:mlk-day`, `holiday:valentines-day`, `holiday:lunar-new-year`, `holiday:st-patricks-day`, `holiday:diwali`, `holiday:indigenous-peoples-day`, `theme:spooky` |
 | `source` | string\|null (optional) | Inspiration source URL (RSS pipeline adaptations link the original post) |
 
 ### `GET data/v1/categories.json`
@@ -89,7 +89,7 @@ Machine-readable filter configuration — the same logic the browser UI uses:
     "time_available": { "type": "select", "options": [15, 20, 30, 45, 60], "description": "Activity fits if time_min <= selected minutes." },
     "group_size":     { "type": "range", "min": 2, "max": 40, "description": "Activity fits if the group range overlaps the selected size." },
     "categories":     { "type": "multiselect", "options": ["seasons", "holidays", ...] },
-    "tags":           { "type": "multiselect", "options": ["season:fall", "season:winter", "season:spring", "holiday:halloween", "holiday:thanksgiving", "holiday:dia-de-muertos", "holiday:christmas", "holiday:hanukkah", "holiday:kwanzaa", "holiday:new-year", "holiday:easter", "holiday:earth-day", "holiday:july-4th", "theme:spooky"], "description": "Activity fits if it carries ANY selected tag." },
+    "tags":           { "type": "multiselect", "options": ["season:fall", "season:winter", "season:spring", "holiday:halloween", "holiday:thanksgiving", "holiday:dia-de-muertos", "holiday:christmas", "holiday:hanukkah", "holiday:kwanzaa", "holiday:new-year", "holiday:easter", "holiday:earth-day", "holiday:july-4th", "holiday:mlk-day", "holiday:valentines-day", "holiday:lunar-new-year", "holiday:st-patricks-day", "holiday:diwali", "holiday:indigenous-peoples-day", "theme:spooky"], "description": "Activity fits if it carries ANY selected tag." },
     "no_prep_only":   { "type": "boolean" },
     "indoor_only":    { "type": "boolean" },
     "outdoor_only":   { "type": "boolean" },

@@ -126,8 +126,8 @@ echo "$CRON_OUT" | python3 -c "$PY_ENVELOPE" >/dev/null 2>&1 \
 echo "$CRON_OUT" | python3 -c "
 import json,sys
 e=json.load(sys.stdin); d=e['data']; m=e['meta']
-assert d['checked']==3, d
-assert len(m['upstream'])==3, m['upstream']
+assert d['checked']==6, d
+assert len(m['upstream'])==6, m['upstream']
 for u in m['upstream']:
     assert {'source','ok','checked_at'} <= set(u), u
     assert isinstance(u['ok'], bool)

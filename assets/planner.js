@@ -1049,6 +1049,12 @@
     'holiday:kwanzaa': '🖤 Kwanzaa', 'holiday:new-year': '🎆 New Year',
     'holiday:easter': '🐣 Easter', 'holiday:earth-day': '🌎 Earth Day',
     'holiday:july-4th': '🇺🇸 July 4th',
+    'holiday:mlk-day': '✊🏾 MLK Day',
+    'holiday:valentines-day': "💌 Valentine's Day",
+    'holiday:lunar-new-year': '🧧 Lunar New Year',
+    'holiday:st-patricks-day': "☘️ St. Patrick's Day",
+    'holiday:diwali': '🪔 Diwali',
+    'holiday:indigenous-peoples-day': "🌎 Indigenous Peoples' Day",
     'theme:spooky': '🕸️ Spooky (not scary)'
   };
   var SEASON_BY_MONTH = { 8: 'season:fall', 9: 'season:fall', 10: 'season:fall',
@@ -1056,13 +1062,14 @@
                           2: 'season:spring', 3: 'season:spring', 4: 'season:spring',
                           5: 'season:summer', 6: 'season:summer', 7: 'season:summer' };
   var HOLIDAY_BY_MONTH = {
-    2: ['holiday:easter'],
+    1: ['holiday:valentines-day', 'holiday:lunar-new-year'],
+    2: ['holiday:easter', 'holiday:st-patricks-day'],
     3: ['holiday:easter', 'holiday:earth-day'],
     6: ['holiday:july-4th'],
-    9: ['holiday:halloween', 'holiday:dia-de-muertos'],
+    9: ['holiday:halloween', 'holiday:dia-de-muertos', 'holiday:indigenous-peoples-day', 'holiday:diwali'],
     10: ['holiday:thanksgiving', 'holiday:hanukkah', 'holiday:kwanzaa'],
     11: ['holiday:christmas', 'holiday:new-year', 'holiday:hanukkah', 'holiday:kwanzaa'],
-    0: ['holiday:new-year', 'holiday:hanukkah', 'holiday:kwanzaa']
+    0: ['holiday:new-year', 'holiday:mlk-day', 'holiday:hanukkah', 'holiday:kwanzaa']
   };
 
   function buildSeasonStrip() {

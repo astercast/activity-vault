@@ -953,7 +953,11 @@
    "variations": {
     "easier": "Use pre-cut slit templates for younger kids.",
     "harder": "Layer two colors — an outer cut layer over a solid inner tube."
-   }
+   },
+   "tags": [
+    "season:winter",
+    "holiday:lunar-new-year"
+   ]
   },
   {
    "age_max": 12,
@@ -3386,7 +3390,11 @@
    "variations": {
     "easier": "Give each child 3 assigned recipients instead of the whole group.",
     "harder": "Write compliments as short poems or acrostics."
-   }
+   },
+   "tags": [
+    "season:winter",
+    "holiday:valentines-day"
+   ]
   },
   {
    "id": "valentine-heart-hunt",
@@ -3429,7 +3437,11 @@
    "variations": {
     "easier": "Hide hearts in plain sight; skip the clue chain.",
     "harder": "Write riddle clues where each answer is the next hiding spot."
-   }
+   },
+   "tags": [
+    "season:winter",
+    "holiday:valentines-day"
+   ]
   },
   {
    "id": "easter-egg-relay",
@@ -6144,7 +6156,11 @@
    "variations": {
     "easier": "Pre-write sentence starters inside each card ('I like how you...').",
     "harder": "Make pop-up cards with a folded tab inside."
-   }
+   },
+   "tags": [
+    "season:winter",
+    "holiday:valentines-day"
+   ]
   },
   {
    "age_max": 12,
@@ -6272,7 +6288,11 @@
    "variations": {
     "easier": "Skip the poles — kids hold the fabric directly.",
     "harder": "Choreograph a figure-eight weave through cones."
-   }
+   },
+   "tags": [
+    "season:winter",
+    "holiday:lunar-new-year"
+   ]
   },
   {
    "age_max": 12,
@@ -23525,8 +23545,747 @@
     "holiday:dia-de-muertos"
    ],
    "inclusion": "Petal paths of cempasuchil are a real Dia de los Muertos practice — marigolds guide spirits home. Present it as remembrance, calm and respectful."
+  },
+  {
+   "id": "dream-for-our-community",
+   "name": "A Dream for Our Community",
+   "tagline": "Hear Dr. King's dream in his own words, then say yours — one sentence, one drawing, one wall full of them.",
+   "categories": [
+    "team-community",
+    "holidays"
+   ],
+   "age_min": 7,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 25,
+   "time_max": 40,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper (one sheet per kid)"
+    },
+    {
+     "item": "crayons or markers"
+    },
+    {
+     "item": "tape for the dream wall"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Clear one wall or board as the dream wall. Have a short, age-appropriate picture book or excerpt about Dr. King ready — his 'I Have a Dream' speech, in a kids' edition, is the anchor.",
+   "steps": [
+    "Read or play the short excerpt together. Keep it brief and real: Dr. King dreamed out loud about fairness, in front of a huge crowd, in 1963.",
+    "Ask: what is one thing you wish were fairer or kinder in our school, our street, our town? Quiet thinking time first — a full minute.",
+    "Each kid writes or draws their dream in one sentence: 'I have a dream that…' Sentence starters on the board for anyone stuck.",
+    "Tape every dream to the wall. Nobody's dream gets skipped or ranked.",
+    "Close with a walk along the wall: anyone who wants to reads their sentence aloud. The wall stays up for the week."
+   ],
+   "variations": {
+    "easier": "Younger kids draw the dream and dictate the sentence to an adult or partner.",
+    "harder": "Write the dream as a short speech and deliver it standing, King-style — one minute, no notes beyond the sentence."
+   },
+   "safety": "Keep the discussion on fairness and kindness in the kids' own world — school, street, town. Step in kindly if a dream mocks another kid.",
+   "tags": [
+    "season:winter",
+    "holiday:mlk-day"
+   ],
+   "copy_free": true,
+   "no_elimination": true,
+   "inclusion": "Use Dr. King's actual words and a real account of his life — January's holiday is about a specific person and a specific movement, not generic kindness. Every family's dream counts; sharing aloud is always optional.",
+   "source": "https://www.weareteachers.com/martin-luther-king-activities/"
+  },
+  {
+   "id": "floating-ink-ghost",
+   "name": "Floating Ink Ghost",
+   "tagline": "Draw a ghost with a dry-erase marker, pour water, and watch it lift off the plate and swim.",
+   "categories": [
+    "stem"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 30,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "dry-erase markers (dark colors work best)"
+    },
+    {
+     "item": "a smooth glass or ceramic plate (one per kid or pair)"
+    },
+    {
+     "item": "a cup of room-temperature water"
+    },
+    {
+     "item": "paper towels"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Test one yourself first — the plate must be smooth and clean, and the ink needs a minute to dry before water touches it. One plate per kid or pair, water cups filled halfway.",
+   "steps": [
+    "Each kid draws a simple ghost on their plate with dry-erase marker — bold lines, filled in. Stick figures and stars work too.",
+    "Wait a full minute. Lifting too early is the number-one way this fails, and finding that out is part of the science.",
+    "Pour water slowly at the edge of the plate, not on the drawing. Watch the edges of the ink first.",
+    "Tilt the plate gently. The drawing lets go and floats — a ghost you can swirl, chase, and poke (it tears if you poke hard).",
+    "Talk it out: dry-erase ink is made to not stick, and the water slips underneath. That is the whole trick, and it is a good one."
+   ],
+   "variations": {
+    "easier": "Pre-draw the ghosts for the youngest kids; their job is the pour and the tilt.",
+    "harder": "Race two colors, draw a whole scene and float it, or test which marker brand lifts best and chart the results."
+   },
+   "safety": "Wipe spills right away — wet floors are the real hazard here. Markers stay on plates, not clothes or skin.",
+   "tags": [
+    "season:fall",
+    "holiday:halloween",
+    "theme:spooky"
+   ],
+   "source": "https://littlebinsforlittlehands.com/floating-drawing/"
+  },
+  {
+   "id": "binary-code-keychain",
+   "name": "Binary Code Keychain",
+   "tagline": "Spell your initials in 1s and 0s with two colors of beads — the same code computers actually read.",
+   "categories": [
+    "stem",
+    "crafts"
+   ],
+   "age_min": 8,
+   "age_max": 14,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 25,
+   "time_max": 40,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "pony beads in two colors (about 20 per kid)"
+    },
+    {
+     "item": "cord, string, or a split key ring (one per kid)"
+    },
+    {
+     "item": "paper and pencils"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Draw the binary alphabet chart on the board (A = 01000001, and so on) — no printing needed. Cut cords to about 8 inches and knot one end of each.",
+   "steps": [
+    "Show the idea plainly: computers store every letter as eight 1s and 0s. Dark bead = 1, light bead = 0. Read the chart row for A together.",
+    "Each kid picks their initials (two or three letters) and writes the bead pattern for each letter on paper first.",
+    "Thread the beads in pattern order. A short spacer bead or a knot between letters keeps them readable.",
+    "Tie off, clip to the key ring or cord loop, and trade: can a partner decode your initials from the beads alone?",
+    "Fast finishers encode a whole word for someone else to crack."
+   ],
+   "variations": {
+    "easier": "Encode one letter only, with a partner checking each bead against the chart.",
+    "harder": "Encode a full first name, or write the decoding rules as a one-page guide for a younger class."
+   },
+   "safety": "Beads are a choking hazard for little siblings — keep them in trays on the table and count them back in at cleanup.",
+   "copy_free": true,
+   "source": "https://littlebinsforlittlehands.com/binary-code-keychain/"
+  },
+  {
+   "id": "indigenous-innovators-spotlight",
+   "name": "Indigenous Innovators Spotlight",
+   "tagline": "Real scientists, artists, and astronauts — research one, make their card, walk the gallery.",
+   "categories": [
+    "team-community",
+    "stem"
+   ],
+   "age_min": 8,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 32,
+   "time_min": 30,
+   "time_max": 45,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "index cards or cardstock (one per kid)"
+    },
+    {
+     "item": "markers"
+    },
+    {
+     "item": "a teacher-made list of 6-8 Indigenous innovators with one line each"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Write the starter list yourself from reliable sources — for example astronaut John Herrington (Chickasaw), scientist and botanist Robin Wall Kimmerer (Potawatomi), engineer Mary Golda Ross (Cherokee), artist Norval Morrisseau (Anishinaabe). Names and nations matter: be specific, never generic.",
+   "steps": [
+    "Read the list aloud together. Each kid or pair claims one person — no duplicates, so the gallery covers all of them.",
+    "Research with the books and sources you have on hand: what did this person make, discover, or change? Find one fact a classmate will not expect.",
+    "Make the spotlight card: name, nation, what they did, the surprising fact, and a drawing of their work (never a costume-style portrait).",
+    "Tape the cards into a gallery row. Walk it slowly, readers in front of each card.",
+    "Close by naming what the gallery adds up to: Indigenous people are scientists, artists, and astronauts right now — not only in history."
+   ],
+   "variations": {
+    "easier": "Work in pairs with the one-line starter as the research base; the card needs just name, nation, and one fact.",
+    "harder": "Add a 'questions we still have' card per person and hunt the answers in a second session."
+   },
+   "safety": null,
+   "tags": [
+    "season:fall",
+    "holiday:indigenous-peoples-day"
+   ],
+   "inclusion": "Present-day people, specific nations, real achievements — that is the whole design. No costumes, no dress-up, no invented ceremonies. If a student is Indigenous, never single them out as the expert; the research is everyone's job.",
+   "source": "https://littlebinsforlittlehands.com/indigenous-peoples-day-activities/"
+  },
+  {
+   "id": "feelings-pumpkin-faces",
+   "name": "Feelings Pumpkin Faces",
+   "tagline": "Draw the feeling on the pumpkin, name it out loud — a feelings check-in disguised as a fall craft.",
+   "categories": [
+    "crafts",
+    "quiet-focus"
+   ],
+   "age_min": 3,
+   "age_max": 8,
+   "group_min": 2,
+   "group_max": 25,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper plates (one per kid)"
+    },
+    {
+     "item": "orange paint or crayons"
+    },
+    {
+     "item": "markers"
+    },
+    {
+     "item": "green or brown paper scraps for stems"
+    },
+    {
+     "item": "glue sticks"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Pre-color the plates orange for the youngest kids, or leave coloring to them if time allows. Cut stem pieces ahead for under-5s. Have four feeling words ready: happy, sad, angry, worried.",
+   "steps": [
+    "Show your own pumpkin face first — draw 'worried' and say it plainly. Grown-ups have feelings too, and naming yours gives permission.",
+    "Call a feeling; everyone draws that face on their plate: eyebrows and mouth do most of the talking.",
+    "New plate or flip it over — run all four feelings, then let each kid pick one more feeling of their own to draw.",
+    "Hold-up round: hold your pumpkin where the group can see. 'This face is angry. Angry feels like…' — anyone may pass.",
+    "Hang the pumpkins in a row. A wall of feelings, all of them allowed."
+   ],
+   "variations": {
+    "easier": "Two feelings only (happy, sad), with face parts pre-drawn to trace.",
+    "harder": "Add mixed feelings — draw a half-and-half face and explain when both show up at once."
+   },
+   "safety": "Feelings talk stays kind: no laughing at anyone's face or example. Passing is always allowed.",
+   "tags": [
+    "season:fall",
+    "holiday:halloween"
+   ],
+   "source": "https://kidsactivitiesblog.com/94459/easy-paper-plate-feelings-pumpkins/"
+  },
+  {
+   "id": "christmas-light-stencil-art",
+   "name": "Christmas Light Stencil Art",
+   "tagline": "Tape a bulb stencil to dark paper, chalk all around it, lift — a glowing string of lights on a night-sky page.",
+   "categories": [
+    "crafts"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 35,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "dark blue or black paper (one sheet per kid)"
+    },
+    {
+     "item": "cardstock stencils cut in bulb shapes (teacher-cut, 2-3 per table)"
+    },
+    {
+     "item": "colored chalk"
+    },
+    {
+     "item": "tape loops"
+    },
+    {
+     "item": "a damp cloth for hands"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Cut the bulb stencils ahead of time. Put one tape loop on the back of each so small hands can hold them still.",
+   "steps": [
+    "Each kid tapes a bulb stencil to their dark paper and picks a chalk color — the bolder the better.",
+    "Color hard all around the stencil's edge, then smudge the chalk outward with a fingertip. The smudge is the glow.",
+    "Lift the stencil: a clean dark bulb with a bright halo. Move it, repeat — three to five bulbs per page.",
+    "Draw one wavy string line in white chalk connecting every bulb. The page is now a string of lights.",
+    "Hang the pages in a row along one wall: the class's own light display, no ladder required."
+   ],
+   "variations": {
+    "easier": "One big bulb per page, with thick chalk for small hands.",
+    "harder": "Plan the color pattern first (repeating sequence), or cut an original stencil shape of their own design."
+   },
+   "safety": "Chalk dust drifts — wipe hands on the damp cloth, not clothes, and keep chalk away from faces.",
+   "tags": [
+    "season:winter",
+    "holiday:christmas"
+   ],
+   "source": "https://buggyandbuddy.com/christmas-light-chalk-stencil-art-kids/"
+  },
+  {
+   "id": "twig-snowflake-craft",
+   "name": "Twig Snowflake Craft",
+   "tagline": "Six sticks, crumpled tissue, and glue — a snowflake you build instead of cutting.",
+   "categories": [
+    "crafts",
+    "seasons"
+   ],
+   "age_min": 3,
+   "age_max": 10,
+   "group_min": 2,
+   "group_max": 25,
+   "time_min": 20,
+   "time_max": 30,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "twigs or craft sticks (6 per kid)"
+    },
+    {
+     "item": "white and pale-blue tissue paper"
+    },
+    {
+     "item": "glue"
+    },
+    {
+     "item": "string for hanging"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Collect or cut twigs to roughly the same length (a hand-span works) and snap off sharp ends. Tear tissue into small squares ahead for the youngest kids.",
+   "steps": [
+    "Lay three twigs across each other like a star — every snowflake starts with six arms, and the twigs prove it.",
+    "Glue the center where they cross and let it set a minute. A wobbly center now means a fallen snowflake later.",
+    "Scrunch tissue squares into tiny balls and glue them along the arms — dense at the center, sparse at the tips, like frost creeping out.",
+    "Tie on the string and hang the flakes at different heights.",
+    "Look up: real snowflakes have six sides too. Twig sixes are sturdier than paper ones — these survive the whole winter."
+   ],
+   "variations": {
+    "easier": "Use craft sticks instead of twigs and pre-glue the star; the tissue work is the right size for age 3.",
+    "harder": "Build a second, bigger flake as a pair project and work out how the arms must scale."
+   },
+   "safety": "Check every found twig for sharp ends and splinters before it reaches the table, and wash hands after outdoor collecting.",
+   "tags": [
+    "season:winter"
+   ],
+   "source": "https://buggyandbuddy.com/tissue-paper-twig-snowflake-craft-kids/"
+  },
+  {
+   "id": "cd-rainbow-light-lab",
+   "name": "CD Rainbow Light Lab",
+   "tagline": "One old CD, one flashlight, and a white wall — split plain light into a rainbow and bend it around.",
+   "categories": [
+    "stem"
+   ],
+   "age_min": 6,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "an old CD or DVD (one per pair)"
+    },
+    {
+     "item": "a flashlight"
+    },
+    {
+     "item": "white paper or a pale wall"
+    },
+    {
+     "item": "a sunny window (optional)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Dim the room if you can — rainbows show best against shade. Check each CD for cracked or sharp edges and retire those.",
+   "steps": [
+    "Shine the flashlight at the CD's shiny side at an angle. Hunt slowly until a rainbow lands on the paper.",
+    "Tilt and turn: the rainbow stretches, splits, and slides. Each pair finds the widest rainbow they can make and holds it still for a count of ten.",
+    "Try the sunny window next (CD in the light, rainbow on paper — eyes never toward the sun). Compare: which light gives the stronger rainbow?",
+    "Draw what you saw: the order of colors, every time, is the same. Red on one edge, violet on the other.",
+    "The honest explanation: the CD's tiny grooves act like a fence that sorts light by color. Sorted light is a rainbow."
+   ],
+   "variations": {
+    "easier": "Work in pairs with the adult holding the CD steady; the hunt is the job.",
+    "harder": "Test other grooved or shiny surfaces (a phone screen off, a vinyl record) and rank which sorts light best."
+   },
+   "safety": "Never look at the sun or aim a reflection at anyone's eyes. Retire cracked CDs — the edges are sharp.",
+   "source": "https://buggyandbuddy.com/rainbow-science-create-light-patterns-with-a-cd/"
+  },
+  {
+   "id": "valentine-to-a-favorite-book",
+   "name": "A Valentine to a Favorite Book",
+   "tagline": "Skip the candy hearts — write a valentine to the book you would hand to a friend today.",
+   "categories": [
+    "quiet-focus",
+    "holidays"
+   ],
+   "age_min": 7,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 30,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper hearts or folded cards (one per kid)"
+    },
+    {
+     "item": "markers or pencils"
+    },
+    {
+     "item": "a stack of well-loved classroom books to choose from"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Cut paper hearts ahead, or let older kids cut their own. Spread the book stack where everyone can browse it for two minutes.",
+   "steps": [
+    "Each kid picks one book they genuinely love. Not the longest, not the hardest — the one they would press on a friend.",
+    "Write the valentine to the book itself: 'Dear [title], you made me…' One honest sentence beats five fancy ones.",
+    "Add the practical part: who should read this book next, and why them?",
+    "Tuck the valentines inside the books or tape them to the covers.",
+    "Book matchmaking: pull a book with someone else's valentine in it and read that sentence aloud. New reading lists get built in five minutes."
+   ],
+   "variations": {
+    "easier": "Draw the valentine and dictate the sentence; a heart with a face from the book counts fully.",
+    "harder": "Write the valentine as a persuasive paragraph and defend the pick in a one-minute pitch."
+   },
+   "safety": null,
+   "tags": [
+    "season:winter",
+    "holiday:valentines-day"
+   ],
+   "copy_free": true
+  },
+  {
+   "id": "lantern-riddle-walk",
+   "name": "Lantern Riddle Walk",
+   "tagline": "Write a riddle, hang it on a lantern, walk the row and solve everyone else's — the Lantern Festival way.",
+   "categories": [
+    "holidays",
+    "team-community"
+   ],
+   "age_min": 6,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 25,
+   "time_max": 40,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper lanterns (simple folded-paper ones work)"
+    },
+    {
+     "item": "markers"
+    },
+    {
+     "item": "string and tape for hanging"
+    },
+    {
+     "item": "slips of paper for answers"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Make or fold the lanterns first (paper-lantern-festival is the craft if you need one), and string a line across the room at kid height. Write one sample riddle yourself — answer hidden under a flap.",
+   "steps": [
+    "Teach the tradition plainly: at the Lantern Festival, which closes Lunar New Year celebrations, riddles are written on lanterns for passers-by to solve. That is the game, unchanged.",
+    "Each kid writes a riddle on their lantern — about an object in the room, an animal, a classmate's desk item. Answer goes under a taped flap or on the back.",
+    "Hang every lantern on the line. Lights low if you can; even ordinary light works.",
+    "Walk the row in pairs with an answer slip. Solve quietly, check the flap, move on. No shouting answers — the next pair deserves the puzzle.",
+    "Gather and vote: hardest riddle, funniest riddle, fairest riddle. The writers reveal themselves last."
+   ],
+   "variations": {
+    "easier": "Picture riddles for younger kids — draw the clues, write the answer word together.",
+    "harder": "Require a rhyming riddle, or a two-step riddle whose first answer feeds the second."
+   },
+   "safety": "String lines stay at kid height and out of walkways; lanterns are paper only, never near a heat source or real flame.",
+   "tags": [
+    "season:winter",
+    "holiday:lunar-new-year"
+   ],
+   "inclusion": "Riddles on lanterns are a real Lantern Festival custom — name it, place it (the 15th day of Lunar New Year), and play it as written rather than dressing it up. Guessing is in pairs so nobody is stuck alone."
+  },
+  {
+   "id": "leprechaun-trap-build",
+   "name": "Leprechaun Trap Build",
+   "tagline": "Boxes, ramps, and one gold coin of bait — engineer a trap for a creature who has never once been caught.",
+   "categories": [
+    "stem"
+   ],
+   "age_min": 6,
+   "age_max": 11,
+   "group_min": 2,
+   "group_max": 24,
+   "time_min": 30,
+   "time_max": 45,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "cardboard boxes and tubes"
+    },
+    {
+     "item": "craft sticks and string"
+    },
+    {
+     "item": "tape"
+    },
+    {
+     "item": "a gold paper coin (one per trap)"
+    },
+    {
+     "item": "scissors"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Set out the building stock and the bait coins. State the one rule that makes it engineering: the trap must be triggered by the coin being touched — a trap that only works if you push it is a sculpture.",
+   "steps": [
+    "Plan first, on paper: where does he step, what moves, what falls or closes? Two minutes of drawing saves twenty of rebuilding.",
+    "Build the trap around the coin. Ramps, levers, falling lids, swinging doors — any mechanism counts if the coin triggers it.",
+    "Test with a finger, not hope. Trigger it three times. A trap that works once in three is a prototype, and prototypes get fixed.",
+    "Fix and retest. Then leave every trap set and baited, and do a gallery walk: each builder explains their mechanism in one sentence.",
+    "Optional overnight drama: check the traps next session for 'evidence' — a tipped coin, a moved stick. He got away. He always gets away."
+   ],
+   "variations": {
+    "easier": "Build in pairs with a falling-lid design only, and adult help on the trigger.",
+    "harder": "Add a second trigger stage, or design the trap to catch without closing at all (a pit, a slide, a one-way ramp)."
+   },
+   "safety": "Scissors and craft knives are adult-handled; cut cardboard on the table, never in a lap.",
+   "tags": [
+    "season:spring",
+    "holiday:st-patricks-day"
+   ]
+  },
+  {
+   "id": "shamrock-shapes-hunt",
+   "name": "Shamrock Shapes Hunt",
+   "tagline": "Green shamrocks are hiding — each one carries a shape. Find them, sort them, count the haul.",
+   "categories": [
+    "seasons",
+    "outdoor"
+   ],
+   "age_min": 3,
+   "age_max": 7,
+   "group_min": 2,
+   "group_max": 25,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "paper shamrocks (teacher-cut, about 20)"
+    },
+    {
+     "item": "a marker"
+    },
+    {
+     "item": "a basket or bag per team"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Cut the shamrocks and draw one clear shape on each — circles, triangles, squares, hearts. Hide them at knee height or lower, in sight once you are close: this is a hunt for 3-to-7-year-olds, not a search warrant.",
+   "steps": [
+    "Show one shamrock and its shape. The job: find a shamrock, name its shape out loud, carry it back. Naming it is what counts it.",
+    "Hunt in pairs or small teams, one basket per team. Walk, don't run — the shapes are hiding, not fleeing.",
+    "Back at the rug, sort the haul into shape piles together.",
+    "Count each pile and line the piles up: which shape hid best? The smallest pile wins the hiding prize.",
+    "Re-hide round, if energy allows — this time the kids hide them for another team, same knee-height rule."
+   ],
+   "variations": {
+    "easier": "Hunt for green only — find any shamrock, shapes come later.",
+    "harder": "Add shape clues instead of free hunting ('find a triangle hiding near something soft'), or graph the counts on the board."
+   },
+   "safety": "Set the hunt boundary out loud before anyone moves, and keep it where one adult can see the whole field.",
+   "tags": [
+    "season:spring",
+    "holiday:st-patricks-day"
+   ]
+  },
+  {
+   "id": "rangoli-pattern-art",
+   "name": "Rangoli Pattern Art",
+   "tagline": "Dot grid, chalk colors, mirror the pattern — floor art that welcomes people in, Diwali-style.",
+   "categories": [
+    "crafts"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 25,
+   "time_max": 40,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "colored chalk (pavement) or colored paper dots and dark paper (indoor version)"
+    },
+    {
+     "item": "a ruler or dot-grid drawn in pencil"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Draw one small dot grid yourself to demo on. Outdoors needs a swept patch of pavement; indoors, dark paper stands in for the doorstep.",
+   "steps": [
+    "Say what rangoli is, plainly: during Diwali, families make bright patterns at their doorways to welcome guests and good fortune. Ours follows the same idea — a welcome you can see from the door.",
+    "Start every design the rangoli way: a grid of dots. Count them out loud — the grid is the skeleton.",
+    "Connect and mirror: draw a petal or diamond in one corner of the grid, then repeat it in all four, turned each time. Symmetry does the heavy lifting.",
+    "Color it in chalk or paper dots, brightest in the center.",
+    "Leave the finished patterns by the classroom door for a day. A welcome mat you made yourself."
+   ],
+   "variations": {
+    "easier": "Use a 3x3 dot grid and one shape repeated, with the adult drawing the grid.",
+    "harder": "Design on a 7x7 grid with two mirrored shapes, or work out the pattern on paper first and scale it up to pavement size."
+   },
+   "safety": "Chalk stays on pavement and paper. Wash hands after — chalk dust and snacks do not mix.",
+   "tags": [
+    "season:fall",
+    "holiday:diwali"
+   ],
+   "inclusion": "Rangoli is a living Diwali tradition, not a generic pattern exercise — name the holiday, the doorway, and the welcome. Make patterns, not pictures of deities, and keep the focus on the craft families actually practice."
+  },
+  {
+   "id": "paper-diya-lanterns",
+   "name": "Paper Diya Lanterns",
+   "tagline": "Fold a paper diya, add a battery tealight, and line the windowsill with light — no flames, all glow.",
+   "categories": [
+    "crafts",
+    "holidays"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 35,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "sturdy paper cups or cardstock (one per kid)"
+    },
+    {
+     "item": "tissue paper in warm colors"
+    },
+    {
+     "item": "glue sticks"
+    },
+    {
+     "item": "battery tealights (one per lantern, optional)"
+    },
+    {
+     "item": "scissors"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Pre-cut tissue into small squares. If you have battery tealights, test them all first — dead batteries are a momentum killer.",
+   "steps": [
+    "Start with the real thing: a diya is a small clay oil lamp, and rows of them light homes and streets through Diwali, the festival of lights. Ours are paper — the row of light is the point, not the flame.",
+    "Press or fold the cup into a shallow bowl shape and cover it with warm tissue colors — golds, oranges, reds.",
+    "Add a tissue flame: one twisted yellow-orange tuft standing in the center, or place a battery tealight inside instead.",
+    "Make the rim fancy — a folded band, dots, a repeating pattern. Diyas are small and decorated like they matter.",
+    "Line the finished lanterns along the windowsill or a shelf, lights on, room lights low for one minute. That minute is the festival feeling, honestly earned."
+   ],
+   "variations": {
+    "easier": "Use a pre-shaped bowl and big tissue pieces; gluing coverage is the whole job at age 5.",
+    "harder": "Design a matched set of three with a planned color sequence, or engineer a hanging version on string."
+   },
+   "safety": "Battery tealights only — never real candles or oil flames in a classroom version. Button batteries stay inside their tealights; tell an adult if one opens.",
+   "tags": [
+    "season:fall",
+    "holiday:diwali"
+   ],
+   "inclusion": "Name the real object and the real festival — a diya, Diwali, light over darkness — and skip costumes and generic 'around the world' framing. The paper version keeps the meaning and drops only the fire."
+  },
+  {
+   "id": "scarf-dance-patterns",
+   "name": "Scarf Dance Patterns",
+   "tagline": "High, low, fast, freeze — follow the pattern with a scarf and feel where the music changes.",
+   "categories": [
+    "music-rhythm",
+    "pe-movement"
+   ],
+   "age_min": 3,
+   "age_max": 8,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 10,
+   "time_max": 20,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "a scarf, tissue, or streamer per kid"
+    },
+    {
+     "item": "music with clear changes (fast/slow, loud/quiet)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Clear the floor and hand out scarves last — scarves distributed early are scarves worn as hats. Pick music with obvious changes; two contrasting songs back to back works.",
+   "steps": [
+    "Free float first: one minute of moving the scarf any way the music suggests. No wrong answers in minute one.",
+    "Call the pattern: high on the loud parts, low on the quiet parts. Scarves make the music visible — quiet music should look small.",
+    "Add speed: wave fast when the music runs, drift when it walks. Watch a few kids mirror each other without being asked.",
+    "Freeze game to close: music stops, scarves and bodies stop mid-shape. The sillier the statue, the better the round.",
+    "Sit, breathe, done. Ten honest minutes of listening with your whole body."
+   ],
+   "variations": {
+    "easier": "Seated version works fully — scarves move, chairs stay. Use one pattern only (high/low).",
+    "harder": "Kids take turns conducting: their scarf leads, the group's scarves follow the pattern they set."
+   },
+   "safety": "Scarves stay in hands — never around necks, never tied. Clear floor, walking feet when the music is quiet.",
+   "no_elimination": true
   }
  ],
- "count": 521,
+ "count": 536,
  "updated": "2026-10-12"
 }

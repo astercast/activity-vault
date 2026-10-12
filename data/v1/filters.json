@@ -59,6 +59,12 @@
     "holiday:easter",
     "holiday:earth-day",
     "holiday:july-4th",
+    "holiday:mlk-day",
+    "holiday:valentines-day",
+    "holiday:lunar-new-year",
+    "holiday:st-patricks-day",
+    "holiday:diwali",
+    "holiday:indigenous-peoples-day",
     "theme:spooky"
    ],
    "labels": {
@@ -76,6 +82,12 @@
     "holiday:easter": "\ud83d\udc23 Easter",
     "holiday:earth-day": "\ud83c\udf0e Earth Day",
     "holiday:july-4th": "\ud83c\uddfa\ud83c\uddf8 July 4th",
+    "holiday:mlk-day": "\u270a\ud83c\udffe MLK Day",
+    "holiday:valentines-day": "\ud83d\udc8c Valentine's Day",
+    "holiday:lunar-new-year": "\ud83e\udde7 Lunar New Year",
+    "holiday:st-patricks-day": "\u2618\ufe0f St. Patrick's Day",
+    "holiday:diwali": "\ud83e\ude94 Diwali",
+    "holiday:indigenous-peoples-day": "\ud83c\udf0e Indigenous Peoples' Day",
     "theme:spooky": "\ud83d\udd78\ufe0f Spooky (not scary)"
    },
    "description": "Season/occasion tags. Activity fits if it carries ANY selected tag."

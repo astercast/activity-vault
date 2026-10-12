@@ -15,7 +15,7 @@ function ok(cond, label, extra) {
 
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const actIds = new Set(acts.map(a => a.id));
-ok(acts.length === 521, '521 activities total', String(acts.length));
+ok(acts.length === 536, '536 activities total', String(acts.length));
 ok(actIds.size === acts.length, 'all activity ids unique');
 
 const TEEN = ['lightning-debates', 'escape-room-build', 'mini-podcast-studio',
@@ -36,7 +36,7 @@ acts.forEach(a => { byId[a.id] = a; });
 // 1. Thin-spot deltas: ages 13/14 and the four holiday tags.
 [13, 14].forEach(age => {
   const n = acts.filter(a => a.age_min <= age && age <= a.age_max).length;
-  ok(n === 68, 'age ' + age + ' coverage 53 -> 68', String(n));
+  ok(n === 70, 'age ' + age + ' coverage 53 -> 68 (wave-23) -> 70 (wave-24 binary keychain + innovators reach 14)', String(n));
 });
 const teenDesigned = acts.filter(a => a.age_min >= 11 && a.age_max >= 13).length;
 ok(teenDesigned >= 13, 'teen-designed activities (age_min>=11)', String(teenDesigned));

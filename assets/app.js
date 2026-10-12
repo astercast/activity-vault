@@ -50,11 +50,19 @@
     'holiday:easter': '🐣 Easter',
     'holiday:earth-day': '🌎 Earth Day',
     'holiday:july-4th': '🇺🇸 July 4th',
+    'holiday:mlk-day': '✊🏾 MLK Day',
+    'holiday:valentines-day': "💌 Valentine's Day",
+    'holiday:lunar-new-year': '🧧 Lunar New Year',
+    'holiday:st-patricks-day': "☘️ St. Patrick's Day",
+    'holiday:diwali': '🪔 Diwali',
+    'holiday:indigenous-peoples-day': "🌎 Indigenous Peoples' Day",
     'theme:spooky': '🕸️ Spooky (not scary)'
   };
   var TAG_ORDER = ['season:fall', 'season:winter', 'season:spring', 'season:summer', 'holiday:halloween', 'holiday:thanksgiving', 'holiday:dia-de-muertos',
                    'holiday:christmas', 'holiday:hanukkah', 'holiday:kwanzaa', 'holiday:new-year',
                    'holiday:easter', 'holiday:earth-day', 'holiday:july-4th',
+                   'holiday:mlk-day', 'holiday:valentines-day', 'holiday:lunar-new-year',
+                   'holiday:st-patricks-day', 'holiday:diwali', 'holiday:indigenous-peoples-day',
                    'theme:spooky'];
 
   var grid, countEl, searchInput, sortChipBtn, topTenBtn;

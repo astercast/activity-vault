@@ -168,6 +168,12 @@
         "holiday:easter",
         "holiday:earth-day",
         "holiday:july-4th",
+        "holiday:mlk-day",
+        "holiday:valentines-day",
+        "holiday:lunar-new-year",
+        "holiday:st-patricks-day",
+        "holiday:diwali",
+        "holiday:indigenous-peoples-day",
         "theme:spooky"
        ]
       },

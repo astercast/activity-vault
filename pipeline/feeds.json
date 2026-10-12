@@ -1,1 +1,32 @@
-[{"id":"weareteachers","name":"WeAreTeachers","url":"https://www.weareteachers.com/feed/"},{"id":"handsonaswegrow","name":"Hands On As We Grow","url":"https://handsonaswegrow.com/feed/"},{"id":"teachbesideme","name":"Teach Beside Me","url":"https://teachbesideme.com/feed/"}]
+[
+ {
+  "id": "weareteachers",
+  "name": "WeAreTeachers",
+  "url": "https://www.weareteachers.com/feed/"
+ },
+ {
+  "id": "handsonaswegrow",
+  "name": "Hands On As We Grow",
+  "url": "https://handsonaswegrow.com/feed/"
+ },
+ {
+  "id": "teachbesideme",
+  "name": "Teach Beside Me",
+  "url": "https://teachbesideme.com/feed/"
+ },
+ {
+  "id": "littlebins",
+  "name": "Little Bins for Little Hands",
+  "url": "https://littlebinsforlittlehands.com/feed/"
+ },
+ {
+  "id": "kidsactivitiesblog",
+  "name": "Kids Activities Blog",
+  "url": "https://kidsactivitiesblog.com/feed/"
+ },
+ {
+  "id": "buggyandbuddy",
+  "name": "Buggy and Buddy",
+  "url": "https://buggyandbuddy.com/feed/"
+ }
+]

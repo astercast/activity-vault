@@ -775,6 +775,62 @@
      "note": "Pinecones and peanut butter, then a week of watching who shows up."
     }
    ]
+  },
+  {
+   "id": "the-whole-calendar",
+   "title": "The whole calendar",
+   "glyph": "🗓️",
+   "when_to_use": "One shelf for the whole school year: twelve holidays, one strong pick each, in calendar order. Plan the year in January or rescue a holiday week the night before — it works both ways.",
+   "picks": [
+    {
+     "id": "new-year-noise-parade",
+     "note": "January opens loud — shakers and one hallway lap to start the year like you mean it."
+    },
+    {
+     "id": "dream-for-our-community",
+     "note": "MLK Day with the real speech at the center: hear his dream, then state yours for your own street."
+    },
+    {
+     "id": "paper-lantern-festival",
+     "note": "Lunar New Year lanterns — make them first, then hang the riddle walk on them later in the week."
+    },
+    {
+     "id": "valentine-card-exchange",
+     "note": "February's rule is nobody skipped: every kid makes one card and gets one card."
+    },
+    {
+     "id": "shamrock-shapes-hunt",
+     "note": "St. Patrick's Day for the youngest kids — shapes, counting, and a hunt set at knee height."
+    },
+    {
+     "id": "natural-dye-easter-eggs",
+     "note": "Spring eggs dyed with onion skins and beets — the pantry does the chemistry."
+    },
+    {
+     "id": "flag-folding-ceremony",
+     "note": "July 4th handled with care: the real 13-fold ceremony, practiced respectfully."
+    },
+    {
+     "id": "indigenous-innovators-spotlight",
+     "note": "October's history slot done right — real Indigenous scientists and artists, researched by the kids."
+    },
+    {
+     "id": "teal-pumpkin-project",
+     "note": "Halloween that includes every kid: the allergy-aware anchor of the whole month."
+    },
+    {
+     "id": "rangoli-pattern-art",
+     "note": "Diwali's welcome, made in chalk — dot grid, mirrored pattern, hung by the door."
+    },
+    {
+     "id": "thankful-turkey-handprints",
+     "note": "Thanksgiving's signature craft: a feather for every thankful thought."
+    },
+    {
+     "id": "homemade-christmas-ornaments",
+     "note": "December closes with the take-home gift parents actually keep."
+    }
+   ]
   }
  ]
 }

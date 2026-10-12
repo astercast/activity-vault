@@ -23,6 +23,8 @@ TAG_IDS = ["season:fall", "season:winter", "season:spring", "season:summer", "ho
            "holiday:dia-de-muertos",
            "holiday:christmas", "holiday:hanukkah", "holiday:kwanzaa", "holiday:new-year",
            "holiday:easter", "holiday:earth-day", "holiday:july-4th",
+           "holiday:mlk-day", "holiday:valentines-day", "holiday:lunar-new-year",
+           "holiday:st-patricks-day", "holiday:diwali", "holiday:indigenous-peoples-day",
            "theme:spooky"]
 TAG_LABELS = {
     "season:fall": "🎃 Fall",
@@ -39,6 +41,12 @@ TAG_LABELS = {
     "holiday:easter": "🐣 Easter",
     "holiday:earth-day": "🌎 Earth Day",
     "holiday:july-4th": "🇺🇸 July 4th",
+    "holiday:mlk-day": "✊🏾 MLK Day",
+    "holiday:valentines-day": "💌 Valentine's Day",
+    "holiday:lunar-new-year": "🧧 Lunar New Year",
+    "holiday:st-patricks-day": "☘️ St. Patrick's Day",
+    "holiday:diwali": "🪔 Diwali",
+    "holiday:indigenous-peoples-day": "🌎 Indigenous Peoples' Day",
     "theme:spooky": "🕸️ Spooky (not scary)",
 }
 
@@ -1047,7 +1055,7 @@ def main():
         sys.exit(1)
     actmap = {a['id']: a for a in acts}
     # Wave 9 explicit assert: every collection pick resolves to a real activity id.
-    assert len(colls) == 14, f"expected 14 collections, got {len(colls)}"
+    assert len(colls) == 15, f"expected 15 collections, got {len(colls)}"
     assert all(p['id'] in actmap for c in colls for p in c['picks']), \
         "collection pick does not resolve to a real activity id"
     # Wave 10 explicit assert: balance-buckets covers all 11 categories.
@@ -1656,7 +1664,7 @@ def main():
               "  each day with a run-of-show timeline, a printable session plan sheet, per-slot",
               "  swap, one aggregated material checklist (have vs. gather), copy-as-text, and",
               "  shareable ?kit= links that restore the exact kit on any device.",
-              "- collections.html — Curated collections: 14 teacher-ready bundles (rainy-day",
+              "- collections.html — Curated collections: 15 teacher-ready bundles (rainy-day",
               "  rescue, first day, sub tub, winter party, spring burst, summer splash, haunted halls, grateful gathering, winter lights…)",
               "  each with a curator's note per pick; printable and copy-able per collection.",
               "- api.html — API docs with a Try-the-API console (endpoint picker, fetch, pretty JSON).",

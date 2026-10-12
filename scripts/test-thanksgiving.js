@@ -16,7 +16,7 @@ function ok(cond, label, extra) {
 
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const actIds = new Set(acts.map(a => a.id));
-ok(acts.length === 521, '521 activities total', String(acts.length));
+ok(acts.length === 536, '536 activities total', String(acts.length));
 ok(actIds.size === acts.length, 'all activity ids unique');
 
 // 1. Tag vocabulary: holiday:thanksgiving is NEW in wave 14 — confirm it is
@@ -102,8 +102,8 @@ ok(JSON.stringify((byId['harvest-gratitude-circle'].tags || []).slice().sort()) 
 
 // 4. Collections: 12 total, grateful-gathering valid
 const colls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/collections.json'), 'utf8')).collections;
-ok(colls.length === 14, '14 collections', String(colls.length));
-ok(new Set(colls.map(c => c.id)).size === 14, 'collection ids unique');
+ok(colls.length === 15, '15 collections', String(colls.length));
+ok(new Set(colls.map(c => c.id)).size === 15, 'collection ids unique');
 const gg = colls.find(c => c.id === 'grateful-gathering');
 ok(!!gg, 'grateful-gathering exists');
 ok(gg.glyph === '🦃', 'grateful-gathering glyph');
@@ -175,9 +175,9 @@ RESEARCH3.forEach(id => {
   ok((byId[id].source || '').startsWith('https://'), 'research activity has source URL: ' + id);
   ok(byId[id].copy_free === true, 'research activity is copy-free: ' + id);
 });
-ok(acts.filter(a => a.copy_free).length === 162, '162 copy_free notes (153 + 9 wave-23)', String(acts.filter(a => a.copy_free).length));
-ok(acts.filter(a => a.no_elimination).length === 41, '41 no_elimination notes (37 + 4 wave-23)');
-ok(acts.filter(a => a.inclusion).length === 46, '46 inclusion notes (42 + 4 wave-23)');
+ok(acts.filter(a => a.copy_free).length === 165, '165 copy_free notes (162 + 3 wave-24)', String(acts.filter(a => a.copy_free).length));
+ok(acts.filter(a => a.no_elimination).length === 43, '43 no_elimination notes (41 + 2 wave-24)');
+ok(acts.filter(a => a.inclusion).length === 51, '51 inclusion notes (46 + 5 wave-24)');
 // research fields appear on built pages
 const cfPage = fs.readFileSync(path.join(ROOT, 'activity/turkey-code-feathers.html'), 'utf8');
 ok(cfPage.includes('Copy-free'), 'copy-free badge renders on activity page');
@@ -239,16 +239,16 @@ ok(samplePage.includes('../thanksgiving.html'), 'generated activity page nav lin
 
 // 11. Generated API: filters.json + collections + manifest + schema + sitemap + llms
 const apiColls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/collections.json'), 'utf8'));
-ok(apiColls.count === 14 && apiColls.collections.length === 14, 'api collections.json count 14');
+ok(apiColls.count === 15 && apiColls.collections.length === 15, 'api collections.json count 15');
 ok(apiColls.collections.some(c => c.id === 'grateful-gathering'), 'api has grateful-gathering');
 const coll = apiColls.collections.find(c => c.id === 'grateful-gathering');
 ok(coll.page === 'collections.html#grateful-gathering', 'grateful-gathering deep link');
 ok(coll.age_span.length === 2 && coll.time_span.length === 2, 'grateful-gathering spans computed');
 const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/index.json'), 'utf8'));
 const collEp = manifest.endpoints.find(e => e.path === 'data/v1/collections.json');
-ok(collEp && collEp.records === 14, 'manifest collections records=14');
+ok(collEp && collEp.records === 15, 'manifest collections records=15');
 const actEp = manifest.endpoints.find(e => e.path === 'data/v1/activities.json');
-ok(actEp && actEp.records === 521, 'manifest activities records=521', String(actEp && actEp.records));
+ok(actEp && actEp.records === 536, 'manifest activities records=536', String(actEp && actEp.records));
 const sitemap = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
 ok(sitemap.includes('thanksgiving.html'), 'sitemap.xml has thanksgiving.html');
 const llms = fs.readFileSync(path.join(ROOT, 'llms.txt'), 'utf8');

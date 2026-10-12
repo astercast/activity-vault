@@ -2,6 +2,26 @@
 
 Running record of build waves. Newest first.
 
+## Wave 24 — 2026-10-12 — "The Scout in Action + The Whole Calendar" 🛰️🗓️
+
+**What shipped (three parts):**
+
+**Part 1 — The Scout, run live, queue processed for real (36 reviewed: 8 accepted, 28 rejected, 0 pending):** the queue on file was fully decided (23 old entries), so the Scout actually scouted. Three verified feeds joined `pipeline/feeds.json` (Little Bins for Little Hands, Kids Activities Blog, Buggy and Buddy — the cron reads the same file, so production gets them too), `pipeline/scan.py` ran live, and 36 fresh candidates queued. Every one was reviewed against the full 521-activity catalog for age-fit, safety, materials sanity, and duplication, with the reason recorded on the queue entry (`scripts/add_wave24.py` holds the full decision table). **Accepted (8, adapted into original words, source credited):** `dream-for-our-community` (the MLK roundup's classic core — the Vault had zero MLK Day coverage), `floating-ink-ghost`, `binary-code-keychain`, `indigenous-innovators-spotlight` (zero Indigenous Peoples' Day coverage before), `feelings-pumpkin-faces`, `christmas-light-stencil-art`, `twig-snowflake-craft`, `cd-rainbow-light-lab`. **Rejected (28) with reasons, samples:** a word-list printable (no runnable activity), a sponsored curriculum post, a peanut-candy salad recipe (top allergen, shared food), an edible sensory bottle aimed at babies (Vault floor is age 3; near-dupe of the calm jars), seven near-identical Christmas ornament posts (one licensed character, one oven-and-shrink-film), template-only printables, an explainer whose science already lives in `fall-leaf-chromatography`, and straight duplicates (`paper-boat-race`, `density-rainbow-jars`, `spiderweb-plate-weave`, `reindeer-grid-coding`). Public queue now reads 0 pending / 59 decided; `review.html` rebuilt from the same data.
+
+**Part 2 — Completeness audit, run hard (+7 gap fills, 5 retags, 6 new tags → 536 activities):** keyword + tag audit found whole holidays at zero — MLK Day, Indigenous Peoples' Day, St. Patrick's Day, Diwali, and Lunar New Year / Valentine's Day present only as untagged activities. Six tags joined the vocabulary everywhere PIPELINE.md requires (build.py validator, `assets/app.js`, `assets/planner.js` labels + month map, API.md, AGENT.md): `holiday:mlk-day`, `holiday:indigenous-peoples-day`, `holiday:valentines-day`, `holiday:lunar-new-year`, `holiday:st-patricks-day`, `holiday:diwali`. Gap fills: `valentine-to-a-favorite-book`, `lantern-riddle-walk` (the real Lantern Festival riddle custom), `leprechaun-trap-build`, `shamrock-shapes-hunt`, `rangoli-pattern-art`, `paper-diya-lanterns` (LED only, no flames), `scarf-dance-patterns` (music-rhythm, still the thinnest category, + ages 3–8). Diwali/Lunar New Year records carry the respectful-learning framing of the wave-20/22 precedents. Retagged: the three valentine activities and `dragon-parade` / `paper-lantern-festival`. Deltas: age-3 coverage 8 → 11, ages 13/14 → 70, valentines-day 4, lunar-new-year 3, st-patricks-day 2, diwali 2.
+
+**Part 3 — New collection (15th): "The whole calendar"** 🗓️ — twelve picks, one per holiday in calendar order (New Year → MLK → Lunar New Year → Valentine's → St. Patrick's → Easter → July 4th → Indigenous Peoples' Day → Halloween → Diwali → Thanksgiving → Christmas), anchored by four wave-24 picks. Plus a drive-by: `tests/api.test.sh` cron assertion updated 3 → 6 feeds; `scripts/test-micro.js` seed-42 deal assertion refreshed with a dated note (pool grew, composition changed, role bounds still asserted per slot); count snapshots refreshed 521 → 536 / 14 → 15 across the suites.
+
+**Validation (wave 24):**
+- `scripts/build.py`: BUILD OK — **536 activities, 536 pages, 11 categories, 15 collections**, 0 dupes
+- `scripts/check_api.py`: ALL CHECKS PASSED — 0 broken links, llms.txt 37 links resolve
+- New `scripts/test-wave24.js`: **318 assertions pass** (8+7 ids, quality bar, source credits resolve to real queue links, 36 queue decisions with reasons, tag deltas + vocabulary in all three codebases, respectful-framing and LED-only checks, collection anchors, feed count)
+- All 14 JS suites pass: desk 463, fieldtrip 183, halloween 846, kit 594, micro 1713, planner-core, spring 663, summer 784, thanksgiving 945 (copy_free 162→165, no_elimination 41→43, inclusion 46→51 snapshots refreshed), wave20 1080, wave23 13089, winter 1217, winterstem 504
+- `tests/api.test.sh`: **33/33 pass** (local harness on :3100, incl. the live cron run against all 6 real feeds)
+- AI-ism scan on new content: clean. `node --check` / `py_compile` on every changed file: clean.
+
+**Honest assessment:** the headline is the rejection rate — 28 of 36. A Scout queue cleared by accepting everything would be a pipeline that publishes blog roundups; this one now visibly does the human's job. The calendar shelf is the part a teacher will feel: before this wave, planning MLK Day, Diwali, or St. Patrick's Day in the Vault meant finding nothing and improvising.
+
 ## Wave 23 — 2026-10-12 — "Thin Spots + The Desk Wow Layer" 🗄️
 
 **What shipped (two parts):**
