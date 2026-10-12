@@ -71,7 +71,7 @@ check("tags use fixed vocabulary",
 coll_payload = json.load(open(os.path.join(API, 'collections.json')))
 colls = coll_payload['collections']
 act_ids = {a['id'] for a in acts}
-check("collections: 8 collections", len(colls) == 8, f"{len(colls)} found")
+check("collections: 9 collections", len(colls) == 9, f"{len(colls)} found")
 check("collections: unique ids", len({c['id'] for c in colls}) == len(colls))
 check("collections: 8-12 picks each",
       all(8 <= len(c['picks']) <= 12 for c in colls))
@@ -187,6 +187,9 @@ for f in html_files:
     for m in url_re.finditer(open(f, encoding='utf-8').read()):
         u = m.group(1)
         if u.startswith(('http', 'mailto:', 'data:', 'javascript:')) or u == '':
+            continue
+        u = u.split('?')[0]  # query strings (?tag=, ?from=collection:) are client-side deep links
+        if u == '':
             continue
         target = os.path.normpath(os.path.join(base, u))
         if not os.path.exists(target):

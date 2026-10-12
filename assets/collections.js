@@ -1,5 +1,5 @@
 /* Activity Vault — curated collections page (wave 9).
-   Renders the 8 hand-picked collections from api/v1/collections.json, resolves
+   Renders the 9 hand-picked collections from api/v1/collections.json, resolves
    picks against api/v1/activities.json, shows the visitor's own rating badges
    (localStorage only — never invented), printable per collection, with a
    "copy this collection" text export per collection (wave-7 pattern). */

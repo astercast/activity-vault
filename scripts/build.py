@@ -19,18 +19,22 @@ ID_RE = re.compile(r'^[a-z0-9-]+$')
 
 # Optional tag vocabulary. Tags drive the "Season / occasion" filter.
 # New tags must be added here AND to assets/app.js (TAG_LABELS) AND api docs.
-TAG_IDS = ["season:fall", "season:winter", "holiday:halloween", "holiday:dia-de-muertos",
+TAG_IDS = ["season:fall", "season:winter", "season:spring", "holiday:halloween", "holiday:dia-de-muertos",
            "holiday:christmas", "holiday:hanukkah", "holiday:kwanzaa", "holiday:new-year",
+           "holiday:easter", "holiday:earth-day",
            "theme:spooky"]
 TAG_LABELS = {
     "season:fall": "🎃 Fall",
     "season:winter": "❄️ Winter",
+    "season:spring": "🌷 Spring",
     "holiday:halloween": "👻 Halloween",
     "holiday:dia-de-muertos": "💀 Día de los Muertos",
     "holiday:christmas": "🎄 Christmas",
     "holiday:hanukkah": "🕎 Hanukkah",
     "holiday:kwanzaa": "🖤 Kwanzaa",
     "holiday:new-year": "🎆 New Year",
+    "holiday:easter": "🐣 Easter",
+    "holiday:earth-day": "🌎 Earth Day",
     "theme:spooky": "🕸️ Spooky (not scary)",
 }
 
@@ -201,6 +205,7 @@ ACTIVITY_TEMPLATE = """<!DOCTYPE html>
       <a href="../sub.html">Sub Tub 🆘</a>
       <a href="../party.html">Party Planner 🎃</a>
       <a href="../collections.html">Collections 📚</a>
+      <a href="../spring.html">Spring 🌷</a>
     </nav>
   </div>
 </header>
@@ -435,7 +440,7 @@ def main():
         sys.exit(1)
     actmap = {a['id']: a for a in acts}
     # Wave 9 explicit assert: every collection pick resolves to a real activity id.
-    assert len(colls) == 8, f"expected 8 collections, got {len(colls)}"
+    assert len(colls) == 9, f"expected 9 collections, got {len(colls)}"
     assert all(p['id'] in actmap for c in colls for p in c['picks']), \
         "collection pick does not resolve to a real activity id"
     # Wave 10 explicit assert: balance-buckets covers all 11 categories.
@@ -785,16 +790,19 @@ def main():
               "- sub.html — Sub Tub: the substitute-teacher rescue kit.",
               "  Pick grade band, minutes to fill, materials on hand, location —",
               "  generates a sequenced print-ready emergency plan plus a 'Dear sub' note template.",
-              "- party.html — Party Planner (Halloween and winter presets).",
+              "- party.html — Party Planner (Halloween, winter, and spring presets).",
               "  Pick a theme, class size, minutes, stations, and budget — generates a timed",
               "  station-rotation plan from seasonal activities, plus a setup list and a",
               "  print-ready run sheet.",
+              "- spring.html — Spring hub: the spring 2027 pack's crafts, outdoor games,",
+              "  spring science, rainy-day backups, and spring-holiday activities, plus the",
+              "  Spring Burst collection and a spring party-theme shortcut.",
               "- planner.html — Smart Weekly Planner 2.0: program presets (after-school / camp /",
               "  classroom), age bands, auto-built no-repeat weeks with a per-day energy balance meter,",
               "  drag-and-drop reorder, per-slot swap, surprise gap-fill, prep-level caps, collection",
               "  seeding (?from=collection:<id>), named saved plans, .ics calendar export, shareable",
               "  ?plan= links, and a print-ready card deck.",
-              "- collections.html — Curated collections: 8 teacher-ready bundles (rainy-day",
+              "- collections.html — Curated collections: 9 teacher-ready bundles (rainy-day",
               "  rescue, first day, sub tub, winter party, no-prep, calm-down…) each with a",
               "  curator's note per pick; printable and copy-able per collection.",
               "- api.html — API docs with a Try-the-API console (endpoint picker, fetch, pretty JSON).",
@@ -815,7 +823,7 @@ def main():
     open(os.path.join(SITE, 'llms-full.txt'), 'w').write('\n'.join(full) + '\n')
 
     # 4. sitemap.xml
-    urls = ["", "planner.html", "sub.html", "party.html", "collections.html", "api.html"] + [f"activity/{a['id']}.html" for a in acts]
+    urls = ["", "planner.html", "sub.html", "party.html", "collections.html", "api.html", "spring.html"] + [f"activity/{a['id']}.html" for a in acts]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:

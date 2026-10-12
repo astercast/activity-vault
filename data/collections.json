@@ -265,6 +265,10 @@
     {
      "id": "paper-airplane-challenge",
      "note": "Paper only — the classic that has never once failed."
+    },
+    {
+     "id": "thunderstorm-clap-along",
+     "note": "Spring-storm backup: the whole class becomes the weather, zero materials, ten loud minutes."
     }
    ]
   },
@@ -433,6 +437,62 @@
     {
      "id": "gratitude-tree",
      "note": "Pin a leaf for something good — the corner grows its own forest."
+    }
+   ]
+  },
+  {
+   "id": "spring-burst",
+   "title": "Spring burst",
+   "glyph": "🌷",
+   "when_to_use": "The air is warm, the kids are wiggly, and everything is blooming. This is the spring 2027 pack's greatest hits plus the Vault's best older spring picks — crafts, puddle science, outdoor games, and spring-holiday stations.",
+   "picks": [
+    {
+     "id": "coffee-filter-butterflies",
+     "note": "Fifteen minutes, coffee filters, total magic — the fastest spring win in the pack."
+    },
+    {
+     "id": "painted-rock-ladybugs",
+     "note": "Rocks from the yard become garden art; hide them for other classes to find."
+    },
+    {
+     "id": "worm-weather-watch",
+     "note": "The after-rain classic — kids who claim to hate science love worm duty."
+    },
+    {
+     "id": "puddle-stomp-parade",
+     "note": "Zero materials, pure joy. Rain boots required, dignity optional."
+    },
+    {
+     "id": "easter-egg-catapult",
+     "note": "Engineering with plastic eggs — the design iteration is the lesson."
+    },
+    {
+     "id": "seed-ball-wildflowers",
+     "note": "Toss-and-grow: the rare craft that keeps working after class ends."
+    },
+    {
+     "id": "kite-flying-basics",
+     "note": "The spring classic that was already in the Vault — now properly tagged."
+    },
+    {
+     "id": "spring-bulb-forcing",
+     "note": "Forced bulbs in jars: weeks of delicious 'is it blooming yet' anticipation."
+    },
+    {
+     "id": "egg-hunt-design",
+     "note": "Let the kids design the hunt — hiding is more fun than finding."
+    },
+    {
+     "id": "thunderstorm-clap-along",
+     "note": "Stuck inside by a spring storm? Become the storm."
+    },
+    {
+     "id": "nest-material-challenge",
+     "note": "The marble 'egg' test turns nest-building into a real engineering challenge."
+    },
+    {
+     "id": "earth-day-trash-audit",
+     "note": "One trash bag, one tally chart, one class that never sees litter the same way."
     }
    ]
   }

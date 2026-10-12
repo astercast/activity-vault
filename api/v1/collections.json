@@ -301,10 +301,14 @@
     {
      "activity_id": "paper-airplane-challenge",
      "curator_note": "Paper only — the classic that has never once failed."
+    },
+    {
+     "activity_id": "thunderstorm-clap-along",
+     "curator_note": "Spring-storm backup: the whole class becomes the weather, zero materials, ten loud minutes."
     }
    ],
    "age_span": [
-    5,
+    4,
     12
    ],
    "time_span": [
@@ -507,8 +511,73 @@
     45
    ],
    "page": "collections.html#calm-down-corner"
+  },
+  {
+   "id": "spring-burst",
+   "title": "Spring burst",
+   "glyph": "🌷",
+   "when_to_use": "The air is warm, the kids are wiggly, and everything is blooming. This is the spring 2027 pack's greatest hits plus the Vault's best older spring picks — crafts, puddle science, outdoor games, and spring-holiday stations.",
+   "picks": [
+    {
+     "activity_id": "coffee-filter-butterflies",
+     "curator_note": "Fifteen minutes, coffee filters, total magic — the fastest spring win in the pack."
+    },
+    {
+     "activity_id": "painted-rock-ladybugs",
+     "curator_note": "Rocks from the yard become garden art; hide them for other classes to find."
+    },
+    {
+     "activity_id": "worm-weather-watch",
+     "curator_note": "The after-rain classic — kids who claim to hate science love worm duty."
+    },
+    {
+     "activity_id": "puddle-stomp-parade",
+     "curator_note": "Zero materials, pure joy. Rain boots required, dignity optional."
+    },
+    {
+     "activity_id": "easter-egg-catapult",
+     "curator_note": "Engineering with plastic eggs — the design iteration is the lesson."
+    },
+    {
+     "activity_id": "seed-ball-wildflowers",
+     "curator_note": "Toss-and-grow: the rare craft that keeps working after class ends."
+    },
+    {
+     "activity_id": "kite-flying-basics",
+     "curator_note": "The spring classic that was already in the Vault — now properly tagged."
+    },
+    {
+     "activity_id": "spring-bulb-forcing",
+     "curator_note": "Forced bulbs in jars: weeks of delicious 'is it blooming yet' anticipation."
+    },
+    {
+     "activity_id": "egg-hunt-design",
+     "curator_note": "Let the kids design the hunt — hiding is more fun than finding."
+    },
+    {
+     "activity_id": "thunderstorm-clap-along",
+     "curator_note": "Stuck inside by a spring storm? Become the storm."
+    },
+    {
+     "activity_id": "nest-material-challenge",
+     "curator_note": "The marble 'egg' test turns nest-building into a real engineering challenge."
+    },
+    {
+     "activity_id": "earth-day-trash-audit",
+     "curator_note": "One trash bag, one tally chart, one class that never sees litter the same way."
+    }
+   ],
+   "age_span": [
+    4,
+    12
+   ],
+   "time_span": [
+    10,
+    60
+   ],
+   "page": "collections.html#spring-burst"
   }
  ],
- "count": 8,
+ "count": 9,
  "updated": "2026-10-12"
 }

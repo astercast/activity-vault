@@ -1863,7 +1863,10 @@
    "variations": {
     "easier": "Use simple sled kites — they practically fly themselves.",
     "harder": "Decorate plain kites first, then fly the art."
-   }
+   },
+   "tags": [
+    "season:spring"
+   ]
   },
   {
    "age_max": 12,
@@ -2942,7 +2945,10 @@
    "variations": {
     "easier": "Plant pre-sprouted beans so results show on day one.",
     "harder": "Run a variables test: light vs. dark, more vs. less water — track and graph."
-   }
+   },
+   "tags": [
+    "season:spring"
+   ]
   },
   {
    "id": "summer-frozen-treasure",
@@ -6169,7 +6175,11 @@
    "variations": {
     "easier": "Hide eggs in plain sight at kid eye level.",
     "harder": "Add one golden egg worth a special prize."
-   }
+   },
+   "tags": [
+    "season:spring",
+    "holiday:easter"
+   ]
   },
   {
    "age_max": 12,
@@ -6552,7 +6562,10 @@
    "variations": {
     "easier": "One class jar everyone watches together.",
     "harder": "Run an experiment: dark closet vs. bright window from day one — compare."
-   }
+   },
+   "tags": [
+    "season:spring"
+   ]
   },
   {
    "age_max": 12,
@@ -10463,8 +10476,1248 @@
     "season:winter",
     "holiday:christmas"
    ]
+  },
+  {
+   "id": "tissue-paper-cherry-blossoms",
+   "name": "Tissue Paper Cherry Blossoms",
+   "tagline": "Twisted paper branches covered in pink tissue blooms — spring on a branch.",
+   "categories": [
+    "crafts"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 40,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "brown paper strips or twisted newspaper"
+    },
+    {
+     "item": "pink and white tissue paper"
+    },
+    {
+     "item": "glue sticks"
+    },
+    {
+     "item": "scissors"
+    },
+    {
+     "item": "blue construction paper for mounting"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Set out one brown paper strip per kid and piles of pre-cut tissue squares (about 2 inches). Put a dab station of glue at each table.",
+   "steps": [
+    "Twist each brown strip tightly into a branch — thicker at the bottom, forked at the top.",
+    "Take one tissue square, pinch it in the center, and twist the pinched end. That is one blossom.",
+    "Glue 8 to 12 blossoms along each branch, clustering 2 or 3 together for fullness. Mix pink and white.",
+    "Glue the finished branch onto blue construction paper so the blossoms pop.",
+    "Gallery walk: line the branches up and spot whose tree looks windiest."
+   ],
+   "variations": {
+    "easier": "Pre-cut the tissue squares and let little ones just pinch and stick.",
+    "harder": "Shade the blossoms: layer a small white twist inside a larger pink one."
+   },
+   "safety": "Scissors supervision; remind kids to cut away from fingers.",
+   "tags": [
+    "season:spring"
+   ]
+  },
+  {
+   "id": "coffee-filter-butterflies",
+   "name": "Coffee Filter Butterflies",
+   "tagline": "Markers plus a spritz of water turn a coffee filter into butterfly wings.",
+   "categories": [
+    "crafts"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 30,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "round basket coffee filters (2 per kid)"
+    },
+    {
+     "item": "washable markers"
+    },
+    {
+     "item": "spray bottles with water"
+    },
+    {
+     "item": "clothespins"
+    },
+    {
+     "item": "pipe cleaners"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Give each kid two coffee filters and markers. Fill spray bottles with plain water — one per table.",
+   "steps": [
+    "Color a coffee filter all over with washable markers — the brighter the better. Patterns beat solid color.",
+    "Lay the filter flat and spritz it lightly: two pumps, not a soak. Watch the colors bleed together.",
+    "Let it dry for 5 minutes (wave it gently to speed things up).",
+    "Pinch the dry filter in the middle and clip it with a clothespin — that is the butterfly body.",
+    "Wrap a pipe cleaner around the clothespin top and curl the ends into antennae. Two filters make a four-wing butterfly."
+   ],
+   "variations": {
+    "easier": "The teacher does the spritzing; kids only color and pinch.",
+    "harder": "Design challenge: make both wings symmetrical, then make a pair that is deliberately mismatched."
+   },
+   "safety": "Washable markers only; spray bottles pointed at the paper, never at faces.",
+   "tags": [
+    "season:spring"
+   ]
+  },
+  {
+   "id": "painted-rock-ladybugs",
+   "name": "Painted Rock Ladybugs",
+   "tagline": "Smooth rocks from the yard become ladybugs — then hide them for others to find.",
+   "categories": [
+    "crafts",
+    "outdoor"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 40,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "smooth flat rocks (collected ahead)"
+    },
+    {
+     "item": "red and black paint or paint pens"
+    },
+    {
+     "item": "white paint for eyes"
+    },
+    {
+     "item": "brushes"
+    },
+    {
+     "item": "newspaper to cover tables"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Collect smooth, flat rocks ahead of time — about the size of a cookie. Wash and dry them. Cover tables with newspaper.",
+   "steps": [
+    "Paint each rock red all over and let it dry completely.",
+    "Paint a black half-circle at one end for the head.",
+    "Add black dots down the back — no two ladybugs need the same pattern.",
+    "Dot two tiny white eyes on the head.",
+    "Optional: hide the finished ladybugs around the schoolyard for other classes to discover."
+   ],
+   "variations": {
+    "easier": "The teacher paints the red base coat ahead; kids add dots and faces.",
+    "harder": "Make a 'habitat card' for each ladybug: where the rock was found and what real ladybugs eat there."
+   },
+   "safety": "Wash hands after handling rocks and paint. Smocks or old shirts — the paint does not wash out.",
+   "tags": [
+    "season:spring"
+   ]
+  },
+  {
+   "id": "pressed-flower-bookmarks",
+   "name": "Pressed Flower Bookmarks",
+   "tagline": "Real pressed flowers sealed into a bookmark — a spring keepsake that lasts.",
+   "categories": [
+    "crafts",
+    "quiet-focus"
+   ],
+   "age_min": 6,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 25,
+   "time_max": 45,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "small fresh flowers and leaves (picked with permission)"
+    },
+    {
+     "item": "heavy books for pressing"
+    },
+    {
+     "item": "cardstock strips"
+    },
+    {
+     "item": "clear packing tape or contact paper"
+    },
+    {
+     "item": "hole punch"
+    },
+    {
+     "item": "yarn"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Pressing takes days, so start a class pressing book at least 3 days ahead (or keep one going all spring). Cut cardstock into bookmark strips and set out tape.",
+   "steps": [
+    "Open the pressing book and let each kid choose 3 to 5 flat, dry flowers or leaves.",
+    "Arrange them on a cardstock strip — leave a border all around.",
+    "Cover the whole strip with a smooth layer of clear packing tape, pressing out bubbles.",
+    "Trim the tape edges, punch a hole at the top, and tie a yarn tassel.",
+    "Write your name and the date on the back — a real keepsake."
+   ],
+   "variations": {
+    "easier": "Use a pre-pressed class set so little ones only arrange and tape.",
+    "harder": "Label each flower on the back with its name — turn it into a botany card."
+   },
+   "safety": "Pick only flowers you are allowed to pick, and never taste any plant. Wash hands after.",
+   "tags": [
+    "season:spring"
+   ]
+  },
+  {
+   "id": "egg-carton-tulip-garden",
+   "name": "Egg Carton Tulip Garden",
+   "tagline": "Cut-up egg cartons bloom into a whole tray of painted tulips.",
+   "categories": [
+    "crafts"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 35,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "cardboard egg cartons"
+    },
+    {
+     "item": "green pipe cleaners"
+    },
+    {
+     "item": "paint and brushes"
+    },
+    {
+     "item": "pom-poms or scrunched tissue"
+    },
+    {
+     "item": "glue"
+    },
+    {
+     "item": "a tray per group"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Cut the egg cartons into individual cups ahead of time (one per kid, plus spares). Poke a small hole in the bottom of each cup.",
+   "steps": [
+    "Paint the outside of your cup a bright petal color and let it dry.",
+    "Push a green pipe cleaner up through the hole — that is the stem. Bend the top so the cup does not slide off.",
+    "Glue a pom-pom or tissue ball inside the cup for the flower center.",
+    "Cut two leaf shapes from green paper and glue them to the stem.",
+    "Plant all the tulips upright in the group tray — a full spring garden by the end of class."
+   ],
+   "variations": {
+    "easier": "Pre-cut the cups and pre-poke the holes; little ones just paint and assemble.",
+    "harder": "Painting challenge: make a bud (cup pinched shut), a bloom, and a fading flower — the three stages of spring."
+   },
+   "safety": "Scissors are for the teacher's prep step only; remind kids to keep paint off clothes.",
+   "tags": [
+    "season:spring"
+   ]
+  },
+  {
+   "id": "paper-plate-sunflower",
+   "name": "Paper Plate Sunflower",
+   "tagline": "A paper plate, some yellow paint, and a seed-mosaic center — instant sunflower.",
+   "categories": [
+    "crafts"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 30,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper plates (one per kid)"
+    },
+    {
+     "item": "yellow paint or crayons"
+    },
+    {
+     "item": "brown tissue paper or real sunflower seeds (for gluing)"
+    },
+    {
+     "item": "green paper strips"
+    },
+    {
+     "item": "glue sticks"
+    }
+   ],
+   "no_prep": true,
+   "setup": "Hand out one paper plate per kid and put the yellow paint or crayons in the middle of each table.",
+   "steps": [
+    "Color the whole plate yellow — paint is brightest, crayons work too.",
+    "Cut slits all around the plate edge (about an inch deep) and bend every other flap slightly down: those are the petals.",
+    "Glue brown tissue scraps or real seeds in a circle in the middle for the flower head.",
+    "Glue a green paper strip to the back as the stem.",
+    "Hold them up together — a field of sunflowers, zero watering needed."
+   ],
+   "variations": {
+    "easier": "Use crayons instead of paint for zero drying time.",
+    "harder": "Two-tone challenge: paint the petal tips a darker yellow-orange gradient."
+   },
+   "safety": null,
+   "tags": [
+    "season:spring"
+   ]
+  },
+  {
+   "id": "worm-weather-watch",
+   "name": "Worm Weather Watch",
+   "tagline": "After rain, the worms come out — count them, log the weather, find the pattern.",
+   "categories": [
+    "stem",
+    "outdoor"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 40,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "clipboards and paper"
+    },
+    {
+     "item": "pencils"
+    },
+    {
+     "item": "magnifying glasses (optional)"
+    },
+    {
+     "item": "a spray bottle of water"
+    }
+   ],
+   "no_prep": true,
+   "setup": "Best the morning after rain. Mark one observation square per pair with chalk or string — about a beach-towel size patch of grass or pavement edge.",
+   "steps": [
+    "Spend 5 quiet minutes just watching your square. Count every worm you see.",
+    "Log the weather: temperature guess, cloudy or sunny, ground wet or dry.",
+    "Watch one worm for 2 full minutes. Which way does it move? How?",
+    "Gently return any handled worms to the soil where you found them.",
+    "Back inside, chart the class counts against the weather log. Do rainy mornings really mean more worms?"
+   ],
+   "variations": {
+    "easier": "One big class square that everyone watches together.",
+    "harder": "Keep the log for two weeks and graph worm counts against actual rainfall."
+   },
+   "safety": "Wash hands after. Handle worms gently and put them back — never take them inside, and do not dig up garden beds.",
+   "tags": [
+    "season:spring"
+   ]
+  },
+  {
+   "id": "puddle-depth-gauge",
+   "name": "Puddle Depth Gauge",
+   "tagline": "Mark a stick, measure the puddle, come back later — where did the water go?",
+   "categories": [
+    "stem",
+    "outdoor"
+   ],
+   "age_min": 6,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 35,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "paint stir sticks or dowels (one per pair)"
+    },
+    {
+     "item": "rulers"
+    },
+    {
+     "item": "permanent markers"
+    },
+    {
+     "item": "paper for data charts"
+    }
+   ],
+   "no_prep": true,
+   "setup": "Needs a real puddle — right after rain is perfect. Give each pair a stick, a ruler, and a marker.",
+   "steps": [
+    "Mark centimeter lines up one side of your stick with the ruler and marker.",
+    "Pick a puddle. Measure the depth at the center and at two edges — write all three numbers down.",
+    "Predict: in one hour, will the puddle be deeper, shallower, or gone?",
+    "Come back in an hour and measure the same three spots.",
+    "Compare: which spot shrank fastest? Sunny puddles vs. shady ones — who wins the evaporation race?"
+   ],
+   "variations": {
+    "easier": "One class puddle, one class stick, group predictions.",
+    "harder": "Calculate the depth lost per hour and predict when the puddle vanishes — then check tomorrow."
+   },
+   "safety": "Measure from the puddle's edge — no wading into deep water, and stay out of streets and parking lots.",
+   "tags": [
+    "season:spring"
+   ]
+  },
+  {
+   "id": "flower-part-dissect",
+   "name": "Flower Part Dissect",
+   "tagline": "Take a flower apart piece by piece and find the machinery inside.",
+   "categories": [
+    "stem"
+   ],
+   "age_min": 7,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 25,
+   "time_max": 40,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "one large flower per pair (tulip or lily from the grocery store)"
+    },
+    {
+     "item": "tweezers"
+    },
+    {
+     "item": "paper plates"
+    },
+    {
+     "item": "hand lenses"
+    },
+    {
+     "item": "tape and labels"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Buy the flowers the same day — tulips and lilies have big, easy-to-find parts. Give each pair one flower, a plate, and tweezers.",
+   "steps": [
+    "Draw your flower whole first — you will want the 'before' picture.",
+    "Pull off the petals one by one and lay them in a row. Count them.",
+    "Find the stamens (the stalks with powdery tips) — touch the pollen with a fingertip. That powder is the point of the whole flower.",
+    "Find the pistil in the center — the sticky-tipped stalk. That is where seeds begin.",
+    "Tape each part onto a labeled diagram: petal, sepal, stamen, pistil."
+   ],
+   "variations": {
+    "easier": "The teacher dissects one flower up front while kids label along.",
+    "harder": "Compare two different flowers side by side — which parts match, which do not?"
+   },
+   "safety": "Check for pollen or flower allergies before starting. No tasting any part. Wash hands when done.",
+   "tags": [
+    "season:spring"
+   ]
+  },
+  {
+   "id": "nest-material-challenge",
+   "name": "Nest Material Challenge",
+   "tagline": "Build a bird nest from yard scraps — then test it with a marble egg.",
+   "categories": [
+    "stem",
+    "outdoor"
+   ],
+   "age_min": 6,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 25,
+   "time_max": 45,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "paper bags for collecting"
+    },
+    {
+     "item": "a marble or small ball per team as the 'egg'"
+    },
+    {
+     "item": "twine (optional)"
+    }
+   ],
+   "no_prep": true,
+   "setup": "Set a 10-minute collection window and clear boundaries for gathering: twigs, grass, leaves, and mud only — nothing from living plants.",
+   "steps": [
+    "Teams of 3 get 10 minutes to gather nest materials — no raiding real nests.",
+    "Build time: 15 minutes to weave a nest that can hold the marble egg.",
+    "Test 1: set the marble in and count to 10. Still in? Pass.",
+    "Test 2: the gentle shake — lift the nest 6 inches and wobble it. Egg stays? Sturdy nest.",
+    "Test 3 (optional): the drop — knee height onto grass. Survivors get bragging rights.",
+    "Debrief: which materials gripped best? Real birds figured this out without hands."
+   ],
+   "variations": {
+    "easier": "Build on a paper plate base so the nest has a head start.",
+    "harder": "Blind materials round: each team draws 3 material cards and may only use those."
+   },
+   "safety": "Build nests only — never touch a real nest or egg. Watch for thorns and wash hands after handling mud.",
+   "tags": [
+    "season:spring"
+   ]
+  },
+  {
+   "id": "seed-dispersal-design",
+   "name": "Seed Dispersal Design",
+   "tagline": "Maple seeds spin — design a paper seed that stays airborne even longer.",
+   "categories": [
+    "stem"
+   ],
+   "age_min": 7,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 40,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "paper"
+    },
+    {
+     "item": "tape"
+    },
+    {
+     "item": "paper clips"
+    },
+    {
+     "item": "scissors"
+    },
+    {
+     "item": "a stopwatch"
+    },
+    {
+     "item": "maple seeds if you can find them"
+    }
+   ],
+   "no_prep": false,
+   "setup": "If maple seeds are around, start by dropping a few and watching them spin. Set a drop zone: same chair or stair height for every test, floor clear below.",
+   "steps": [
+    "Fold the classic paper helicopter: cut a strip, slit the top, fold the blades opposite ways.",
+    "Drop it from the test height three times. Time each fall — average it.",
+    "Now redesign: longer blades? Heavier bottom? Wider wings? Change ONE thing at a time.",
+    "Test each design three times and record. Longest average flight wins.",
+    "Final round: tape a paper clip 'seed' to your design as payload. Does it still fly?"
+   ],
+   "variations": {
+    "easier": "Everyone builds the same basic helicopter and just races flight times.",
+    "harder": "Constraint cards: must spin clockwise, must land within a hula hoop, must carry two paper clips."
+   },
+   "safety": "Keep the drop zone clear — nobody walks under the testing chair.",
+   "tags": [
+    "season:spring"
+   ]
+  },
+  {
+   "id": "sprout-growth-race",
+   "name": "Sprout Growth Race",
+   "tagline": "Two cups, one seed each, different light — place your bets on the sprout.",
+   "categories": [
+    "stem"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "clear plastic cups (2 per kid)"
+    },
+    {
+     "item": "potting soil"
+    },
+    {
+     "item": "bean seeds"
+    },
+    {
+     "item": "water"
+    },
+    {
+     "item": "labels and markers"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Set up a soil station with scoops. Pre-label cups 'SUN' and 'DARK' for younger kids to save time.",
+   "steps": [
+    "Fill two cups with soil, poke one bean an inch deep in each, water both.",
+    "Label them and place one on a sunny windowsill, one in a dark cupboard.",
+    "Everyone predicts: which sprouts first? Write it down — no changing bets.",
+    "Water lightly every other day and measure any growth with a ruler.",
+    "After a week, compare. The dark cup usually sprouts first — but which one looks healthier? Discuss why."
+   ],
+   "variations": {
+    "easier": "One class pair of cups that everyone watches together.",
+    "harder": "Add a third cup: watered vs. never watered — which variable matters more?"
+   },
+   "safety": "Wash hands after handling soil. Soil stays in the cups, not on faces.",
+   "tags": [
+    "season:spring"
+   ]
+  },
+  {
+   "id": "bubble-snake-blower",
+   "name": "Bubble Snake Blower",
+   "tagline": "A sock, a bottle, and some soapy water — blow a bubble snake a foot long.",
+   "categories": [
+    "stem",
+    "outdoor"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "plastic bottles with the bottoms cut off (teacher preps)"
+    },
+    {
+     "item": "old socks (one per bottle)"
+    },
+    {
+     "item": "rubber bands"
+    },
+    {
+     "item": "dish soap and water in shallow trays"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Cut the bottoms off the bottles ahead of time — no kid cutting plastic. Mix a good squirt of dish soap into each tray of water.",
+   "steps": [
+    "Stretch a sock tightly over the cut end of the bottle and rubber-band it on.",
+    "Dip the sock end into the soapy tray — soak it well.",
+    "Blow gently through the mouthpiece. Out comes a long, wiggly bubble snake.",
+    "Experiment: fast blow vs. slow blow — which makes the longer snake?",
+    "Longest-snake contest: measure the winner with a ruler."
+   ],
+   "variations": {
+    "easier": "The teacher does the dipping; kids only blow.",
+    "harder": "Two-sock challenge: does a double layer make bigger or smaller bubbles? Hypothesize first."
+   },
+   "safety": "Blow, do not suck — and keep the soapy water out of eyes. Wash hands after.",
+   "tags": [
+    "season:spring"
+   ]
+  },
+  {
+   "id": "evaporation-chalk-lines",
+   "name": "Evaporation Chalk Lines",
+   "tagline": "Trace the puddle with chalk, wait an hour, and watch the water lose.",
+   "categories": [
+    "stem",
+    "outdoor"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 30,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "sidewalk chalk"
+    },
+    {
+     "item": "clipboards and paper"
+    },
+    {
+     "item": "a watch or timer"
+    }
+   ],
+   "no_prep": true,
+   "setup": "Needs puddles and pavement — right after rain on the blacktop is ideal. Give each pair a piece of chalk.",
+   "steps": [
+    "Pick a puddle and trace its exact edge with chalk. Write the time next to your line.",
+    "Predict: in 30 minutes, will your line be inside or outside the water?",
+    "Come back in 30 minutes and trace the new edge in a different color.",
+    "Repeat at 60 minutes if you have time.",
+    "Compare lines: sunny-side puddles vs. shady ones. Where did the water go? (Up! Into the air.)"
+   ],
+   "variations": {
+    "easier": "One class puddle, two tracings, group discussion.",
+    "harder": "Copy your puddle outlines onto graph paper and estimate the area lost."
+   },
+   "safety": "Chalk on pavement only — not walls or cars. Stay on dry edges, out of the street.",
+   "tags": [
+    "season:spring"
+   ]
+  },
+  {
+   "id": "sponge-bucket-relay",
+   "name": "Sponge Bucket Relay",
+   "tagline": "Soak, sprint, squeeze — the relay where the water does the traveling.",
+   "categories": [
+    "pe-movement",
+    "outdoor"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 30,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "2 buckets of water"
+    },
+    {
+     "item": "2 large sponges"
+    },
+    {
+     "item": "2 empty buckets"
+    },
+    {
+     "item": "cones for lanes"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Set two lanes: a full water bucket at the start of each, an empty bucket about 30 feet away. One sponge per team.",
+   "steps": [
+    "Teams line up behind their water bucket.",
+    "First runner soaks the sponge, runs to the far bucket, squeezes it in, runs back, and hands off.",
+    "Next runner goes. No wringing the sponge out early — it has to travel wet.",
+    "First team to fill their far bucket to the marked line wins.",
+    "Losers' consolation: everyone gets to dump the leftover water on the grass."
+   ],
+   "variations": {
+    "easier": "Shorten the lane to 15 feet for little legs.",
+    "harder": "Overhead carry: the sponge must travel above your head — drips count against you."
+   },
+   "safety": "Wet pavement is slippery — walk the turn at the far bucket, no diving stops. Shoes stay on.",
+   "tags": [
+    "season:spring"
+   ]
+  },
+  {
+   "id": "puddle-stomp-parade",
+   "name": "Puddle Stomp Parade",
+   "tagline": "Line up, chant, and stomp every puddle on the route — rhythm required.",
+   "categories": [
+    "pe-movement",
+    "outdoor"
+   ],
+   "age_min": 4,
+   "age_max": 10,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 10,
+   "time_max": 20,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "setup": "No setup — just rain boots or old shoes and a route with puddles. Scout the route first for anything deeper than a shoe.",
+   "steps": [
+    "Line up single file behind the leader.",
+    "March to a chant: 'Stomp, stomp, puddle stomp!' — leader calls, group answers.",
+    "Every puddle on the route gets stomped in rhythm as the line passes through.",
+    "Rotate the leader every two puddles — new leaders invent new verses.",
+    "Grand finale: everyone finds the biggest puddle and does one giant synchronized stomp. Then shake off and head in."
+   ],
+   "variations": {
+    "easier": "Skip the chant — just stomp freely through the puddles.",
+    "harder": "Kids compose the verses: each puddle gets its own rhyming couplet."
+   },
+   "safety": "Rain boots or shoes you do not mind soaking. Splash-zone rule: no stomping right next to someone's face.",
+   "tags": [
+    "season:spring"
+   ]
+  },
+  {
+   "id": "spring-sound-map",
+   "name": "Spring Sound Map",
+   "tagline": "Sit still for two minutes, then draw every sound you heard — and where it lived.",
+   "categories": [
+    "quiet-focus",
+    "outdoor"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "setup": "No materials — this one runs on ears. Set clear sit-spot boundaries first, spaced so nobody distracts a neighbor.",
+   "steps": [
+    "Everyone finds a sit spot and gets comfortable.",
+    "Eyes closed, two full minutes of just listening. No talking, no peeking.",
+    "Open eyes. On paper (or in the air with a finger), draw an X for yourself.",
+    "Mark every sound you heard around the X: bird up-left, wind overhead, car far right — closer sounds closer to the X.",
+    "Share: who heard the most sounds? Who heard something nobody else did?",
+    "Optional: come back tomorrow at the same time and compare maps."
+   ],
+   "variations": {
+    "easier": "Skip the drawing — just list the sounds out loud after.",
+    "harder": "Layer it: mark human sounds with circles and nature sounds with stars."
+   },
+   "safety": null,
+   "tags": [
+    "season:spring"
+   ]
+  },
+  {
+   "id": "puddle-hopscotch",
+   "name": "Puddle Hopscotch",
+   "tagline": "Classic hopscotch with a twist: the blue squares are puddles — jump them.",
+   "categories": [
+    "pe-movement",
+    "outdoor"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 30,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "sidewalk chalk (including blue)"
+    },
+    {
+     "item": "a small stone per kid as a marker"
+    }
+   ],
+   "no_prep": true,
+   "setup": "Draw a standard hopscotch court on pavement. Color 2 or 3 squares solid blue — those are the puddles.",
+   "steps": [
+    "Toss your marker onto square one and hop the court as usual.",
+    "Rule: you may never land in a blue puddle square — jump clean over it.",
+    "Land in a puddle and you lose your turn (and get pretend-soaked).",
+    "Finish the court, then toss to square two. First to complete all throws wins.",
+    "Remix round: players take turns adding a new blue puddle square."
+   ],
+   "variations": {
+    "easier": "Let little ones step around the puddles instead of jumping them.",
+    "harder": "Double-puddle jump: two blue squares in a row — only for confident hoppers."
+   },
+   "safety": "Chalk on pavement only. Keep the court clear of bikes and foot traffic.",
+   "tags": [
+    "season:spring"
+   ]
+  },
+  {
+   "id": "egg-roll-race",
+   "name": "Egg Roll Race",
+   "tagline": "The egg-and-spoon classic, spring edition — plastic eggs, real competition.",
+   "categories": [
+    "pe-movement",
+    "outdoor"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "plastic Easter eggs (one per kid)"
+    },
+    {
+     "item": "tablespoons"
+    },
+    {
+     "item": "cones for start and turnaround"
+    }
+   ],
+   "no_prep": true,
+   "setup": "Set two lanes with a turnaround cone about 20 feet out. One spoon and one plastic egg per racer.",
+   "steps": [
+    "Racers balance the egg on the spoon — one hand on the spoon, other hand behind your back.",
+    "On 'go', walk (then run, for older kids) to the cone, circle it, and come back.",
+    "Drop the egg? Stop, pick it up, put it back on the spoon, keep going.",
+    "Tag the next teammate's hand for the relay handoff.",
+    "Winning team picks the victory chant. Losing team picks it too — everyone chants it."
+   ],
+   "variations": {
+    "easier": "Carry the egg in your hand instead of on the spoon.",
+    "harder": "Spoon-in-mouth round for older kids — no hands allowed at all."
+   },
+   "safety": "Clear the lane of tripping hazards. No running with the spoon in the mouth for the youngest racers.",
+   "tags": [
+    "season:spring",
+    "holiday:easter"
+   ]
+  },
+  {
+   "id": "jellybean-sort-graph",
+   "name": "Jellybean Sort Graph",
+   "tagline": "Sort the jellybeans, count the colors, graph it — then check your prediction.",
+   "categories": [
+    "stem"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 35,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "jellybeans or colored counters (one small cup per pair)"
+    },
+    {
+     "item": "muffin tins or sorting trays"
+    },
+    {
+     "item": "graph paper"
+    },
+    {
+     "item": "crayons"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Portion one small cup of jellybeans per pair — mixed colors. Hand out graph paper with the color labels pre-written for younger kids.",
+   "steps": [
+    "Before opening: predict which color you will have the most of. Write it down.",
+    "Sort your cup by color into the muffin tin.",
+    "Count each color and write the numbers down.",
+    "Build a bar graph: one bar per color, one square per bean.",
+    "Compare: did your prediction win? Combine the class data — does the big graph match anyone's small one?"
+   ],
+   "variations": {
+    "easier": "Sort and count only — skip the graph.",
+    "harder": "Fractions: what fraction of your cup is red? Convert the graph to percentages."
+   },
+   "safety": "Allergy check before any tasting, and set the eat-or-not rule before the cups open — not halfway through.",
+   "tags": [
+    "season:spring",
+    "holiday:easter"
+   ]
+  },
+  {
+   "id": "easter-egg-catapult",
+   "name": "Easter Egg Catapult",
+   "tagline": "Popsicle sticks, rubber bands, one plastic spoon — launch the egg at the target.",
+   "categories": [
+    "stem"
+   ],
+   "age_min": 7,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 25,
+   "time_max": 45,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "popsicle sticks"
+    },
+    {
+     "item": "rubber bands"
+    },
+    {
+     "item": "plastic spoons"
+    },
+    {
+     "item": "plastic Easter eggs"
+    },
+    {
+     "item": "tape"
+    },
+    {
+     "item": "a measuring tape"
+    },
+    {
+     "item": "a bucket as a target"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Pre-bundle the building supplies per pair: 8 sticks, 4 rubber bands, 1 spoon, tape. Set a clear firing range with the target bucket 6 feet out.",
+   "steps": [
+    "Build the base: stack 5 sticks and rubber-band both ends tight.",
+    "Lay 2 sticks in a V across the stack and band the crossing point — that is the arm base.",
+    "Tape the spoon to the end of the top stick. Arm complete.",
+    "Load a plastic egg, pull back, release. Measure how far it flew.",
+    "Iterate: move the fulcrum, tighten the bands, change the angle. Best of 5 launches counts.",
+    "Final: accuracy round — 3 points for the bucket, 1 for within a hula hoop."
+   ],
+   "variations": {
+    "easier": "The teacher pre-builds the base; kids attach the spoon and launch.",
+    "harder": "Distance-plus-accuracy combined score, or a moving target (a rolling hoop)."
+   },
+   "safety": "Launch away from people, one launcher firing at a time. Plastic eggs only — nothing hard or heavy.",
+   "tags": [
+    "season:spring",
+    "holiday:easter"
+   ]
+  },
+  {
+   "id": "earth-day-trash-audit",
+   "name": "Earth Day Trash Audit",
+   "tagline": "Sort one day of classroom trash, weigh the truth, and set one reduction goal.",
+   "categories": [
+    "stem",
+    "team-community"
+   ],
+   "age_min": 7,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 30,
+   "time_max": 50,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "disposable gloves (one pair per kid)"
+    },
+    {
+     "item": "trash bags"
+    },
+    {
+     "item": "a tarp or old sheet"
+    },
+    {
+     "item": "a scale (optional)"
+    },
+    {
+     "item": "chart paper and markers"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Save one full day of classroom trash in tied bags. Lay the tarp, set out gloves, and pre-screen the bags for anything sharp — the teacher does this part, not the kids.",
+   "steps": [
+    "Gloves on. Dump one bag onto the tarp.",
+    "Sort into three piles: recycle, trash, could-have-been-avoided.",
+    "Count or weigh each pile and record the numbers on chart paper.",
+    "Find the biggest avoidable item. As a class, set ONE reduction goal for next week.",
+    "Re-audit in a week and compare. Post the before-and-after chart by the door."
+   ],
+   "variations": {
+    "easier": "Audit just paper vs. everything else — two piles, same lesson.",
+    "harder": "Run the audit for a full week and present the results to another class."
+   },
+   "safety": "Gloves stay on the whole time. The teacher pre-screens every bag — no sharp or unknown items, ever. Wash hands thoroughly after.",
+   "tags": [
+    "season:spring",
+    "holiday:earth-day"
+   ]
+  },
+  {
+   "id": "seed-ball-wildflowers",
+   "name": "Seed Ball Wildflowers",
+   "tagline": "Clay, compost, native seeds — roll them, dry them, toss them where flowers belong.",
+   "categories": [
+    "crafts",
+    "outdoor"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 35,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "air-dry clay or clay-rich soil"
+    },
+    {
+     "item": "compost"
+    },
+    {
+     "item": "native wildflower seed mix"
+    },
+    {
+     "item": "water"
+    },
+    {
+     "item": "trays for drying"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Mix the dry ingredients ahead: roughly 3 parts clay to 2 parts compost. Set out the seed mix separately so kids see what goes in.",
+   "steps": [
+    "Grab a plum-size lump of the clay-compost mix.",
+    "Press a pinch of wildflower seeds into the center and fold the clay over.",
+    "Roll it into a firm marble-size ball. Make 4 or 5 each.",
+    "Set the balls on trays to dry for a day or two.",
+    "Toss them onto bare soil patches — garden edges, planters, the nature corner. Rain does the rest.",
+    "Mark your toss spots on a map. Check back in 3 weeks for sprouts."
+   ],
+   "variations": {
+    "easier": "The teacher mixes; kids only roll the balls.",
+    "harder": "Experiment: toss half in sun and half in shade — which patch sprouts first?"
+   },
+   "safety": "Native seed mix only — never toss non-native or invasive seeds. Wash hands after handling compost.",
+   "tags": [
+    "season:spring",
+    "holiday:earth-day"
+   ]
+  },
+  {
+   "id": "recycled-paper-making",
+   "name": "Recycled Paper Making",
+   "tagline": "Yesterday's scrap paper becomes tomorrow's paper — blended, scooped, and pressed.",
+   "categories": [
+    "stem",
+    "crafts"
+   ],
+   "age_min": 7,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 30,
+   "time_max": 50,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "shredded scrap paper"
+    },
+    {
+     "item": "a blender (teacher-operated)"
+    },
+    {
+     "item": "water"
+    },
+    {
+     "item": "a basin"
+    },
+    {
+     "item": "a window screen in a frame or fine mesh"
+    },
+    {
+     "item": "sponges"
+    },
+    {
+     "item": "towels"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Soak the shredded paper in water for at least an hour ahead of time. Set up the blender station where only the teacher stands. This is a two-day project: make today, use tomorrow.",
+   "steps": [
+    "Tear the soaked paper into small bits and blend it with plenty of water into a smooth pulp — the teacher runs the blender.",
+    "Pour the pulp into the basin and stir in more water until it looks like thin oatmeal.",
+    "Slide the screen frame under the pulp and lift straight up — a thin layer stays on the mesh.",
+    "Sponge the water out through the screen, then flip the sheet onto a towel.",
+    "Let the sheets dry overnight. Tomorrow: write on the paper you made.",
+    "Optional: press flower petals into the wet pulp for decorated paper."
+   ],
+   "variations": {
+    "easier": "Make one big class sheet together instead of individual ones.",
+    "harder": "Experiment: which scrap makes the strongest sheet — newspaper, printer paper, or construction paper?"
+   },
+   "safety": "The teacher operates the blender — no exceptions. Wipe up water spills right away; wet floors are the real hazard here.",
+   "tags": [
+    "season:spring",
+    "holiday:earth-day"
+   ]
+  },
+  {
+   "id": "thunderstorm-clap-along",
+   "name": "Thunderstorm Clap Along",
+   "tagline": "Become the storm with your hands and feet — then conduct it back to calm.",
+   "categories": [
+    "music-rhythm"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 40,
+   "time_min": 10,
+   "time_max": 20,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "setup": "No setup. Arrange the group in a circle or at their desks — everyone needs elbow room for stomping.",
+   "steps": [
+    "The leader is the conductor. Start with silence — 'the air before the storm.'",
+    "Wind: everyone rubs their palms together softly, then louder.",
+    "First drops: finger snaps, scattered, then faster.",
+    "Rain: full clapping, building louder and louder.",
+    "Thunder: foot stomps on the conductor's cue — big ones.",
+    "Peak storm: everything at once for 10 seconds.",
+    "Then reverse it: thunder fades, rain slows, drops stop, wind dies. Silence. The storm has passed.",
+    "Rotate the conductor and let a kid run the next storm."
+   ],
+   "variations": {
+    "easier": "Follow-the-leader only — the teacher conducts the whole storm.",
+    "harder": "Split into four groups, each owning one storm layer, and layer them like an orchestra."
+   },
+   "safety": null,
+   "tags": [
+    "season:spring"
+   ]
   }
  ],
- "count": 238,
+ "count": 263,
  "updated": "2026-10-12"
 }

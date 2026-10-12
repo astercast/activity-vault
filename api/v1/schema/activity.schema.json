@@ -122,12 +122,15 @@
     "enum": [
      "season:fall",
      "season:winter",
+     "season:spring",
      "holiday:halloween",
      "holiday:dia-de-muertos",
      "holiday:christmas",
      "holiday:hanukkah",
      "holiday:kwanzaa",
      "holiday:new-year",
+     "holiday:easter",
+     "holiday:earth-day",
      "theme:spooky"
     ]
    },

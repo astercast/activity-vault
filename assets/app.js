@@ -36,16 +36,20 @@
   var TAG_LABELS = {
     'season:fall': '🎃 Fall',
     'season:winter': '❄️ Winter',
+    'season:spring': '🌷 Spring',
     'holiday:halloween': '👻 Halloween',
     'holiday:dia-de-muertos': '💀 Día de los Muertos',
     'holiday:christmas': '🎄 Christmas',
     'holiday:hanukkah': '🕎 Hanukkah',
     'holiday:kwanzaa': '🖤 Kwanzaa',
     'holiday:new-year': '🎆 New Year',
+    'holiday:easter': '🐣 Easter',
+    'holiday:earth-day': '🌎 Earth Day',
     'theme:spooky': '🕸️ Spooky (not scary)'
   };
-  var TAG_ORDER = ['season:fall', 'season:winter', 'holiday:halloween', 'holiday:dia-de-muertos',
+  var TAG_ORDER = ['season:fall', 'season:winter', 'season:spring', 'holiday:halloween', 'holiday:dia-de-muertos',
                    'holiday:christmas', 'holiday:hanukkah', 'holiday:kwanzaa', 'holiday:new-year',
+                   'holiday:easter', 'holiday:earth-day',
                    'theme:spooky'];
 
   var grid, countEl, searchInput, sortChipBtn, topTenBtn;
@@ -455,6 +459,12 @@
       if (statActs) statActs.textContent = state.activities.length;
       if (statCats) statCats.textContent = state.categories.length;
       if (statPrep) statPrep.textContent = state.activities.filter(function (a) { return a.no_prep; }).length;
+      // Seasonal homepage promo: visible March–May only (client-side, month-gated).
+      var promo = document.getElementById('season-promo');
+      if (promo) {
+        var pm = new Date().getMonth();
+        promo.hidden = !(pm === 2 || pm === 3 || pm === 4);
+      }
       buildFilters();
       // ?view=top-rated deep link (My top 10 — ratings live in the visitor's browser)
       try {

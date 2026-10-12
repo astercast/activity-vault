@@ -2,6 +2,28 @@
 
 Running record of build waves. Newest first.
 
+## Wave 11 — 2026-10-11 — Spring 2027 pack (+25 → 263) + spring hub + Party Planner spring theme + RSS sweep
+
+**What shipped:**
+- **RSS pipeline sweep** — ran `pipeline/scan.py`: 33 feed items scanned (WeAreTeachers 16, Hands On As We Grow 7, Teach Beside Me 10), 0 new candidates, 0 pending review. The review queue's 23 entries were all decided in earlier waves; nothing to process this wave.
+- **Spring seasonal pack** — 25 new original activities (`scripts/add_wave11.py`, all original words per PIPELINE.md): spring crafts (`tissue-paper-cherry-blossoms`, `coffee-filter-butterflies`, `painted-rock-ladybugs`, `pressed-flower-bookmarks`, `egg-carton-tulip-garden`, `paper-plate-sunflower`), spring STEM/nature (`worm-weather-watch`, `puddle-depth-gauge`, `flower-part-dissect`, `nest-material-challenge`, `seed-dispersal-design`, `sprout-growth-race`, `bubble-snake-blower`, `evaporation-chalk-lines`), outdoor games (`sponge-bucket-relay`, `puddle-stomp-parade`, `spring-sound-map`, `puddle-hopscotch`, `egg-roll-race`), spring holidays (`jellybean-sort-graph`, `easter-egg-catapult`, `earth-day-trash-audit`, `seed-ball-wildflowers`, `recycled-paper-making`), rainy-day backup (`thunderstorm-clap-along`). Three zero-material/no-prep emergencies (`puddle-stomp-parade`, `spring-sound-map`, `thunderstorm-clap-along`) flow automatically into the Sub Tub "nothing at all" tier. (Note: `shadow-tag` was drafted then dropped — the id already exists.)
+- **Tag vocabulary grown** — `season:spring`, `holiday:easter`, `holiday:earth-day` added to the `scripts/build.py` validator, `assets/app.js` labels/order, `api/v1/filters.json`, the activity schema tag enum, and the docs. 4 older spring activities retro-tagged with tags only (descriptions untouched): `spring-seed-cups`, `spring-bulb-forcing`, `kite-flying-basics` → `season:spring`; `egg-hunt-design` → `season:spring` + `holiday:easter`.
+- **Spring hub** (`spring.html` + new `assets/spring.js`) — 5 curated sections with build-validated id lists: spring crafts, outdoor games, spring science, rainy spring days (ties to the rainy-day-rescue collection), spring holidays (Easter + Earth Day groups with `?tag=` browse chips). Hero shortcuts: 🗓️ Plan a spring week (`planner.html?from=collection:spring-burst`), 📚 Spring Burst collection, 🎉 spring party theme. Client-side render from `api/v1/activities.json`; your-own rating badges (localStorage only); semantic HTML + ARIA + keyboard-native; mobile-first, existing design system.
+- **Spring Burst collection** — 9th collection in `data/collections.json` (🌷, 12 picks, every pick with a curator note, all ids validated). Sub Tub essentials gains `thunderstorm-clap-along` as its spring emergency (12 picks, within the 8–12 cap).
+- **Party Planner spring theme** — third theme in `assets/party.js` (Easter/Earth Day/`season:spring` pool; group names Bunnies, Sprouts, Rainclouds, Ladybugs, Tadpoles, Seedlings; hero/kicker/closing copy); `party.html` gains the 🌷 Spring radio chip, updated title/meta, and a Spring Burst collection tie-in note. Theme switching stays data-driven.
+- **Planner + homepage seasonal tie-ins** — planner "This season in the Vault" strip now maps Mar–May → `season:spring`, Mar → `holiday:easter`, Apr → `holiday:easter` + `holiday:earth-day`; homepage shows a month-gated (Mar–May, client-side) 🌷 Spring promo banner linking to `spring.html`; "Spring 🌷" nav link added to all page shells including the 263 generated activity pages.
+- **Seasonal freshness pass** — scanned all 263 records for year/time-relative staleness: only intentional "this year" phrasing in the New Year activities; all spring copy clean, no invented details.
+- **Agentic surface** — `api/v1/index.json` manifest auto-updated (263 activities, 9 collections, v1.0.0); schemas regenerated (tag enum); `llms.txt`/`llms-full.txt`/`sitemap.xml` regenerated (spring.html tool line, 9 collections, sitemap gains `spring.html`); `AGENT.md` (counts, tag vocabulary, spring hub section, spring party theme + pool, strip month map), `API.md` (counts, tag lists, 9 collections), `README.md` (263 activities, spring hub, tag chips, corrected skills count 11) updated by hand.
+- **No new skill** — no genuine gap: spring crafts/games are covered by `activity-finder`, outdoor games by `outdoor-play-picker`, rainy backups by `no-prep-rescue`/`rainy-day-rescue`, spring STEM by `stem-demo-picker`.
+- **check_api.py fix** — the link checker now strips `?query` before resolving local paths, so client-side deep links in static HTML (`planner.html?from=collection:spring-burst`) no longer false-positive.
+
+**Validation (wave 11):**
+- `scripts/build.py`: BUILD OK — 263 activities, 263 pages rendered, 11 categories, 9 collections, 11 balance-bucket mappings, 0 dupes
+- `scripts/check_api.py`: ALL CHECKS PASSED — 270 pages, 0 broken; llms.txt 27 links resolve
+- `scripts/test-spring.js` (new): 346 assertions pass — 25 wave-11 ids present/unique, tag splits (19 spring-only / 3 easter / 3 earth-day), steps + easier/harder on all 25, retro-tags exact, collections valid (9 unique, spring-burst 12 picks all resolving with notes, sub-tub-essentials spring pick), every `spring.js` curated id resolves, planner month→spring mapping + labels, party spring theme shape + pool ≥ 6 stations-worth, zero-material trio sub-tub-ready, `app.js` tags + promo hook, `filters.json` tags, manifest records 263/9
+- `scripts/test-planner-core.js`: 39/39 pass (unchanged)
+- `node --check`: app.js, planner.js, party.js, spring.js, collections.js, ratings.js, sub.js, planner-core.js — clean
+
 ## Wave 10 — 2026-10-11 — Smart Weekly Planner 2.0 (flagship interactive tool)
 
 **What shipped:**
