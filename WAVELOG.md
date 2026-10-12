@@ -22,7 +22,7 @@ Running record of build waves. Newest first.
 - `planner.js` UI smoke test (fake-DOM, headless): 15 checks pass — generate renders 5 day cards + week balance + 10 slots + 6 meters, swap buttons present, surprise-fill no-op message, save→localStorage round-trip with real ids, copy plan link, `.ics` download anchor, `?plan=` import (dropped id noted), `?from=collection:rainy-day-rescue` seeding
 - DOM id cross-check: all 28 `getElementById` ids in planner.js exist in planner.html
 
-**Wave 10 push resolution:** _pending — filled after push._
+**Wave 10 push resolution:** local commit `da736fa` pushed via `gh-push.py` (20 files, 20 blob uploads, first attempt, exit 0, ~26s) — remote commit `60e7f0df277d148dde3d854d4b83bbaa31248cd4`. Verified via GitHub API: commit exists, `main` HEAD points at it, recursive remote tree (320 files, not truncated) contains `assets/planner-core.js`, `data/balance-buckets.json`, `api/v1/balance-buckets.json`, both new schemas, `scripts/test-planner-core.js`, `skills/balanced-week-builder.md`, the rewritten `planner.html`/`assets/planner.js`, and updated `WAVELOG.md`/`AGENT.md`/`API.md`.
 
 ## Wave 9 — 2026-10-11 — Curated collections (content + browse feature wave)
 
