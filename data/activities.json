@@ -1,0 +1,2707 @@
+[
+ {
+  "age_max": 12,
+  "age_min": 7,
+  "categories": [
+   "stem",
+   "crafts"
+  ],
+  "group_max": 40,
+  "group_min": 4,
+  "id": "paper-airplane-challenge",
+  "location": [
+   "indoor",
+   "outdoor"
+  ],
+  "materials": [
+   {
+    "item": "printer paper (a stack)"
+   },
+   {
+    "item": "tape measure or long measuring tape"
+   }
+  ],
+  "name": "Paper Airplane Challenge",
+  "no_prep": true,
+  "safety": "Throw only down the lane and only on your turn — no aiming at other kids.",
+  "setup": "Clear a throwing lane down the longest hallway, gym, or field you have. Mark a launch line with tape. Give every kid 3 sheets of paper.",
+  "steps": [
+   "Show the group one basic dart fold, step by step — pause so everyone can follow along.",
+   "Let kids fold their first plane however they like (copies of the demo are fine).",
+   "One at a time, each kid throws from the launch line. Measure each flight and write the distance on a board.",
+   "Round two: kids redesign. They can refold, add a second sheet, or try a wide-wing glider style.",
+   "Measure again. Celebrate biggest improvement, not just longest flight — that rewards the iterating.",
+   "Optional finals: best distance, best style, most creative design, weirdest crash."
+  ],
+  "tagline": "Fold, throw, measure, iterate — the cheapest engineering lesson there is.",
+  "time_max": 45,
+  "time_min": 20,
+  "variations": {
+   "easier": "Pre-crease the paper down the middle so the first fold is easy to line up.",
+   "harder": "Add target rings (hula hoops on the ground) and score by accuracy instead of distance."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 8,
+  "categories": [
+   "stem"
+  ],
+  "group_max": 30,
+  "group_min": 4,
+  "id": "egg-drop-challenge",
+  "location": [
+   "indoor",
+   "outdoor"
+  ],
+  "materials": [
+   {
+    "item": "raw eggs (one per team, plus a spare or two)"
+   },
+   {
+    "item": "tape, rubber bands, string"
+   },
+   {
+    "item": "scrap paper, cardboard, newspaper"
+   },
+   {
+    "item": "plastic bags"
+   },
+   {
+    "item": "cotton balls or crumpled paper for padding"
+   }
+  ],
+  "name": "Egg Drop Challenge",
+  "no_prep": false,
+  "safety": "Keep the drop zone clear — nobody stands under the drop. Clean up any broken egg immediately; wash hands after.",
+  "setup": "Divide the group into teams of 2–4. Put the building supplies on a central table and give each team one egg. Pick a drop spot — a balcony, stairwell landing, or playground structure with a safe landing zone below.",
+  "steps": [
+   "Explain the goal: the egg must survive a drop from the marked height. No catching.",
+   "Give teams 20 minutes to build a container around their egg using the supplies.",
+   "Walk everyone to the drop spot together. One drop per team, one at a time.",
+   "Open each container and check for cracks. Survivors move to a higher drop if you want a finals round.",
+   "Debrief: what protected the winners — padding, a parachute, a cage? Connect it to how real things are packaged."
+  ],
+  "tagline": "Design a container that keeps a raw egg safe in a drop from up high.",
+  "time_max": 60,
+  "time_min": 30,
+  "variations": {
+   "easier": "Drop from a lower height (one story or a table) so success is likely.",
+   "harder": "Limit teams to 5 items total, or ban parachutes so they solve it with structure alone."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 7,
+  "categories": [
+   "stem",
+   "team-community"
+  ],
+  "group_max": 30,
+  "group_min": 4,
+  "id": "spaghetti-tower",
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "dry spaghetti (about 20 sticks per team)"
+   },
+   {
+    "item": "mini marshmallows (about 20 per team)"
+   },
+   {
+    "item": "measuring tape or yardstick"
+   }
+  ],
+  "name": "Spaghetti Tower",
+  "no_prep": false,
+  "safety": null,
+  "setup": "Split the group into teams of 3–4. Give each team the same count of spaghetti and marshmallows. Clear table space for building.",
+  "steps": [
+   "Show the basic joint: push a spaghetti end into a marshmallow. That is the whole construction system.",
+   "Teams get 20 minutes to build the tallest tower that stands on its own.",
+   "The tower must stand for 10 full seconds with nobody touching it to count.",
+   "Measure each standing tower. Crown a winner, then let everyone eat the leftover marshmallows.",
+   "Talk about it: wide bases beat tall skinny ones, and triangles beat squares."
+  ],
+  "tagline": "The tallest free-standing tower wins — built from dry spaghetti and marshmallows.",
+  "time_max": 45,
+  "time_min": 25,
+  "variations": {
+   "easier": "Allow tape at the joints for younger builders.",
+   "harder": "The tower must hold a golf ball on top for 10 seconds to qualify."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 6,
+  "categories": [
+   "stem"
+  ],
+  "group_max": 30,
+  "group_min": 2,
+  "id": "baking-soda-volcano",
+  "location": [
+   "indoor",
+   "outdoor"
+  ],
+  "materials": [
+   {
+    "item": "small plastic bottle or cup per volcano"
+   },
+   {
+    "item": "baking soda"
+   },
+   {
+    "item": "white vinegar"
+   },
+   {
+    "item": "dish soap"
+   },
+   {
+    "item": "red food coloring (optional)"
+   },
+   {
+    "item": "tray to catch the mess"
+   },
+   {
+    "item": "modeling clay or play-dough to shape the cone (optional)"
+   }
+  ],
+  "name": "Baking Soda Volcano",
+  "no_prep": false,
+  "safety": "Vinegar stings eyes — keep faces back during the pour. Wipe up spills so floors are not slippery.",
+  "setup": "Put a tray down for each volcano — this gets gloriously messy. Pre-fill a cup of vinegar per group. If using clay, let kids shape the cone around the bottle first.",
+  "steps": [
+   "Stand the bottle in the middle of the tray and build the volcano shape around it with clay or crumpled newspaper.",
+   "Spoon 2 tablespoons of baking soda into the bottle. Add a squirt of dish soap and a few drops of food coloring.",
+   "Count down together. Pour in about half a cup of vinegar and step back.",
+   "Watch the eruption. Let each kid trigger their own.",
+   "Explain simply: the baking soda and vinegar react and make gas, and the gas pushes the liquid up and out."
+  ],
+  "tagline": "The classic fizz eruption — build the mountain, trigger the reaction.",
+  "time_max": 45,
+  "time_min": 20,
+  "variations": {
+   "easier": "Do one big demo volcano as a group instead of individual builds.",
+   "harder": "Challenge teams to make the eruption last longer or shoot higher by adjusting the mix."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 7,
+  "categories": [
+   "stem"
+  ],
+  "group_max": 25,
+  "group_min": 2,
+  "id": "density-rainbow-jars",
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "clear jars or tall cups"
+   },
+   {
+    "item": "honey or corn syrup"
+   },
+   {
+    "item": "dish soap"
+   },
+   {
+    "item": "water with food coloring"
+   },
+   {
+    "item": "vegetable oil"
+   },
+   {
+    "item": "rubbing alcohol with food coloring"
+   },
+   {
+    "item": "spoons for pouring"
+   }
+  ],
+  "name": "Density Rainbow Jars",
+  "no_prep": false,
+  "safety": "Rubbing alcohol is not for drinking — label it clearly and keep it at the teacher station.",
+  "setup": "Pre-mix the colored water and colored rubbing alcohol in pitchers. Line up the liquids in density order (heaviest first) at a central station. Each kid gets a jar.",
+  "steps": [
+   "Ask the group to guess what happens if you pour honey, water, and oil into one jar. Take bets.",
+   "Pour the liquids in this order, slowly down the side of the jar: honey, dish soap, colored water, oil, colored alcohol.",
+   "Watch the layers settle into a rainbow. The densest sinks, the lightest floats.",
+   "Let kids drop in small objects (grape, bead, coin, cork) and guess which layer each will stop at.",
+   "Try tilting the jar gently — the layers shift but settle back."
+  ],
+  "tagline": "Stack liquids into a rainbow that refuses to mix.",
+  "time_max": 40,
+  "time_min": 20,
+  "variations": {
+   "easier": "Use just three liquids (honey, water, oil) for a simple stack.",
+   "harder": "Have kids predict each object's resting layer before dropping, then explain any surprises."
+  }
+ },
+ {
+  "age_max": 11,
+  "age_min": 6,
+  "categories": [
+   "stem",
+   "outdoor"
+  ],
+  "group_max": 30,
+  "group_min": 2,
+  "id": "shadow-tracing",
+  "location": [
+   "outdoor"
+  ],
+  "materials": [
+   {
+    "item": "sidewalk chalk"
+   },
+   {
+    "item": "a sunny patch of pavement"
+   }
+  ],
+  "name": "Shadow Tracing",
+  "no_prep": true,
+  "safety": "Stay off parking lots and driveways — use a playground or courtyard with no vehicle traffic.",
+  "setup": "Find a sunny paved spot where kids can stand safely. Bring chalk.",
+  "steps": [
+   "Each kid picks a pose and stands still while a partner traces their shadow outline in chalk.",
+   "Write the time next to the outline.",
+   "Come back an hour or two later and stand in the same spot. Trace the new shadow in a different color.",
+   "Compare: the shadow moved and changed length. Ask why — guide them to the sun moving across the sky.",
+   "Optional: trace once more before pickup for a three-color shadow record."
+  ],
+  "tagline": "Trace your shadow in the morning, come back at noon, and watch it move.",
+  "time_max": 60,
+  "time_min": 15,
+  "variations": {
+   "easier": "Trace a fixed object (a cone, a ball) instead of a person so nobody has to hold still.",
+   "harder": "Have kids predict where the shadow will be next time before re-tracing."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 7,
+  "categories": [
+   "stem",
+   "quiet-focus"
+  ],
+  "group_max": 30,
+  "group_min": 2,
+  "id": "marshmallow-constellations",
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "mini marshmallows"
+   },
+   {
+    "item": "toothpicks"
+   },
+   {
+    "item": "printed constellation cards or a simple star chart"
+   }
+  ],
+  "name": "Marshmallow Constellations",
+  "no_prep": false,
+  "safety": "Toothpicks are sharp — no sword fights, and supervise younger builders closely.",
+  "setup": "Print or draw a few famous constellations (Big Dipper, Orion, Cassiopeia) as dot patterns on cards. Put marshmallows and toothpicks in bowls on tables.",
+  "steps": [
+   "Show the group how a constellation is just stars connected by imaginary lines — like dot-to-dot in the sky.",
+   "Each kid picks a constellation card and rebuilds it: a marshmallow for every star, toothpicks for the lines.",
+   "Once the real ones are built, flip the card over: invent a brand-new constellation and name it.",
+   "Kids present their invented constellations and the story behind the shape.",
+   "End with a gallery walk — everyone tours the table and votes for most creative."
+  ],
+  "tagline": "Build the Big Dipper out of marshmallows and toothpicks — then invent your own.",
+  "time_max": 40,
+  "time_min": 20,
+  "variations": {
+   "easier": "Use pretzel sticks instead of toothpicks for younger kids.",
+   "harder": "Build to scale: make one constellation's stars bigger to show brighter vs. dimmer stars."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 6,
+  "categories": [
+   "seasons",
+   "stem",
+   "outdoor"
+  ],
+  "group_max": 30,
+  "group_min": 2,
+  "id": "seed-starting-cups",
+  "location": [
+   "indoor",
+   "outdoor"
+  ],
+  "materials": [
+   {
+    "item": "clear plastic cups"
+   },
+   {
+    "item": "potting soil"
+   },
+   {
+    "item": "fast seeds (beans, radish, or sunflower)"
+   },
+   {
+    "item": "water spray bottle"
+   },
+   {
+    "item": "markers and masking tape for labels"
+   }
+  ],
+  "name": "Seed Starting Cups",
+  "no_prep": false,
+  "safety": "Wash hands after handling soil.",
+  "setup": "Best in spring but works any time indoors. Set up a soil station with scoops. Pre-label cups with each kid's name to save time.",
+  "steps": [
+   "Each kid fills a cup two-thirds full with soil.",
+   "Push 2–3 seeds about a finger-knuckle deep into the soil and cover them.",
+   "Mist with the spray bottle until the soil is damp like a wrung-out sponge.",
+   "Label the cup with name and seed type. Put cups on a sunny windowsill.",
+   "Start a sprout race: first seedling to show green wins. Check and water lightly each day after."
+  ],
+  "tagline": "Plant real seeds, take them home, and race to see whose sprouts first.",
+  "time_max": 40,
+  "time_min": 20,
+  "variations": {
+   "easier": "Use bean seeds — they sprout fast and dramatically, even in a damp paper towel.",
+   "harder": "Run an experiment: one cup in sun vs. one in shade, or watered vs. barely watered, and log the difference."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 7,
+  "categories": [
+   "seasons",
+   "stem",
+   "quiet-focus"
+  ],
+  "group_max": 40,
+  "group_min": 2,
+  "id": "weather-journal",
+  "location": [
+   "indoor",
+   "outdoor"
+  ],
+  "materials": [
+   {
+    "item": "paper and pencils or a printed journal sheet"
+   },
+   {
+    "item": "optional: outdoor thermometer"
+   }
+  ],
+  "name": "Weather Journal",
+  "no_prep": true,
+  "safety": null,
+  "setup": "Print a simple daily log: date, sky (sunny/cloudy/rainy), temperature guess, wind, one observation. Works as a recurring 10-minute opener.",
+  "steps": [
+   "Each day, kids step outside (or look out the window) and record the sky, clouds, wind, and temperature.",
+   "Add one free observation: birds, puddles, what people are wearing.",
+   "After a week, look back together: what patterns show up? Did cloudy days feel cooler?",
+   "Let kids make a one-day forecast for tomorrow and check who was closest.",
+   "Keep the journals going for a month for a real mini climate record."
+  ],
+  "tagline": "A week of sky-watching turns kids into junior meteorologists.",
+  "time_max": 20,
+  "time_min": 10,
+  "variations": {
+   "easier": "Use picture checkboxes (sun, cloud, rain) instead of written entries for younger kids.",
+   "harder": "Add cloud-type identification (cumulus, stratus, cirrus) with a simple cloud chart."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 6,
+  "categories": [
+   "seasons",
+   "crafts"
+  ],
+  "group_max": 40,
+  "group_min": 2,
+  "id": "paper-snowflakes",
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "white paper (copy paper or coffee filters for variety)"
+   },
+   {
+    "item": "scissors"
+   }
+  ],
+  "name": "Paper Snowflakes",
+  "no_prep": true,
+  "safety": "Scissors stay at the table — no walking around with open blades.",
+  "setup": "A winter classic. Have scissors ready and demonstrate the fold once before kids cut.",
+  "steps": [
+   "Fold a square of paper in half diagonally to make a triangle, then fold into thirds to make a narrow wedge.",
+   "Cut small triangles and curves out of the folded edges — the cut edges become the pattern.",
+   "Unfold slowly and reveal the snowflake. Tape it to the window or a string for display.",
+   "Try a second round with coffee filters — they fold easier and make delicate flakes.",
+   "Hang the best ones as a group winter display."
+  ],
+  "tagline": "Fold, snip, unfold — no two alike, just like the real thing.",
+  "time_max": 40,
+  "time_min": 15,
+  "variations": {
+   "easier": "Pre-fold the wedges for younger kids so they only do the cutting.",
+   "harder": "Challenge kids to cut their initials or a recognizable shape into the design."
+  }
+ },
+ {
+  "age_max": 10,
+  "age_min": 5,
+  "categories": [
+   "seasons",
+   "crafts",
+   "outdoor"
+  ],
+  "group_max": 30,
+  "group_min": 2,
+  "id": "leaf-rubbing-gallery",
+  "location": [
+   "outdoor",
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "fallen leaves (collect outside)"
+   },
+   {
+    "item": "plain white paper"
+   },
+   {
+    "item": "crayons with wrappers peeled"
+   }
+  ],
+  "name": "Leaf Rubbing Gallery",
+  "no_prep": true,
+  "safety": "Collect only fallen leaves from the ground — no pulling leaves off plants. Wash hands after.",
+  "setup": "Best in fall. Start with a short leaf-collection walk — each kid gathers 5–10 interesting leaves.",
+  "steps": [
+   "Take a leaf walk and collect fallen leaves of different shapes and sizes.",
+   "Back at the table, place a leaf vein-side up under a sheet of paper.",
+   "Rub the side of a crayon firmly over the paper — the leaf's shape and veins appear.",
+   "Make a gallery page with several rubbings. Label each with the leaf's shape or a made-up name.",
+   "Hang the pages together as a fall display."
+  ],
+  "tagline": "Collect fall leaves, rub their veins onto paper, and hang a natural gallery.",
+  "time_max": 40,
+  "time_min": 20,
+  "variations": {
+   "easier": "Use big sturdy leaves (maple, oak) which give the clearest rubbings.",
+   "harder": "Turn it into a leaf ID challenge — match each rubbing to the tree it came from."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 5,
+  "categories": [
+   "crafts",
+   "outdoor"
+  ],
+  "group_max": 30,
+  "group_min": 2,
+  "id": "rock-painting",
+  "location": [
+   "outdoor",
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "smooth flat rocks (collected or bought in bulk)"
+   },
+   {
+    "item": "acrylic paint pens or washable paint"
+   },
+   {
+    "item": "cups of water and paper towels"
+   },
+   {
+    "item": "newspaper to protect tables"
+   }
+  ],
+  "name": "Rock Painting",
+  "no_prep": false,
+  "safety": "Acrylic paint stains clothes — smocks or old shirts recommended.",
+  "setup": "Wash and dry the rocks ahead of time. Cover tables. Put out paint pens — they are far less messy than brushes and cups.",
+  "steps": [
+   "Each kid picks 2–3 rocks and plans a design: an animal, a pattern, a kind word.",
+   "Paint the design. Paint pens make details easy; let layers dry before adding on top.",
+   "While paint dries, kids write where they plan to hide their rock.",
+   "Optional: hide finished rocks around the school or park for strangers to find.",
+   "Keep one rock each for a group display shelf."
+  ],
+  "tagline": "Smooth stones become ladybugs, monsters, and messages — then hide them around the neighborhood.",
+  "time_max": 60,
+  "time_min": 25,
+  "variations": {
+   "easier": "Stick to simple dot patterns or single-color designs for younger painters.",
+   "harder": "Paint a set of story stones (a character, a place, an object) and use them to tell stories."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 7,
+  "categories": [
+   "crafts",
+   "quiet-focus"
+  ],
+  "group_max": 25,
+  "group_min": 2,
+  "id": "friendship-bracelets",
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "embroidery floss in many colors"
+   },
+   {
+    "item": "tape or safety pins to anchor"
+   },
+   {
+    "item": "scissors"
+   }
+  ],
+  "name": "Friendship Bracelets",
+  "no_prep": false,
+  "safety": null,
+  "setup": "Cut floss into arm-length strands ahead of time and bundle by color. Demo the two basic knots slowly on a big scale first.",
+  "steps": [
+   "Each kid picks 3–4 strands, knots them together at the top, and tapes the knot to the table.",
+   "Teach the forward knot: make a 4-shape with the working strand, pull it through, tighten — twice per strand.",
+   "Work down the row of strands, one knot at a time. The pattern emerges on its own.",
+   "When the bracelet fits around the wrist, knot the end and trim.",
+   "Trade bracelets with a friend — that is the whole point."
+  ],
+  "tagline": "Knot embroidery floss into bracelets to trade — the playground classic.",
+  "time_max": 60,
+  "time_min": 20,
+  "variations": {
+   "easier": "Do simple braided bracelets (three strands, plain braid) for kids who find knots frustrating.",
+   "harder": "Learn the chevron (V-shape) pattern or add beads to the design."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 7,
+  "categories": [
+   "crafts",
+   "quiet-focus"
+  ],
+  "group_max": 30,
+  "group_min": 2,
+  "id": "origami-jumping-frogs",
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "square paper (origami paper or cut copy paper)"
+   },
+   {
+    "item": "markers for decorating"
+   }
+  ],
+  "name": "Origami Jumping Frogs",
+  "no_prep": true,
+  "safety": null,
+  "setup": "Pre-cut paper into squares if using copy paper. Practice the fold sequence once yourself so you can demo smoothly.",
+  "steps": [
+   "Fold the square in half both ways and unfold, leaving crease lines.",
+   "Collapse the top into a triangle (the classic waterbomb base) — demo this slowly, it is the tricky part.",
+   "Fold the triangle's corners up to make the front legs, then fold the bottom up twice to form the springy back.",
+   "Press down on the frog's back and release — it jumps.",
+   "Decorate with eyes and spots, then race frogs across a table finish line."
+  ],
+  "tagline": "Fold a paper frog that actually hops — then hold a frog-jump race.",
+  "time_max": 40,
+  "time_min": 20,
+  "variations": {
+   "easier": "Use larger paper — big folds are easier for small hands to manage.",
+   "harder": "Experiment: does a tighter spring fold make it jump farther? Test and compare."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 7,
+  "categories": [
+   "crafts"
+  ],
+  "group_max": 25,
+  "group_min": 2,
+  "id": "paper-mache-bowls",
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "balloons (one per kid)"
+   },
+   {
+    "item": "newspaper torn into strips"
+   },
+   {
+    "item": "flour + water paste (or liquid starch)"
+   },
+   {
+    "item": "bowls for paste"
+   },
+   {
+    "item": "paint for decorating (day 2)"
+   }
+  ],
+  "name": "Paper Mache Bowls",
+  "no_prep": false,
+  "safety": "Paste is non-toxic but messy — smocks on, and wash hands before the snack table.",
+  "setup": "Mix paste ahead of time (roughly 1 part flour to 2 parts water, stir out lumps). Tear newspaper into strips. This is a two-day project: build day one, paint day two.",
+  "steps": [
+   "Blow up a balloon and set it knot-side down in a cup so it sits steady.",
+   "Dip newspaper strips in paste, wipe off the excess, and layer them over the top half of the balloon — 3 layers.",
+   "Set the bowls aside to dry overnight (they need a full day).",
+   "Day two: pop the balloon and lift out the rubber. Trim the rim if needed.",
+   "Paint and decorate the hardened bowl."
+  ],
+  "tagline": "Newspaper, paste, balloon — a bowl that hardens overnight.",
+  "time_max": 60,
+  "time_min": 30,
+  "variations": {
+   "easier": "Use only 2 layers and keep bowls small so they dry faster.",
+   "harder": "Build the bowl around the whole balloon, pop it, and cut a door to make a little house."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 7,
+  "categories": [
+   "crafts",
+   "quiet-focus"
+  ],
+  "group_max": 40,
+  "group_min": 2,
+  "id": "comic-strip-creations",
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "paper"
+   },
+   {
+    "item": "pencils, pens, markers"
+   },
+   {
+    "item": "rulers for panel lines (optional)"
+   }
+  ],
+  "name": "Comic Strip Creations",
+  "no_prep": true,
+  "safety": null,
+  "setup": "None needed. Optionally pre-draw blank 3- or 4-panel strips to hand out.",
+  "steps": [
+   "Fold or rule the paper into 3–4 equal panels.",
+   "Brainstorm a tiny story: a setup, a middle, and a punchline or twist.",
+   "Draw one scene per panel. Stick figures are completely fine — storytelling beats art skill.",
+   "Add speech bubbles and sound-effect words (POW, SPLAT, hmm...).",
+   "Share comics in small groups, then bind the best into a group comic book."
+  ],
+  "tagline": "Three panels, one joke or story — everyone can make a comic.",
+  "time_max": 45,
+  "time_min": 20,
+  "variations": {
+   "easier": "Give a starter prompt: 'The day my pet could talk...'",
+   "harder": "Require a plot twist in the final panel, or make a silent comic with no words at all."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 6,
+  "categories": [
+   "crafts",
+   "quiet-focus"
+  ],
+  "group_max": 40,
+  "group_min": 2,
+  "id": "bookmarks-that-matter",
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "cardstock cut into bookmark strips"
+   },
+   {
+    "item": "markers, colored pencils"
+   },
+   {
+    "item": "hole punch and yarn or ribbon (optional)"
+   }
+  ],
+  "name": "Bookmarks That Matter",
+  "no_prep": true,
+  "safety": null,
+  "setup": "Pre-cut cardstock into strips (about 2 x 6 inches). Set out decorating supplies.",
+  "steps": [
+   "Each kid takes a bookmark strip and picks a theme: favorite book, a quote, a pattern, a monster.",
+   "Decorate both sides — one side art, one side words.",
+   "Punch a hole at the top and tie on yarn for a tassel if you have it.",
+   "Laminate or cover with clear tape to make them last.",
+   "Trade one with a friend and keep one for your own book."
+  ],
+  "tagline": "Design a bookmark worth keeping — then actually use it.",
+  "time_max": 35,
+  "time_min": 15,
+  "variations": {
+   "easier": "Provide printed templates with borders to color in.",
+   "harder": "Make corner bookmarks (origami fold that hugs the page corner)."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 6,
+  "categories": [
+   "crafts"
+  ],
+  "group_max": 30,
+  "group_min": 2,
+  "id": "collage-self-portrait",
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "magazines and newspapers to cut up"
+   },
+   {
+    "item": "glue sticks"
+   },
+   {
+    "item": "scissors"
+   },
+   {
+    "item": "large paper or cardstock"
+   }
+  ],
+  "name": "Collage Self-Portrait",
+  "no_prep": false,
+  "safety": "Scissors stay at the table.",
+  "setup": "Collect a stack of old magazines. Put out glue, scissors, and big paper.",
+  "steps": [
+   "Talk about it first: a self-portrait does not have to look like you — it can show what you love.",
+   "Kids cut out images, colors, and words that feel like them.",
+   "Arrange the pieces on the cardstock before gluing — composition first.",
+   "Glue everything down. Add drawn details or a title with markers.",
+   "Do a gallery walk. Kids guess whose portrait is whose before names are revealed."
+  ],
+  "tagline": "Cut-up magazines become portraits of who you are inside.",
+  "time_max": 50,
+  "time_min": 25,
+  "variations": {
+   "easier": "Limit it to 10 cutouts so nobody gets overwhelmed.",
+   "harder": "Theme it: 'me in 10 years' or 'my perfect weekend' as the portrait subject."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 6,
+  "categories": [
+   "holidays",
+   "crafts",
+   "team-community"
+  ],
+  "group_max": 40,
+  "group_min": 4,
+  "id": "gratitude-tree",
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "large branch in a pot or a drawn tree on butcher paper"
+   },
+   {
+    "item": "paper leaves (cut from colored paper)"
+   },
+   {
+    "item": "string or tape"
+   },
+   {
+    "item": "markers"
+   }
+  ],
+  "name": "Gratitude Tree",
+  "no_prep": false,
+  "safety": null,
+  "setup": "Pre-cut paper leaves (or have kids cut them — adds 10 minutes). Mount a branch in a pot of rocks, or tape a big drawn tree to the wall.",
+  "steps": [
+   "Each kid takes a paper leaf and writes one thing they are grateful for.",
+   "Add a second leaf: something they appreciate about someone in the group.",
+   "Hang the leaves on the branches with string or tape them to the drawn tree.",
+   "Step back and read a few aloud (volunteers only).",
+   "Leave the tree up through the holiday season — it fills in beautifully."
+  ],
+  "tagline": "A bare branch fills with paper leaves, each one carrying something someone is thankful for.",
+  "time_max": 40,
+  "time_min": 20,
+  "variations": {
+   "easier": "Pre-write sentence starters on the leaves ('I am thankful for ___').",
+   "harder": "Make it a week-long project — one new leaf per day per kid."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 6,
+  "categories": [
+   "holidays",
+   "crafts"
+  ],
+  "group_max": 40,
+  "group_min": 2,
+  "id": "holiday-card-workshop",
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "folded blank cards or folded cardstock"
+   },
+   {
+    "item": "markers, crayons, colored pencils"
+   },
+   {
+    "item": "stickers, stamps (optional)"
+   },
+   {
+    "item": "envelopes"
+   }
+  ],
+  "name": "Holiday Card Workshop",
+  "no_prep": true,
+  "safety": null,
+  "setup": "Pre-fold cardstock into cards. Set out decorating supplies assembly-line style.",
+  "steps": [
+   "Each kid picks who their card is for — family, a friend, a teacher.",
+   "Design the front: a drawing, a pattern, or a big bold letter.",
+   "Write the message inside. Prompt: one real memory + one wish for them.",
+   "Decorate the envelope too — it is part of the gift.",
+   "Collect cards in a 'post box' and hand them out at pickup time."
+  ],
+  "tagline": "Handmade cards beat store-bought ones — every time.",
+  "time_max": 45,
+  "time_min": 20,
+  "variations": {
+   "easier": "Provide printed card templates with a design to color.",
+   "harder": "Make pop-up cards — cut two slits in the fold and push the shape inward."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 8,
+  "categories": [
+   "holidays",
+   "crafts"
+  ],
+  "group_max": 25,
+  "group_min": 2,
+  "id": "paper-lantern-festival",
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "colored paper"
+   },
+   {
+    "item": "scissors"
+   },
+   {
+    "item": "tape or glue"
+   },
+   {
+    "item": "battery tea lights (real candles never)"
+   }
+  ],
+  "name": "Paper Lantern Festival",
+  "no_prep": false,
+  "safety": "Battery tea lights only — never real candles near paper.",
+  "setup": "Demo the fold-and-cut once. Have tape ready; glue is slower for this build.",
+  "steps": [
+   "Fold a sheet of colored paper in half lengthwise.",
+   "Cut slits from the folded edge toward the open edge, stopping about an inch short.",
+   "Unfold, roll the paper into a tube, and tape the short ends together.",
+   "Tape a paper handle strip across the top.",
+   "Drop in a battery tea light, dim the room lights, and enjoy the glow."
+  ],
+  "tagline": "Fold, snip, and roll paper into glowing lanterns — battery lights only.",
+  "time_max": 40,
+  "time_min": 20,
+  "variations": {
+   "easier": "Use pre-cut slit templates for younger kids.",
+   "harder": "Layer two colors — an outer cut layer over a solid inner tube."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 5,
+  "categories": [
+   "holidays"
+  ],
+  "group_max": 40,
+  "group_min": 4,
+  "id": "thankful-garland",
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "paper strips in fall colors"
+   },
+   {
+    "item": "glue sticks or tape"
+   },
+   {
+    "item": "markers"
+   }
+  ],
+  "name": "Thankful Garland",
+  "no_prep": true,
+  "safety": null,
+  "setup": "Cut paper into strips ahead of time (about 1 x 8 inches). Each kid needs 4–6 strips.",
+  "steps": [
+   "On each strip, write one thing you are thankful for — people, foods, moments, anything.",
+   "Loop the first strip into a ring and glue or tape it closed.",
+   "Thread the next strip through the ring, loop it, and seal — a paper chain grows.",
+   "Keep adding until every strip is linked. Combine small chains into one long garland.",
+   "Hang the garland across the room as holiday decor."
+  ],
+  "tagline": "A paper chain where every link is something someone is thankful for.",
+  "time_max": 35,
+  "time_min": 15,
+  "variations": {
+   "easier": "Let kids draw instead of write on the strips.",
+   "harder": "Color-code the strips: people = red, things = orange, moments = yellow."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 7,
+  "categories": [
+   "team-community",
+   "outdoor",
+   "holidays"
+  ],
+  "group_max": 30,
+  "group_min": 6,
+  "id": "kindness-scavenger-hunt",
+  "location": [
+   "outdoor",
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "printed kindness checklists"
+   }
+  ],
+  "name": "Kindness Scavenger Hunt",
+  "no_prep": true,
+  "safety": "Teams stay within the agreed boundaries and in sight of an adult.",
+  "setup": "Print a checklist of kind acts: hold a door, pick up litter, compliment a stranger's shoes, help carry something, draw chalk art for the sidewalk. Works around holidays or any day.",
+  "steps": [
+   "Split into teams of 3–4 and hand out the checklists.",
+   "Set the boundaries and the time limit (20–30 minutes).",
+   "Teams roam and complete as many kind acts as they can. An adult verifies each one.",
+   "Regroup and share the best stories — what act got the biggest reaction?",
+   "No prizes for most acts; celebrate the stories instead."
+  ],
+  "tagline": "A scavenger hunt where the items are kind acts.",
+  "time_max": 45,
+  "time_min": 25,
+  "variations": {
+   "easier": "Do it inside the building with staff as the targets of kindness.",
+   "harder": "Add a secret bonus act each team must invent themselves."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 6,
+  "categories": [
+   "team-community",
+   "quiet-focus"
+  ],
+  "group_max": 25,
+  "group_min": 5,
+  "id": "storytelling-circle",
+  "location": [
+   "indoor",
+   "outdoor"
+  ],
+  "materials": [],
+  "name": "Storytelling Circle",
+  "no_prep": true,
+  "safety": null,
+  "setup": "Chairs in a circle. One object to pass as the talking piece — a ball, a stuffed animal, anything.",
+  "steps": [
+   "Whoever holds the talking piece tells a short true story from their life — funny, scary, or proud.",
+   "Pass the piece around the circle. Everyone gets a turn; passing is allowed, no pressure.",
+   "After a full round, open it up: ask follow-up questions about the best stories.",
+   "Round two (optional): tell a story about someone else in the circle — something you admire about them.",
+   "End by naming one thing you learned about someone today."
+  ],
+  "tagline": "One object, one circle, true stories — the fastest way to know each other.",
+  "time_max": 40,
+  "time_min": 15,
+  "variations": {
+   "easier": "Give story prompts: 'a time you laughed really hard,' 'something you are good at.'",
+   "harder": "Build one group story — each person adds one sentence, keeping it coherent."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 6,
+  "categories": [
+   "team-community",
+   "icebreakers"
+  ],
+  "group_max": 30,
+  "group_min": 5,
+  "id": "compliment-chain",
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "paper and pencils (optional)"
+   }
+  ],
+  "name": "Compliment Chain",
+  "no_prep": true,
+  "safety": null,
+  "setup": "Circle up. Set the tone: compliments must be specific and real — no 'you're nice' allowed.",
+  "steps": [
+   "Start with the person to your left: give them one specific compliment ('You explained the rules really clearly today').",
+   "They give a specific compliment to the next person, and so on around the circle.",
+   "If writing first feels safer, have everyone write compliments on slips, then read them aloud.",
+   "End with a group compliment — one thing this whole group does well.",
+   "Keep the slips in a jar to re-read on a rough day."
+  ],
+  "tagline": "Go around the circle giving real, specific compliments — no generic ones allowed.",
+  "time_max": 30,
+  "time_min": 15,
+  "variations": {
+   "easier": "Write compliments anonymously on slips for shy groups.",
+   "harder": "Compliment something the person did this week, not just a trait."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 7,
+  "categories": [
+   "team-community",
+   "icebreakers"
+  ],
+  "group_max": 20,
+  "group_min": 8,
+  "id": "human-knot",
+  "location": [
+   "indoor",
+   "outdoor"
+  ],
+  "materials": [],
+  "name": "Human Knot",
+  "no_prep": true,
+  "safety": "Gentle hands only — no yanking arms. If a grip hurts, let go and re-grab.",
+  "setup": "Circle up, shoulder to shoulder. Works best with 8–16 players.",
+  "steps": [
+   "Everyone reaches their right hand into the middle and grabs someone else's right hand — not the person next to them.",
+   "Do the same with left hands, grabbing a different person.",
+   "The result is a human knot. The goal: untangle into a clean circle without letting go.",
+   "Talk while you work — 'step over,' 'duck under,' 'turn around.'",
+   "If the knot is truly stuck after several minutes, allow one grip to re-grab and continue."
+  ],
+  "tagline": "Grab random hands across the circle, then untangle without letting go.",
+  "time_max": 25,
+  "time_min": 10,
+  "variations": {
+   "easier": "Play with eyes open (standard) and a smaller group of 8.",
+   "harder": "One player is the 'director' who can only talk, not be part of the knot."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 6,
+  "categories": [
+   "team-community",
+   "pe-movement"
+  ],
+  "group_max": 30,
+  "group_min": 8,
+  "id": "hula-hoop-pass",
+  "location": [
+   "indoor",
+   "outdoor"
+  ],
+  "materials": [
+   {
+    "item": "one hula hoop per team"
+   }
+  ],
+  "name": "Hula Hoop Pass",
+  "no_prep": true,
+  "safety": "Keep the hoop moving at a steady pace — no whipping it around fast.",
+  "setup": "Line up or circle up in teams. Each team holds hands in a line or circle; the hoop starts on one player's arm.",
+  "steps": [
+   "Without letting go of hands, pass the hula hoop down the line — players step and duck through it.",
+   "The hoop travels from one end to the other (or all the way around the circle).",
+   "Time each team. Then run it again and try to beat your own time.",
+   "Add a second hoop going the opposite direction for chaos mode.",
+   "Debrief: the teams that talked to each other ('lift your arm!') were always faster."
+  ],
+  "tagline": "Pass a hula hoop down a hand-holding line without letting go.",
+  "time_max": 25,
+  "time_min": 10,
+  "variations": {
+   "easier": "Let players use both hands free — just pass the hoop body-to-body.",
+   "harder": "Race two teams side by side, or run it in complete silence (gestures only)."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 7,
+  "categories": [
+   "team-community",
+   "pe-movement"
+  ],
+  "group_max": 20,
+  "group_min": 6,
+  "id": "group-juggling",
+  "location": [
+   "indoor",
+   "outdoor"
+  ],
+  "materials": [
+   {
+    "item": "3–6 soft balls or beanbags"
+   }
+  ],
+  "name": "Group Juggling",
+  "no_prep": true,
+  "safety": "Use soft balls only — no hard baseballs.",
+  "setup": "Stand in a circle. Establish a throwing order first with one ball before adding more.",
+  "steps": [
+   "Throw one ball around the circle in a fixed order — A always throws to B, B to C, and so on.",
+   "Once the pattern is smooth, the leader calls out names to add a second ball, then a third.",
+   "Keep adding balls until the pattern breaks down into laughter.",
+   "Reset and try to beat your record for number of balls in play.",
+   "Talk about it: the pattern only works when everyone remembers their person."
+  ],
+  "tagline": "Keep an ever-growing number of balls moving in a fixed circle pattern.",
+  "time_max": 25,
+  "time_min": 10,
+  "variations": {
+   "easier": "Use scarves or balloons first — they move slowly and are easy to catch.",
+   "harder": "Reverse the pattern mid-game on the leader's call."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 8,
+  "categories": [
+   "team-community",
+   "stem"
+  ],
+  "group_max": 24,
+  "group_min": 6,
+  "id": "tower-of-trust-build",
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "plastic cups (30+ per team)"
+   },
+   {
+    "item": "rubber bands with strings attached (one per team)"
+   },
+   {
+    "item": "table space"
+   }
+  ],
+  "name": "Tower of Trust Build",
+  "no_prep": false,
+  "safety": null,
+  "setup": "Tie 4–6 strings to each rubber band so the whole team can pull it open together. Stack cups upside-down nearby.",
+  "steps": [
+   "The challenge: build a cup pyramid using ONLY the rubber-band tool — no touching cups with hands.",
+   "Each team member holds one string. Together they stretch the band open, lower it over a cup, and release to grip.",
+   "Carry the cup to the build zone and stack it. One cup at a time.",
+   "First team to build a 6-cup pyramid (3-2-1) wins.",
+   "Debrief: what happened when one person pulled too hard? Teamwork is literally tension management."
+  ],
+  "tagline": "Build a cup pyramid touching only strings — one rubber band, whole team.",
+  "time_max": 35,
+  "time_min": 15,
+  "variations": {
+   "easier": "Allow one designated 'placer' to use hands for the final set-down.",
+   "harder": "Build a 10-cup pyramid (4-3-2-1) or race two teams head to head."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 7,
+  "categories": [
+   "team-community"
+  ],
+  "group_max": 25,
+  "group_min": 6,
+  "id": "blindfolded-guide-course",
+  "location": [
+   "indoor",
+   "outdoor"
+  ],
+  "materials": [
+   {
+    "item": "blindfolds or bandanas"
+   },
+   {
+    "item": "cones or chairs for obstacles"
+   },
+   {
+    "item": "a small prize or token at the finish"
+   }
+  ],
+  "name": "Blindfolded Guide Course",
+  "no_prep": false,
+  "safety": "Clear the course of anything hard or sharp. A spotter walks alongside each pair. Slow walking only — no running blindfolded.",
+  "setup": "Set up a simple obstacle course with cones or chairs. Pair kids up: one blindfolded walker, one sighted guide.",
+  "steps": [
+   "Walk the course together first with eyes open so walkers know the layout.",
+   "Blindfold the walkers. Guides may ONLY use words — no touching.",
+   "Guides talk their partner through: 'three small steps forward, now turn left.'",
+   "Swap roles and run it again.",
+   "Debrief: what instructions worked best? Specific and calm beat loud and vague."
+  ],
+  "tagline": "One partner blindfolded, one partner guiding — with words only.",
+  "time_max": 30,
+  "time_min": 15,
+  "variations": {
+   "easier": "Let guides hold their partner's elbow while giving directions.",
+   "harder": "Guides must stay at the finish line and direct from a distance."
+  }
+ },
+ {
+  "age_max": 11,
+  "age_min": 5,
+  "categories": [
+   "pe-movement",
+   "outdoor"
+  ],
+  "group_max": 40,
+  "group_min": 6,
+  "id": "red-light-green-light",
+  "location": [
+   "outdoor"
+  ],
+  "materials": [],
+  "name": "Red Light, Green Light",
+  "no_prep": true,
+  "safety": "Play on a flat field or gym — no running on pavement near traffic.",
+  "setup": "One caller stands at the far end with their back to the group. Everyone else lines up at the start line.",
+  "steps": [
+   "Caller shouts 'green light!' and turns around — everyone runs toward them.",
+   "Caller shouts 'red light!' and spins back — everyone must freeze instantly.",
+   "Anyone the caller catches moving goes back to the start line.",
+   "First player to tag the caller becomes the next caller.",
+   "Add 'yellow light' (slow motion) for a fun twist in later rounds."
+  ],
+  "tagline": "Sprint on green, freeze on red — get caught moving and start over.",
+  "time_max": 25,
+  "time_min": 10,
+  "variations": {
+   "easier": "Shorten the field so rounds end faster.",
+   "harder": "Caught players become extra spotters helping the caller."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 5,
+  "categories": [
+   "pe-movement",
+   "rainy-day"
+  ],
+  "group_max": 40,
+  "group_min": 6,
+  "id": "freeze-dance",
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "music player and speaker"
+   }
+  ],
+  "name": "Freeze Dance",
+  "no_prep": true,
+  "safety": "Clear the dance floor of chairs and bags. No roughhousing — dancing only.",
+  "setup": "Push furniture to the walls. One person controls the music.",
+  "steps": [
+   "Play the music — everyone dances however they want.",
+   "Pause the music without warning. Everyone freezes exactly as they are.",
+   "Anyone still moving after the freeze is out (or does 5 jumping jacks and rejoins — your call).",
+   "Play again. Last dancer standing wins, or just play round after round.",
+   "Theme rounds: dance like a robot, like you are underwater, like a statue coming to life."
+  ],
+  "tagline": "Dance while the music plays, freeze like a statue when it stops.",
+  "time_max": 25,
+  "time_min": 10,
+  "variations": {
+   "easier": "Eliminated players become freeze judges instead of sitting out.",
+   "harder": "Freeze in a specific pose the caller names ('freeze like a tree!')."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 8,
+  "categories": [
+   "pe-movement",
+   "outdoor"
+  ],
+  "group_max": 30,
+  "group_min": 10,
+  "id": "capture-the-flag-lite",
+  "location": [
+   "outdoor"
+  ],
+  "materials": [
+   {
+    "item": "two flags (bandanas, cones, or pool noodles)"
+   },
+   {
+    "item": "cones or rope to mark the center line and jail zones"
+   }
+  ],
+  "name": "Capture the Flag",
+  "no_prep": false,
+  "safety": "Agree on boundaries before starting. Tag with two fingers on the shoulder — no tackling, pushing, or tripping.",
+  "setup": "Split a field in half with a center line. Each team hides its flag somewhere on its side (visible, not buried). Mark a jail zone on each side.",
+  "steps": [
+   "Split into two teams and send each to its side of the field.",
+   "Goal: sneak across, grab the other team's flag, and carry it back to your side.",
+   "If tagged on enemy territory, you go to their jail — teammates can free you with a tag.",
+   "First team to carry the enemy flag across the center line wins.",
+   "Play best-of-three with new flag spots each round."
+  ],
+  "tagline": "Sneak in, grab the flag, get home — the playground epic.",
+  "time_max": 45,
+  "time_min": 20,
+  "variations": {
+   "easier": "Play with a visible flag on a pole to keep rounds short.",
+   "harder": "Add a second flag per team, or make jailed players do 10 jumping jacks to earn release."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 6,
+  "categories": [
+   "pe-movement",
+   "outdoor"
+  ],
+  "group_max": 40,
+  "group_min": 8,
+  "id": "relay-race-mixup",
+  "location": [
+   "outdoor"
+  ],
+  "materials": [
+   {
+    "item": "batons or beanbags"
+   },
+   {
+    "item": "cones for turn-around points"
+   }
+  ],
+  "name": "Relay Race Mix-Up",
+  "no_prep": true,
+  "safety": "Run in lanes so nobody collides at the turn-around cone.",
+  "setup": "Divide into even teams and line up. Mark a turn-around cone about 30 yards out.",
+  "steps": [
+   "Round one: classic sprint relay — run out, round the cone, hand off the baton.",
+   "Round two: each leg adds a twist — hop on one foot, crab-walk, skip, bear-crawl.",
+   "Round three: teams invent their own movement for the final relay.",
+   "Cheer for every team at the finish — last place gets the loudest cheer.",
+   "Tally team points across rounds for an overall champion."
+  ],
+  "tagline": "Classic relays, but every round adds a sillier way to move.",
+  "time_max": 35,
+  "time_min": 15,
+  "variations": {
+   "easier": "Shorten the course for younger runners.",
+   "harder": "Add a task at the turn-around: 5 jumping jacks before heading back."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 7,
+  "categories": [
+   "pe-movement",
+   "outdoor"
+  ],
+  "group_max": 30,
+  "group_min": 4,
+  "id": "obstacle-course-design",
+  "location": [
+   "outdoor"
+  ],
+  "materials": [
+   {
+    "item": "cones, hula hoops, jump ropes, pool noodles — whatever is on hand"
+   },
+   {
+    "item": "timer or stopwatch"
+   }
+  ],
+  "name": "Design-Your-Own Obstacle Course",
+  "no_prep": false,
+  "safety": "Check every station for stability before running. No climbing on anything not meant for climbing.",
+  "setup": "Lay out all available equipment. Teams design, then everyone runs every course.",
+  "steps": [
+   "Split into teams of 4–5. Each team gets the same pile of equipment.",
+   "Teams have 15 minutes to design a 6-station obstacle course: crawl, jump, balance, throw, run, spin.",
+   "Each team demos its course while the others watch and cheer.",
+   "Everyone runs every course, timed. Fastest total time wins — style points for the best-designed station.",
+   "Vote on awards: toughest, silliest, most creative."
+  ],
+  "tagline": "Teams build the course, then everyone races through all of them.",
+  "time_max": 60,
+  "time_min": 30,
+  "variations": {
+   "easier": "Teacher designs one course and everyone runs it — kids just add one station each.",
+   "harder": "Add a rule: the course must include one teamwork station (carry a partner's shoe, three-legged section)."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 6,
+  "categories": [
+   "pe-movement",
+   "outdoor"
+  ],
+  "group_max": 40,
+  "group_min": 2,
+  "id": "jump-rope-countdown",
+  "location": [
+   "outdoor"
+  ],
+  "materials": [
+   {
+    "item": "jump ropes (a few, or one long rope for group jumping)"
+   }
+  ],
+  "name": "Jump Rope Countdown",
+  "no_prep": true,
+  "safety": "Give each jumper space — ropes and faces do not mix. Check ropes for knots before starting.",
+  "steps": [
+   "Warm up with 30 seconds of free jumping to find a rhythm.",
+   "Challenge one: how many jumps in one minute? Count and record.",
+   "Challenge two: trick ladder — 10 normal, 10 high-knee, 10 criss-cross arms, 10 backwards.",
+   "Group round: two turners, one long rope, jumpers take turns running in and jumping.",
+   "End with a freestyle show-off round — best trick wins the cheer."
+  ],
+  "tagline": "Count, trick, and show off — jump rope as a personal-best sport.",
+  "time_max": 30,
+  "time_min": 15,
+  "variations": {
+   "easier": "Let beginners jump without the rope first to learn the timing, or swing the rope slowly.",
+   "harder": "Double-unders (rope passes twice per jump) for advanced jumpers."
+  },
+  "setup": "Lay out the ropes in an open area with room to swing. If using one long rope, pick two steady turners."
+ },
+ {
+  "age_max": 12,
+  "age_min": 7,
+  "categories": [
+   "pe-movement",
+   "rainy-day",
+   "quiet-focus"
+  ],
+  "group_max": 30,
+  "group_min": 8,
+  "id": "silent-ball",
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "one soft foam or beach ball"
+   }
+  ],
+  "name": "Silent Ball",
+  "no_prep": true,
+  "safety": "Gentle tosses only — no fast throws at faces.",
+  "setup": "Stand in a circle. One soft ball. The rule that matters: total silence.",
+  "steps": [
+   "Toss the ball to anyone in the circle — but nobody may talk, laugh out loud, or make noise.",
+   "If you talk, drop the ball, or make a bad throw, you sit out for that round.",
+   "The circle shrinks as players drop out. Last one standing wins.",
+   "Play again — it is harder than it sounds to stay quiet while catching.",
+   "Variation round: allow whispering but no laughing."
+  ],
+  "tagline": "Pass the ball in total silence — talk, laugh, or drop it and you are out.",
+  "time_max": 25,
+  "time_min": 10,
+  "variations": {
+   "easier": "Allow one 'free' mistake per player before they sit out.",
+   "harder": "Two balls in play at once, or players must catch one-handed."
+  }
+ },
+ {
+  "age_max": 10,
+  "age_min": 5,
+  "categories": [
+   "pe-movement"
+  ],
+  "group_max": 30,
+  "group_min": 8,
+  "id": "parachute-popcorn",
+  "location": [
+   "indoor",
+   "outdoor"
+  ],
+  "materials": [
+   {
+    "item": "playground parachute"
+   },
+   {
+    "item": "foam balls or beanbags (the 'popcorn')"
+   }
+  ],
+  "name": "Parachute Popcorn",
+  "no_prep": false,
+  "safety": "Keep the parachute low when shaking hard — nobody goes under it while popcorn is bouncing.",
+  "setup": "Spread the parachute on the ground. Everyone grabs an edge and stands. Toss the foam balls into the middle.",
+  "steps": [
+   "Everyone lifts and lowers the parachute together to make gentle waves.",
+   "On the count of three, shake hard and fast — the balls pop like popcorn.",
+   "Challenge: keep ALL the popcorn bouncing for 30 seconds without any falling off.",
+   "Popcorn storm: everyone lets go on '3' and watches the parachute float down.",
+   "Cool-down: sit under the parachute tent it makes and tell one story."
+  ],
+  "tagline": "Shake the big parachute until the foam balls pop like popcorn.",
+  "time_max": 25,
+  "time_min": 10,
+  "variations": {
+   "easier": "Use beach balls — big, slow, and easy to keep in.",
+   "harder": "Assign each color ball a point value and score the popcorn that stays in."
+  }
+ },
+ {
+  "age_max": 10,
+  "age_min": 5,
+  "categories": [
+   "pe-movement",
+   "icebreakers"
+  ],
+  "group_max": 25,
+  "group_min": 8,
+  "id": "duck-duck-goose",
+  "location": [
+   "indoor",
+   "outdoor"
+  ],
+  "materials": [],
+  "name": "Duck Duck Goose",
+  "no_prep": true,
+  "safety": "Run around the OUTSIDE of the circle only — no cutting through the middle.",
+  "setup": "Sit in a tight circle. One player is 'it' and walks around the outside.",
+  "steps": [
+   "'It' taps heads one by one, saying 'duck, duck, duck...'",
+   "On 'GOOSE!' the tapped player jumps up and chases 'it' around the circle.",
+   "If the chaser tags 'it' before they sit in the empty spot, 'it' goes again.",
+   "If 'it' sits down first, the chaser becomes the new 'it.'",
+   "Speed round: two 'its' going at once for bigger groups."
+  ],
+  "tagline": "The tap-and-chase circle game every kid already half-knows.",
+  "time_max": 20,
+  "time_min": 10,
+  "variations": {
+   "easier": "Walk instead of run for younger kids.",
+   "harder": "The goose must hop on one foot while chasing."
+  }
+ },
+ {
+  "age_max": 10,
+  "age_min": 5,
+  "categories": [
+   "pe-movement",
+   "icebreakers"
+  ],
+  "group_max": 40,
+  "group_min": 6,
+  "id": "simon-says",
+  "location": [
+   "indoor",
+   "outdoor"
+  ],
+  "materials": [],
+  "name": "Simon Says",
+  "no_prep": true,
+  "safety": null,
+  "setup": "One leader faces the group. Everyone else spreads out so they can move.",
+  "steps": [
+   "The leader gives commands: 'Simon says touch your toes' — everyone does it.",
+   "Without 'Simon says,' the command is a trap: 'Jump!' — anyone who jumps is out.",
+   "Speed up as the group shrinks. Slow, tricky commands catch more players.",
+   "Last player standing becomes the next Simon.",
+   "Silly Simon round: all commands are dance moves."
+  ],
+  "tagline": "Only move when Simon says — the listening game that never gets old.",
+  "time_max": 20,
+  "time_min": 10,
+  "variations": {
+   "easier": "Give one warning before a player is out.",
+   "harder": "Chain commands: 'Simon says touch your head AND stomp your foot.'"
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 6,
+  "categories": [
+   "outdoor",
+   "seasons"
+  ],
+  "group_max": 30,
+  "group_min": 2,
+  "id": "nature-scavenger-hunt",
+  "location": [
+   "outdoor"
+  ],
+  "materials": [
+   {
+    "item": "printed scavenger checklists"
+   },
+   {
+    "item": "paper bags for collecting"
+   },
+   {
+    "item": "pencils"
+   }
+  ],
+  "name": "Nature Scavenger Hunt",
+  "no_prep": true,
+  "safety": "Collect only what is on the ground. Stay in the marked area; no eating anything found.",
+  "setup": "Print checklists tailored to your space: something smooth, something rough, a Y-shaped stick, 3 different leaves, something red, a feather, something that makes a sound.",
+  "steps": [
+   "Hand out checklists and bags. Set the boundaries and the time limit (20 minutes).",
+   "Kids hunt in pairs — pairs find more and argue less.",
+   "Regroup and show-and-tell the finds. Award points for the trickiest items.",
+   "Bonus: find something NOT on the list and convince the group it should have been.",
+   "Leave no trace — put back anything alive, take only photos of the rest."
+  ],
+  "tagline": "A checklist, a bag, and twenty minutes of sharp-eyed hunting.",
+  "time_max": 40,
+  "time_min": 20,
+  "variations": {
+   "easier": "Use picture checklists for kids who cannot read yet.",
+   "harder": "Make it a photo hunt — find it, photograph it, leave it where it lies."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 5,
+  "categories": [
+   "outdoor",
+   "quiet-focus"
+  ],
+  "group_max": 30,
+  "group_min": 2,
+  "id": "i-spy-walk",
+  "location": [
+   "outdoor"
+  ],
+  "materials": [],
+  "name": "I Spy Walk",
+  "no_prep": true,
+  "safety": "Walk in pairs on paths — stay off roads and out of parking lots.",
+  "setup": "None — just a route. A park loop, a school block, a nature trail.",
+  "steps": [
+   "Walk in pairs. One partner picks something they can see and says, 'I spy something green and wiggly...'",
+   "The other guesses. Three guesses, then a new clue.",
+   "Swap roles every few minutes so everyone leads.",
+   "Collect the best spies: who stumped their partner the longest?",
+   "End the walk by sharing one cool thing you noticed that you walk past every day."
+  ],
+  "tagline": "Turn any walk into a game of sharp eyes and clever clues.",
+  "time_max": 30,
+  "time_min": 15,
+  "variations": {
+   "easier": "Give the first letter as a free clue for younger kids.",
+   "harder": "Ban color clues — describe by shape, texture, or what it does."
+  }
+ },
+ {
+  "age_max": 11,
+  "age_min": 6,
+  "categories": [
+   "outdoor"
+  ],
+  "group_max": 30,
+  "group_min": 2,
+  "id": "nature-bingo",
+  "location": [
+   "outdoor"
+  ],
+  "materials": [
+   {
+    "item": "printed nature bingo cards"
+   },
+   {
+    "item": "pencils or crayons"
+   }
+  ],
+  "name": "Nature Bingo",
+  "no_prep": true,
+  "safety": "Stay on paths and in the agreed area. Look with eyes first — some plants sting.",
+  "setup": "Print bingo cards with pictures or words: bird, pinecone, yellow flower, spider web, smooth stone, mushroom, feather, ant, cloud shaped like something, litter (pick it up!).",
+  "steps": [
+   "Hand out cards and pencils. Explain: mark a square when you FIND it — no collecting needed.",
+   "Set boundaries and a time limit (15–20 minutes).",
+   "First to complete a row shouts 'BINGO!' — verify the finds together.",
+   "Keep going for blackout (whole card) if the group is engaged.",
+   "End by picking up any litter spotted during the game."
+  ],
+  "tagline": "Bingo cards meet the great outdoors — mark what you spot.",
+  "time_max": 35,
+  "time_min": 15,
+  "variations": {
+   "easier": "Use picture-only cards for pre-readers.",
+   "harder": "Require photo evidence of each square for a camera round."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 6,
+  "categories": [
+   "outdoor",
+   "crafts"
+  ],
+  "group_max": 25,
+  "group_min": 2,
+  "id": "chalk-maze",
+  "location": [
+   "outdoor"
+  ],
+  "materials": [
+   {
+    "item": "sidewalk chalk (lots of it)"
+   }
+  ],
+  "name": "Chalk Maze",
+  "no_prep": true,
+  "safety": "Use a paved area away from traffic and parking. Chalk washes off — skip painted walls.",
+  "setup": "Find a big paved area. Teams design maze sections that connect into one mega-maze.",
+  "steps": [
+   "Split into teams. Each team draws a maze section on the pavement — paths, dead ends, and one entrance and exit.",
+   "Connect the sections into one giant maze across the whole area.",
+   "Teams swap: navigate another team's section without crossing lines.",
+   "Time the runs. Fastest navigator wins — then everyone free-draws in the leftover space.",
+   "Photo the maze from above before the next rain takes it."
+  ],
+  "tagline": "Draw a giant maze on the pavement, then race through it.",
+  "time_max": 50,
+  "time_min": 25,
+  "variations": {
+   "easier": "Draw one simple spiral maze together as a whole group.",
+   "harder": "Add challenge stations inside the maze: 10 hops, a riddle to solve, a balance beam line."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 7,
+  "categories": [
+   "outdoor",
+   "seasons"
+  ],
+  "group_max": 20,
+  "group_min": 2,
+  "id": "kite-flying-basics",
+  "location": [
+   "outdoor"
+  ],
+  "materials": [
+   {
+    "item": "kites (simple diamond kites work best)"
+   },
+   {
+    "item": "extra string"
+   }
+  ],
+  "name": "Kite Flying",
+  "no_prep": false,
+  "safety": "Fly in open fields only — far from power lines, trees, and roads.",
+  "setup": "Best on a breezy spring day. Assemble kites ahead of time for younger kids; older kids can assemble their own.",
+  "steps": [
+   "Check the wind: it should tug a ribbon or move small branches — too calm or too gusty both fail.",
+   "One person holds the kite up while the flyer walks back, letting out string.",
+   "On 'go,' the holder tosses the kite up and the flyer pulls gently to catch the wind.",
+   "Steer by pulling the string in short tugs — never yank.",
+   "When kites are stable, challenge: who can fly longest without re-launching?"
+  ],
+  "tagline": "Catch the wind on a string — the spring classic.",
+  "time_max": 60,
+  "time_min": 30,
+  "variations": {
+   "easier": "Use simple sled kites — they practically fly themselves.",
+   "harder": "Decorate plain kites first, then fly the art."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 7,
+  "categories": [
+   "pe-movement",
+   "outdoor",
+   "team-community"
+  ],
+  "group_max": 30,
+  "group_min": 8,
+  "id": "tug-of-war",
+  "location": [
+   "outdoor"
+  ],
+  "materials": [
+   {
+    "item": "long sturdy rope"
+   },
+   {
+    "item": "a center marker (bandana tied to the rope)"
+   }
+  ],
+  "name": "Tug of War",
+  "no_prep": true,
+  "safety": "No wrapping the rope around hands or bodies — grip only. Everyone wears closed-toe shoes. Stop immediately if anyone falls.",
+  "setup": "Lay the rope on grass (softer landings). Mark a center line on the ground. Split into two even teams.",
+  "steps": [
+   "Teams line up on opposite sides, gripping the rope with both hands.",
+   "On 'go,' pull! First team to drag the marker over their line wins the round.",
+   "Best of three rounds, then mix up the teams and go again.",
+   "Between rounds, talk strategy: timing the pull together beats raw strength.",
+   "End with an all-vs-coaches round if the adults are brave."
+  ],
+  "tagline": "Grip, plant your feet, and pull together — the purest team contest.",
+  "time_max": 25,
+  "time_min": 10,
+  "variations": {
+   "easier": "Shorter rope and smaller teams for younger kids.",
+   "harder": "Silent rounds — no talking, pull in rhythm by feel."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 7,
+  "categories": [
+   "icebreakers",
+   "quiet-focus"
+  ],
+  "group_max": 30,
+  "group_min": 5,
+  "id": "two-truths-and-a-lie",
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "paper and pencils (optional)"
+   }
+  ],
+  "name": "Two Truths and a Lie",
+  "no_prep": true,
+  "safety": null,
+  "setup": "Circle up. Everyone thinks of two true things about themselves and one made-up thing.",
+  "steps": [
+   "One player shares their three statements in any order.",
+   "The group discusses and votes on which one is the lie.",
+   "Reveal! The best liars get the biggest reactions.",
+   "Go around the circle — keep statements short so the game moves.",
+   "Award the 'best poker face' at the end."
+  ],
+  "tagline": "Two true facts, one fib — can the group spot the lie?",
+  "time_max": 30,
+  "time_min": 15,
+  "variations": {
+   "easier": "Do it in small groups of 5–6 instead of one big circle.",
+   "harder": "Theme it: two truths and a lie about summer, about food, about a talent."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 6,
+  "categories": [
+   "icebreakers",
+   "rainy-day"
+  ],
+  "group_max": 30,
+  "group_min": 8,
+  "id": "telephone-game",
+  "location": [
+   "indoor"
+  ],
+  "materials": [],
+  "name": "Telephone",
+  "no_prep": true,
+  "safety": null,
+  "setup": "Sit in a circle or a long line. The leader thinks of a tricky sentence.",
+  "steps": [
+   "The leader whispers a sentence to the first player — once, quietly.",
+   "Each player whispers what they heard to the next. No repeats allowed.",
+   "The last player says the sentence out loud. Compare it to the original.",
+   "The mangling is the point — laugh, then play again with a harder sentence.",
+   "Try a round where everyone must whisper in a silly voice."
+  ],
+  "tagline": "Whisper a sentence around the circle and see what survives.",
+  "time_max": 20,
+  "time_min": 10,
+  "variations": {
+   "easier": "Use short, simple sentences for younger groups.",
+   "harder": "Use tongue-twisters or sentences with similar-sounding words."
+  }
+ },
+ {
+  "age_max": 11,
+  "age_min": 5,
+  "categories": [
+   "icebreakers"
+  ],
+  "group_max": 25,
+  "group_min": 6,
+  "id": "name-chain",
+  "location": [
+   "indoor",
+   "outdoor"
+  ],
+  "materials": [],
+  "name": "Name Chain",
+  "no_prep": true,
+  "safety": null,
+  "setup": "Stand or sit in a circle. Everyone learns names fast with this one.",
+  "steps": [
+   "First player says their name plus a movement (e.g., 'Maya!' with a spin).",
+   "Second player repeats the first player's name and move, then adds their own.",
+   "Keep building: each player recites the whole chain before adding themselves.",
+   "If someone forgets, the group helps — no eliminations, just laughs.",
+   "End with the whole group doing the full chain together."
+  ],
+  "tagline": "Learn every name in the group in one silly, memorable chain.",
+  "time_max": 20,
+  "time_min": 10,
+  "variations": {
+   "easier": "Just names, no movements, for very young groups.",
+   "harder": "Add an alliterative adjective: 'Jumping Jayden, Dancing Dana.'"
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 6,
+  "categories": [
+   "icebreakers",
+   "rainy-day"
+  ],
+  "group_max": 40,
+  "group_min": 4,
+  "id": "would-you-rather-circle",
+  "location": [
+   "indoor"
+  ],
+  "materials": [],
+  "name": "Would You Rather",
+  "no_prep": true,
+  "safety": null,
+  "setup": "Circle up. The leader has a list of kid-friendly dilemmas ready (or the group invents them).",
+  "steps": [
+   "Leader asks: 'Would you rather have wings or gills?'",
+   "Everyone points left for option A, right for option B — then defend your pick.",
+   "Let kids take turns asking the next question.",
+   "Rule: no judging anyone's answer — the weirder the reasoning, the better.",
+   "End with everyone inventing one question for the group to vote on tomorrow."
+  ],
+  "tagline": "Impossible choices, hilarious defenses — the easiest discussion starter.",
+  "time_max": 25,
+  "time_min": 10,
+  "variations": {
+   "easier": "Give two silly options only — keep it light for young kids.",
+   "harder": "Add 'why' — everyone must defend their choice in one sentence."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 7,
+  "categories": [
+   "icebreakers",
+   "rainy-day"
+  ],
+  "group_max": 30,
+  "group_min": 6,
+  "id": "charades",
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "slips of paper with prompts"
+   },
+   {
+    "item": "a bowl or hat"
+   },
+   {
+    "item": "timer"
+   }
+  ],
+  "name": "Charades",
+  "no_prep": true,
+  "safety": null,
+  "setup": "Pre-write prompt slips (animals, actions, movie titles) or let teams write them. Split into two teams.",
+  "steps": [
+   "One player draws a slip and acts it out — no words, no sounds.",
+   "Their team shouts guesses. One minute per turn, then switch teams.",
+   "Score a point per correct guess. Wrong-team stealing: allow it for extra chaos.",
+   "Rotate actors so everyone gets a turn.",
+   "Final round: double points, and the actor picks their own prompt."
+  ],
+  "tagline": "Act it out, no talking — the timeless guessing game.",
+  "time_max": 35,
+  "time_min": 15,
+  "variations": {
+   "easier": "Use only animal prompts for younger players.",
+   "harder": "Theme rounds: books, movies, or 'things in this room.'"
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 6,
+  "categories": [
+   "icebreakers",
+   "rainy-day",
+   "crafts"
+  ],
+  "group_max": 30,
+  "group_min": 4,
+  "id": "pictionary",
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "whiteboard or large paper pad"
+   },
+   {
+    "item": "markers"
+   },
+   {
+    "item": "prompt slips"
+   },
+   {
+    "item": "timer"
+   }
+  ],
+  "name": "Pictionary",
+  "no_prep": true,
+  "safety": null,
+  "setup": "Split into two teams. One draws at a time while their team guesses.",
+  "steps": [
+   "The drawer picks a prompt slip and has 60 seconds to draw it — no letters, no numbers, no talking.",
+   "Their team shouts guesses. Correct guess scores a point.",
+   "Switch drawers each round so everyone draws.",
+   "Allow the other team to steal if time runs out — keeps everyone watching.",
+   "Championship round: the drawer uses their non-dominant hand."
+  ],
+  "tagline": "Draw it fast, guess it faster — no words allowed.",
+  "time_max": 35,
+  "time_min": 15,
+  "variations": {
+   "easier": "Show the category (animal, food, action) before drawing starts.",
+   "harder": "Draw with eyes closed for the final round."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 7,
+  "categories": [
+   "icebreakers",
+   "rainy-day",
+   "quiet-focus"
+  ],
+  "group_max": 25,
+  "group_min": 3,
+  "id": "twenty-questions",
+  "location": [
+   "indoor"
+  ],
+  "materials": [],
+  "name": "20 Questions",
+  "no_prep": true,
+  "safety": null,
+  "setup": "One player thinks of something (person, place, or thing). Everyone else asks yes-or-no questions.",
+  "steps": [
+   "The thinker announces the category: animal, vegetable, or mineral (person/place/thing works too).",
+   "Players take turns asking yes-or-no questions: 'Is it alive? Can you eat it?'",
+   "Count the questions out loud — 20 is the limit.",
+   "If the group guesses it, the winner becomes the next thinker.",
+   "If 20 questions run out, the thinker reveals it and picks again."
+  ],
+  "tagline": "Twenty yes-or-no questions to crack the mystery.",
+  "time_max": 25,
+  "time_min": 10,
+  "variations": {
+   "easier": "Give 25 questions and allow one free hint.",
+   "harder": "Ban the most obvious opening questions ('Is it alive?') after round one."
+  }
+ },
+ {
+  "age_max": 11,
+  "age_min": 6,
+  "categories": [
+   "pe-movement",
+   "rainy-day"
+  ],
+  "group_max": 25,
+  "group_min": 8,
+  "id": "musical-chairs",
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "chairs (one fewer than players)"
+   },
+   {
+    "item": "music player"
+   }
+  ],
+  "name": "Musical Chairs",
+  "no_prep": true,
+  "safety": "Walk quickly to chairs — no diving or shoving. Keep the chair circle stable.",
+  "setup": "Arrange chairs in a circle, facing outward, one fewer than the number of players.",
+  "steps": [
+   "Play music. Everyone walks (or dances) around the chairs.",
+   "When the music stops, everyone grabs a seat. One player is left standing — they are out.",
+   "Remove one chair and play again.",
+   "Last player seated wins.",
+   "Friendship variant: nobody is out — instead, everyone must SHARE the remaining chairs."
+  ],
+  "tagline": "Circle the chairs, grab a seat when the music stops.",
+  "time_max": 25,
+  "time_min": 10,
+  "variations": {
+   "easier": "Play the sharing variant so nobody sits out.",
+   "harder": "Chairs face alternating directions to make the scramble trickier."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 7,
+  "categories": [
+   "rainy-day",
+   "quiet-focus",
+   "crafts"
+  ],
+  "group_max": 30,
+  "group_min": 2,
+  "id": "story-dice",
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "dice (or printed story-dice sheets)"
+   },
+   {
+    "item": "paper and pencils"
+   }
+  ],
+  "name": "Story Dice",
+  "no_prep": true,
+  "safety": null,
+  "setup": "Make simple story dice: label each face of a die with a character, setting, object, or problem — or print a story-dice sheet with 6 options per category.",
+  "steps": [
+   "Each kid rolls three times: once for a character, once for a setting, once for a problem.",
+   "They have 10 minutes to write or draw a story using all three elements.",
+   "Volunteers read their stories aloud.",
+   "Vote on awards: funniest, most surprising, best twist.",
+   "Collect the stories into a group storybook."
+  ],
+  "tagline": "Roll the dice, get your ingredients, write the story.",
+  "time_max": 40,
+  "time_min": 20,
+  "variations": {
+   "easier": "Roll only two dice (character + setting) for younger writers.",
+   "harder": "Add a fourth die: the story must end with a plot twist."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 6,
+  "categories": [
+   "rainy-day"
+  ],
+  "group_max": 30,
+  "group_min": 2,
+  "id": "indoor-scavenger-hunt",
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "printed clue lists"
+   },
+   {
+    "item": "pencils"
+   }
+  ],
+  "name": "Indoor Scavenger Hunt",
+  "no_prep": true,
+  "safety": "Walking feet inside — no running. Stay in the allowed rooms.",
+  "setup": "Write a checklist of things to find without moving anything: something older than you, something with wheels, something blue, a book with an animal on the cover, something that ticks, the softest thing in the room.",
+  "steps": [
+   "Hand out checklists. Set the boundaries (which rooms) and the time limit.",
+   "Kids hunt in pairs, writing WHERE each item is — nothing gets moved.",
+   "Regroup and verify the trickiest finds together.",
+   "Bonus points for the most creative interpretation of a clue.",
+   "Reset the room together — leave it better than you found it."
+  ],
+  "tagline": "The rainy-day classic: find it, don't move it.",
+  "time_max": 35,
+  "time_min": 15,
+  "variations": {
+   "easier": "Use picture clues for younger hunters.",
+   "harder": "Make it a riddle hunt — each clue is a riddle leading to the next location."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 7,
+  "categories": [
+   "rainy-day",
+   "quiet-focus"
+  ],
+  "group_max": 40,
+  "group_min": 2,
+  "id": "mad-libs-live",
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "printed mad-libs stories (or write your own templates)"
+   },
+   {
+    "item": "pencils"
+   }
+  ],
+  "name": "Mad Libs Live",
+  "no_prep": true,
+  "safety": null,
+  "setup": "Print a few mad-libs templates, or write your own around a theme (a field trip, a holiday, the group itself).",
+  "steps": [
+   "Ask the group for words WITHOUT showing the story: 'Give me a silly noun! An adjective! A verb ending in -ing!'",
+   "Fill in the blanks as the words come in — the sillier, the better.",
+   "Read the finished story aloud with dramatic flair.",
+   "Let kids pair up and run their own mad libs for each other.",
+   "Collect the funniest ones for a group laugh-book."
+  ],
+  "tagline": "Fill in the blanks blind, then hear the ridiculous story you built.",
+  "time_max": 30,
+  "time_min": 15,
+  "variations": {
+   "easier": "Do one big group mad lib on the whiteboard.",
+   "harder": "Kids write their own mad-libs templates for a partner to fill in."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 7,
+  "categories": [
+   "rainy-day",
+   "stem",
+   "quiet-focus"
+  ],
+  "group_max": 25,
+  "group_min": 2,
+  "id": "card-tower-challenge",
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "decks of playing cards (one per team)"
+   }
+  ],
+  "name": "Card Tower Challenge",
+  "no_prep": true,
+  "safety": null,
+  "setup": "Clear table space. Each team gets one deck. No tape, no glue — cards only.",
+  "steps": [
+   "Challenge: build the tallest free-standing card tower in 15 minutes.",
+   "Show the basic technique once: lean two cards together into an A-frame, then bridge across the top.",
+   "Let teams build. Collapses are part of the game — rebuild fast.",
+   "Measure standing towers at the end of time. Tallest wins.",
+   "Debrief: what worked — wider bases, lighter touches, patience."
+  ],
+  "tagline": "One deck of cards, no tape, tallest tower wins.",
+  "time_max": 30,
+  "time_min": 15,
+  "variations": {
+   "easier": "Allow a flat table edge or book as a windbreak and base.",
+   "harder": "The tower must survive a gentle table tap to qualify."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 6,
+  "categories": [
+   "quiet-focus"
+  ],
+  "group_max": 40,
+  "group_min": 2,
+  "id": "calm-breathing-shapes",
+  "location": [
+   "indoor"
+  ],
+  "materials": [],
+  "name": "Calm Breathing Shapes",
+  "no_prep": true,
+  "safety": "This is a calm-down routine, not a medical exercise — keep it gentle and stop if anyone feels dizzy.",
+  "setup": "Everyone finds a comfortable seat. Dim the lights if you can. This works great as a transition after high-energy play.",
+  "steps": [
+   "Trace a square in the air with your finger: breathe IN while tracing up one side (4 counts).",
+   "Hold for 4 counts while tracing across the top.",
+   "Breathe OUT for 4 counts tracing down the other side. Hold 4 across the bottom.",
+   "Repeat for 5 rounds — slower each time.",
+   "End with one big stretch and a quiet moment. Notice how the room feels different."
+  ],
+  "tagline": "Trace shapes in the air while breathing in rhythm — a reset button for loud afternoons.",
+  "time_max": 15,
+  "time_min": 5,
+  "variations": {
+   "easier": "Just do the in-and-out tracing without counting for young kids.",
+   "harder": "Try triangle breathing (3 counts) or star tracing with 5 points."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 7,
+  "categories": [
+   "quiet-focus",
+   "crafts"
+  ],
+  "group_max": 30,
+  "group_min": 2,
+  "id": "exquisite-corpse-draw",
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "paper"
+   },
+   {
+    "item": "markers or crayons"
+   }
+  ],
+  "name": "Exquisite Corpse Drawing",
+  "no_prep": true,
+  "safety": null,
+  "setup": "Fold each paper into thirds. Each kid starts with one folded paper.",
+  "steps": [
+   "On the top third, draw a head — any head: human, monster, robot.",
+   "Fold the head section back so only two little neck lines show. Pass the paper left.",
+   "On the middle third, draw a torso connecting to the neck lines. Fold it back, pass left.",
+   "On the bottom third, draw legs and feet. Unfold the whole thing.",
+   "Reveal the creatures! The mismatched combos are always hilarious. Hang the best."
+  ],
+  "tagline": "Three artists, one folded paper, one gloriously weird creature.",
+  "time_max": 30,
+  "time_min": 15,
+  "variations": {
+   "easier": "Do just two sections (head + body) for younger kids.",
+   "harder": "Add a rule: each section must be a different art style (realistic, cartoon, robot)."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 8,
+  "categories": [
+   "quiet-focus"
+  ],
+  "group_max": 30,
+  "group_min": 2,
+  "id": "story-chain-writing",
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "paper and pencils"
+   },
+   {
+    "item": "a timer"
+   }
+  ],
+  "name": "Story Chain Writing",
+  "no_prep": true,
+  "safety": null,
+  "setup": "Everyone gets paper and a pencil. Agree on a starting sentence together.",
+  "steps": [
+   "Write the starting sentence at the top of your page. Set a timer for 2 minutes — write!",
+   "When time is up, pass your paper to the left.",
+   "Read what you received, then continue the story for 2 more minutes.",
+   "Repeat 4–5 rounds until papers come back around.",
+   "Read your (now wild) story aloud in small groups."
+  ],
+  "tagline": "Start a story, pass it on, and watch it take a left turn.",
+  "time_max": 35,
+  "time_min": 20,
+  "variations": {
+   "easier": "Pass every 3 minutes and allow drawing instead of writing.",
+   "harder": "Each round must end mid-sentence — the next writer has to finish the thought."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 7,
+  "categories": [
+   "quiet-focus",
+   "crafts"
+  ],
+  "group_max": 30,
+  "group_min": 2,
+  "id": "mandala-drawing",
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "paper"
+   },
+   {
+    "item": "compass or round objects to trace (cups, lids)"
+   },
+   {
+    "item": "markers, colored pencils, or gel pens"
+   }
+  ],
+  "name": "Mandala Drawing",
+  "no_prep": true,
+  "safety": null,
+  "setup": "Put on quiet background music. This is a calm, individual activity — perfect wind-down.",
+  "steps": [
+   "Trace a large circle on your paper using a cup or lid.",
+   "Divide it lightly into equal wedges with pencil lines from the center.",
+   "Starting from the center, draw one repeating pattern per ring — dots, petals, triangles, waves.",
+   "Work outward ring by ring, alternating colors.",
+   "Finish by outlining in black. Display the mandalas together — they look stunning as a group."
+  ],
+  "tagline": "Circles within circles — the most calming drawing there is.",
+  "time_max": 45,
+  "time_min": 20,
+  "variations": {
+   "easier": "Provide pre-drawn circle templates with the wedges already marked.",
+   "harder": "Use only two colors, or make a collaborative giant mandala on butcher paper."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 6,
+  "categories": [
+   "quiet-focus",
+   "outdoor"
+  ],
+  "group_max": 25,
+  "group_min": 2,
+  "id": "listening-walk",
+  "location": [
+   "outdoor"
+  ],
+  "materials": [
+   {
+    "item": "paper and pencils"
+   }
+  ],
+  "name": "Listening Walk",
+  "no_prep": true,
+  "safety": "Walk in pairs on a safe path. Stay aware of surroundings even while listening closely.",
+  "setup": "A quiet route works best — a garden, a park path, a calm street. Explain the one rule: this walk is about ears, not eyes.",
+  "steps": [
+   "Walk slowly in pairs. For the first 5 minutes, nobody talks — just listen.",
+   "Each person writes down every sound they hear: birds, wind, footsteps, distant cars, a dog barking.",
+   "Compare lists. Who heard the most? Who heard the quietest sound?",
+   "Walk back and listen for sounds you missed the first time.",
+   "Share the most surprising sound and where it came from."
+  ],
+  "tagline": "A walk where the only job is to listen — and write down everything you hear.",
+  "time_max": 30,
+  "time_min": 15,
+  "variations": {
+   "easier": "Give young kids a checklist of sounds to listen for (bird, car, wind, voices).",
+   "harder": "Sit still for 5 minutes with eyes closed, then map where each sound came from."
+  }
+ },
+ {
+  "age_max": 11,
+  "age_min": 6,
+  "categories": [
+   "seasons",
+   "crafts",
+   "outdoor"
+  ],
+  "group_max": 25,
+  "group_min": 2,
+  "id": "pinecone-bird-feeders",
+  "location": [
+   "outdoor",
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "large pinecones"
+   },
+   {
+    "item": "peanut butter or sunflower-seed butter"
+   },
+   {
+    "item": "birdseed"
+   },
+   {
+    "item": "string"
+   },
+   {
+    "item": "butter knives or popsicle sticks for spreading"
+   }
+  ],
+  "name": "Pinecone Bird Feeders",
+  "no_prep": false,
+  "safety": "Check for nut allergies first — use sunflower-seed butter if anyone is allergic. Wash hands after.",
+  "setup": "A winter favorite. Collect pinecones ahead of time or buy in bulk. Tie string to each cone first — it is fiddly work kids find frustrating.",
+  "steps": [
+   "Tie a loop of string around the top of each pinecone for hanging.",
+   "Spread peanut butter (or sunbutter) all over the cone, pushing it into the cracks.",
+   "Roll the sticky cone in birdseed until it is fully coated.",
+   "Hang the feeders on trees near a window where kids can watch.",
+   "Keep a bird-spotting log: which birds visit, and when?"
+  ],
+  "tagline": "Pinecones + peanut butter + birdseed = a winter buffet for local birds.",
+  "time_max": 40,
+  "time_min": 20,
+  "variations": {
+   "easier": "Use toilet-paper rolls instead of pinecones — easier to coat.",
+   "harder": "Turn it into a study: which seed mix attracts the most species?"
+  }
+ },
+ {
+  "age_max": 10,
+  "age_min": 5,
+  "categories": [
+   "seasons",
+   "crafts"
+  ],
+  "group_max": 30,
+  "group_min": 2,
+  "id": "ice-cube-painting",
+  "location": [
+   "indoor",
+   "outdoor"
+  ],
+  "materials": [
+   {
+    "item": "ice cube trays"
+   },
+   {
+    "item": "washable paint or food coloring"
+   },
+   {
+    "item": "popsicle sticks"
+   },
+   {
+    "item": "thick paper"
+   },
+   {
+    "item": "smocks or old shirts"
+   }
+  ],
+  "name": "Ice Cube Painting",
+  "no_prep": false,
+  "safety": "Washable paint only. Paints stain — smocks on, and protect tables.",
+  "setup": "The day before: mix a little washable paint into water in each ice tray slot, add a popsicle stick handle, and freeze. A summer-cooldown classic.",
+  "steps": [
+   "Hand out the frozen paint cubes — they melt fast, so work quickly.",
+   "Drag the melting cubes across thick paper. Colors blend where they meet.",
+   "Try layering: let one color dry slightly, then paint over it.",
+   "While paintings dry, talk about it: the melting IS the paintbrush.",
+   "Hang the finished art — the soft blended edges look like watercolors."
+  ],
+  "tagline": "Frozen paint cubes that melt into watercolor-style art — perfect for hot days.",
+  "time_max": 40,
+  "time_min": 20,
+  "variations": {
+   "easier": "Use food coloring instead of paint for zero-stain cleanup.",
+   "harder": "Paint on black paper — the colors pop dramatically."
+  }
+ },
+ {
+  "age_max": 12,
+  "age_min": 5,
+  "categories": [
+   "holidays",
+   "crafts"
+  ],
+  "group_max": 30,
+  "group_min": 2,
+  "id": "no-carve-pumpkin-decorating",
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "small pumpkins (one per kid)"
+   },
+   {
+    "item": "acrylic paint or paint pens"
+   },
+   {
+    "item": "stickers, googly eyes, pipe cleaners"
+   },
+   {
+    "item": "glue"
+   },
+   {
+    "item": "newspaper for tables"
+   }
+  ],
+  "name": "No-Carve Pumpkin Decorating",
+  "no_prep": false,
+  "safety": "No carving means no knives — that is the whole point. Paint pens over brushes for less mess.",
+  "setup": "A fall favorite with zero sharp tools. Cover tables, set out decorating supplies, hand out one pumpkin per kid.",
+  "steps": [
+   "Wipe pumpkins clean so paint sticks.",
+   "Plan a design: a face, a monster, a pattern, a mini scene.",
+   "Paint the base coat first and let it dry while planning details.",
+   "Add faces with paint pens, stick on googly eyes, glue on pipe-cleaner arms.",
+   "Line up the finished pumpkins as a fall display — vote on silliest, spookiest, most creative."
+  ],
+  "tagline": "All the pumpkin fun, zero knives — paint, stickers, and googly eyes.",
+  "time_max": 50,
+  "time_min": 25,
+  "variations": {
+   "easier": "Stickers and googly eyes only — no paint, no drying time.",
+   "harder": "Theme it: decorate your pumpkin as a book character."
+  }
+ }
+]

@@ -1,0 +1,59 @@
+# PIPELINE — how the Activity Vault library grows
+
+The Vault is a living archive. This doc defines the contribution format and the refresh process so every wave (human or agent) adds activities the same clean way.
+
+## Contribution format
+
+Every activity is one JSON object in `data/activities.json`. All fields required unless noted:
+
+```json
+{
+  "id": "paper-airplane-challenge",
+  "name": "Paper Airplane Challenge",
+  "tagline": "Fold, throw, measure, iterate — the cheapest engineering lesson there is.",
+  "categories": ["stem", "crafts"],
+  "age_min": 7,
+  "age_max": 12,
+  "group_min": 4,
+  "group_max": 40,
+  "time_min": 20,
+  "time_max": 45,
+  "location": ["indoor"],
+  "materials": [{"item": "printer paper (a stack)"}],
+  "no_prep": true,
+  "setup": "Clear a throwing lane...",
+  "steps": ["Show the group one basic dart fold..."],
+  "variations": {"easier": "...", "harder": "..."},
+  "safety": "Throw only down the lane..." 
+}
+```
+
+- `safety`: `null` when nothing beyond ordinary classroom sense applies. Never invent safety or medical claims.
+- `id`: lowercase slug, unique, matches `^[a-z0-9-]+$`.
+- `categories`: 1–3 ids from `data/categories.json`.
+- `materials`: `[]` means truly nothing needed (then `no_prep` must be `true`).
+
+## Content rules (standing)
+
+1. **Original words only.** Activities must be real, classic, public-domain concepts (folk games, standard crafts, textbook demos) described in our own words. Never copy text from other sites.
+2. **No invented claims.** Safety notes = common sense (scissors supervision, allergy checks, clear play space). No medical/therapeutic claims — `calm-breathing-shapes` is a calm-down routine, not therapy.
+3. **Teacher-real.** Every activity must be runnable by one adult with a normal classroom budget. If it needs exotic supplies, it doesn't belong.
+4. **Age-honest.** Ranges must reflect reality — no "ages 5–12" on something needing fine motor skills a 5-year-old doesn't have.
+
+## Refresh process (per wave)
+
+1. Pick a theme (e.g. "10 more rainy-day games", "summer water play", "5-minute fillers").
+2. Draft records in the contribution format above.
+3. Run `python3 scripts/build.py` — it validates schema, id uniqueness, category ids, ranges, and renders every page. Fix until `BUILD OK`.
+4. Run checks: `node --check` on JS, link check, JSON parse.
+5. Update counts in `WAVELOG.md` and commit.
+
+## Category balance targets
+
+Keep every category at 8+ activities. Current counts are printed by the build; if a category falls behind, the next wave prioritizes it.
+
+## Quality bar for new activities
+
+- Steps a substitute teacher could follow cold.
+- At least one variation in each direction (easier/harder).
+- `time_min` = the honest floor, not the optimistic one.

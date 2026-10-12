@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plan my week — Activity Vault</title>
+<meta name="description" content="Build your week's activity plan in seconds: pick days, slots, and constraints — get a no-repeat plan with printable cards.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#week-plan">Skip to week plan</a>
+<header class="site-header no-print">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Activity Vault home">
+      <span class="brand-mark" aria-hidden="true">🗂️</span>
+      <span class="brand-text">Activity <strong>Vault</strong></span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="index.html">Browse</a>
+      <a href="planner.html" aria-current="page">Plan my week</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" aria-labelledby="hero-title">
+    <span class="kicker no-print">📅 Plan my week</span>
+    <h1 id="hero-title">Your week, planned.</h1>
+    <p class="lede no-print">Pick your days and time slots, set your constraints, and the Vault builds a no-repeat week from matching activities — with a note on why each one fits.</p>
+  </section>
+
+  <form class="planner-form no-print" id="planner-form" onsubmit="return false;" aria-label="Week planner options">
+    <fieldset>
+      <legend>Days</legend>
+      <div class="day-row" role="group" aria-label="Days of the week">
+        <label class="chip"><input type="checkbox" name="day" value="Monday" checked> Mon</label>
+        <label class="chip"><input type="checkbox" name="day" value="Tuesday" checked> Tue</label>
+        <label class="chip"><input type="checkbox" name="day" value="Wednesday" checked> Wed</label>
+        <label class="chip"><input type="checkbox" name="day" value="Thursday" checked> Thu</label>
+        <label class="chip"><input type="checkbox" name="day" value="Friday" checked> Fri</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Slots &amp; limits</legend>
+      <div class="filter-group">
+        <label class="flabel" for="slots-per-day">Activity slots per day</label>
+        <select id="slots-per-day">
+          <option value="1">1 slot</option>
+          <option value="2" selected>2 slots</option>
+          <option value="3">3 slots</option>
+          <option value="4">4 slots</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label class="flabel" for="max-time">Max minutes per activity</label>
+        <select id="max-time">
+          <option value="">No limit</option>
+          <option value="15">15 min</option>
+          <option value="20">20 min</option>
+          <option value="30" selected>30 min</option>
+          <option value="45">45 min</option>
+          <option value="60">60 min</option>
+        </select>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Categories (optional)</legend>
+      <div class="chip-row" id="pcat-row"></div>
+    </fieldset>
+    <fieldset>
+      <legend>Constraints</legend>
+      <label class="toggle-row"><input type="checkbox" id="p-noprep"> Only no-prep activities</label>
+      <label class="toggle-row"><input type="checkbox" id="p-indoor"> Indoor only</label>
+      <label class="toggle-row"><input type="checkbox" id="p-repeats"> Allow repeats if I run out</label>
+    </fieldset>
+    <button class="btn" id="generate" type="button">✨ Generate my week</button>
+  </form>
+
+  <p id="plan-note" role="status" aria-live="polite"></p>
+  <div class="week-plan" id="week-plan" tabindex="-1"></div>
+
+  <div class="print-actions no-print" id="plan-actions" hidden>
+    <button class="btn" id="print-plan" type="button">🖨️ Print week plan</button>
+    <button class="btn btn-ghost" id="regenerate" type="button">🎲 Shuffle again</button>
+  </div>
+  <p class="no-print" style="margin-bottom:3rem;"><a href="index.html">← Back to browsing</a></p>
+</main>
+
+<footer class="site-footer no-print">
+  <div class="wrap"><p><strong>Activity Vault</strong> — the all-in-one activity archive for teachers &amp; after-school programs.</p></div>
+</footer>
+
+<script src="assets/planner.js" defer></script>
+</body>
+</html>

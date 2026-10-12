@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Activity Vault — the all-in-one activity archive for teachers</title>
+<meta name="description" content="Hundreds of real, classic activities for teachers and after-school programs. Filter by age, time, group size, and materials. Plan your week. Print one-page cards.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#cards">Skip to activities</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Activity Vault home">
+      <span class="brand-mark" aria-hidden="true">🗂️</span>
+      <span class="brand-text">Activity <strong>Vault</strong></span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="index.html" aria-current="page">Browse</a>
+      <a href="planner.html">Plan my week</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" aria-labelledby="hero-title">
+    <span class="kicker">For teachers &amp; after-school programs</span>
+    <h1 id="hero-title">Every great activity,<br>in one vault.</h1>
+    <p class="lede">The archive you wish existed: real, classic activities — games, crafts, STEM demos, wind-downs — filterable by age, time, group size, and what you actually have on hand. Pick a plan, print the cards, run the week.</p>
+    <div class="stats" aria-label="Library stats">
+      <div class="stat"><b id="stat-activities">–</b><span>activities</span></div>
+      <div class="stat"><b id="stat-categories">–</b><span>categories</span></div>
+      <div class="stat"><b id="stat-noprep">–</b><span>need zero prep</span></div>
+    </div>
+  </section>
+
+  <div class="browser">
+    <aside aria-label="Filters">
+      <form class="filters" id="filters" onsubmit="return false;">
+        <h2>Find an activity</h2>
+      </form>
+    </aside>
+    <section aria-label="Activities">
+      <div class="results-bar">
+        <p><strong id="result-count" role="status" aria-live="polite">Loading…</strong></p>
+        <a class="btn btn-small btn-ghost no-print" href="planner.html">📅 Plan my week</a>
+      </div>
+      <div class="card-grid" id="cards"></div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>Activity Vault</strong> — the all-in-one activity archive for teachers &amp; after-school programs. All activities are classic, public-domain concepts described in our own words.</p>
+    <p><a href="api/v1/activities.json">API</a> · <a href="llms.txt">llms.txt</a> · <a href="API.md">API docs</a></p>
+  </div>
+</footer>
+
+<script src="assets/app.js" defer></script>
+</body>
+</html>

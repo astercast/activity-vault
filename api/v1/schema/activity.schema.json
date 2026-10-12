@@ -1,0 +1,120 @@
+{
+ "$schema": "http://json-schema.org/draft-07/schema#",
+ "title": "Activity",
+ "type": "object",
+ "required": [
+  "id",
+  "name",
+  "tagline",
+  "categories",
+  "age_min",
+  "age_max",
+  "group_min",
+  "group_max",
+  "time_min",
+  "time_max",
+  "location",
+  "materials",
+  "no_prep",
+  "setup",
+  "steps",
+  "variations"
+ ],
+ "properties": {
+  "id": {
+   "type": "string",
+   "pattern": "^[a-z0-9-]+$"
+  },
+  "name": {
+   "type": "string"
+  },
+  "tagline": {
+   "type": "string"
+  },
+  "categories": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   },
+   "minItems": 1
+  },
+  "age_min": {
+   "type": "integer"
+  },
+  "age_max": {
+   "type": "integer"
+  },
+  "group_min": {
+   "type": "integer"
+  },
+  "group_max": {
+   "type": "integer"
+  },
+  "time_min": {
+   "type": "integer"
+  },
+  "time_max": {
+   "type": "integer"
+  },
+  "location": {
+   "type": "array",
+   "items": {
+    "enum": [
+     "indoor",
+     "outdoor"
+    ]
+   }
+  },
+  "materials": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "item"
+    ],
+    "properties": {
+     "item": {
+      "type": "string"
+     },
+     "note": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "no_prep": {
+   "type": "boolean"
+  },
+  "setup": {
+   "type": "string"
+  },
+  "steps": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   },
+   "minItems": 1
+  },
+  "variations": {
+   "type": "object",
+   "required": [
+    "easier",
+    "harder"
+   ],
+   "properties": {
+    "easier": {
+     "type": "string"
+    },
+    "harder": {
+     "type": "string"
+    }
+   }
+  },
+  "safety": {
+   "type": [
+    "string",
+    "null"
+   ]
+  }
+ }
+}

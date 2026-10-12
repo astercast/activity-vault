@@ -1,0 +1,68 @@
+{
+ "filters": {
+  "age": {
+   "type": "range",
+   "min": 5,
+   "max": 12,
+   "unit": "years",
+   "description": "Activity fits if the age range overlaps the selected age."
+  },
+  "time_available": {
+   "type": "select",
+   "options": [
+    15,
+    20,
+    30,
+    45,
+    60
+   ],
+   "unit": "minutes",
+   "description": "Activity fits if time_min <= selected minutes."
+  },
+  "group_size": {
+   "type": "range",
+   "min": 2,
+   "max": 40,
+   "unit": "kids",
+   "description": "Activity fits if the group range overlaps the selected size."
+  },
+  "categories": {
+   "type": "multiselect",
+   "options": [
+    "seasons",
+    "holidays",
+    "crafts",
+    "stem",
+    "pe-movement",
+    "team-community",
+    "icebreakers",
+    "outdoor",
+    "rainy-day",
+    "quiet-focus"
+   ]
+  },
+  "no_prep_only": {
+   "type": "boolean",
+   "description": "Only activities with no_prep=true."
+  },
+  "indoor_only": {
+   "type": "boolean",
+   "description": "Only activities with 'indoor' in location."
+  },
+  "outdoor_only": {
+   "type": "boolean",
+   "description": "Only activities with 'outdoor' in location."
+  },
+  "search": {
+   "type": "text",
+   "fields": [
+    "name",
+    "tagline",
+    "materials[].item",
+    "steps"
+   ],
+   "description": "Case-insensitive substring match across name, tagline, materials, steps."
+  }
+ },
+ "updated": "2026-10-12"
+}

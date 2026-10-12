@@ -1,0 +1,35 @@
+# Activity Vault
+
+The all-in-one activity archive for teachers and after-school program teachers.
+Hundreds of real, classic, public-domain activity concepts — filterable by age, time,
+group size, materials, and category. Plan-my-week planner. Printable one-page cards.
+
+## Categories
+- Seasons: 8 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
+- Holidays: 6 activities — Festive projects and games for the days the whole group looks forward to.
+- Crafts: 21 activities — Hands-on making: fold it, paint it, build it, take it home.
+- STEM: 11 activities — Experiments, engineering challenges, and satisfying science demos.
+- PE & Movement: 14 activities — Run, jump, dance — activities that burn off the wiggles.
+- Team & Community: 11 activities — Turn a group into a crew: cooperation, trust, and belonging.
+- Icebreakers: 11 activities — First-day friendly: learn names, laugh, and loosen up fast.
+- Outdoor: 18 activities — Fresh-air activities for fields, playgrounds, and nature walks.
+- Rainy Day: 12 activities — Stuck inside? These keep a roomful of kids happy without a gym.
+- Quiet & Focus: 19 activities — Wind-down worthy: calm, creative, individual or small-group.
+
+## API
+- api/v1/activities.json — full activity records
+- api/v1/categories.json — category definitions
+- api/v1/filters.json — filter configuration
+- api/v1/schema/activity.schema.json — JSON schema
+
+## Skills
+- skills/activity-finder.md
+- skills/week-planner.md
+- skills/rainy-day-rescue.md
+- skills/stem-demo-picker.md
+- skills/icebreaker-chooser.md
+- skills/quiet-focus-picker.md
+
+## Docs
+- API.md — full API reference
+- PIPELINE.md — how the library grows
