@@ -16,6 +16,8 @@
     noPrepOnly: false,
     indoorOnly: false,
     outdoorOnly: false,
+    copyFreeOnly: false,  // wave 14: only activities verified copy-free (zero printing)
+    noElimOnly: false,    // wave 14: only games verified no-elimination
     sortByRating: false, // sort by the visitor's OWN ratings (localStorage)
     topTen: false        // "My top 10": rated-only, top 10 by own stars
   };
@@ -71,6 +73,8 @@
     if (state.cats.size && !a.categories.some(function (c) { return state.cats.has(c); })) return false;
     if (state.tags.size && !(a.tags || []).some(function (t) { return state.tags.has(t); })) return false;
     if (state.noPrepOnly && !a.no_prep) return false;
+    if (state.copyFreeOnly && !a.copy_free) return false;
+    if (state.noElimOnly && !a.no_elimination) return false;
     if (state.indoorOnly && a.location.indexOf('indoor') === -1) return false;
     if (state.outdoorOnly && a.location.indexOf('outdoor') === -1) return false;
     if (state.q) {
@@ -313,9 +317,11 @@
     cg.appendChild(el('span', 'flabel', 'Category'));
     var row = el('div', 'chip-row');
     state.categories.forEach(function (c) {
-      row.appendChild(chipButton(c.glyph + ' ' + c.name, false, function (on) {
+      var cb = chipButton(c.glyph + ' ' + c.name, false, function (on) {
         if (on) state.cats.add(c.id); else state.cats.delete(c.id);
-      }, c.color));
+      }, c.color);
+      cb.setAttribute('data-cat', c.id);
+      row.appendChild(cb);
     });
     cg.appendChild(row);
     host.appendChild(cg);
@@ -393,7 +399,9 @@
     og.appendChild(el('span', 'flabel', 'Quick filters'));
     [['✓ Only no-prep', function (on) { state.noPrepOnly = on; }],
      ['⌂ Indoor only', function (on) { state.indoorOnly = on; if (on) { state.outdoorOnly = false; syncOutdoor(); } }],
-     ['🌳 Outdoor only', function (on) { state.outdoorOnly = on; if (on) { state.indoorOnly = false; syncIndoor(); } }]
+     ['🌳 Outdoor only', function (on) { state.outdoorOnly = on; if (on) { state.indoorOnly = false; syncIndoor(); } }],
+     ['🖨️ Copy-free', function (on) { state.copyFreeOnly = on; }],
+     ['♾️ No elimination', function (on) { state.noElimOnly = on; }]
     ].forEach(function (pair, idx) {
       var b = chipButton(pair[0], false, function (on) { pair[1](on); });
       b.dataset.toggleIdx = idx;
