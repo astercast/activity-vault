@@ -19,6 +19,8 @@ Running record of build waves. Newest first.
 - Logic test (node): computed age_span/time_span in the API match the picks; no-prep-lifesavers is 100% no_prep; last-10-minutes all run cold at ≤15 min floors; winter-party-night picks all winter-tagged except winter-gingerbread-build (name is the tag — Paper Gingerbread Houses, holidays/crafts, wave-6 winter pack)
 - Curator-note honesty check: every note is a one-line "why this one", no invented activities, original descriptions untouched
 
+**Wave 9 push resolution:** local commit `77cca42` pushed via `gh-push.py` (260 files, first attempt, exit 0, ~5 min) — remote commit `6d675939d84d03636590438982cc7de9044129f1`. Verified via GitHub API: recursive remote tree (313 files, not truncated) contains `collections.html`, `data/collections.json`, `api/v1/collections.json`, `api/v1/schema/collections.schema.json`, `api/v1/schema/collection.schema.json`, `assets/collections.js`, `scripts/write_collections.py`, `WAVELOG.md`, and `AGENT.md`.
+
 ## Wave 8 — 2026-10-11 — Ratings + "top rated" (interactive tools wave)
 
 **What shipped:**
