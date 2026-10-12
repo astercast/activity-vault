@@ -1,22 +1,22 @@
 ---
 name: balanced-week-builder
-description: Build an auto-balanced week of activities with an energy balance meter, prep caps, and no repeats — the Smart Weekly Planner 2.0 recipe.
+description: Build auto-balanced multi-week activity plans with an energy balance meter, prep caps, and no repeats — the Smart Weekly Planner 3.0 recipe (brain breaks, weather backups, supply lists, substitute kits).
 ---
 
-# Build a balanced week (Smart Weekly Planner 2.0)
+# Build a balanced week (Smart Weekly Planner 3.0)
 
 ## Use when
 
-A teacher wants a full week planned in one go **and** wants the energy balanced — "plan my week, no two sleepy days in a row" or "I need 3 days of camp for 8-year-olds, keep the prep light."
+A teacher wants a full week planned in one go **and** wants the energy balanced — "plan my week, no two sleepy days in a row" or "I need 3 days of camp for 8-year-olds, keep the prep light." Also for multi-week stretches: "plan the next three weeks, no repeats."
 
 ## Inputs
 
 - Program type: `after-school` (2 slots/day, ≤30 min, starts 3pm), `camp` (3 slots/day, ≤45 min, starts 9am), `classroom` (2 slots/day, ≤20 min, indoor, starts 1pm)
 - Age band: `prek-k` (3–6), `g1-2` (6–8), `g3-5` (8–11), `g6-8` (11–14), `all` (3–14)
-- Days to fill (default Mon–Fri; Sat/Sun supported), slots per day (1–4), minutes per activity
+- Days to fill (default Mon–Fri; Sat/Sun supported), **weeks to plan (1–4)**, slots per day (1–4), minutes per activity
 - Optional category subset; hard constraints: no-prep only, indoor only, allow repeats
 - Prep cap: max prep-heavy (non-`no_prep`) activities per week (default 2, 0 = no prep at all)
-- Optional seed: a collection id — curator picks go in first, gaps fill automatically
+- Optional seed: a collection id — curator picks go in first (week 1 only), gaps fill automatically
 
 ## Procedure
 
@@ -32,6 +32,14 @@ A teacher wants a full week planned in one go **and** wants the energy balanced 
    - 3+ slots with zero calm → "add a quiet landing"
 6. Week-level checks: 4+ filled slots with zero movement → "kids need to move"; 6+ with zero calm → "plan a calm landing".
 7. Output: day → slot → activity name + page link (`activity/<id>.html`) + one-line why-it-fits. Point the teacher at `planner.html` for the interactive version (drag-and-drop, per-slot swap, 🎲 surprise gap-fill, named saved plans, 📥 `.ics` export, 🔗 shareable `?plan=` link).
+
+## What's new in 3.0
+
+- **Multi-week plans (1–4 weeks):** one shared no-repeat set across all weeks (unless repeats are allowed) — `P.buildMultiWeek(activities, opts, catBucket, seed)`; `opts.weeks` is clamped to 1–4; collection seeds go in week 1 only. The `?plan=` payload is now v2 (`{version: 2, weeks: [{weekNum, days}]}`) — v1 payloads (flat `days`) still import as week 1. `.ics` shifts +7 days per extra week.
+- **⚡ Brain break of the day:** `brainBreak(pool, usedIds, byId, catBucket, seed)` — movement-bucket, `time_min <= 10`, unscheduled. Research-backed: microbreaks under 10 minutes counter cognitive fatigue (2026 engagement research).
+- **🌦️ Weather backups:** `needsWeatherBackup(a)` flags outdoor-only slots; `weatherBackupFor(...)` returns an indoor pick (no-prep first, then high-energy so kids still move). The UI offers a one-tap "Swap in backup".
+- **🛒 Supply list:** `aggregateSupplies(weeks, byId)` groups equivalent material strings ("printer paper (a stack)" + "printer paper" → one line), counts scheduled slots per item, lists the days — busiest items first. Copyable as text, rides along in the print deck.
+- **🆘 Substitute kit:** `subBackupFor(...)` — `no_prep` required (the 2026 "copy-free" gold standard), indoor + weather-proof preferred; the UI shows the first 3 steps so any adult can run it cold. Prints as its own section.
 
 ## Worked example
 

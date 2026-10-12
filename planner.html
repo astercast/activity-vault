@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Smart Weekly Planner 2.0 — Activity Vault</title>
-<meta name="description" content="Auto-build balanced weeks: pick a program, age group, and days — get a no-repeat week with an energy balance meter, drag-and-drop, swap, .ics export, and saveable plans.">
+<title>Smart Weekly Planner 3.0 — Activity Vault</title>
+<meta name="description" content="Auto-build balanced multi-week plans: pick a program, age group, and weeks — get no-repeat weeks with an energy balance meter, ⚡ brain breaks, 🌦️ weather backups, a 🛒 aggregated supply list, a 🆘 substitute kit, drag-and-drop, .ics export, and saveable plans.">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -31,9 +31,13 @@
 
 <main class="wrap">
   <section class="hero" aria-labelledby="hero-title">
-    <span class="kicker no-print">📅 Smart Weekly Planner 2.0</span>
-    <h1 id="hero-title">Your week, auto-built and balanced.</h1>
-    <p class="lede no-print">Pick a program, an age group, and your days — the Vault deals a no-repeat week from 238 real activities, balances the energy across every day, and warns you when a day is lopsided. Then drag it into shape.</p>
+    <span class="kicker no-print">📅 Smart Weekly Planner 3.0</span>
+    <h1 id="hero-title">Your weeks, auto-built and balanced.</h1>
+    <p class="lede no-print">Pick a program, an age group, and up to four weeks — the Vault deals no-repeat weeks from 326 real activities, balances the energy across every day, and warns you when a day is lopsided. Every day gets a ⚡ brain-break idea, every outdoor slot a 🌦️ weather backup, every plan a 🛒 supply list and a 🆘 substitute kit. Then drag it into shape.</p>
+    <p class="no-print calm-row">
+      <button class="btn btn-ghost btn-small" id="calm-toggle" type="button" aria-pressed="false">🍃 Calm mode: off</button>
+      <span class="muted">Turns off page animations and motion — your call, not your OS setting.</span>
+    </p>
   </section>
 
   <p class="plan-note no-print">📚 Short on inspiration? <a href="collections.html">Start from a curated collection</a> — or seed the planner straight from one: every collection has a “🗓️ Plan a week from this” button.</p>
@@ -62,6 +66,16 @@
     </fieldset>
     <fieldset>
       <legend>Days &amp; time</legend>
+      <div class="filter-group">
+        <label class="flabel" for="p-weeks">Weeks to plan</label>
+        <select id="p-weeks">
+          <option value="1" selected>1 week</option>
+          <option value="2">2 weeks</option>
+          <option value="3">3 weeks</option>
+          <option value="4">4 weeks</option>
+        </select>
+        <p class="field-hint">Multi-week plans never repeat an activity across weeks unless you allow repeats.</p>
+      </div>
       <div class="day-row" role="group" aria-label="Days of the week">
         <label class="chip"><input type="checkbox" name="day" value="Monday" checked> Mon</label>
         <label class="chip"><input type="checkbox" name="day" value="Tuesday" checked> Tue</label>
@@ -117,7 +131,9 @@
   </form>
 
   <p id="plan-note" role="status" aria-live="polite"></p>
+  <nav class="plan-sections no-print" id="plan-sections" aria-label="Plan sections" hidden></nav>
   <div class="week-plan" id="week-plan" tabindex="-1"></div>
+  <div class="plan-extras no-print" id="plan-extras"></div>
 
   <div class="print-actions no-print" id="plan-actions" hidden>
     <button class="btn" id="print-plan" type="button">🖨️ Print week plan</button>

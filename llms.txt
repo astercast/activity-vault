@@ -6,11 +6,11 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
 
 ## Categories
 - Seasons: 68 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
-- Holidays: 62 activities — Festive projects and games for the days the whole group looks forward to.
-- Crafts: 102 activities — Hands-on making: fold it, paint it, build it, take it home.
-- STEM: 80 activities — Experiments, engineering challenges, and satisfying science demos.
+- Holidays: 65 activities — Festive projects and games for the days the whole group looks forward to.
+- Crafts: 103 activities — Hands-on making: fold it, paint it, build it, take it home.
+- STEM: 83 activities — Experiments, engineering challenges, and satisfying science demos.
 - PE & Movement: 69 activities — Run, jump, dance — activities that burn off the wiggles.
-- Team & Community: 73 activities — Turn a group into a crew: cooperation, trust, and belonging.
+- Team & Community: 74 activities — Turn a group into a crew: cooperation, trust, and belonging.
 - Icebreakers: 33 activities — First-day friendly: learn names, laugh, and loosen up fast.
 - Outdoor: 70 activities — Fresh-air activities for fields, playgrounds, and nature walks.
 - Rainy Day: 35 activities — Stuck inside? These keep a roomful of kids happy without a gym.
@@ -28,7 +28,7 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
 
 ## Skills
 - skills/activity-finder.md — Find the right activity fast using age, time, group size, and materials-on-hand filters.
-- skills/balanced-week-builder.md — Build an auto-balanced week of activities with an energy balance meter, prep caps, and no repeats — the Smart Weekly Planner 2.0 recipe.
+- skills/balanced-week-builder.md — Build auto-balanced multi-week activity plans with an energy balance meter, prep caps, and no repeats — the Smart Weekly Planner 3.0 recipe (brain breaks, weather backups, supply lists, substitute kits).
 - skills/halloween-party-planner.md — Turn party constraints into a timed station-rotation plan from seasonal activities. Covers the Halloween, winter, spring, and summer party presets.
 - skills/icebreaker-chooser.md — Pick first-day and new-group icebreakers matched to group size and shyness level.
 - skills/no-prep-rescue.md — Grab-and-go activities that need zero prep and zero (or near-zero) materials.
@@ -57,6 +57,10 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
 - summer.html — Summer hub: the summer 2027 pack's water play, outdoor games,
   summer crafts, beat-the-heat indoor backups, and camp + July 4th activities,
   plus the Summer Splash collection and a summer party-theme shortcut.
+- fieldtrip.html — Field Trip Planner: destination, group size, and trip length
+  become a clock-time timeline, chaperone and buddy-pair math, a budget estimate,
+  on-site activity ideas matched from the real library, bus-ride activities from the
+  field-trip-bus-ride collection, and printable permission-slip + pack checklists.
 - thanksgiving.html — Thanksgiving hub: the Thanksgiving 2026 pack's gratitude
   crafts, harvest games, Thanksgiving STEM, gratitude and friendsgiving activities,
   and giving-back projects, plus the Grateful Gathering collection and a

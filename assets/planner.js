@@ -1,6 +1,11 @@
-/* Activity Vault — Smart Weekly Planner 2.0.
-   Auto-build balanced weeks, balance meter, drag-and-drop, swap, surprise-fill,
-   named saved plans, .ics export, collection seeding, shareable ?plan= links. */
+/* Activity Vault — Smart Weekly Planner 3.0.
+   Auto-build balanced weeks (1–4), balance meter, drag-and-drop, swap,
+   surprise-fill, named saved plans, .ics export, collection seeding,
+   shareable ?plan= links — plus 3.0: multi-week no-repeat dealing,
+   ⚡ brain breaks, 🌦️ weather-aware indoor backups, 🛒 supply-list
+   aggregation, 🆘 substitute kit per slot.
+   Design craft: container queries, view transitions (reduced-motion safe),
+   scroll-driven card entrance, sticky plan section nav, DnD affordances. */
 (function () {
   'use strict';
 
@@ -11,8 +16,8 @@
   var state = {
     activities: [], categories: [], catMap: {}, actmap: {},
     catBucket: {}, collections: [],
-    plan: null,   // {version, name, programType, maxTime, days:[{day, slots:[{slot, activityId}]}]}
-    opts: null,   // last-used constraint snapshot (drives swap/fill)
+    plan: null,   // {version:2, name, programType, maxTime, ageBand, weeks:[{weekNum, days:[...]}]}
+    opts: null,   // last-used constraint snapshot (drives swap/fill/backups)
     pool: [],
     notes: []
   };
@@ -24,6 +29,26 @@
     return e;
   }
   function catName(id) { return (state.catMap[id] || {}).name || id; }
+  function reduceMotion() {
+    return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  }
+  function calmMode() {
+    return document.documentElement.hasAttribute('data-calm');
+  }
+
+  /* View-transition-safe re-render: crossfades slot changes, skipped for
+     reduced-motion users, calm-mode users, and older browsers (plain render). */
+  function transitionRender(fn) {
+    if (!reduceMotion() && !calmMode() && document.startViewTransition) {
+      document.startViewTransition(function () { fn(); });
+    } else { fn(); }
+  }
+
+  function refocus(key) {
+    if (!key) return;
+    var b = document.querySelector('[data-fkey="' + key + '"]');
+    if (b && b.focus) b.focus({ preventScroll: true });
+  }
 
   /* ---------------- form ---------------- */
 
@@ -59,6 +84,7 @@
     }
     return {
       days: days.length ? days : DAYS7.slice(0, 5),
+      weeks: P.clampWeeks(document.getElementById('p-weeks').value),
       slotsPerDay: slots,
       maxTime: maxTime,
       ageBand: document.getElementById('p-ageband').value,
@@ -77,6 +103,7 @@
   function setForm(opts) {
     document.getElementById('p-program').value = opts.programType || 'after-school';
     document.getElementById('p-ageband').value = opts.ageBand || 'all';
+    document.getElementById('p-weeks').value = String(P.clampWeeks(opts.weeks || 1));
     document.getElementById('slots-per-day').value = String(opts.slotsPerDay || 2);
     document.getElementById('max-time').value = opts.maxTime ? String(opts.maxTime) : '30';
     document.getElementById('p-prepcap').value = String(opts.maxPrepHeavy != null ? opts.maxPrepHeavy : 2);
@@ -106,6 +133,8 @@
     state.pool = P.filterPool(state.activities, opts);
     var out = document.getElementById('week-plan');
     out.innerHTML = '';
+    document.getElementById('plan-extras').innerHTML = '';
+    document.getElementById('plan-sections').hidden = true;
     state.notes = [];
 
     if (!state.pool.length) {
@@ -115,29 +144,33 @@
       return;
     }
 
-    var res = P.buildWeek(state.activities, opts, state.catBucket);
-    state.notes = res.notes;
+    var res = P.buildMultiWeek(state.activities, opts, state.catBucket);
     state.plan = {
-      version: 1,
+      version: 2,
       name: document.getElementById('plan-name-input') &&
             document.getElementById('plan-name-input').value.trim() || defaultPlanName(),
       programType: opts.programType,
       maxTime: opts.maxTime,
       ageBand: opts.ageBand,
-      days: res.days
+      weeks: res.weeks
     };
 
-    var totalSlots = opts.days.length * opts.slotsPerDay;
-    var filled = 0;
-    res.days.forEach(function (d) {
-      d.slots.forEach(function (s) { if (s.activityId) filled++; });
+    var totalSlots = 0, filled = 0, seedPlaced = 0, seedSkipped = 0;
+    res.weeks.forEach(function (w) {
+      seedPlaced += w.seedPlaced; seedSkipped += w.seedSkipped;
+      (w.notes || []).forEach(function (n) { state.notes.push('Week ' + w.weekNum + ': ' + n); });
+      w.days.forEach(function (d) {
+        d.slots.forEach(function (s) { totalSlots++; if (s.activityId) filled++; });
+      });
     });
     var msg = notePrefix || '';
-    msg += 'Planned ' + filled + ' of ' + totalSlots + ' slots from ' + state.pool.length + ' matching activities.';
-    if (res.seedPlaced) msg += ' Seeded ' + res.seedPlaced + ' curator pick' + (res.seedPlaced > 1 ? 's' : '') + '.';
-    if (res.seedSkipped) msg += ' ' + res.seedSkipped + ' collection pick' + (res.seedSkipped > 1 ? 's' : '') +
+    msg += 'Planned ' + filled + ' of ' + totalSlots + ' slots across ' + res.weeks.length +
+      (res.weeks.length === 1 ? ' week' : ' weeks') + ' from ' + state.pool.length +
+      ' matching activities — no repeats between weeks.';
+    if (seedPlaced) msg += ' Seeded ' + seedPlaced + ' curator pick' + (seedPlaced > 1 ? 's' : '') + ' into week 1.';
+    if (seedSkipped) msg += ' ' + seedSkipped + ' collection pick' + (seedSkipped > 1 ? 's' : '') +
       ' didn\u2019t fit your filters — filled from the library instead.';
-    if (res.notes.length) msg += ' ' + res.notes.join(' ');
+    if (state.notes.length) msg += ' ' + state.notes.join(' ');
     status(msg);
 
     renderPlan();
@@ -148,6 +181,19 @@
   function defaultPlanName() {
     var d = new Date();
     return 'Week of ' + d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+  }
+
+  /* All scheduled ids across every week — the shared no-repeat set for
+     swaps, backups, and brain breaks. */
+  function usedIds() {
+    var u = {};
+    if (!state.plan) return u;
+    state.plan.weeks.forEach(function (w) {
+      w.days.forEach(function (d) {
+        d.slots.forEach(function (s) { if (s.activityId) u[s.activityId] = true; });
+      });
+    });
+    return u;
   }
 
   /* ---------------- rendering ---------------- */
@@ -172,11 +218,13 @@
   }
 
   function slotWhy(a) { return P.whyFits(a, catName); }
+  function fkey(kind, wi, di, slotNum) { return kind + '-w' + wi + '-d' + di + '-s' + slotNum; }
 
-  function renderSlot(d, s, dayIdx) {
+  function renderSlot(w, d, s, wi, di) {
     var li = el('li', 'slot');
     li.draggable = true;
-    li.dataset.day = String(dayIdx);
+    li.dataset.week = String(wi);
+    li.dataset.day = String(di);
     li.dataset.slot = String(s.slot);
     li.setAttribute('aria-label', 'Slot ' + s.slot + (s.activityId ? ': ' + state.actmap[s.activityId].name : ' (empty)'));
 
@@ -210,26 +258,30 @@
     if (a) {
       var swap = el('button', 'btn btn-small btn-ghost', '🔀 Swap');
       swap.type = 'button';
+      swap.setAttribute('data-fkey', fkey('swap', wi, di, s.slot));
       swap.setAttribute('aria-label', 'Swap ' + a.name + ' for a different activity');
-      swap.addEventListener('click', function () { swapSlot(dayIdx, s.slot); });
+      swap.addEventListener('click', function () { swapSlot(wi, di, s.slot); });
       acts.appendChild(swap);
     }
     var up = el('button', 'btn btn-small btn-ghost', '↑');
     up.type = 'button';
+    up.setAttribute('data-fkey', fkey('up', wi, di, s.slot));
     up.setAttribute('aria-label', 'Move slot ' + s.slot + ' up');
-    up.addEventListener('click', function () { moveSlot(dayIdx, s.slot, -1); });
+    up.addEventListener('click', function () { moveSlot(wi, di, s.slot, -1); });
     var down = el('button', 'btn btn-small btn-ghost', '↓');
     down.type = 'button';
+    down.setAttribute('data-fkey', fkey('down', wi, di, s.slot));
     down.setAttribute('aria-label', 'Move slot ' + s.slot + ' down');
-    down.addEventListener('click', function () { moveSlot(dayIdx, s.slot, 1); });
+    down.addEventListener('click', function () { moveSlot(wi, di, s.slot, 1); });
     acts.appendChild(up);
     acts.appendChild(down);
     body.appendChild(acts);
     li.appendChild(body);
 
     // Drag-and-drop reorder within the day (keyboard users get the ↑/↓ buttons).
+    // Grip affordance: the whole row grabs; .drag-over shows a drop bar.
     li.addEventListener('dragstart', function (ev) {
-      ev.dataTransfer.setData('text/plain', dayIdx + ':' + s.slot);
+      ev.dataTransfer.setData('text/plain', wi + ':' + di + ':' + s.slot);
       ev.dataTransfer.effectAllowed = 'move';
       li.classList.add('dragging');
     });
@@ -246,97 +298,364 @@
     li.addEventListener('drop', function (ev) {
       ev.preventDefault();
       var parts = ev.dataTransfer.getData('text/plain').split(':');
-      dropSlot(dayIdx, parseInt(parts[1], 10), s.slot);
+      if (parseInt(parts[0], 10) === wi && parseInt(parts[1], 10) === di) {
+        dropSlot(wi, di, parseInt(parts[2], 10), s.slot);
+      }
     });
     return li;
   }
 
-  function renderPlan() {
-    var out = document.getElementById('week-plan');
-    out.innerHTML = '';
-    if (!state.plan) return;
-
-    // Week-level balance summary + warnings.
-    var weekBal = el('div', 'week-balance');
+  function weekBalance(weeks) {
     var wcounts = {};
     P.BUCKET_IDS.forEach(function (b) { wcounts[b] = 0; });
     var wtotal = 0;
-    state.plan.days.forEach(function (d) {
-      var b = P.balanceOf(d.slots, state.actmap, state.catBucket);
-      P.BUCKET_IDS.forEach(function (k) { wcounts[k] += b.counts[k]; });
-      wtotal += b.total;
+    weeks.forEach(function (w) {
+      w.days.forEach(function (d) {
+        var b = P.balanceOf(d.slots, state.actmap, state.catBucket);
+        P.BUCKET_IDS.forEach(function (k) { wcounts[k] += b.counts[k]; });
+        wtotal += b.total;
+      });
     });
-    weekBal.appendChild(el('h3', null, 'Week balance'));
-    weekBal.appendChild(meterBar({ counts: wcounts, total: wtotal }));
-    var wwarn = P.weekWarnings(state.plan.days, state.actmap, state.catBucket);
-    if (wwarn.length) {
-      var wul = el('ul', 'meter-warnings');
-      wwarn.forEach(function (w) { wul.appendChild(el('li', null, '⚠️ ' + w)); });
-      weekBal.appendChild(wul);
-    }
-    out.appendChild(weekBal);
-
-    state.plan.days.forEach(function (d, dayIdx) {
-      var card = el('section', 'day-card');
-      card.setAttribute('aria-label', d.day + ' plan');
-      card.appendChild(el('h3', null, d.day));
-      var bal = P.balanceOf(d.slots, state.actmap, state.catBucket);
-      card.appendChild(meterBar(bal));
-      var legend = el('p', 'meter-legend',
-        P.BUCKETS.map(function (b) { return b.glyph + ' ' + b.label + ': ' + bal.counts[b.id]; }).join(' · '));
-      card.appendChild(legend);
-      var warns = P.dayWarnings(bal, d.day);
-      if (warns.length) {
-        var ul = el('ul', 'meter-warnings');
-        warns.forEach(function (w) { ul.appendChild(el('li', null, '⚠️ ' + w)); });
-        card.appendChild(ul);
-      }
-      var list = el('ol', 'slot-list');
-      list.setAttribute('aria-label', d.day + ' slots');
-      d.slots.forEach(function (s) { list.appendChild(renderSlot(d, s, dayIdx)); });
-      card.appendChild(list);
-      out.appendChild(card);
-    });
+    return { counts: wcounts, total: wtotal };
   }
 
-  function refreshDay(dayIdx) {
-    renderPlan();
-    buildPrintDeck();
+  function warningsList(warns) {
+    var wul = el('ul', 'meter-warnings');
+    warns.forEach(function (w) { wul.appendChild(el('li', null, '⚠️ ' + w)); });
+    return wul;
+  }
+
+  function renderPlan() {
+    var out = document.getElementById('week-plan');
+    var extras = document.getElementById('plan-extras');
+    var nav = document.getElementById('plan-sections');
+    out.innerHTML = '';
+    extras.innerHTML = '';
+    if (!state.plan) { nav.hidden = true; return; }
+
+    var used = usedIds();
+
+    // Sticky section nav: week anchors + the three 3.0 extras.
+    nav.innerHTML = '';
+    var navLabel = el('span', 'plan-sections-label', 'Jump to:');
+    navLabel.id = 'plan-sections-label';
+    nav.appendChild(navLabel);
+    var navRow = el('div', 'chip-row');
+    navRow.setAttribute('role', 'group');
+    navRow.setAttribute('aria-labelledby', 'plan-sections-label');
+    state.plan.weeks.forEach(function (w) {
+      var a = el('a', 'chip chip-link', 'Week ' + w.weekNum);
+      a.href = '#week-' + w.weekNum;
+      navRow.appendChild(a);
+    });
+    var weatherRows = collectWeatherRows();
+    if (weatherRows.length) {
+      var wa = el('a', 'chip chip-link', '🌦️ Weather backups');
+      wa.href = '#weather-section';
+      navRow.appendChild(wa);
+    }
+    var sa = el('a', 'chip chip-link', '🛒 Supply list');
+    sa.href = '#supply-section';
+    navRow.appendChild(sa);
+    var ka = el('a', 'chip chip-link', '🆘 Substitute kit');
+    ka.href = '#subkit-section';
+    navRow.appendChild(ka);
+    nav.appendChild(navRow);
+    nav.hidden = false;
+
+    // Week sections.
+    state.plan.weeks.forEach(function (w, wi) {
+      var sec = el('section', 'week-section');
+      sec.setAttribute('aria-labelledby', 'week-' + w.weekNum + '-h');
+      var h = el('h2', 'week-head');
+      h.id = 'week-' + w.weekNum + '-h';
+      var anchor = el('span', 'week-head-anchor', 'Week ' + w.weekNum);
+      anchor.id = 'week-' + w.weekNum;
+      anchor.tabIndex = -1;
+      h.appendChild(anchor);
+      var filled = 0, total = 0;
+      w.days.forEach(function (d) {
+        d.slots.forEach(function (s) { total++; if (s.activityId) filled++; });
+      });
+      h.appendChild(el('span', 'week-head-sub', ' · ' + filled + ' of ' + total + ' slots planned'));
+      sec.appendChild(h);
+
+      var weekBal = el('div', 'week-balance');
+      weekBal.appendChild(el('h3', null, 'Week ' + w.weekNum + ' balance'));
+      var wb = weekBalance([w]);
+      weekBal.appendChild(meterBar(wb));
+      var wwarn = [];
+      w.days.forEach(function (d) {
+        var b = P.balanceOf(d.slots, state.actmap, state.catBucket);
+        wwarn = wwarn.concat(P.dayWarnings(b, d.day));
+      });
+      wwarn = wwarn.concat(P.weekWarnings(w.days, state.actmap, state.catBucket));
+      if (wwarn.length) weekBal.appendChild(warningsList(wwarn));
+      sec.appendChild(weekBal);
+
+      w.days.forEach(function (d, di) {
+        var card = el('section', 'day-card');
+        card.setAttribute('aria-label', 'Week ' + w.weekNum + ', ' + d.day + ' plan');
+        card.appendChild(el('h3', null, d.day));
+        var bal = P.balanceOf(d.slots, state.actmap, state.catBucket);
+        card.appendChild(meterBar(bal));
+        var legend = el('p', 'meter-legend',
+          P.BUCKETS.map(function (b) { return b.glyph + ' ' + b.label + ': ' + bal.counts[b.id]; }).join(' · '));
+        card.appendChild(legend);
+        // ⚡ Brain break of the day — research-backed <10 min movement reset.
+        var bbId = P.brainBreak(state.pool, used, state.actmap, state.catBucket, wi * 100 + di + 11);
+        if (bbId) {
+          var bb = state.actmap[bbId];
+          var bbLine = el('p', 'brain-break');
+          bbLine.appendChild(document.createTextNode('⚡ Brain-break idea: '));
+          var bbLink = el('a', null, bb.name);
+          bbLink.href = 'activity/' + bb.id + '.html';
+          bbLine.appendChild(bbLink);
+          bbLine.appendChild(document.createTextNode(' — runs cold in ' + bb.time_min + ' min or less.'));
+          card.appendChild(bbLine);
+        }
+        var list = el('ol', 'slot-list');
+        list.setAttribute('aria-label', d.day + ' slots');
+        d.slots.forEach(function (s) { list.appendChild(renderSlot(w, d, s, wi, di)); });
+        card.appendChild(list);
+        sec.appendChild(card);
+      });
+      out.appendChild(sec);
+    });
+
+    renderExtras(extras, weatherRows, used);
+  }
+
+  /* ---------------- 3.0 extras: weather, supplies, sub kit ---------------- */
+
+  function collectWeatherRows() {
+    var rows = [];
+    if (!state.plan) return rows;
+    var used = usedIds();
+    state.plan.weeks.forEach(function (w, wi) {
+      w.days.forEach(function (d, di) {
+        d.slots.forEach(function (s) {
+          var a = s.activityId && state.actmap[s.activityId];
+          if (!a || !P.needsWeatherBackup(a)) return;
+          var backupId = P.weatherBackupFor(a, state.pool, used, state.actmap,
+            state.catBucket, state.opts, wi * 1000 + di * 10 + s.slot);
+          rows.push({ wi: wi, di: di, slot: s.slot, weekNum: w.weekNum,
+                      day: d.day, activity: a, backupId: backupId });
+        });
+      });
+    });
+    return rows;
+  }
+
+  function renderExtras(extras, weatherRows, used) {
+    // 🌦️ Weather backups — every outdoor-only slot gets an indoor plan B.
+    if (weatherRows.length) {
+      var wsec = el('section', 'extra-section');
+      wsec.setAttribute('aria-labelledby', 'weather-h');
+      var wh = el('h2', 'extra-head');
+      wh.id = 'weather-h';
+      var wanchor = el('span', null, '🌦️ Weather backups');
+      wanchor.id = 'weather-section';
+      wanchor.tabIndex = -1;
+      wh.appendChild(wanchor);
+      wsec.appendChild(wh);
+      wsec.appendChild(el('p', 'muted',
+        'Rain happens. Every outdoor-only slot below already has an indoor backup picked — one tap swaps it in.'));
+      var wul = el('ul', 'backup-list');
+      weatherRows.forEach(function (r) {
+        var li = el('li', 'backup-row');
+        li.appendChild(el('span', 'backup-from',
+          '⛈️ ' + r.activity.name + ' (Week ' + r.weekNum + ' ' + r.day + ', slot ' + r.slot + ') is outdoor-only.'));
+        if (r.backupId) {
+          var b = state.actmap[r.backupId];
+          li.appendChild(el('span', 'backup-to', ' → Indoor backup: ' + b.name +
+            (b.no_prep ? ' (no prep)' : '') + ' — '));
+          var swapIn = el('button', 'btn btn-small', 'Swap in backup');
+          swapIn.type = 'button';
+          swapIn.setAttribute('aria-label',
+            'Swap ' + r.activity.name + ' for indoor backup ' + b.name);
+          (function (row, bid) {
+            swapIn.addEventListener('click', function () { swapInBackup(row, bid); });
+          })(r, r.backupId);
+          li.appendChild(swapIn);
+        } else {
+          li.appendChild(el('span', 'backup-to muted',
+            ' → No indoor backup fit your filters — keep a rainy-day fallback handy.'));
+        }
+        wul.appendChild(li);
+      });
+      wsec.appendChild(wul);
+      extras.appendChild(wsec);
+    }
+
+    // 🛒 Supply list — one aggregated prep list for the whole plan.
+    var supplies = P.aggregateSupplies(state.plan.weeks, state.actmap);
+    var ssec = el('section', 'extra-section');
+    ssec.setAttribute('aria-labelledby', 'supply-h');
+    var sh = el('h2', 'extra-head');
+    sh.id = 'supply-h';
+    var sanchor = el('span', null, '🛒 Supply list');
+    sanchor.id = 'supply-section';
+    sanchor.tabIndex = -1;
+    sh.appendChild(sanchor);
+    ssec.appendChild(sh);
+    if (!supplies.length) {
+      ssec.appendChild(el('p', 'muted', 'No materials needed — this whole plan is copy-free. 🎉'));
+    } else {
+      ssec.appendChild(el('p', 'muted',
+        'Everything below, counted across ' + state.plan.weeks.length +
+        (state.plan.weeks.length === 1 ? ' week' : ' weeks') +
+        '. Busiest items first — grab these and the week is prepped.'));
+      var sul = el('ul', 'supply-list');
+      supplies.slice(0, 40).forEach(function (g) {
+        var li = el('li', 'supply-row');
+        li.appendChild(el('span', 'supply-item', g.display));
+        li.appendChild(el('span', 'supply-count',
+          ' × ' + g.count + ' activit' + (g.count === 1 ? 'y' : 'ies')));
+        li.appendChild(el('span', 'supply-days', ' — ' + g.dayLabels.join(', ')));
+        sul.appendChild(li);
+      });
+      ssec.appendChild(sul);
+      if (supplies.length > 40) {
+        ssec.appendChild(el('p', 'muted', '…and ' + (supplies.length - 40) +
+          ' more one-off items (see the printed list for all).'));
+      }
+      var copyBtn = el('button', 'btn btn-ghost', '📋 Copy supply list');
+      copyBtn.type = 'button';
+      copyBtn.id = 'copy-supply';
+      var copySt = el('span', 'copy-status');
+      copySt.id = 'copy-supply-status';
+      copySt.setAttribute('role', 'status');
+      copySt.setAttribute('aria-live', 'polite');
+      copyBtn.addEventListener('click', function () { copySupplyList(copySt); });
+      ssec.appendChild(copyBtn);
+      ssec.appendChild(copySt);
+    }
+    extras.appendChild(ssec);
+
+    // 🆘 Substitute kit — an any-sub-can-run-it backup for every slot.
+    var ksec = el('section', 'extra-section');
+    ksec.setAttribute('aria-labelledby', 'subkit-h');
+    var kh = el('h2', 'extra-head');
+    kh.id = 'subkit-h';
+    var kanchor = el('span', null, '🆘 Substitute kit');
+    kanchor.id = 'subkit-section';
+    kanchor.tabIndex = -1;
+    kh.appendChild(kanchor);
+    ksec.appendChild(kh);
+    ksec.appendChild(el('p', 'muted',
+      'Out sick? Hand this to your sub. Every backup below is no-prep, zero materials — ' +
+      'the 2026 gold standard is "copy-free" — with plain-language steps any adult can run cold. ' +
+      'Print the week plan and the kit rides along.'));
+    state.plan.weeks.forEach(function (w, wi) {
+      // Native <details> per week: free keyboard behavior, keeps a long kit scannable.
+      var det = el('details', 'subkit-week-details');
+      if (wi === 0) det.open = true;
+      var slotCount = 0;
+      w.days.forEach(function (d) {
+        d.slots.forEach(function (s) { if (s.activityId) slotCount++; });
+      });
+      var sum = el('summary', 'subkit-week',
+        'Week ' + w.weekNum + ' substitute kit (' + slotCount + ' slots)');
+      det.appendChild(sum);
+      var kul = el('ul', 'subkit-list');
+      w.days.forEach(function (d, di) {
+        d.slots.forEach(function (s) {
+          var a = s.activityId && state.actmap[s.activityId];
+          if (!a) return;
+          var bid = P.subBackupFor(a, state.pool, used, state.actmap,
+            state.catBucket, state.opts, wi * 1000 + di * 10 + s.slot + 7);
+          var li = el('li', 'subkit-row');
+          var head = el('p', 'subkit-head');
+          head.appendChild(document.createTextNode(
+            d.day + ', slot ' + s.slot + ' — instead of “' + a.name + '”: '));
+          if (bid) {
+            var b = state.actmap[bid];
+            var blink = el('a', null, b.name);
+            blink.href = 'activity/' + b.id + '.html';
+            var strong = el('strong', null, null);
+            strong.appendChild(blink);
+            head.appendChild(strong);
+            head.appendChild(document.createTextNode(
+              ' (' + b.time_min + '–' + b.time_max + ' min · no prep · no materials)'));
+            li.appendChild(head);
+            if (b.steps && b.steps.length) {
+              var ol = el('ol', 'subkit-steps');
+              b.steps.slice(0, 3).forEach(function (st) {
+                ol.appendChild(el('li', null, typeof st === 'string' ? st : (st.text || st.step || '')));
+              });
+              li.appendChild(ol);
+            }
+          } else {
+            head.appendChild(document.createTextNode('no no-prep backup fit — the room\u2019s usual filler works.'));
+            li.appendChild(head);
+          }
+          kul.appendChild(li);
+        });
+      });
+      det.appendChild(kul);
+      ksec.appendChild(det);
+    });
+    extras.appendChild(ksec);
+  }
+
+  function refreshPlan(focusKey) {
+    transitionRender(function () {
+      renderPlan();
+      buildPrintDeck();
+    });
+    if (focusKey) {
+      // Re-focus after the view transition finishes painting.
+      setTimeout(function () { refocus(focusKey); }, (reduceMotion() || calmMode()) ? 0 : 120);
+    }
   }
 
   /* ---------------- slot actions ---------------- */
 
-  function swapSlot(dayIdx, slotNum) {
-    var day = state.plan.days[dayIdx];
+  function swapSlot(wi, di, slotNum) {
+    var week = state.plan.weeks[wi];
+    var day = week.days[di];
     var s = day.slots.filter(function (x) { return x.slot === slotNum; })[0];
     if (!s || !s.activityId) return;
     var oldName = state.actmap[s.activityId].name;
-    var newId = P.swapCandidate(state.pool, state.plan.days, dayIdx,
+    var newId = P.swapCandidate(state.pool, week.days, di,
       day.slots.indexOf(s), state.actmap, state.catBucket, state.opts);
     if (!newId) {
       status('Nothing else fits those constraints — loosen a filter and try again.');
       return;
     }
     s.activityId = newId;
-    refreshDay(dayIdx);
+    var key = fkey('swap', wi, di, slotNum);
+    refreshPlan(key);
     status('Swapped “' + oldName + '” for “' + state.actmap[newId].name + '”.');
   }
 
-  function moveSlot(dayIdx, slotNum, dir) {
-    var slots = state.plan.days[dayIdx].slots;
+  function swapInBackup(row, backupId) {
+    var s = state.plan.weeks[row.wi].days[row.di].slots.filter(function (x) {
+      return x.slot === row.slot;
+    })[0];
+    if (!s) return;
+    var oldName = state.actmap[s.activityId].name;
+    s.activityId = backupId;
+    refreshPlan(null);
+    status('🌦️ Swapped “' + oldName + '” for indoor backup “' + state.actmap[backupId].name + '”.');
+  }
+
+  function moveSlot(wi, di, slotNum, dir) {
+    var slots = state.plan.weeks[wi].days[di].slots;
     var i = slots.map(function (x) { return x.slot; }).indexOf(slotNum);
     var j = i + dir;
     if (i < 0 || j < 0 || j >= slots.length) return;
     var t = slots[i]; slots[i] = slots[j]; slots[j] = t;
     slots.forEach(function (x, k) { x.slot = k + 1; });
     var a = slots[j].activityId ? state.actmap[slots[j].activityId].name : 'open slot';
-    refreshDay(dayIdx);
+    refreshPlan(fkey(dir < 0 ? 'up' : 'down', wi, di, slotNum));
     status('Moved “' + a + '” ' + (dir < 0 ? 'up' : 'down') + '.');
   }
 
-  function dropSlot(dayIdx, fromSlotNum, toSlotNum) {
+  function dropSlot(wi, di, fromSlotNum, toSlotNum) {
     if (fromSlotNum === toSlotNum) return;
-    var slots = state.plan.days[dayIdx].slots;
+    var slots = state.plan.weeks[wi].days[di].slots;
     var from = slots.map(function (x) { return x.slot; }).indexOf(fromSlotNum);
     var to = slots.map(function (x) { return x.slot; }).indexOf(toSlotNum);
     if (from < 0 || to < 0) return;
@@ -344,7 +663,7 @@
     slots.splice(to, 0, moved);
     slots.forEach(function (x, k) { x.slot = k + 1; });
     var a = moved.activityId ? state.actmap[moved.activityId].name : 'open slot';
-    refreshDay(dayIdx);
+    refreshPlan(null);
     status('Moved “' + a + '” to slot ' + (to + 1) + '.');
   }
 
@@ -352,16 +671,20 @@
     if (!state.plan) return;
     function gaps() {
       var n = 0;
-      state.plan.days.forEach(function (d) {
-        d.slots.forEach(function (s) { if (!s.activityId) n++; });
+      state.plan.weeks.forEach(function (w) {
+        w.days.forEach(function (d) {
+          d.slots.forEach(function (s) { if (!s.activityId) n++; });
+        });
       });
       return n;
     }
     var before = gaps();
     if (before === 0) { status('No gaps to fill — every slot already has an activity.'); return; }
-    P.fillGaps(state.plan.days, state.pool, state.actmap, state.catBucket, state.opts);
+    state.plan.weeks.forEach(function (w) {
+      P.fillGaps(w.days, state.pool, state.actmap, state.catBucket, state.opts);
+    });
     var placed = before - gaps();
-    refreshDay(0);
+    refreshPlan(null);
     status(placed > 0
       ? '🎲 Surprise! Filled ' + placed + ' gap' + (placed === 1 ? '' : 's') + ' with fresh picks.'
       : 'No gap could be filled with those constraints — loosen a filter and try again.');
@@ -381,6 +704,18 @@
     catch (e) { status('Could not save — browser storage is unavailable.'); }
   }
 
+  function savedMeta(rec) {
+    var days = 0, weeks = 0;
+    if (rec.weeks) {
+      weeks = rec.weeks.length;
+      rec.weeks.forEach(function (w) { days += (w.days || []).length; });
+    } else if (rec.days) { // v1 record from the 2.0 era
+      days = rec.days.length;
+      weeks = 1;
+    }
+    return weeks + (weeks === 1 ? ' week' : ' weeks') + ' · ' + days + ' days';
+  }
+
   function renderSaved() {
     var host = document.getElementById('saved-plans');
     host.innerHTML = '';
@@ -393,7 +728,7 @@
       var li = el('li', 'saved-plan');
       li.appendChild(el('span', 'saved-plan-name', rec.name));
       li.appendChild(el('span', 'saved-plan-meta',
-        ' · ' + rec.days.length + ' days · saved ' +
+        ' · ' + savedMeta(rec) + ' · saved ' +
         new Date(rec.created).toLocaleDateString(undefined, { month: 'short', day: 'numeric' })));
       var loadBtn = el('button', 'btn btn-small', 'Load');
       loadBtn.type = 'button';
@@ -418,7 +753,7 @@
     if (!state.plan) { status('Generate a week first, then save it.'); return; }
     var nameInput = document.getElementById('plan-name-input');
     var name = (nameInput.value || '').trim() || defaultPlanName();
-    var rec = P.savedPlanRecord(name, state.opts, state.plan.days);
+    var rec = P.savedPlanRecord(name, state.opts, state.plan.weeks);
     rec.opts = state.opts; // full constraint snapshot so swaps/fills keep working
     var arr = loadSaved();
     var dup = arr.map(function (r) { return r.name; }).indexOf(name);
@@ -431,20 +766,28 @@
 
   function loadPlanRecord(rec) {
     var validated = P.validatePlanData(rec, state.actmap);
+    var totalDays = 0;
+    validated.weeks.forEach(function (w) { totalDays += w.days.length; });
+    if (!totalDays) {
+      status('That saved plan didn\u2019t contain any usable days.');
+      return;
+    }
     state.opts = rec.opts || Object.assign(getForm(), {
       programType: validated.programType, maxTime: validated.maxTime
     });
+    state.opts.weeks = validated.weeks.length;
     setForm(state.opts);
     state.pool = P.filterPool(state.activities, state.opts);
     state.plan = {
-      version: 1, name: rec.name,
+      version: 2, name: rec.name || validated.name,
       programType: validated.programType, maxTime: validated.maxTime,
-      ageBand: state.opts.ageBand, days: validated.days
+      ageBand: state.opts.ageBand, weeks: validated.weeks
     };
     renderPlan();
     buildPrintDeck();
     document.getElementById('plan-actions').hidden = false;
-    status('Loaded “' + rec.name + '”.');
+    status('Loaded “' + state.plan.name + '” (' + validated.weeks.length +
+      (validated.weeks.length === 1 ? ' week' : ' weeks') + ').');
   }
 
   /* ---------------- exports ---------------- */
@@ -487,11 +830,9 @@
     return line;
   }
 
-  function copyWeek() {
-    if (!state.plan) return;
-    var text = P.planText(state.plan, state.actmap, catName, ratingExportLine);
+  function absolutize(text) {
     // Deep links: absolute URLs when served over http(s).
-    text = text.split('\n').map(function (line) {
+    return text.split('\n').map(function (line) {
       if (/^(activity|index)\//.test(line.trim())) {
         return line.replace(/(activity\/[a-z0-9-]+\.html|index\.html)/, function (m) {
           return cardUrl(m);
@@ -499,7 +840,24 @@
       }
       return line;
     }).join('\n');
-    copyText(text, document.getElementById('copy-week-status'));
+  }
+
+  function copyWeek() {
+    if (!state.plan) return;
+    var text = P.planText(state.plan, state.actmap, catName, ratingExportLine);
+    copyText(absolutize(text), document.getElementById('copy-week-status'));
+  }
+
+  function copySupplyList(statusEl) {
+    if (!state.plan) return;
+    var supplies = P.aggregateSupplies(state.plan.weeks, state.actmap);
+    var lines = ['🛒 Supply list — ' + state.plan.name + ' — Activity Vault', ''];
+    supplies.forEach(function (g) {
+      lines.push(g.display + ' — ' + g.count + ' activit' + (g.count === 1 ? 'y' : 'ies') +
+        ' (' + g.dayLabels.join(', ') + ')');
+    });
+    lines.push('', 'Counts are scheduled slots — buy once, use all week.');
+    copyText(lines.join('\n'), statusEl || document.getElementById('copy-supply-status'));
   }
 
   function copyPlanLink() {
@@ -510,64 +868,159 @@
 
   function exportICS() {
     if (!state.plan) return;
-    var ics = P.exportICS(state.plan, state.actmap, new Date());
-    var blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+    var now = new Date();
+    var header = null;
+    var events = [];
+    state.plan.weeks.forEach(function (w, wi) {
+      var ics = P.exportICS({
+        name: state.plan.name + (state.plan.weeks.length > 1 ? ' — Week ' + w.weekNum : ''),
+        programType: state.plan.programType,
+        maxTime: state.plan.maxTime,
+        days: w.days
+      }, state.actmap, now, wi);
+      var parts = ics.split('BEGIN:VEVENT');
+      if (!header) header = parts[0];
+      for (var i = 1; i < parts.length; i++) {
+        var ev = parts[i].split('END:VEVENT')[0];
+        events.push('BEGIN:VEVENT' + ev + 'END:VEVENT');
+      }
+    });
+    var text = header + events.join('\r\n') + '\r\nEND:VCALENDAR\r\n';
+    var blob = new Blob([text], { type: 'text/calendar;charset=utf-8' });
     var a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
-    a.download = 'activity-vault-week.ics';
+    a.download = 'activity-vault-plan.ics';
     document.body.appendChild(a);
     a.click();
     setTimeout(function () {
       URL.revokeObjectURL(a.href);
       document.body.removeChild(a);
     }, 1000);
-    status('Downloaded activity-vault-week.ics — import it into any calendar app.');
+    status('Downloaded activity-vault-plan.ics (' + events.length + ' events' +
+      (state.plan.weeks.length > 1 ? ', ' + state.plan.weeks.length + ' weeks' : '') +
+      ') — import it into any calendar app.');
   }
 
-  /* ---------------- print deck (wave 7 pattern + balance lines) ---------------- */
+  /* ---------------- print deck (wave-7 pattern, 3.0: multi-week + extras) ---------------- */
 
   function buildPrintDeck() {
     var host = document.getElementById('print-week-cards');
     host.textContent = '';
     if (!state.plan) return;
-    state.plan.days.forEach(function (d) {
-      var bal = P.balanceOf(d.slots, state.actmap, state.catBucket);
-      var dayHead = el('div', 'print-day-head');
-      dayHead.appendChild(el('h3', null, d.day));
-      dayHead.appendChild(el('p', null, 'Energy balance: ' +
-        P.BUCKETS.map(function (b) { return b.glyph + ' ' + bal.counts[b.id]; }).join(' · ')));
-      host.appendChild(dayHead);
-      d.slots.forEach(function (s) {
-        var a = s.activityId && state.actmap[s.activityId];
-        if (!a) return;
-        var card = el('section', 'print-week-card');
-        card.setAttribute('aria-label', 'Print card: ' + a.name);
-        card.appendChild(el('h3', null, d.day + ' — Slot ' + s.slot));
-        card.appendChild(el('h4', null, a.name));
-        var dl = el('dl', 'fact-grid');
-        [['Ages', a.age_min + '–' + a.age_max],
-         ['Group', a.group_min + '–' + a.group_max + ' kids'],
-         ['Time', a.time_min + '–' + a.time_max + ' min'],
-         ['Prep', a.no_prep ? 'No prep needed' : 'Some prep needed'],
-         ['Materials', a.materials.length ? a.materials.length + ' item(s)' : 'None needed'],
-         ['Steps', a.steps.length + ' steps']].forEach(function (f) {
-          var wrap = el('div', null);
-          wrap.appendChild(el('dt', null, f[0]));
-          wrap.appendChild(el('dd', null, f[1]));
-          dl.appendChild(wrap);
-        });
-        card.appendChild(dl);
-        if (a.materials.length) {
-          card.appendChild(el('h4', null, 'Materials'));
-          var mu = el('ul', null);
-          a.materials.forEach(function (m) { mu.appendChild(el('li', null, m.item)); });
-          card.appendChild(mu);
+    var used = usedIds();
+
+    state.plan.weeks.forEach(function (w, wi) {
+      if (state.plan.weeks.length > 1) {
+        var whead = el('div', 'print-week-head');
+        whead.appendChild(el('h2', null, 'Week ' + w.weekNum + ' — ' + state.plan.name));
+        host.appendChild(whead);
+      }
+      w.days.forEach(function (d, di) {
+        var bal = P.balanceOf(d.slots, state.actmap, state.catBucket);
+        var dayHead = el('div', 'print-day-head');
+        dayHead.appendChild(el('h3', null, (state.plan.weeks.length > 1 ? 'Week ' + w.weekNum + ' · ' : '') + d.day));
+        dayHead.appendChild(el('p', null, 'Energy balance: ' +
+          P.BUCKETS.map(function (b) { return b.glyph + ' ' + bal.counts[b.id]; }).join(' · ')));
+        var bbId = P.brainBreak(state.pool, used, state.actmap, state.catBucket, wi * 100 + di + 11);
+        if (bbId) {
+          dayHead.appendChild(el('p', null, '⚡ Brain-break idea: ' + state.actmap[bbId].name +
+            ' (runs cold in ' + state.actmap[bbId].time_min + ' min or less)'));
         }
-        if (a.safety) card.appendChild(el('p', null, '⚠️ ' + a.safety));
-        card.appendChild(el('p', 'print-url', 'Full card — ' + cardUrl('activity/' + a.id + '.html')));
-        host.appendChild(card);
+        host.appendChild(dayHead);
+        d.slots.forEach(function (s) {
+          var a = s.activityId && state.actmap[s.activityId];
+          if (!a) return;
+          var card = el('section', 'print-week-card');
+          card.setAttribute('aria-label', 'Print card: ' + a.name);
+          card.appendChild(el('h3', null, d.day + ' — Slot ' + s.slot));
+          card.appendChild(el('h4', null, a.name));
+          var dl = el('dl', 'fact-grid');
+          [['Ages', a.age_min + '–' + a.age_max],
+           ['Group', a.group_min + '–' + a.group_max + ' kids'],
+           ['Time', a.time_min + '–' + a.time_max + ' min'],
+           ['Prep', a.no_prep ? 'No prep needed' : 'Some prep needed'],
+           ['Materials', a.materials.length ? a.materials.length + ' item(s)' : 'None needed'],
+           ['Steps', a.steps.length + ' steps']].forEach(function (f) {
+            var wrap = el('div', null);
+            wrap.appendChild(el('dt', null, f[0]));
+            wrap.appendChild(el('dd', null, f[1]));
+            dl.appendChild(wrap);
+          });
+          card.appendChild(dl);
+          if (a.materials.length) {
+            card.appendChild(el('h4', null, 'Materials'));
+            var mu = el('ul', null);
+            a.materials.forEach(function (m) { mu.appendChild(el('li', null, m.item)); });
+            card.appendChild(mu);
+          }
+          if (a.safety) card.appendChild(el('p', null, '⚠️ ' + a.safety));
+          if (P.needsWeatherBackup(a)) {
+            var wbId = P.weatherBackupFor(a, state.pool, used, state.actmap,
+              state.catBucket, state.opts, wi * 1000 + di * 10 + s.slot);
+            if (wbId) {
+              card.appendChild(el('p', null, '🌦️ If it rains: run “' +
+                state.actmap[wbId].name + '” instead (indoor' +
+                (state.actmap[wbId].no_prep ? ', no prep' : '') + ').'));
+            }
+          }
+          card.appendChild(el('p', 'print-url', 'Full card — ' + cardUrl('activity/' + a.id + '.html')));
+          host.appendChild(card);
+        });
       });
     });
+
+    // Supply list print page.
+    var supplies = P.aggregateSupplies(state.plan.weeks, state.actmap);
+    if (supplies.length) {
+      var sp = el('section', 'print-supply');
+      sp.setAttribute('aria-label', 'Print: supply list');
+      sp.appendChild(el('h3', null, '🛒 Supply list — ' + state.plan.name));
+      var sul = el('ul', null);
+      supplies.forEach(function (g) {
+        sul.appendChild(el('li', null, g.display + ' — ' + g.count + ' activit' +
+          (g.count === 1 ? 'y' : 'ies') + ' (' + g.dayLabels.join(', ') + ')'));
+      });
+      sp.appendChild(sul);
+      host.appendChild(sp);
+    }
+
+    // Substitute kit print pages.
+    var kp = el('section', 'print-subkit');
+    kp.setAttribute('aria-label', 'Print: substitute kit');
+    kp.appendChild(el('h3', null, '🆘 Substitute kit — ' + state.plan.name));
+    kp.appendChild(el('p', null,
+      'Every backup is no-prep, zero materials. Any adult can run these cold.'));
+    state.plan.weeks.forEach(function (w, wi) {
+      if (state.plan.weeks.length > 1) kp.appendChild(el('h4', null, 'Week ' + w.weekNum));
+      w.days.forEach(function (d, di) {
+        kp.appendChild(el('h4', null, d.day));
+        var kul = el('ul', null);
+        d.slots.forEach(function (s) {
+          var a = s.activityId && state.actmap[s.activityId];
+          if (!a) return;
+          var bid = P.subBackupFor(a, state.pool, used, state.actmap,
+            state.catBucket, state.opts, wi * 1000 + di * 10 + s.slot + 7);
+          if (bid) {
+            var b = state.actmap[bid];
+            var li = el('li', null, 'Slot ' + s.slot + ' — instead of “' + a.name +
+              '”: ' + b.name + ' (' + b.time_min + '–' + b.time_max + ' min, no prep). ');
+            if (b.steps && b.steps.length) {
+              li.appendChild(el('br', null, null));
+              li.appendChild(document.createTextNode(
+                'Steps: ' + b.steps.slice(0, 3).map(function (st) {
+                  return typeof st === 'string' ? st : (st.text || st.step || '');
+                }).join(' → ')));
+            }
+            kul.appendChild(li);
+          } else {
+            kul.appendChild(el('li', null, 'Slot ' + s.slot + ' (“' + a.name +
+              '”): no no-prep backup fit — room\u2019s usual filler works.'));
+          }
+        });
+        kp.appendChild(kul);
+      });
+    });
+    host.appendChild(kp);
   }
 
   /* ---------------- season strip (kept from 1.0) ---------------- */
@@ -624,10 +1077,36 @@
     host.hidden = false;
   }
 
+  /* ---------------- calm mode (sensory envelope) ---------------- */
+
+  var CALM_KEY = 'activityvault.calm.v1';
+
+  function setCalm(on, silent) {
+    if (on) document.documentElement.setAttribute('data-calm', 'true');
+    else document.documentElement.removeAttribute('data-calm');
+    var b = document.getElementById('calm-toggle');
+    if (b) {
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      b.textContent = '🍃 Calm mode: ' + (on ? 'on' : 'off');
+    }
+    if (!silent) {
+      try { localStorage.setItem(CALM_KEY, on ? '1' : '0'); } catch (e) { /* storage unavailable */ }
+    }
+  }
+
+  function initCalm() {
+    var stored = null;
+    try { stored = localStorage.getItem(CALM_KEY); } catch (e) { /* storage unavailable */ }
+    setCalm(stored === '1', true);
+    var b = document.getElementById('calm-toggle');
+    if (b) b.addEventListener('click', function () { setCalm(!calmMode()); });
+  }
+
   /* ---------------- form build ---------------- */
 
   function buildForm() {
     buildSeasonStrip();
+    initCalm();
 
     // Program presets + age bands.
     var progSel = document.getElementById('p-program');
@@ -699,25 +1178,29 @@
     if (q.plan) {
       try {
         var data = P.validatePlanData(P.decodePlan(q.plan), state.actmap);
-        if (!data.days.length) {
+        var totalDays = 0;
+        data.weeks.forEach(function (w) { totalDays += w.days.length; });
+        if (!totalDays) {
           status('That plan link didn\u2019t contain any usable days — it may be from an older version.');
           return;
         }
         var opts = getForm();
         opts.programType = data.programType;
         opts.maxTime = data.maxTime;
+        opts.weeks = data.weeks.length;
         state.opts = opts;
         setForm(opts);
         state.pool = P.filterPool(state.activities, opts);
         state.plan = {
-          version: 1, name: data.name,
+          version: 2, name: data.name,
           programType: data.programType, maxTime: data.maxTime,
-          ageBand: opts.ageBand, days: data.days
+          ageBand: opts.ageBand, weeks: data.weeks
         };
         renderPlan();
         buildPrintDeck();
         document.getElementById('plan-actions').hidden = false;
-        var msg = 'Opened shared plan “' + data.name + '”.';
+        var msg = 'Opened shared plan “' + data.name + '” (' + data.weeks.length +
+          (data.weeks.length === 1 ? ' week' : ' weeks') + ').';
         if (data.dropped.length) msg += ' ' + data.dropped.length + ' activit' +
           (data.dropped.length === 1 ? 'y' : 'ies') + ' in the link aren\u2019t in the library and were skipped.';
         status(msg);

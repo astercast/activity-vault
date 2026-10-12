@@ -153,7 +153,7 @@ activities where time_min <= 20
 
 **Rainy-day plan:** `categories` contains `rainy-day`, then sort by energy: PE first, crafts middle, quiet-focus last.
 
-**Week plan (no repeats, balanced):** filter to pool, then deal round-robin across days × slots, scoring candidates by bucket scarcity (day ×3 + week) and unused categories — never two prep-heavy activities past the weekly cap. Balance meter: bucket = primary category's bucket (`api/v1/balance-buckets.json`); warn when a non-`mixed` bucket holds > 50% of a day's filled slots. See `skills/balanced-week-builder.md`. Planner deep links: `planner.html?from=collection:<id>` (seed from a curated collection) and `planner.html?plan=<base64url>` (open a shared plan — see AGENT.md Workflow 4).
+**Week plan (no repeats, balanced):** filter to pool, then deal round-robin across days × slots (1–4 weeks, shared no-repeat set across weeks unless repeats allowed), scoring candidates by bucket scarcity (day ×3 + week) and unused categories — never two prep-heavy activities past the weekly cap. Balance meter: bucket = primary category's bucket (`api/v1/balance-buckets.json`); warn when a non-`mixed` bucket holds > 50% of a day's filled slots. 3.0 extras: ⚡ brain-break idea per day (movement, ≤10 min), 🌦️ weather backup per outdoor-only slot (indoor, one-tap swap), 🛒 aggregated supply list, 🆘 substitute kit (no-prep, zero-material, plain-language steps). See `skills/balanced-week-builder.md`. Planner deep links: `planner.html?from=collection:<id>` (seed from a curated collection) and `planner.html?plan=<base64url>` (open a shared plan — v2 `weeks[]` payload, v1 still imports; see AGENT.md Workflow 4).
 
 ## llms.txt
 
