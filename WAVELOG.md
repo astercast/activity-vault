@@ -24,6 +24,8 @@ Running record of build waves. Newest first.
 - `scripts/test-planner-core.js`: 39/39 pass (unchanged)
 - `node --check`: app.js, planner.js, party.js, summer.js, spring.js, collections.js, ratings.js, sub.js, planner-core.js, test-summer.js — clean
 
+**Wave 12 push resolution:** local commit `b250609` pushed via `gh-push.py` (320 files, 320 blob uploads; first attempt hit a transient 400 on one blob at blob ~250, retry of the whole script succeeded, exit 0) — remote commit `da21fb10ceabdf837b37618b996d8bcfdd9f0b64`. Verified via GitHub API: commit exists, `main` HEAD points at it, recursive remote tree (378 files, not truncated) contains `summer.html`, `assets/summer.js`, `scripts/add_wave12.py`, `scripts/test-summer.js`, `api/v1/collections.json`, the 25 new `activity/*.html` pages, and updated `WAVELOG.md`/`AGENT.md`/`API.md`.
+
 ## Wave 11 — 2026-10-11 — Spring 2027 pack (+25 → 263) + spring hub + Party Planner spring theme + RSS sweep
 
 **What shipped:**
