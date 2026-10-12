@@ -5,16 +5,17 @@ Hundreds of real, classic, public-domain activity concepts — filterable by age
 group size, materials, and category. Plan-my-week planner. Printable one-page cards.
 
 ## Categories
-- Seasons: 8 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
-- Holidays: 6 activities — Festive projects and games for the days the whole group looks forward to.
-- Crafts: 21 activities — Hands-on making: fold it, paint it, build it, take it home.
-- STEM: 11 activities — Experiments, engineering challenges, and satisfying science demos.
-- PE & Movement: 14 activities — Run, jump, dance — activities that burn off the wiggles.
-- Team & Community: 11 activities — Turn a group into a crew: cooperation, trust, and belonging.
-- Icebreakers: 11 activities — First-day friendly: learn names, laugh, and loosen up fast.
-- Outdoor: 18 activities — Fresh-air activities for fields, playgrounds, and nature walks.
-- Rainy Day: 12 activities — Stuck inside? These keep a roomful of kids happy without a gym.
-- Quiet & Focus: 19 activities — Wind-down worthy: calm, creative, individual or small-group.
+- Seasons: 22 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
+- Holidays: 25 activities — Festive projects and games for the days the whole group looks forward to.
+- Crafts: 48 activities — Hands-on making: fold it, paint it, build it, take it home.
+- STEM: 37 activities — Experiments, engineering challenges, and satisfying science demos.
+- PE & Movement: 36 activities — Run, jump, dance — activities that burn off the wiggles.
+- Team & Community: 35 activities — Turn a group into a crew: cooperation, trust, and belonging.
+- Icebreakers: 23 activities — First-day friendly: learn names, laugh, and loosen up fast.
+- Outdoor: 32 activities — Fresh-air activities for fields, playgrounds, and nature walks.
+- Rainy Day: 24 activities — Stuck inside? These keep a roomful of kids happy without a gym.
+- Quiet & Focus: 39 activities — Wind-down worthy: calm, creative, individual or small-group.
+- Music & Rhythm: 7 activities — Drums, shakers, rhythm games, and songs — make some noise.
 
 ## API
 - api/v1/activities.json — full activity records

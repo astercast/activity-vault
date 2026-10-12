@@ -69,8 +69,15 @@
    "glyph": "🧘",
    "id": "quiet-focus",
    "name": "Quiet & Focus"
+  },
+  {
+   "id": "music-rhythm",
+   "name": "Music & Rhythm",
+   "glyph": "🥁",
+   "color": "#a855f7",
+   "blurb": "Drums, shakers, rhythm games, and songs — make some noise."
   }
  ],
- "count": 10,
+ "count": 11,
  "updated": "2026-10-12"
 }

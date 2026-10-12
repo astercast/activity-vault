@@ -2,6 +2,34 @@
 
 Running record of build waves. Newest first.
 
+## Wave 2c — 2026-10-11 — Merged parallel chunk7b (+12 → 166)
+
+Merged the sibling's `data/chunk7b.json` (12 activities, same schema, 0 dupes).
+Total: **166 activities**. Rebuilt + revalidated.
+
+## Wave 2b — 2026-10-11 — Merged parallel chunk7 (+16 → 154)
+
+A parallel builder was adding `data/chunk7.json` (16 activities, same schema) concurrently.
+Merged with id-dedupe (16/16 new, 0 dupes), rebuilt, revalidated. Total: **154 activities**.
+`data/chunk7.json` retained for provenance; the validator rejects duplicate ids, so any
+re-merge would fail loudly rather than corrupt.
+
+## Wave 2 — 2026-10-11 — Content expansion: 66 → 138 activities
+
+**What shipped:**
+- Merged 72 new original activities (researched from teaching blogs, described in our own words) into `data/activities.json` via `scripts/convert_wave2.py` (schema-converted from staged drafts; 17 near-duplicates of wave-1 activities skipped)
+- New **Music & Rhythm** category (7 activities: cup rhythms, bucket drumming, rhythm name game, sound story, parody songs, dance tutorial, shaker instruments)
+- Every new activity carries the full schema: safety note, setup, steps, easier/harder variations
+- Regenerated: 138 activity pages, api/v1, llms.txt/llms-full.txt, sitemap.xml
+- README counts updated (66 → 138, 10 → 11 categories)
+
+**Validation (wave 2):**
+- `scripts/build.py`: BUILD OK — schema, id uniqueness, category ids, ranges, all 138 pages rendered
+- `node --check assets/app.js assets/planner.js`: pass
+- Link check: 140 pages, 0 broken
+- api/v1/activities.json count: 138
+
+
 ## Wave 1 — 2026-10-11 — Foundation build
 
 **Commit:** `3590dd45edd9dad681f1c6bf0ede212b5aa20b17` (content) + WAVELOG commit below.

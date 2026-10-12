@@ -2,7 +2,7 @@
 
 The all-in-one activity archive for teachers & after-school program teachers.
 
-**66 activities** across 10 color-coded categories — seasons, holidays, crafts, STEM, PE & movement, team & community, icebreakers, outdoor, rainy-day, and quiet & focus. Every activity is a real, classic, public-domain concept described in our own words: name, age range, group size, time, materials (with no-prep flags), setup, step-by-step instructions, easier/harder variations, and common-sense safety notes.
+**166 activities** across 11 color-coded categories — seasons, holidays, crafts, STEM, PE & movement, team & community, icebreakers, outdoor, rainy-day, quiet & focus, and music & rhythm. Every activity is a real, classic, public-domain concept described in our own words: name, age range, group size, time, materials (with no-prep flags), setup, step-by-step instructions, easier/harder variations, and common-sense safety notes.
 
 ## What it does
 
@@ -25,7 +25,7 @@ No build tools, no dependencies beyond Python 3. Open `index.html` in a browser 
 ## Repo layout
 
 ```
-data/activities.json      ← source of truth (66 activities)
+data/activities.json      ← source of truth (166 activities)
 data/categories.json      ← 10 categories (color, glyph, blurb)
 scripts/build.py          ← validator + static generator
 assets/                   ← style.css, app.js (browser), planner.js
