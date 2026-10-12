@@ -5,16 +5,16 @@ Hundreds of real, classic, public-domain activity concepts — filterable by age
 group size, materials, and category. Plan-my-week planner. Printable one-page cards.
 
 ## Categories
-- Seasons: 22 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
-- Holidays: 25 activities — Festive projects and games for the days the whole group looks forward to.
-- Crafts: 53 activities — Hands-on making: fold it, paint it, build it, take it home.
-- STEM: 37 activities — Experiments, engineering challenges, and satisfying science demos.
-- PE & Movement: 38 activities — Run, jump, dance — activities that burn off the wiggles.
-- Team & Community: 35 activities — Turn a group into a crew: cooperation, trust, and belonging.
-- Icebreakers: 26 activities — First-day friendly: learn names, laugh, and loosen up fast.
-- Outdoor: 34 activities — Fresh-air activities for fields, playgrounds, and nature walks.
-- Rainy Day: 28 activities — Stuck inside? These keep a roomful of kids happy without a gym.
-- Quiet & Focus: 43 activities — Wind-down worthy: calm, creative, individual or small-group.
+- Seasons: 34 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
+- Holidays: 38 activities — Festive projects and games for the days the whole group looks forward to.
+- Crafts: 66 activities — Hands-on making: fold it, paint it, build it, take it home.
+- STEM: 45 activities — Experiments, engineering challenges, and satisfying science demos.
+- PE & Movement: 43 activities — Run, jump, dance — activities that burn off the wiggles.
+- Team & Community: 41 activities — Turn a group into a crew: cooperation, trust, and belonging.
+- Icebreakers: 27 activities — First-day friendly: learn names, laugh, and loosen up fast.
+- Outdoor: 37 activities — Fresh-air activities for fields, playgrounds, and nature walks.
+- Rainy Day: 30 activities — Stuck inside? These keep a roomful of kids happy without a gym.
+- Quiet & Focus: 50 activities — Wind-down worthy: calm, creative, individual or small-group.
 - Music & Rhythm: 7 activities — Drums, shakers, rhythm games, and songs — make some noise.
 
 ## API
@@ -31,11 +31,15 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
 - skills/icebreaker-chooser.md
 - skills/quiet-focus-picker.md
 - skills/sub-tub-rescue.md
+- skills/halloween-party-planner.md
 
 ## Tools
 - sub.html — Sub Tub: the substitute-teacher rescue kit.
   Pick grade band, minutes to fill, materials on hand, location —
   generates a sequenced print-ready emergency plan plus a 'Dear sub' note template.
+- party.html — Halloween Class-Party Planner.
+  Pick class size, minutes, stations, and budget — generates a timed station-rotation
+  plan from seasonal activities, plus a setup list and a print-ready run sheet.
 
 ## Docs
 - API.md — full API reference

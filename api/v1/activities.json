@@ -2703,7 +2703,11 @@
    "variations": {
     "easier": "Stickers and googly eyes only — no paint, no drying time.",
     "harder": "Theme it: decorate your pumpkin as a book character."
-   }
+   },
+   "tags": [
+    "season:fall",
+    "holiday:halloween"
+   ]
   },
   {
    "id": "fall-sensory-jars",
@@ -2757,7 +2761,10 @@
    "variations": {
     "easier": "Pre-fill jars with water; kids just add glitter and confetti.",
     "harder": "Layer different materials (sand, beads, oil) and predict which settles fastest."
-   }
+   },
+   "tags": [
+    "season:fall"
+   ]
   },
   {
    "id": "pumpkin-painting-party",
@@ -2814,7 +2821,11 @@
    "variations": {
     "easier": "Use stickers and markers only — no paint.",
     "harder": "Paint a scene or character with a backstory to present."
-   }
+   },
+   "tags": [
+    "season:fall",
+    "holiday:halloween"
+   ]
   },
   {
    "id": "winter-snow-slime",
@@ -3046,7 +3057,11 @@
    "variations": {
     "easier": "Use pre-cut puppet shapes; kids just assemble and perform.",
     "harder": "Write a full script with dialogue and rehearse with lighting cues."
-   }
+   },
+   "tags": [
+    "holiday:halloween",
+    "theme:spooky"
+   ]
   },
   {
    "id": "halloween-mummy-wrap",
@@ -3135,7 +3150,11 @@
    "variations": {
     "easier": "Move the foul line closer; use a soft ball instead of a pumpkin.",
     "harder": "Narrow the lane and add a second row of pins for a split."
-   }
+   },
+   "tags": [
+    "season:fall",
+    "holiday:halloween"
+   ]
   },
   {
    "id": "winter-gingerbread-build",
@@ -7540,8 +7559,1790 @@
     "easier": "Learn just the opening position and invent your own figures.",
     "harder": "Chain figures: transfer a figure through three partners in a row."
    }
+  },
+  {
+   "id": "measure-the-pumpkin",
+   "name": "Measure the Pumpkin",
+   "tagline": "Circumference, weight, seed guesses — a pumpkin turns into a math lab.",
+   "categories": [
+    "stem",
+    "seasons"
+   ],
+   "age_min": 6,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 25,
+   "time_max": 45,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "pumpkins in a few different sizes (one per small group)"
+    },
+    {
+     "item": "tape measures"
+    },
+    {
+     "item": "a scale (bathroom scale works)"
+    },
+    {
+     "item": "paper and pencils for recording"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Set out one pumpkin per small group with a tape measure and a recording sheet (columns: guess / actual for circumference, weight, seed count).",
+   "steps": [
+    "Each group predicts: how many inches around their pumpkin, how heavy it is, and how many seeds are inside. Write every guess down first — no measuring yet.",
+    "Measure the circumference at the widest point with the tape measure. Record the actual number next to the guess.",
+    "Weigh the pumpkin. Compare — who guessed closest?",
+    "Estimate the seed count. Then the teacher cuts the pumpkin open (adults only on the knife) and each group scoops and counts their pumpkin's seeds in piles of ten.",
+    "Compare seed counts: does the biggest pumpkin hold the most seeds? Usually not — great discussion starter."
+   ],
+   "variations": {
+    "easier": "Skip the seed count and just do circumference and weight predictions.",
+    "harder": "Graph every group's results and look for patterns between size, weight, and seed count."
+   },
+   "safety": "Only the adult handles the knife when opening pumpkins. Wash hands after handling seeds and pulp.",
+   "tags": [
+    "season:fall"
+   ]
+  },
+  {
+   "id": "pumpkin-seed-sprout-baggies",
+   "name": "Pumpkin Seed Sprouting Baggies",
+   "tagline": "Seeds wake up on the classroom window — watch germination happen day by day.",
+   "categories": [
+    "stem",
+    "seasons"
+   ],
+   "age_min": 5,
+   "age_max": 10,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "pumpkin seeds (saved from a carved pumpkin or a seed packet)"
+    },
+    {
+     "item": "paper towels"
+    },
+    {
+     "item": "zip-top sandwich bags"
+    },
+    {
+     "item": "water"
+    },
+    {
+     "item": "tape"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Dampen the paper towels (wring out the drips). Give each kid a bag, a towel, and 3–4 seeds.",
+   "steps": [
+    "Fold the damp paper towel and slide it into the bag with 3–4 seeds pressed against the towel so you can see them.",
+    "Seal the bag and tape it to a sunny window — the bag is its own little greenhouse.",
+    "Each day, kids observe and draw what they see: nothing, a crack, a root, a sprout.",
+    "After a week, compare: which seeds sprouted first? Did seeds near the top of the bag beat the ones at the bottom?",
+    "Transplant the best sprouts into cups of soil if you want a longer project."
+   ],
+   "variations": {
+    "easier": "Sprout just one seed per bag so it's easy to watch.",
+    "harder": "Run a side experiment: one bag in the dark, one in the light — compare the sprouts."
+   },
+   "safety": null,
+   "tags": [
+    "season:fall"
+   ]
+  },
+  {
+   "id": "apple-browning-lab",
+   "name": "Apple Browning Lab",
+   "tagline": "Why do cut apples turn brown? Kids run the experiment and find out.",
+   "categories": [
+    "stem",
+    "seasons"
+   ],
+   "age_min": 7,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 35,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "apples (one per group)"
+    },
+    {
+     "item": "lemon juice"
+    },
+    {
+     "item": "water"
+    },
+    {
+     "item": "a little salt"
+    },
+    {
+     "item": "small cups"
+    },
+    {
+     "item": "plates"
+    },
+    {
+     "item": "kid-safe knives or pre-sliced apple wedges"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Slice each apple into 4 wedges (adults slice, or hand out pre-cut wedges). Set out cups labeled: plain water, lemon-juice water, salt water, nothing.",
+   "steps": [
+    "Soak one wedge in each liquid for 2 minutes. Leave one wedge untouched on a plate.",
+    "Line all four wedges up and predict: which will stay the freshest-looking after 20 minutes?",
+    "Wait. Do another activity or read aloud while the clock runs.",
+    "Compare the wedges. The lemon-juice one usually stays pale — the acid slows the browning reaction.",
+    "Taste test (optional): does the protected wedge taste different? Discuss what 'browning' actually is — air reacting with the apple's flesh."
+   ],
+   "variations": {
+    "easier": "Test just two treatments: lemon juice vs. nothing.",
+    "harder": "Try more treatments (vinegar, honey water, milk) and have kids design the experiment themselves, including a control."
+   },
+   "safety": "Check for fruit allergies first, and have everyone wash hands before and after handling food.",
+   "tags": [
+    "season:fall"
+   ]
+  },
+  {
+   "id": "fall-leaf-chromatography",
+   "name": "Fall Leaf Chromatography",
+   "tagline": "Hidden colors inside fall leaves separate out on a coffee filter.",
+   "categories": [
+    "stem",
+    "seasons"
+   ],
+   "age_min": 8,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 24,
+   "time_min": 30,
+   "time_max": 50,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "fresh fall leaves (red, yellow, orange)"
+    },
+    {
+     "item": "coffee filters"
+    },
+    {
+     "item": "rubbing alcohol"
+    },
+    {
+     "item": "small jars or cups"
+    },
+    {
+     "item": "pencils"
+    },
+    {
+     "item": "scissors"
+    },
+    {
+     "item": "tape"
+    }
+   ],
+   "no_prep": false,
+   "setup": "An adult pours a half-inch of rubbing alcohol into each jar. Give each group leaves, a filter strip, and a pencil.",
+   "steps": [
+    "Tear the leaves into small pieces and drop them into the jar so they're covered by the alcohol.",
+    "Let the jar sit 10–15 minutes, swirling now and then — the alcohol pulls the leaf's pigments out.",
+    "Cut a strip of coffee filter, tape it to a pencil, and rest the pencil across the jar so the strip's tip just touches the liquid.",
+    "Wait 20–30 minutes. The liquid climbs the strip and the hidden colors (yellows, oranges, even greens) separate into bands.",
+    "Dry the strips and compare: do red leaves and yellow leaves hide the same colors?"
+   ],
+   "variations": {
+    "easier": "Do one jar as a whole-class demo instead of per-group jars.",
+    "harder": "Test leaves from different trees and sort the dried strips into a class color chart."
+   },
+   "safety": "Rubbing alcohol is adult-handled only, and jars stay on the table — no carrying them around. Work in a ventilated room.",
+   "tags": [
+    "season:fall"
+   ]
+  },
+  {
+   "id": "leaf-animal-collage",
+   "name": "Leaf Animal Collage",
+   "tagline": "Dry leaves become foxes, owls, and hedgehogs — nature's sticker book.",
+   "categories": [
+    "crafts",
+    "seasons"
+   ],
+   "age_min": 4,
+   "age_max": 10,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 25,
+   "time_max": 45,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "a basket of dry fall leaves in different shapes and colors"
+    },
+    {
+     "item": "glue sticks"
+    },
+    {
+     "item": "cardstock or heavy paper"
+    },
+    {
+     "item": "googly eyes (optional)"
+    },
+    {
+     "item": "markers"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Spread the leaves out on a table so kids can browse shapes. Hand out cardstock and glue.",
+   "steps": [
+    "Sort through the leaves: which ones look like ears? A round body? A pointy tail?",
+    "Lay out an animal on the paper WITHOUT gluing first — arrange, step back, adjust.",
+    "Glue the pieces down one at a time, biggest pieces first.",
+    "Add details with markers or googly eyes: faces, legs, whiskers.",
+    "Title the piece and hang a class 'leaf zoo' gallery."
+   ],
+   "variations": {
+    "easier": "Glue pre-cut leaf shapes onto a printed animal outline.",
+    "harder": "Make a whole habitat scene — the animal plus leaf trees, sun, and ground."
+   },
+   "safety": null,
+   "tags": [
+    "season:fall"
+   ]
+  },
+  {
+   "id": "paper-bag-ghost-puppets",
+   "name": "Paper-Bag Ghost Puppets",
+   "tagline": "Lunch bags + tissue paper = a cast of friendly ghosts for a puppet show.",
+   "categories": [
+    "crafts",
+    "holidays"
+   ],
+   "age_min": 4,
+   "age_max": 9,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 35,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "white paper lunch bags"
+    },
+    {
+     "item": "black markers"
+    },
+    {
+     "item": "white tissue paper or crepe streamers"
+    },
+    {
+     "item": "glue sticks"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Set out bags with the flat bottom facing up — that flat square is the ghost's face.",
+   "steps": [
+    "Draw a silly (not scary) ghost face on the flat bottom of the bag: big round eyes, an 'o' mouth.",
+    "Cut or tear tissue paper into strips and glue them around the bag's opening — these are the ghost's flowy bottom.",
+    "Slide a hand inside and practice: ghosts bob, spin, and say 'booo' in a friendly voice.",
+    "Pair up and improvise a 2-minute ghost puppet scene behind a desk 'stage'.",
+    "Perform for the class. Applaud every ghost."
+   ],
+   "variations": {
+    "easier": "Skip the tissue strips — just decorate and perform with the bag.",
+    "harder": "Write a short script for the ghost scene and perform it with simple props."
+   },
+   "safety": null,
+   "tags": [
+    "holiday:halloween",
+    "theme:spooky"
+   ]
+  },
+  {
+   "id": "handprint-bat-garland",
+   "name": "Handprint Bat Garland",
+   "tagline": "Two handprints make bat wings — string them into a classroom garland.",
+   "categories": [
+    "crafts",
+    "holidays"
+   ],
+   "age_min": 4,
+   "age_max": 10,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 35,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "black construction paper"
+    },
+    {
+     "item": "white crayons or chalk"
+    },
+    {
+     "item": "scissors"
+    },
+    {
+     "item": "string or yarn"
+    },
+    {
+     "item": "tape or a hole punch"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Cut black paper into pieces big enough for two handprints. Put out white crayons for tracing.",
+   "steps": [
+    "Trace both hands on the black paper — fingers spread wide. These are the bat's wings.",
+    "Cut out the hands (younger kids: an adult helps with scissors).",
+    "Cut a small oval for the body and two triangle ears; glue them between the wings.",
+    "Draw a friendly face with the white crayon.",
+    "String everyone's bats onto yarn and hang the garland across the room."
+   ],
+   "variations": {
+    "easier": "The teacher pre-cuts handprint pairs; kids just decorate and string them.",
+    "harder": "Add a research card to each bat: one real bat fact (they eat insects, they hang upside down)."
+   },
+   "safety": "Scissors stay at the table and cut paper only — adults help the youngest cutters.",
+   "tags": [
+    "holiday:halloween",
+    "theme:spooky"
+   ]
+  },
+  {
+   "id": "spiderweb-plate-weave",
+   "name": "Spiderweb Plate Weaving",
+   "tagline": "Weave yarn across a paper plate into a web, then add a spider.",
+   "categories": [
+    "crafts",
+    "holidays"
+   ],
+   "age_min": 5,
+   "age_max": 11,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 25,
+   "time_max": 45,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper plates"
+    },
+    {
+     "item": "hole punch"
+    },
+    {
+     "item": "yarn or string"
+    },
+    {
+     "item": "scissors"
+    },
+    {
+     "item": "plastic spider rings or pom-poms (optional)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Punch 10–12 holes evenly around each plate's rim. Cut the center out of the plates so only the rim ring remains (adults do the center cut).",
+   "steps": [
+    "Tie yarn through one hole with a knot to anchor it.",
+    "Weave across the plate: through one hole, across the middle, out another hole — crisscross until a web forms.",
+    "Tie off the end with a knot and trim the tail.",
+    "Add a spider: a plastic ring spider, or make one from a pom-pom with pipe-cleaner legs.",
+    "Hang the webs from the ceiling with string."
+   ],
+   "variations": {
+    "easier": "Use pre-punched rims and shorter yarn pieces; the teacher helps with knots.",
+    "harder": "Weave a pattern (over-two, under-one) and add a second color for a spiral effect."
+   },
+   "safety": "Adults cut the plate centers — rims tear easily, so go slow.",
+   "tags": [
+    "holiday:halloween",
+    "theme:spooky"
+   ]
+  },
+  {
+   "id": "papel-picado-banners",
+   "name": "Papel Picado Banners",
+   "tagline": "Fold and snip tissue paper into the colorful cut-paper banners of Día de los Muertos.",
+   "categories": [
+    "crafts",
+    "holidays"
+   ],
+   "age_min": 7,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 30,
+   "time_max": 50,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "bright tissue paper"
+    },
+    {
+     "item": "scissors"
+    },
+    {
+     "item": "string or yarn"
+    },
+    {
+     "item": "tape or glue"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Cut tissue paper into rectangles (about 8x10 inches). Stack 3–4 sheets to cut several at once. Set out string for the finished banner.",
+   "steps": [
+    "Fold the tissue rectangle in half, then in half again — small folds make detailed cuts.",
+    "Cut shapes out of the folded edges: triangles, half-circles, diamonds. Don't cut the fold completely apart.",
+    "Unfold carefully to reveal the design — every banner looks different.",
+    "Tape the top edge of each finished panel to the string, spacing them out.",
+    "Hang the banner up. Share what you know: papel picado are the festive cut-paper banners made in Mexico for Día de los Muertos — we're practicing the craft with respect for the tradition it comes from."
+   ],
+   "variations": {
+    "easier": "Cut simpler shapes (just triangles along one edge) on fewer folded layers.",
+    "harder": "Design a panel with a specific symbol — a marigold, a skull, a heart — and learn what it represents."
+   },
+   "safety": "Scissors cut paper only. Tissue tears easily, so unfold slowly.",
+   "tags": [
+    "holiday:dia-de-muertos"
+   ]
+  },
+  {
+   "id": "egg-carton-spider-craft",
+   "name": "Egg Carton Spiders",
+   "tagline": "One egg-carton cup + pipe-cleaner legs = a spider that actually dangles.",
+   "categories": [
+    "crafts",
+    "holidays"
+   ],
+   "age_min": 4,
+   "age_max": 9,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 30,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "cardboard egg cartons"
+    },
+    {
+     "item": "black paint or markers"
+    },
+    {
+     "item": "pipe cleaners"
+    },
+    {
+     "item": "googly eyes"
+    },
+    {
+     "item": "glue"
+    },
+    {
+     "item": "string"
+    }
+   ],
+   "no_prep": false,
+   "setup": "An adult cuts the cartons into single cups ahead of time — one cup per kid. Set out paint and let cups dry before decorating.",
+   "steps": [
+    "Paint or color the cup black (or any spider color you like).",
+    "Poke 8 pipe-cleaner legs through the sides — 4 on each side — and bend the ends into little feet.",
+    "Glue on googly eyes. Give your spider a name.",
+    "Tie a string to the top and hang the spiders around the room — a whole spider drop.",
+    "Optional: write one true spider fact on a tag and hang it with your spider."
+   ],
+   "variations": {
+    "easier": "Skip the paint — decorate the cup with markers instead.",
+    "harder": "Build a spiderweb from yarn between two chairs and hang the whole class's spiders in it."
+   },
+   "safety": "Adults cut the cartons — the cardboard is stiff. Wash hands after painting.",
+   "tags": [
+    "holiday:halloween",
+    "theme:spooky"
+   ]
+  },
+  {
+   "id": "corn-husk-dolls",
+   "name": "Corn Husk Dolls",
+   "tagline": "Soak, bundle, and tie dried corn husks into old-fashioned dolls.",
+   "categories": [
+    "crafts",
+    "seasons"
+   ],
+   "age_min": 7,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 30,
+   "time_max": 50,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "dried corn husks (craft store or grocery)"
+    },
+    {
+     "item": "a bowl of warm water"
+    },
+    {
+     "item": "string or twine"
+    },
+    {
+     "item": "scissors"
+    },
+    {
+     "item": "markers"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Soak the corn husks in warm water for 10 minutes so they're bendable. Give each kid 6–8 husks and a length of twine.",
+   "steps": [
+    "Lay 4 husks flat and tie them together in the middle — this bundle is the body.",
+    "Fold the top half down over the tie to make the head; tie again just below to form the neck.",
+    "Take 2 more husks, roll them tight, and tie both ends — these are the arms. Slip them through the body bundle and tie at the waist.",
+    "Arrange the bottom husks into a skirt shape and tie at the waist.",
+    "Draw a face with markers, or leave it blank like traditional husk dolls. Name your doll."
+   ],
+   "variations": {
+    "easier": "Make a simple version: one bundle tied for the head, one tie for the waist — no separate arms.",
+    "harder": "Dress the dolls with extra husk layers, tiny hats, or woven belts."
+   },
+   "safety": "Soak water can be slippery — wipe up spills so nobody slips.",
+   "tags": [
+    "season:fall"
+   ]
+  },
+  {
+   "id": "apple-print-painting",
+   "name": "Apple Print Painting",
+   "tagline": "Halved apples become stamps — print rows of apple patterns.",
+   "categories": [
+    "crafts",
+    "seasons"
+   ],
+   "age_min": 4,
+   "age_max": 10,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 35,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "apples (a few)"
+    },
+    {
+     "item": "washable paint in fall colors"
+    },
+    {
+     "item": "paper plates for paint"
+    },
+    {
+     "item": "big paper or cardstock"
+    },
+    {
+     "item": "smocks or old shirts"
+    },
+    {
+     "item": "paper towels"
+    }
+   ],
+   "no_prep": false,
+   "setup": "An adult halves the apples top-to-bottom (the star-shaped core shows) and crosswise (the round center shows). Pour paint onto plates.",
+   "steps": [
+    "Look at the cut apple — spot the star in the middle.",
+    "Press the cut side into the paint, then stamp it firmly onto the paper. Lift straight up.",
+    "Make patterns: rows of stars, alternating colors, a border frame.",
+    "Try stamping with the crosswise half for a different shape.",
+    "Sign your print and let it dry flat."
+   ],
+   "variations": {
+    "easier": "Stamp with one color only and make a simple row pattern.",
+    "harder": "Carve a simple shape into the apple half with a plastic knife (adult supervises) for a custom stamp."
+   },
+   "safety": "Adults do all the apple cutting. Smocks on — paint washes out of hands, not always out of shirts.",
+   "tags": [
+    "season:fall"
+   ]
+  },
+  {
+   "id": "ghost-footprint-keepsake",
+   "name": "Ghost Footprint Keepsakes",
+   "tagline": "One painted footprint, flipped upside down, becomes a little ghost.",
+   "categories": [
+    "crafts",
+    "holidays"
+   ],
+   "age_min": 3,
+   "age_max": 7,
+   "group_min": 2,
+   "group_max": 24,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "white washable paint"
+    },
+    {
+     "item": "dark-colored cardstock"
+    },
+    {
+     "item": "paint trays or plates"
+    },
+    {
+     "item": "baby wipes or a damp towel"
+    },
+    {
+     "item": "black markers"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Pour white paint into trays. Lay out cardstock — one sheet per kid. Keep wipes handy; this one is gloriously messy.",
+   "steps": [
+    "Paint the bottom of one foot white (a grown-up helper can do this part).",
+    "Press the foot firmly onto the dark paper, heel at the top — then lift straight up.",
+    "Wipe the foot clean right away.",
+    "Once dry, flip the paper so the toes point down: the footprint is now a ghost's flowy body.",
+    "Draw two eyes and a round 'boo' mouth with the black marker."
+   ],
+   "variations": {
+    "easier": "Do handprints instead of footprints — less wiggly.",
+    "harder": "Make a whole haunted-house scene around the ghost with crayons."
+   },
+   "safety": "Use washable paint only, and wipe feet immediately — wet paint + tile floors are slippery.",
+   "tags": [
+    "holiday:halloween",
+    "theme:spooky"
+   ]
+  },
+  {
+   "id": "fall-scavenger-bingo",
+   "name": "Fall Scavenger Bingo",
+   "tagline": "A bingo card full of fall — hunt the outdoors for every square.",
+   "categories": [
+    "outdoor",
+    "seasons"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 40,
+   "time_min": 25,
+   "time_max": 45,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "printed fall bingo cards (or blank cards kids draw themselves)"
+    },
+    {
+     "item": "pencils or crayons"
+    }
+   ],
+   "no_prep": true,
+   "setup": "Print bingo cards with fall finds (red leaf, acorn, pinecone, yellow leaf, smooth rock, feather, piece of bark, something round, a seed, a stick shaped like a letter) — or have kids draw their own 3x3 grids and fill in fall items.",
+   "steps": [
+    "Hand out a card and pencil to each kid (or pair).",
+    "Walk the yard, field, or trail together. When you spot a square's item, mark it — look, don't always pick.",
+    "First row, column, or diagonal filled = BINGO. Keep walking for a full-card blackout if energy allows.",
+    "End in a circle: each kid shows their favorite find and says why they picked it.",
+    "Leave everything where it belongs — the next class gets the same hunt."
+   ],
+   "variations": {
+    "easier": "Use a 3x3 card with pictures instead of words for younger kids.",
+    "harder": "Add a tally challenge: count how many of each item the whole group found and graph it."
+   },
+   "safety": "Set clear boundaries for the walk area first. Watch for poison ivy, thorns, and busy paths.",
+   "tags": [
+    "season:fall"
+   ]
+  },
+  {
+   "id": "build-a-scarecrow",
+   "name": "Build-a-Scarecrow",
+   "tagline": "Stuff old clothes with straw and raise a guardian for the school garden.",
+   "categories": [
+    "outdoor",
+    "team-community",
+    "seasons"
+   ],
+   "age_min": 6,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 40,
+   "time_max": 60,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "old long-sleeve shirt and pants"
+    },
+    {
+     "item": "a pillowcase"
+    },
+    {
+     "item": "straw, hay, or shredded paper"
+    },
+    {
+     "item": "twine or rope"
+    },
+    {
+     "item": "a wooden stake or broom handle"
+    },
+    {
+     "item": "markers"
+    },
+    {
+     "item": "an old hat"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Gather stuffing material and clothes. Pick the scarecrow's post — garden bed, playground corner, or field edge — and pound the stake in first.",
+   "steps": [
+    "Stuff the shirt with straw and tie the cuffs and bottom shut with twine.",
+    "Stuff the pants the same way and tie the ankles.",
+    "Draw a face on the pillowcase, stuff it lightly, and tie it closed for the head.",
+    "Dress the scarecrow: shirt over the stake, pants tied on, head pinned at the top, hat on.",
+    "Give your scarecrow a name and a job description. Vote on the name if there are rival ideas."
+   ],
+   "variations": {
+    "easier": "Build a mini tabletop scarecrow from a paper bag and shredded paper instead.",
+    "harder": "Write a 'day in the life' story from the scarecrow's point of view."
+   },
+   "safety": "Straw can be scratchy — no throwing it, and watch for kids with hay allergies.",
+   "tags": [
+    "season:fall"
+   ]
+  },
+  {
+   "id": "leaf-collect-sort-science",
+   "name": "Leaf Collect & Sort",
+   "tagline": "Every kid collects ten leaves, then the group sorts them like real scientists.",
+   "categories": [
+    "outdoor",
+    "stem"
+   ],
+   "age_min": 5,
+   "age_max": 10,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 25,
+   "time_max": 40,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "a bag or basket per kid"
+    },
+    {
+     "item": "sorting trays, paper plates, or big sheets of paper"
+    }
+   ],
+   "no_prep": true,
+   "setup": "Set a collection boundary and a time limit (10 minutes). Hand out bags.",
+   "steps": [
+    "Everyone collects exactly 10 different leaves — different is the goal.",
+    "Dump them out and sort them into groups. The rule is yours to invent: by color, by size, by smooth vs. jagged edges.",
+    "Count each group and lay the leaves out as a living bar graph.",
+    "Each kid explains their sorting rule to a partner. Try someone else's rule on your leaves — does it still work?",
+    "Pick the most surprising leaf and sketch it with three labeled features."
+   ],
+   "variations": {
+    "easier": "Collect 5 leaves and sort by one rule: color.",
+    "harder": "Press the most interesting leaves between book pages and start a class leaf herbarium with labels."
+   },
+   "safety": "Check the area for hazards before collecting. No tasting leaves.",
+   "tags": [
+    "season:fall"
+   ]
+  },
+  {
+   "id": "scarecrow-dress-up-relay",
+   "name": "Scarecrow Dress-Up Relay",
+   "tagline": "Sprint, dress like a scarecrow, strike a pose, sprint back — tag, you're it.",
+   "categories": [
+    "pe-movement",
+    "seasons"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 8,
+   "group_max": 40,
+   "time_min": 20,
+   "time_max": 35,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "2 full sets of oversized clothes (flannel shirt, baggy pants, hat, gloves)"
+    },
+    {
+     "item": "2 chairs or cones to mark the dressing stations"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Split into two teams. At the far end, set out one full scarecrow outfit per team on a chair.",
+   "steps": [
+    "First runner sprints to the chair and puts on EVERY piece of the outfit — shirt, pants, hat, gloves.",
+    "Strike a scarecrow pose (arms out!) and hold it for 3 seconds.",
+    "Sprint back and tag the next teammate, who runs up and puts the outfit on over their own clothes.",
+    "Keep going until every teammate has done the dress-up run.",
+    "First team finished wins — bonus cheer for the best scarecrow pose of the day."
+   ],
+   "variations": {
+    "easier": "Use fewer clothing pieces (just shirt and hat) for younger kids.",
+    "harder": "Add a straw-bale obstacle to run around, or require the pose to freeze until the team names it."
+   },
+   "safety": "Clear the running lane of tripping hazards. Oversized pants get tucked or rolled so nobody trips.",
+   "tags": [
+    "season:fall"
+   ]
+  },
+  {
+   "id": "costume-parade-pose-freeze",
+   "name": "Costume Parade Freeze",
+   "tagline": "Parade your costume while the music plays — freeze in your best pose when it stops.",
+   "categories": [
+    "pe-movement",
+    "holidays"
+   ],
+   "age_min": 4,
+   "age_max": 10,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 30,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "a music player"
+    },
+    {
+     "item": "room to parade in a circle"
+    }
+   ],
+   "no_prep": true,
+   "setup": "Clear a parade loop around the room. Line kids up in their costumes.",
+   "steps": [
+    "Start the music — everyone parades the loop, showing off their costume.",
+    "When the music stops, FREEZE in your best costume pose.",
+    "The audience (everyone still frozen counts too) tries to guess each costume. Unfreeze one at a time to take a bow.",
+    "Music back on — parade again. Repeat 4–5 rounds.",
+    "End with a group freeze: the whole class holds one giant tableau pose."
+   ],
+   "variations": {
+    "easier": "Skip the guessing — just parade and freeze.",
+    "harder": "Add categories: freeze like your character would move, or pair up for duo poses."
+   },
+   "safety": "Costumes need to let kids see and move safely — no vision-blocking masks while parading, and no real or toy weapons, ever.",
+   "tags": [
+    "holiday:halloween"
+   ]
+  },
+  {
+   "id": "pin-the-hat-on-witch",
+   "name": "Pin the Hat on the Witch",
+   "tagline": "The party classic with a Halloween twist — blindfold, spin, stick the hat.",
+   "categories": [
+    "pe-movement",
+    "holidays"
+   ],
+   "age_min": 4,
+   "age_max": 9,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "a large witch face poster (drawn or printed)"
+    },
+    {
+     "item": "paper witch hats (one per kid)"
+    },
+    {
+     "item": "tape or sticky tack on each hat"
+    },
+    {
+     "item": "a soft scarf for a blindfold"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Hang the witch poster at kid height. Put a tape loop on the back of each paper hat.",
+   "steps": [
+    "One at a time, a kid stands a few steps back, gets gently blindfolded, and turns around once.",
+    "Walk forward slowly (a buddy can give 'left / right / straight' hints) and press the hat onto the poster.",
+    "Lift the blindfold — the room decides if the hat landed on the head or somewhere hilarious.",
+    "Everyone gets a turn. Closest hat to the head wins the round.",
+    "Leave the finished poster up as party decor."
+   ],
+   "variations": {
+    "easier": "Skip the blindfold — just stick the hat from a marked line.",
+    "harder": "Add decoy targets: also pin the broom, the cat, and the wart."
+   },
+   "safety": "Clear the walking path of furniture and spot younger kids so nobody bumps into anything.",
+   "tags": [
+    "holiday:halloween"
+   ]
+  },
+  {
+   "id": "glow-stick-ring-toss",
+   "name": "Glow Stick Ring Toss",
+   "tagline": "Dim the lights and toss glowing rings onto bottle targets.",
+   "categories": [
+    "pe-movement",
+    "rainy-day",
+    "holidays"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 30,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "glow sticks (2–3 per kid)"
+    },
+    {
+     "item": "plastic bottles or cones"
+    },
+    {
+     "item": "sand or water to weight bottles"
+    },
+    {
+     "item": "tape to mark throwing lines"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Crack the glow sticks to activate and connect the ends into rings. Weight the bottles, line them up, and dim the lights.",
+   "steps": [
+    "Mark 2–3 throwing lines — closer for younger kids, farther for older.",
+    "Each kid gets 3 rings per turn. Toss underhand at the bottles.",
+    "Score: 1 point per ringer, 3 points for the farthest bottle.",
+    "Play 3 rounds, then a final 'sudden-death' round for the top scorers.",
+    "Collect all the rings at the end — they make great take-home party favors."
+   ],
+   "variations": {
+    "easier": "Use big floor targets (hula hoops) instead of bottles for easy wins.",
+    "harder": "Assign point values to each bottle and let kids keep a running score sheet."
+   },
+   "safety": "Glow sticks are for tossing, not chewing or bending until they snap — any cracked stick goes straight in the trash.",
+   "tags": [
+    "holiday:halloween"
+   ]
+  },
+  {
+   "id": "pumpkin-roll-race",
+   "name": "Pumpkin Roll Race",
+   "tagline": "Roll a pumpkin across the field with a pool noodle — no hands allowed.",
+   "categories": [
+    "pe-movement",
+    "seasons"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 40,
+   "time_min": 20,
+   "time_max": 35,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "small pumpkins (one per racer)"
+    },
+    {
+     "item": "pool noodles (one per racer)"
+    },
+    {
+     "item": "cones to mark lanes and a finish line"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Set up straight lanes with cones, one pumpkin and one noodle per lane. Mark a clear finish line.",
+   "steps": [
+    "Racers line up behind their pumpkins, noodle in hand.",
+    "On 'go', guide your pumpkin down the lane using ONLY the noodle — no hands, no feet.",
+    "If your pumpkin leaves your lane, roll it back in before continuing.",
+    "Run heats of 4–6 racers; winners race a final.",
+    "Cool-down: everyone helps carry pumpkins back. Losers' pumpkins get a consolation cheer."
+   ],
+   "variations": {
+    "easier": "Shorten the lane and let younger kids use their hands to roll.",
+    "harder": "Add slalom cones to weave around, or race in pairs with one noodle each."
+   },
+   "safety": "Noodles guide pumpkins — never swing them at people. Pumpkins stay on the ground.",
+   "tags": [
+    "season:fall"
+   ]
+  },
+  {
+   "id": "halloween-bingo",
+   "name": "Halloween Bingo",
+   "tagline": "Bingo with bats, pumpkins, and black cats — shout 'BOO!' instead of 'bingo'.",
+   "categories": [
+    "rainy-day",
+    "holidays"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 40,
+   "time_min": 20,
+   "time_max": 35,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "printed Halloween bingo cards (or blank cards kids fill with Halloween drawings)"
+    },
+    {
+     "item": "tokens (dried beans, paper squares)"
+    },
+    {
+     "item": "a caller set of picture cards or just call words aloud"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Hand out cards and tokens. The caller needs the full list of Halloween words/pictures (ghost, bat, pumpkin, witch hat, spider, moon, candy, black cat, haunted house).",
+   "steps": [
+    "The caller draws or announces one Halloween item at a time.",
+    "Kids cover the matching square on their card.",
+    "First to complete a row shouts 'BOO!' — check the card, then keep playing for blackout.",
+    "Winners get to be the caller for the next round.",
+    "Final round: everyone plays two cards at once for the championship."
+   ],
+   "variations": {
+    "easier": "Play with picture cards and matching (no reading needed) for younger kids.",
+    "harder": "Kids make their own cards by drawing 9 Halloween items in a grid — then swap cards and play."
+   },
+   "safety": null,
+   "tags": [
+    "holiday:halloween"
+   ]
+  },
+  {
+   "id": "candy-corn-estimation-jar",
+   "name": "Candy Corn Estimation Jar",
+   "tagline": "Guess how many are in the jar — then count by tens to find out.",
+   "categories": [
+    "quiet-focus",
+    "stem",
+    "holidays"
+   ],
+   "age_min": 6,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 40,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "a clear jar filled with candy corn (or dried beans for an allergy-safe version)"
+    },
+    {
+     "item": "small paper slips and pencils"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Fill the jar ahead of time and count the pieces as you fill (write the total down secretly). Set the jar where everyone can see it — no touching.",
+   "steps": [
+    "Everyone studies the jar and writes down a guess on a slip — one guess each, no changing.",
+    "Collect the slips. Read a few guesses aloud — marvel at the range.",
+    "Pour out the jar and count together in groups of ten. Compare to the guesses.",
+    "Closest guess wins — the prize can be the honor of refilling the jar for the next class.",
+    "Talk strategy: who guessed by layers? By rows? What would you do differently next time?"
+   ],
+   "variations": {
+    "easier": "Use a smaller jar and count by fives.",
+    "harder": "Fill two jars with different sizes of candy and estimate which holds more pieces."
+   },
+   "safety": "Check allergies before any tasting happens — and keep the jar sealed until counting time if your class has food allergies.",
+   "tags": [
+    "holiday:halloween"
+   ]
+  },
+  {
+   "id": "costume-category-vote",
+   "name": "Costume Category Vote",
+   "tagline": "Everyone wins something when the categories are this creative.",
+   "categories": [
+    "team-community",
+    "holidays"
+   ],
+   "age_min": 6,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 40,
+   "time_min": 20,
+   "time_max": 35,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper ballots and pencils"
+    },
+    {
+     "item": "a ballot box"
+    },
+    {
+     "item": "paper medals or ribbons (optional)"
+    }
+   ],
+   "no_prep": true,
+   "setup": "Announce fun categories ahead of time: Most Creative, Funniest, Spookiest (Not Scary), Best Duo, Best Homemade. Set out ballots.",
+   "steps": [
+    "Give everyone 5 minutes to look at all the costumes up close.",
+    "Everyone votes in each category — no voting for yourself.",
+    "Two volunteers tally the votes while the class does a costume parade.",
+    "Announce winners with a drumroll. Hand out paper medals.",
+    "Close by having every kid name one costume (not their own) they admired — everyone gets recognized."
+   ],
+   "variations": {
+    "easier": "Vote on just two categories to keep it short.",
+    "harder": "Let kids invent and campaign for their own new categories."
+   },
+   "safety": "Categories stay kind — celebrate creativity and effort, never single anyone out.",
+   "tags": [
+    "holiday:halloween"
+   ]
+  },
+  {
+   "id": "ofrenda-memory-circle",
+   "name": "Ofrenda Memory Circle",
+   "tagline": "Build a small class ofrenda and share happy memories of people we miss.",
+   "categories": [
+    "team-community",
+    "holidays"
+   ],
+   "age_min": 7,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 30,
+   "time_max": 45,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "a small table and cloth"
+    },
+    {
+     "item": "paper marigolds (or drawn ones)"
+    },
+    {
+     "item": "LED candles only"
+    },
+    {
+     "item": "printed photos (optional — kids can also just bring a memory)"
+    },
+    {
+     "item": "paper and pencils"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Set up the table with the cloth. Arrange marigolds and LED candles. Explain first: Día de los Muertos is a Mexican celebration where families honor loved ones who have died — building ofrendas with photos, marigolds, food, and candles to welcome their memory back. We're learning about it with respect.",
+   "steps": [
+    "Each kid writes or draws a happy memory of someone they miss — a grandparent, a pet, anyone.",
+    "One at a time, kids may place their memory on the ofrenda and share it aloud — or just place it quietly. Passing is always okay.",
+    "Light the LED candles together as a symbol of remembrance.",
+    "Sit in a circle and share: what is one thing you learned from the person you remembered?",
+    "Leave the ofrenda up through the week. Take memories home on Friday."
+   ],
+   "variations": {
+    "easier": "The teacher builds the ofrenda and kids simply add drawings — no sharing aloud required.",
+    "harder": "Research real ofrenda elements (pan de muerto, sugar skulls, copal) and add labeled paper versions."
+   },
+   "safety": "LED candles only — no real flames, ever. Sharing is always optional; some kids may prefer to listen.",
+   "tags": [
+    "holiday:dia-de-muertos"
+   ]
+  },
+  {
+   "id": "coping-strategy-cards",
+   "name": "Coping Strategy Cards",
+   "tagline": "Kids build a personal deck of calm-down cards to keep in their desk.",
+   "categories": [
+    "quiet-focus"
+   ],
+   "age_min": 6,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 25,
+   "time_max": 40,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "index cards (4–5 per kid)"
+    },
+    {
+     "item": "markers or crayons"
+    },
+    {
+     "item": "a hole punch"
+    },
+    {
+     "item": "binder rings or yarn to bind the deck"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Brainstorm calm-down strategies on the board first (deep breaths, count to ten, squeeze a stress ball, draw, ask for a break). Give each kid 4–5 blank cards.",
+   "steps": [
+    "Each kid picks 4–5 strategies from the board and makes one card per strategy: draw a picture on one side, write the steps on the other.",
+    "Punch a hole in the corner of each card and bind them into a little flip deck.",
+    "Practice: the teacher names a tricky feeling, and kids flip to the card they'd use.",
+    "Keep the decks in desks or a calm corner. Kids can add new cards anytime.",
+    "Revisit in a month: which cards actually got used? Retire the duds, add new ideas."
+   ],
+   "variations": {
+    "easier": "Make just 2 cards with teacher-chosen strategies.",
+    "harder": "Kids design a 'help a friend' card: what to say when a classmate is upset."
+   },
+   "safety": null,
+   "source": "https://www.weareteachers.com/coping-strategies-for-students-posters-free-printables/?utm_source=rss&utm_medium=rss&utm_campaign=coping-strategies-for-students-posters-free-printables"
+  },
+  {
+   "id": "kindness-poster-campaign",
+   "name": "Kindness Poster Campaign",
+   "tagline": "Pairs design posters with one clear kindness message — then the hallways become the gallery.",
+   "categories": [
+    "team-community"
+   ],
+   "age_min": 7,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 40,
+   "time_min": 30,
+   "time_max": 50,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "large paper or poster board (one per pair)"
+    },
+    {
+     "item": "markers, crayons, or paint"
+    },
+    {
+     "item": "tape for hanging"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Pair kids up. Brainstorm what kindness actually looks like at school (including someone, using kind words, helping without being asked).",
+   "steps": [
+    "Each pair picks ONE clear message — short enough to read from across the hall.",
+    "Design the poster: big readable letters, one strong image, the message front and center.",
+    "Present the poster to the class in 30 seconds: what does it say, and who is it for?",
+    "Hang the posters in hallways with permission — the campaign is the point.",
+    "A week later, walk the hall and notice: which posters do people stop to read?"
+   ],
+   "variations": {
+    "easier": "Make small desk posters instead of hallway-sized ones.",
+    "harder": "Turn the best posters into a printed kindness calendar for the school office."
+   },
+   "safety": null,
+   "source": "https://www.weareteachers.com/anti-bullying-posters-decor/?utm_source=rss&utm_medium=rss&utm_campaign=anti-bullying-posters-decor"
+  },
+  {
+   "id": "winter-joke-slam",
+   "name": "Winter Joke Slam",
+   "tagline": "Everyone writes a clean winter joke — the applause-o-meter picks the champion.",
+   "categories": [
+    "icebreakers"
+   ],
+   "age_min": 7,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 40,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "slips of paper and pencils"
+    },
+    {
+     "item": "a jar or hat"
+    }
+   ],
+   "no_prep": true,
+   "setup": "Set the rules: winter-themed, clean, and kind — no jokes at anyone's expense. Hand out slips.",
+   "steps": [
+    "Everyone writes one winter joke on a slip (a groaner is perfect) and drops it in the jar.",
+    "Shake the jar. Draw slips one at a time and read each joke aloud with full dramatic flair.",
+    "After each joke, the room rates it with applause — louder means funnier.",
+    "Top 3 joke-writers read their own jokes for the final round.",
+    "Crown the Winter Joke Champion. Post the winning joke on the board for the week."
+   ],
+   "variations": {
+    "easier": "The teacher reads pre-collected jokes instead of kids writing their own.",
+    "harder": "Kids illustrate the winning jokes into a class joke book."
+   },
+   "safety": "Jokes stay kind — nothing that teases a person or group.",
+   "source": "https://www.weareteachers.com/winter-jokes/?utm_source=rss&utm_medium=rss&utm_campaign=winter-jokes"
+  },
+  {
+   "id": "gratitude-door-decor",
+   "name": "Gratitude Door Decor",
+   "tagline": "The classroom door becomes a tree, and every kid hangs a leaf of thanks.",
+   "categories": [
+    "team-community",
+    "seasons"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 40,
+   "time_min": 30,
+   "time_max": 60,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "butcher paper or a plastic tablecloth"
+    },
+    {
+     "item": "construction paper leaves (or cut-your-own)"
+    },
+    {
+     "item": "markers"
+    },
+    {
+     "item": "tape"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Cover the classroom door (or a wall) with butcher paper and draw a big bare tree — trunk and branches. Cut or pre-cut paper leaves, one big leaf per kid.",
+   "steps": [
+    "Each kid writes one thing they're grateful for on their leaf — specific beats generic ('my grandma's pancakes' beats 'food').",
+    "One at a time, kids tape their leaf onto the tree branches and read it aloud (or have the teacher read it).",
+    "Step back and admire: a bare tree turned full.",
+    "Leave it up through the season. Add new leaves anytime someone thinks of something.",
+    "Closing circle: which leaf on the tree surprised you most?"
+   ],
+   "variations": {
+    "easier": "The teacher writes the gratitudes while kids decorate the leaves.",
+    "harder": "Make it a hallway installation: every class in the grade adds a tree to a 'gratitude forest'."
+   },
+   "safety": null,
+   "tags": [
+    "season:fall"
+   ],
+   "source": "https://www.weareteachers.com/17-thanksgiving-bulletin-boards-and-door-decorations-to-celebrate-gratitude/?utm_source=rss&utm_medium=rss&utm_campaign=17-thanksgiving-bulletin-boards-and-door-decorations-to-celebrate-gratitude"
+  },
+  {
+   "id": "take-a-stand-debate",
+   "name": "Take-a-Stand Debate",
+   "tagline": "Agree or disagree? Stand on your side, give one reason, and switch if you're convinced.",
+   "categories": [
+    "team-community"
+   ],
+   "age_min": 9,
+   "age_max": 12,
+   "group_min": 6,
+   "group_max": 40,
+   "time_min": 30,
+   "time_max": 50,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "setup": "Clear a line down the middle of the room: one side is AGREE, the other is DISAGREE. Prepare 4–6 low-stakes statements (e.g., 'Cereal is better than pancakes', 'Homework should be optional on Fridays').",
+   "steps": [
+    "Read a statement aloud. Everyone stands on the AGREE or DISAGREE side — no middle.",
+    "Each side picks 2 speakers to give their best one-sentence reason.",
+    "After hearing both sides, anyone may switch sides. Movers say what convinced them.",
+    "New statement, everyone re-stands. Keep a brisk pace — 5 minutes per statement.",
+    "Debrief: which switch surprised you? What makes a reason convincing?"
+   ],
+   "variations": {
+    "easier": "Use silly, zero-stakes statements and let kids give reasons in pairs instead of to the room.",
+    "harder": "Let kids write the statements, then run a formal version with opening statements and rebuttals."
+   },
+   "safety": "Keep statements low-stakes and impersonal — no topics that single out a kid's life or beliefs.",
+   "source": "https://www.weareteachers.com/argumentative-writing-prompts/?utm_source=rss&utm_medium=rss&utm_campaign=argumentative-writing-prompts"
+  },
+  {
+   "id": "poetry-share-circle",
+   "name": "Poetry Share Circle",
+   "tagline": "Read poems aloud, steal your favorite line, and share why it stuck.",
+   "categories": [
+    "quiet-focus"
+   ],
+   "age_min": 7,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 25,
+   "time_max": 45,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "a set of short printed poems (3–4 copies each of 5–6 poems)"
+    },
+    {
+     "item": "paper and pencils"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Print a small stack of short, kid-friendly poems — funny ones work great. Lay them out like a menu.",
+   "steps": [
+    "The teacher reads one poem aloud first, with feeling.",
+    "Everyone picks a poem, reads it silently twice, and underlines their favorite line.",
+    "Go around the circle: read your line aloud and say one sentence about why you picked it.",
+    "Second round (optional): anyone who wants to reads a whole poem aloud.",
+    "Exit ticket: write your own 4-line poem on any topic. No rhyming required."
+   ],
+   "variations": {
+    "easier": "The teacher reads all the poems and kids just pick a favorite line to repeat.",
+    "harder": "Host a poetry slam: volunteers perform a poem with gestures for the class."
+   },
+   "safety": null,
+   "source": "https://www.weareteachers.com/thanksgiving-poems-for-kids/?utm_source=rss&utm_medium=rss&utm_campaign=thanksgiving-poems-for-kids"
+  },
+  {
+   "id": "pumpkin-letter-hunt",
+   "name": "Pumpkin Letter Hunt",
+   "tagline": "Letters hide all over a pumpkin — find the one the teacher calls.",
+   "categories": [
+    "quiet-focus",
+    "crafts"
+   ],
+   "age_min": 3,
+   "age_max": 6,
+   "group_min": 2,
+   "group_max": 20,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "a small pumpkin"
+    },
+    {
+     "item": "letter stickers or masking tape with letters written on"
+    },
+    {
+     "item": "a pointer stick (optional)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Stick letter stickers all over the pumpkin — uppercase on one side, matching lowercase nearby. Set the pumpkin on a table everyone can reach.",
+   "steps": [
+    "Gather the kids around the pumpkin. Name a letter out loud.",
+    "Kids take turns finding that letter on the pumpkin and pointing to it (or gently tapping it).",
+    "When they find it, everyone says the letter's sound together.",
+    "Level up: call out a letter and ask for a word that starts with it before the hunt continues.",
+    "End by singing the alphabet while pointing to letters around the pumpkin in order."
+   ],
+   "variations": {
+    "easier": "Use just 5–6 letters spaced far apart on the pumpkin.",
+    "harder": "Hide sight words instead of letters and have kids read the word they find."
+   },
+   "safety": "Little hands can topple the pumpkin — keep it on a low, steady table.",
+   "tags": [
+    "season:fall"
+   ],
+   "source": "https://www.handsonaswegrow.com/fall-find-the-letter-pumpkin/"
+  },
+  {
+   "id": "secret-code-decoder-wheels",
+   "name": "Secret Code Decoder Wheels",
+   "tagline": "Build a cipher wheel from cardstock, then trade coded messages to crack.",
+   "categories": [
+    "stem",
+    "crafts"
+   ],
+   "age_min": 8,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 30,
+   "time_max": 50,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "cardstock or paper plates (2 circles per kid)"
+    },
+    {
+     "item": "brass paper fasteners"
+    },
+    {
+     "item": "scissors"
+    },
+    {
+     "item": "markers"
+    },
+    {
+     "item": "rulers"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Cut two circles per kid: a big outer wheel and a smaller inner wheel (or use two paper plates, one trimmed smaller). Poke a center hole in each.",
+   "steps": [
+    "Write the alphabet evenly around the outer wheel's edge.",
+    "Write the alphabet around the inner wheel's edge too, in a different color.",
+    "Pin the small wheel on top of the big one with the fastener — it should spin freely.",
+    "Learn the code: turn the inner wheel so A lines up under a different letter — that's your key. Write a message by finding each letter on the outer wheel and writing the inner-wheel letter beneath it.",
+    "Trade coded messages with a partner. Share only the key (which letter A lines up under) and decode each other's notes."
+   ],
+   "variations": {
+    "easier": "Use pre-made wheels where kids just decorate and practice with a given key.",
+    "harder": "Invent a symbol code (pictures instead of letters) or crack a message with an unknown key by guessing common letters."
+   },
+   "safety": "Brass fasteners have a sharp point — the teacher pokes the center holes.",
+   "source": "https://www.teachbesideme.com/decoder-wheel-printable/"
+  },
+  {
+   "id": "expressionism-scream-art",
+   "name": "Big-Feeling Scream Art",
+   "tagline": "Borrow the wavy style of a famous painting to draw your own big feeling.",
+   "categories": [
+    "crafts"
+   ],
+   "age_min": 8,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 30,
+   "time_max": 50,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper"
+    },
+    {
+     "item": "oil pastels or crayons"
+    },
+    {
+     "item": "a printed image of Munch's 'The Scream' to look at together"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Show the famous painting and talk about what you notice: the wavy lines, the bold colors, the huge feeling on the face. The rule: we're borrowing the STYLE, not copying the painting.",
+   "steps": [
+    "Pick a big feeling you've had: excited, nervous, overjoyed, frustrated.",
+    "Draw a face showing that feeling — big and simple, filling the page.",
+    "Fill the background with wavy, swirly lines in bold colors, like the painting's sky.",
+    "Write one sentence under your art: what feeling is it, without telling the whole story.",
+    "Gallery walk: look at everyone's piece and guess the feeling. Artists reveal at the end."
+   ],
+   "variations": {
+    "easier": "Draw just the face with the wavy background — skip the sentence.",
+    "harder": "Make a diptych: the same scene drawn twice, once with calm straight lines and once with wild wavy ones."
+   },
+   "safety": "Feelings are welcome; stories behind them stay private unless a kid chooses to share.",
+   "source": "https://www.teachbesideme.com/the-scream-art-project-for-kids/"
+  },
+  {
+   "id": "dinosaur-pattern-blocks",
+   "name": "Dinosaur Pattern Blocks",
+   "tagline": "Fill dino outlines with pattern blocks — geometry with teeth.",
+   "categories": [
+    "quiet-focus"
+   ],
+   "age_min": 4,
+   "age_max": 8,
+   "group_min": 2,
+   "group_max": 24,
+   "time_min": 20,
+   "time_max": 40,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "pattern blocks"
+    },
+    {
+     "item": "printed dinosaur outline mats (or simple dino outlines drawn on paper)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Print or draw simple dinosaur silhouettes on paper — one per kid. Set out shared bins of pattern blocks.",
+   "steps": [
+    "Pick a dinosaur mat and fill the outline with pattern blocks — match shapes to the spaces.",
+    "Count how many of each shape you used. Which shape did your dino need most?",
+    "Clear the mat and build the same dinosaur freehand, no outline.",
+    "Design your own dinosaur from blocks and name it. Draw it on paper so the design lasts.",
+    "Block museum: line up the paper designs and tour everyone's dinosaurs."
+   ],
+   "variations": {
+    "easier": "Use just 2–3 block shapes and a simple long-neck outline.",
+    "harder": "Measure your dinosaur in block-lengths, or build two dinos and compare their areas."
+   },
+   "safety": null,
+   "source": "https://www.teachbesideme.com/dinosaur-pattern-block-mats/"
+  },
+  {
+   "id": "masterpiece-coloring-gallery",
+   "name": "Masterpiece Coloring Gallery",
+   "tagline": "Color famous artworks, write what you notice, and hang a class museum.",
+   "categories": [
+    "quiet-focus",
+    "crafts"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 40,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "printed coloring pages of famous artworks (several designs)"
+    },
+    {
+     "item": "crayons or colored pencils"
+    },
+    {
+     "item": "tape or a display wall"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Print a variety of famous-artwork coloring pages — a few copies of each. Lay them out so kids can choose.",
+   "steps": [
+    "Pick the artwork that catches your eye. Look at it for a full minute before coloring.",
+    "Color it your way — match the original colors or go wild, your choice.",
+    "Underneath, write one sentence: what do you notice in this artwork?",
+    "Hang every finished piece in a row — that's the class gallery.",
+    "Tour the gallery together. Each artist stands by their piece while the class shares one observation."
+   ],
+   "variations": {
+    "easier": "Color with no writing — just the gallery walk at the end.",
+    "harder": "Research the real painting behind your page and add a 3-fact label card."
+   },
+   "safety": null,
+   "source": "https://www.teachbesideme.com/famous-art-coloring-pages/"
+  },
+  {
+   "id": "continents-map-puzzle",
+   "name": "Continents Map Puzzle",
+   "tagline": "Cut out the seven continents and fit them onto a blank world map.",
+   "categories": [
+    "stem",
+    "quiet-focus"
+   ],
+   "age_min": 7,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 25,
+   "time_max": 45,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "printed world map outlines (one per kid)"
+    },
+    {
+     "item": "printed continent cutouts"
+    },
+    {
+     "item": "scissors"
+    },
+    {
+     "item": "glue sticks"
+    },
+    {
+     "item": "crayons"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Print a blank-ish world map (outlines only) and a sheet of labeled continent shapes per kid.",
+   "steps": [
+    "Cut out the seven continents. Mix them up.",
+    "Fit each continent onto the map outline like a puzzle — no peeking at a finished map yet.",
+    "Glue them down, then label each one and color it a different color.",
+    "Partner quiz: cover the labels and name each continent by pointing.",
+    "Bonus: mark where you live, and draw a line to somewhere you'd love to visit."
+   ],
+   "variations": {
+    "easier": "Use pre-cut continents — just match, glue, and label.",
+    "harder": "Add the oceans, then research one animal from each continent and draw it on the map."
+   },
+   "safety": "Scissors cut paper only.",
+   "source": "https://www.teachbesideme.com/free-printable-world-map/"
   }
  ],
- "count": 176,
+ "count": 213,
  "updated": "2026-10-12"
 }

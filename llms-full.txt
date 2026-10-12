@@ -5,16 +5,16 @@ Hundreds of real, classic, public-domain activity concepts — filterable by age
 group size, materials, and category. Plan-my-week planner. Printable one-page cards.
 
 ## Categories
-- Seasons: 22 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
-- Holidays: 25 activities — Festive projects and games for the days the whole group looks forward to.
-- Crafts: 53 activities — Hands-on making: fold it, paint it, build it, take it home.
-- STEM: 37 activities — Experiments, engineering challenges, and satisfying science demos.
-- PE & Movement: 38 activities — Run, jump, dance — activities that burn off the wiggles.
-- Team & Community: 35 activities — Turn a group into a crew: cooperation, trust, and belonging.
-- Icebreakers: 26 activities — First-day friendly: learn names, laugh, and loosen up fast.
-- Outdoor: 34 activities — Fresh-air activities for fields, playgrounds, and nature walks.
-- Rainy Day: 28 activities — Stuck inside? These keep a roomful of kids happy without a gym.
-- Quiet & Focus: 43 activities — Wind-down worthy: calm, creative, individual or small-group.
+- Seasons: 34 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
+- Holidays: 38 activities — Festive projects and games for the days the whole group looks forward to.
+- Crafts: 66 activities — Hands-on making: fold it, paint it, build it, take it home.
+- STEM: 45 activities — Experiments, engineering challenges, and satisfying science demos.
+- PE & Movement: 43 activities — Run, jump, dance — activities that burn off the wiggles.
+- Team & Community: 41 activities — Turn a group into a crew: cooperation, trust, and belonging.
+- Icebreakers: 27 activities — First-day friendly: learn names, laugh, and loosen up fast.
+- Outdoor: 37 activities — Fresh-air activities for fields, playgrounds, and nature walks.
+- Rainy Day: 30 activities — Stuck inside? These keep a roomful of kids happy without a gym.
+- Quiet & Focus: 50 activities — Wind-down worthy: calm, creative, individual or small-group.
 - Music & Rhythm: 7 activities — Drums, shakers, rhythm games, and songs — make some noise.
 
 ## API
@@ -31,11 +31,15 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
 - skills/icebreaker-chooser.md
 - skills/quiet-focus-picker.md
 - skills/sub-tub-rescue.md
+- skills/halloween-party-planner.md
 
 ## Tools
 - sub.html — Sub Tub: the substitute-teacher rescue kit.
   Pick grade band, minutes to fill, materials on hand, location —
   generates a sequenced print-ready emergency plan plus a 'Dear sub' note template.
+- party.html — Halloween Class-Party Planner.
+  Pick class size, minutes, stations, and budget — generates a timed station-rotation
+  plan from seasonal activities, plus a setup list and a print-ready run sheet.
 
 ## Docs
 - API.md — full API reference
@@ -62,6 +66,16 @@ Page: activity/all-about-me-bags.html
 Bear crawls, frog hops, crab walks, and flamingo stands — a full-body workout disguised as a trip to the zoo.
 Categories: PE & Movement | Ages 4-8 | Group 2-25 | 20-20 min | No prep | indoor/outdoor
 Page: activity/animal-moves.html
+
+### Apple Browning Lab
+Why do cut apples turn brown? Kids run the experiment and find out.
+Categories: STEM, Seasons | Ages 7-12 | Group 2-30 | 20-35 min | Prep needed | indoor
+Page: activity/apple-browning-lab.html
+
+### Apple Print Painting
+Halved apples become stamps — print rows of apple patterns.
+Categories: Crafts, Seasons | Ages 4-10 | Group 2-30 | 20-35 min | Prep needed | indoor
+Page: activity/apple-print-painting.html
 
 ### Appreciation Postcards
 One specific thank-you per kid, delivered like mail.
@@ -93,6 +107,11 @@ Slow-floating balloons and paper-plate rackets make indoor tennis that never bre
 Categories: PE & Movement, Rainy Day | Ages 5-12 | Group 2-16 | 20-20 min | Prep needed | indoor
 Page: activity/balloon-tennis.html
 
+### Big-Feeling Scream Art
+Borrow the wavy style of a famous painting to draw your own big feeling.
+Categories: Crafts | Ages 8-12 | Group 2-30 | 30-50 min | Prep needed | indoor
+Page: activity/expressionism-scream-art.html
+
 ### Birthday Lineup (Silent)
 Line up in birthday order with zero talking — fingers, mime, and teamwork do all the communicating.
 Categories: Team & Community, Icebreakers | Ages 6-12 | Group 8-30 | 15-15 min | No prep | indoor/outdoor
@@ -123,10 +142,20 @@ Write kind notes on paper 'drops' and fill each other's buckets — then keep a 
 Categories: Team & Community | Ages 4-10 | Group 4-25 | 25-25 min | Prep needed | indoor
 Page: activity/bucket-fillers.html
 
+### Build-a-Scarecrow
+Stuff old clothes with straw and raise a guardian for the school garden.
+Categories: Outdoor, Team & Community, Seasons | Ages 6-12 | Group 4-30 | 40-60 min | Prep needed | outdoor
+Page: activity/build-a-scarecrow.html
+
 ### Calm Breathing Shapes
 Trace shapes in the air while breathing in rhythm — a reset button for loud afternoons.
 Categories: Quiet & Focus | Ages 6-12 | Group 2-40 | 5-15 min | No prep | indoor
 Page: activity/calm-breathing-shapes.html
+
+### Candy Corn Estimation Jar
+Guess how many are in the jar — then count by tens to find out.
+Categories: Quiet & Focus, STEM, Holidays | Ages 6-12 | Group 2-40 | 15-25 min | Prep needed | indoor
+Page: activity/candy-corn-estimation-jar.html
 
 ### Capture the Flag
 Sneak in, grab the flag, get home — the playground epic.
@@ -213,6 +242,31 @@ Sit in a circle and give every single person specific, genuine compliments — t
 Categories: Team & Community, Icebreakers | Ages 5-12 | Group 5-30 | 15-15 min | No prep | indoor/outdoor
 Page: activity/compliment-circle.html
 
+### Continents Map Puzzle
+Cut out the seven continents and fit them onto a blank world map.
+Categories: STEM, Quiet & Focus | Ages 7-12 | Group 2-30 | 25-45 min | Prep needed | indoor
+Page: activity/continents-map-puzzle.html
+
+### Coping Strategy Cards
+Kids build a personal deck of calm-down cards to keep in their desk.
+Categories: Quiet & Focus | Ages 6-12 | Group 2-30 | 25-40 min | Prep needed | indoor
+Page: activity/coping-strategy-cards.html
+
+### Corn Husk Dolls
+Soak, bundle, and tie dried corn husks into old-fashioned dolls.
+Categories: Crafts, Seasons | Ages 7-12 | Group 2-30 | 30-50 min | Prep needed | indoor
+Page: activity/corn-husk-dolls.html
+
+### Costume Category Vote
+Everyone wins something when the categories are this creative.
+Categories: Team & Community, Holidays | Ages 6-12 | Group 4-40 | 20-35 min | No prep | indoor
+Page: activity/costume-category-vote.html
+
+### Costume Parade Freeze
+Parade your costume while the music plays — freeze in your best pose when it stops.
+Categories: PE & Movement, Holidays | Ages 4-10 | Group 4-30 | 20-30 min | No prep | indoor
+Page: activity/costume-parade-pose-freeze.html
+
 ### Crab Walk Soccer
 Soccer played entirely in crab-walk position — belly up, hands and feet down. Hilarious, exhausting, unforgettable.
 Categories: PE & Movement, Outdoor | Ages 6-12 | Group 8-24 | 25-25 min | Prep needed | outdoor
@@ -263,6 +317,11 @@ Teams build the course, then everyone races through all of them.
 Categories: PE & Movement, Outdoor | Ages 7-12 | Group 4-30 | 30-60 min | Prep needed | outdoor
 Page: activity/obstacle-course-design.html
 
+### Dinosaur Pattern Blocks
+Fill dino outlines with pattern blocks — geometry with teeth.
+Categories: Quiet & Focus | Ages 4-8 | Group 2-24 | 20-40 min | Prep needed | indoor
+Page: activity/dinosaur-pattern-blocks.html
+
 ### Dragon Parade
 A walking, waving paper dragon — every kid gets a section.
 Categories: Holidays, PE & Movement | Ages 5-12 | Group 8-30 | 30-60 min | Prep needed | indoor/outdoor
@@ -277,6 +336,11 @@ Page: activity/duck-duck-goose.html
 Teams race to transport eggs on spoons through silly obstacles — drop it and you start that leg over.
 Categories: Holidays, PE & Movement | Ages 5-12 | Group 8-30 | 25-25 min | Prep needed | indoor/outdoor
 Page: activity/easter-egg-relay.html
+
+### Egg Carton Spiders
+One egg-carton cup + pipe-cleaner legs = a spider that actually dangles.
+Categories: Crafts, Holidays | Ages 4-9 | Group 2-30 | 20-30 min | Prep needed | indoor
+Page: activity/egg-carton-spider-craft.html
 
 ### Egg Drop Challenge
 Design a container that keeps a raw egg safe in a drop from up high.
@@ -297,6 +361,16 @@ Page: activity/emoji-intros.html
 Three artists, one folded paper, one gloriously weird creature.
 Categories: Quiet & Focus, Crafts | Ages 7-12 | Group 2-30 | 15-30 min | No prep | indoor
 Page: activity/exquisite-corpse-draw.html
+
+### Fall Leaf Chromatography
+Hidden colors inside fall leaves separate out on a coffee filter.
+Categories: STEM, Seasons | Ages 8-12 | Group 2-24 | 30-50 min | Prep needed | indoor
+Page: activity/fall-leaf-chromatography.html
+
+### Fall Scavenger Bingo
+A bingo card full of fall — hunt the outdoors for every square.
+Categories: Outdoor, Seasons | Ages 5-12 | Group 2-40 | 25-45 min | No prep | outdoor
+Page: activity/fall-scavenger-bingo.html
 
 ### Falling Leaves Sensory Jars
 Build calming glitter-and-leaf jars that kids can shake and watch settle — a perfect quiet corner tool.
@@ -338,10 +412,25 @@ Small toys frozen in ice blocks become an excavation mission — kids experiment
 Categories: Seasons, STEM | Ages 4-10 | Group 1-20 | 30-30 min | Prep needed | indoor/outdoor
 Page: activity/summer-frozen-treasure.html
 
+### Ghost Footprint Keepsakes
+One painted footprint, flipped upside down, becomes a little ghost.
+Categories: Crafts, Holidays | Ages 3-7 | Group 2-24 | 15-25 min | Prep needed | indoor
+Page: activity/ghost-footprint-keepsake.html
+
 ### Glitter Calm-Down Jars
 Shake the glitter storm, then breathe slowly until it all settles — a personal calm-down timer in a jar.
 Categories: Quiet & Focus, Crafts | Ages 4-10 | Group 1-20 | 25-25 min | Prep needed | indoor
 Page: activity/glitter-calm-jars.html
+
+### Glow Stick Ring Toss
+Dim the lights and toss glowing rings onto bottle targets.
+Categories: PE & Movement, Rainy Day, Holidays | Ages 5-12 | Group 4-30 | 15-30 min | Prep needed | indoor
+Page: activity/glow-stick-ring-toss.html
+
+### Gratitude Door Decor
+The classroom door becomes a tree, and every kid hangs a leaf of thanks.
+Categories: Team & Community, Seasons | Ages 5-12 | Group 4-40 | 30-60 min | Prep needed | indoor
+Page: activity/gratitude-door-decor.html
 
 ### Gratitude Journals
 Three specific good things, one thank-you, every session — a private journal that rewires attention toward the good.
@@ -368,10 +457,20 @@ Cover a wall in butcher paper and let every group claim a section — the finish
 Categories: Team & Community, Crafts | Ages 5-12 | Group 6-30 | 45-45 min | Prep needed | indoor
 Page: activity/group-mural.html
 
+### Halloween Bingo
+Bingo with bats, pumpkins, and black cats — shout 'BOO!' instead of 'bingo'.
+Categories: Rainy Day, Holidays | Ages 5-12 | Group 4-40 | 20-35 min | Prep needed | indoor
+Page: activity/halloween-bingo.html
+
 ### Halloween Shadow Puppet Show
 Cut spooky silhouettes, mount them on sticks, and perform a shadow play behind a sheet with flashlights.
 Categories: Holidays, Rainy Day, Crafts | Ages 5-12 | Group 4-25 | 45-45 min | Prep needed | indoor
 Page: activity/halloween-shadow-puppets.html
+
+### Handprint Bat Garland
+Two handprints make bat wings — string them into a classroom garland.
+Categories: Crafts, Holidays | Ages 4-10 | Group 2-30 | 20-35 min | Prep needed | indoor
+Page: activity/handprint-bat-garland.html
 
 ### Harvest Thanksgiving Skits
 Two-minute skits about gratitude, planned in ten.
@@ -443,6 +542,11 @@ Each link holds a secret act of kindness. Tear one off daily and watch the chain
 Categories: Holidays, Team & Community | Ages 4-12 | Group 1-30 | 30-30 min | Prep needed | indoor
 Page: activity/winter-kindness-chain.html
 
+### Kindness Poster Campaign
+Pairs design posters with one clear kindness message — then the hallways become the gallery.
+Categories: Team & Community | Ages 7-12 | Group 4-40 | 30-50 min | Prep needed | indoor
+Page: activity/kindness-poster-campaign.html
+
 ### Kindness Scavenger Hunt
 A scavenger hunt where the items are kind acts.
 Categories: Team & Community, Outdoor, Holidays | Ages 7-12 | Group 6-30 | 25-45 min | No prep | outdoor/indoor
@@ -453,10 +557,20 @@ Catch the wind on a string — the spring classic.
 Categories: Outdoor, Seasons | Ages 7-12 | Group 2-20 | 30-60 min | Prep needed | outdoor
 Page: activity/kite-flying-basics.html
 
+### Leaf Animal Collage
+Dry leaves become foxes, owls, and hedgehogs — nature's sticker book.
+Categories: Crafts, Seasons | Ages 4-10 | Group 2-30 | 25-45 min | Prep needed | indoor
+Page: activity/leaf-animal-collage.html
+
 ### Leaf Boat Races
 Leaf hulls, twig masts, and a finish line downstream.
 Categories: Seasons, Outdoor, STEM | Ages 4-10 | Group 2-30 | 20-40 min | No prep | outdoor
 Page: activity/leaf-boat-races.html
+
+### Leaf Collect & Sort
+Every kid collects ten leaves, then the group sorts them like real scientists.
+Categories: Outdoor, STEM | Ages 5-10 | Group 2-30 | 25-40 min | No prep | outdoor
+Page: activity/leaf-collect-sort-science.html
 
 ### Leaf Rubbing Gallery
 Collect fall leaves, rub their veins onto paper, and hang a natural gallery.
@@ -518,6 +632,16 @@ Twenty marshmallows, twenty spaghetti sticks, fifteen minutes — build the tall
 Categories: STEM, Team & Community | Ages 6-12 | Group 6-30 | 30-30 min | Prep needed | indoor
 Page: activity/marshmallow-towers.html
 
+### Masterpiece Coloring Gallery
+Color famous artworks, write what you notice, and hang a class museum.
+Categories: Quiet & Focus, Crafts | Ages 5-12 | Group 2-30 | 20-40 min | Prep needed | indoor
+Page: activity/masterpiece-coloring-gallery.html
+
+### Measure the Pumpkin
+Circumference, weight, seed guesses — a pumpkin turns into a math lab.
+Categories: STEM, Seasons | Ages 6-12 | Group 2-30 | 25-45 min | Prep needed | indoor/outdoor
+Page: activity/measure-the-pumpkin.html
+
 ### Mini Pumpkin Bowling
 Roll small pumpkins at bottle 'pins' in this harvest twist on bowling — easy to set up, endlessly replayable.
 Categories: Holidays, PE & Movement | Ages 4-10 | Group 2-20 | 20-20 min | Prep needed | indoor/outdoor
@@ -578,6 +702,11 @@ All the fall fun of pumpkins with zero knives: paint, stickers, and googly eyes 
 Categories: Seasons, Holidays, Crafts | Ages 4-12 | Group 1-30 | 40-40 min | Prep needed | indoor/outdoor
 Page: activity/pumpkin-painting-party.html
 
+### Ofrenda Memory Circle
+Build a small class ofrenda and share happy memories of people we miss.
+Categories: Team & Community, Holidays | Ages 7-12 | Group 4-30 | 30-45 min | Prep needed | indoor
+Page: activity/ofrenda-memory-circle.html
+
 ### One-Word Story Chain
 Build a story one sentence per person around the circle — plot twists mandatory, logic optional.
 Categories: Team & Community, Icebreakers, Quiet & Focus | Ages 7-12 | Group 5-25 | 20-20 min | No prep | indoor
@@ -587,6 +716,11 @@ Page: activity/story-chain.html
 Fold a paper frog that actually hops — then hold a frog-jump race.
 Categories: Crafts, Quiet & Focus | Ages 7-12 | Group 2-30 | 20-40 min | No prep | indoor
 Page: activity/origami-jumping-frogs.html
+
+### Papel Picado Banners
+Fold and snip tissue paper into the colorful cut-paper banners of Día de los Muertos.
+Categories: Crafts, Holidays | Ages 7-12 | Group 2-30 | 30-50 min | Prep needed | indoor
+Page: activity/papel-picado-banners.html
 
 ### Paper Airplane Challenge
 Fold, throw, measure, iterate — the cheapest engineering lesson there is.
@@ -643,6 +777,11 @@ Fold, snip, unfold — no two alike, just like the real thing.
 Categories: Seasons, Crafts | Ages 6-12 | Group 2-40 | 15-40 min | No prep | indoor
 Page: activity/paper-snowflakes.html
 
+### Paper-Bag Ghost Puppets
+Lunch bags + tissue paper = a cast of friendly ghosts for a puppet show.
+Categories: Crafts, Holidays | Ages 4-9 | Group 2-30 | 20-35 min | Prep needed | indoor
+Page: activity/paper-bag-ghost-puppets.html
+
 ### Parachute Play
 Lift, billow, and trap the air — popcorn balls, mushroom tents, and color swaps with the classic play parachute.
 Categories: Outdoor, PE & Movement | Ages 4-10 | Group 6-30 | 25-25 min | Prep needed | outdoor
@@ -663,15 +802,40 @@ Draw it fast, guess it faster — no words allowed.
 Categories: Icebreakers, Rainy Day, Crafts | Ages 6-12 | Group 4-30 | 15-35 min | No prep | indoor
 Page: activity/pictionary.html
 
+### Pin the Hat on the Witch
+The party classic with a Halloween twist — blindfold, spin, stick the hat.
+Categories: PE & Movement, Holidays | Ages 4-9 | Group 4-30 | 15-25 min | Prep needed | indoor
+Page: activity/pin-the-hat-on-witch.html
+
 ### Pinecone Bird Feeders
 Pinecones + peanut butter + birdseed = a winter buffet for local birds.
 Categories: Seasons, Crafts, Outdoor | Ages 6-11 | Group 2-25 | 20-40 min | Prep needed | outdoor/indoor
 Page: activity/pinecone-bird-feeders.html
 
+### Poetry Share Circle
+Read poems aloud, steal your favorite line, and share why it stuck.
+Categories: Quiet & Focus | Ages 7-12 | Group 2-30 | 25-45 min | Prep needed | indoor
+Page: activity/poetry-share-circle.html
+
 ### Puffy Snow Slime
 Mix up a batch of moldable, stretchy 'snow' and sculpt a miniature winter world with small toys.
 Categories: Seasons, STEM, Holidays | Ages 6-12 | Group 1-20 | 30-30 min | Prep needed | indoor
 Page: activity/winter-snow-slime.html
+
+### Pumpkin Letter Hunt
+Letters hide all over a pumpkin — find the one the teacher calls.
+Categories: Quiet & Focus, Crafts | Ages 3-6 | Group 2-20 | 15-25 min | Prep needed | indoor
+Page: activity/pumpkin-letter-hunt.html
+
+### Pumpkin Roll Race
+Roll a pumpkin across the field with a pool noodle — no hands allowed.
+Categories: PE & Movement, Seasons | Ages 5-12 | Group 4-40 | 20-35 min | Prep needed | outdoor
+Page: activity/pumpkin-roll-race.html
+
+### Pumpkin Seed Sprouting Baggies
+Seeds wake up on the classroom window — watch germination happen day by day.
+Categories: STEM, Seasons | Ages 5-10 | Group 2-30 | 15-25 min | Prep needed | indoor
+Page: activity/pumpkin-seed-sprout-baggies.html
 
 ### Rain Gauge Challenge
 Build a rain gauge, predict the week, check the sky's score.
@@ -707,6 +871,16 @@ Page: activity/rock-cairn-balance.html
 Smooth stones become ladybugs, monsters, and messages — then hide them around the neighborhood.
 Categories: Crafts, Outdoor | Ages 5-12 | Group 2-30 | 25-60 min | Prep needed | outdoor/indoor
 Page: activity/rock-painting.html
+
+### Scarecrow Dress-Up Relay
+Sprint, dress like a scarecrow, strike a pose, sprint back — tag, you're it.
+Categories: PE & Movement, Seasons | Ages 5-12 | Group 8-40 | 20-35 min | Prep needed | indoor/outdoor
+Page: activity/scarecrow-dress-up-relay.html
+
+### Secret Code Decoder Wheels
+Build a cipher wheel from cardstock, then trade coded messages to crack.
+Categories: STEM, Crafts | Ages 8-12 | Group 2-30 | 30-50 min | Prep needed | indoor
+Page: activity/secret-code-decoder-wheels.html
 
 ### Secret Kindness Missions
 Secret missions, all kindness, zero pranks.
@@ -798,6 +972,11 @@ Race to build and collapse cup pyramids — solo speed runs, team relays, and a 
 Categories: Rainy Day, PE & Movement | Ages 6-12 | Group 2-20 | 20-20 min | Prep needed | indoor
 Page: activity/cup-stacking.html
 
+### Spiderweb Plate Weaving
+Weave yarn across a paper plate into a web, then add a spider.
+Categories: Crafts, Holidays | Ages 5-11 | Group 2-30 | 25-45 min | Prep needed | indoor
+Page: activity/spiderweb-plate-weave.html
+
 ### Sponge Water Relay
 Sponge-soak, sprint, squeeze — teams race to transfer the most water bucket-to-bucket. Everyone gets soaked.
 Categories: Outdoor, PE & Movement, Seasons | Ages 6-12 | Group 8-30 | 25-25 min | Prep needed | outdoor
@@ -847,6 +1026,11 @@ Page: activity/string-figure-games.html
 The sun does the painting — you just pick the shapes.
 Categories: Seasons, Crafts, Outdoor | Ages 6-12 | Group 2-30 | 30-60 min | No prep | outdoor
 Page: activity/sun-print-art.html
+
+### Take-a-Stand Debate
+Agree or disagree? Stand on your side, give one reason, and switch if you're convinced.
+Categories: Team & Community | Ages 9-12 | Group 6-40 | 30-50 min | No prep | indoor
+Page: activity/take-a-stand-debate.html
 
 ### Teach-a-Move Dance Tutorial
 Each group invents a dance move, teaches it to everyone, then strings them all into one epic group routine.
@@ -907,6 +1091,11 @@ Page: activity/weather-journal.html
 Frozen water, berries, and a battery candle — winter glow.
 Categories: Seasons, Crafts | Ages 5-12 | Group 2-30 | 25-45 min | Prep needed | indoor/outdoor
 Page: activity/winter-ice-lanterns.html
+
+### Winter Joke Slam
+Everyone writes a clean winter joke — the applause-o-meter picks the champion.
+Categories: Icebreakers | Ages 7-12 | Group 4-40 | 15-25 min | No prep | indoor
+Page: activity/winter-joke-slam.html
 
 ### Would You Rather
 Impossible choices, hilarious defenses — the easiest discussion starter.

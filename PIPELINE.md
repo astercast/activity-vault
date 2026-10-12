@@ -24,11 +24,19 @@ Every activity is one JSON object in `data/activities.json`. All fields required
   "setup": "Clear a throwing lane...",
   "steps": ["Show the group one basic dart fold..."],
   "variations": {"easier": "...", "harder": "..."},
-  "safety": "Throw only down the lane..." 
+  "safety": "Throw only down the lane..." ,
+  "tags": ["season:fall"],
+  "source": "https://example.com/inspiration-post"
 }
 ```
 
 - `safety`: `null` when nothing beyond ordinary classroom sense applies. Never invent safety or medical claims.
+- `tags` (optional): season/occasion tags from the fixed vocabulary in `scripts/build.py`
+  (`season:fall`, `holiday:halloween`, `holiday:dia-de-muertos`, `theme:spooky`).
+  Powers the "Season / occasion" filter. New tags must be added to the validator,
+  `assets/app.js` labels, and the API docs together.
+- `source` (optional): URL of the inspiration post when an activity is adapted from
+  the RSS review queue. Rendered on the page as an "inspired by" credit.
 - `id`: lowercase slug, unique, matches `^[a-z0-9-]+$`.
 - `categories`: 1–3 ids from `data/categories.json`.
 - `materials`: `[]` means truly nothing needed (then `no_prep` must be `true`).
@@ -65,8 +73,9 @@ activity ideas for **human review** — it never publishes anything on its own.
 
 Review workflow: read a pending candidate → adapt the idea into **original
 words** per the contribution format above (link the source post as inspiration,
-never copy text) → add it in a wave → set its queue entry to `"accepted"` or
-`"rejected"`.
+never copy text) → add it in a wave → set its queue entry to `"accepted"` (with
+the new `activity_id`), `"rejected"` (with a `decision` reason), or `"deferred"`
+(good concept, wrong season — hold for a later wave).
 
 Cron (Mondays 7am, no keys needed):
 

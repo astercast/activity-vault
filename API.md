@@ -11,7 +11,7 @@ Full activity library.
 ```json
 {
   "activities": [ { "id": "...", "name": "...", ... } ],
-  "count": 66,
+  "count": 213,
   "updated": "2026-10-11"
 }
 ```
@@ -23,7 +23,7 @@ Full activity library.
 | `id` | string | URL-safe slug; page at `activity/<id>.html` |
 | `name` | string | Display name |
 | `tagline` | string | One-line pitch |
-| `categories` | string[] | 1+ of the 10 category ids |
+| `categories` | string[] | 1+ of the 11 category ids |
 | `age_min` / `age_max` | int | Inclusive age range (years) |
 | `group_min` / `group_max` | int | Inclusive group size (kids) |
 | `time_min` / `time_max` | int | Minutes; `time_min` is the realistic floor |
@@ -34,10 +34,12 @@ Full activity library.
 | `steps` | string[] | Ordered instructions |
 | `variations` | object | `{"easier": "...", "harder": "..."}` |
 | `safety` | string\|null | Common-sense safety notes, or null |
+| `tags` | string[] (optional) | Season/occasion tags: `season:fall`, `holiday:halloween`, `holiday:dia-de-muertos`, `theme:spooky` |
+| `source` | string\|null (optional) | Inspiration source URL (RSS pipeline adaptations link the original post) |
 
 ### `GET api/v1/categories.json`
 
-The 10 categories: `id`, `name`, `blurb`, `color` (hex), `glyph`.
+The 11 categories: `id`, `name`, `blurb`, `color` (hex), `glyph`.
 
 ```json
 { "categories": [ {"id": "stem", "name": "STEM", "blurb": "...", "color": "#0d8a96", "glyph": "🔬"} ], "count": 10, "updated": "..." }
@@ -54,6 +56,7 @@ Machine-readable filter configuration — the same logic the browser UI uses:
     "time_available": { "type": "select", "options": [15, 20, 30, 45, 60], "description": "Activity fits if time_min <= selected minutes." },
     "group_size":     { "type": "range", "min": 2, "max": 40, "description": "Activity fits if the group range overlaps the selected size." },
     "categories":     { "type": "multiselect", "options": ["seasons", "holidays", ...] },
+    "tags":           { "type": "multiselect", "options": ["season:fall", "holiday:halloween", "holiday:dia-de-muertos", "theme:spooky"], "description": "Activity fits if it carries ANY selected tag." },
     "no_prep_only":   { "type": "boolean" },
     "indoor_only":    { "type": "boolean" },
     "outdoor_only":   { "type": "boolean" },

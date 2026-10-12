@@ -12,10 +12,19 @@
     maxTime: null,      // minutes available (activity matches if time_min <= maxTime)
     group: null,        // group size (activity matches if range overlaps)
     cats: new Set(),    // selected category ids
+    tags: new Set(),    // selected season/occasion tags (activity matches if it has ANY)
     noPrepOnly: false,
     indoorOnly: false,
     outdoorOnly: false
   };
+
+  var TAG_LABELS = {
+    'season:fall': '🎃 Fall',
+    'holiday:halloween': '👻 Halloween',
+    'holiday:dia-de-muertos': '💀 Día de los Muertos',
+    'theme:spooky': '🕸️ Spooky (not scary)'
+  };
+  var TAG_ORDER = ['season:fall', 'holiday:halloween', 'holiday:dia-de-muertos', 'theme:spooky'];
 
   var grid, countEl, searchInput;
 
@@ -31,6 +40,7 @@
     if (state.maxTime != null && a.time_min > state.maxTime) return false;
     if (state.group != null && (a.group_min > state.group || a.group_max < state.group)) return false;
     if (state.cats.size && !a.categories.some(function (c) { return state.cats.has(c); })) return false;
+    if (state.tags.size && !(a.tags || []).some(function (t) { return state.tags.has(t); })) return false;
     if (state.noPrepOnly && !a.no_prep) return false;
     if (state.indoorOnly && a.location.indexOf('indoor') === -1) return false;
     if (state.outdoorOnly && a.location.indexOf('outdoor') === -1) return false;
@@ -58,6 +68,11 @@
       if (!c) return;
       var chip = el('span', 'chip cat-chip', c.glyph + ' ' + c.name);
       chip.style.setProperty('--cat', c.color);
+      chip.setAttribute('aria-hidden', 'true');
+      chips.appendChild(chip);
+    });
+    (a.tags || []).forEach(function (t) {
+      var chip = el('span', 'chip tag-chip', TAG_LABELS[t] || t);
       chip.setAttribute('aria-hidden', 'true');
       chips.appendChild(chip);
     });
@@ -155,6 +170,18 @@
     cg.appendChild(row);
     host.appendChild(cg);
 
+    // season / occasion tags
+    var tagg = el('div', 'filter-group');
+    tagg.appendChild(el('span', 'flabel', 'Season / occasion'));
+    var tagrow = el('div', 'chip-row');
+    TAG_ORDER.forEach(function (t) {
+      tagrow.appendChild(chipButton(TAG_LABELS[t], false, function (on) {
+        if (on) state.tags.add(t); else state.tags.delete(t);
+      }, '#8b5cf6'));
+    });
+    tagg.appendChild(tagrow);
+    host.appendChild(tagg);
+
     // age
     var ag = el('div', 'filter-group');
     ag.appendChild(el('label', 'flabel', 'Age'));
@@ -235,7 +262,8 @@
     reset.type = 'button';
     reset.addEventListener('click', function () {
       state.q = ''; state.age = null; state.maxTime = null; state.group = null;
-      state.cats.clear(); state.noPrepOnly = false; state.indoorOnly = false; state.outdoorOnly = false;
+      state.cats.clear(); state.tags.clear();
+      state.noPrepOnly = false; state.indoorOnly = false; state.outdoorOnly = false;
       searchInput.value = ''; tsel.value = ''; gsel.value = '';
       host.querySelectorAll('[aria-pressed]').forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
       render();

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Party Planner — Halloween class-party planner — Activity Vault</title>
+<meta name="description" content="Plan a Halloween class party in minutes: class size, party length, stations, and budget become a timed station-rotation plan with a setup list and print-ready run sheet.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#party-plan">Skip to party plan</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Activity Vault home">
+      <span class="brand-mark" aria-hidden="true">🗂️</span>
+      <span class="brand-text">Activity <strong>Vault</strong></span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="index.html">Browse</a>
+      <a href="planner.html">Plan my week</a>
+      <a href="sub.html">Sub Tub 🆘</a>
+      <a href="party.html" aria-current="page">Party Planner 🎃</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" aria-labelledby="hero-title">
+    <span class="kicker no-print">🎃 Party Planner</span>
+    <h1 id="hero-title">The Halloween<br>class-party planner.</h1>
+    <p class="lede no-print">Tell it your class size, how long the party runs, how many stations you can staff, and your budget — it builds a timed station-rotation plan from the Vault's fall and Halloween activities, with a merged setup list and a print-ready run sheet.</p>
+  </section>
+
+  <form class="planner-form no-print" id="party-form" onsubmit="return false;" aria-label="Halloween class-party planner options">
+    <fieldset>
+      <legend>Class size</legend>
+      <div class="filter-group">
+        <label class="flabel" for="party-size">Number of kids</label>
+        <input type="number" id="party-size" min="4" max="60" value="24" inputmode="numeric">
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Party length</legend>
+      <div class="filter-group">
+        <label class="flabel" for="party-minutes">Minutes</label>
+        <select id="party-minutes">
+          <option value="30">30 min</option>
+          <option value="45">45 min</option>
+          <option value="60" selected>60 min</option>
+          <option value="90">90 min</option>
+        </select>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Stations</legend>
+      <div class="filter-group">
+        <label class="flabel" for="party-stations">How many stations can you staff?</label>
+        <select id="party-stations">
+          <option value="2">2 stations</option>
+          <option value="3" selected>3 stations</option>
+          <option value="4">4 stations</option>
+          <option value="5">5 stations</option>
+          <option value="6">6 stations</option>
+        </select>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Budget</legend>
+      <div class="chip-row" role="radiogroup" aria-label="Budget">
+        <label class="chip"><input type="radio" name="budget" value="shoestring" checked> 🪙 Shoestring</label>
+        <label class="chip"><input type="radio" name="budget" value="moderate"> 💵 Moderate</label>
+        <label class="chip"><input type="radio" name="budget" value="splurge"> 🎉 Splurge</label>
+      </div>
+    </fieldset>
+    <button class="btn" id="party-generate" type="button">🎃 Build my party plan</button>
+  </form>
+
+  <p id="party-status" role="status" aria-live="polite" class="no-print"></p>
+
+  <article id="party-plan" aria-labelledby="party-plan-title" hidden>
+    <div class="plan-sheet">
+      <header class="plan-head">
+        <p class="kicker">🎃 Halloween class-party run sheet</p>
+        <h2 id="party-plan-title" tabindex="-1">Party plan</h2>
+        <p class="plan-meta" id="party-meta"></p>
+      </header>
+      <section aria-labelledby="rot-title">
+        <h3 id="rot-title">🔁 Station rotation</h3>
+        <p class="plan-note">Split the class into groups. Each group starts at one station and rotates when the timer rings. The adult at each station repeats their activity every round.</p>
+        <ol class="plan-blocks" id="party-rounds"></ol>
+      </section>
+      <section aria-labelledby="setup-title">
+        <h3 id="setup-title">🧰 Setup checklist</h3>
+        <p class="plan-note">Gather everything before the party starts. One column per station.</p>
+        <div id="party-setup"></div>
+      </section>
+      <section aria-labelledby="stations-title">
+        <h3 id="stations-title">📋 Station cards</h3>
+        <ol class="plan-blocks" id="party-stations-list"></ol>
+      </section>
+      <section aria-labelledby="close-title">
+        <h3 id="close-title">🎬 Closing</h3>
+        <p id="party-closing"></p>
+      </section>
+    </div>
+  </article>
+
+  <div class="print-actions no-print" id="party-actions" hidden>
+    <button class="btn" id="print-party" type="button">🖨️ Print run sheet</button>
+    <button class="btn btn-ghost" id="party-reshuffle" type="button">🎲 Shuffle stations</button>
+  </div>
+  <p class="no-print" style="margin-bottom:3rem;"><a href="index.html">← Back to browsing</a></p>
+</main>
+
+<footer class="site-footer no-print">
+  <div class="wrap"><p><strong>Activity Vault</strong> — the all-in-one activity archive for teachers &amp; after-school programs.</p></div>
+</footer>
+
+<script src="assets/party.js" defer></script>
+</body>
+</html>

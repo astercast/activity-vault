@@ -115,6 +115,26 @@
     "string",
     "null"
    ]
+  },
+  "tags": {
+   "type": "array",
+   "items": {
+    "enum": [
+     "season:fall",
+     "holiday:halloween",
+     "holiday:dia-de-muertos",
+     "theme:spooky"
+    ]
+   },
+   "description": "Optional season/occasion tags for filtering."
+  },
+  "source": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "format": "uri",
+   "description": "Optional inspiration source URL (RSS pipeline)."
   }
  }
 }

@@ -42,6 +42,22 @@
     "music-rhythm"
    ]
   },
+  "tags": {
+   "type": "multiselect",
+   "options": [
+    "season:fall",
+    "holiday:halloween",
+    "holiday:dia-de-muertos",
+    "theme:spooky"
+   ],
+   "labels": {
+    "season:fall": "\ud83c\udf83 Fall",
+    "holiday:halloween": "\ud83d\udc7b Halloween",
+    "holiday:dia-de-muertos": "\ud83d\udc80 D\u00eda de los Muertos",
+    "theme:spooky": "\ud83d\udd78\ufe0f Spooky (not scary)"
+   },
+   "description": "Season/occasion tags. Activity fits if it carries ANY selected tag."
+  },
   "no_prep_only": {
    "type": "boolean",
    "description": "Only activities with no_prep=true."

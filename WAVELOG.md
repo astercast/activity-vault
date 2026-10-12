@@ -2,6 +2,50 @@
 
 Running record of build waves. Newest first.
 
+## Wave 4 — 2026-10-11 — Fall/Halloween seasonal pack (+37 → 213) + Party Planner + RSS review
+
+**What shipped:**
+- **Fall/Halloween seasonal pack** — 25 new original activities (pumpkin science, spooky-not-scary
+  crafts, costume parade games, fall nature walks, party stations, Día de los Muertos respectful
+  crafts): measure-the-pumpkin, pumpkin-seed-sprout-baggies, apple-browning-lab,
+  fall-leaf-chromatography, leaf-animal-collage, paper-bag-ghost-puppets, handprint-bat-garland,
+  spiderweb-plate-weave, papel-picado-banners, egg-carton-spider-craft, corn-husk-dolls,
+  apple-print-painting, ghost-footprint-keepsake, fall-scavenger-bingo, build-a-scarecrow,
+  leaf-collect-sort-science, scarecrow-dress-up-relay, costume-parade-pose-freeze,
+  pin-the-hat-on-witch, glow-stick-ring-toss, pumpkin-roll-race, halloween-bingo,
+  candy-corn-estimation-jar, costume-category-vote, ofrenda-memory-circle.
+  Skipped 8 near-duplicate concepts already in the library (mummy-wrap-relay, spooky-story-circle,
+  mini-pumpkin-bowling, sink-or-float, pinecone-bird-feeders, paper-plate-masks, leaf-rubbing,
+  leaf-boat-races, baking-soda-volcano variants).
+- **Season/occasion tags** — new optional `tags` field (`season:fall`, `holiday:halloween`,
+  `holiday:dia-de-muertos`, `theme:spooky`), validated against a fixed vocabulary in
+  `scripts/build.py`. New "Season / occasion" filter group in the browser (chips: 🎃 Fall,
+  👻 Halloween, 💀 Día de los Muertos, 🕸️ Spooky), tag chips on cards + detail pages,
+  `tags` multiselect in `api/v1/filters.json`, documented in API.md/PIPELINE.md.
+  5 existing fall/Halloween activities retro-tagged.
+- **Halloween class-party planner** (`party.html` + `assets/party.js`) — inputs (class size,
+  minutes, stations, budget) → timed station-rotation plan from the seasonal pool, with
+  rotation timetable, merged setup checklist, station cards, and a print-ready run sheet
+  (`@media print`). Graceful warnings when stations outrun the time/budget. New nav link
+  everywhere; sitemap + llms.txt updated.
+- **RSS review queue cleared** — all 23 candidates reviewed: 12 accepted into the library
+  (coping-strategy-cards, kindness-poster-campaign, winter-joke-slam, gratitude-door-decor,
+  take-a-stand-debate, poetry-share-circle, pumpkin-letter-hunt, secret-code-decoder-wheels,
+  expressionism-scream-art, dinosaur-pattern-blocks, masterpiece-coloring-gallery,
+  continents-map-puzzle), each adapted in original words with an optional `source` credit link;
+  10 rejected with reasons (contest announcement, book list, listicles, duplicates,
+  near-duplicates of new items, state-specific pack, novel-unit tie-in); 1 deferred
+  (Christmas ornaments → winter pack). Decisions logged in `pipeline/review-queue.json`.
+- 8th skill: `skills/halloween-party-planner.md`. README/API.md counts → 213.
+
+**Validation (wave 4):**
+- `scripts/build.py`: BUILD OK — 213 activities, 213 pages, 0 dupes, tags/source schema pass
+- `node --check` on app.js/party.js/planner.js/sub.js: pass
+- Link check: 217 pages, 0 broken
+- api/v1/activities.json: 213, all ids unique; tag counts: fall 18, halloween 15, spooky 6, día-de-muertos 2
+- Party-pool simulation: default config (24 kids / 60 min / 3 stations / shoestring) → 6 candidates, OK; tight configs degrade to a helpful warning, not a broken plan
+- Fixed a latent build bug: the render assertion used the raw name, failing on `&` (Leaf Collect & Sort); now checks the escaped name
+
 ## Wave 2d — 2026-10-11 — Final chunk7c merge (+10 → 176) + Sub Tub tool
 
 Merged the last of the parallel `data/chunk7c.json` batch: 10/12 new (0 dupes).

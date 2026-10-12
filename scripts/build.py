@@ -16,6 +16,16 @@ REQUIRED = ['id','name','tagline','categories','age_min','age_max','group_min','
             'time_min','time_max','location','materials','no_prep','setup','steps','variations']
 ID_RE = re.compile(r'^[a-z0-9-]+$')
 
+# Optional tag vocabulary. Tags drive the "Season / occasion" filter.
+# New tags must be added here AND to assets/app.js (TAG_LABELS) AND api docs.
+TAG_IDS = ["season:fall", "holiday:halloween", "holiday:dia-de-muertos", "theme:spooky"]
+TAG_LABELS = {
+    "season:fall": "🎃 Fall",
+    "holiday:halloween": "👻 Halloween",
+    "holiday:dia-de-muertos": "💀 Día de los Muertos",
+    "theme:spooky": "🕸️ Spooky (not scary)",
+}
+
 def load():
     acts = json.load(open(os.path.join(DATA, 'activities.json')))
     cats = json.load(open(os.path.join(DATA, 'categories.json')))
@@ -53,6 +63,17 @@ def validate(acts, cats):
             errs.append(f"{tag}: bad time range")
         if a.get('group_min',0) > a.get('group_max',0):
             errs.append(f"{tag}: bad group range")
+        tags = a.get('tags')
+        if tags is not None:
+            if not isinstance(tags, list) or not tags:
+                errs.append(f"{tag}: tags must be a non-empty list")
+            else:
+                for t in tags:
+                    if t not in TAG_IDS:
+                        errs.append(f"{tag}: unknown tag '{t}'")
+        src = a.get('source')
+        if src is not None and (not isinstance(src, str) or not src.startswith('http')):
+            errs.append(f"{tag}: source must be an http(s) URL")
     return errs
 
 ACTIVITY_TEMPLATE = """<!DOCTYPE html>
@@ -76,6 +97,7 @@ ACTIVITY_TEMPLATE = """<!DOCTYPE html>
       <a href="../index.html">Browse</a>
       <a href="../planner.html">Plan my week</a>
       <a href="../sub.html">Sub Tub 🆘</a>
+      <a href="../party.html">Party Planner 🎃</a>
     </nav>
   </div>
 </header>
@@ -110,6 +132,7 @@ ACTIVITY_TEMPLATE = """<!DOCTYPE html>
       <p><strong>Harder:</strong> {harder}</p>
     </section>
     {safety_block}
+    {source_block}
     <div class="print-actions no-print">
       <button type="button" class="btn" onclick="window.print()">🖨️ Print this card</button>
       <a class="btn btn-ghost" href="../planner.html">Add to my week →</a>
@@ -130,6 +153,9 @@ def render_activity(a, catmap):
     chips = ''.join(
         f'<span class="chip" style="--cat:{catmap[c]["color"]}">{catmap[c]["glyph"]} {esc(catmap[c]["name"])}</span>'
         for c in a['categories'])
+    tagchips = ''.join(
+        f'<span class="chip tag-chip">{esc(TAG_LABELS.get(t, t))}</span>'
+        for t in a.get('tags', []))
     mats = ''.join(f'<li>{esc(m["item"])}</li>' for m in a['materials'])
     if not a['materials']:
         mats = '<li><em>No materials needed.</em></li>'
@@ -138,17 +164,22 @@ def render_activity(a, catmap):
     if a.get('safety'):
         safety = ('<section class="safety" aria-labelledby="h-safety">'
                   f'<h2 id="h-safety">⚠️ Safety</h2><p>{esc(a["safety"])}</p></section>')
+    source = ''
+    if a.get('source'):
+        source = (f'<p class="source-line">Inspired by an idea from the teaching community — '
+                  f'<a href="{esc(a["source"])}" rel="noopener">source post</a> '
+                  f'(adapted in our own words).</p>')
     prep = '✅ No prep needed' if a['no_prep'] else 'Some prep needed'
     loc = ' & '.join('Indoors' if l=='indoor' else 'Outdoors' for l in a['location'])
     return ACTIVITY_TEMPLATE.format(
         name=esc(a['name']), tagline=esc(a['tagline']),
-        chips=chips, age_min=a['age_min'], age_max=a['age_max'],
+        chips=chips + tagchips, age_min=a['age_min'], age_max=a['age_max'],
         group_min=a['group_min'], group_max=a['group_max'],
         time_min=a['time_min'], time_max=a['time_max'],
         location=loc, prep=prep, setup=esc(a['setup']),
         materials=mats, steps=steps,
         easier=esc(a['variations']['easier']), harder=esc(a['variations']['harder']),
-        safety_block=safety)
+        safety_block=safety, source_block=source)
 
 def main():
     acts, cats = load()
@@ -166,7 +197,7 @@ def main():
     rendered = 0
     for a in acts:
         page = render_activity(a, catmap)
-        assert a['name'] in page and len(page) > 500, f"render check failed: {a['id']}"
+        assert esc(a['name']) in page and len(page) > 500, f"render check failed: {a['id']}"
         with open(os.path.join(actdir, a['id'] + '.html'), 'w') as f:
             f.write(page)
         rendered += 1
@@ -187,6 +218,9 @@ def main():
         "group_size": {"type": "range", "min": 2, "max": 40, "unit": "kids",
                 "description": "Activity fits if the group range overlaps the selected size."},
         "categories": {"type": "multiselect", "options": [c['id'] for c in cats]},
+        "tags": {"type": "multiselect", "options": TAG_IDS,
+                "labels": TAG_LABELS,
+                "description": "Season/occasion tags. Activity fits if it carries ANY selected tag."},
         "no_prep_only": {"type": "boolean", "description": "Only activities with no_prep=true."},
         "indoor_only": {"type": "boolean", "description": "Only activities with 'indoor' in location."},
         "outdoor_only": {"type": "boolean", "description": "Only activities with 'outdoor' in location."},
@@ -215,7 +249,11 @@ def main():
             "steps": {"type": "array", "items": {"type": "string"}, "minItems": 1},
             "variations": {"type": "object", "required": ["easier", "harder"],
                            "properties": {"easier": {"type": "string"}, "harder": {"type": "string"}}},
-            "safety": {"type": ["string", "null"]}
+            "safety": {"type": ["string", "null"]},
+            "tags": {"type": "array", "items": {"enum": TAG_IDS},
+                     "description": "Optional season/occasion tags for filtering."},
+            "source": {"type": ["string", "null"], "format": "uri",
+                       "description": "Optional inspiration source URL (RSS pipeline)."}
         }
     }
     json.dump(act_schema, open(os.path.join(schemadir, 'activity.schema.json'), 'w'), indent=1)
@@ -246,10 +284,13 @@ def main():
               "", "## Skills", "- skills/activity-finder.md", "- skills/week-planner.md",
               "- skills/rainy-day-rescue.md", "- skills/stem-demo-picker.md",
               "- skills/icebreaker-chooser.md", "- skills/quiet-focus-picker.md",
-              "- skills/sub-tub-rescue.md",
+              "- skills/sub-tub-rescue.md", "- skills/halloween-party-planner.md",
               "", "## Tools", "- sub.html — Sub Tub: the substitute-teacher rescue kit.",
               "  Pick grade band, minutes to fill, materials on hand, location —",
               "  generates a sequenced print-ready emergency plan plus a 'Dear sub' note template.",
+              "- party.html — Halloween Class-Party Planner.",
+              "  Pick class size, minutes, stations, and budget — generates a timed station-rotation",
+              "  plan from seasonal activities, plus a setup list and a print-ready run sheet.",
               "", "## Docs", "- API.md — full API reference", "- PIPELINE.md — how the library grows"]
     open(os.path.join(SITE, 'llms.txt'), 'w').write('\n'.join(lines) + '\n')
 
@@ -265,7 +306,7 @@ def main():
     open(os.path.join(SITE, 'llms-full.txt'), 'w').write('\n'.join(full) + '\n')
 
     # 4. sitemap.xml
-    urls = ["", "planner.html", "sub.html"] + [f"activity/{a['id']}.html" for a in acts]
+    urls = ["", "planner.html", "sub.html", "party.html"] + [f"activity/{a['id']}.html" for a in acts]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:

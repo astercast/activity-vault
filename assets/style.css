@@ -117,6 +117,7 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .chip[aria-pressed="true"] { border-color: var(--cat, var(--accent)); background: var(--cat, var(--accent)); color: #fff; }
 .chip.cat-chip { --cat: #888; }
+.chip.tag-chip { --cat: #8b5cf6; border-style: dashed; }
 input[type="search"], select {
   width: 100%; padding: .55rem .7rem; border: 2px solid var(--line); border-radius: 10px;
   font: inherit; background: #fff; color: var(--ink);
@@ -185,6 +186,22 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
 .activity-card ol li, .activity-card ul li { margin-bottom: .45rem; }
 .safety { background: #fff8e6; border: 2px solid #d9a821; border-radius: 10px; padding: .2rem 1rem; margin-top: 1.4rem; }
 .safety h2 { border: 0 !important; margin-bottom: .2rem; }
+.source-line { font-size: .85rem; color: var(--ink-soft); margin-top: 1.2rem; }
+
+/* ---------- party planner ---------- */
+.plan-note { color: var(--ink-soft); font-size: .92rem; margin: -.4rem 0 1rem; }
+.rotation-list { margin: .4rem 0 0; padding-left: 1.2rem; }
+.rotation-list li { margin: .25rem 0; }
+#party-setup { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1rem 0; }
+.setup-col { background: #fff; border: 2px solid var(--line); border-radius: var(--radius); padding: .8rem 1rem; }
+.setup-col h4 { margin: 0 0 .5rem; font-size: .95rem; }
+.setup-list { list-style: none; margin: 0; padding: 0; }
+.setup-list li { margin: .3rem 0; font-size: .9rem; }
+.checkbox { font-weight: 700; }
+input[type="number"] {
+  width: 8rem; padding: .55rem .7rem; border: 2px solid var(--line); border-radius: 10px;
+  font: inherit; background: #fff; color: var(--ink);
+}
 .print-actions { display: flex; gap: .7rem; flex-wrap: wrap; margin-top: 1.8rem; }
 
 /* ---------- planner ---------- */
