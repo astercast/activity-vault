@@ -9341,8 +9341,1130 @@
    },
    "safety": "Scissors cut paper only.",
    "source": "https://www.teachbesideme.com/free-printable-world-map/"
+  },
+  {
+   "id": "homemade-christmas-ornaments",
+   "name": "Homemade Christmas Ornaments",
+   "tagline": "Classic kid-made ornaments — keep some for your tree, gift the rest.",
+   "categories": [
+    "crafts",
+    "holidays"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 45,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "clear plastic ornament balls or cardstock circles (one per kid)"
+    },
+    {
+     "item": "glitter, sequins, and stickers"
+    },
+    {
+     "item": "paint pens or markers"
+    },
+    {
+     "item": "ribbon or yarn"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Set up a decorating station with one ornament blank per kid and the decorations in shared bowls. Loop a ribbon hanger through each ornament first.",
+   "steps": [
+    "Each kid picks an ornament blank and decorates it any way they like — glitter, stickers, painted dots, initials.",
+    "Let paint dry flat on a tray so it doesn't smudge.",
+    "Tie on the ribbon hanger and do a 'gallery walk' of everyone's tree.",
+    "Kids wrap one ornament to gift to someone and keep one for the classroom or family tree."
+   ],
+   "variations": {
+    "easier": "Pre-fill ornament balls with glitter so the littlest ones just shake and admire.",
+    "harder": "Try salt-dough cutouts (baked ahead) as the ornament base for a two-day project."
+   },
+   "safety": "Glitter travels — cover the table and keep it out of eyes and mouths.",
+   "tags": [
+    "season:winter",
+    "holiday:christmas"
+   ],
+   "source": "https://handsonaswegrow.com/homemade-christmas-ornaments-kids/"
+  },
+  {
+   "id": "snowflake-paper-patterns",
+   "name": "Snowflake Paper Patterns",
+   "tagline": "Fold, snip, unfold — the six-fold surprise that never gets old.",
+   "categories": [
+    "crafts"
+   ],
+   "age_min": 6,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 30,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "white printer paper or coffee filters (3 per kid)"
+    },
+    {
+     "item": "scissors"
+    }
+   ],
+   "no_prep": true,
+   "setup": "Cut the paper into circles (or use coffee filters — they're already round and easy to fold).",
+   "steps": [
+    "Fold each circle in half, then into thirds, so you get a six-fold wedge.",
+    "Snip triangles and curves out of the folded edges — not too close to the fold line.",
+    "Unfold and gasp. Hang the snowflakes on string across the windows.",
+    "Optional: tape two kids' snowflakes together back-to-back and notice no two match."
+   ],
+   "variations": {
+    "easier": "Pre-fold the wedges so little ones just cut the easy outer edges.",
+    "harder": "Challenge: try one cut too many and see what happens — then repair it with tape."
+   },
+   "safety": "Scissors supervision; remind kids to cut away from fingers.",
+   "tags": [
+    "season:winter"
+   ]
+  },
+  {
+   "id": "suet-cage-winter-feeder",
+   "name": "Suet Cage Winter Feeder",
+   "tagline": "Pack a wire suet cage with winter bird food — a high-energy feast for cold days.",
+   "categories": [
+    "crafts",
+    "outdoor"
+   ],
+   "age_min": 6,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "wire suet cages (one per small group)"
+    },
+    {
+     "item": "solid vegetable shortening"
+    },
+    {
+     "item": "oats, cornmeal, and birdseed"
+    },
+    {
+     "item": "mixing bowls and spoons"
+    },
+    {
+     "item": "string"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Set out bowls of shortening and dry ingredients. Put one suet cage and a length of string in front of each group.",
+   "steps": [
+    "Mix two parts dry ingredients with one part softened shortening into a crumbly dough.",
+    "Pack the dough firmly into the suet cage — press it into every corner.",
+    "Thread string through the cage top and tie a strong hanger loop.",
+    "Hang the cages where birds can reach them but cats can't, and keep a visitor log."
+   ],
+   "variations": {
+    "easier": "Teacher mixes and packs; kids press the dough in with spoons.",
+    "harder": "Make two cages with different mixes (more oats vs. more seed) and compare visitors."
+   },
+   "safety": "Shortening only — no peanut butter unless allergies are cleared. Wash hands after.",
+   "tags": [
+    "season:winter"
+   ]
+  },
+  {
+   "id": "ice-ornaments",
+   "name": "Ice Ornaments",
+   "tagline": "Freeze water, leaves, and berries into hanging winter sun-catchers.",
+   "categories": [
+    "stem",
+    "crafts"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 30,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "muffin tins or silicone molds"
+    },
+    {
+     "item": "water"
+    },
+    {
+     "item": "natural bits: leaves, berries, pine sprigs"
+    },
+    {
+     "item": "string or yarn"
+    },
+    {
+     "item": "a freezer"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Lay out molds, a pitcher of water, and the natural bits. Cut string loops about 20 cm long, one per mold.",
+   "steps": [
+    "Lay a string loop into each mold with the loop end hanging over the edge.",
+    "Arrange leaves, berries, and sprigs in the molds — flat is prettiest.",
+    "Fill each mold with water and set in the freezer overnight.",
+    "Pop the ornaments out and hang them outside. Watch what happens as they melt."
+   ],
+   "variations": {
+    "easier": "Teacher fills the molds; kids just arrange the nature bits.",
+    "harder": "Test variables: which ornaments melt fastest — sunny fence vs. shady porch?"
+   },
+   "safety": "No tasting the 'ingredients'; melt water goes on the garden, not in mouths.",
+   "tags": [
+    "season:winter"
+   ]
+  },
+  {
+   "id": "hanukkah-counting-chain",
+   "name": "Hanukkah Counting Chain",
+   "tagline": "A paper chain of eight links plus a leader — a craft for learning how Hanukkah counts its eight nights.",
+   "categories": [
+    "crafts",
+    "holidays"
+   ],
+   "age_min": 6,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 30,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "blue and white paper strips"
+    },
+    {
+     "item": "glue sticks or tape"
+    },
+    {
+     "item": "a marker"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Cut paper into strips (about 3 × 20 cm), eight of one color and one of another for the leader link. Frame the activity as learning about a holiday other families celebrate — this is a counting craft, not a ceremony.",
+   "steps": [
+    "Chain the eight links together, one for each night of Hanukkah.",
+    "Add the leader link at the front of the chain.",
+    "On each link, write something the group has learned about the holiday.",
+    "Hang the chain and add one fact per day as a class countdown."
+   ],
+   "variations": {
+    "easier": "Teacher assembles the chain; kids decorate the links with drawings.",
+    "harder": "Research one more true fact per night from a reliable source and add it."
+   },
+   "safety": "Cultural note: this craft is for learning about Hanukkah, not performing it. Treat the holiday with respect — ask, don't assume, about anyone's traditions.",
+   "tags": [
+    "season:winter",
+    "holiday:hanukkah"
+   ]
+  },
+  {
+   "id": "kwanzaa-unity-garland",
+   "name": "Kwanzaa Unity Garland",
+   "tagline": "A red, black, and green garland made while learning about Kwanzaa's seven principles — a values craft, not a ceremony.",
+   "categories": [
+    "crafts",
+    "holidays"
+   ],
+   "age_min": 7,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 35,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "red, black, and green construction paper"
+    },
+    {
+     "item": "scissors"
+    },
+    {
+     "item": "glue sticks or tape"
+    },
+    {
+     "item": "markers"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Cut paper into strips. Frame the activity as learning about Kwanzaa — a week-long celebration of family, community, and culture — and its seven principles (the Nguzo Saba). This is a classroom craft about its values, not a ceremony.",
+   "steps": [
+    "Cut strips of red, black, and green paper.",
+    "On each strip, write one of the seven principles (unity, self-determination, collective work, cooperative economics, purpose, creativity, faith).",
+    "Link the strips into a garland, alternating the three colors.",
+    "Read the garland together and discuss: what does each principle look like in our classroom?"
+   ],
+   "variations": {
+    "easier": "Use fewer strips (three colors, one word each: unity, creativity, faith).",
+    "harder": "Research what each principle means in practice and add an example to each strip."
+   },
+   "safety": "Cultural note: this craft is for learning about Kwanzaa, not performing it. Present it as a values celebration some families observe; keep the tone respectful.",
+   "tags": [
+    "season:winter",
+    "holiday:kwanzaa"
+   ]
+  },
+  {
+   "id": "snowball-toss-math",
+   "name": "Snowball Toss Math",
+   "tagline": "Toss indoor snowballs into point buckets — arithmetic with your whole body.",
+   "categories": [
+    "pe-movement",
+    "stem"
+   ],
+   "age_min": 6,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 40,
+   "time_min": 15,
+   "time_max": 30,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "soft indoor snowballs (crumpled paper or yarn balls, 2 per kid)"
+    },
+    {
+     "item": "buckets or boxes labeled 1, 5, 10, 25"
+    }
+   ],
+   "no_prep": true,
+   "setup": "Line up the point buckets along one wall, a few feet from the throw line. Give every kid two snowballs. Post a score chart.",
+   "steps": [
+    "Each kid throws both snowballs into the buckets and adds their points.",
+    "After everyone has thrown, kids compute their running totals.",
+    "Round two: teams throw and pool their points — first team to 100 wins.",
+    "Close with the 'blizzard round': everyone throws at once, then the class sorts and counts every bucket together."
+   ],
+   "variations": {
+    "easier": "Use buckets labeled 1 and 2 only; count together on fingers.",
+    "harder": "Add a multiplier bucket: a snowball in the star bucket doubles your round."
+   },
+   "safety": "Throw underhand only, and only toward the buckets — no aiming at people.",
+   "tags": [
+    "season:winter"
+   ]
+  },
+  {
+   "id": "animal-walk-relay",
+   "name": "Animal Walk Relay",
+   "tagline": "Waddle like a penguin, stomp like a polar bear — a relay across the gym floor.",
+   "categories": [
+    "pe-movement"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 6,
+   "group_max": 40,
+   "time_min": 10,
+   "time_max": 20,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "cones or tape to mark the relay line"
+    }
+   ],
+   "no_prep": true,
+   "setup": "Split the group into equal teams behind the start line. Name three winter animal walks and demo each one.",
+   "steps": [
+    "Leg 1: penguin waddle (heels together, arms at sides, wobble to the cone and back).",
+    "Leg 2: polar-bear prowl (bear crawl — hands and feet, knees off the floor).",
+    "Leg 3: arctic-hare hop (two-footed hops all the way).",
+    "Leg 4: snowy-owl swoop (arms out, slow flapping glide). First team sitting in a line when their last runner returns wins."
+   ],
+   "variations": {
+    "easier": "One animal walk per round instead of four legs; everyone does the same one.",
+    "harder": "Add a 'blizzard obstacle': teammates crawl under a held-up blanket halfway."
+   },
+   "safety": "Clear the floor of anything slippery first; no running full speed on tile.",
+   "tags": [
+    "season:winter"
+   ]
+  },
+  {
+   "id": "freeze-dance-winter",
+   "name": "Winter Freeze Dance",
+   "tagline": "Freeze dance with a twist: when the music stops, the caller shouts a winter animal.",
+   "categories": [
+    "music-rhythm",
+    "pe-movement"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 40,
+   "time_min": 10,
+   "time_max": 20,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "music to play and pause"
+    }
+   ],
+   "no_prep": true,
+   "setup": "You need nothing but music and space to move. Assign a caller (rotate the job).",
+   "steps": [
+    "Everyone dances while the music plays.",
+    "Music stops — everyone freezes, and the caller shouts a winter animal: 'penguin!', 'polar bear!', 'snowy owl!'",
+    "Everyone holds the pose of that animal until the music restarts.",
+    "Rotate callers every few rounds; the silliest-held pose wins applause."
+   ],
+   "variations": {
+    "easier": "Caller gives extra time to find the pose; no one sits out for a wrong guess.",
+    "harder": "Add 'migrating goose': kids link up in a V and glide to a new spot in the room."
+   },
+   "safety": "Keep dance space clear of furniture corners; freeze means stop, not crash.",
+   "tags": [
+    "season:winter"
+   ]
+  },
+  {
+   "id": "year-in-review-quilt",
+   "name": "Year-in-Review Quilt",
+   "tagline": "Every kid decorates one paper square with their year's highlight — together they become a class quilt.",
+   "categories": [
+    "team-community",
+    "quiet-focus"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 40,
+   "time_min": 25,
+   "time_max": 45,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper squares (one per kid, same size)"
+    },
+    {
+     "item": "crayons, markers, and collage scraps"
+    },
+    {
+     "item": "glue sticks"
+    },
+    {
+     "item": "a large backing sheet or bulletin board"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Cut identical paper squares (about 20 cm). Set out art supplies in shared caddies and lay the backing sheet flat.",
+   "steps": [
+    "Each kid fills one square with their year's highlight — a drawing, a word, a photo corner, a tiny collage.",
+    "Kids share their square with the table and explain what it means.",
+    "Assemble the squares edge-to-edge on the backing sheet, alternating light and dark colors for a real quilt feel.",
+    "Hang the quilt where families can see it at the New Year event or open house."
+   ],
+   "variations": {
+    "easier": "Draw the highlight; teacher writes the caption the child dictates.",
+    "harder": "Leave one blank square per kid to fill in June — the quilt grows all year."
+   },
+   "safety": "Highlights are self-chosen — nobody has to explain anything they'd rather keep private.",
+   "tags": [
+    "season:winter",
+    "holiday:new-year"
+   ]
+  },
+  {
+   "id": "resolution-ladder",
+   "name": "Resolution Ladder",
+   "tagline": "New Year goals as a ladder — one small, doable rung per month.",
+   "categories": [
+    "quiet-focus",
+    "team-community"
+   ],
+   "age_min": 7,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 40,
+   "time_min": 15,
+   "time_max": 30,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper strips (12 per kid)"
+    },
+    {
+     "item": "a large ladder drawn on butcher paper"
+    },
+    {
+     "item": "markers"
+    },
+    {
+     "item": "tape"
+    }
+   ],
+   "no_prep": true,
+   "setup": "Draw a big ladder on butcher paper with 12 rungs. Give each kid 12 strips.",
+   "steps": [
+    "Each kid writes one small, doable goal on each strip — one per month.",
+    "Goals must be concrete: 'read 10 minutes daily' beats 'read more'.",
+    "Tape the strips onto the rungs, grouped by month, and hang the ladder up.",
+    "Revisit monthly: flip over the rungs you hit and set the next month's."
+   ],
+   "variations": {
+    "easier": "Do 4 seasons instead of 12 months; draw the goal instead of writing it.",
+    "harder": "Add a 'stretch rung' at the top: one big dream goal for the whole year."
+   },
+   "safety": "Goals are private to share — kids post only what they want to post.",
+   "tags": [
+    "season:winter",
+    "holiday:new-year"
+   ]
+  },
+  {
+   "id": "midnight-countdown-rehearsal",
+   "name": "Midnight Countdown Rehearsal",
+   "tagline": "A practice New Year's Eve: chant the 10-to-0 countdown and cheer in a brand-new pretend year.",
+   "categories": [
+    "icebreakers",
+    "team-community"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 40,
+   "time_min": 10,
+   "time_max": 20,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "setup": "No setup needed. This works great as the last 15 minutes before a winter break dismissal.",
+   "steps": [
+    "Everyone stands in a circle. The leader announces what 'year' we're cheering in.",
+    "Count down from 10 together, getting louder each number.",
+    "At zero: cheer, clap, and do a group jump — the new 'year' has arrived.",
+    "Go around the circle: each kid names one thing they're glad happened this year.",
+    "Optional finale: countdown in a whisper, then a tiny silent cheer."
+   ],
+   "variations": {
+    "easier": "Count down from 5 instead of 10; skip the go-around for big groups.",
+    "harder": "Let kids run the countdown in another language the class is learning."
+   },
+   "safety": "Mind the volume if another class is next door — schedule accordingly.",
+   "tags": [
+    "season:winter",
+    "holiday:new-year"
+   ]
+  },
+  {
+   "id": "track-prints-detective",
+   "name": "Track Prints Detective",
+   "tagline": "Find animal prints in snow or mud, match them to a chart, solve the mystery.",
+   "categories": [
+    "outdoor"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 40,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "a printed animal-track ID chart"
+    },
+    {
+     "item": "a camera or phone for photos"
+    },
+    {
+     "item": "a notebook"
+    }
+   ],
+   "no_prep": true,
+   "setup": "After fresh snow or rain, scout a route with visible prints. Print one track chart per pair.",
+   "steps": [
+    "Walk the route quietly and look for prints — snow and mud both work.",
+    "Photograph each set of prints and note where you found them.",
+    "Match them against the ID chart: how many toes, claw marks or not, size?",
+    "Log the 'case file': what animal, how many, which direction, and the evidence that convinced you."
+   ],
+   "variations": {
+    "easier": "Teacher pre-prints photo cards of three local tracks; kids match at the site.",
+    "harder": "Measure stride length between prints and estimate the animal's speed."
+   },
+   "safety": "Stay on paths; don't follow prints into streets or private yards.",
+   "tags": [
+    "season:winter"
+   ]
+  },
+  {
+   "id": "frost-observation",
+   "name": "Frost Observation",
+   "tagline": "Magnify the ice crystals on windows and leaves and sketch their patterns.",
+   "categories": [
+    "stem",
+    "outdoor"
+   ],
+   "age_min": 6,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 30,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "magnifying glasses (one per pair)"
+    },
+    {
+     "item": "paper and pencils"
+    },
+    {
+     "item": "a thermometer (optional)"
+    }
+   ],
+   "no_prep": true,
+   "setup": "On a frosty morning, find windows, car hoods (with the owner's okay), or leaves with visible frost. Hand out magnifiers and sketch paper.",
+   "steps": [
+    "Look at the frost through the magnifier — find the six-pointed crystals.",
+    "Sketch three different crystals you actually see, not what you imagine.",
+    "Compare sketches: does everyone's frost look the same? Different?",
+    "Discuss: what did the night have to be like for this frost to form?"
+   ],
+   "variations": {
+    "easier": "One shared magnifier, teacher narrates; kids draw one big crystal together.",
+    "harder": "Check the overnight low online and connect it to how feathery the frost is."
+   },
+   "safety": "Don't lick frosty metal, and don't touch anyone's car without permission.",
+   "tags": [
+    "season:winter"
+   ]
+  },
+  {
+   "id": "bark-and-branch-study",
+   "name": "Bark and Branch Study",
+   "tagline": "Identify winter trees with no leaves — bark patterns and buds are the clues.",
+   "categories": [
+    "outdoor"
+   ],
+   "age_min": 7,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 25,
+   "time_max": 45,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "a winter tree ID key (printed or one shared book)"
+    },
+    {
+     "item": "paper and crayons for bark rubbings"
+    }
+   ],
+   "no_prep": true,
+   "setup": "Pick a park or schoolyard with a few different trees. Print one ID key per pair.",
+   "steps": [
+    "Do bark rubbings: press paper against the trunk, rub sideways with a crayon.",
+    "Study the buds at branch tips with the ID key — shape, size, arrangement.",
+    "Match each tree to the key and label your rubbings with the tree's name.",
+    "Back inside: line up the rubbings and see if the class agrees on each ID."
+   ],
+   "variations": {
+    "easier": "Focus on just two trees; teacher does the ID, kids do the rubbings.",
+    "harder": "Keep a winter tree log through the season and watch the buds swell in spring."
+   },
+   "safety": "Don't pull bark off trees or break branches — rubbings only.",
+   "tags": [
+    "season:winter"
+   ]
+  },
+  {
+   "id": "dissolving-warm-drink-lab",
+   "name": "Dissolving Warm-Drink Lab",
+   "tagline": "Hot cocoa science: does powder dissolve faster in hot water or cold?",
+   "categories": [
+    "stem"
+   ],
+   "age_min": 6,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 35,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "cocoa mix"
+    },
+    {
+     "item": "sugar cubes"
+    },
+    {
+     "item": "clear cups"
+    },
+    {
+     "item": "warm and cold water"
+    },
+    {
+     "item": "spoons"
+    },
+    {
+     "item": "a stopwatch or timer"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Set up two stations: warm water and cold water. Give each pair two clear cups, one spoon of cocoa mix, and a sugar cube.",
+   "steps": [
+    "Predict: which cup dissolves the cocoa faster — warm or cold? Write it down.",
+    "Add the cocoa to both cups at the same time. Time how long each takes to fully dissolve with the same stirring.",
+    "Repeat with the sugar cubes — but this time, one cup stirred, one not.",
+    "Chart the class results. Discuss: why did the warm water win?"
+   ],
+   "variations": {
+    "easier": "Teacher runs the demo up front; kids just predict and watch.",
+    "harder": "Try milk vs. water, or test whether crushed vs. whole sugar cube matters."
+   },
+   "safety": "Water should be warm, not hot — an adult handles the kettle. Check for dairy allergies if tasting.",
+   "tags": [
+    "season:winter"
+   ]
+  },
+  {
+   "id": "temperature-melt-race",
+   "name": "Temperature Melt Race",
+   "tagline": "Three cups of water, three ice cubes — predict which melts first, then watch.",
+   "categories": [
+    "stem"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "ice cubes (3 per pair)"
+    },
+    {
+     "item": "clear cups"
+    },
+    {
+     "item": "warm, room-temperature, and cold water"
+    },
+    {
+     "item": "timers"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Set out the three water temperatures labeled A, B, C (don't reveal which is which yet). Give each pair three cups and three ice cubes.",
+   "steps": [
+    "Each pair predicts the melt order and writes it down — no changing it.",
+    "Drop one ice cube in each cup at the same time and start the timer.",
+    "Record the exact melt time for each cube.",
+    "Reveal the temperatures. Who predicted right? Discuss what heat does to ice."
+   ],
+   "variations": {
+    "easier": "Run it as a teacher demo; kids predict by holding up fingers (1, 2, 3).",
+    "harder": "Add a fourth cup with salt in the ice water — does salt change the melt?"
+   },
+   "safety": "An adult pours the warm water. Dry spills immediately so nobody slips.",
+   "tags": [
+    "season:winter"
+   ]
+  },
+  {
+   "id": "snowflake-mirror",
+   "name": "Snowflake Mirror",
+   "tagline": "Pairs mirror each other's snowflake arm poses — then try to catch the change.",
+   "categories": [
+    "team-community",
+    "pe-movement"
+   ],
+   "age_min": 4,
+   "age_max": 9,
+   "group_min": 4,
+   "group_max": 40,
+   "time_min": 10,
+   "time_max": 20,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "setup": "No setup at all. Pair the kids up, facing each other, arms' length apart.",
+   "steps": [
+    "One partner is the 'snowflake', the other is the 'mirror'.",
+    "The snowflake slowly moves arms and body into a new pose; the mirror copies in real time.",
+    "After a minute, swap roles.",
+    "Round two: the mirror has to spot three deliberate changes the snowflake sneaks in.",
+    "Close: each pair shows their best snowflake pose to the group."
+   ],
+   "variations": {
+    "easier": "Whole group mirrors the teacher instead of pairing up.",
+    "harder": "Three-person teams: one caller shouts pose words ('branch!', 'crystal!')."
+   },
+   "safety": null,
+   "tags": [
+    "season:winter"
+   ]
+  },
+  {
+   "id": "winter-tall-tale",
+   "name": "Winter Tall Tale",
+   "tagline": "A circle story where every kid adds one wild winter sentence.",
+   "categories": [
+    "team-community",
+    "icebreakers"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 40,
+   "time_min": 10,
+   "time_max": 20,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "setup": "Nothing needed — just a circle. The teacher starts the story with one sentence.",
+   "steps": [
+    "Teacher: 'On the coldest morning of the year, I opened my door and saw...'",
+    "Each kid adds exactly one sentence, building on the last one.",
+    "Encourage wild but connected additions — the yeti borrowed the bus, the snow spoke back.",
+    "After one full circle, the teacher closes the tale in three sentences.",
+    "Optional: vote on the best sentence and start a new tale with it."
+   ],
+   "variations": {
+    "easier": "Kids can pass, or just add a sound effect instead of a sentence.",
+    "harder": "Two circles compete for the best ending, then swap and judge."
+   },
+   "safety": null,
+   "tags": [
+    "season:winter"
+   ]
+  },
+  {
+   "id": "warm-up-countdown",
+   "name": "Warm-Up Countdown",
+   "tagline": "Call-and-response counting with jumping jacks — math that warms the room.",
+   "categories": [
+    "icebreakers",
+    "pe-movement"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 40,
+   "time_min": 10,
+   "time_max": 15,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "setup": "Push desks back so everyone has arm room. Teacher leads the first round.",
+   "steps": [
+    "Teacher calls a number and a move: 'Ten jumping jacks — go!' The group counts aloud together while doing it.",
+    "Rotate the caller: each kid picks the next number and move (high knees, arm circles, toe touches).",
+    "Add math: 'Seven minus two jumping jacks — how many?' Solve, then do them.",
+    "Final round: count down from 20 to 1 together, getting quieter each number, ending seated."
+   ],
+   "variations": {
+    "easier": "Just counting with claps, no big moves; teacher picks every number.",
+    "harder": "Add multiplication: 'Three sets of four arm circles — how many total?'"
+   },
+   "safety": "Moves stay low-impact near furniture; anyone can march in place instead.",
+   "tags": [
+    "season:winter"
+   ]
+  },
+  {
+   "id": "paper-mitten-match",
+   "name": "Paper Mitten Match",
+   "tagline": "Decorate mitten pairs, mix them up, and play memory across the room.",
+   "categories": [
+    "crafts",
+    "rainy-day"
+   ],
+   "age_min": 4,
+   "age_max": 10,
+   "group_min": 2,
+   "group_max": 24,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper mitten cutouts (2 per kid)"
+    },
+    {
+     "item": "crayons and markers"
+    },
+    {
+     "item": "a paper bag"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Cut out pairs of paper mittens ahead of time (trace one hand shape and flip it). Give each kid two matching mittens.",
+   "steps": [
+    "Each kid decorates their two mittens identically — same pattern, same colors.",
+    "Collect one mitten from every kid into the paper bag and hide the other halves.",
+    "Scatter the hidden mittens face-down on the rug; kids draw a mitten from the bag.",
+    "One at a time, each kid flips a rug mitten trying to find their pair's match. Matched pairs hang on the 'clothesline' to dry."
+   ],
+   "variations": {
+    "easier": "Teacher matches for them: hold up two mittens, 'same or different?'",
+    "harder": "Three-mitten sets: decorate a trio and match all three."
+   },
+   "safety": "No running while searching — walk to the rug.",
+   "tags": [
+    "season:winter"
+   ]
+  },
+  {
+   "id": "winter-wreath-collage",
+   "name": "Winter Wreath Collage",
+   "tagline": "A paper-plate wreath layered with cut-paper greens — a winter door classic.",
+   "categories": [
+    "crafts"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 30,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper plates (one per kid)"
+    },
+    {
+     "item": "green construction paper"
+    },
+    {
+     "item": "scissors"
+    },
+    {
+     "item": "glue sticks"
+    },
+    {
+     "item": "ribbon"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Cut the centers out of the paper plates ahead of time so they're rings. Put green paper scraps in shared bowls.",
+   "steps": [
+    "Glue torn or cut green paper pieces all around the ring, overlapping like leaves.",
+    "Add red paper berries (tiny circles) and a ribbon bow at the top.",
+    "Write the child's name and the year on the back.",
+    "Hang the wreaths on the classroom door for the season."
+   ],
+   "variations": {
+    "easier": "Teacher pre-cuts leaf shapes; kids just glue them around the ring.",
+    "harder": "Weave in real pressed leaves between the paper layers for texture."
+   },
+   "safety": "Scissors supervision; glue sticks, not bottles, for the little ones.",
+   "tags": [
+    "season:winter",
+    "holiday:christmas"
+   ]
+  },
+  {
+   "id": "cotton-ball-penguin",
+   "name": "Cotton-Ball Penguin",
+   "tagline": "A fluffy cotton-ball penguin puppet with real googly attitude.",
+   "categories": [
+    "crafts"
+   ],
+   "age_min": 4,
+   "age_max": 10,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "black and white paper ovals (one set per kid)"
+    },
+    {
+     "item": "cotton balls"
+    },
+    {
+     "item": "glue"
+    },
+    {
+     "item": "googly eyes"
+    },
+    {
+     "item": "orange paper beaks"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Pre-cut the black body ovals and white belly ovals. Put cotton balls, eyes, and beaks in shared bowls.",
+   "steps": [
+    "Glue the white belly oval onto the black body oval.",
+    "Glue cotton balls all around the edge for a fluffy outline.",
+    "Add googly eyes and the orange beak.",
+    "Give your penguin a name and introduce it to a neighbor's penguin."
+   ],
+   "variations": {
+    "easier": "Teacher glues the body together; kids stick on cotton balls and eyes.",
+    "harder": "Add flippers (small black paper wings) and a paper ice floe to stand on."
+   },
+   "safety": "Googly eyes are small — keep them out of mouths; supervision for under-5s.",
+   "tags": [
+    "season:winter"
+   ]
+  },
+  {
+   "id": "arctic-animal-research-jigsaw",
+   "name": "Arctic Animal Research Jigsaw",
+   "tagline": "Small expert teams research one arctic animal each, then teach the class.",
+   "categories": [
+    "team-community",
+    "stem"
+   ],
+   "age_min": 8,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 40,
+   "time_min": 30,
+   "time_max": 45,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "arctic animal fact sheets (one animal per team: polar bear, arctic fox, snowy owl, narwhal, penguin, seal)"
+    },
+    {
+     "item": "poster paper"
+    },
+    {
+     "item": "markers"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Prepare one simple fact sheet per animal (diet, habitat, one superpower adaptation). Split the class into expert teams of 3–4.",
+   "steps": [
+    "Each team studies its animal's sheet and picks the three coolest facts.",
+    "Teams make a poster: drawing, the three facts, and one question for the class.",
+    "New mixed groups form with one expert from each animal — each expert teaches their animal in two minutes.",
+    "Back together: the class votes on the most surprising adaptation learned."
+   ],
+   "variations": {
+    "easier": "Teacher reads the fact sheet aloud; teams draw the animal and dictate one fact.",
+    "harder": "Add a 'myth vs. fact' round: teams invent one plausible-sounding fake fact and the class guesses which is fake."
+   },
+   "safety": null,
+   "tags": [
+    "season:winter"
+   ]
+  },
+  {
+   "id": "gingerbread-shape-build",
+   "name": "Gingerbread Shape Build",
+   "tagline": "Engineer the tallest tower you can from graham crackers and icing 'mortar'.",
+   "categories": [
+    "stem",
+    "crafts"
+   ],
+   "age_min": 6,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 25,
+   "time_max": 40,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "graham crackers"
+    },
+    {
+     "item": "thick icing in squeeze bottles"
+    },
+    {
+     "item": "paper plates"
+    },
+    {
+     "item": "candy for decoration (optional)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Give each pair a plate, a stack of graham crackers, and a squeeze bottle of icing. Set a 20-minute build timer.",
+   "steps": [
+    "Plan first: sketch the tower on the plate's edge before touching food.",
+    "Build with icing as mortar — let each layer set a minute before adding more.",
+    "Measure the finished tower; the tallest standing tower wins.",
+    "Decorate, photograph, and then — the best part — eat the engineering."
+   ],
+   "variations": {
+    "easier": "Build flat houses (walls only) instead of tall towers.",
+    "harder": "Test shapes: which holds more weight, a cube tower or a pyramid?"
+   },
+   "safety": "Check for wheat, dairy, and egg allergies before anyone eats. Icing is sticky — wash hands and wipe tables after.",
+   "tags": [
+    "season:winter",
+    "holiday:christmas"
+   ]
   }
  ],
- "count": 213,
+ "count": 238,
  "updated": "2026-10-12"
 }

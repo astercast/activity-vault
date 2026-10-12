@@ -2,8 +2,8 @@
  "meta": {
   "site": "Activity Vault",
   "version": "1.0.0",
-  "generated": "2026-10-12T00:42:09Z",
-  "source_snapshot": "data/activities.json + data/categories.json — 213 activities, 11 categories"
+  "generated": "2026-10-12T00:51:12Z",
+  "source_snapshot": "data/activities.json + data/categories.json — 238 activities, 11 categories"
  },
  "endpoints": [
   {
@@ -20,7 +20,7 @@
    "description": "Every activity record: filters (age, time, group, location, materials, no_prep), setup, steps, variations, safety, optional season/occasion tags, optional source URL.",
    "schema": "api/v1/schema/activities.schema.json",
    "updated": "2026-10-12",
-   "records": 213,
+   "records": 238,
    "stability": "stable"
   },
   {

@@ -164,15 +164,16 @@
  },
  {
   "id": "526b06095852036d",
-  "status": "deferred",
+  "status": "accepted",
   "feed": "Hands On As We Grow",
   "title": "Homemade Christmas Ornaments for Kids to Make",
   "link": "https://handsonaswegrow.com/homemade-christmas-ornaments-kids/",
   "published": "Wed, 30 Sep 2026 13:00:58 +0000",
   "summary": "Click here to read   Homemade Christmas Ornaments for Kids to Make   on Hands On As We Grow® \n \n\n DIY some of these gorgeous kids homemade Christmas ornaments! Keep some for your own tree or gift them to loved ones.  \n\n\n\n What will you do with your  holiday crafts?  \n\n\n\n Believe me, you and the kids",
   "note": "Adapt into original words per PIPELINE.md. Link as source if adapted.",
-  "decision": "Good concept but Christmas-seasonal — hold for the winter pack wave.",
-  "reviewed": "2026-10-11"
+  "decision": "Adapted into original words for the winter pack wave (activity: homemade-christmas-ornaments); source credited on the activity.",
+  "reviewed": "2026-10-11",
+  "activity_id": "homemade-christmas-ornaments"
  },
  {
   "id": "c8c702f8d6786f62",

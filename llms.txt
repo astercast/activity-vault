@@ -6,16 +6,16 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
 
 ## Categories
 - Seasons: 34 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
-- Holidays: 38 activities — Festive projects and games for the days the whole group looks forward to.
-- Crafts: 66 activities — Hands-on making: fold it, paint it, build it, take it home.
-- STEM: 45 activities — Experiments, engineering challenges, and satisfying science demos.
-- PE & Movement: 43 activities — Run, jump, dance — activities that burn off the wiggles.
-- Team & Community: 41 activities — Turn a group into a crew: cooperation, trust, and belonging.
-- Icebreakers: 27 activities — First-day friendly: learn names, laugh, and loosen up fast.
-- Outdoor: 37 activities — Fresh-air activities for fields, playgrounds, and nature walks.
-- Rainy Day: 30 activities — Stuck inside? These keep a roomful of kids happy without a gym.
-- Quiet & Focus: 50 activities — Wind-down worthy: calm, creative, individual or small-group.
-- Music & Rhythm: 7 activities — Drums, shakers, rhythm games, and songs — make some noise.
+- Holidays: 41 activities — Festive projects and games for the days the whole group looks forward to.
+- Crafts: 76 activities — Hands-on making: fold it, paint it, build it, take it home.
+- STEM: 52 activities — Experiments, engineering challenges, and satisfying science demos.
+- PE & Movement: 48 activities — Run, jump, dance — activities that burn off the wiggles.
+- Team & Community: 47 activities — Turn a group into a crew: cooperation, trust, and belonging.
+- Icebreakers: 30 activities — First-day friendly: learn names, laugh, and loosen up fast.
+- Outdoor: 41 activities — Fresh-air activities for fields, playgrounds, and nature walks.
+- Rainy Day: 31 activities — Stuck inside? These keep a roomful of kids happy without a gym.
+- Quiet & Focus: 52 activities — Wind-down worthy: calm, creative, individual or small-group.
+- Music & Rhythm: 8 activities — Drums, shakers, rhythm games, and songs — make some noise.
 
 ## API — start at api/v1/index.json (self-describing manifest)
 - api/v1/index.json — api manifest
@@ -26,7 +26,7 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
 
 ## Skills
 - skills/activity-finder.md — Find the right activity fast using age, time, group size, and materials-on-hand filters.
-- skills/halloween-party-planner.md — Turn party constraints into a timed station-rotation plan from seasonal activities.
+- skills/halloween-party-planner.md — Turn party constraints into a timed station-rotation plan from seasonal activities. Covers the Halloween and winter party presets.
 - skills/icebreaker-chooser.md — Pick first-day and new-group icebreakers matched to group size and shyness level.
 - skills/no-prep-rescue.md — Grab-and-go activities that need zero prep and zero (or near-zero) materials.
 - skills/outdoor-play-picker.md — Pick the right outdoor activity for the space, weather, and energy level you have.
@@ -40,9 +40,10 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
 - sub.html — Sub Tub: the substitute-teacher rescue kit.
   Pick grade band, minutes to fill, materials on hand, location —
   generates a sequenced print-ready emergency plan plus a 'Dear sub' note template.
-- party.html — Halloween Class-Party Planner.
-  Pick class size, minutes, stations, and budget — generates a timed station-rotation
-  plan from seasonal activities, plus a setup list and a print-ready run sheet.
+- party.html — Party Planner (Halloween and winter presets).
+  Pick a theme, class size, minutes, stations, and budget — generates a timed
+  station-rotation plan from seasonal activities, plus a setup list and a
+  print-ready run sheet.
 - planner.html — Plan-my-week planner: days, slots per day, and filters →
   a no-repeat week of activities with a print-ready sheet.
 - api.html — API docs with a Try-the-API console (endpoint picker, fetch, pretty JSON).

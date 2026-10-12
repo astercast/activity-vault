@@ -133,8 +133,13 @@
       "items": {
        "enum": [
         "season:fall",
+        "season:winter",
         "holiday:halloween",
         "holiday:dia-de-muertos",
+        "holiday:christmas",
+        "holiday:hanukkah",
+        "holiday:kwanzaa",
+        "holiday:new-year",
         "theme:spooky"
        ]
       },

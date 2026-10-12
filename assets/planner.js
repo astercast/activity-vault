@@ -129,7 +129,51 @@
       ('Planned ' + totalSlots + ' slots from ' + pool.length + ' matching activities.');
   }
 
+  var SEASON_LABELS = {
+    'season:fall': '🎃 Fall', 'season:winter': '❄️ Winter',
+    'holiday:halloween': '👻 Halloween', 'holiday:dia-de-muertos': '💀 Día de los Muertos',
+    'holiday:christmas': '🎄 Christmas', 'holiday:hanukkah': '🕎 Hanukkah',
+    'holiday:kwanzaa': '🖤 Kwanzaa', 'holiday:new-year': '🎆 New Year',
+    'theme:spooky': '🕸️ Spooky (not scary)'
+  };
+  var SEASON_BY_MONTH = { 8: 'season:fall', 9: 'season:fall', 10: 'season:fall',
+                          11: 'season:winter', 0: 'season:winter', 1: 'season:winter' };
+  var HOLIDAY_BY_MONTH = {
+    9: ['holiday:halloween', 'holiday:dia-de-muertos'],
+    10: ['holiday:hanukkah', 'holiday:kwanzaa'],
+    11: ['holiday:christmas', 'holiday:new-year', 'holiday:hanukkah', 'holiday:kwanzaa'],
+    0: ['holiday:new-year', 'holiday:hanukkah', 'holiday:kwanzaa']
+  };
+
+  function buildSeasonStrip() {
+    var host = document.getElementById('season-strip');
+    if (!host) return;
+    var month = new Date().getMonth();
+    var tags = [];
+    if (SEASON_BY_MONTH[month]) tags.push(SEASON_BY_MONTH[month]);
+    (HOLIDAY_BY_MONTH[month] || []).forEach(function (t) { tags.push(t); });
+    var chips = [];
+    tags.forEach(function (t) {
+      var n = state.activities.filter(function (a) {
+        return (a.tags || []).indexOf(t) !== -1;
+      }).length;
+      if (n) chips.push({ tag: t, n: n });
+    });
+    if (!chips.length) { host.hidden = true; return; }
+    host.textContent = '';
+    host.appendChild(el('span', 'season-strip-title', '🌿 This season in the Vault:'));
+    var row = el('div', 'chip-row');
+    chips.forEach(function (c) {
+      var a = el('a', 'chip chip-link', SEASON_LABELS[c.tag] + ' (' + c.n + ')');
+      a.href = 'index.html?tag=' + encodeURIComponent(c.tag);
+      row.appendChild(a);
+    });
+    host.appendChild(row);
+    host.hidden = false;
+  }
+
   function buildForm() {
+    buildSeasonStrip();
     // category checkboxes
     var host = document.getElementById('pcat-row');
     state.categories.forEach(function (c) {

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Party Planner — Halloween class-party planner — Activity Vault</title>
-<meta name="description" content="Plan a Halloween class party in minutes: class size, party length, stations, and budget become a timed station-rotation plan with a setup list and print-ready run sheet.">
+<title>Party Planner — Halloween and winter class-party plans — Activity Vault</title>
+<meta name="description" content="Plan a Halloween or winter class party in minutes: theme, class size, party length, stations, and budget become a timed station-rotation plan with a setup list and print-ready run sheet.">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -19,19 +19,26 @@
       <a href="index.html">Browse</a>
       <a href="planner.html">Plan my week</a>
       <a href="sub.html">Sub Tub 🆘</a>
-      <a href="party.html" aria-current="page">Party Planner 🎃</a>
+      <a href="party.html" aria-current="page">Party Planner 🎉</a>
     </nav>
   </div>
 </header>
 
 <main class="wrap">
   <section class="hero" aria-labelledby="hero-title">
-    <span class="kicker no-print">🎃 Party Planner</span>
+    <span class="kicker no-print" id="party-hero-kicker">🎃 Party Planner</span>
     <h1 id="hero-title">The Halloween<br>class-party planner.</h1>
-    <p class="lede no-print">Tell it your class size, how long the party runs, how many stations you can staff, and your budget — it builds a timed station-rotation plan from the Vault's fall and Halloween activities, with a merged setup list and a print-ready run sheet.</p>
+    <p class="lede no-print" id="party-hero-lede">Tell it your class size, how long the party runs, how many stations you can staff, and your budget — it builds a timed station-rotation plan from the Vault's fall and Halloween activities, with a merged setup list and a print-ready run sheet.</p>
   </section>
 
-  <form class="planner-form no-print" id="party-form" onsubmit="return false;" aria-label="Halloween class-party planner options">
+  <form class="planner-form no-print" id="party-form" onsubmit="return false;" aria-label="Class-party planner options">
+    <fieldset>
+      <legend>Party theme</legend>
+      <div class="chip-row" role="radiogroup" aria-label="Party theme">
+        <label class="chip"><input type="radio" name="theme" value="halloween" checked> 🎃 Halloween</label>
+        <label class="chip"><input type="radio" name="theme" value="winter"> ❄️ Winter</label>
+      </div>
+    </fieldset>
     <fieldset>
       <legend>Class size</legend>
       <div class="filter-group">
@@ -80,7 +87,7 @@
   <article id="party-plan" aria-labelledby="party-plan-title" hidden>
     <div class="plan-sheet">
       <header class="plan-head">
-        <p class="kicker">🎃 Halloween class-party run sheet</p>
+        <p class="kicker" id="party-kicker">🎃 Halloween class-party run sheet</p>
         <h2 id="party-plan-title" tabindex="-1">Party plan</h2>
         <p class="plan-meta" id="party-meta"></p>
       </header>

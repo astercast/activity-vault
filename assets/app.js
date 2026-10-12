@@ -20,11 +20,18 @@
 
   var TAG_LABELS = {
     'season:fall': '🎃 Fall',
+    'season:winter': '❄️ Winter',
     'holiday:halloween': '👻 Halloween',
     'holiday:dia-de-muertos': '💀 Día de los Muertos',
+    'holiday:christmas': '🎄 Christmas',
+    'holiday:hanukkah': '🕎 Hanukkah',
+    'holiday:kwanzaa': '🖤 Kwanzaa',
+    'holiday:new-year': '🎆 New Year',
     'theme:spooky': '🕸️ Spooky (not scary)'
   };
-  var TAG_ORDER = ['season:fall', 'holiday:halloween', 'holiday:dia-de-muertos', 'theme:spooky'];
+  var TAG_ORDER = ['season:fall', 'season:winter', 'holiday:halloween', 'holiday:dia-de-muertos',
+                   'holiday:christmas', 'holiday:hanukkah', 'holiday:kwanzaa', 'holiday:new-year',
+                   'theme:spooky'];
 
   var grid, countEl, searchInput;
 
@@ -175,9 +182,11 @@
     tagg.appendChild(el('span', 'flabel', 'Season / occasion'));
     var tagrow = el('div', 'chip-row');
     TAG_ORDER.forEach(function (t) {
-      tagrow.appendChild(chipButton(TAG_LABELS[t], false, function (on) {
+      var tb = chipButton(TAG_LABELS[t], false, function (on) {
         if (on) state.tags.add(t); else state.tags.delete(t);
-      }, '#8b5cf6'));
+      }, '#8b5cf6');
+      tb.setAttribute('data-tag', t);
+      tagrow.appendChild(tb);
     });
     tagg.appendChild(tagrow);
     host.appendChild(tagg);
@@ -289,6 +298,15 @@
       if (statCats) statCats.textContent = state.categories.length;
       if (statPrep) statPrep.textContent = state.activities.filter(function (a) { return a.no_prep; }).length;
       buildFilters();
+      // ?tag= deep links (used by the week planner's seasonal suggestions)
+      try {
+        var qtag = new URLSearchParams(window.location.search).get('tag');
+        if (qtag && TAG_ORDER.indexOf(qtag) !== -1) {
+          state.tags.add(qtag);
+          var tbtn = document.querySelector('[data-tag="' + qtag + '"]');
+          if (tbtn) tbtn.setAttribute('aria-pressed', 'true');
+        }
+      } catch (e) { /* malformed query string — ignore */ }
       render();
     }).catch(function () {
       grid.innerHTML = '<div class="empty"><span class="big" aria-hidden="true">⚠️</span><p>Could not load the activity library. Check your connection and reload.</p></div>';

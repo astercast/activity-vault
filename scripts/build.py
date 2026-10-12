@@ -19,11 +19,18 @@ ID_RE = re.compile(r'^[a-z0-9-]+$')
 
 # Optional tag vocabulary. Tags drive the "Season / occasion" filter.
 # New tags must be added here AND to assets/app.js (TAG_LABELS) AND api docs.
-TAG_IDS = ["season:fall", "holiday:halloween", "holiday:dia-de-muertos", "theme:spooky"]
+TAG_IDS = ["season:fall", "season:winter", "holiday:halloween", "holiday:dia-de-muertos",
+           "holiday:christmas", "holiday:hanukkah", "holiday:kwanzaa", "holiday:new-year",
+           "theme:spooky"]
 TAG_LABELS = {
     "season:fall": "🎃 Fall",
+    "season:winter": "❄️ Winter",
     "holiday:halloween": "👻 Halloween",
     "holiday:dia-de-muertos": "💀 Día de los Muertos",
+    "holiday:christmas": "🎄 Christmas",
+    "holiday:hanukkah": "🕎 Hanukkah",
+    "holiday:kwanzaa": "🖤 Kwanzaa",
+    "holiday:new-year": "🎆 New Year",
     "theme:spooky": "🕸️ Spooky (not scary)",
 }
 
@@ -459,9 +466,10 @@ def main():
               "- sub.html — Sub Tub: the substitute-teacher rescue kit.",
               "  Pick grade band, minutes to fill, materials on hand, location —",
               "  generates a sequenced print-ready emergency plan plus a 'Dear sub' note template.",
-              "- party.html — Halloween Class-Party Planner.",
-              "  Pick class size, minutes, stations, and budget — generates a timed station-rotation",
-              "  plan from seasonal activities, plus a setup list and a print-ready run sheet.",
+              "- party.html — Party Planner (Halloween and winter presets).",
+              "  Pick a theme, class size, minutes, stations, and budget — generates a timed",
+              "  station-rotation plan from seasonal activities, plus a setup list and a",
+              "  print-ready run sheet.",
               "- planner.html — Plan-my-week planner: days, slots per day, and filters →",
               "  a no-repeat week of activities with a print-ready sheet.",
               "- api.html — API docs with a Try-the-API console (endpoint picker, fetch, pretty JSON).",

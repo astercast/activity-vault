@@ -118,6 +118,10 @@ a:hover { text-decoration-thickness: 2px; }
 .chip[aria-pressed="true"] { border-color: var(--cat, var(--accent)); background: var(--cat, var(--accent)); color: #fff; }
 .chip.cat-chip { --cat: #888; }
 .chip.tag-chip { --cat: #8b5cf6; border-style: dashed; }
+.chip-link { text-decoration: none; border-style: dashed; --cat: #8b5cf6; }
+.chip-link:hover, .chip-link:focus-visible { border-color: var(--cat); background: #f3edff; }
+.season-strip { margin: 0 0 1.25rem; padding: .9rem 1rem; border: 2px dashed var(--line); border-radius: 14px; background: #fff; }
+.season-strip-title { display: block; font-weight: 700; margin-bottom: .5rem; }
 input[type="search"], select {
   width: 100%; padding: .55rem .7rem; border: 2px solid var(--line); border-radius: 10px;
   font: inherit; background: #fff; color: var(--ink);

@@ -13,7 +13,7 @@ This archive is built to be driven by agents, no browser needed. Everything is s
 
 | Endpoint | What it is | Schema |
 |---|---|---|
-| `api/v1/activities.json` | All 213 activity records with full details | `api/v1/schema/activities.schema.json` |
+| `api/v1/activities.json` | All 238 activity records with full details | `api/v1/schema/activities.schema.json` |
 | `api/v1/categories.json` | The 11 categories (`id`, `name`, `blurb`, `color`, `glyph`) | `api/v1/schema/categories.schema.json` |
 | `api/v1/filters.json` | Machine-readable filter config — the same matching logic the browser UI uses | `api/v1/schema/filters.schema.json` |
 | `api/v1/skills.json` | Registry of the 10 reusable skill recipes in `skills/` | (self-describing) |
@@ -24,7 +24,7 @@ Record-level schemas also exist: `api/v1/schema/activity.schema.json` and `api/v
 
 ## The activity record
 
-Each record in `activities.json` has: `id` (slug; detail page at `activity/<id>.html`), `name`, `tagline`, `categories[]` (1+ of the 11 ids), `age_min`/`age_max`, `group_min`/`group_max`, `time_min`/`time_max` (minutes; `time_min` is the realistic floor), `location[]` (`indoor`/`outdoor`), `materials[]` (`{item, note?}`; empty array = nothing needed), `no_prep` (bool), `setup`, `steps[]`, `variations` (`{easier, harder}`), `safety` (string or null — common-sense notes), optional `tags[]` (season/occasion vocabulary: `season:fall`, `holiday:halloween`, `holiday:dia-de-muertos`, `theme:spooky` — validated against a fixed list), optional `source` (URL credit for RSS-pipeline adaptations).
+Each record in `activities.json` has: `id` (slug; detail page at `activity/<id>.html`), `name`, `tagline`, `categories[]` (1+ of the 11 ids), `age_min`/`age_max`, `group_min`/`group_max`, `time_min`/`time_max` (minutes; `time_min` is the realistic floor), `location[]` (`indoor`/`outdoor`), `materials[]` (`{item, note?}`; empty array = nothing needed), `no_prep` (bool), `setup`, `steps[]`, `variations` (`{easier, harder}`), `safety` (string or null — common-sense notes), optional `tags[]` (season/occasion vocabulary: `season:fall`, `season:winter`, `holiday:halloween`, `holiday:dia-de-muertos`, `holiday:christmas`, `holiday:hanukkah`, `holiday:kwanzaa`, `holiday:new-year`, `theme:spooky` — validated against a fixed list), optional `source` (URL credit for RSS-pipeline adaptations).
 
 ## Filter semantics (same as the UI — copy these exactly)
 
@@ -44,9 +44,9 @@ The three tools (`sub.html`, `party.html`, `planner.html`) are thin clients over
 
 **Sub Tub** (`sub.html`) — inputs: `band` ∈ {`prek-k` (ages 3–6), `g1-2` (6–8), `g3-5` (8–11), `g6-8` (11–14)}, `minutes` (15–90), `tier` ∈ {`nothing`, `paper`, `art`, `any`} (materials on hand), `loc` ∈ {`indoor`, `either`}. Logic: age overlap with the band, indoor must include `indoor`, materials tier = substring match on material names (`paper` tier = only paper/pencil/pen/crayon/marker/cardstock/notebook/sticky-note/index-card/envelope/worksheet/clipboard words). Sequences opener → mains → calm closer, fills gaps with a filler block. Reproduce in full: `assets/sub.js` `filterPool`/`buildPlan`.
 
-**Party planner** (`party.html`) — inputs: `class_size` (4–60), `minutes`, `stations`, `budget` ∈ {`shoestring`, `moderate`, `splurge`}. Logic: `round_min = floor((minutes - 10) / stations)` (5 min intro + 5 min wrap); `per_group = ceil(class_size / stations)`. Pool: activity must carry ANY of [`holiday:halloween`, `holiday:dia-de-muertos`, `season:fall`, `theme:spooky`] AND ANY of [`crafts`, `pe-movement`, `rainy-day`, `quiet-focus`, `team-community`, `icebreakers`]; `time_min <= round_min + 5`; group range must include `per_group`; `shoestring` budget keeps only activities with no materials or all-cheap materials (paper, crayon, marker, pencil, pen, glue, scissors, tape, balloon, bag, plate, cup, string, yarn, dice, card, chalk, sticker, ribbon, towel, tissue, newspaper, box, sock, button, cotton, pipe cleaner, toothpick). Stations picked by: no-prep first, then longest `time_max`, preferring categories not yet used. Full logic: `assets/party.js`.
+**Party planner** (`party.html`) — inputs: `theme` ∈ {`halloween`, `winter`}, `class_size` (4–60), `minutes`, `stations`, `budget` ∈ {`shoestring`, `moderate`, `splurge`}. Logic: `round_min = floor((minutes - 10) / stations)` (5 min intro + 5 min wrap); winter theme also reserves a 5-min ☕ warm-up break midway, so `round_min = floor((minutes - 15) / stations)`; `per_group = ceil(class_size / stations)`. Pool by theme: Halloween = activity carries ANY of [`holiday:halloween`, `holiday:dia-de-muertos`, `season:fall`, `theme:spooky`]; Winter = ANY of [`holiday:christmas`, `holiday:new-year`, `season:winter`] — and ANY of [`crafts`, `pe-movement`, `rainy-day`, `quiet-focus`, `team-community`, `icebreakers`]; `time_min <= round_min + 5`; group range must include `per_group`; `shoestring` budget keeps only activities with no materials or all-cheap materials (paper, crayon, marker, pencil, pen, glue, scissors, tape, balloon, bag, plate, cup, string, yarn, dice, card, chalk, sticker, ribbon, towel, tissue, newspaper, box, sock, button, cotton, pipe cleaner, toothpick). Stations picked by: no-prep first, then longest `time_max`, preferring categories not yet used. Full logic: `assets/party.js`.
 
-**Week planner** (`planner.html`) — inputs: `days[]`, `slots` per day (1–4), optional `cats` set, `maxTime`, `noPrepOnly`, `indoorOnly`, `allowRepeats`. Logic: pool = filter above; shuffle; deal round-robin across days × slots; prefer activities whose categories haven't appeared yet that week (`usedCats`), skip already-used ids unless `allowRepeats`. Full logic: `assets/planner.js`.
+**Week planner** (`planner.html`) — inputs: `days[]`, `slots` per day (1–4), optional `cats` set, `maxTime`, `noPrepOnly`, `indoorOnly`, `allowRepeats`. Logic: pool = filter above; shuffle; deal round-robin across days × slots; prefer activities whose categories haven't appeared yet that week (`usedCats`), skip already-used ids unless `allowRepeats`. Seasonal suggestions strip (top of page, month-driven): links to `index.html?tag=<tag>` with live counts — the browse page pre-selects a `?tag=` value from the tag vocabulary. Full logic: `assets/planner.js`.
 
 ---
 
@@ -54,7 +54,7 @@ The three tools (`sub.html`, `party.html`, `planner.html`) are thin clients over
 
 **Situation:** 8-year-olds, stuck indoors, ~30 minutes.
 
-1. `GET api/v1/activities.json` (one fetch; 213 records, ~300 KB).
+1. `GET api/v1/activities.json` (one fetch; 238 records, ~300 KB).
 2. Filter:
    - `'rainy-day'` in `categories`
    - `'indoor'` in `location`

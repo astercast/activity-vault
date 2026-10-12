@@ -1,6 +1,6 @@
 ---
 name: halloween-party-planner
-description: Turn party constraints into a timed station-rotation plan from seasonal activities.
+description: Turn party constraints into a timed station-rotation plan from seasonal activities. Covers the Halloween and winter party presets.
 ---
 
 # Halloween Party Planner skill
@@ -9,14 +9,22 @@ Turn a teacher's party constraints into a timed station-rotation plan using the 
 
 ## When to use
 
-The user wants help planning a Halloween (or fall) class party: how many stations, how to rotate groups, what to buy, and a run sheet they can print.
+The user wants help planning a Halloween (or fall) class party — or a **winter** class party, using the winter preset: how many stations, how to rotate groups, what to buy, and a run sheet they can print.
 
 ## Inputs to collect
 
+- Party theme: Halloween 🎃 or Winter ❄️
 - Class size (number of kids)
 - Party length in minutes (30 / 45 / 60 / 90)
 - Stations they can staff (2–6)
 - Budget: shoestring / moderate / splurge
+
+## Theme presets
+
+- **Halloween** — party pool: activities tagged `holiday:halloween`, `holiday:dia-de-muertos`, `season:fall`, or `theme:spooky`. Groups named Ghosts, Bats, Pumpkins, Spiders, Witches, Black Cats. Closes with a costume category vote or group photo.
+- **Winter** — party pool: activities tagged `holiday:christmas`, `holiday:new-year`, or `season:winter`. Groups named Snowflakes, Penguins, Reindeer, Mittens, Icicles, Cocoa Bears. Includes a 5-minute ☕ warm-up break halfway through the rotation (cozy-timed rotations), so round length = (minutes − 15) ÷ stations, rounded down. Closes with a favorite-moments share.
+
+For winter parties, prefer a mix: one craft, one movement game, one quiet/STEM station, plus a New Year reflection activity near the end of the year. The respectful-framing rule below applies to Hanukkah and Kwanzaa crafts too: they are classroom crafts *about* the holidays, not ceremonies.
 
 ## How to build the plan
 
@@ -38,5 +46,5 @@ The user wants help planning a Halloween (or fall) class party: how many station
 ## Standing rules
 
 - Safety notes are common-sense only: costume visibility (no vision-blocking masks while moving), no real or toy weapons, allergy checks before any food/treats, LED candles only. No invented safety or medical claims.
-- Respectful framing for Día de los Muertos activities: it is a Mexican celebration honoring loved ones who have died — learning, not dressing up.
-- Suggest the interactive tool too: `party.html` does all of this automatically with a print-ready run sheet.
+- Respectful framing for Día de los Muertos activities: it is a Mexican celebration honoring loved ones who have died — learning, not dressing up. Same for Hanukkah and Kwanzaa crafts: classroom crafts *about* the holidays, never ceremonies; keep the tone respectful and learning-first.
+- Suggest the interactive tool too: `party.html` does all of this automatically (theme picker included) with a print-ready run sheet.

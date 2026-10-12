@@ -21,10 +21,10 @@ Self-describing manifest of the whole API — agents should start here:
 {
   "meta": { "site": "Activity Vault", "version": "1.0.0",
             "generated": "2026-10-11T00:40:21Z",
-            "source_snapshot": "data/activities.json + data/categories.json — 213 activities, 11 categories" },
+            "source_snapshot": "data/activities.json + data/categories.json — 238 activities, 11 categories" },
   "endpoints": [ { "path": "api/v1/activities.json", "title": "...", "description": "...",
                    "schema": "api/v1/schema/activities.schema.json",
-                   "updated": "2026-10-11", "records": 213, "stability": "stable" } ],
+                   "updated": "2026-10-11", "records": 238, "stability": "stable" } ],
   "deprecation_notes": "No endpoints are deprecated as of 1.0.0."
 }
 ```
@@ -38,7 +38,7 @@ Full activity library.
 ```json
 {
   "activities": [ { "id": "...", "name": "...", ... } ],
-  "count": 213,
+  "count": 238,
   "updated": "2026-10-11"
 }
 ```
@@ -61,7 +61,7 @@ Full activity library.
 | `steps` | string[] | Ordered instructions |
 | `variations` | object | `{"easier": "...", "harder": "..."}` |
 | `safety` | string\|null | Common-sense safety notes, or null |
-| `tags` | string[] (optional) | Season/occasion tags: `season:fall`, `holiday:halloween`, `holiday:dia-de-muertos`, `theme:spooky` |
+| `tags` | string[] (optional) | Season/occasion tags: `season:fall`, `season:winter`, `holiday:halloween`, `holiday:dia-de-muertos`, `holiday:christmas`, `holiday:hanukkah`, `holiday:kwanzaa`, `holiday:new-year`, `theme:spooky` |
 | `source` | string\|null (optional) | Inspiration source URL (RSS pipeline adaptations link the original post) |
 
 ### `GET api/v1/categories.json`
@@ -83,7 +83,7 @@ Machine-readable filter configuration — the same logic the browser UI uses:
     "time_available": { "type": "select", "options": [15, 20, 30, 45, 60], "description": "Activity fits if time_min <= selected minutes." },
     "group_size":     { "type": "range", "min": 2, "max": 40, "description": "Activity fits if the group range overlaps the selected size." },
     "categories":     { "type": "multiselect", "options": ["seasons", "holidays", ...] },
-    "tags":           { "type": "multiselect", "options": ["season:fall", "holiday:halloween", "holiday:dia-de-muertos", "theme:spooky"], "description": "Activity fits if it carries ANY selected tag." },
+    "tags":           { "type": "multiselect", "options": ["season:fall", "season:winter", "holiday:halloween", "holiday:dia-de-muertos", "holiday:christmas", "holiday:hanukkah", "holiday:kwanzaa", "holiday:new-year", "theme:spooky"], "description": "Activity fits if it carries ANY selected tag." },
     "no_prep_only":   { "type": "boolean" },
     "indoor_only":    { "type": "boolean" },
     "outdoor_only":   { "type": "boolean" },

@@ -2,6 +2,65 @@
 
 Running record of build waves. Newest first.
 
+## Wave 6 — 2026-10-11 — Winter/holiday seasonal pack (+25 → 238)
+
+**What shipped:**
+- **Winter seasonal pack** — 25 new original activities (`scripts/add_wave6.py`):
+  winter crafts (homemade-christmas-ornaments, snowflake-paper-patterns,
+  suet-cage-winter-feeder, ice-ornaments, winter-wreath-collage, cotton-ball-penguin,
+  paper-mitten-match, gingerbread-shape-build), cozy indoor PE/movement
+  (snowball-toss-math, animal-walk-relay, freeze-dance-winter), New Year reflection
+  (year-in-review-quilt, resolution-ladder, midnight-countdown-rehearsal), winter
+  nature walks (track-prints-detective, frost-observation, bark-and-branch-study),
+  warm-drink science (dissolving-warm-drink-lab, temperature-melt-race), an arctic
+  research jigsaw, and respectful Hanukkah/Kwanzaa learning crafts
+  (hanukkah-counting-chain, kwanzaa-unity-garland — flagged as cultural,
+  "classroom craft *about* the holiday, not a ceremony", no invented rituals).
+  Two name collisions with earlier waves (pinecone-bird-feeders, new-year-time-capsule)
+  were replaced with genuinely new activities, not merged over.
+- **Tag vocabulary grown** — `season:winter`, `holiday:christmas`, `holiday:hanukkah`,
+  `holiday:kwanzaa`, `holiday:new-year` added to the validator (`scripts/build.py`
+  `TAG_IDS`/`TAG_LABELS`), the browse filter (`assets/app.js`), `api/v1/filters.json`,
+  and the docs (`API.md`, `AGENT.md`). `scripts/check_api.py` now imports `TAG_IDS`
+  from `build.py` (single source of truth) and derives expected counts from the
+  payload instead of hardcoding "213".
+- **RSS pipeline** — scan re-run: 0 new candidates, 0 pending. The wave-4 deferred
+  item ("Homemade Christmas Ornaments for Kids to Make", Hands On As We Grow) is
+  **accepted**: adapted into original words as `homemade-christmas-ornaments` with
+  the source URL credited. Queue is empty (no pending/deferred).
+- **Party planner winter preset** — `party.html` gains a theme picker (Halloween /
+  Winter). Winter uses the `holiday:christmas`/`holiday:new-year`/`season:winter`
+  pool, winter group names (Snowflakes, Penguins, Reindeer, Mittens, Icicles,
+  Cocoa Bears), cozy-timed rotations (a 5-min ☕ warm-up break midway, so
+  `round_min = floor((minutes − 15) / stations)`), and winter closings. Hero copy,
+  run-sheet kicker/title, and plan meta all switch with the theme; Halloween
+  behavior is byte-for-byte unchanged. AGENT.md party-planner section updated.
+- **Sub Tub winter band** — 3 zero-prep, zero-material winter emergencies
+  (`snowflake-mirror`, `winter-tall-tale`, `warm-up-countdown`) that flow
+  automatically into the Sub Tub "nothing at all" tier across the PreK–K
+  through grades 6–8 bands.
+- **Week planner seasonal suggestions** — month-driven "This season in the Vault"
+  strip on `planner.html` linking to `index.html?tag=<tag>` with live activity
+  counts; `assets/app.js` now pre-selects a valid `?tag=` on load (new deep link).
+- **Skills**: no new skill — merged into `skills/halloween-party-planner.md`
+  (winter preset section, theme inputs, respectful Hanukkah/Kwanzaa framing rule)
+  rather than duplicating.
+- Docs: `API.md` counts 213→238 + tag lists, `AGENT.md` counts/tags/party-planner/
+  week-planner sections, `README.md` 213→238; `llms.txt`/`llms-full.txt`/`sitemap.xml`
+  regenerated (party tool line now theme-generic).
+
+**Validation (wave 6):**
+- `scripts/build.py`: BUILD OK — 238 activities, 238 pages, 0 dupes
+- `scripts/check_api.py`: ALL CHECKS PASSED — 238/238 records validate against
+  schema; tags in vocabulary; workflow1: 29 matches; workflow2 (Halloween):
+  pool 4 → 3 stations; **new** winter preset: pool 13 → 3 stations picked
+  (resolution-ladder, snowball-toss-math, snowflake-paper-patterns); workflow3:
+  10 distinct slots, 11 categories; link check 0 broken (243 pages);
+  llms.txt links resolve (22)
+- `node --check` clean on app.js, party.js, planner.js, sub.js; runtime smoke
+  test of `party.js` render for both themes (DOM stub): Halloween 3 blocks, no
+  break; winter 3 rounds + warm-up break, correct clock math
+
 ## Wave 5 — 2026-10-11 — Agent API excellence pass
 
 **What shipped:**

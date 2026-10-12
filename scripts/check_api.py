@@ -7,6 +7,9 @@ Exits non-zero on any failure.
 import json, os, re, sys, math, random
 import jsonschema
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from build import TAG_IDS  # noqa: E402 — single source of truth for the tag vocabulary
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 API = os.path.join(ROOT, 'api', 'v1')
 failures = []
@@ -22,8 +25,9 @@ check("manifest version semver", re.match(r'^\d+\.\d+\.\d+$', manifest['meta']['
 check("manifest generated ISO-8601 UTC",
       re.match(r'^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$', manifest['meta']['generated']) is not None,
       manifest['meta']['generated'])
+_snap_acts = json.load(open(os.path.join(API, 'activities.json')))['activities']
 check("manifest snapshot names counts",
-      "213 activities" in manifest['meta']['source_snapshot'])
+      f"{len(_snap_acts)} activities" in manifest['meta']['source_snapshot'])
 
 # ---------- 2. schema validation of every endpoint payload ----------
 for ep in manifest['endpoints']:
@@ -47,7 +51,7 @@ for ep in manifest['endpoints']:
         check("updated date-only: " + ep['path'],
               re.match(r'^\d{4}-\d{2}-\d{2}$', payload.get('updated', '')) is not None)
 
-# activity record schema on all 213 records (strict per-record check)
+# activity record schema on every record (strict per-record check)
 act_schema = json.load(open(os.path.join(API, 'schema', 'activity.schema.json')))
 acts = json.load(open(os.path.join(API, 'activities.json')))['activities']
 bad = 0
@@ -56,11 +60,10 @@ for a in acts:
         jsonschema.validate(a, act_schema)
     except jsonschema.ValidationError:
         bad += 1
-check("all 213 activity records validate against activity.schema.json", bad == 0, f"bad={bad}")
+check(f"all {len(acts)} activity records validate against activity.schema.json", bad == 0, f"bad={bad}")
 check("0 duplicate ids", len({a['id'] for a in acts}) == len(acts))
 check("tags use fixed vocabulary",
-      all(t in ["season:fall", "holiday:halloween", "holiday:dia-de-muertos", "theme:spooky"]
-          for a in acts for t in a.get('tags', [])))
+      all(t in TAG_IDS for a in acts for t in a.get('tags', [])))
 
 # ---------- 3. AGENT.md workflow 1: rainy-day for 8-year-olds ----------
 w1 = [a for a in acts
@@ -97,6 +100,25 @@ check("workflow2: 3 stations picked", len(picks) == 3, str([a['id'] for a in pic
 print("   plan: 0:00-0:05 welcome |",
       " | ".join(f"{a['id']} ({round_min} min, group of {per_group})" for a in picks),
       "| regroup")
+
+# ---------- 4b. Winter party preset: same shape, winter tags, 5-min warm-up break ----------
+WINTER_TAGS = ['holiday:christmas', 'holiday:new-year', 'season:winter']
+w_round_min = math.floor((minutes - 10 - 5) / stations)  # minus the cozy warm-up break
+wpool = [a for a in acts
+         if any(t in (a.get('tags') or []) for t in WINTER_TAGS)
+         and any(c in PARTY_CATS for c in a['categories'])
+         and a['time_min'] <= w_round_min + 5
+         and a['group_min'] <= per_group <= a['group_max']
+         and (not a['materials'] or all(any(w in m['item'].lower() for w in CHEAP)
+                                       for m in a['materials']))]
+check("winter preset: party pool non-empty", len(wpool) >= 3, f"{len(wpool)} candidates")
+worder = sorted(wpool, key=lambda a: ((not a['no_prep']), -a['time_max'], a['id']))
+wpicks, wused_cats, wremaining = [], set(), worder[:]
+while len(wpicks) < stations and wremaining:
+    widx = next((i for i, a in enumerate(wremaining) if a['categories'][0] not in wused_cats), 0)
+    wpicks.append(wremaining.pop(widx))
+    wused_cats.add(wpicks[-1]['categories'][0])
+check("winter preset: 3 stations picked", len(wpicks) == 3, str([a['id'] for a in wpicks]))
 
 # ---------- 5. AGENT.md workflow 3: week plan, 4th grade (ages 9-10), 5x2, 45 min ----------
 random.seed(7)
