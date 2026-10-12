@@ -48,6 +48,32 @@ Every activity is one JSON object in `data/activities.json`. All fields required
 4. Run checks: `node --check` on JS, link check, JSON parse.
 5. Update counts in `WAVELOG.md` and commit.
 
+## RSS watch (live intake)
+
+`pipeline/` runs a weekly scan over teaching/activity blogs and queues fresh
+activity ideas for **human review** — it never publishes anything on its own.
+
+- `pipeline/feeds.json` — curated feeds (WeAreTeachers, Hands On As We Grow,
+  Teach Beside Me). All verified working 2026-10-11.
+- `pipeline/scan.py` — stdlib-only RSS scanner. Keyword-filters for
+  activity-relevant posts, dedupes via `pipeline/seen.json`, appends candidates
+  to `pipeline/review-queue.json` with `status: "pending"`. Exits 0 on feed
+  errors (logs and continues). **It never touches `data/activities.json`.**
+- `pipeline/refresh.sh` — one-line runner for cron.
+- `pipeline/review-queue.json` — the human queue. Each entry: feed, title, link,
+  published date, summary, and a note to adapt into original words.
+
+Review workflow: read a pending candidate → adapt the idea into **original
+words** per the contribution format above (link the source post as inspiration,
+never copy text) → add it in a wave → set its queue entry to `"accepted"` or
+`"rejected"`.
+
+Cron (Mondays 7am, no keys needed):
+
+```
+0 7 * * 1  cd ~/workspace/activity-vault && ./pipeline/refresh.sh >> pipeline/scan.log 2>&1
+```
+
 ## Category balance targets
 
 Keep every category at 8+ activities. Current counts are printed by the build; if a category falls behind, the next wave prioritizes it.
