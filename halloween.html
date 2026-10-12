@@ -6,6 +6,8 @@
 <title>Halloween in the Vault — crafts, costume games, not-too-spooky science — Activity Vault</title>
 <meta name="description" content="The Halloween 2026 pack: 20 new Halloween activities for teachers and after-school programs — crafts, costume and party games, not-too-spooky science, harvest activities, and trick-or-treat alternatives — plus the Haunted Halls collection and the Halloween party theme.">
 <link rel="stylesheet" href="assets/style.css">
+<script src="assets/site.js" defer></script>
+
 </head>
 <body>
 <a class="skip-link" href="#halloween-main">Skip to Halloween activities</a>
@@ -20,12 +22,17 @@
       <a href="planner.html">Plan my week</a>
       <a href="sub.html">Sub Tub 🆘</a>
       <a href="party.html">Party Planner 🎉</a>
+      <a href="fieldtrip.html">Field Trips 🚌</a>
       <a href="collections.html">Collections 📚</a>
       <a href="halloween.html" aria-current="page">Halloween 🎃</a>
       <a href="thanksgiving.html">Thanksgiving 🦃</a>
       <a href="spring.html">Spring 🌷</a>
       <a href="summer.html">Summer ☀️</a>
     </nav>
+    <button class="btn btn-ghost btn-small no-print" id="site-calm-toggle" type="button"
+            aria-pressed="false" aria-label="Calm mode: turn off page animations and motion">
+      <span aria-hidden="true">🍃</span> Calm: <span class="calm-state">off</span>
+    </button>
   </div>
 </header>
 
@@ -55,6 +62,15 @@
   <p id="halloween-status" role="status" aria-live="polite">Loading Halloween activities…</p>
 
   <div id="halloween-sections"></div>
+
+<nav class="season-cross no-print" aria-label="Explore more seasonal hubs">
+  <p><strong>Explore more seasons:</strong></p>
+  <div class="chip-row">
+      <a class="chip chip-link" href="thanksgiving.html">🦃 Thanksgiving</a>
+      <a class="chip chip-link" href="spring.html">🌷 Spring</a>
+      <a class="chip chip-link" href="summer.html">☀️ Summer</a>
+  </div>
+</nav>
 </main>
 
 <footer class="site-footer no-print">

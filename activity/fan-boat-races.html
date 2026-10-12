@@ -19,19 +19,25 @@
       <a href="../index.html">Browse</a>
       <a href="../planner.html">Plan my week</a>
       <a href="../sub.html">Sub Tub 🆘</a>
-      <a href="../party.html">Party Planner 🎃</a>
+      <a href="../party.html">Party Planner 🎉</a>
+      <a href="../fieldtrip.html">Field Trips 🚌</a>
       <a href="../collections.html">Collections 📚</a>
       <a href="../halloween.html">Halloween 🎃</a>
       <a href="../thanksgiving.html">Thanksgiving 🦃</a>
       <a href="../spring.html">Spring 🌷</a>
       <a href="../summer.html">Summer ☀️</a>
     </nav>
+    <button class="btn btn-ghost btn-small no-print" id="site-calm-toggle" type="button"
+            aria-pressed="false" aria-label="Calm mode: turn off page animations and motion">
+      <span aria-hidden="true">🍃</span> Calm: <span class="calm-state">off</span>
+    </button>
   </div>
 </header>
 <main id="main" class="wrap activity-page">
-  <p class="crumbs no-print"><a href="../index.html">← All activities</a></p>
+  <p class="crumbs no-print"><a href="../index.html">← All activities</a> · <a href="../index.html?cats=stem">STEM</a></p>
   <article class="activity-card print-card" aria-labelledby="act-title">
     <div class="cat-chips"><span class="chip" style="--cat:#0d8a96">🔬 STEM</span><span class="chip" style="--cat:#4a7ec2">🌧️ Rainy Day</span><span class="chip" style="--cat:#c77b1e">🍂 Seasons</span><span class="chip tag-chip">☀️ Summer</span></div>
+    
     <h1 id="act-title">Fan Boat Races</h1>
     <p class="tagline">Paper boats race across a tub — powered by nothing but fanned air.</p>
     <dl class="fact-grid">
@@ -59,6 +65,8 @@
       <p><strong>Harder:</strong> Storm round: everyone fans at once from both ends — last boat floating upright wins.</p>
     </section>
     <section class="safety" aria-labelledby="h-safety"><h2 id="h-safety">⚠️ Safety</h2><p>Towels around the tub before racing starts — splashes happen. Paper cuts: fold slowly, crease with a ruler edge.</p></section>
+    
+    
     
     <section class="rate-box no-print" aria-labelledby="h-rate">
       <h2 id="h-rate">⭐ Tried this? Rate it</h2>
@@ -110,6 +118,7 @@
     </div>
     <p class="print-only print-url">Full activity card — <span class="print-url-here"></span></p>
   </article>
+  <section class="collection-section no-print" aria-labelledby="h-related"><div class="collection-head"><span class="collection-glyph-lg" aria-hidden="true">🔗</span><h2 class="collection-h2" id="h-related">Related stem</h2></div><ol class="pick-list"><li class="pick"><div class="pick-row"><a class="pick-name" href="ice-excavation-dig.html">Ice Excavation Dig</a></div><p class="pick-facts">Ages 4–12 · 25–45 min</p><p class="pick-note">Tiny toys frozen in a block of ice — excavate them with salt and droppers.</p></li><li class="pick"><div class="pick-row"><a class="pick-name" href="apple-browning-lab.html">Apple Browning Lab</a></div><p class="pick-facts">Ages 7–12 · 20–35 min</p><p class="pick-note">Why do cut apples turn brown? Kids run the experiment and find out.</p></li><li class="pick"><div class="pick-row"><a class="pick-name" href="fall-leaf-chromatography.html">Fall Leaf Chromatography</a></div><p class="pick-facts">Ages 8–12 · 30–50 min</p><p class="pick-note">Hidden colors inside fall leaves separate out on a coffee filter.</p></li></ol></section>
 </main>
 <footer class="site-footer no-print">
   <div class="wrap"><p>Activity Vault — the all-in-one activity archive for teachers &amp; after-school programs.</p></div>
@@ -134,6 +143,7 @@ else{fallbackCopy(url);}
 })();
 </script>
 <script src="../assets/ratings.js"></script>
+<script src="../assets/site.js" defer></script>
 <script>
 (function(){'use strict';
 /* Personal rating widget — stars + note + reflection, localStorage only. */

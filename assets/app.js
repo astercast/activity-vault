@@ -16,6 +16,8 @@
     noPrepOnly: false,
     indoorOnly: false,
     outdoorOnly: false,
+    copyFreeOnly: false,  // wave 14 scope-up: only activities verified copy-free (zero printing)
+    noElimOnly: false,    // wave 14 scope-up: only no-elimination activities
     sortByRating: false, // sort by the visitor's OWN ratings (localStorage)
     topTen: false        // "My top 10": rated-only, top 10 by own stars
   };
@@ -73,6 +75,8 @@
     if (state.noPrepOnly && !a.no_prep) return false;
     if (state.indoorOnly && a.location.indexOf('indoor') === -1) return false;
     if (state.outdoorOnly && a.location.indexOf('outdoor') === -1) return false;
+    if (state.copyFreeOnly && !a.copy_free) return false;
+    if (state.noElimOnly && !a.no_elimination) return false;
     if (state.q) {
       var hay = (a.name + ' ' + a.tagline + ' ' +
         a.materials.map(function (m) { return m.item; }).join(' ') + ' ' +
@@ -105,6 +109,17 @@
       chip.setAttribute('aria-hidden', 'true');
       chips.appendChild(chip);
     });
+    // wave 14 scope-up: research-backed badges, visible in the browse grid too
+    if (a.copy_free) {
+      var cf = el('span', 'chip tag-chip', '🖨️ Copy-free');
+      cf.setAttribute('aria-hidden', 'true');
+      chips.appendChild(cf);
+    }
+    if (a.no_elimination) {
+      var ne = el('span', 'chip tag-chip', '♾️ No elimination');
+      ne.setAttribute('aria-hidden', 'true');
+      chips.appendChild(ne);
+    }
     card.appendChild(chips);
 
     var h = el('h3');
@@ -313,9 +328,11 @@
     cg.appendChild(el('span', 'flabel', 'Category'));
     var row = el('div', 'chip-row');
     state.categories.forEach(function (c) {
-      row.appendChild(chipButton(c.glyph + ' ' + c.name, false, function (on) {
+      var cb = chipButton(c.glyph + ' ' + c.name, false, function (on) {
         if (on) state.cats.add(c.id); else state.cats.delete(c.id);
-      }, c.color));
+      }, c.color);
+      cb.setAttribute('data-cat', c.id);
+      row.appendChild(cb);
     });
     cg.appendChild(row);
     host.appendChild(cg);
@@ -393,7 +410,9 @@
     og.appendChild(el('span', 'flabel', 'Quick filters'));
     [['✓ Only no-prep', function (on) { state.noPrepOnly = on; }],
      ['⌂ Indoor only', function (on) { state.indoorOnly = on; if (on) { state.outdoorOnly = false; syncOutdoor(); } }],
-     ['🌳 Outdoor only', function (on) { state.outdoorOnly = on; if (on) { state.indoorOnly = false; syncIndoor(); } }]
+     ['🌳 Outdoor only', function (on) { state.outdoorOnly = on; if (on) { state.indoorOnly = false; syncIndoor(); } }],
+     ['🖨️ Copy-free only', function (on) { state.copyFreeOnly = on; }],
+     ['♾️ No-elimination only', function (on) { state.noElimOnly = on; }]
     ].forEach(function (pair, idx) {
       var b = chipButton(pair[0], false, function (on) { pair[1](on); });
       b.dataset.toggleIdx = idx;
@@ -437,6 +456,7 @@
       state.q = ''; state.age = null; state.maxTime = null; state.group = null;
       state.cats.clear(); state.tags.clear();
       state.noPrepOnly = false; state.indoorOnly = false; state.outdoorOnly = false;
+      state.copyFreeOnly = false; state.noElimOnly = false;
       state.sortByRating = false; state.topTen = false;
       searchInput.value = ''; tsel.value = ''; gsel.value = '';
       host.querySelectorAll('[aria-pressed]').forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
@@ -486,7 +506,26 @@
         }
         var qview = new URLSearchParams(window.location.search).get('view');
         if (qview === 'top-rated') applyRatingView(true, true);
+        // ?cats= deep link (wave 14 nav audit): preselect category chips from hub links
+        var qcats = new URLSearchParams(window.location.search).get('cats');
+        if (qcats) {
+          qcats.split(',').forEach(function (cid) {
+            cid = cid.trim();
+            if (cid && state.catMap[cid] && !state.cats.has(cid)) {
+              state.cats.add(cid);
+              var cbtn = document.querySelector('[data-cat="' + cid + '"]');
+              if (cbtn) cbtn.setAttribute('aria-pressed', 'true');
+            }
+          });
+        }
       } catch (e) { /* malformed query string — ignore */ }
+      // "/" focuses search from anywhere (wave 14 nav audit)
+      document.addEventListener('keydown', function (e) {
+        if (e.key === '/' && !/^(INPUT|TEXTAREA|SELECT)$/.test((document.activeElement || {}).tagName || '')) {
+          e.preventDefault();
+          if (searchInput) searchInput.focus();
+        }
+      });
       render();
       var copyBtn = document.getElementById('copy-collection');
       if (copyBtn) copyBtn.addEventListener('click', copyCollection);

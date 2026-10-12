@@ -16,7 +16,7 @@ function ok(cond, label, extra) {
 
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const actIds = new Set(acts.map(a => a.id));
-ok(acts.length === 326, '326 activities total', String(acts.length));
+ok(acts.length === 329, '329 activities total', String(acts.length));
 ok(actIds.size === acts.length, 'all activity ids unique');
 
 // 1. Tag vocabulary: holiday:thanksgiving is NEW in wave 14 — confirm it is
@@ -39,19 +39,21 @@ ok(tagOpts.includes('holiday:thanksgiving'), 'filters.json has holiday:thanksgiv
 const tagLabels = JSON.parse(fs.readFileSync(path.join(ROOT, 'api/v1/filters.json'), 'utf8')).filters.tags.labels;
 ok(tagLabels['holiday:thanksgiving'] === '🦃 Thanksgiving', 'filters.json label for thanksgiving');
 
-// 2. The 18 wave-14 ids are all present
+// 2. The 21 wave-14 ids are all present (18 core + 3 research STEM from the
+//    2026-10-11 activity-ideas research mission)
 const W14 = ['thankful-turkey-handprints','paper-cornucopia-build','friendsgiving-place-cards','harvest-weave-placemats',
  'turkey-tag-chase','pumpkin-bucket-toss','harvest-basket-relay',
  'cranberry-toothpick-towers','turkey-baster-relay','shake-jar-butter',
  'friendsgiving-potluck-plan','friendsgiving-story-circle',
  'gratitude-alphabet-circle','thankful-jar-shares','gratitude-all-year',
- 'food-drive-planning','staff-thank-you-cards','blessing-bag-pack'];
-ok(W14.length === 18, '18 wave-14 ids listed');
+ 'food-drive-planning','staff-thank-you-cards','blessing-bag-pack',
+ 'turkey-code-feathers','cornucopia-catch-game','thanksgiving-table-build'];
+ok(W14.length === 21, '21 wave-14 ids listed');
 W14.forEach(id => ok(actIds.has(id), 'wave-14 id present: ' + id));
 const byId = Object.fromEntries(acts.map(a => [a.id, a]));
-// tag split: 13 thanksgiving-only / 4 fall+thanksgiving / 1 fall-only
+// tag split: 16 thanksgiving-only / 4 fall+thanksgiving / 1 fall-only
 const tagKey = id => JSON.stringify((byId[id].tags || []).slice().sort());
-ok(W14.filter(id => tagKey(id) === JSON.stringify(['holiday:thanksgiving'])).length === 13, '13 thanksgiving-only');
+ok(W14.filter(id => tagKey(id) === JSON.stringify(['holiday:thanksgiving'])).length === 16, '16 thanksgiving-only');
 ok(W14.filter(id => tagKey(id) === JSON.stringify(['holiday:thanksgiving','season:fall'])).length === 4, '4 fall+thanksgiving');
 ok(W14.filter(id => tagKey(id) === JSON.stringify(['season:fall'])).length === 1, '1 fall-only');
 W14.forEach(id => ok((byId[id].tags || []).includes('holiday:thanksgiving') || id === 'harvest-weave-placemats',
@@ -166,11 +168,52 @@ ok(indexHtml.includes('id="season-promo-thanksgiving"'), 'index.html has thanksg
 ok(indexHtml.includes('collections.html#grateful-gathering'), 'promo links grateful-gathering');
 ok(indexHtml.includes('thanksgiving.html'), 'promo links thanksgiving.html');
 
-// 10. Nav: all 10 shells link thanksgiving.html; exactly one aria-current per shell,
+// research integration (wave 14 scope-up): the 3 STEM activities carry source
+// links and copy-free flags; research fields validate across the dataset
+const RESEARCH3 = ['turkey-code-feathers','cornucopia-catch-game','thanksgiving-table-build'];
+RESEARCH3.forEach(id => {
+  ok((byId[id].source || '').startsWith('https://'), 'research activity has source URL: ' + id);
+  ok(byId[id].copy_free === true, 'research activity is copy-free: ' + id);
+});
+ok(acts.filter(a => a.copy_free).length === 53, '53 copy_free notes', String(acts.filter(a => a.copy_free).length));
+ok(acts.filter(a => a.no_elimination).length === 14, '14 no_elimination notes');
+ok(acts.filter(a => a.inclusion).length === 21, '21 inclusion notes');
+// research fields appear on built pages
+const cfPage = fs.readFileSync(path.join(ROOT, 'activity/turkey-code-feathers.html'), 'utf8');
+ok(cfPage.includes('Copy-free'), 'copy-free badge renders on activity page');
+ok(cfPage.includes('source post'), 'source attribution renders on activity page');
+const whyPage = fs.readFileSync(path.join(ROOT, 'activity/cornucopia-catch-game.html'), 'utf8');
+ok(whyPage.includes('Why it works'), 'why_it_works renders on activity page');
+const inclPage = fs.readFileSync(path.join(ROOT, 'activity/thankful-turkey-handprints.html'), 'utf8');
+ok(inclPage.includes('Inclusion notes'), 'inclusion notes render on activity page');
+// nav audit (wave 14 scope-up): breadcrumbs, related cross-links, deep links
+ok(inclPage.includes('?cats=crafts'), 'breadcrumb links the primary category deep link');
+ok(inclPage.includes('h-related'), 'related-activities block renders');
+const relIds = [...inclPage.matchAll(/href="([a-z0-9-]+)\.html"/g)].map(m => m[1])
+  .filter(id => id !== 'thankful-turkey-handprints');
+ok(relIds.length >= 3, 'related block has >=3 cross-links', String(relIds.length));
+relIds.forEach(id => ok(actIds.has(id), 'related cross-link resolves: ' + id));
+ok(appSrc.includes('copyFreeOnly'), 'app.js has copyFreeOnly filter state');
+ok(appSrc.includes('noElimOnly'), 'app.js has noElimOnly filter state');
+ok(appSrc.includes("get('cats')"), 'app.js parses ?cats= deep links');
+ok(appSrc.includes('data-cat'), 'app.js marks category buttons with data-cat');
+// web-craft round 2: calm toggle + site.js on every shell, gated view transitions
+const styleSrc = fs.readFileSync(path.join(ROOT, 'assets/style.css'), 'utf8');
+ok(/@media \(prefers-reduced-motion: no-preference\) \{\s*@view-transition/.test(styleSrc),
+  'view-transition opt-in is reduced-motion gated (round-2 correction)');
+ok(styleSrc.includes('data-calm="true"'), 'style.css has calm-mode kill rules');
+ok(styleSrc.includes('content-visibility'), 'style.css uses content-visibility on listings');
+ok(fs.existsSync(path.join(ROOT, 'assets/site.js')), 'assets/site.js exists');
+const siteSrc = fs.readFileSync(path.join(ROOT, 'assets/site.js'), 'utf8');
+ok(siteSrc.includes('activityvault.calm.v1'), 'site.js uses the shared calm storage key');
+ok(siteSrc.includes('prefetch'), 'site.js prefetches nav links on hover/focus');
+
+// 10. Nav: all 11 shells link thanksgiving.html; exactly one aria-current per shell,
 //     pointing at that shell (wave-12 lesson: verify aria-current explicitly)
 const SHELLS = {
   'index.html': 'index.html', 'planner.html': 'planner.html', 'sub.html': 'sub.html',
-  'party.html': 'party.html', 'collections.html': 'collections.html', 'api.html': null,
+  'party.html': 'party.html', 'fieldtrip.html': 'fieldtrip.html',
+  'collections.html': 'collections.html', 'api.html': null,
   'spring.html': 'spring.html', 'summer.html': 'summer.html', 'halloween.html': 'halloween.html',
   'thanksgiving.html': 'thanksgiving.html'
 };
@@ -187,6 +230,8 @@ for (const [f, current] of Object.entries(SHELLS)) {
         f + ' does not mark thanksgiving as current');
     }
   }
+  ok(html.includes('id="site-calm-toggle"'), f + ' has the site-wide calm toggle');
+  ok(html.includes('assets/site.js'), f + ' loads site.js');
 }
 // generated activity pages link the hub too
 const samplePage = fs.readFileSync(path.join(ROOT, 'activity/thankful-turkey-handprints.html'), 'utf8');
@@ -203,7 +248,7 @@ const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'api/v1/index.json')
 const collEp = manifest.endpoints.find(e => e.path === 'api/v1/collections.json');
 ok(collEp && collEp.records === 12, 'manifest collections records=12');
 const actEp = manifest.endpoints.find(e => e.path === 'api/v1/activities.json');
-ok(actEp && actEp.records === 326, 'manifest activities records=326', String(actEp && actEp.records));
+ok(actEp && actEp.records === 329, 'manifest activities records=329', String(actEp && actEp.records));
 const sitemap = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
 ok(sitemap.includes('thanksgiving.html'), 'sitemap.xml has thanksgiving.html');
 const llms = fs.readFileSync(path.join(ROOT, 'llms.txt'), 'utf8');

@@ -1067,7 +1067,8 @@
   "variations": {
    "easier": "Give story prompts: 'a time you laughed really hard,' 'something you are good at.'",
    "harder": "Build one group story — each person adds one sentence, keeping it coherent."
-  }
+  },
+  "copy_free": true
  },
  {
   "age_max": 12,
@@ -1138,7 +1139,8 @@
   "variations": {
    "easier": "Play with eyes open (standard) and a smaller group of 8.",
    "harder": "One player is the 'director' who can only talk, not be part of the knot."
-  }
+  },
+  "copy_free": true
  },
  {
   "age_max": 12,
@@ -1333,7 +1335,9 @@
   "variations": {
    "easier": "Shorten the field so rounds end faster.",
    "harder": "Caught players become extra spotters helping the caller."
-  }
+  },
+  "copy_free": true,
+  "no_elimination": true
  },
  {
   "age_max": 12,
@@ -1639,7 +1643,9 @@
   "variations": {
    "easier": "Walk instead of run for younger kids.",
    "harder": "The goose must hop on one foot while chasing."
-  }
+  },
+  "copy_free": true,
+  "no_elimination": true
  },
  {
   "age_max": 10,
@@ -1673,7 +1679,9 @@
   "variations": {
    "easier": "Give one warning before a player is out.",
    "harder": "Chain commands: 'Simon says touch your head AND stomp your foot.'"
-  }
+  },
+  "copy_free": true,
+  "no_elimination": true
  },
  {
   "age_max": 12,
@@ -1749,7 +1757,8 @@
   "variations": {
    "easier": "Give the first letter as a free clue for younger kids.",
    "harder": "Ban color clues — describe by shape, texture, or what it does."
-  }
+  },
+  "copy_free": true
  },
  {
   "age_max": 11,
@@ -1946,7 +1955,8 @@
   "variations": {
    "easier": "Do it in small groups of 5–6 instead of one big circle.",
    "harder": "Theme it: two truths and a lie about summer, about food, about a talent."
-  }
+  },
+  "no_elimination": true
  },
  {
   "age_max": 12,
@@ -1979,7 +1989,9 @@
   "variations": {
    "easier": "Use short, simple sentences for younger groups.",
    "harder": "Use tongue-twisters or sentences with similar-sounding words."
-  }
+  },
+  "copy_free": true,
+  "no_elimination": true
  },
  {
   "age_max": 11,
@@ -2012,7 +2024,9 @@
   "variations": {
    "easier": "Just names, no movements, for very young groups.",
    "harder": "Add an alliterative adjective: 'Jumping Jayden, Dancing Dana.'"
-  }
+  },
+  "copy_free": true,
+  "no_elimination": true
  },
  {
   "age_max": 12,
@@ -2045,7 +2059,9 @@
   "variations": {
    "easier": "Give two silly options only — keep it light for young kids.",
    "harder": "Add 'why' — everyone must defend their choice in one sentence."
-  }
+  },
+  "copy_free": true,
+  "no_elimination": true
  },
  {
   "age_max": 12,
@@ -2169,7 +2185,9 @@
   "variations": {
    "easier": "Give 25 questions and allow one free hint.",
    "harder": "Ban the most obvious opening questions ('Is it alive?') after round one."
-  }
+  },
+  "copy_free": true,
+  "no_elimination": true
  },
  {
   "age_max": 11,
@@ -2399,7 +2417,8 @@
   "variations": {
    "easier": "Just do the in-and-out tracing without counting for young kids.",
    "harder": "Try triangle breathing (3 counts) or star tracing with 5 points."
-  }
+  },
+  "copy_free": true
  },
  {
   "age_max": 12,
@@ -4592,7 +4611,8 @@
   "variations": {
    "easier": "Do 3 animals instead of 5.",
    "harder": "Add a timed circuit: 30 seconds per animal, 3 rounds."
-  }
+  },
+  "copy_free": true
  },
  {
   "id": "flag-tag",
@@ -4667,7 +4687,9 @@
   "variations": {
    "easier": "Use a stuffed animal as the target instead of a person.",
    "harder": "Each compliment must name a specific action from this week."
-  }
+  },
+  "copy_free": true,
+  "no_elimination": true
  },
  {
   "id": "birthday-lineup",
@@ -4701,7 +4723,8 @@
   "variations": {
    "easier": "Allow whispering.",
    "harder": "Line up by exact birth date, then by birth time."
-  }
+  },
+  "copy_free": true
  },
  {
   "id": "cup-stack-relay",
@@ -4778,7 +4801,9 @@
   "variations": {
    "easier": "Allow passing once per round.",
    "harder": "Each sentence must start with the last word of the previous one."
-  }
+  },
+  "copy_free": true,
+  "no_elimination": true
  },
  {
   "id": "bucket-fillers",
@@ -4904,7 +4929,8 @@
   "variations": {
    "easier": "Just names, no favorite things.",
    "harder": "Add a gesture for each person that the group must repeat."
-  }
+  },
+  "copy_free": true
  },
  {
   "id": "two-truths",
@@ -5016,7 +5042,8 @@
   "variations": {
    "easier": "Walk instead of run.",
    "harder": "The chaser must say the tapped person's favorite thing, not just their name."
-  }
+  },
+  "copy_free": true
  },
  {
   "id": "all-about-me-bags",
@@ -5317,7 +5344,8 @@
   "variations": {
    "easier": "Bigger play area.",
    "harder": "Play at noon when shadows are shortest."
-  }
+  },
+  "copy_free": true
  },
  {
   "id": "bug-safari",
@@ -5857,7 +5885,9 @@
   "variations": {
    "easier": "Slow beat, no speed-up rounds.",
    "harder": "Add a second beat layer with stomps."
-  }
+  },
+  "copy_free": true,
+  "no_elimination": true
  },
  {
   "id": "sound-story",
@@ -5890,7 +5920,8 @@
   "variations": {
    "easier": "Use just 2 sound groups.",
    "harder": "Kids write and perform their own 5-line sound story."
-  }
+  },
+  "copy_free": true
  },
  {
   "id": "parody-songs",
@@ -6365,7 +6396,8 @@
   },
   "tags": [
    "holiday:thanksgiving"
-  ]
+  ],
+  "copy_free": true
  },
  {
   "age_max": 12,
@@ -6489,7 +6521,8 @@
   "variations": {
    "easier": "Skip the cloud types — just do the shape game.",
    "harder": "Keep a cloud journal for a week and spot which type brings rain."
-  }
+  },
+  "copy_free": true
  },
  {
   "age_max": 12,
@@ -7208,7 +7241,8 @@
   "variations": {
    "easier": "Pick from three teacher-suggested greetings instead of inventing.",
    "harder": "Add a Friday-only fancy version."
-  }
+  },
+  "copy_free": true
  },
  {
   "age_max": 12,
@@ -7280,7 +7314,8 @@
   "variations": {
    "easier": "One item instead of three.",
    "harder": "Add a constraint: nothing electronic, or everything must fit in a backpack."
-  }
+  },
+  "copy_free": true
  },
  {
   "age_max": 10,
@@ -7557,7 +7592,8 @@
   "variations": {
    "easier": "Three rocks is a win — celebrate the mini-cairns.",
    "harder": "Team towers: combine rocks into one giant group cairn."
-  }
+  },
+  "copy_free": true
  },
  {
   "age_max": 12,
@@ -9063,7 +9099,8 @@
    "harder": "Let kids write the statements, then run a formal version with opening statements and rebuttals."
   },
   "safety": "Keep statements low-stakes and impersonal — no topics that single out a kid's life or beliefs.",
-  "source": "https://www.weareteachers.com/argumentative-writing-prompts/?utm_source=rss&utm_medium=rss&utm_campaign=argumentative-writing-prompts"
+  "source": "https://www.weareteachers.com/argumentative-writing-prompts/?utm_source=rss&utm_medium=rss&utm_campaign=argumentative-writing-prompts",
+  "copy_free": true
  },
  {
   "id": "poetry-share-circle",
@@ -9922,7 +9959,8 @@
   "tags": [
    "season:winter",
    "holiday:new-year"
-  ]
+  ],
+  "copy_free": true
  },
  {
   "id": "track-prints-detective",
@@ -10189,7 +10227,8 @@
   "safety": null,
   "tags": [
    "season:winter"
-  ]
+  ],
+  "copy_free": true
  },
  {
   "id": "winter-tall-tale",
@@ -10225,7 +10264,8 @@
   "safety": null,
   "tags": [
    "season:winter"
-  ]
+  ],
+  "copy_free": true
  },
  {
   "id": "warm-up-countdown",
@@ -10260,7 +10300,8 @@
   "safety": "Moves stay low-impact near furniture; anyone can march in place instead.",
   "tags": [
    "season:winter"
-  ]
+  ],
+  "copy_free": true
  },
  {
   "id": "paper-mitten-match",
@@ -11297,7 +11338,8 @@
   "safety": "Rain boots or shoes you do not mind soaking. Splash-zone rule: no stomping right next to someone's face.",
   "tags": [
    "season:spring"
-  ]
+  ],
+  "copy_free": true
  },
  {
   "id": "spring-sound-map",
@@ -11334,7 +11376,8 @@
   "safety": null,
   "tags": [
    "season:spring"
-  ]
+  ],
+  "copy_free": true
  },
  {
   "id": "puddle-hopscotch",
@@ -11740,7 +11783,8 @@
   "safety": null,
   "tags": [
    "season:spring"
-  ]
+  ],
+  "copy_free": true
  },
  {
   "id": "water-balloon-toss",
@@ -14069,7 +14113,9 @@
   "safety": "Scissors stay at the table; little kids get pre-cut bodies and feathers.",
   "tags": [
    "holiday:thanksgiving"
-  ]
+  ],
+  "inclusion": "Pre-cut pieces for little hands; dictate thankful thoughts for pre-writers.",
+  "copy_free": true
  },
  {
   "id": "paper-cornucopia-build",
@@ -14123,7 +14169,9 @@
   "tags": [
    "season:fall",
    "holiday:thanksgiving"
-  ]
+  ],
+  "inclusion": "Pre-rolled cones available; partner rolling for limited grip strength.",
+  "copy_free": true
  },
  {
   "id": "friendsgiving-place-cards",
@@ -14169,7 +14217,9 @@
   "safety": null,
   "tags": [
    "holiday:thanksgiving"
-  ]
+  ],
+  "inclusion": "Draw instead of write; name cards can be dictated.",
+  "copy_free": true
  },
  {
   "id": "harvest-weave-placemats",
@@ -14218,7 +14268,9 @@
   "safety": "Scissors stay at the table; pre-cut strips for the youngest weavers.",
   "tags": [
    "season:fall"
-  ]
+  ],
+  "inclusion": "Wide strips for easier weaving; pre-cut strips for the youngest.",
+  "copy_free": true
  },
  {
   "id": "turkey-tag-chase",
@@ -14261,7 +14313,11 @@
   "safety": "Noodle taps stay gentle and below the shoulders. Clear the field of holes and sticks first.",
   "tags": [
    "holiday:thanksgiving"
-  ]
+  ],
+  "inclusion": "Walking-only rounds; a seated 'barn guard' role keeps everyone in the game.",
+  "copy_free": true,
+  "no_elimination": true,
+  "why_it_works": "Played in short 3-minute rounds, it works as a structured movement break — research finds active breaks under 10 minutes improve on-task behavior (Deakin University, IJRESS Jan 2026)."
  },
  {
   "id": "pumpkin-bucket-toss",
@@ -14308,7 +14364,10 @@
   "tags": [
    "season:fall",
    "holiday:thanksgiving"
-  ]
+  ],
+  "inclusion": "Move the line closer; bigger buckets for easier success.",
+  "copy_free": true,
+  "no_elimination": true
  },
  {
   "id": "harvest-basket-relay",
@@ -14356,7 +14415,10 @@
   "tags": [
    "season:fall",
    "holiday:thanksgiving"
-  ]
+  ],
+  "inclusion": "Walk instead of run; carry two crops to shorten the distance.",
+  "copy_free": true,
+  "no_elimination": true
  },
  {
   "id": "cranberry-toothpick-towers",
@@ -14405,7 +14467,9 @@
   "safety": "Toothpicks are pointy — build on the table, never sword-fight. Check the class allergy list before using real cranberries; pom-poms build exactly the same.",
   "tags": [
    "holiday:thanksgiving"
-  ]
+  ],
+  "inclusion": "Build flat shapes instead of towers; partner roles for every step.",
+  "copy_free": true
  },
  {
   "id": "turkey-baster-relay",
@@ -14456,7 +14520,9 @@
   "safety": "Basters point at pom-poms, never at faces. Allergy-safe by design: the 'cranberries' are pom-poms, so there are no food allergies to check. Wash basters before and after if they were ever near real food.",
   "tags": [
    "holiday:thanksgiving"
-  ]
+  ],
+  "inclusion": "Big pom-poms, short distance; two hands on the baster.",
+  "copy_free": true
  },
  {
   "id": "shake-jar-butter",
@@ -14505,7 +14571,10 @@
   "safety": "Dairy check first: kids with dairy allergies take the official timer role and observe the science — no tasting without an adult's say-so. Jars stay closed while shaking.",
   "tags": [
    "holiday:thanksgiving"
-  ]
+  ],
+  "inclusion": "One big group jar with 30-second shake turns; timer role for dairy-free kids.",
+  "copy_free": true,
+  "why_it_works": "Hands-on making beats screen time: the APA's Sept 2026 report finds learning sticks when kids apply knowledge off-screen — and nothing is more off-screen than shaking cream into butter."
  },
  {
   "id": "friendsgiving-potluck-plan",
@@ -14554,7 +14623,8 @@
   "safety": "Check the class allergy list BEFORE the sign-up goes home — every dish needs its ingredient card, and keep one table nut-free.",
   "tags": [
    "holiday:thanksgiving"
-  ]
+  ],
+  "inclusion": "Fixed 3-dish menu option; jobs assigned by interest, not just volunteers."
  },
  {
   "id": "friendsgiving-story-circle",
@@ -14590,7 +14660,9 @@
   "safety": null,
   "tags": [
    "holiday:thanksgiving"
-  ]
+  ],
+  "inclusion": "Share one thankful word instead of a story; listening counts fully.",
+  "copy_free": true
  },
  {
   "id": "gratitude-alphabet-circle",
@@ -14626,7 +14698,9 @@
   "safety": null,
   "tags": [
    "holiday:thanksgiving"
-  ]
+  ],
+  "inclusion": "Team play for shy kids; passing allowed on any letter.",
+  "copy_free": true
  },
  {
   "id": "thankful-jar-shares",
@@ -14672,7 +14746,9 @@
   "safety": null,
   "tags": [
    "holiday:thanksgiving"
-  ]
+  ],
+  "inclusion": "Draw or dictate slips; anonymous by default.",
+  "copy_free": true
  },
  {
   "id": "gratitude-all-year",
@@ -14719,7 +14795,9 @@
   "tags": [
    "season:fall",
    "holiday:thanksgiving"
-  ]
+  ],
+  "inclusion": "Draw instead of write; sharing always optional.",
+  "copy_free": true
  },
  {
   "id": "food-drive-planning",
@@ -14768,7 +14846,9 @@
   "safety": "Cans only — no open or homemade food in the bins. Heavy boxes get carried by adults.",
   "tags": [
    "holiday:thanksgiving"
-  ]
+  ],
+  "inclusion": "Poster, counter, and greeter roles for every mobility level.",
+  "copy_free": true
  },
  {
   "id": "staff-thank-you-cards",
@@ -14817,7 +14897,9 @@
   "safety": null,
   "tags": [
    "holiday:thanksgiving"
-  ]
+  ],
+  "inclusion": "One giant class card option; dictate the message.",
+  "copy_free": true
  },
  {
   "id": "blessing-bag-pack",
@@ -14865,6 +14947,164 @@
   "safety": "Sealed store-bought snacks only — nothing homemade or opened. Check snack labels against the class allergy list if any bags stay in the room.",
   "tags": [
    "holiday:thanksgiving"
-  ]
+  ],
+  "inclusion": "Seated assembly line; decorating counts as full participation.",
+  "copy_free": true
+ },
+ {
+  "id": "turkey-code-feathers",
+  "name": "Turkey Code Feathers",
+  "tagline": "Invent a symbol code, encode a turkey fact on feathers, trade and decode.",
+  "categories": [
+   "stem",
+   "crafts",
+   "holidays"
+  ],
+  "age_min": 6,
+  "age_max": 10,
+  "group_min": 2,
+  "group_max": 30,
+  "time_min": 35,
+  "time_max": 50,
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "paper turkey body + feather cutouts"
+   },
+   {
+    "item": "markers"
+   },
+   {
+    "item": "paper for the code key"
+   }
+  ],
+  "no_prep": false,
+  "setup": "Cut a simple turkey body and 8 feather shapes per kid. Feathers get taped on after the coding is done.",
+  "steps": [
+   "Invent your symbols: draw one symbol for each letter A–Z (younger kids do A–M). This is your code key — keep it secret.",
+   "Pick a true turkey fact and encode it, one letter per feather.",
+   "Tape the coded feathers onto your turkey body.",
+   "Trade turkeys with a partner and decode theirs using THEIR key.",
+   "Share the most surprising fact the group decoded."
+  ],
+  "variations": {
+   "easier": "Use a ready-made symbol bank and encode just 3 letters.",
+   "harder": "Encode a whole riddle across two turkeys and let another pair crack it."
+  },
+  "safety": "Scissors stay at the table; pre-cut bodies and feathers for little kids.",
+  "tags": [
+   "holiday:thanksgiving"
+  ],
+  "source": "https://naomimeredith.com/tag/fall/",
+  "copy_free": true,
+  "inclusion": "Symbol bank for a head start; drawing-only codes welcome; encode in a home language with a translated key."
+ },
+ {
+  "id": "cornucopia-catch-game",
+  "name": "Cornucopia Catch",
+  "tagline": "Build paper cornucopias, then invent your own catch game — rules and all.",
+  "categories": [
+   "stem",
+   "team-community",
+   "holidays"
+  ],
+  "age_min": 7,
+  "age_max": 11,
+  "group_min": 6,
+  "group_max": 30,
+  "time_min": 45,
+  "time_max": 70,
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "paper"
+   },
+   {
+    "item": "tape"
+   },
+   {
+    "item": "scissors"
+   },
+   {
+    "item": "paper 'produce' cutouts (apples, corn, pumpkins)"
+   }
+  ],
+  "no_prep": false,
+  "setup": "Set out paper and tape per team of 3–4. Cut a pile of paper produce up front so building starts fast.",
+  "steps": [
+   "Build 3 paper cornucopias sturdy enough to hold, catch, and toss.",
+   "Test: toss paper produce between teammates and catch it in the horn.",
+   "Now invent your own game: teams write the rules, the scoring, and a name.",
+   "Rotate: play another team's game exactly by their rules.",
+   "Vote: funniest rules, trickiest catch, best team name."
+  ],
+  "variations": {
+   "easier": "Build one big team cornucopia and play catch in a circle.",
+   "harder": "Add a points zone on the floor — long catches into the horn score double."
+  },
+  "safety": "Scissors stay at the table. Toss paper produce only, never at faces.",
+  "tags": [
+   "holiday:thanksgiving"
+  ],
+  "source": "https://naomimeredith.com/tag/fall/",
+  "copy_free": true,
+  "why_it_works": "Student-designed endings — inventing the game's rules — are the 2026 STEM flourish research flags as most engaging: kids own the challenge instead of just following it.",
+  "inclusion": "Pre-rolled cone templates; seated tossing; rules can be dictated and scribed."
+ },
+ {
+  "id": "thanksgiving-table-build",
+  "name": "Thanksgiving Table Build",
+  "tagline": "Toothpicks and glue: build a table with at most 4 legs that holds the feast.",
+  "categories": [
+   "stem",
+   "holidays"
+  ],
+  "age_min": 8,
+  "age_max": 12,
+  "group_min": 2,
+  "group_max": 30,
+  "time_min": 40,
+  "time_max": 60,
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "toothpicks"
+   },
+   {
+    "item": "white glue"
+   },
+   {
+    "item": "wax paper"
+   },
+   {
+    "item": "books for weight-testing"
+   }
+  ],
+  "no_prep": false,
+  "setup": "Cover the table with wax paper — glue peels right off. Hand out toothpicks and glue per team.",
+  "steps": [
+   "The constraint: a table with AT MOST 4 legs, standing on its own.",
+   "Sketch the leg design first — triangles beat squares for strength.",
+   "Build on the wax paper; let the glue set (build one day, test the next if you can).",
+   "Load books one at a time onto the tabletop; record the max before it fails.",
+   "Compare: which leg designs held the most? What would you change?"
+  ],
+  "variations": {
+   "easier": "Build with thicker skewers and test with paperback books only.",
+   "harder": "Limit it to 20 toothpicks total — the constraint forces smarter design."
+  },
+  "safety": "Toothpicks are pointy — build on the table, never sword-fight. Check glue bottles for clogs before frustrated squeezing starts.",
+  "tags": [
+   "holiday:thanksgiving"
+  ],
+  "source": "https://naomimeredith.com/tag/fall/",
+  "copy_free": true,
+  "inclusion": "Thicker skewers for easier grip; team roles (planner, builder, tester); test narrated aloud so everyone follows the results."
  }
 ]

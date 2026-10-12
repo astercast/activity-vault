@@ -19,19 +19,25 @@
       <a href="../index.html">Browse</a>
       <a href="../planner.html">Plan my week</a>
       <a href="../sub.html">Sub Tub 🆘</a>
-      <a href="../party.html">Party Planner 🎃</a>
+      <a href="../party.html">Party Planner 🎉</a>
+      <a href="../fieldtrip.html">Field Trips 🚌</a>
       <a href="../collections.html">Collections 📚</a>
       <a href="../halloween.html">Halloween 🎃</a>
       <a href="../thanksgiving.html">Thanksgiving 🦃</a>
       <a href="../spring.html">Spring 🌷</a>
       <a href="../summer.html">Summer ☀️</a>
     </nav>
+    <button class="btn btn-ghost btn-small no-print" id="site-calm-toggle" type="button"
+            aria-pressed="false" aria-label="Calm mode: turn off page animations and motion">
+      <span aria-hidden="true">🍃</span> Calm: <span class="calm-state">off</span>
+    </button>
   </div>
 </header>
 <main id="main" class="wrap activity-page">
-  <p class="crumbs no-print"><a href="../index.html">← All activities</a></p>
+  <p class="crumbs no-print"><a href="../index.html">← All activities</a> · <a href="../index.html?cats=seasons">Seasons</a></p>
   <article class="activity-card print-card" aria-labelledby="act-title">
     <div class="cat-chips"><span class="chip" style="--cat:#c77b1e">🍂 Seasons</span><span class="chip" style="--cat:#4f7d3a">🌳 Outdoor</span><span class="chip" style="--cat:#6b7280">🧘 Quiet &amp; Focus</span></div>
+    <div class="cat-chips"><span class="chip tag-chip">🖨️ Copy-free</span></div>
     <h1 id="act-title">Cloud Spotting Guide</h1>
     <p class="tagline">Three cloud types, five minutes of sky-watching, endless shapes.</p>
     <dl class="fact-grid">
@@ -59,6 +65,8 @@
       <p><strong>Harder:</strong> Keep a cloud journal for a week and spot which type brings rain.</p>
     </section>
     <section class="safety" aria-labelledby="h-safety"><h2 id="h-safety">⚠️ Safety</h2><p>No staring straight at the sun — pick a viewing direction away from it, and sunglasses are welcome.</p></section>
+    
+    
     
     <section class="rate-box no-print" aria-labelledby="h-rate">
       <h2 id="h-rate">⭐ Tried this? Rate it</h2>
@@ -110,6 +118,7 @@
     </div>
     <p class="print-only print-url">Full activity card — <span class="print-url-here"></span></p>
   </article>
+  <section class="collection-section no-print" aria-labelledby="h-related"><div class="collection-head"><span class="collection-glyph-lg" aria-hidden="true">🔗</span><h2 class="collection-h2" id="h-related">Related seasons</h2></div><ol class="pick-list"><li class="pick"><div class="pick-row"><a class="pick-name" href="leaf-boat-races.html">Leaf Boat Races</a></div><p class="pick-facts">Ages 4–10 · 20–40 min</p><p class="pick-note">Leaf hulls, twig masts, and a finish line downstream.</p></li><li class="pick"><div class="pick-row"><a class="pick-name" href="leaf-rubbing-gallery.html">Leaf Rubbing Gallery</a></div><p class="pick-facts">Ages 5–10 · 20–40 min</p><p class="pick-note">Collect fall leaves, rub their veins onto paper, and hang a natural gallery.</p></li><li class="pick"><div class="pick-row"><a class="pick-name" href="shadow-clock-sundial.html">Shadow Clock Sundial</a></div><p class="pick-facts">Ages 7–12 · 25–45 min</p><p class="pick-note">A stick, some chalk, and the sun — the oldest clock there is.</p></li></ol></section>
 </main>
 <footer class="site-footer no-print">
   <div class="wrap"><p>Activity Vault — the all-in-one activity archive for teachers &amp; after-school programs.</p></div>
@@ -134,6 +143,7 @@ else{fallbackCopy(url);}
 })();
 </script>
 <script src="../assets/ratings.js"></script>
+<script src="../assets/site.js" defer></script>
 <script>
 (function(){'use strict';
 /* Personal rating widget — stars + note + reflection, localStorage only. */

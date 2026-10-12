@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Field Trip Planner — timelines, chaperones, bus activities, checklists — Activity Vault</title>
+<meta name="description" content="Plan a class field trip in minutes: destination, group size, and trip length become a clock-time timeline, chaperone and buddy-pair math, a budget estimate, on-site activity ideas from the real library, bus-ride activities, and printable permission-slip and pack checklists.">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/site.js" defer></script>
+
+</head>
+<body>
+<a class="skip-link" href="#fieldtrip-main">Skip to the field trip planner</a>
+<header class="site-header no-print">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Activity Vault home">
+      <span class="brand-mark" aria-hidden="true">🗂️</span>
+      <span class="brand-text">Activity <strong>Vault</strong></span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="index.html">Browse</a>
+      <a href="planner.html">Plan my week</a>
+      <a href="sub.html">Sub Tub 🆘</a>
+      <a href="party.html">Party Planner 🎉</a>
+      <a href="fieldtrip.html" aria-current="page">Field Trips 🚌</a>
+      <a href="collections.html">Collections 📚</a>
+      <a href="halloween.html">Halloween 🎃</a>
+      <a href="thanksgiving.html">Thanksgiving 🦃</a>
+      <a href="spring.html">Spring 🌷</a>
+      <a href="summer.html">Summer ☀️</a>
+    </nav>
+    <button class="btn btn-ghost btn-small no-print" id="site-calm-toggle" type="button"
+            aria-pressed="false" aria-label="Calm mode: turn off page animations and motion">
+      <span aria-hidden="true">🍃</span> Calm: <span class="calm-state">off</span>
+    </button>
+  </div>
+</header>
+
+<main class="wrap" id="fieldtrip-main">
+  <section class="hero" aria-labelledby="hero-title">
+    <span class="kicker no-print">🚌 Field Trip Planner</span>
+    <h1 id="hero-title">The field trip,<br>planned before lunch.</h1>
+    <p class="lede no-print">Tell it the destination, group size, and trip length — it builds a clock-time timeline, does the chaperone and buddy-pair math, estimates the budget, matches on-site activities from the Vault's real library, picks bus-ride activities from the field-trip-bus-ride collection, and prints your permission-slip and pack checklists. Ratios and prices are your inputs to confirm; the arithmetic is ours.</p>
+  </section>
+
+  <form class="planner-form no-print" id="fieldtrip-form" onsubmit="return false;" aria-label="Field trip planner options">
+    <fieldset>
+      <legend>Destination</legend>
+      <div class="filter-group">
+        <label class="flabel" for="ft-destination">Where are you going?</label>
+        <select id="ft-destination"></select>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Group</legend>
+      <div class="filter-group">
+        <label class="flabel" for="ft-ageband">Age band</label>
+        <select id="ft-ageband"></select>
+      </div>
+      <div class="filter-group">
+        <label class="flabel" for="ft-kids">Number of kids</label>
+        <input type="number" id="ft-kids" min="4" max="60" value="24" inputmode="numeric">
+      </div>
+      <div class="filter-group">
+        <label class="flabel" for="ft-ratio">Chaperone ratio (1 adult per …)</label>
+        <select id="ft-ratio">
+          <option value="6">1 : 6</option>
+          <option value="8" selected>1 : 8</option>
+          <option value="10">1 : 10</option>
+        </select>
+        <p class="dim">Confirm the required ratio with your program's policy — requirements vary.</p>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Schedule</legend>
+      <div class="chip-row" role="radiogroup" aria-label="Trip length">
+        <label class="chip"><input type="radio" name="ft-length" value="half" checked> Half day (~3 h)</label>
+        <label class="chip"><input type="radio" name="ft-length" value="full"> Full day (~5 h)</label>
+      </div>
+      <div class="filter-group">
+        <label class="flabel" for="ft-start">Start time</label>
+        <input type="time" id="ft-start" value="09:00">
+      </div>
+      <div class="filter-group">
+        <label class="flabel" for="ft-travel-out">Travel to destination (minutes)</label>
+        <input type="number" id="ft-travel-out" min="0" max="180" value="30" inputmode="numeric">
+      </div>
+      <div class="filter-group">
+        <label class="flabel" for="ft-travel-back">Travel back (minutes)</label>
+        <input type="number" id="ft-travel-back" min="0" max="180" value="30" inputmode="numeric">
+      </div>
+      <div class="filter-group">
+        <label class="flabel" for="ft-ride">Bus ride each way (minutes)</label>
+        <input type="number" id="ft-ride" min="0" max="180" value="30" inputmode="numeric">
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Budget</legend>
+      <div class="filter-group">
+        <label class="flabel" for="ft-admission">Admission per kid ($)</label>
+        <input type="number" id="ft-admission" min="0" step="0.50" value="0" inputmode="decimal">
+      </div>
+      <div class="filter-group">
+        <label class="flabel" for="ft-transport">Transport flat cost ($)</label>
+        <input type="number" id="ft-transport" min="0" step="1" value="0" inputmode="decimal">
+      </div>
+      <p class="dim">Confirm prices with the destination — the planner does the arithmetic, not the quotes.</p>
+    </fieldset>
+    <button class="btn" id="ft-generate" type="button">🚌 Build my field-trip plan</button>
+  </form>
+
+  <p id="ft-status" role="status" aria-live="polite" class="no-print"></p>
+
+  <div id="ft-results"></div>
+
+  <p class="no-print"><a href="collections.html#field-trip-bus-ride">🚌 Browse the field-trip-bus-ride collection →</a></p>
+  <p class="no-print" style="margin-bottom:3rem;"><a href="index.html">← Back to browsing</a></p>
+</main>
+
+<footer class="site-footer no-print">
+  <div class="wrap">
+    <p><strong>Activity Vault</strong> — the all-in-one activity archive for teachers &amp; after-school programs. All activities are classic, public-domain concepts described in our own words.</p>
+    <p><a href="api/v1/activities.json">API</a> · <a href="api.html">API docs &amp; console</a> · <a href="llms.txt">llms.txt</a> · <a href="AGENT.md">Agent guide</a></p>
+  </div>
+</footer>
+
+<script src="assets/fieldtrip-core.js" defer></script>
+<script src="assets/fieldtrip.js" defer></script>
+</body>
+</html>

@@ -84,6 +84,14 @@
    "type": "boolean",
    "description": "Only activities with no_prep=true."
   },
+  "copy_free_only": {
+   "type": "boolean",
+   "description": "Only activities verified copy-free (zero printing)."
+  },
+  "no_elimination_only": {
+   "type": "boolean",
+   "description": "Only games verified no-elimination."
+  },
   "indoor_only": {
    "type": "boolean",
    "description": "Only activities with 'indoor' in location."

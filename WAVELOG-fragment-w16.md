@@ -87,7 +87,18 @@ pack lands in `data/activities.json`, copy the entry below into WAVELOG.md
   present on both food activities
 - `node --check` on the staged test file: clean
 
-**Wave 16 push resolution:** (filled after push)
+**Wave 16 push resolution:** local commit `fd71a46` (3 files, staged only).
+Pushed via `gh-push.py` — remote commit `792f1c78f0b0047d35d433bb3d53d4857c99f2fd`
+(verified via GitHub API: commit exists, `main` HEAD points at it, base→HEAD
+diff is exactly the 3 fragment files plus `scripts/build.py` carrying the
+wave-14 lane's uncommitted why/inclusion/related-page features — see incident
+note). ⚠️ INCIDENT: `gh-push.py` pushes the working tree's tracked state, not
+just the commit — the first push accidentally carried wave-15's uncommitted
+edits (`assets/app.js`, `planner-core.js`, `planner.js`, then `style.css`,
+`planner.html`, `scripts/test-planner-core.js`) to remote main. Repaired with
+two revert pushes (no force-push); final remote verified clean. Full timeline
+in the wave-16 worker's parent report — the shared-tree push hazard needs a
+coordinator decision (serialize pushes or per-lane worktrees).
 
 **For the merge worker:**
 1. Append the 26 records from `MERGE-fragment-w16-pack.json` to

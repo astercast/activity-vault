@@ -19,19 +19,25 @@
       <a href="../index.html">Browse</a>
       <a href="../planner.html">Plan my week</a>
       <a href="../sub.html">Sub Tub 🆘</a>
-      <a href="../party.html">Party Planner 🎃</a>
+      <a href="../party.html">Party Planner 🎉</a>
+      <a href="../fieldtrip.html">Field Trips 🚌</a>
       <a href="../collections.html">Collections 📚</a>
       <a href="../halloween.html">Halloween 🎃</a>
       <a href="../thanksgiving.html">Thanksgiving 🦃</a>
       <a href="../spring.html">Spring 🌷</a>
       <a href="../summer.html">Summer ☀️</a>
     </nav>
+    <button class="btn btn-ghost btn-small no-print" id="site-calm-toggle" type="button"
+            aria-pressed="false" aria-label="Calm mode: turn off page animations and motion">
+      <span aria-hidden="true">🍃</span> Calm: <span class="calm-state">off</span>
+    </button>
   </div>
 </header>
 <main id="main" class="wrap activity-page">
-  <p class="crumbs no-print"><a href="../index.html">← All activities</a></p>
+  <p class="crumbs no-print"><a href="../index.html">← All activities</a> · <a href="../index.html?cats=holidays">Holidays</a></p>
   <article class="activity-card print-card" aria-labelledby="act-title">
     <div class="cat-chips"><span class="chip" style="--cat:#b7413c">🎉 Holidays</span><span class="chip" style="--cat:#7b5fc7">✂️ Crafts</span><span class="chip" style="--cat:#c98f1b">🤝 Team &amp; Community</span><span class="chip tag-chip">🦃 Thanksgiving</span></div>
+    
     <h1 id="act-title">Gratitude Tree</h1>
     <p class="tagline">A bare branch fills with paper leaves, each one carrying something someone is thankful for.</p>
     <dl class="fact-grid">
@@ -58,6 +64,8 @@
       <p><strong>Easier:</strong> Pre-write sentence starters on the leaves (&#x27;I am thankful for ___&#x27;).</p>
       <p><strong>Harder:</strong> Make it a week-long project — one new leaf per day per kid.</p>
     </section>
+    
+    
     
     
     <section class="rate-box no-print" aria-labelledby="h-rate">
@@ -110,6 +118,7 @@
     </div>
     <p class="print-only print-url">Full activity card — <span class="print-url-here"></span></p>
   </article>
+  <section class="collection-section no-print" aria-labelledby="h-related"><div class="collection-head"><span class="collection-glyph-lg" aria-hidden="true">🔗</span><h2 class="collection-h2" id="h-related">Related holidays</h2></div><ol class="pick-list"><li class="pick"><div class="pick-row"><a class="pick-name" href="valentine-compliment-cards.html">Compliment Card Exchange</a></div><p class="pick-facts">Ages 5–12 · 30–30 min</p><p class="pick-note">Everyone makes a card mailbox, then the group fills them with anonymous compliments — the sweetest mail call of the year.</p></li><li class="pick"><div class="pick-row"><a class="pick-name" href="harvest-thanksgiving-skits.html">Harvest Thanksgiving Skits</a></div><p class="pick-facts">Ages 6–12 · 30–50 min</p><p class="pick-note">Two-minute skits about gratitude, planned in ten.</p></li><li class="pick"><div class="pick-row"><a class="pick-name" href="holiday-card-workshop.html">Holiday Card Workshop</a></div><p class="pick-facts">Ages 6–12 · 20–45 min</p><p class="pick-note">Handmade cards beat store-bought ones — every time.</p></li></ol></section>
 </main>
 <footer class="site-footer no-print">
   <div class="wrap"><p>Activity Vault — the all-in-one activity archive for teachers &amp; after-school programs.</p></div>
@@ -134,6 +143,7 @@ else{fallbackCopy(url);}
 })();
 </script>
 <script src="../assets/ratings.js"></script>
+<script src="../assets/site.js" defer></script>
 <script>
 (function(){'use strict';
 /* Personal rating widget — stars + note + reflection, localStorage only. */

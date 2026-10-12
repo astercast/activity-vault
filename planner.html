@@ -6,6 +6,8 @@
 <title>Smart Weekly Planner 3.0 — Activity Vault</title>
 <meta name="description" content="Auto-build balanced multi-week plans: pick a program, age group, and weeks — get no-repeat weeks with an energy balance meter, ⚡ brain breaks, 🌦️ weather backups, a 🛒 aggregated supply list, a 🆘 substitute kit, drag-and-drop, .ics export, and saveable plans.">
 <link rel="stylesheet" href="assets/style.css">
+<script src="assets/site.js" defer></script>
+
 </head>
 <body>
 <a class="skip-link" href="#week-plan">Skip to week plan</a>
@@ -20,12 +22,17 @@
       <a href="planner.html" aria-current="page">Plan my week</a>
       <a href="sub.html">Sub Tub 🆘</a>
       <a href="party.html">Party Planner 🎉</a>
+      <a href="fieldtrip.html">Field Trips 🚌</a>
       <a href="collections.html">Collections 📚</a>
       <a href="halloween.html">Halloween 🎃</a>
       <a href="thanksgiving.html">Thanksgiving 🦃</a>
       <a href="spring.html">Spring 🌷</a>
       <a href="summer.html">Summer ☀️</a>
     </nav>
+    <button class="btn btn-ghost btn-small no-print" id="site-calm-toggle" type="button"
+            aria-pressed="false" aria-label="Calm mode: turn off page animations and motion">
+      <span aria-hidden="true">🍃</span> Calm: <span class="calm-state">off</span>
+    </button>
   </div>
 </header>
 
@@ -34,10 +41,6 @@
     <span class="kicker no-print">📅 Smart Weekly Planner 3.0</span>
     <h1 id="hero-title">Your weeks, auto-built and balanced.</h1>
     <p class="lede no-print">Pick a program, an age group, and up to four weeks — the Vault deals no-repeat weeks from 326 real activities, balances the energy across every day, and warns you when a day is lopsided. Every day gets a ⚡ brain-break idea, every outdoor slot a 🌦️ weather backup, every plan a 🛒 supply list and a 🆘 substitute kit. Then drag it into shape.</p>
-    <p class="no-print calm-row">
-      <button class="btn btn-ghost btn-small" id="calm-toggle" type="button" aria-pressed="false">🍃 Calm mode: off</button>
-      <span class="muted">Turns off page animations and motion — your call, not your OS setting.</span>
-    </p>
   </section>
 
   <p class="plan-note no-print">📚 Short on inspiration? <a href="collections.html">Start from a curated collection</a> — or seed the planner straight from one: every collection has a “🗓️ Plan a week from this” button.</p>

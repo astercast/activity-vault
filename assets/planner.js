@@ -1077,36 +1077,10 @@
     host.hidden = false;
   }
 
-  /* ---------------- calm mode (sensory envelope) ---------------- */
-
-  var CALM_KEY = 'activityvault.calm.v1';
-
-  function setCalm(on, silent) {
-    if (on) document.documentElement.setAttribute('data-calm', 'true');
-    else document.documentElement.removeAttribute('data-calm');
-    var b = document.getElementById('calm-toggle');
-    if (b) {
-      b.setAttribute('aria-pressed', on ? 'true' : 'false');
-      b.textContent = '🍃 Calm mode: ' + (on ? 'on' : 'off');
-    }
-    if (!silent) {
-      try { localStorage.setItem(CALM_KEY, on ? '1' : '0'); } catch (e) { /* storage unavailable */ }
-    }
-  }
-
-  function initCalm() {
-    var stored = null;
-    try { stored = localStorage.getItem(CALM_KEY); } catch (e) { /* storage unavailable */ }
-    setCalm(stored === '1', true);
-    var b = document.getElementById('calm-toggle');
-    if (b) b.addEventListener('click', function () { setCalm(!calmMode()); });
-  }
-
   /* ---------------- form build ---------------- */
 
   function buildForm() {
     buildSeasonStrip();
-    initCalm();
 
     // Program presets + age bands.
     var progSel = document.getElementById('p-program');

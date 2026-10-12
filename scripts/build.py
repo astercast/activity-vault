@@ -184,6 +184,12 @@ def validate(acts, cats):
         src = a.get('source')
         if src is not None and (not isinstance(src, str) or not src.startswith('http')):
             errs.append(f"{tag}: source must be an http(s) URL")
+        for bf in ('copy_free', 'no_elimination'):
+            if bf in a and not isinstance(a[bf], bool):
+                errs.append(f"{tag}: {bf} must be boolean")
+        for sf in ('why_it_works', 'inclusion'):
+            if sf in a and not isinstance(a[sf], str):
+                errs.append(f"{tag}: {sf} must be a string")
     return errs
 
 ACTIVITY_TEMPLATE = """<!DOCTYPE html>
@@ -207,19 +213,25 @@ ACTIVITY_TEMPLATE = """<!DOCTYPE html>
       <a href="../index.html">Browse</a>
       <a href="../planner.html">Plan my week</a>
       <a href="../sub.html">Sub Tub 🆘</a>
-      <a href="../party.html">Party Planner 🎃</a>
+      <a href="../party.html">Party Planner 🎉</a>
+      <a href="../fieldtrip.html">Field Trips 🚌</a>
       <a href="../collections.html">Collections 📚</a>
       <a href="../halloween.html">Halloween 🎃</a>
       <a href="../thanksgiving.html">Thanksgiving 🦃</a>
       <a href="../spring.html">Spring 🌷</a>
       <a href="../summer.html">Summer ☀️</a>
     </nav>
+    <button class="btn btn-ghost btn-small no-print" id="site-calm-toggle" type="button"
+            aria-pressed="false" aria-label="Calm mode: turn off page animations and motion">
+      <span aria-hidden="true">🍃</span> Calm: <span class="calm-state">off</span>
+    </button>
   </div>
 </header>
 <main id="main" class="wrap activity-page">
-  <p class="crumbs no-print"><a href="../index.html">← All activities</a></p>
+  <p class="crumbs no-print"><a href="../index.html">← All activities</a> · <a href="../index.html?cats={crumb_cat}">{crumb_cat_name}</a></p>
   <article class="activity-card print-card" aria-labelledby="act-title">
     <div class="cat-chips">{chips}</div>
+    {badges}
     <h1 id="act-title">{name}</h1>
     <p class="tagline">{tagline}</p>
     <dl class="fact-grid">
@@ -248,6 +260,8 @@ ACTIVITY_TEMPLATE = """<!DOCTYPE html>
     </section>
     {safety_block}
     {source_block}
+    {why_block}
+    {inclusion_block}
     <section class="rate-box no-print" aria-labelledby="h-rate">
       <h2 id="h-rate">⭐ Tried this? Rate it</h2>
       <p class="rate-privacy">Your ratings live in <strong>this browser only</strong> — nobody else can see them. There are no community ratings here; every star on this card is yours.</p>
@@ -298,6 +312,7 @@ ACTIVITY_TEMPLATE = """<!DOCTYPE html>
     </div>
     <p class="print-only print-url">Full activity card — <span class="print-url-here"></span></p>
   </article>
+  {related_block}
 </main>
 <footer class="site-footer no-print">
   <div class="wrap"><p>Activity Vault — the all-in-one activity archive for teachers &amp; after-school programs.</p></div>
@@ -322,6 +337,7 @@ else{{fallbackCopy(url);}}
 }})();
 </script>
 <script src="../assets/ratings.js"></script>
+<script src="../assets/site.js" defer></script>
 <script>
 (function(){{'use strict';
 /* Personal rating widget — stars + note + reflection, localStorage only. */
@@ -404,13 +420,40 @@ paint(R.getRating(ACT_ID));
 def esc(s):
     return html.escape(str(s), quote=True)
 
-def render_activity(a, catmap):
+def related_activities(a, acts, n=3):
+    """Cross-linking (wave 14 nav audit): same primary category first,
+    age overlap preferred, no-prep preferred. Always returns up to n."""
+    def overlap(x):
+        return x['age_min'] <= a['age_max'] and x['age_max'] >= a['age_min']
+    primary = a['categories'][0] if a['categories'] else None
+    cands = [x for x in acts
+             if x['id'] != a['id'] and x['categories'] and x['categories'][0] == primary]
+    scored = sorted(cands, key=lambda x: (
+        0 if overlap(x) else 1,
+        -len(set(x['categories']) & set(a['categories'])),
+        0 if x['no_prep'] else 1,
+        x['id']))
+    picks = [x for x in scored if overlap(x)][:n]
+    for x in scored:
+        if len(picks) >= n:
+            break
+        if x not in picks:
+            picks.append(x)
+    return picks[:n]
+
+def render_activity(a, catmap, acts):
     chips = ''.join(
         f'<span class="chip" style="--cat:{catmap[c]["color"]}">{catmap[c]["glyph"]} {esc(catmap[c]["name"])}</span>'
         for c in a['categories'])
     tagchips = ''.join(
         f'<span class="chip tag-chip">{esc(TAG_LABELS.get(t, t))}</span>'
         for t in a.get('tags', []))
+    badges = ''
+    if a.get('copy_free'):
+        badges += '<span class="chip tag-chip">🖨️ Copy-free</span>'
+    if a.get('no_elimination'):
+        badges += '<span class="chip tag-chip">♾️ No elimination</span>'
+    badges = f'<div class="cat-chips">{badges}</div>' if badges else ''
     mats = ''.join(f'<li>{esc(m["item"])}</li>' for m in a['materials'])
     if not a['materials']:
         mats = '<li><em>No materials needed.</em></li>'
@@ -518,6 +561,8 @@ def main():
                 "labels": TAG_LABELS,
                 "description": "Season/occasion tags. Activity fits if it carries ANY selected tag."},
         "no_prep_only": {"type": "boolean", "description": "Only activities with no_prep=true."},
+        "copy_free_only": {"type": "boolean", "description": "Only activities verified copy-free (zero printing)."},
+        "no_elimination_only": {"type": "boolean", "description": "Only games verified no-elimination."},
         "indoor_only": {"type": "boolean", "description": "Only activities with 'indoor' in location."},
         "outdoor_only": {"type": "boolean", "description": "Only activities with 'outdoor' in location."},
         "search": {"type": "text", "fields": ["name", "tagline", "materials[].item", "steps"],
@@ -633,6 +678,14 @@ def main():
             "variations": {"type": "object", "required": ["easier", "harder"],
                            "properties": {"easier": {"type": "string"}, "harder": {"type": "string"}}},
             "safety": {"type": ["string", "null"]},
+            "copy_free": {"type": "boolean",
+                     "description": "Verified zero-printing (wave 14, per 2026 teacher research)."},
+            "no_elimination": {"type": "boolean",
+                     "description": "Verified no-elimination game (wave 14, 2026 PE norm)."},
+            "why_it_works": {"type": ["string", "null"],
+                     "description": "Research-backed one-liner on why the activity works."},
+            "inclusion": {"type": ["string", "null"],
+                     "description": "One-line inclusion notes (access, language, assessment)."},
             "tags": {"type": "array", "items": {"enum": TAG_IDS},
                      "description": "Optional season/occasion tags for filtering."},
             "source": {"type": ["string", "null"], "format": "uri",
@@ -842,6 +895,10 @@ def main():
               "- summer.html — Summer hub: the summer 2027 pack's water play, outdoor games,",
               "  summer crafts, beat-the-heat indoor backups, and camp + July 4th activities,",
               "  plus the Summer Splash collection and a summer party-theme shortcut.",
+              "- fieldtrip.html — Field Trip Planner: destination, group size, and trip length",
+              "  become a clock-time timeline, chaperone and buddy-pair math, a budget estimate,",
+              "  on-site activity ideas matched from the real library, bus-ride activities from the",
+              "  field-trip-bus-ride collection, and printable permission-slip + pack checklists.",
               "- thanksgiving.html — Thanksgiving hub: the Thanksgiving 2026 pack's gratitude",
               "  crafts, harvest games, Thanksgiving STEM, gratitude and friendsgiving activities,",
               "  and giving-back projects, plus the Grateful Gathering collection and a",
@@ -872,7 +929,7 @@ def main():
     open(os.path.join(SITE, 'llms-full.txt'), 'w').write('\n'.join(full) + '\n')
 
     # 4. sitemap.xml
-    urls = ["", "planner.html", "sub.html", "party.html", "collections.html", "api.html", "halloween.html", "thanksgiving.html", "spring.html", "summer.html"] + [f"activity/{a['id']}.html" for a in acts]
+    urls = ["", "planner.html", "sub.html", "party.html", "fieldtrip.html", "collections.html", "api.html", "halloween.html", "thanksgiving.html", "spring.html", "summer.html"] + [f"activity/{a['id']}.html" for a in acts]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:

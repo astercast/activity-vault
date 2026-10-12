@@ -19,19 +19,25 @@
       <a href="../index.html">Browse</a>
       <a href="../planner.html">Plan my week</a>
       <a href="../sub.html">Sub Tub 🆘</a>
-      <a href="../party.html">Party Planner 🎃</a>
+      <a href="../party.html">Party Planner 🎉</a>
+      <a href="../fieldtrip.html">Field Trips 🚌</a>
       <a href="../collections.html">Collections 📚</a>
       <a href="../halloween.html">Halloween 🎃</a>
       <a href="../thanksgiving.html">Thanksgiving 🦃</a>
       <a href="../spring.html">Spring 🌷</a>
       <a href="../summer.html">Summer ☀️</a>
     </nav>
+    <button class="btn btn-ghost btn-small no-print" id="site-calm-toggle" type="button"
+            aria-pressed="false" aria-label="Calm mode: turn off page animations and motion">
+      <span aria-hidden="true">🍃</span> Calm: <span class="calm-state">off</span>
+    </button>
   </div>
 </header>
 <main id="main" class="wrap activity-page">
-  <p class="crumbs no-print"><a href="../index.html">← All activities</a></p>
+  <p class="crumbs no-print"><a href="../index.html">← All activities</a> · <a href="../index.html?cats=icebreakers">Icebreakers</a></p>
   <article class="activity-card print-card" aria-labelledby="act-title">
     <div class="cat-chips"><span class="chip" style="--cat:#d4567e">👋 Icebreakers</span><span class="chip" style="--cat:#4a7ec2">🌧️ Rainy Day</span></div>
+    <div class="cat-chips"><span class="chip tag-chip">🖨️ Copy-free</span><span class="chip tag-chip">♾️ No elimination</span></div>
     <h1 id="act-title">Would You Rather</h1>
     <p class="tagline">Impossible choices, hilarious defenses — the easiest discussion starter.</p>
     <dl class="fact-grid">
@@ -58,6 +64,8 @@
       <p><strong>Easier:</strong> Give two silly options only — keep it light for young kids.</p>
       <p><strong>Harder:</strong> Add &#x27;why&#x27; — everyone must defend their choice in one sentence.</p>
     </section>
+    
+    
     
     
     <section class="rate-box no-print" aria-labelledby="h-rate">
@@ -110,6 +118,7 @@
     </div>
     <p class="print-only print-url">Full activity card — <span class="print-url-here"></span></p>
   </article>
+  <section class="collection-section no-print" aria-labelledby="h-related"><div class="collection-head"><span class="collection-glyph-lg" aria-hidden="true">🔗</span><h2 class="collection-h2" id="h-related">Related icebreakers</h2></div><ol class="pick-list"><li class="pick"><div class="pick-row"><a class="pick-name" href="charades.html">Charades</a></div><p class="pick-facts">Ages 7–12 · 15–35 min</p><p class="pick-note">Act it out, no talking — the timeless guessing game.</p></li><li class="pick"><div class="pick-row"><a class="pick-name" href="pictionary.html">Pictionary</a></div><p class="pick-facts">Ages 6–12 · 15–35 min</p><p class="pick-note">Draw it fast, guess it faster — no words allowed.</p></li><li class="pick"><div class="pick-row"><a class="pick-name" href="telephone-game.html">Telephone</a></div><p class="pick-facts">Ages 6–12 · 10–20 min</p><p class="pick-note">Whisper a sentence around the circle and see what survives.</p></li></ol></section>
 </main>
 <footer class="site-footer no-print">
   <div class="wrap"><p>Activity Vault — the all-in-one activity archive for teachers &amp; after-school programs.</p></div>
@@ -134,6 +143,7 @@ else{fallbackCopy(url);}
 })();
 </script>
 <script src="../assets/ratings.js"></script>
+<script src="../assets/site.js" defer></script>
 <script>
 (function(){'use strict';
 /* Personal rating widget — stars + note + reflection, localStorage only. */

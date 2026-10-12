@@ -4,8 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Thanksgiving in the Vault — gratitude crafts, harvest games, Thanksgiving STEM — Activity Vault</title>
-<meta name="description" content="The Thanksgiving 2026 pack: 18 new Thanksgiving activities for teachers and after-school programs — gratitude crafts, harvest games, Thanksgiving STEM, gratitude and friendsgiving practices, and giving-back projects — plus the Grateful Gathering collection and the Thanksgiving party theme.">
+<meta name="description" content="The Thanksgiving 2026 pack: 21 new Thanksgiving activities for teachers and after-school programs — gratitude crafts, harvest games, Thanksgiving STEM, gratitude and friendsgiving practices, and giving-back projects — plus the Grateful Gathering collection and the Thanksgiving party theme.">
 <link rel="stylesheet" href="assets/style.css">
+<script src="assets/site.js" defer></script>
+
 </head>
 <body>
 <a class="skip-link" href="#thanksgiving-main">Skip to Thanksgiving activities</a>
@@ -20,12 +22,17 @@
       <a href="planner.html">Plan my week</a>
       <a href="sub.html">Sub Tub 🆘</a>
       <a href="party.html">Party Planner 🎉</a>
+      <a href="fieldtrip.html">Field Trips 🚌</a>
       <a href="collections.html">Collections 📚</a>
       <a href="halloween.html">Halloween 🎃</a>
       <a href="thanksgiving.html" aria-current="page">Thanksgiving 🦃</a>
       <a href="spring.html">Spring 🌷</a>
       <a href="summer.html">Summer ☀️</a>
     </nav>
+    <button class="btn btn-ghost btn-small no-print" id="site-calm-toggle" type="button"
+            aria-pressed="false" aria-label="Calm mode: turn off page animations and motion">
+      <span aria-hidden="true">🍃</span> Calm: <span class="calm-state">off</span>
+    </button>
   </div>
 </header>
 
@@ -33,7 +40,7 @@
   <section class="hero" aria-labelledby="hero-title">
     <span class="kicker no-print">🦃 Thanksgiving 2026 pack</span>
     <h1 id="hero-title">Thanksgiving in the Vault.</h1>
-    <p class="lede no-print">Eighteen new Thanksgiving activities — gratitude crafts, harvest games, Thanksgiving STEM (cranberry engineering, turkey-baster physics, jar-shaken butter), friendsgiving plans, and giving-back projects — plus the Vault's best older gratitude picks, freshly tagged. Not every family celebrates Thanksgiving, and gratitude doesn't need a holiday: everything below works for everyone. Everything here is real and runnable: classic concepts described in our own words.</p>
+    <p class="lede no-print">Twenty-one new Thanksgiving activities — gratitude crafts, harvest games, Thanksgiving STEM (cranberry engineering, turkey-baster physics, jar-shaken butter), friendsgiving plans, and giving-back projects — plus the Vault's best older gratitude picks, freshly tagged. Not every family celebrates Thanksgiving, and gratitude doesn't need a holiday: everything below works for everyone. Everything here is real and runnable: classic concepts described in our own words.</p>
     <div class="hero-actions no-print">
       <a class="btn" href="planner.html?from=collection:grateful-gathering">🗓️ Plan a Thanksgiving week</a>
       <a class="btn btn-ghost" href="collections.html#grateful-gathering">📚 Grateful Gathering collection</a>
@@ -44,6 +51,15 @@
   <p id="thanksgiving-status" role="status" aria-live="polite">Loading Thanksgiving activities…</p>
 
   <div id="thanksgiving-sections"></div>
+
+<nav class="season-cross no-print" aria-label="Explore more seasonal hubs">
+  <p><strong>Explore more seasons:</strong></p>
+  <div class="chip-row">
+      <a class="chip chip-link" href="halloween.html">🎃 Halloween</a>
+      <a class="chip chip-link" href="spring.html">🌷 Spring</a>
+      <a class="chip chip-link" href="summer.html">☀️ Summer</a>
+  </div>
+</nav>
 </main>
 
 <footer class="site-footer no-print">

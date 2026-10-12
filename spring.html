@@ -6,6 +6,8 @@
 <title>Spring in the Vault — spring crafts, outdoor games, spring science — Activity Vault</title>
 <meta name="description" content="The spring 2027 pack: spring crafts, outdoor games, spring science, rainy-day backups, and spring-holiday activities for teachers and after-school programs — plus the Spring Burst collection and a spring party theme.">
 <link rel="stylesheet" href="assets/style.css">
+<script src="assets/site.js" defer></script>
+
 </head>
 <body>
 <a class="skip-link" href="#spring-main">Skip to spring activities</a>
@@ -20,12 +22,17 @@
       <a href="planner.html">Plan my week</a>
       <a href="sub.html">Sub Tub 🆘</a>
       <a href="party.html">Party Planner 🎉</a>
+      <a href="fieldtrip.html">Field Trips 🚌</a>
       <a href="collections.html">Collections 📚</a>
       <a href="halloween.html">Halloween 🎃</a>
       <a href="thanksgiving.html">Thanksgiving 🦃</a>
       <a href="spring.html" aria-current="page">Spring 🌷</a>
       <a href="summer.html">Summer ☀️</a>
     </nav>
+    <button class="btn btn-ghost btn-small no-print" id="site-calm-toggle" type="button"
+            aria-pressed="false" aria-label="Calm mode: turn off page animations and motion">
+      <span aria-hidden="true">🍃</span> Calm: <span class="calm-state">off</span>
+    </button>
   </div>
 </header>
 
@@ -44,6 +51,15 @@
   <p id="spring-status" role="status" aria-live="polite">Loading spring activities…</p>
 
   <div id="spring-sections"></div>
+
+<nav class="season-cross no-print" aria-label="Explore more seasonal hubs">
+  <p><strong>Explore more seasons:</strong></p>
+  <div class="chip-row">
+      <a class="chip chip-link" href="halloween.html">🎃 Halloween</a>
+      <a class="chip chip-link" href="thanksgiving.html">🦃 Thanksgiving</a>
+      <a class="chip chip-link" href="summer.html">☀️ Summer</a>
+  </div>
+</nav>
 </main>
 
 <footer class="site-footer no-print">

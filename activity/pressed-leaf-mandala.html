@@ -19,19 +19,25 @@
       <a href="../index.html">Browse</a>
       <a href="../planner.html">Plan my week</a>
       <a href="../sub.html">Sub Tub 🆘</a>
-      <a href="../party.html">Party Planner 🎃</a>
+      <a href="../party.html">Party Planner 🎉</a>
+      <a href="../fieldtrip.html">Field Trips 🚌</a>
       <a href="../collections.html">Collections 📚</a>
       <a href="../halloween.html">Halloween 🎃</a>
       <a href="../thanksgiving.html">Thanksgiving 🦃</a>
       <a href="../spring.html">Spring 🌷</a>
       <a href="../summer.html">Summer ☀️</a>
     </nav>
+    <button class="btn btn-ghost btn-small no-print" id="site-calm-toggle" type="button"
+            aria-pressed="false" aria-label="Calm mode: turn off page animations and motion">
+      <span aria-hidden="true">🍃</span> Calm: <span class="calm-state">off</span>
+    </button>
   </div>
 </header>
 <main id="main" class="wrap activity-page">
-  <p class="crumbs no-print"><a href="../index.html">← All activities</a></p>
+  <p class="crumbs no-print"><a href="../index.html">← All activities</a> · <a href="../index.html?cats=crafts">Crafts</a></p>
   <article class="activity-card print-card" aria-labelledby="act-title">
     <div class="cat-chips"><span class="chip" style="--cat:#7b5fc7">✂️ Crafts</span><span class="chip" style="--cat:#c77b1e">🍂 Seasons</span><span class="chip" style="--cat:#0d8a96">🔬 STEM</span><span class="chip tag-chip">🎃 Fall</span><span class="chip tag-chip">👻 Halloween</span></div>
+    
     <h1 id="act-title">Pressed-Leaf Mandalas</h1>
     <p class="tagline">Fall leaves arranged into perfect symmetrical circles — harvest math you can hang up.</p>
     <dl class="fact-grid">
@@ -59,6 +65,8 @@
       <p><strong>Harder:</strong> Photograph the mandala, then rebuild it from memory — or design one with 180-degree rotational symmetry only.</p>
     </section>
     <section class="safety" aria-labelledby="h-safety"><h2 id="h-safety">⚠️ Safety</h2><p>Collect fallen leaves only — don&#x27;t strip branches. Wash hands after handling outdoor leaves.</p></section>
+    
+    
     
     <section class="rate-box no-print" aria-labelledby="h-rate">
       <h2 id="h-rate">⭐ Tried this? Rate it</h2>
@@ -110,6 +118,7 @@
     </div>
     <p class="print-only print-url">Full activity card — <span class="print-url-here"></span></p>
   </article>
+  <section class="collection-section no-print" aria-labelledby="h-related"><div class="collection-head"><span class="collection-glyph-lg" aria-hidden="true">🔗</span><h2 class="collection-h2" id="h-related">Related crafts</h2></div><ol class="pick-list"><li class="pick"><div class="pick-row"><a class="pick-name" href="sun-print-cards.html">Sun Print Cards</a></div><p class="pick-facts">Ages 5–12 · 20–35 min</p><p class="pick-note">Lay objects on sun-sensitive paper, let the sun do the printing.</p></li><li class="pick"><div class="pick-row"><a class="pick-name" href="apple-print-painting.html">Apple Print Painting</a></div><p class="pick-facts">Ages 4–10 · 20–35 min</p><p class="pick-note">Halved apples become stamps — print rows of apple patterns.</p></li><li class="pick"><div class="pick-row"><a class="pick-name" href="cardboard-city.html">Cardboard Box City</a></div><p class="pick-facts">Ages 6–12 · 60–60 min</p><p class="pick-note">Teams of engineers build a cardboard metropolis — houses, shops, landmarks — then connect their blocks into one city.</p></li></ol></section>
 </main>
 <footer class="site-footer no-print">
   <div class="wrap"><p>Activity Vault — the all-in-one activity archive for teachers &amp; after-school programs.</p></div>
@@ -134,6 +143,7 @@ else{fallbackCopy(url);}
 })();
 </script>
 <script src="../assets/ratings.js"></script>
+<script src="../assets/site.js" defer></script>
 <script>
 (function(){'use strict';
 /* Personal rating widget — stars + note + reflection, localStorage only. */

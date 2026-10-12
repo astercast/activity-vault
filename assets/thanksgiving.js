@@ -48,7 +48,10 @@
       picks: [
         ['cranberry-toothpick-towers', 'Toothpicks and cranberries — who builds the tallest harvest tower?'],
         ['turkey-baster-relay', 'Move the \u201ccranberries\u201d with nothing but a turkey baster and air pressure.'],
-        ['shake-jar-butter', 'Cream, a jar, ten minutes of shaking: that\u2019s butter.']
+        ['shake-jar-butter', 'Cream, a jar, ten minutes of shaking: that\u2019s butter.'],
+        ['turkey-code-feathers', 'Invent a symbol code and encode a turkey fact — from 2026 teaching research.'],
+        ['cornucopia-catch-game', 'Build paper cornucopias, then invent your own catch game, rules and all.'],
+        ['thanksgiving-table-build', 'Toothpicks and glue: a table with at most 4 legs that holds the feast.']
       ]
     },
     {

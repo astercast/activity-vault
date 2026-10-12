@@ -128,6 +128,28 @@
        "null"
       ]
      },
+     "copy_free": {
+      "type": "boolean",
+      "description": "Verified zero-printing (wave 14, per 2026 teacher research)."
+     },
+     "no_elimination": {
+      "type": "boolean",
+      "description": "Verified no-elimination game (wave 14, 2026 PE norm)."
+     },
+     "why_it_works": {
+      "type": [
+       "string",
+       "null"
+      ],
+      "description": "Research-backed one-liner on why the activity works."
+     },
+     "inclusion": {
+      "type": [
+       "string",
+       "null"
+      ],
+      "description": "One-line inclusion notes (access, language, assessment)."
+     },
      "tags": {
       "type": "array",
       "items": {

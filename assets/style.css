@@ -429,6 +429,14 @@ html[data-calm="true"] ::view-transition-new(*) { animation: none !important; }
    + transparency on this page, beyond the prefers-reduced-motion binary. */
 .calm-row { display: flex; gap: .6rem; align-items: center; flex-wrap: wrap; margin: 0 0 1rem; }
 html[data-calm="true"] .plan-sections { background: var(--paper); backdrop-filter: none; }
+/* site-wide calm toggle in the header */
+#site-calm-toggle { white-space: nowrap; }
+/* calm mode: kill ALL animation + transitions site-wide (stronger than the
+   media query — this is the user's explicit choice) */
+html[data-calm="true"] *, html[data-calm="true"] *::before, html[data-calm="true"] *::after {
+  animation: none !important;
+  transition: none !important;
+}
 
 /* substitute-kit week accordions: native <details>, keyboard behavior free */
 .subkit-week-details { border-top: 1px dashed var(--line); padding: .4rem 0; }
@@ -437,6 +445,26 @@ html[data-calm="true"] .plan-sections { background: var(--paper); backdrop-filte
   padding: .35rem 0; border-radius: 6px;
 }
 .subkit-week-details > summary::marker { color: var(--accent); }
+
+/* field trip planner: permission-slip table + ratio warnings */
+.ft-table { width: 100%; border-collapse: collapse; margin: .8rem 0; font-size: .95rem; }
+.ft-table th, .ft-table td { border: 1px solid var(--line); padding: .45rem .6rem; text-align: left; }
+.ft-table th { background: var(--sand); font-family: var(--font-display); }
+.ft-table td:last-child { font-variant-numeric: tabular-nums; }
+.ft-warning {
+  background: #fdf3e3; border: 2px solid #d9a441; border-radius: 10px;
+  padding: .7rem 1rem; margin: .8rem 0; font-weight: 600;
+}
+/* field trip checklists as native accordions: free keyboard + exclusive open */
+.ft-check { border: 1px solid var(--line); border-radius: 10px; margin: .6rem 0; background: var(--paper); }
+.ft-check > summary {
+  cursor: pointer; font-family: var(--font-display); font-weight: 700; font-size: 1.1rem;
+  padding: .7rem 1rem; border-radius: 10px;
+}
+.ft-check > summary::marker { color: var(--accent); }
+@media print {
+  .ft-check:not([open]) > :not(summary) { display: block; }
+}
 
 /* print: the 3.0 extras ride along in the deck */
 @media print {
