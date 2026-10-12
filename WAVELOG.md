@@ -21,7 +21,7 @@ Running record of build waves. Newest first.
 - Rating widget keyboard test (structural, no headless browser on this VM): 5 native `<input type="radio" name="av-rate">` in a `<fieldset>` with legend "Your rating (1 to 5 stars)" — native radio group semantics guarantee arrow-key movement and Enter/Space selection; no `role="radiogroup"` fakery; 2 `aria-live="polite"` status regions (rating + reflection)
 - Honesty-copy check: activity pages state "this browser only … no community ratings … every star on this card is yours"; browse banner states no community ratings / no averages
 
-**Wave 7 push resolution:** (pending — local commit below)
+**Wave 8 push resolution:** local commit `b7d7ca1` pushed via `gh-push.py` (250 files, 250 blob uploads, ~4.5 min) — remote commit `56680976fd43d74be6a570cfe05b713103c9c443`. Verified via GitHub API: remote tree contains `assets/ratings.js`, the three wired HTML pages, `AGENT.md`, `WAVELOG.md`, and regenerated activity pages (306 files in tree).
 
 ## Wave 7 — 2026-10-11 — Print + share (interactive tools wave)
 
