@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /* Wave 18 assertions: After-School Kit integrity.
    - kit-core.js pure logic (pantry matching, filters, kit dealing, run-of-show,
-     checklist aggregation, URL encode/decode) on the REAL 355-activity dataset
+     checklist aggregation, URL encode/decode) on the REAL 415-activity dataset
    - kit.html structure + kit.js DOM-id cross-check
    - nav aria-current across all 12 shells, llms.txt / sitemap.xml entries,
      calm toggle wiring
@@ -116,9 +116,13 @@ const tightKit = K.buildKit(acts, tight, bucketByCat, 7);
 ok(tightKit.days.length >= 1, 'tight filters still deal at least one day');
 ok(tightKit.days.flatMap(d => d.slots.map(s => s.id)).every(id => actIds.has(id)),
   'tight-kit ids all resolve');
-// impossible corner: graceful no-kit + a plain-language warning, never a fake kit
+// impossible corner: graceful no-kit + a plain-language warning, never a fake kit.
+// Pass an explicitly empty pool: the wave-19 micro pack made the old "tight"
+// config (prek-k / 60 kids / chalk-only pantry) genuinely fillable — which is
+// the point of the pack — so the impossible path is tested deterministically
+// against an empty pool instead of a config the dataset outgrew.
 const impossible = K.clampCfg({ ageBand: 'prek-k', groupSize: 60, days: 5, minutes: 30, mode: 'pantry', pantry: ['chalk'] });
-const impKit = K.buildKit(acts, impossible, bucketByCat, 7);
+const impKit = K.buildKit([], impossible, bucketByCat, 7);
 ok(impKit.days.length === 0 && impKit.warnings.length === 1 &&
   /loosen/i.test(impKit.warnings[0]), 'impossible filters -> empty kit + loosen warning');
 

@@ -21,10 +21,10 @@ Self-describing manifest of the whole API — agents should start here:
 {
   "meta": { "site": "Activity Vault", "version": "1.0.0",
             "generated": "2026-10-11T00:40:21Z",
-            "source_snapshot": "data/activities.json + data/categories.json — 355 activities, 11 categories" },
+            "source_snapshot": "data/activities.json + data/categories.json — 415 activities, 11 categories" },
   "endpoints": [ { "path": "api/v1/activities.json", "title": "...", "description": "...",
                    "schema": "api/v1/schema/activities.schema.json",
-                   "updated": "2026-10-11", "records": 355, "stability": "stable" } ],
+                   "updated": "2026-10-11", "records": 415, "stability": "stable" } ],
   "deprecation_notes": "No endpoints are deprecated as of 1.0.0."
 }
 ```

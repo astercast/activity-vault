@@ -16456,8 +16456,2107 @@
     "easier": "The seeker counts to 60 for more hiding time.",
     "harder": "Sardines style: everyone squeezes into one hiding spot."
    }
+  },
+  {
+   "id": "dice-fitness-roll",
+   "name": "Dice Fitness Roll",
+   "tagline": "Roll the dice, do the moves — a different workout every throw.",
+   "categories": [
+    "pe-movement",
+    "icebreakers"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 40,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "one dice"
+    }
+   ],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Clear a little floor space. Assign each number 1-6 a move on the board.",
+   "steps": [
+    "Assign moves: 1 = jumping jacks, 2 = squats, 3 = arm circles, 4 = high knees, 5 = toe touches, 6 = teacher's choice.",
+    "A kid rolls the dice and calls the number. Everyone does that many of the matching move.",
+    "Keep rolling for five minutes — new roller each throw.",
+    "Last round: the roller picks any two numbers and combines the moves."
+   ],
+   "variations": {
+    "easier": "Roll once and do the moves seated or marching in place.",
+    "harder": "Roll twice and add the numbers — that is your rep count."
+   },
+   "safety": "Keep spacing so arms do not hit neighbors; low-impact swaps always allowed."
+  },
+  {
+   "id": "squat-spell",
+   "name": "Squat and Spell",
+   "tagline": "Spell your name with your legs — one squat per letter.",
+   "categories": [
+    "pe-movement"
+   ],
+   "age_min": 6,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 40,
+   "time_min": 5,
+   "time_max": 8,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Everyone stands with room to squat.",
+   "steps": [
+    "Teacher demos: say your name out loud, one squat per letter — 'M-A-Y-A' is four squats.",
+    "Go around the circle: each kid squats through their own name while the group counts the letters.",
+    "Round two: spell a vocabulary word from this week instead of names.",
+    "Finish: the longest name in the room leads one final group squat-spell."
+   ],
+   "variations": {
+    "easier": "Do it as toe-touches or marching in place instead of squats.",
+    "harder": "Spell it backwards — one squat per letter, no peeking at the spelling."
+   },
+   "safety": "Knees track over toes; anyone can do half-squats."
+  },
+  {
+   "id": "mirror-march",
+   "name": "Mirror March",
+   "tagline": "Copy your partner's march exactly — then steal the lead.",
+   "categories": [
+    "pe-movement",
+    "team-community"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 40,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Pair up facing each other with an arm's length between partners.",
+   "steps": [
+    "Partner A marches in place with big arm swings; Partner B mirrors every move exactly.",
+    "After one minute, the teacher calls 'switch' — B leads, A mirrors.",
+    "Round three: leaders add a silly move every ten seconds for the mirror to catch.",
+    "End with both partners inventing a three-move mirror routine and showing the room."
+   ],
+   "variations": {
+    "easier": "Mirror only the arms while marching gently in place.",
+    "harder": "No talking — the switch happens on a silent hand signal from the teacher."
+   },
+   "safety": "Keep the arm's-length gap so nobody bumps elbows."
+  },
+  {
+   "id": "beat-the-bell-burst",
+   "name": "Beat the Bell Burst",
+   "tagline": "Three 60-second movement bursts against the timer.",
+   "categories": [
+    "pe-movement"
+   ],
+   "age_min": 5,
+   "age_max": 14,
+   "group_min": 2,
+   "group_max": 60,
+   "time_min": 5,
+   "time_max": 8,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "a timer (a phone timer works)"
+    }
+   ],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Pick three moves before you start: one legs, one arms, one full-body.",
+   "steps": [
+    "Set the timer for 60 seconds. Everyone does move one — as many good reps as they can.",
+    "Thirty seconds of rest and water. Set the timer again for move two.",
+    "Repeat for move three. Each round, try to beat your own count from last time — nobody else's.",
+    "Cool down: walk it out for one minute while the teacher calls the high counts."
+   ],
+   "variations": {
+    "easier": "Thirty-second rounds instead of sixty; march in place between rounds.",
+    "harder": "Combine all three moves into one 60-second circuit, no rest between."
+   },
+   "safety": "Good form beats fast reps; stop if anything hurts."
+  },
+  {
+   "id": "clock-lunges",
+   "name": "Clock Lunges",
+   "tagline": "Lunge around an imaginary clock face — twelve numbers, twelve lunges.",
+   "categories": [
+    "pe-movement"
+   ],
+   "age_min": 8,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 40,
+   "time_min": 5,
+   "time_max": 8,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Everyone stands in their own spot with room to step forward.",
+   "steps": [
+    "Imagine a clock face on the floor around you: 12 straight ahead, 6 behind.",
+    "Teacher calls numbers: '3!' — lunge sideways to 3 o'clock, then back to center.",
+    "Call faster: mix 12, 4, 8, 2 — hold each lunge for two breaths.",
+    "Final round: kids take turns calling the numbers for the group."
+   ],
+   "variations": {
+    "easier": "Step-touches to each number instead of full lunges.",
+    "harder": "Add the time math: 'half past the number' means lunge halfway between two hours."
+   },
+   "safety": "Keep the front knee behind the toes; small steps are fine."
+  },
+  {
+   "id": "popcorn-jumps",
+   "name": "Popcorn Pops",
+   "tagline": "Crouch low like a kernel — pop high when your word is called.",
+   "categories": [
+    "pe-movement",
+    "icebreakers"
+   ],
+   "age_min": 4,
+   "age_max": 10,
+   "group_min": 4,
+   "group_max": 40,
+   "time_min": 5,
+   "time_max": 8,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Everyone crouches low with space around them.",
+   "steps": [
+    "Teacher assigns each kid a popcorn word: 'butter,' 'salt,' 'caramel,' 'cheese.'",
+    "Teacher calls words in any order. When you hear yours, pop up high with arms up, then crouch again.",
+    "Speed up the calls until the whole room is popping like a hot pan.",
+    "Last round: kids call the words for each other."
+   ],
+   "variations": {
+    "easier": "Stand and do a big stretch up instead of jumping.",
+    "harder": "Two words per kid — pop on either one."
+   },
+   "safety": "Land soft with bent knees; keep spacing on the pop."
+  },
+  {
+   "id": "traffic-cop",
+   "name": "Traffic Cop",
+   "tagline": "One kid directs the room's traffic — jog, freeze, or turn.",
+   "categories": [
+    "pe-movement",
+    "icebreakers"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 6,
+   "group_max": 40,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Everyone spreads out. One volunteer is the traffic cop up front.",
+   "steps": [
+    "Cop's signals: arms up = jog in place, arms out wide = freeze, spin finger = turn around once.",
+    "Practice each signal together until the room responds instantly.",
+    "Play: the cop mixes signals fast for two minutes. Slow responders do a silly bow.",
+    "New cop takes over — the old cop picks them."
+   ],
+   "variations": {
+    "easier": "Walk in place instead of jogging; only two signals.",
+    "harder": "Add a fourth signal: both hands on head = crouch low."
+   },
+   "safety": "Jog in place means feet stay under you — no traveling across the room."
+  },
+  {
+   "id": "zip-zap-zop",
+   "name": "Zip Zap Zop",
+   "tagline": "Point, pass the energy, and do not break the chain.",
+   "categories": [
+    "icebreakers"
+   ],
+   "age_min": 8,
+   "age_max": 14,
+   "group_min": 6,
+   "group_max": 30,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Stand in a circle. One player starts with hands together, pointed at someone.",
+   "steps": [
+    "The starter points and says 'ZIP!' The pointed-to player points at someone else: 'ZAP!'",
+    "Third player points and says 'ZOP!' — then the cycle restarts at ZIP.",
+    "Anyone who says the wrong word or hesitates too long does a bow and the game restarts.",
+    "Speed up each round until the circle is a blur of zips, zaps, and zops."
+   ],
+   "variations": {
+    "easier": "Allow a three-second pause; the group chants the next word as a hint.",
+    "harder": "Add a rule: you cannot point back at the person who just pointed at you."
+   },
+   "safety": "Point with an open hand, not a jab — keep it playful."
+  },
+  {
+   "id": "alphabet-lineup",
+   "name": "Alphabet Lineup",
+   "tagline": "No talking: line up A to Z by first name.",
+   "categories": [
+    "icebreakers",
+    "team-community"
+   ],
+   "age_min": 6,
+   "age_max": 14,
+   "group_min": 6,
+   "group_max": 40,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Everyone stands in a loose group. No talking from this point on.",
+   "steps": [
+    "Without speaking, arrange yourselves in one line from A to Z by first name.",
+    "Use gestures, finger-spelling in the air, or pointing to sort it out.",
+    "When the line looks right, everyone says their name down the line to check.",
+    "Time it. Then try to beat your time sorting by last name."
+   ],
+   "variations": {
+    "easier": "Talking allowed — the challenge is just the sorting.",
+    "harder": "Sort by middle name, or by birthday within the same first letter."
+   },
+   "safety": "Walk, do not shove, while sorting — keep hands to yourself."
+  },
+  {
+   "id": "word-ball-toss",
+   "name": "Word Ball Toss",
+   "tagline": "Toss an invisible ball — catch it with a word from the category.",
+   "categories": [
+    "icebreakers"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 6,
+   "group_max": 30,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Stand in a circle. Teacher names a category: animals, foods, colors.",
+   "steps": [
+    "The starter mimes throwing a ball to someone while saying a category word: 'Elephant!'",
+    "The catcher says a new word and throws to someone else: 'Giraffe!'",
+    "No repeats — a repeated word means you do a victory spin and the game continues.",
+    "New category each round; let a kid pick the category."
+   ],
+   "variations": {
+    "easier": "Repeats allowed for younger kids — the toss is the fun part.",
+    "harder": "Two invisible balls in play at once."
+   },
+   "safety": "Mime the throw gently — no real throwing, no lunging."
+  },
+  {
+   "id": "two-minute-mingle",
+   "name": "Two-Minute Mingle",
+   "tagline": "Sixty-second chats, two rotations, then introduce your partner.",
+   "categories": [
+    "icebreakers",
+    "team-community"
+   ],
+   "age_min": 8,
+   "age_max": 14,
+   "group_min": 6,
+   "group_max": 40,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "a timer (a phone timer works)"
+    }
+   ],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Pair up. Each pair gets one question from the teacher.",
+   "steps": [
+    "Round one: 60 seconds — 'What is something you are good at?' Take turns, 30 seconds each.",
+    "Rotate: find a new partner. Round two: 'What is the best thing you ate this week?'",
+    "Come back to the circle. Introduce your round-two partner and share their answer.",
+    "The group votes on the most surprising answer — winner picks the next mingle question."
+   ],
+   "variations": {
+    "easier": "One round only, with the teacher asking the question to the whole circle.",
+    "harder": "No repeats: your partner's answer cannot match anyone else's introduction."
+   },
+   "safety": "Keep voices at conversation level — mingles get loud."
+  },
+  {
+   "id": "secret-high-five",
+   "name": "Secret High-Five",
+   "tagline": "Pick someone across the room in secret — then cross and high-five at once.",
+   "categories": [
+    "icebreakers"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 8,
+   "group_max": 40,
+   "time_min": 5,
+   "time_max": 8,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Everyone stands spread out. On the teacher's signal, each kid silently picks one person across the room.",
+   "steps": [
+    "Point at your person in your head only — no pointing fingers, no telling.",
+    "Teacher counts down: 3, 2, 1 — everyone walks to their person for a high-five.",
+    "The room becomes a happy traffic jam of crossing paths and high-fives.",
+    "Go again with a new secret person. Try to pick someone you have not high-fived yet."
+   ],
+   "variations": {
+    "easier": "Pick someone close by instead of across the room.",
+    "harder": "Add a secret handshake you invent on the spot with your person."
+   },
+   "safety": "Walk, do not run, to your person — watch for crossing paths."
+  },
+  {
+   "id": "pass-the-face",
+   "name": "Pass the Face",
+   "tagline": "Copy the silly face, change it, pass it on.",
+   "categories": [
+    "icebreakers"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 6,
+   "group_max": 30,
+   "time_min": 5,
+   "time_max": 8,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Sit or stand in a circle where everyone can see each face.",
+   "steps": [
+    "The starter makes a silly face at the person next to them.",
+    "That person copies the face exactly, turns to the next person, and changes it into a new silly face.",
+    "The face morphs around the circle — watch it get weirder every pass.",
+    "Full circle: the last face comes back to the starter. Everyone votes on the silliest face."
+   ],
+   "variations": {
+    "easier": "Just copy without changing — the copying is the game.",
+    "harder": "Add a sound effect to every face."
+   },
+   "safety": "Silly faces only — nothing that mocks anyone."
+  },
+  {
+   "id": "guess-the-leader",
+   "name": "Guess the Leader",
+   "tagline": "One guesser, one secret leader — the whole room copies the moves.",
+   "categories": [
+    "icebreakers"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 6,
+   "group_max": 30,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "One volunteer leaves the room or covers their eyes. The group silently picks a leader.",
+   "steps": [
+    "The guesser returns to the middle. The leader starts a simple repeating move — clapping, head nods.",
+    "Everyone copies the leader's move. The leader changes moves every few seconds; the room follows.",
+    "The guesser gets three guesses to name the leader. The room keeps copying without giving it away.",
+    "New guesser, new secret leader — play again."
+   ],
+   "variations": {
+    "easier": "The leader stays in one spot so the guesser can scan the room.",
+    "harder": "The leader changes moves only when the guesser blinks or looks away."
+   },
+   "safety": "Moves stay small and seated-friendly if space is tight."
+  },
+  {
+   "id": "rhythm-echo-clap",
+   "name": "Rhythm Echo Clap",
+   "tagline": "The teacher claps it — the room claps it back, then a kid leads.",
+   "categories": [
+    "music-rhythm",
+    "icebreakers"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 60,
+   "time_min": 5,
+   "time_max": 8,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Everyone seated or standing with hands free.",
+   "steps": [
+    "Teacher claps a short pattern: clap-clap — pause — clap. The room echoes it back.",
+    "Make patterns longer and trickier each round — add stomps and snaps.",
+    "A volunteer becomes the leader and invents the pattern; the room echoes.",
+    "Final round: chain three kids' patterns together into one long echo."
+   ],
+   "variations": {
+    "easier": "Echo with just two claps at a time.",
+    "harder": "Echo it backwards."
+   },
+   "safety": "Clap at medium volume — protect ears in small rooms."
+  },
+  {
+   "id": "body-percussion-build",
+   "name": "Body Percussion Build-Up",
+   "tagline": "Layer stomp, clap, snap, and pat into a four-part groove.",
+   "categories": [
+    "music-rhythm"
+   ],
+   "age_min": 6,
+   "age_max": 14,
+   "group_min": 6,
+   "group_max": 40,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Stand in a circle. Teacher keeps a steady count: 1-2-3-4.",
+   "steps": [
+    "Everyone stomps on beat 1 only. Keep it going — that is layer one.",
+    "Add claps on beat 2. Then thigh-pats on beat 3. Then finger snaps on beat 4.",
+    "Run the full four-layer groove for one minute — listen to the room lock in.",
+    "Split the circle: half does beats 1 and 3, half does 2 and 4. Trade parts."
+   ],
+   "variations": {
+    "easier": "Two layers only: stomp and clap.",
+    "harder": "One kid solos an 8-beat pattern over the group's groove."
+   },
+   "safety": "Stomp lightly — floors and downstairs neighbors count."
+  },
+  {
+   "id": "volume-dial-chant",
+   "name": "Volume Dial Chant",
+   "tagline": "One chant, whispered to shouted and back — you control the dial.",
+   "categories": [
+    "music-rhythm"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 60,
+   "time_min": 5,
+   "time_max": 8,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Pick a short chant everyone knows — a class motto, a counting rhyme, a name cheer.",
+   "steps": [
+    "Teacher is the volume dial: hand low = whisper the chant, hand high = full voice.",
+    "Run the chant while the teacher slowly raises and lowers the hand.",
+    "Freeze the dial halfway — hold the chant at medium volume for a full round.",
+    "A kid becomes the dial. The room follows their hand exactly."
+   ],
+   "variations": {
+    "easier": "Just two levels: whisper and normal voice.",
+    "harder": "The dial moves fast — the room has to track sudden jumps."
+   },
+   "safety": "Full voice, never screaming — the dial stops before it hurts."
+  },
+  {
+   "id": "hum-line-guess",
+   "name": "Hum Line Guess",
+   "tagline": "Hum the tune, hide the words — the room names that song.",
+   "categories": [
+    "music-rhythm",
+    "icebreakers"
+   ],
+   "age_min": 6,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 40,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "No materials. Agree on fair game: songs everyone in the room would know.",
+   "steps": [
+    "One volunteer hums the melody of a well-known song — no words, no hints.",
+    "The room calls out guesses. First right guess becomes the next hummer.",
+    "Keep a running list of guessed songs on the board.",
+    "Lightning round: 20 seconds per hum, as many songs as you can name."
+   ],
+   "variations": {
+    "easier": "Hum with the group humming along once someone guesses it.",
+    "harder": "Hum it backwards — melody in reverse."
+   },
+   "safety": "Keep volume friendly — humming, not belting."
+  },
+  {
+   "id": "silent-beat-march",
+   "name": "Silent Beat March",
+   "tagline": "No music, no counting — march to the teacher's silent hand beat.",
+   "categories": [
+    "music-rhythm",
+    "pe-movement"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 40,
+   "time_min": 5,
+   "time_max": 8,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Everyone stands with room to march in place.",
+   "steps": [
+    "Teacher raises a hand and starts pulsing it up and down — that is the beat. Everyone marches in place to it.",
+    "Teacher speeds up and slows down the hand. The room's feet follow exactly.",
+    "Fist in the air = freeze mid-step. Open hand = march again.",
+    "A volunteer takes the beat. Try to trick the room with a sudden tempo change."
+   ],
+   "variations": {
+    "easier": "Seated version: tap knees to the silent beat instead of marching.",
+    "harder": "Half the room marches the beat while the other half claps double-time."
+   },
+   "safety": "March in place — feet stay under shoulders, no traveling."
+  },
+  {
+   "id": "silent-count-twenty",
+   "name": "Silent Count to Twenty",
+   "tagline": "Eyes closed, one voice at a time — if two speak, start over.",
+   "categories": [
+    "quiet-focus"
+   ],
+   "age_min": 8,
+   "age_max": 14,
+   "group_min": 6,
+   "group_max": 30,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Sit in a circle, eyes closed. No planning who goes when.",
+   "steps": [
+    "The group counts to 20 together — but only one person may say each number.",
+    "If two voices overlap, everyone takes a breath and starts back at one.",
+    "No signals, no pointing — listen for the tiny pause that means it is your turn.",
+    "When you reach 20, open your eyes. Try it again and beat your restart count."
+   ],
+   "variations": {
+    "easier": "Count to 10 instead of 20.",
+    "harder": "Count backwards from 20 to 1."
+   },
+   "safety": "None needed — this is a still, seated game."
+  },
+  {
+   "id": "rose-thorn-bud",
+   "name": "Rose, Thorn, Bud",
+   "tagline": "One good thing, one hard thing, one thing you are looking forward to.",
+   "categories": [
+    "quiet-focus",
+    "team-community"
+   ],
+   "age_min": 6,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 40,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Sit in a circle. Teacher explains: rose = something good, thorn = something hard, bud = something coming.",
+   "steps": [
+    "Everyone gets 30 seconds of silent thinking to pick their three.",
+    "Go around the circle: each person shares their rose, thorn, and bud in one breath.",
+    "No fixing anyone's thorn — just listen. Nods are enough.",
+    "End with the teacher naming one bud for the whole group."
+   ],
+   "variations": {
+    "easier": "Just rose and bud — skip the thorn.",
+    "harder": "Write them down first, then share — compare what changed."
+   },
+   "safety": "Sharing is always optional — 'pass' is a complete answer."
+  },
+  {
+   "id": "one-word-weather",
+   "name": "One-Word Weather Report",
+   "tagline": "If your energy were weather today, what would it be?",
+   "categories": [
+    "quiet-focus",
+    "team-community"
+   ],
+   "age_min": 5,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 40,
+   "time_min": 5,
+   "time_max": 8,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Sit in a circle. No wrong answers — weather is weather.",
+   "steps": [
+    "Teacher starts: 'My energy weather today is partly cloudy with a chance of giggles.'",
+    "Go around: each person reports their energy as weather in a few words.",
+    "Notice the room's forecast — lots of sunshine? A storm front moving in?",
+    "Close: everyone names one thing that could clear their skies today."
+   ],
+   "variations": {
+    "easier": "Just the weather word — no explanation needed.",
+    "harder": "Report the weather you WANT by the end of the day, and one step toward it."
+   },
+   "safety": "All weather is welcome — no fixing, no judging."
+  },
+  {
+   "id": "tense-and-release",
+   "name": "Tense and Release",
+   "tagline": "Squeeze everything tight — then let it all go.",
+   "categories": [
+    "quiet-focus"
+   ],
+   "age_min": 5,
+   "age_max": 14,
+   "group_min": 2,
+   "group_max": 60,
+   "time_min": 5,
+   "time_max": 8,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Sit comfortably with feet flat and hands in laps.",
+   "steps": [
+    "Squeeze both fists as tight as you can for five slow counts.",
+    "Release. Notice the warm, tingly feeling in your hands.",
+    "Shoulders up to your ears — hold five counts — drop them.",
+    "Finish: scrunch your whole face tight, then let it melt into a soft smile."
+   ],
+   "variations": {
+    "easier": "Just the fists — squeeze and release three times.",
+    "harder": "Work down the body: fists, shoulders, belly, toes."
+   },
+   "safety": "Tight means firm, not painful — ease off if anything aches."
+  },
+  {
+   "id": "crumple-and-toss",
+   "name": "Crumple and Toss",
+   "tagline": "Write the worry, crumple the paper, toss it in the bin.",
+   "categories": [
+    "quiet-focus"
+   ],
+   "age_min": 6,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 40,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper (one scrap per kid)"
+    },
+    {
+     "item": "pencils"
+    }
+   ],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Everyone gets a scrap of paper and a pencil. Put a bin or box in the middle.",
+   "steps": [
+    "Write or draw one worry or annoyance from today — one or two words is enough.",
+    "Crumple the paper into the tightest ball you can.",
+    "On the count of three, everyone tosses their worry-ball into the bin.",
+    "Sit for 30 quiet seconds. Notice how the room feels lighter."
+   ],
+   "variations": {
+    "easier": "Draw the worry instead of writing it — scribbles count.",
+    "harder": "On the back, write one thing you will do about it — toss only the front."
+   },
+   "safety": "Nobody reads anyone else's paper — toss means private."
+  },
+  {
+   "id": "hand-squeeze-pass",
+   "name": "Hand Squeeze Pass",
+   "tagline": "One silent squeeze travels the whole circle — eyes closed.",
+   "categories": [
+    "quiet-focus",
+    "team-community"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 6,
+   "group_max": 30,
+   "time_min": 5,
+   "time_max": 8,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Sit in a circle holding hands, eyes closed.",
+   "steps": [
+    "Teacher squeezes the hand of the person to their right — that is the signal.",
+    "Each person passes one gentle squeeze to the next hand. No talking, eyes closed.",
+    "Time how long the squeeze takes to travel the full circle.",
+    "Try to beat your time — then try it with two squeezes going opposite directions."
+   ],
+   "variations": {
+    "easier": "Eyes open for the first round.",
+    "harder": "Pass a pattern: squeeze-squeeze-pause, and the next person must copy it."
+   },
+   "safety": "Gentle squeezes only — firm enough to feel, never hard."
+  },
+  {
+   "id": "gratitude-minute",
+   "name": "Gratitude Minute",
+   "tagline": "Sixty silent seconds, three good things — then share one.",
+   "categories": [
+    "quiet-focus",
+    "team-community"
+   ],
+   "age_min": 5,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 60,
+   "time_min": 5,
+   "time_max": 8,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "a timer (a phone timer works)"
+    }
+   ],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Everyone sits comfortably. Teacher sets a timer for 60 seconds.",
+   "steps": [
+    "Timer starts: 60 seconds of silence. Think of three good things from today — small counts.",
+    "When the timer dings, everyone opens their eyes.",
+    "Go around fast: each person shares just ONE of their three.",
+    "End together: the whole room says 'thank you' to the day, out loud, once."
+   ],
+   "variations": {
+    "easier": "Thirty seconds and one good thing.",
+    "harder": "The shared one cannot be something anyone else already said."
+   },
+   "safety": "Small gratitudes count double — a warm drink, a good song, dry socks."
+  },
+  {
+   "id": "finger-count-breath",
+   "name": "Finger Count Breathing",
+   "tagline": "Touch thumb to each fingertip — one slow breath per touch.",
+   "categories": [
+    "quiet-focus"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 60,
+   "time_min": 5,
+   "time_max": 8,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Hold one hand up, fingers spread. Breathe normally to start.",
+   "steps": [
+    "Touch your thumb to your pointer finger. Breathe in slowly through your nose.",
+    "Move to the middle finger — breathe out slowly through your mouth.",
+    "Keep going: ring finger in, pinky out. That is one round.",
+    "Do three full rounds, slower each time. Notice your shoulders drop."
+   ],
+   "variations": {
+    "easier": "Just pointer and middle finger — in, out, done.",
+    "harder": "Close your eyes and count ten full rounds without losing your place."
+   },
+   "safety": "Slow and easy — never hold your breath until it feels uncomfortable."
+  },
+  {
+   "id": "silent-sketch-minute",
+   "name": "Silent Sketch Minute",
+   "tagline": "Three silent minutes: draw today's favorite moment.",
+   "categories": [
+    "quiet-focus",
+    "crafts"
+   ],
+   "age_min": 5,
+   "age_max": 14,
+   "group_min": 2,
+   "group_max": 60,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper (one sheet per kid)"
+    },
+    {
+     "item": "crayons or markers"
+    }
+   ],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Everyone gets paper and crayons. Teacher sets a timer for three minutes.",
+   "steps": [
+    "Think of your favorite moment from today — the funniest, kindest, or proudest.",
+    "Three silent minutes: draw it. Stick figures welcome, masterpieces optional.",
+    "When the timer dings, pencils down — even mid-line.",
+    "Pair up and show your sketch: 30 seconds each to explain it."
+   ],
+   "variations": {
+    "easier": "Draw with your non-dominant hand — everyone's art matches.",
+    "harder": "No lifting the crayon: one continuous line for the whole sketch."
+   },
+   "safety": "This is sketching, not art class — no judging anyone's drawing."
+  },
+  {
+   "id": "yarn-appreciation-web",
+   "name": "Appreciation Web",
+   "tagline": "Toss the yarn, name an appreciation — watch the web grow.",
+   "categories": [
+    "team-community"
+   ],
+   "age_min": 6,
+   "age_max": 14,
+   "group_min": 8,
+   "group_max": 30,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "a ball of yarn or string"
+    }
+   ],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Stand in a circle. One person holds the yarn ball.",
+   "steps": [
+    "The holder names something they appreciate about the person across from them, holds the yarn end, and tosses the ball to them.",
+    "The catcher holds their bit of yarn, names an appreciation for someone else, and tosses.",
+    "Keep going until everyone holds a strand — a web stretches across the circle.",
+    "Gently lift the web together, then carefully pass the ball back to wind it up."
+   ],
+   "variations": {
+    "easier": "Appreciations can be about the whole group, not one person.",
+    "harder": "Each appreciation must name something specific the person DID this week."
+   },
+   "safety": "Toss underhand and gentle — aim for hands, not faces."
+  },
+  {
+   "id": "human-machine",
+   "name": "Human Machine",
+   "tagline": "Every person is one moving part — together you are a machine.",
+   "categories": [
+    "team-community",
+    "icebreakers"
+   ],
+   "age_min": 6,
+   "age_max": 14,
+   "group_min": 6,
+   "group_max": 30,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Stand in a circle with room to move arms.",
+   "steps": [
+    "One volunteer starts: pick a repeating motion and sound — a piston arm going 'pssh.'",
+    "The next person connects to them with their own motion and sound — a gear turning, 'click-click.'",
+    "Keep adding parts until everyone is connected into one wild machine.",
+    "Run the machine for 30 seconds. Then the teacher calls 'slow motion' — the machine winds down."
+   ],
+   "variations": {
+    "easier": "Just three parts: start a tiny machine with three volunteers.",
+    "harder": "The machine has to 'make' something — act out what it produces."
+   },
+   "safety": "Parts connect with air space between — no climbing on each other."
+  },
+  {
+   "id": "helping-hands-pledge",
+   "name": "Helping Hands Pledge",
+   "tagline": "Name one way you will help the class this week — then do it.",
+   "categories": [
+    "team-community"
+   ],
+   "age_min": 5,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 60,
+   "time_min": 5,
+   "time_max": 8,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Sit in a circle. Teacher starts with their own pledge.",
+   "steps": [
+    "Each person names one specific, doable way they will help the class this week.",
+    "Keep it small and real: 'I will stack the chairs,' 'I will help Sam with spelling.'",
+    "Go around fast — one sentence each, no discussion.",
+    "Teacher writes the pledges on the board. Revisit at week's end: who kept theirs?"
+   ],
+   "variations": {
+    "easier": "Pledge as table groups instead of individuals.",
+    "harder": "Pledges must help a specific person, named out loud."
+   },
+   "safety": "Pledges are promises to the group — keep them kind and keepable."
+  },
+  {
+   "id": "shout-out-sixty",
+   "name": "Shout-Out Sixty",
+   "tagline": "Sixty seconds of rapid-fire shout-outs — teacher scribes them all.",
+   "categories": [
+    "team-community"
+   ],
+   "age_min": 5,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 60,
+   "time_min": 5,
+   "time_max": 8,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper"
+    },
+    {
+     "item": "a marker"
+    }
+   ],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Teacher at the board with a marker. Timer set for 60 seconds.",
+   "steps": [
+    "Timer starts: call out shout-outs as fast as you can — 'Shout-out to Priya for sharing her markers!'",
+    "Teacher scribes every one on the board, rapid-fire.",
+    "When the timer dings, read the whole list back together.",
+    "Leave the list up all day — the wall of shout-outs."
+   ],
+   "variations": {
+    "easier": "Shout-outs can be for the whole class, not individuals.",
+    "harder": "Every shout-out must name something specific from TODAY."
+   },
+   "safety": "Shout-outs lift people up — kind words only."
+  },
+  {
+   "id": "circle-of-strength",
+   "name": "Circle of Strength",
+   "tagline": "Name one strength YOU bring to this team.",
+   "categories": [
+    "team-community"
+   ],
+   "age_min": 8,
+   "age_max": 14,
+   "group_min": 6,
+   "group_max": 30,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Sit in a circle. Teacher frames it: strengths are not bragging — they are inventory.",
+   "steps": [
+    "Each person names one strength they bring to the group: 'I am good at staying calm,' 'I notice details.'",
+    "The group echoes it back: 'Maya stays calm!'",
+    "Go around the full circle — everyone gets echoed.",
+    "Close: teacher names the team's combined superpower from what they heard."
+   ],
+   "variations": {
+    "easier": "Strengths can be simple: 'I am funny,' 'I am on time.'",
+    "harder": "Name a strength AND one way you will use it this week."
+   },
+   "safety": "Echo exactly what they said — no upgrades, no jokes."
+  },
+  {
+   "id": "word-of-the-day-vote",
+   "name": "Word of the Day Vote",
+   "tagline": "Nominate it, vote it, live it — one word for the whole day.",
+   "categories": [
+    "team-community"
+   ],
+   "age_min": 5,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 60,
+   "time_min": 5,
+   "time_max": 8,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "No materials — just voices and a show of hands.",
+   "steps": [
+    "Teacher asks: 'What one word should guide us today?' Take three nominations.",
+    "Each nominator defends their word in one sentence.",
+    "Vote by show of hands. The winner is today's word.",
+    "Write it on the board. Catch each other living it — call it out when you see it."
+   ],
+   "variations": {
+    "easier": "Teacher picks three words; the group just votes.",
+    "harder": "The word must be one nobody has used before this month."
+   },
+   "safety": "All nominated words must be kind — the teacher can veto."
+  },
+  {
+   "id": "window-weather-sketch",
+   "name": "Window Weather Sketch",
+   "tagline": "Five minutes, one window, the whole sky.",
+   "categories": [
+    "rainy-day",
+    "quiet-focus"
+   ],
+   "age_min": 5,
+   "age_max": 14,
+   "group_min": 2,
+   "group_max": 40,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper (one sheet per kid)"
+    },
+    {
+     "item": "pencils"
+    }
+   ],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Everyone gets paper and a pencil near a window view of the sky.",
+   "steps": [
+    "Look out for 30 seconds without drawing — really see the sky.",
+    "Sketch what you see: clouds, rain lines, light, movement. Fast and loose.",
+    "Add three labels: what you see, what you hear, what the air feels like.",
+    "Pair up and compare skies — same window, different drawings."
+   ],
+   "variations": {
+    "easier": "Just the drawing — skip the labels.",
+    "harder": "Sketch the same window again tomorrow and spot three differences."
+   },
+   "safety": "Stay inside — this is a watch-the-weather activity, not a go-into-it one."
+  },
+  {
+   "id": "indoor-picnic-memory",
+   "name": "Indoor Picnic Memory",
+   "tagline": "We are having a picnic — and I am bringing... can you remember it all?",
+   "categories": [
+    "rainy-day",
+    "icebreakers"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 6,
+   "group_max": 30,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Sit in a circle on the floor — picnic style.",
+   "steps": [
+    "First player: 'We are having a picnic and I am bringing apples.'",
+    "Next player repeats the list and adds one: '...apples and cheese.'",
+    "Keep building the picnic list around the circle.",
+    "If you forget an item, the group chants it back to you — nobody is out, the picnic just grows."
+   ],
+   "variations": {
+    "easier": "Keep the list short: restart after eight items.",
+    "harder": "Alphabetical picnic: each item must start with the next letter."
+   },
+   "safety": "Imaginary food only — no real snacks needed."
+  },
+  {
+   "id": "paper-boat-race",
+   "name": "Paper Boat Race",
+   "tagline": "Fold it fast, float it fast — whose boat crosses first?",
+   "categories": [
+    "rainy-day",
+    "stem"
+   ],
+   "age_min": 6,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper (one sheet per kid)"
+    },
+    {
+     "item": "a shallow bin or tray of water"
+    }
+   ],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Everyone gets one sheet of paper. The water bin sits in the middle.",
+   "steps": [
+    "Fold a simple paper boat — teacher demos the five folds slowly, once.",
+    "Set a 3-minute timer: finish your boat before it dings.",
+    "Line the boats up at one end of the bin. On 'go,' blow them across — no touching.",
+    "First boat to touch the far side wins. Race again with the losers' bracket."
+   ],
+   "variations": {
+    "easier": "Teacher pre-folds the tricky steps; kids finish the easy folds.",
+    "harder": "One redesign round: change one fold and race again."
+   },
+   "safety": "Water stays in the bin — towels nearby for splashes."
+  },
+  {
+   "id": "shadow-guess",
+   "name": "Shadow Guess",
+   "tagline": "Hands on the wall, shadows on the wall — guess the shape.",
+   "categories": [
+    "rainy-day"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "One lamp or bright light aimed at a blank wall. Lights low.",
+   "steps": [
+    "One volunteer stands between the light and the wall, back to the group.",
+    "They shape their hands into an animal or object — the shadow lands big on the wall.",
+    "The group calls out guesses. First right guess becomes the next shadow-maker.",
+    "Lightning round: 30 seconds per shadow, as many guesses as you can."
+   ],
+   "variations": {
+    "easier": "The shadow-maker announces the category: animal, food, or thing.",
+    "harder": "Two-person shadows: build the shape together."
+   },
+   "safety": "Hands only — no whole-body shadows that block the light for everyone."
+  },
+  {
+   "id": "puddle-poetry",
+   "name": "Puddle Poetry",
+   "tagline": "Two lines about the rain — that is a whole poem.",
+   "categories": [
+    "rainy-day",
+    "quiet-focus"
+   ],
+   "age_min": 8,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 40,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper (one scrap per kid)"
+    },
+    {
+     "item": "pencils"
+    }
+   ],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Everyone gets a paper scrap and pencil. Listen to the rain for 30 seconds first.",
+   "steps": [
+    "Listen to the rain — or imagine it — for 30 quiet seconds.",
+    "Write two lines about it. They do not have to rhyme.",
+    "Volunteers read theirs aloud. Snap instead of clapping.",
+    "Collect the poems on the board — the class rain anthology."
+   ],
+   "variations": {
+    "easier": "One line is a complete poem.",
+    "harder": "Both lines must include a sound word: pitter, splash, drum."
+   },
+   "safety": "Poems are gifts — listen like it matters."
+  },
+  {
+   "id": "chalk-number-dash",
+   "name": "Chalk Number Dash",
+   "tagline": "Teacher calls the math — dash to the chalk answer.",
+   "categories": [
+    "outdoor",
+    "pe-movement"
+   ],
+   "age_min": 5,
+   "age_max": 10,
+   "group_min": 6,
+   "group_max": 30,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "chalk"
+    }
+   ],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Write big numbers 1-20 scattered on the pavement with chalk.",
+   "steps": [
+    "Teacher calls a math question: 'What is 7 plus 5?'",
+    "Kids dash to the chalk number that answers it and stand on it.",
+    "Check: everyone on 12 does a victory jump.",
+    "New caller each round — a kid picks the next question."
+   ],
+   "variations": {
+    "easier": "Teacher points to numbers; kids just dash to the named one.",
+    "harder": "Two-step problems: '8 plus 4 minus 2.'"
+   },
+   "safety": "Watch for other dashers — slow down near the numbers."
+  },
+  {
+   "id": "bird-call-count",
+   "name": "Bird Call Count",
+   "tagline": "Three silent minutes — how many bird calls can you count?",
+   "categories": [
+    "outdoor",
+    "quiet-focus"
+   ],
+   "age_min": 5,
+   "age_max": 14,
+   "group_min": 2,
+   "group_max": 40,
+   "time_min": 5,
+   "time_max": 8,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Find a sitting spot outside. Agree on silence before you start.",
+   "steps": [
+    "Settle in. For three minutes, just listen.",
+    "Count every bird call you hear — on your fingers, silently.",
+    "When time is up, compare counts. Why are they different?",
+    "Try again: this time, notice which direction the calls come from."
+   ],
+   "variations": {
+    "easier": "Just listen for one minute — no counting.",
+    "harder": "Tally different TYPES of calls separately: chirps, caws, songs."
+   },
+   "safety": "Stay in the agreed boundaries — listening ears, watching feet."
+  },
+  {
+   "id": "stick-shape-sprint",
+   "name": "Stick Shape Sprint",
+   "tagline": "Five minutes, found sticks, three shapes — go.",
+   "categories": [
+    "outdoor",
+    "stem"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Set boundaries for stick collecting. No breaking branches — fallen sticks only.",
+   "steps": [
+    "Two minutes: collect fallen sticks — as many as you can carry.",
+    "Teacher calls a shape: 'Triangle!' Build it with your sticks on the ground.",
+    "New shape every minute: square, star, the first letter of your name.",
+    "Gallery walk: tour everyone's shapes before the timer dings."
+   ],
+   "variations": {
+    "easier": "Build any shape you want — free build for five minutes.",
+    "harder": "Shapes must use exactly ten sticks."
+   },
+   "safety": "Fallen sticks only — and sticks stay low, never waved around."
+  },
+  {
+   "id": "cloud-drift-race",
+   "name": "Cloud Drift Race",
+   "tagline": "Pick a cloud, predict its drift — three minutes to be right.",
+   "categories": [
+    "outdoor"
+   ],
+   "age_min": 5,
+   "age_max": 14,
+   "group_min": 2,
+   "group_max": 40,
+   "time_min": 5,
+   "time_max": 8,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Lie back or sit where everyone can see the same patch of sky.",
+   "steps": [
+    "Everyone picks one cloud and points at it.",
+    "Predict: which way will it drift in three minutes? Point where you think it will go.",
+    "Watch in silence for three minutes.",
+    "Closest prediction wins — winner picks the next cloud."
+   ],
+   "variations": {
+    "easier": "Just watch the clouds drift — no predictions.",
+    "harder": "Predict AND name the cloud's shape at the start and end."
+   },
+   "safety": "Sun check: do not stare near the sun — pick clouds away from it."
+  },
+  {
+   "id": "leaf-catch",
+   "name": "Leaf Catch",
+   "tagline": "Catch a falling leaf before it lands — harder than it looks.",
+   "categories": [
+    "outdoor",
+    "pe-movement"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 40,
+   "time_min": 5,
+   "time_max": 8,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Stand under or near a tree on a breezy day. Hands ready.",
+   "steps": [
+    "Watch the tree. When a leaf lets go, catch it before it touches the ground.",
+    "One point per caught leaf. Dropped leaves do not count.",
+    "Two minutes of catching — count your points.",
+    "Winner demonstrates their catching stance for the group."
+   ],
+   "variations": {
+    "easier": "Catch leaves a partner tosses gently in the air.",
+    "harder": "Catch with one hand only — or with your non-dominant hand."
+   },
+   "safety": "Stay clear of the trunk and low branches while watching the sky."
+  },
+  {
+   "id": "origami-corner-bookmark",
+   "name": "Origami Corner Bookmark",
+   "tagline": "Three folds and your book has a new corner pocket.",
+   "categories": [
+    "crafts"
+   ],
+   "age_min": 8,
+   "age_max": 14,
+   "group_min": 2,
+   "group_max": 40,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper (one square per kid)"
+    },
+    {
+     "item": "scissors"
+    }
+   ],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Everyone gets a paper square — cut from a sheet if needed.",
+   "steps": [
+    "Fold the square corner-to-corner into a triangle.",
+    "Fold the two bottom corners up to the top point — crease hard.",
+    "Tuck those flaps into the pocket that formed. That is the bookmark.",
+    "Decorate the front with markers — it slides onto any page corner."
+   ],
+   "variations": {
+    "easier": "Teacher pre-folds step one; kids do the rest.",
+    "harder": "Fold a second one and decorate it as a gift."
+   },
+   "safety": "Scissors cut paper only — carry them closed and pointed down."
+  },
+  {
+   "id": "accordion-paper-fan",
+   "name": "Accordion Paper Fan",
+   "tagline": "Fold, pinch, wave — a working fan in five minutes.",
+   "categories": [
+    "crafts"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 40,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper (one sheet per kid)"
+    },
+    {
+     "item": "markers or crayons"
+    }
+   ],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Everyone gets a sheet of paper. Decorate FIRST — it is easier flat.",
+   "steps": [
+    "Decorate your paper however you like — both sides.",
+    "Fold it accordion-style: forward, back, forward, back — one-inch folds.",
+    "Pinch one end tight and tape it — that is the handle.",
+    "Fan the other end open and wave. Test whose fan moves the most air."
+   ],
+   "variations": {
+    "easier": "Wider folds — fewer folds to make.",
+    "harder": "Two papers taped together for a giant fan."
+   },
+   "safety": "Crease with your nail, not your teeth."
+  },
+  {
+   "id": "paper-cup-telephone",
+   "name": "Paper Cup Telephones",
+   "tagline": "The classic: two cups, one string, real voices.",
+   "categories": [
+    "crafts",
+    "stem"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 40,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper cups (two per pair)"
+    },
+    {
+     "item": "yarn or string"
+    }
+   ],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Pair up. Each pair gets two cups and a length of yarn.",
+   "steps": [
+    "Poke a small hole in the bottom of each cup — teacher helps the poke.",
+    "Thread the yarn through both holes and knot each end inside its cup.",
+    "Partners walk apart until the string is tight. One talks, one listens.",
+    "Whisper a secret message. Did it come through? Trade roles and try again."
+   ],
+   "variations": {
+    "easier": "Teacher pre-pokes all the holes.",
+    "harder": "Try it with a slack string — what changes? That is the science."
+   },
+   "safety": "Keep the string taut but gentle — no yanking cups toward faces."
+  },
+  {
+   "id": "mini-me-flag",
+   "name": "Mini-Me Flag",
+   "tagline": "Design a flag that flies for exactly one person: you.",
+   "categories": [
+    "crafts"
+   ],
+   "age_min": 5,
+   "age_max": 14,
+   "group_min": 2,
+   "group_max": 60,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper (one sheet per kid)"
+    },
+    {
+     "item": "markers or crayons"
+    }
+   ],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Everyone gets paper and markers. No wrong flags.",
+   "steps": [
+    "Draw a flag shape — rectangle, triangle, any shape.",
+    "Fill it with three things that represent you: a color, a symbol, an animal.",
+    "Add one word on your flag — your motto, your name, your power.",
+    "Flag parade: hold them high and march once around the room."
+   ],
+   "variations": {
+    "easier": "Just colors and one symbol — keep it simple.",
+    "harder": "Design a flag for your whole table group — everyone must agree."
+   },
+   "safety": "Markers stay on paper — caps back on when you pause."
+  },
+  {
+   "id": "gratitude-chain-links",
+   "name": "Gratitude Chain",
+   "tagline": "One link per thank-you — watch the class chain grow.",
+   "categories": [
+    "crafts",
+    "team-community"
+   ],
+   "age_min": 5,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 60,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper strips"
+    },
+    {
+     "item": "markers or crayons"
+    },
+    {
+     "item": "tape or glue"
+    }
+   ],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Cut paper into strips ahead of time — or have kids tear them.",
+   "steps": [
+    "Write one thank-you on a strip: a person, a thing, a moment.",
+    "Loop your strip into a ring and tape it shut.",
+    "Link your ring through a classmate's ring — the chain grows.",
+    "Hang the finished chain where everyone can see it all week."
+   ],
+   "variations": {
+    "easier": "Draw the thank-you instead of writing it.",
+    "harder": "Every link must thank a different person — no repeats until everyone is named."
+   },
+   "safety": "Tape tears, do not bite it — and watch fingers with the dispenser."
+  },
+  {
+   "id": "shadow-size-test",
+   "name": "Shadow Size Test",
+   "tagline": "Move your hand closer, watch the shadow grow — why?",
+   "categories": [
+    "stem"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 40,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "One lamp or bright light aimed at a blank wall. Lights low.",
+   "steps": [
+    "Hold your hand close to the wall — look at the small, sharp shadow.",
+    "Slowly move your hand toward the light. Watch the shadow grow and blur.",
+    "Move it back. Small and sharp again.",
+    "Ask the room: why does closer to the light mean bigger shadow? Take three theories."
+   ],
+   "variations": {
+    "easier": "Just play with the sizes — no theories needed.",
+    "harder": "Predict the size before you move: 'halfway to the light means...?'"
+   },
+   "safety": "Do not stare into the lamp — watch the wall."
+  },
+  {
+   "id": "gravity-drop-race",
+   "name": "Gravity Drop Race",
+   "tagline": "Flat sheet versus crumpled ball — place your bets.",
+   "categories": [
+    "stem"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 40,
+   "time_min": 5,
+   "time_max": 8,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper (two sheets per kid)"
+    }
+   ],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Everyone gets two sheets of paper. Stand on chairs only if the teacher says so — floor is fine.",
+   "steps": [
+    "Crumple one sheet into a tight ball. Keep the other flat.",
+    "Everyone predicts: which hits the floor first?",
+    "On 'drop,' release both from the same height at the same time.",
+    "The ball wins — but WHY? Take theories, then test: flat versus loosely crumpled."
+   ],
+   "variations": {
+    "easier": "Just race them — the surprise is the lesson.",
+    "harder": "Redesign the flat sheet (fold it?) to fall faster — race again."
+   },
+   "safety": "Drop from shoulder height — no climbing for extra altitude."
+  },
+  {
+   "id": "balloon-static-pickup",
+   "name": "Balloon Static Pickup",
+   "tagline": "Rub the balloon, lift the paper — invisible force, visible result.",
+   "categories": [
+    "stem"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 40,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "a balloon"
+    },
+    {
+     "item": "paper scraps (torn tiny)"
+    }
+   ],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Tear paper into tiny bits on each table. One balloon per group.",
+   "steps": [
+    "Rub the balloon on your hair or sweater — ten fast rubs.",
+    "Hold it just above the paper bits. Watch them jump up and stick.",
+    "Count how many bits you can lift at once.",
+    "Test: does it still work after five minutes? What about on a sleeve versus hair?"
+   ],
+   "variations": {
+    "easier": "Just the rub-and-lift — the wow is enough.",
+    "harder": "Race: whose balloon holds its bits the longest?"
+   },
+   "safety": "Balloons stay away from faces — and pick up every scrap after."
+  },
+  {
+   "id": "breath-power-race",
+   "name": "Breath Power Race",
+   "tagline": "No hands — blow your paper scrap across the finish line.",
+   "categories": [
+    "stem",
+    "pe-movement"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 5,
+   "time_max": 8,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper scraps"
+    },
+    {
+     "item": "tape (for the start and finish lines)"
+    }
+   ],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Tape a start line and a finish line on each table. One paper scrap per kid.",
+   "steps": [
+    "Place your scrap on the start line. Hands behind your back.",
+    "On 'go,' blow your scrap toward the finish — steady breaths win.",
+    "First scrap across wins the heat. Losers' bracket races next.",
+    "Experiment: big fast puffs versus slow steady blowing — which wins?"
+   ],
+   "variations": {
+    "easier": "Shorter track — move the finish line closer.",
+    "harder": "Blow around an obstacle: a cup sitting mid-track."
+   },
+   "safety": "Blow, do not spit — and give each other breathing room."
+  },
+  {
+   "id": "sound-vibration-hum",
+   "name": "Feel the Hum",
+   "tagline": "Hand on throat, hum high, hum low — feel the buzz change.",
+   "categories": [
+    "stem",
+    "music-rhythm"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 60,
+   "time_min": 5,
+   "time_max": 8,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Everyone puts two fingers gently on the front of their throat.",
+   "steps": [
+    "Hum a low note. Feel the slow, big buzz under your fingers.",
+    "Slide up to a high note. Feel the buzz get fast and small.",
+    "Hum your name. Feel the buzz jump with each syllable.",
+    "Ask the room: what do you think is buzzing in there? Take three theories."
+   ],
+   "variations": {
+    "easier": "Just hum high and low — feel the difference.",
+    "harder": "Hum with your mouth closed versus open — what changes?"
+   },
+   "safety": "Gentle humming only — no shouting into your own throat."
+  },
+  {
+   "id": "season-sort-sprint",
+   "name": "Season Sort Sprint",
+   "tagline": "Pinecone? Swimsuit? Snowflake? Sort it into the right season — fast.",
+   "categories": [
+    "seasons"
+   ],
+   "age_min": 5,
+   "age_max": 10,
+   "group_min": 6,
+   "group_max": 30,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Designate four corners: Spring, Summer, Fall, Winter.",
+   "steps": [
+    "Teacher calls an item: 'pumpkin!' 'sunscreen!' 'rain boots!'",
+    "Everyone dashes to the season corner it belongs to.",
+    "Tricky ones get debated: 'birthday!' — birthdays are every season!",
+    "A kid becomes the caller. Try to stump the room."
+   ],
+   "variations": {
+    "easier": "Caller gives a hint with each item.",
+    "harder": "Items must be sorted by season AND explained in one sentence."
+   },
+   "safety": "Corners need space — no crashing into the walls."
+  },
+  {
+   "id": "weather-compare",
+   "name": "Weather Compare",
+   "tagline": "How is today different from yesterday? Three observations.",
+   "categories": [
+    "seasons",
+    "quiet-focus"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 40,
+   "time_min": 5,
+   "time_max": 8,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "No materials — just memory and the window.",
+   "steps": [
+    "Look out the window for 30 seconds. Notice everything.",
+    "Name three ways today's weather differs from yesterday's.",
+    "Vote: is today better, worse, or just different?",
+    "One prediction: what will tomorrow's weather do?"
+   ],
+   "variations": {
+    "easier": "One difference is enough.",
+    "harder": "Track it for a week — spot the pattern."
+   },
+   "safety": "Observations only — no weather-chasing."
+  },
+  {
+   "id": "season-stretch",
+   "name": "Season Stretch",
+   "tagline": "Grow like spring, sway like summer, drop like fall, sleep like winter.",
+   "categories": [
+    "seasons",
+    "pe-movement"
+   ],
+   "age_min": 4,
+   "age_max": 10,
+   "group_min": 4,
+   "group_max": 40,
+   "time_min": 5,
+   "time_max": 8,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Everyone stands with arm room.",
+   "steps": [
+    "Spring: crouch small, then grow tall with arms reaching up.",
+    "Summer: sway side to side like a tree in a warm breeze.",
+    "Fall: let your leaves drop — arms flutter down to the ground.",
+    "Winter: curl small and still. Hold it. Then spring comes again — grow!"
+   ],
+   "variations": {
+    "easier": "Just the four poses — hold each one.",
+    "harder": "Add a sound to each season."
+   },
+   "safety": "Stretch gently — growing trees do not force it."
+  },
+  {
+   "id": "celebration-circle",
+   "name": "Celebration Circle",
+   "tagline": "One sentence: a celebration your family loves.",
+   "categories": [
+    "holidays",
+    "team-community"
+   ],
+   "age_min": 5,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 40,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Sit in a circle. Every family's celebrations count.",
+   "steps": [
+    "Each person shares one sentence: a celebration or tradition their family enjoys.",
+    "One sentence only — the short version is the whole point.",
+    "Listen for celebrations you have never heard of.",
+    "End with the teacher naming one thing all the celebrations share."
+   ],
+   "variations": {
+    "easier": "Just name the celebration — no sentence needed.",
+    "harder": "Share the food, the sound, or the smell of it — one vivid detail."
+   },
+   "safety": "Every tradition is welcome — curiosity only, no comparisons."
+  },
+  {
+   "id": "gift-wrap-speed",
+   "name": "Gift Wrap Speed Round",
+   "tagline": "Three minutes, one paper plate, judged on creativity — go.",
+   "categories": [
+    "holidays",
+    "crafts"
+   ],
+   "age_min": 8,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper (a few sheets per pair)"
+    },
+    {
+     "item": "tape"
+    },
+    {
+     "item": "paper plates (one per pair, the 'gift')"
+    }
+   ],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Pairs get paper, tape, and a paper plate to wrap as their 'gift.'",
+   "steps": [
+    "Three minutes on the timer: wrap your paper plate however you like.",
+    "Creativity counts more than neatness — weird folds welcome.",
+    "Parade the gifts. The room votes: neatest, funniest, most surprising.",
+    "Unwrap carefully — save the paper for the next round."
+   ],
+   "variations": {
+    "easier": "Five minutes instead of three.",
+    "harder": "Wrap it so the plate cannot be seen at all — no gaps."
+   },
+   "safety": "Tape tears, do not bite — scissors stay with the teacher if used."
+  },
+  {
+   "id": "thank-you-sprint",
+   "name": "Thank-You Sprint",
+   "tagline": "Five minutes, three thank-you notes — who gets yours?",
+   "categories": [
+    "holidays",
+    "team-community"
+   ],
+   "age_min": 6,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 60,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper (three scraps per kid)"
+    },
+    {
+     "item": "pencils"
+    }
+   ],
+   "no_prep": true,
+   "copy_free": true,
+   "setup": "Everyone gets three paper scraps and a pencil.",
+   "steps": [
+    "Think of three people you are thankful for — school counts.",
+    "Five minutes: write one thank-you note to each. Two sentences is plenty.",
+    "Fold them and write the name on the outside.",
+    "Deliver them today — or save them for the week's end."
+   ],
+   "variations": {
+    "easier": "One note instead of three.",
+    "harder": "The notes must name something specific the person did."
+   },
+   "safety": "Kind and true — if you cannot say it kindly, pick someone else."
   }
  ],
- "count": 355,
+ "count": 415,
  "updated": "2026-10-12"
 }
