@@ -22,7 +22,7 @@ Running record of build waves. Newest first.
 - `node --check`: test-wave20.js, planner.js, halloween.js — clean
 - Headless Chromium (puppeteer-core, wave-18 interception harness, `~/workspace/w20halloween/verify.js` — no virtual-time-budget per the 2026-10-12 AGENTS.md lesson): halloween.html renders 6 sections with the 40-pick wave-20 section → spook filter narrows correctly → collections.html#halloween-week renders 12 picks → roll-a-monster-dice-draw page renders with FILED stamp, Kit nav, calm toggle, why-it-works + inclusion sections → planner.html October strip shows "🗓️ Plan from the Halloween Week collection" → clicking it seeds the collection dropdown to halloween-week and generates ("Seeded from 🎃 Halloween week") → index.html October promo shows the HALLOWEEN 2026 stamp (Archivo Black confirmed) → 390px mobile page with no horizontal scroll → **zero console errors/pageerrors**. Screenshots: `~/workspace/w20halloween/shots/` (halloween-hub, collection-halloween-week, activity-roll-a-monster, planner-seeded, index-halloween-stamp, activity-mobile).
 
-**Wave 20 push resolution:** (filled after push)
+**Wave 20 push resolution:** local `7bc8ffe` pushed via `gh-push.py` (125 files, 125 blob uploads, exit 0, ~3.4 min) → remote commit `9a4091f82391593f4295f77392a45a615d2a677e`. Verified via GitHub API: commit exists, `main` HEAD points at it, recursive remote tree (568 files, not truncated) contains `activity/roll-a-monster-dice-draw.html`, `activity/ghost-balloon-stomp.html`, `scripts/test-wave20.js`, `scripts/add_wave20.py`, `halloween.html`, `index.html`, `assets/planner.js`, `WAVELOG.md`, and `api/v1/collections.json`.
 
 ## Wave 19 — 2026-10-11 — "The Micro-Activity Pack" ⚡ content wave (+60 → 415)
 
