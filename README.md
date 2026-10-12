@@ -2,12 +2,12 @@
 
 The all-in-one activity archive for teachers & after-school program teachers.
 
-**455 activities** across 11 color-coded categories — seasons, holidays, crafts, STEM, PE & movement, team & community, icebreakers, outdoor, rainy-day, quiet & focus, and music & rhythm. Every activity is a real, classic, public-domain concept described in our own words: name, age range, group size, time, materials (with no-prep flags), setup, step-by-step instructions, easier/harder variations, and common-sense safety notes. Research-backed extras: 🖨️ copy-free flags (128 verified zero-printing), ♾️ no-elimination flags (27 — nobody sits out), 🔬 "why it works" research notes, 🤝 inclusion adaptations, and source attributions.
+**521 activities** across 11 color-coded categories — seasons, holidays, crafts, STEM, PE & movement, team & community, icebreakers, outdoor, rainy-day, quiet & focus, and music & rhythm. Every activity is a real, classic, public-domain concept described in our own words: name, age range, group size, time, materials (with no-prep flags), setup, step-by-step instructions, easier/harder variations, and common-sense safety notes. Research-backed extras: 🖨️ copy-free flags (162 verified zero-printing), ♾️ no-elimination flags (41 — nobody sits out), 🔬 "why it works" research notes, 🤝 inclusion adaptations, and source attributions.
 
 ## What it does
 
 - **Filter browser** (`index.html`) — filter by age, time available, group size, category, season/occasion tags (🎃 Fall, ❄️ Winter, 🌷 Spring, ☀️ Summer, 👻 Halloween, 🦃 Thanksgiving, 💀 Día de los Muertos, 🐣 Easter, 🌎 Earth Day, 🇺🇸 July 4th, 🕸️ Spooky), materials on hand ("only no-prep", "only indoor", "copy-free only", "no-elimination only"), plus full-text search across names, materials, and steps (press `/` to focus). Deep links: `?tag=`, `?cats=`, `?view=top-rated`. Card grid links to a detail page per activity. March–May shows a 🌷 Spring promo banner; June–August shows a ☀️ Summer promo banner; October shows a 🎃 Halloween promo banner; November shows a 🦃 Thanksgiving promo banner.
-- **The Teachers Desk** (`desk.html`) — the archive as a physical teachers desk: 11 wooden category drawers with brass label holders and cup pulls; every drawer opens onto six index cards on top of the pile (curator picks first, then no-prep) plus a hand-written pencil note with honest per-drawer counts. Each drawer deep-links to its filtered browse view (`index.html?cats=<id>`); the kneehole blotter links the week planner. Keyboard-friendly, reduced-motion and no-JS safe.
+- **The Teacher's Desk** (`index.html#desk`, plus the dedicated `desk.html`) — the archive landing is a desk you can open: 11 wooden category drawers with brass label holders and cup pulls; every drawer opens onto six index cards on top of the pile (curator picks first, then no-prep) plus a hand-written pencil note with honest per-drawer counts. Each drawer deep-links to its filtered browse view (`index.html?cats=<id>#browse`); the kneehole blotter links the week planner. Keyboard-friendly, reduced-motion and no-JS safe.
 - **Plan-my-week planner** (`planner.html`) — pick days, weeks (1–4), slots per day, and constraints → generates no-repeat multi-week plans (never repeats across weeks) with a "why it fits" note per slot, a ⚡ brain-break idea per day, 🌦️ weather backups for outdoor slots, a 🛒 aggregated supply list, and a 🆘 substitute kit (no-prep, zero-material backups with plain-language steps). Printable (week cards + supply list + sub kit). Month-driven "This season in the Vault" strip (Mar–May → spring tags, Jun–Aug → summer tags, Oct → Halloween tags, Nov → Thanksgiving tags), with one-tap "🗓️ Plan from the collection" seed links in the holiday months (Oct → Halloween Week, Nov → Grateful Gathering).
 - **Sub Tub** (`sub.html`) — the substitute-teacher rescue kit: grade band + minutes to fill + materials on hand → sequenced print-ready emergency plan plus a "Dear sub" note template. The screenshot-friendly one-pager.
 - **Party Planner** (`party.html`) — class-party planner with Halloween, Thanksgiving, winter, spring, and summer themes: class size + party minutes + stations + budget → timed station-rotation plan from seasonal activities, with a merged setup checklist and a print-ready run sheet.
@@ -35,7 +35,7 @@ No build tools, no dependencies beyond Python 3. Open `index.html` in a browser 
 ## Repo layout
 
 ```
-data/activities.json      ← source of truth (455 activities)
+data/activities.json      ← source of truth (521 activities)
 data/categories.json      ← 11 categories (color, glyph, blurb)
 scripts/build.py          ← validator + static generator
 assets/                   ← style.css, app.js (browser), planner.js, sub.js, party.js, halloween.js, thanksgiving.js

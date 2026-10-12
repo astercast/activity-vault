@@ -15,7 +15,7 @@ function ok(cond, label, extra) {
 
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const actIds = new Set(acts.map(a => a.id));
-ok(acts.length === 497, '497 activities total', String(acts.length));
+ok(acts.length === 521, '521 activities total', String(acts.length));
 ok(actIds.size === acts.length, 'all activity ids unique');
 
 // 1. New tags in the validator vocabulary (single source of truth: build.py)
@@ -133,7 +133,7 @@ const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/index.json'
 const collEp = manifest.endpoints.find(e => e.path === 'data/v1/collections.json');
 ok(collEp && collEp.records === 14, 'manifest collections records=14');
 const actEp = manifest.endpoints.find(e => e.path === 'data/v1/activities.json');
-ok(actEp && actEp.records === 497, 'manifest activities records=497', String(actEp && actEp.records));
+ok(actEp && actEp.records === 521, 'manifest activities records=521', String(actEp && actEp.records));
 // schema tag enum carries the new tags
 const schema = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/schema/activity.schema.json'), 'utf8'));
 const enumSrc = JSON.stringify(schema);

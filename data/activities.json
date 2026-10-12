@@ -22473,5 +22473,1056 @@
    "season:winter"
   ],
   "copy_free": true
+ },
+ {
+  "id": "lightning-debates",
+  "name": "Lightning Debates",
+  "tagline": "Two minutes a side, one judge's rubric — debate club energy with zero prep.",
+  "categories": [
+   "team-community"
+  ],
+  "age_min": 11,
+  "age_max": 14,
+  "group_min": 6,
+  "group_max": 30,
+  "time_min": 25,
+  "time_max": 45,
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "paper and pencils"
+   },
+   {
+    "item": "a timer (a phone works)"
+   }
+  ],
+  "no_prep": false,
+  "setup": "Write 6-8 debatable statements on slips — silly and serious mixed. Pick three judges.",
+  "steps": [
+   "Draw the first statement and assign sides by coin flip — you argue what you draw, not what you believe.",
+   "Each side gets 3 minutes to prep: one claim, two reasons, one example. Write it tight.",
+   "Debate: 2 minutes per side, alternating, no interrupting. The timer is the law.",
+   "Judges score on the rubric: strongest reason, best rebuttal, clearest speaking. No score for loudest.",
+   "New statement, new sides, new debaters. Everyone argues at least once before anyone goes twice."
+  ],
+  "variations": {
+   "easier": "Use 1-minute rounds, or let teams prep together instead of solo.",
+   "harder": "Add a cross-examination round, or require one cited fact per argument."
+  },
+  "safety": "Argue the point, never the person — the judge docks points for personal shots.",
+  "copy_free": true,
+  "no_elimination": true
+ },
+ {
+  "id": "escape-room-build",
+  "name": "Escape Room Build",
+  "tagline": "Design the locks, hide the clues, then watch another team break out.",
+  "categories": [
+   "stem",
+   "team-community"
+  ],
+  "age_min": 11,
+  "age_max": 14,
+  "group_min": 6,
+  "group_max": 30,
+  "time_min": 45,
+  "time_max": 90,
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "paper"
+   },
+   {
+    "item": "markers"
+   },
+   {
+    "item": "tape"
+   },
+   {
+    "item": "envelopes"
+   },
+   {
+    "item": "any classroom props"
+   },
+   {
+    "item": "combination locks (if available)"
+   }
+  ],
+  "no_prep": false,
+  "setup": "Split the group into 2-3 build teams. Each team gets a corner of the room and the prop box.",
+  "steps": [
+   "Each team invents a story: the room is 'locked' and the other team must earn the way out.",
+   "Design 4-5 puzzles in a chain — each solved puzzle gives the clue to the next. Write the clue trail down.",
+   "Build it: hide clues, set 'locks' (taped-shut boxes, guarded envelopes, combination locks if you have them).",
+   "Playtest with your own team first — if you can't solve it, nobody can. Fix the unfair puzzles.",
+   "Swap rooms: each team attempts another team's escape room while the builders watch silently and take notes."
+  ],
+  "variations": {
+   "easier": "Build 3 puzzles instead of 5, or give every team the same starter puzzle.",
+   "harder": "Add a red-herring clue, or require one puzzle that needs two people solving together."
+  },
+  "safety": "No locking anyone in a real room — 'locked' means a taped box or a guarded door, never a real lock."
+ },
+ {
+  "id": "mini-podcast-studio",
+  "name": "Mini Podcast Studio",
+  "tagline": "Plan it, record it, play it back — a three-minute episode with a real audience.",
+  "categories": [
+   "quiet-focus",
+   "team-community"
+  ],
+  "age_min": 12,
+  "age_max": 14,
+  "group_min": 3,
+  "group_max": 24,
+  "time_min": 40,
+  "time_max": 60,
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "a phone or tablet for recording"
+   },
+   {
+    "item": "paper for scripting"
+   }
+  ],
+  "no_prep": false,
+  "setup": "Charge the recording device. Find the quietest corner — closets and corners record best.",
+  "steps": [
+   "Pick a topic worth three minutes: a review, an interview, a debate, a story. One topic per group.",
+   "Script the skeleton, not the sentences: hook, three beats, closer. Nobody reads a script word-for-word.",
+   "Record in one take if you can — mistakes are part of the charm. Re-record only the truly broken bits.",
+   "Play it back for the group. Everyone notes one thing that worked and one thing to fix.",
+   "Final recordings play for the whole room. Vote on best hook, best interview question, funniest moment."
+  ],
+  "variations": {
+   "easier": "Record a 60-second episode instead of three minutes, or interview a partner instead of scripting.",
+   "harder": "Add theme music (hummed counts), or produce a two-episode series with a cliffhanger."
+  },
+  "safety": "First names only on recordings, and get permission before any recording leaves the room."
+ },
+ {
+  "id": "public-art-proposal",
+  "name": "Public Art Proposal",
+  "tagline": "Design the mural, budget the paint, pitch it to the panel — real-world art, start to finish.",
+  "categories": [
+   "crafts",
+   "team-community"
+  ],
+  "age_min": 12,
+  "age_max": 14,
+  "group_min": 3,
+  "group_max": 24,
+  "time_min": 45,
+  "time_max": 75,
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "large paper or poster board"
+   },
+   {
+    "item": "markers"
+   },
+   {
+    "item": "rulers"
+   }
+  ],
+  "no_prep": false,
+  "setup": "Pick a real wall or space in the building (even an imaginary commission works). Set a fake budget: $300.",
+  "steps": [
+   "Walk the space together — light, size, who passes it daily. Real proposals start with the site, not the sketch.",
+   "Sketch the design to scale on the poster board. Every element needs a reason — color, subject, placement.",
+   "Budget it: price the paint, brushes, and hours. The $300 cap is real — cut what doesn't earn its place.",
+   "Pitch to the panel (the rest of the room): 3 minutes, design first, budget second, why-it-matters last.",
+   "The panel votes with fake dollars — most-funded proposal wins. Discuss what the winners did differently."
+  ],
+  "variations": {
+   "easier": "Skip the budget and pitch on design alone, or propose for a paper 'wall' instead of a real space.",
+   "harder": "Require a community-input step (survey 10 people), or add a maintenance plan for year two."
+  },
+  "safety": "This is a proposal exercise — no painting any real wall without actual permission."
+ },
+ {
+  "id": "survival-rank-challenge",
+  "name": "Survival Rank Challenge",
+  "tagline": "Ten items, one desert island — rank them, then see how the experts scored it.",
+  "categories": [
+   "team-community"
+  ],
+  "age_min": 12,
+  "age_max": 14,
+  "group_min": 4,
+  "group_max": 30,
+  "time_min": 20,
+  "time_max": 35,
+  "location": [
+   "indoor"
+  ],
+  "materials": [],
+  "no_prep": true,
+  "setup": "No setup — read the item list aloud or write it on the board. Split into teams of 3-4.",
+  "steps": [
+   "Set the scene: your boat sank, you're on a desert island, rescue comes in 30 days. Ten salvaged items.",
+   "Read the ten items. Each team ranks them 1-10 by survival value — and must agree on every rank.",
+   "Reveal the expert ranking one item at a time. Teams score the gap: 0 points for a match, up to 9 per miss.",
+   "Lowest total gap wins. Then the real discussion: which item did everyone underrate, and why?",
+   "Replay with a new scenario (arctic, desert) using the same ranking discipline."
+  ],
+  "variations": {
+   "easier": "Use 6 items instead of 10, or let teams rank individually then compare.",
+   "harder": "Teams defend their #1 pick in 60 seconds before the reveal, or design their own 10-item list."
+  },
+  "safety": null,
+  "copy_free": true
+ },
+ {
+  "id": "board-game-prototype",
+  "name": "Board Game Prototype",
+  "tagline": "Design it, build it, playtest it — your game, someone else's table.",
+  "categories": [
+   "quiet-focus"
+  ],
+  "age_min": 11,
+  "age_max": 14,
+  "group_min": 2,
+  "group_max": 24,
+  "time_min": 45,
+  "time_max": 90,
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "cardboard or card stock"
+   },
+   {
+    "item": "markers"
+   },
+   {
+    "item": "a dice"
+   },
+   {
+    "item": "game pieces (buttons, beads, dried beans)"
+   }
+  ],
+  "no_prep": false,
+  "setup": "Set out the build supplies. Each pair or trio claims a table.",
+  "steps": [
+   "Pick the core tension first: race, battle, build, or bluff. Every game needs one.",
+   "Write the rules on one page — if it doesn't fit, it's too complicated. Include how the game ENDS.",
+   "Build the prototype ugly and fast: hand-drawn board, borrowed pieces. Pretty comes later.",
+   "Swap tables: play someone else's game cold, using only their written rules. Note every confusion.",
+   "Return with notes. Designers change exactly one rule based on playtest feedback, then play again."
+  ],
+  "variations": {
+   "easier": "Design a card game instead of a board game, or playtest with the designer explaining.",
+   "harder": "Add a second win condition, or require the game to teach something real."
+  },
+  "safety": "Small game pieces are a choking hazard for younger siblings — bag them at cleanup."
+ },
+ {
+  "id": "peer-skill-swap",
+  "name": "Peer Skill Swap",
+  "tagline": "Everyone teaches a five-minute skill — you leave knowing twelve new things.",
+  "categories": [
+   "team-community"
+  ],
+  "age_min": 12,
+  "age_max": 14,
+  "group_min": 6,
+  "group_max": 30,
+  "time_min": 30,
+  "time_max": 60,
+  "location": [
+   "indoor"
+  ],
+  "materials": [],
+  "no_prep": true,
+  "setup": "No setup. Everyone needs one teachable 5-minute skill — give them a minute to think of theirs.",
+  "steps": [
+   "Go around: each person names a skill they can teach in 5 minutes. Juggling, knots, a card trick, a phrase in another language.",
+   "Pair up. Teacher teaches, learner learns — 5 minutes, then switch roles.",
+   "Rotate: find a new partner and teach YOUR skill again. Teaching twice makes it stick.",
+   "After three rotations, everyone demos one skill they LEARNED (not their own) for the group.",
+   "Vote: most surprising skill, best teacher, skill most likely to get used again."
+  ],
+  "variations": {
+   "easier": "Do two rotations instead of three, or let pairs teach the whole group instead of rotating.",
+   "harder": "Chain the skills (each learner must use a learned skill in their next lesson), or film 60-second tutorials."
+  },
+  "safety": "Skills must be classroom-safe — no fire, no sharp tools, nothing that would need a permission slip.",
+  "no_elimination": true
+ },
+ {
+  "id": "improv-scene-showdown",
+  "name": "Improv Scene Showdown",
+  "tagline": "Suggestions in, scenes out — a bracket of improv games with the room as judge.",
+  "categories": [
+   "icebreakers",
+   "team-community"
+  ],
+  "age_min": 11,
+  "age_max": 14,
+  "group_min": 6,
+  "group_max": 30,
+  "time_min": 25,
+  "time_max": 45,
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "slips of paper"
+   },
+   {
+    "item": "a hat or bowl"
+   }
+  ],
+  "no_prep": false,
+  "setup": "Collect suggestions on slips: locations, occupations, weird objects. Split into teams of 3-4.",
+  "steps": [
+   "Teach the three games: freeze (two actors, someone yells freeze and swaps in), yes-and story (build one sentence each), and prop switch (one object, ten uses).",
+   "Round one: each team draws a suggestion and plays one game, 2 minutes. The room is the audience.",
+   "Audience votes by applause after each round — loudest wins the round. Losing teams become the judges' panel.",
+   "Semifinal and final: winners play a mashup — start with one game, the judges call the switch mid-scene.",
+   "Champions get the golden prop (any silly object). Everyone plays every round — judges perform too."
+  ],
+  "variations": {
+   "easier": "Play single rounds with no bracket, or let the teacher call all the switches.",
+   "harder": "Add audience-thrown curveballs mid-scene, or require every scene to end with a moral."
+  },
+  "safety": null,
+  "no_elimination": true
+ },
+ {
+  "id": "event-budget-challenge",
+  "name": "Event Budget Challenge",
+  "tagline": "Two hundred dollars, one party, zero excuses — plan the whole event on paper and defend every dollar.",
+  "categories": [
+   "stem"
+  ],
+  "age_min": 12,
+  "age_max": 14,
+  "group_min": 4,
+  "group_max": 24,
+  "time_min": 35,
+  "time_max": 60,
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "paper"
+   },
+   {
+    "item": "pencils"
+   },
+   {
+    "item": "calculators (optional)"
+   }
+  ],
+  "no_prep": false,
+  "setup": "Set the event: an end-of-term party for 30. The budget is $200 — write it big on the board.",
+  "steps": [
+   "List everything the party needs: food, drinks, decorations, music, games. No idea is too small to price.",
+   "Price it with real numbers — look up actual store prices if you have a device, estimate honestly if not.",
+   "Build the budget sheet. If you're over $200, cut — and every cut needs a reason the party still works.",
+   "The twist: cut 20% more. What's the first thing to go? What's untouchable? Defend both.",
+   "Each team pitches their final budget in 2 minutes. The room votes: best party per dollar wins."
+  ],
+  "variations": {
+   "easier": "Raise the budget to $500, or plan for 10 guests instead of 30.",
+   "harder": "Add a surprise mid-plan (it rains — move it indoors, reprice), or require a donation/sponsor line."
+  },
+  "safety": null,
+  "copy_free": true
+ },
+ {
+  "id": "photo-story-sequence",
+  "name": "Photo Story Sequence",
+  "tagline": "Five photos, one story — no captions allowed until the reveal.",
+  "categories": [
+   "quiet-focus",
+   "outdoor"
+  ],
+  "age_min": 11,
+  "age_max": 14,
+  "group_min": 2,
+  "group_max": 20,
+  "time_min": 30,
+  "time_max": 50,
+  "location": [
+   "indoor",
+   "outdoor"
+  ],
+  "materials": [
+   {
+    "item": "a phone or tablet camera per group"
+   }
+  ],
+  "no_prep": false,
+  "setup": "Split into groups of 2-3, one camera each. Set the boundaries for where groups may roam.",
+  "steps": [
+   "Pick a story shape first: a chase, a mystery, a transformation, a day in the life. Five shots, in order.",
+   "Plan all five shots before touching the camera — what's in frame, what's the turning point (shot 3 or 4)?",
+   "Shoot in order, no reordering later. People, objects, shadows — everything is a prop.",
+   "Swap cameras with another group. They arrange your five photos and guess the story — no hints.",
+   "Reveal: the photographers tell the real story, then everyone votes on the best plot twist."
+  ],
+  "variations": {
+   "easier": "Shoot three photos instead of five, or let groups add one caption per photo.",
+   "harder": "Tell the story backwards (shot 5 first), or require the whole story to use no people."
+  },
+  "safety": "Stay in bounds and in pairs. No photos of strangers without permission."
+ },
+ {
+  "id": "town-hall-simulation",
+  "name": "Town Hall Simulation",
+  "tagline": "A real local issue, assigned roles, one gavel — civics with the gloves off (respectfully).",
+  "categories": [
+   "team-community"
+  ],
+  "age_min": 12,
+  "age_max": 14,
+  "group_min": 8,
+  "group_max": 32,
+  "time_min": 40,
+  "time_max": 60,
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "role cards (or assigned roles)"
+   },
+   {
+    "item": "a gavel, real or improvised"
+   }
+  ],
+  "no_prep": false,
+  "setup": "Pick a real local issue (park hours, bike lanes, a school rule). Write role cards: residents, business owners, council members, press.",
+  "steps": [
+   "Assign roles — everyone gets one, including the press corps and the council. Read your role's stake in the issue.",
+   "Ten minutes of prep: what does your character want, and what's their strongest argument? Write two points.",
+   "The hearing opens: each side presents for 2 minutes, then open comment — one speaker at a time, gavel rules.",
+   "Press corps asks the hard questions. Council members may interrupt (politely) for clarification.",
+   "Council deliberates out loud, then votes. Debrief out of character: did the best argument win, or the loudest?"
+  ],
+  "variations": {
+   "easier": "Use a silly issue (school mascot change) instead of a real one, or skip the press corps.",
+   "harder": "Require written position statements, or hold a second session where everyone switches roles."
+  },
+  "safety": null,
+  "copy_free": true
+ },
+ {
+  "id": "water-filter-build",
+  "name": "Water Filter Build",
+  "tagline": "Muddy water in, clear water out — engineer a filter from bottles and gravel.",
+  "categories": [
+   "stem"
+  ],
+  "age_min": 11,
+  "age_max": 14,
+  "group_min": 2,
+  "group_max": 24,
+  "time_min": 30,
+  "time_max": 50,
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "clear plastic bottles (tops cut off)"
+   },
+   {
+    "item": "gravel"
+   },
+   {
+    "item": "sand"
+   },
+   {
+    "item": "cotton balls or coffee filters"
+   },
+   {
+    "item": "muddy water (dirt stirred into water)"
+   }
+  ],
+  "no_prep": false,
+  "setup": "Cut the bottle tops off (adult job) and flip them neck-down into the bottle bottoms. Mix the muddy water.",
+  "steps": [
+   "Predict first: which layer catches the most dirt — gravel, sand, or cotton? Write it down.",
+   "Build the filter: cotton at the neck, then sand, then gravel. Pour slowly — flooding ruins the layers.",
+   "Catch the filtered water in a clear cup. Compare it to the muddy original, side by side.",
+   "Redesign one layer — more sand? tighter cotton? — and run the same muddy water through again.",
+   "Score clarity 1-5 each round. The winning design gets drawn on the board with its layer order labeled."
+  ],
+  "variations": {
+   "easier": "Build one class filter together instead of per-group, or test with plain dusty water.",
+   "harder": "Test three different layer orders head-to-head, or time how clarity changes over three pours."
+  },
+  "safety": "Filtered water is NOT drinkable — this is a clarity demo only. Everyone washes hands after."
+ },
+ {
+  "id": "flag-folding-ceremony",
+  "name": "Flag Folding Ceremony",
+  "tagline": "Thirteen folds, each with a meaning — learn the ceremony the honor guard uses.",
+  "categories": [
+   "team-community",
+   "holidays"
+  ],
+  "age_min": 10,
+  "age_max": 14,
+  "group_min": 4,
+  "group_max": 30,
+  "time_min": 20,
+  "time_max": 30,
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "a large flag or flag-sized cloth"
+   }
+  ],
+  "no_prep": false,
+  "setup": "Clear floor space. You'll need room for pairs to work with the full cloth spread out.",
+  "steps": [
+   "Learn the triangle fold first: lengthwise twice, then triangle-fold from the striped end, tucking the last bit in.",
+   "Practice in pairs until every team can fold a clean triangle with no loose ends.",
+   "Learn what the thirteen folds traditionally represent — each fold carries a meaning in the ceremony.",
+   "Perform it: two folders, one reader. The reader names each fold's meaning as the folders work.",
+   "Close with a moment of quiet. Discuss: why do ceremonies like this use such precise movements?"
+  ],
+  "variations": {
+   "easier": "Fold a paper flag first to learn the pattern, or watch one clean fold demonstrated slowly.",
+   "harder": "Research the fold meanings' history, or teach the ceremony to a younger group."
+  },
+  "safety": "Handle the flag with care — it never touches the ground.",
+  "tags": [
+   "holiday:july-4th"
+  ],
+  "inclusion": "The 13-fold ceremony is a real military tradition. Present the fold meanings as tradition, not trivia."
+ },
+ {
+  "id": "parade-route-planners",
+  "name": "Parade Route Planners",
+  "tagline": "Map the parade: scale the route, time the march, beat the road closures.",
+  "categories": [
+   "stem",
+   "holidays"
+  ],
+  "age_min": 8,
+  "age_max": 12,
+  "group_min": 4,
+  "group_max": 24,
+  "time_min": 30,
+  "time_max": 45,
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "grid paper"
+   },
+   {
+    "item": "rulers"
+   },
+   {
+    "item": "pencils"
+   }
+  ],
+  "no_prep": false,
+  "setup": "Draw a simple town grid on the board (10x10 blocks) as the shared starting map.",
+  "steps": [
+   "Copy the town grid. Mark the start (the park) and the finish (the town square) — the parade must connect them.",
+   "Plot the route: it must pass at least 3 'crowd zones' (mark them) and avoid 2 'closed streets' (mark those too).",
+   "Measure the route in blocks, then scale it: 1 block = 200 meters. How long is the parade route, really?",
+   "Time it: the parade moves at 3 km/h with a 10-minute stop at each crowd zone. When does it reach the square?",
+   "Each team presents its route. Vote: shortest legal route, most crowd zones, best backup for a rained-out street."
+  ],
+  "variations": {
+   "easier": "Use a pre-drawn route and just do the measuring and timing math.",
+   "harder": "Add a second parade that must not cross the first, or price the barricades per block."
+  },
+  "safety": null,
+  "tags": [
+   "holiday:july-4th"
+  ],
+  "copy_free": true
+ },
+ {
+  "id": "independence-debate",
+  "name": "Independence Debate",
+  "tagline": "1776, argued fresh — was independence the right call? You decide, with evidence.",
+  "categories": [
+   "team-community",
+   "holidays"
+  ],
+  "age_min": 12,
+  "age_max": 14,
+  "group_min": 6,
+  "group_max": 30,
+  "time_min": 35,
+  "time_max": 55,
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "paper"
+   },
+   {
+    "item": "pencils"
+   }
+  ],
+  "no_prep": false,
+  "setup": "Write the question on the board: 'Was declaring independence in 1776 the right decision?' Assign sides.",
+  "steps": [
+   "Ten minutes of prep: each side lists its three strongest reasons. One must be about ordinary people, not just leaders.",
+   "Opening statements: 2 minutes per side, no interrupting. State your case like you mean it.",
+   "Rebuttal round: each side gets 3 minutes to answer the other side's best point directly.",
+   "Judges (or the audience) vote — not on which side they agree with, but on which side argued better.",
+   "Debrief: what fact surprised you most? Did arguing the other side change how you see it?"
+  ],
+  "variations": {
+   "easier": "Debate a simpler question ('Should the colonies have paid the taxes?'), or prep as teams of four.",
+   "harder": "Require one primary-source quote per side, or restage it as a Continental Congress vote."
+  },
+  "safety": null,
+  "tags": [
+   "holiday:july-4th"
+  ],
+  "copy_free": true
+ },
+ {
+  "id": "upcycle-invention-challenge",
+  "name": "Upcycle Invention Challenge",
+  "tagline": "Trash in, invention out — build something useful from the recycling bin.",
+  "categories": [
+   "stem",
+   "crafts"
+  ],
+  "age_min": 8,
+  "age_max": 12,
+  "group_min": 2,
+  "group_max": 28,
+  "time_min": 35,
+  "time_max": 60,
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "clean recyclables (bottles, boxes, cans)"
+   },
+   {
+    "item": "tape"
+   },
+   {
+    "item": "scissors"
+   },
+   {
+    "item": "string"
+   }
+  ],
+  "no_prep": false,
+  "setup": "Rinse and dry the recyclables the day before. Sort them into material piles.",
+  "steps": [
+   "Pick a real problem first: desk clutter, a wobbly table, carrying supplies. Inventions need jobs.",
+   "Sketch the invention before touching materials — what does each part do?",
+   "Build it: 20 minutes, tape and string only for joining (no glue guns unless an adult runs them).",
+   "Demo day: each team shows the problem, the build, and the one thing that broke during testing.",
+   "Vote on most useful, most creative, and most likely to actually get used. Winners get displayed."
+  ],
+  "variations": {
+   "easier": "Build from a pre-sorted kit of 5 items, or invent as a whole class with the teacher building.",
+   "harder": "Require the invention to have a moving part, or ban tape and allow only folding and slotting."
+  },
+  "safety": "Clean everything first. No sharp metal edges — tape over any cut edges.",
+  "tags": [
+   "holiday:earth-day"
+  ]
+ },
+ {
+  "id": "classroom-water-audit",
+  "name": "Classroom Water Audit",
+  "tagline": "Where does the water go? Measure it, map it, cut it.",
+  "categories": [
+   "stem",
+   "team-community"
+  ],
+  "age_min": 9,
+  "age_max": 12,
+  "group_min": 4,
+  "group_max": 30,
+  "time_min": 30,
+  "time_max": 50,
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "paper"
+   },
+   {
+    "item": "pencils"
+   },
+   {
+    "item": "a measuring cup or marked bottle"
+   }
+  ],
+  "no_prep": false,
+  "setup": "List the room's water uses on the board to start: sink, water bottles, plants, cleaning.",
+  "steps": [
+   "Brainstorm every water use in the room and the building — drinking, washing, plants, mopping.",
+   "Measure what you can: time the sink flow into the cup for 10 seconds, count bottle refills in a day.",
+   "Estimate the rest honestly and total it: how many liters does this room use in a week?",
+   "Find the biggest use. That's your target — one change that cuts it (shorter hand-washing, a plant-watering rota).",
+   "Post the audit by the sink. Re-measure in a week: did the number move?"
+  ],
+  "variations": {
+   "easier": "Audit just the sink, or use the teacher's estimates instead of measuring.",
+   "harder": "Audit the whole school floor, or track a full month and graph the trend."
+  },
+  "safety": null,
+  "tags": [
+   "holiday:earth-day"
+  ],
+  "copy_free": true
+ },
+ {
+  "id": "litter-tally-cleanup",
+  "name": "Litter Tally Cleanup",
+  "tagline": "Pick it up, tally it up — a cleanup that ends with real data.",
+  "categories": [
+   "outdoor",
+   "team-community"
+  ],
+  "age_min": 6,
+  "age_max": 12,
+  "group_min": 4,
+  "group_max": 30,
+  "time_min": 30,
+  "time_max": 45,
+  "location": [
+   "outdoor"
+  ],
+  "materials": [
+   {
+    "item": "gloves (one pair per kid)"
+   },
+   {
+    "item": "trash bags"
+   },
+   {
+    "item": "pencils"
+   },
+   {
+    "item": "paper for tally sheets"
+   }
+  ],
+  "no_prep": false,
+  "setup": "Divide the grounds into zones, one per team. Hand out gloves and bags — gloves go on first.",
+  "steps": [
+   "Each team takes a zone and 15 minutes: pick up every piece of litter, big or small.",
+   "Sort as you go: plastic, paper, wrappers, mystery items. Tally each category on the sheet.",
+   "Weigh or count the bags. Total it up: which category won the ugly prize?",
+   "Chart it on the board — a bar chart of what the grounds actually collect.",
+   "Propose one fix for the worst category (more bins? a wrapper-free lunch day?) and pitch it."
+  ],
+  "variations": {
+   "easier": "Clean one small zone as a class, or tally by team instead of by category.",
+   "harder": "Repeat monthly and track the trend, or map litter hotspots on a grounds diagram."
+  },
+  "safety": "Gloves on the whole time. Never pick up anything sharp, rusty, or unidentifiable — flag it for an adult.",
+  "tags": [
+   "holiday:earth-day"
+  ],
+  "copy_free": true
+ },
+ {
+  "id": "natural-dye-easter-eggs",
+  "name": "Natural Dye Easter Eggs",
+  "tagline": "Onion skins, turmeric, red cabbage — the pantry dyes eggs better than the kit.",
+  "categories": [
+   "stem",
+   "crafts"
+  ],
+  "age_min": 6,
+  "age_max": 12,
+  "group_min": 2,
+  "group_max": 24,
+  "time_min": 40,
+  "time_max": 60,
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "hard-boiled eggs"
+   },
+   {
+    "item": "onion skins"
+   },
+   {
+    "item": "turmeric"
+   },
+   {
+    "item": "red cabbage"
+   },
+   {
+    "item": "vinegar"
+   },
+   {
+    "item": "pots"
+   }
+  ],
+  "no_prep": false,
+  "setup": "Simmer each dye material in water for 20 minutes (adult job), strain, and add a spoonful of vinegar per cup.",
+  "steps": [
+   "Line up the dye baths and predict: which pantry item makes the strongest color? Write guesses down.",
+   "Dip one egg per bath for 5 minutes. Pull, dry, compare — whose prediction held up?",
+   "Experiment: dip half as long, twice as long, or dip in two baths in a row. Record every recipe.",
+   "Try pattern tricks: wrap an egg in a rubber band or a leaf before dipping for resist designs.",
+   "Line up the full spectrum and vote: most surprising color source wins."
+  ],
+  "variations": {
+   "easier": "Dye with one bath as a class demo, or use pre-made dye baths and just do the dipping.",
+   "harder": "Test pH with the red cabbage dye (it shifts color), or dye onion-skin patterns on paper first."
+  },
+  "safety": "Adults handle the hot dye pots. Check egg allergies before anyone handles or tastes the eggs.",
+  "tags": [
+   "holiday:easter"
+  ]
+ },
+ {
+  "id": "wax-resist-easter-eggs",
+  "name": "Wax-Resist Easter Eggs",
+  "tagline": "White crayon, bright dye, big reveal — draw in secret, dye in color.",
+  "categories": [
+   "crafts"
+  ],
+  "age_min": 7,
+  "age_max": 12,
+  "group_min": 2,
+  "group_max": 24,
+  "time_min": 30,
+  "time_max": 45,
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "hard-boiled or blown eggs"
+   },
+   {
+    "item": "white crayons"
+   },
+   {
+    "item": "food-color dye baths in cups"
+   },
+   {
+    "item": "drying rack or egg carton"
+   }
+  ],
+  "no_prep": false,
+  "setup": "Mix the dye baths (food coloring + water + a splash of vinegar). Set out white crayons and drying space.",
+  "steps": [
+   "Draw on the egg with white crayon — invisible on the shell, which is the whole trick. Patterns, names, zigzags.",
+   "Dip the egg in the lightest dye first. Count to 30, lift, and watch the white drawing appear.",
+   "Add more crayon on the dyed egg, then dip in a darker color — the wax resists every layer.",
+   "Dry each egg in the carton between dips so the colors don't smudge.",
+   "Display the dozen: everyone guesses which egg used the most layers."
+  ],
+  "variations": {
+   "easier": "Draw and dip in one color only, or decorate paper egg cutouts the same way.",
+   "harder": "Try two-color resists with rubber bands, or dye a full ombre set from light to dark."
+  },
+  "safety": "Check egg allergies. Dye stains hands and clothes — smocks or old shirts.",
+  "tags": [
+   "holiday:easter"
+  ]
+ },
+ {
+  "id": "kindness-egg-missions",
+  "name": "Kindness Egg Missions",
+  "tagline": "Every egg hides a secret mission — all kindness, zero pranks.",
+  "categories": [
+   "team-community",
+   "holidays"
+  ],
+  "age_min": 5,
+  "age_max": 10,
+  "group_min": 4,
+  "group_max": 30,
+  "time_min": 20,
+  "time_max": 35,
+  "location": [
+   "indoor",
+   "outdoor"
+  ],
+  "materials": [
+   {
+    "item": "plastic eggs"
+   },
+   {
+    "item": "paper slips"
+   },
+   {
+    "item": "pencils"
+   }
+  ],
+  "no_prep": false,
+  "setup": "Cut paper slips to fit the eggs. The teacher vets every mission slip before it goes in an egg.",
+  "steps": [
+   "Everyone writes one secret kindness mission on a slip: 'compliment someone's shoes,' 'help carry something heavy.'",
+   "Fold each slip into a plastic egg. Mix them up — nobody hunts their own egg.",
+   "Hide the eggs around the room or yard. Hunt! One egg per kid to start.",
+   "Open your egg and read the mission. Complete it before the timer runs out — quietly, like a secret agent.",
+   "Circle up: share what your mission was and how it landed. The best missions go on the board."
+  ],
+  "variations": {
+   "easier": "The teacher pre-writes all the missions, or hunt in pairs.",
+   "harder": "Run it as a week-long game (one mission egg per day), or let kids design missions for another class."
+  },
+  "safety": "Missions must be kind and safe — the teacher vets every slip before it goes in an egg.",
+  "tags": [
+   "holiday:easter"
+  ],
+  "no_elimination": true
+ },
+ {
+  "id": "calavera-literaria-poems",
+  "name": "Calavera Literaria Poems",
+  "tagline": "Witty verses about the living, written for the dead — Mexico's playful poetic tradition.",
+  "categories": [
+   "quiet-focus",
+   "team-community"
+  ],
+  "age_min": 9,
+  "age_max": 14,
+  "group_min": 2,
+  "group_max": 30,
+  "time_min": 30,
+  "time_max": 50,
+  "location": [
+   "indoor"
+  ],
+  "materials": [],
+  "no_prep": true,
+  "setup": "No setup. Explain the tradition first: calaveras literarias are satirical epitaph poems, written about the living with humor and affection.",
+  "steps": [
+   "Read one classic calavera aloud (translated) — notice the tone: teasing, never cruel; the subject is always in on the joke.",
+   "Each writer picks a willing subject — a classmate who agrees, a teacher, a famous figure. No unwilling subjects, ever.",
+   "Draft 4-8 rhyming lines: the 'skeleton' comes for the subject in a funny, specific way (late for everything, steals the erasers).",
+   "Trade drafts with a partner: does it tease with affection? Cut any line that punches down.",
+   "Read them aloud in a circle. The subject gets the final bow — and keeps the poem."
+  ],
+  "variations": {
+   "easier": "Write 4 lines instead of 8, or write about a fictional character instead of a real person.",
+   "harder": "Illustrate the calavera, or perform it as a two-voice reading."
+  },
+  "safety": null,
+  "tags": [
+   "holiday:dia-de-muertos"
+  ],
+  "copy_free": true,
+  "inclusion": "Calaveras literarias are a real Mexican literary tradition — playful epitaphs for the living that celebrate life. The humor is affectionate; the dead are honored, never mocked."
+ },
+ {
+  "id": "sugar-skull-decorating",
+  "name": "Sugar Skull Decorating",
+  "tagline": "Bright icing, bold patterns — decorate calaveras de azucar the traditional way.",
+  "categories": [
+   "crafts"
+  ],
+  "age_min": 7,
+  "age_max": 12,
+  "group_min": 2,
+  "group_max": 24,
+  "time_min": 30,
+  "time_max": 50,
+  "location": [
+   "indoor"
+  ],
+  "materials": [
+   {
+    "item": "sugar skull shapes (store-bought or salt-dough)"
+   },
+   {
+    "item": "icing tubes or paint pens"
+   },
+   {
+    "item": "sequins (optional)"
+   }
+  ],
+  "no_prep": false,
+  "setup": "Set out the skull shapes and decorating supplies. Cover tables — icing travels.",
+  "steps": [
+   "Learn first: sugar skulls are cheerful offerings for Dia de los Muertos, honoring real loved ones — bright, never spooky.",
+   "Plan the pattern on paper: symmetric designs work best — flowers around the eyes, hearts on the forehead.",
+   "Decorate: outline first, then fill. Bright colors, bold shapes — traditional skulls are joyful, not scary.",
+   "Add the name across the forehead if you like — traditionally the name of someone being remembered.",
+   "Display them together as a class ofrenda-style shelf. Share: who would you dedicate yours to, and why?"
+  ],
+  "variations": {
+   "easier": "Decorate paper skull cutouts instead of 3D shapes, or work in pairs on one skull.",
+   "harder": "Research regional skull styles, or make salt-dough skulls from scratch a day ahead."
+  },
+  "safety": "Decorated sugar skulls are for looking, not eating, unless they're food-safe — check before tasting.",
+  "tags": [
+   "holiday:dia-de-muertos"
+  ],
+  "inclusion": "Sugar skulls (calaveras de azucar) are a real Dia de los Muertos tradition — cheerful remembrances of loved ones. Frame the craft as honoring, not Halloween-spooky."
+ },
+ {
+  "id": "marigold-petal-path",
+  "name": "Marigold Petal Path",
+  "tagline": "Lay a path of marigold petals — the traditional welcome for returning spirits.",
+  "categories": [
+   "team-community",
+   "outdoor"
+  ],
+  "age_min": 6,
+  "age_max": 12,
+  "group_min": 4,
+  "group_max": 30,
+  "time_min": 20,
+  "time_max": 30,
+  "location": [
+   "outdoor"
+  ],
+  "materials": [
+   {
+    "item": "marigold petals (real or tissue-paper)"
+   }
+  ],
+  "no_prep": false,
+  "setup": "Gather petals into baskets, one per small group. Choose the path: a hallway, a garden bed edge, a classroom aisle.",
+  "steps": [
+   "Learn the tradition: on Dia de los Muertos, cempasuchil petal paths guide loved ones' spirits home — a real practice of remembrance.",
+   "Lay the path together, petal by petal, in a winding line. No rushing — the laying is the activity.",
+   "Walk the finished path quietly, single file. Notice the color, the scent, the shape you made together.",
+   "At the end, each person shares one happy memory of someone they miss — one sentence is plenty.",
+   "Gather the petals gently afterward for compost or the art bin. The path was temporary; the memory isn't."
+  ],
+  "variations": {
+   "easier": "Lay a short tabletop path instead of a walking one, or use paper petals indoors.",
+   "harder": "Pair with the class ofrenda, or map the path as a drawn design first."
+  },
+  "safety": null,
+  "tags": [
+   "holiday:dia-de-muertos"
+  ],
+  "inclusion": "Petal paths of cempasuchil are a real Dia de los Muertos practice — marigolds guide spirits home. Present it as remembrance, calm and respectful."
  }
 ]

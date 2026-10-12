@@ -813,7 +813,10 @@ def render_activity(a, catmap, acts):
 # wires the brass pulls (aria-expanded); calm mode + prefers-reduced-motion
 # kill the card cascade/stamp animations via the global rules, content stays.
 # ---------------------------------------------------------------------------
-def render_desk(acts, cats, colls):
+def desk_drawers_html(acts, cats, colls):
+    """Build the 11 wooden drawer fronts + trays. Shared by desk.html and the
+    landing-desk injection into index.html (wave 23: the archive landing
+    becomes a desk you can open). Returns (left_html, right_html)."""
     actmap = {a['id']: a for a in acts}
     picked_ids = {p['id'] for c in colls for p in c['picks']}
     by_cat = {}
@@ -850,7 +853,7 @@ def render_desk(acts, cats, colls):
                 f'<p class="desk-card-meta">{meta}</p></li>')
         rest = total - len(picks)
         foot = (f'\u2026and {rest} more cards in this drawer \u2014 '
-                f'<a href="index.html?cats={cid}">Open the full drawer \u2192</a>') if rest > 0 else ''
+                f'<a href="index.html?cats={cid}#browse">Open the full drawer \u2192</a>') if rest > 0 else ''
         num = f"DRAWER {i + 1:02d}"
         drawers.append(
             f'<div class="drawer" data-drawer="{cid}">'
@@ -871,6 +874,65 @@ def render_desk(acts, cats, colls):
 
     left = '\n'.join(drawers[:6])
     right = '\n'.join(drawers[6:])
+    return left, right
+
+
+def render_landing_desk(acts, cats, colls):
+    """Wave 23: the archive landing (index.html) becomes a desk you can open.
+    Same drawers as desk.html (shared builder above), with the kneehole
+    blotter pointing at the planner — the week, laid out on the desk."""
+    left, right = desk_drawers_html(acts, cats, colls)
+    n_acts, n_colls = len(acts), len(colls)
+    return (
+        '  <section class="desk-section" id="desk" aria-label="The teacher\'s desk: eleven category drawers">\n'
+        '    <div class="desk">\n'
+        '      <p class="desk-nameplate" aria-hidden="true"><span>Activity Vault</span></p>\n'
+        '      <p class="desk-sub">The whole archive, filed the old way — pull a drawer, grab a card. Every drawer opens.</p>\n'
+        '      <div class="desk-toolbar no-print" role="group" aria-label="Drawer controls">\n'
+        '        <button class="btn btn-small" id="drawers-open-all" type="button">\U0001f5c4\ufe0f Open all drawers</button>\n'
+        '        <button class="btn btn-small btn-ghost" id="drawers-close-all" type="button">Close all</button>\n'
+        '      </div>\n'
+        '      <div class="pedestals">\n'
+        '        <div class="pedestal" aria-label="Left drawers">\n'
+        + '\n'.join('          ' + line for line in left.split('\n')) + '\n'
+        '        </div>\n'
+        '        <div class="kneehole">\n'
+        '          <section class="blotter-card" aria-labelledby="blotter-h">\n'
+        '            <p class="blotter-stamp" aria-hidden="true">The blotter</p>\n'
+        '            <h2 id="blotter-h">Your week, laid out here.</h2>\n'
+        f'            <p>The Smart Weekly Planner deals no-repeat weeks from the same {n_acts} cards in these drawers — balanced days, brain breaks, supply lists.</p>\n'
+        '            <p><a class="btn" href="planner.html">\U0001f4c5 Open the planner</a></p>\n'
+        f'            <p class="blotter-alt">or browse the <a href="collections.html">{n_colls} curated collections</a></p>\n'
+        '          </section>\n'
+        '        </div>\n'
+        '        <div class="pedestal" aria-label="Right drawers">\n'
+        + '\n'.join('          ' + line for line in right.split('\n')) + '\n'
+        '        </div>\n'
+        '      </div>\n'
+        '    </div>\n'
+        '  </section>\n'
+    )
+
+
+def inject_landing_desk(acts, cats, colls):
+    """Wave 23: splice the generated desk section into index.html between the
+    BUILD:DESK markers. Hand edits outside the markers survive every build;
+    the drawer markup inside is build-owned (real counts, real cards)."""
+    path = os.path.join(SITE, 'index.html')
+    html_text = open(path).read()
+    start = '<!-- BUILD:DESK -->'
+    end = '<!-- /BUILD:DESK -->'
+    assert start in html_text and end in html_text, "index.html missing BUILD:DESK markers"
+    before, rest = html_text.split(start, 1)
+    _, after = rest.split(end, 1)
+    section = render_landing_desk(acts, cats, colls)
+    assert 'DRAWER 01' in section and 'DRAWER 11' in section, "landing desk render check failed"
+    open(path, 'w').write(before + start + '\n' + section + '  ' + end + after)
+    print(f"index.html: landing desk injected ({len(acts)} activities, {len(cats)} drawers)")
+
+
+def render_desk(acts, cats, colls):
+    left, right = desk_drawers_html(acts, cats, colls)
     stats = (len(acts), len(cats), len(colls))
     return DESK_TEMPLATE.format(
         n_acts=stats[0], n_cats=stats[1], n_colls=stats[2],
@@ -1010,6 +1072,10 @@ def main():
     assert 'DRAWER 01' in desk_page and 'DRAWER 11' in desk_page, "desk render check failed"
     with open(os.path.join(SITE, 'desk.html'), 'w') as f:
         f.write(desk_page)
+
+    # 1c. Wave 23: the archive landing (index.html) becomes a desk you can
+    # open — the generated desk section is spliced between BUILD:DESK markers.
+    inject_landing_desk(acts, cats, colls)
 
     # 2. API
     # 2026-10-12: static data lives in data/v1/ — Vercel never serves static

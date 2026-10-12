@@ -6,15 +6,15 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
 
 ## Categories
 - Seasons: 95 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
-- Holidays: 95 activities — Festive projects and games for the days the whole group looks forward to.
-- Crafts: 137 activities — Hands-on making: fold it, paint it, build it, take it home.
-- STEM: 125 activities — Experiments, engineering challenges, and satisfying science demos.
+- Holidays: 99 activities — Festive projects and games for the days the whole group looks forward to.
+- Crafts: 142 activities — Hands-on making: fold it, paint it, build it, take it home.
+- STEM: 132 activities — Experiments, engineering challenges, and satisfying science demos.
 - PE & Movement: 101 activities — Run, jump, dance — activities that burn off the wiggles.
-- Team & Community: 110 activities — Turn a group into a crew: cooperation, trust, and belonging.
-- Icebreakers: 58 activities — First-day friendly: learn names, laugh, and loosen up fast.
-- Outdoor: 88 activities — Fresh-air activities for fields, playgrounds, and nature walks.
+- Team & Community: 125 activities — Turn a group into a crew: cooperation, trust, and belonging.
+- Icebreakers: 59 activities — First-day friendly: learn names, laugh, and loosen up fast.
+- Outdoor: 91 activities — Fresh-air activities for fields, playgrounds, and nature walks.
 - Rainy Day: 50 activities — Stuck inside? These keep a roomful of kids happy without a gym.
-- Quiet & Focus: 109 activities — Wind-down worthy: calm, creative, individual or small-group.
+- Quiet & Focus: 113 activities — Wind-down worthy: calm, creative, individual or small-group.
 - Music & Rhythm: 27 activities — Drums, shakers, rhythm games, and songs — make some noise.
 
 ## API — start at data/v1/index.json (self-describing manifest)

@@ -988,15 +988,19 @@ h2 { font-weight: 700; letter-spacing: -.015em; }
 .chip-row .chip:nth-child(4n) { transform: rotate(1.8deg); }
 .chip-row .chip:hover { transform: rotate(0deg) scale(1.05); z-index: 2; position: relative; }
 .chip-row .chip[aria-pressed="true"] {
-  /* peeled-and-stamped: filled, stamped type */
+  /* peeled-and-stamped: filled, stamped type. Fill re-declared here (wave 23):
+     `.chip-row .chip` (same specificity, later in source) was overriding the
+     base pressed rule's background — white-on-white, label invisible. No
+     grunge mask: it ate the fill and left white text on white. */
+  background: var(--cat, var(--accent));
+  border-color: var(--cat, var(--accent));
+  color: #fff;
   font-family: var(--font-stamp);
   font-size: .68rem;
   letter-spacing: .06em;
   text-transform: uppercase;
   transform: rotate(-1deg) scale(1.04);
   box-shadow: 0 0 0 2.5px #fff, 0 4px 10px rgba(42, 36, 28, .22);
-  -webkit-mask-image: var(--grunge);
-  mask-image: var(--grunge);
 }
 .filters {
   background:
@@ -1607,6 +1611,10 @@ html[data-calm="true"] ::view-transition-new(*) { animation: none !important; }
   text-shadow: 0 1px 0 rgba(255, 244, 210, .6);
   box-shadow: 0 2px 6px rgba(30, 18, 6, .5), inset 0 1px 0 rgba(255,255,255,.5);
   transform: rotate(-1deg);
+}
+.desk-sub {
+  text-align: center; margin: 0 0 .2rem;
+  font-family: var(--font-hand); font-size: 1.15rem; color: #5a4426;
 }
 .desk-toolbar {
   display: flex; gap: .6rem; justify-content: center; flex-wrap: wrap;
