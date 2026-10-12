@@ -1,10 +1,21 @@
-/* Activity Vault — Plan-my-week planner.
-   Pick days + slots + constraints -> generates a no-repeat week plan. Printable. */
+/* Activity Vault — Smart Weekly Planner 2.0.
+   Auto-build balanced weeks, balance meter, drag-and-drop, swap, surprise-fill,
+   named saved plans, .ics export, collection seeding, shareable ?plan= links. */
 (function () {
   'use strict';
 
-  var DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
-  var state = { activities: [], categories: [], catMap: {} };
+  var P = window.VaultPlanner;
+  var DAYS7 = P.WEEKDAYS;
+  var PLANS_KEY = 'activityvault.plans.v1';
+
+  var state = {
+    activities: [], categories: [], catMap: {}, actmap: {},
+    catBucket: {}, collections: [],
+    plan: null,   // {version, name, programType, maxTime, days:[{day, slots:[{slot, activityId}]}]}
+    opts: null,   // last-used constraint snapshot (drives swap/fill)
+    pool: [],
+    notes: []
+  };
 
   function el(tag, cls, text) {
     var e = document.createElement(tag);
@@ -12,145 +23,433 @@
     if (text != null) e.textContent = text;
     return e;
   }
+  function catName(id) { return (state.catMap[id] || {}).name || id; }
 
-  function shuffle(arr) {
-    var a = arr.slice();
-    for (var i = a.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      var t = a[i]; a[i] = a[j]; a[j] = t;
-    }
-    return a;
+  /* ---------------- form ---------------- */
+
+  function programDefaults() {
+    var prog = P.PROGRAMS[document.getElementById('p-program').value] || P.PROGRAMS['after-school'];
+    document.getElementById('slots-per-day').value = String(prog.slotsPerDay);
+    document.getElementById('max-time').value = String(prog.maxTime);
+    document.getElementById('p-indoor').checked = !!prog.indoorOnly;
+    updateDayMinutes();
+  }
+
+  function updateDayMinutes() {
+    var slots = parseInt(document.getElementById('slots-per-day').value, 10) || 2;
+    var mins = parseInt(document.getElementById('max-time').value, 10) || 30;
+    document.getElementById('day-minutes').textContent = '≈ ' + (slots * mins) + ' min/day';
   }
 
   function getForm() {
     var days = [];
     document.querySelectorAll('input[name="day"]:checked').forEach(function (c) { days.push(c.value); });
-    var slots = parseInt(document.getElementById('slots-per-day').value, 10) || 2;
-    var maxTime = document.getElementById('max-time').value;
-    var cats = new Set();
-    document.querySelectorAll('input[name="pcat"]:checked').forEach(function (c) { cats.add(c.value); });
+    var programType = document.getElementById('p-program').value;
+    var band = P.AGE_BANDS[document.getElementById('p-ageband').value] || P.AGE_BANDS.all;
+    var cats = [];
+    document.querySelectorAll('input[name="pcat"]:checked').forEach(function (c) { cats.push(c.value); });
+    var slots = Math.min(Math.max(parseInt(document.getElementById('slots-per-day').value, 10) || 2, 1), 4);
+    var maxTime = parseInt(document.getElementById('max-time').value, 10) || null;
+    var prepCap = parseInt(document.getElementById('p-prepcap').value, 10);
+    var collId = document.getElementById('p-collection').value;
+    var seedIds = [];
+    if (collId) {
+      var coll = state.collections.filter(function (c) { return c.id === collId; })[0];
+      if (coll) seedIds = coll.picks.map(function (p) { return p.id; });
+    }
     return {
-      days: days.length ? days : DAYS.slice(),
-      slots: Math.min(Math.max(slots, 1), 4),
-      maxTime: maxTime ? parseInt(maxTime, 10) : null,
+      days: days.length ? days : DAYS7.slice(0, 5),
+      slotsPerDay: slots,
+      maxTime: maxTime,
+      ageBand: document.getElementById('p-ageband').value,
+      ageMin: band.min, ageMax: band.max,
+      programType: programType,
       cats: cats,
       noPrepOnly: document.getElementById('p-noprep').checked,
       indoorOnly: document.getElementById('p-indoor').checked,
-      allowRepeats: document.getElementById('p-repeats').checked
+      allowRepeats: document.getElementById('p-repeats').checked,
+      maxPrepHeavy: isNaN(prepCap) ? 2 : prepCap,
+      seedIds: seedIds,
+      collectionId: collId || null
     };
   }
 
-  function poolFor(opts) {
-    return state.activities.filter(function (a) {
-      if (opts.maxTime != null && a.time_min > opts.maxTime) return false;
-      if (opts.cats.size && !a.categories.some(function (c) { return opts.cats.has(c); })) return false;
-      if (opts.noPrepOnly && !a.no_prep) return false;
-      if (opts.indoorOnly && a.location.indexOf('indoor') === -1) return false;
-      return true;
+  function setForm(opts) {
+    document.getElementById('p-program').value = opts.programType || 'after-school';
+    document.getElementById('p-ageband').value = opts.ageBand || 'all';
+    document.getElementById('slots-per-day').value = String(opts.slotsPerDay || 2);
+    document.getElementById('max-time').value = opts.maxTime ? String(opts.maxTime) : '30';
+    document.getElementById('p-prepcap').value = String(opts.maxPrepHeavy != null ? opts.maxPrepHeavy : 2);
+    document.getElementById('p-noprep').checked = !!opts.noPrepOnly;
+    document.getElementById('p-indoor').checked = !!opts.indoorOnly;
+    document.getElementById('p-repeats').checked = !!opts.allowRepeats;
+    document.getElementById('p-collection').value = opts.collectionId || '';
+    document.querySelectorAll('input[name="day"]').forEach(function (c) {
+      c.checked = (opts.days || []).indexOf(c.value) !== -1;
     });
-  }
-
-  function whyFits(a, opts) {
-    var bits = [];
-    bits.push(a.time_min + '–' + a.time_max + ' min');
-    if (a.no_prep) bits.push('no prep');
-    var cnames = a.categories.map(function (c) { return (state.catMap[c] || {}).name || c; });
-    bits.push(cnames.slice(0, 2).join(' · '));
-    return bits.join(' — ');
-  }
-
-  // Spread categories across the week: prefer an activity whose categories
-  // haven't been used yet that day/week.
-  function pick(pool, usedIds, usedCats, opts) {
-    var cands = shuffle(pool.filter(function (a) { return usedIds.indexOf(a.id) === -1; }));
-    if (!cands.length && opts.allowRepeats) cands = shuffle(pool);
-    if (!cands.length) return null;
-    cands.sort(function (x, y) {
-      var xn = x.categories.filter(function (c) { return usedCats.indexOf(c) === -1; }).length;
-      var yn = y.categories.filter(function (c) { return usedCats.indexOf(c) === -1; }).length;
-      return yn - xn;
+    document.querySelectorAll('input[name="pcat"]').forEach(function (c) {
+      c.checked = (opts.cats || []).indexOf(c.value) !== -1;
     });
-    return cands[0];
+    updateDayMinutes();
   }
 
-  function generate() {
+  /* ---------------- generation ---------------- */
+
+  function status(msg) {
+    document.getElementById('plan-note').textContent = msg;
+  }
+
+  function generate(seedIdsOverride, notePrefix) {
     var opts = getForm();
-    var pool = poolFor(opts);
+    if (seedIdsOverride !== undefined) opts.seedIds = seedIdsOverride;
+    state.opts = opts;
+    state.pool = P.filterPool(state.activities, opts);
     var out = document.getElementById('week-plan');
-    var note = document.getElementById('plan-note');
     out.innerHTML = '';
-    note.textContent = '';
-    state.plan = [];
+    state.notes = [];
 
-    if (!pool.length) {
-      note.textContent = 'No activities match those constraints — try loosening them.';
+    if (!state.pool.length) {
+      status('No activities match those constraints — try loosening them.');
       document.getElementById('plan-actions').hidden = true;
       buildPrintDeck();
       return;
     }
 
-    var usedIds = [];
-    var weekCats = [];
-    var totalSlots = opts.days.length * opts.slots;
-    if (!opts.allowRepeats && pool.length < totalSlots) {
-      note.textContent = 'Only ' + pool.length + ' activities match, but you asked for ' +
-        totalSlots + ' slots. Repeats are off — some slots may stay empty, or allow repeats.';
-    }
+    var res = P.buildWeek(state.activities, opts, state.catBucket);
+    state.notes = res.notes;
+    state.plan = {
+      version: 1,
+      name: document.getElementById('plan-name-input') &&
+            document.getElementById('plan-name-input').value.trim() || defaultPlanName(),
+      programType: opts.programType,
+      maxTime: opts.maxTime,
+      ageBand: opts.ageBand,
+      days: res.days
+    };
 
-    opts.days.forEach(function (day) {
-      var card = el('section', 'day-card');
-      card.appendChild(el('h3', null, day));
-      var dayCats = [];
-      var dayPlan = { day: day, slots: [] };
-      for (var s = 0; s < opts.slots; s++) {
-        var a = pick(pool, usedIds, weekCats.concat(dayCats), opts);
-        var slot = el('div', 'slot');
-        slot.appendChild(el('div', 'slot-time', 'Slot ' + (s + 1)));
-        var slotPlan = { slot: s + 1, name: null, id: null, a: null };
-        if (a) {
-          var nm = el('div', 'slot-name');
-          var link = el('a', null, a.name);
-          link.href = 'activity/' + a.id + '.html';
-          nm.appendChild(link);
-          slot.appendChild(nm);
-          slot.appendChild(el('p', 'slot-why', whyFits(a, opts)));
-          // The visitor's own rating, if they gave one (never an aggregate).
-          var R = window.VaultRatings;
-          var mine = R ? R.getRating(a.id) : null;
-          if (mine) {
-            var rline = '⭐ You rated this ' + mine.stars + '★';
-            if (mine.note) rline += ' — ' + mine.note;
-            slot.appendChild(el('p', 'slot-rating', rline));
-          }
-          if (usedIds.indexOf(a.id) === -1 || !opts.allowRepeats) usedIds.push(a.id);
-          slotPlan.name = a.name;
-          slotPlan.id = a.id;
-          slotPlan.a = a;
-          a.categories.forEach(function (c) {
-            if (dayCats.indexOf(c) === -1) dayCats.push(c);
-            if (weekCats.indexOf(c) === -1) weekCats.push(c);
-          });
-        } else {
-          slot.appendChild(el('div', 'slot-name', '— open slot —'));
-          slot.appendChild(el('p', 'slot-why', 'Not enough unique activities matched. Loosen a filter.'));
-        }
-        dayPlan.slots.push(slotPlan);
-        card.appendChild(slot);
-      }
-      state.plan.push(dayPlan);
-      out.appendChild(card);
+    var totalSlots = opts.days.length * opts.slotsPerDay;
+    var filled = 0;
+    res.days.forEach(function (d) {
+      d.slots.forEach(function (s) { if (s.activityId) filled++; });
     });
+    var msg = notePrefix || '';
+    msg += 'Planned ' + filled + ' of ' + totalSlots + ' slots from ' + state.pool.length + ' matching activities.';
+    if (res.seedPlaced) msg += ' Seeded ' + res.seedPlaced + ' curator pick' + (res.seedPlaced > 1 ? 's' : '') + '.';
+    if (res.seedSkipped) msg += ' ' + res.seedSkipped + ' collection pick' + (res.seedSkipped > 1 ? 's' : '') +
+      ' didn\u2019t fit your filters — filled from the library instead.';
+    if (res.notes.length) msg += ' ' + res.notes.join(' ');
+    status(msg);
 
+    renderPlan();
     buildPrintDeck();
-
-    var actions = document.getElementById('plan-actions');
-    actions.hidden = false;
-    note.textContent = note.textContent ||
-      ('Planned ' + totalSlots + ' slots from ' + pool.length + ' matching activities.');
+    document.getElementById('plan-actions').hidden = false;
   }
 
+  function defaultPlanName() {
+    var d = new Date();
+    return 'Week of ' + d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+  }
+
+  /* ---------------- rendering ---------------- */
+
+  function meterBar(balance) {
+    var total = balance.total;
+    var wrap = el('div', 'meter');
+    wrap.setAttribute('role', 'img');
+    var parts = [];
+    P.BUCKETS.forEach(function (b) {
+      var n = balance.counts[b.id];
+      if (n > 0 && total > 0) {
+        var seg = el('span', 'meter-seg meter-' + b.id);
+        seg.style.width = (n / total * 100) + '%';
+        seg.title = b.glyph + ' ' + b.label + ': ' + n;
+        wrap.appendChild(seg);
+        parts.push(b.glyph + ' ' + n);
+      }
+    });
+    wrap.setAttribute('aria-label', 'Energy balance: ' + (parts.length ? parts.join(', ') : 'no activities yet'));
+    return wrap;
+  }
+
+  function slotWhy(a) { return P.whyFits(a, catName); }
+
+  function renderSlot(d, s, dayIdx) {
+    var li = el('li', 'slot');
+    li.draggable = true;
+    li.dataset.day = String(dayIdx);
+    li.dataset.slot = String(s.slot);
+    li.setAttribute('aria-label', 'Slot ' + s.slot + (s.activityId ? ': ' + state.actmap[s.activityId].name : ' (empty)'));
+
+    var a = s.activityId ? state.actmap[s.activityId] : null;
+    var body = el('div', 'slot-body');
+    if (a) {
+      body.appendChild(el('div', 'slot-time', 'Slot ' + s.slot));
+      var nm = el('div', 'slot-name');
+      var link = el('a', null, a.name);
+      link.href = 'activity/' + a.id + '.html';
+      nm.appendChild(link);
+      var bucket = P.bucketFor(a, state.catBucket);
+      var bl = P.BUCKETS.filter(function (b) { return b.id === bucket; })[0];
+      nm.appendChild(el('span', 'slot-bucket', ' ' + (bl ? bl.glyph : '')));
+      body.appendChild(nm);
+      body.appendChild(el('p', 'slot-why', slotWhy(a)));
+      var R = window.VaultRatings;
+      var mine = R ? R.getRating(a.id) : null;
+      if (mine) {
+        var rline = '⭐ You rated this ' + mine.stars + '★';
+        if (mine.note) rline += ' — ' + mine.note;
+        body.appendChild(el('p', 'slot-rating', rline));
+      }
+    } else {
+      body.appendChild(el('div', 'slot-time', 'Slot ' + s.slot));
+      body.appendChild(el('div', 'slot-name slot-empty', '— open slot —'));
+      body.appendChild(el('p', 'slot-why', 'Hit “🎲 Surprise me” to fill this gap.'));
+    }
+
+    var acts = el('div', 'slot-actions');
+    if (a) {
+      var swap = el('button', 'btn btn-small btn-ghost', '🔀 Swap');
+      swap.type = 'button';
+      swap.setAttribute('aria-label', 'Swap ' + a.name + ' for a different activity');
+      swap.addEventListener('click', function () { swapSlot(dayIdx, s.slot); });
+      acts.appendChild(swap);
+    }
+    var up = el('button', 'btn btn-small btn-ghost', '↑');
+    up.type = 'button';
+    up.setAttribute('aria-label', 'Move slot ' + s.slot + ' up');
+    up.addEventListener('click', function () { moveSlot(dayIdx, s.slot, -1); });
+    var down = el('button', 'btn btn-small btn-ghost', '↓');
+    down.type = 'button';
+    down.setAttribute('aria-label', 'Move slot ' + s.slot + ' down');
+    down.addEventListener('click', function () { moveSlot(dayIdx, s.slot, 1); });
+    acts.appendChild(up);
+    acts.appendChild(down);
+    body.appendChild(acts);
+    li.appendChild(body);
+
+    // Drag-and-drop reorder within the day (keyboard users get the ↑/↓ buttons).
+    li.addEventListener('dragstart', function (ev) {
+      ev.dataTransfer.setData('text/plain', dayIdx + ':' + s.slot);
+      ev.dataTransfer.effectAllowed = 'move';
+      li.classList.add('dragging');
+    });
+    li.addEventListener('dragend', function () {
+      li.classList.remove('dragging');
+      document.querySelectorAll('.slot.drag-over').forEach(function (x) { x.classList.remove('drag-over'); });
+    });
+    li.addEventListener('dragover', function (ev) {
+      ev.preventDefault();
+      ev.dataTransfer.dropEffect = 'move';
+      li.classList.add('drag-over');
+    });
+    li.addEventListener('dragleave', function () { li.classList.remove('drag-over'); });
+    li.addEventListener('drop', function (ev) {
+      ev.preventDefault();
+      var parts = ev.dataTransfer.getData('text/plain').split(':');
+      dropSlot(dayIdx, parseInt(parts[1], 10), s.slot);
+    });
+    return li;
+  }
+
+  function renderPlan() {
+    var out = document.getElementById('week-plan');
+    out.innerHTML = '';
+    if (!state.plan) return;
+
+    // Week-level balance summary + warnings.
+    var weekBal = el('div', 'week-balance');
+    var wcounts = {};
+    P.BUCKET_IDS.forEach(function (b) { wcounts[b] = 0; });
+    var wtotal = 0;
+    state.plan.days.forEach(function (d) {
+      var b = P.balanceOf(d.slots, state.actmap, state.catBucket);
+      P.BUCKET_IDS.forEach(function (k) { wcounts[k] += b.counts[k]; });
+      wtotal += b.total;
+    });
+    weekBal.appendChild(el('h3', null, 'Week balance'));
+    weekBal.appendChild(meterBar({ counts: wcounts, total: wtotal }));
+    var wwarn = P.weekWarnings(state.plan.days, state.actmap, state.catBucket);
+    if (wwarn.length) {
+      var wul = el('ul', 'meter-warnings');
+      wwarn.forEach(function (w) { wul.appendChild(el('li', null, '⚠️ ' + w)); });
+      weekBal.appendChild(wul);
+    }
+    out.appendChild(weekBal);
+
+    state.plan.days.forEach(function (d, dayIdx) {
+      var card = el('section', 'day-card');
+      card.setAttribute('aria-label', d.day + ' plan');
+      card.appendChild(el('h3', null, d.day));
+      var bal = P.balanceOf(d.slots, state.actmap, state.catBucket);
+      card.appendChild(meterBar(bal));
+      var legend = el('p', 'meter-legend',
+        P.BUCKETS.map(function (b) { return b.glyph + ' ' + b.label + ': ' + bal.counts[b.id]; }).join(' · '));
+      card.appendChild(legend);
+      var warns = P.dayWarnings(bal, d.day);
+      if (warns.length) {
+        var ul = el('ul', 'meter-warnings');
+        warns.forEach(function (w) { ul.appendChild(el('li', null, '⚠️ ' + w)); });
+        card.appendChild(ul);
+      }
+      var list = el('ol', 'slot-list');
+      list.setAttribute('aria-label', d.day + ' slots');
+      d.slots.forEach(function (s) { list.appendChild(renderSlot(d, s, dayIdx)); });
+      card.appendChild(list);
+      out.appendChild(card);
+    });
+  }
+
+  function refreshDay(dayIdx) {
+    renderPlan();
+    buildPrintDeck();
+  }
+
+  /* ---------------- slot actions ---------------- */
+
+  function swapSlot(dayIdx, slotNum) {
+    var day = state.plan.days[dayIdx];
+    var s = day.slots.filter(function (x) { return x.slot === slotNum; })[0];
+    if (!s || !s.activityId) return;
+    var oldName = state.actmap[s.activityId].name;
+    var newId = P.swapCandidate(state.pool, state.plan.days, dayIdx,
+      day.slots.indexOf(s), state.actmap, state.catBucket, state.opts);
+    if (!newId) {
+      status('Nothing else fits those constraints — loosen a filter and try again.');
+      return;
+    }
+    s.activityId = newId;
+    refreshDay(dayIdx);
+    status('Swapped “' + oldName + '” for “' + state.actmap[newId].name + '”.');
+  }
+
+  function moveSlot(dayIdx, slotNum, dir) {
+    var slots = state.plan.days[dayIdx].slots;
+    var i = slots.map(function (x) { return x.slot; }).indexOf(slotNum);
+    var j = i + dir;
+    if (i < 0 || j < 0 || j >= slots.length) return;
+    var t = slots[i]; slots[i] = slots[j]; slots[j] = t;
+    slots.forEach(function (x, k) { x.slot = k + 1; });
+    var a = slots[j].activityId ? state.actmap[slots[j].activityId].name : 'open slot';
+    refreshDay(dayIdx);
+    status('Moved “' + a + '” ' + (dir < 0 ? 'up' : 'down') + '.');
+  }
+
+  function dropSlot(dayIdx, fromSlotNum, toSlotNum) {
+    if (fromSlotNum === toSlotNum) return;
+    var slots = state.plan.days[dayIdx].slots;
+    var from = slots.map(function (x) { return x.slot; }).indexOf(fromSlotNum);
+    var to = slots.map(function (x) { return x.slot; }).indexOf(toSlotNum);
+    if (from < 0 || to < 0) return;
+    var moved = slots.splice(from, 1)[0];
+    slots.splice(to, 0, moved);
+    slots.forEach(function (x, k) { x.slot = k + 1; });
+    var a = moved.activityId ? state.actmap[moved.activityId].name : 'open slot';
+    refreshDay(dayIdx);
+    status('Moved “' + a + '” to slot ' + (to + 1) + '.');
+  }
+
+  function surpriseFill() {
+    if (!state.plan) return;
+    function gaps() {
+      var n = 0;
+      state.plan.days.forEach(function (d) {
+        d.slots.forEach(function (s) { if (!s.activityId) n++; });
+      });
+      return n;
+    }
+    var before = gaps();
+    if (before === 0) { status('No gaps to fill — every slot already has an activity.'); return; }
+    P.fillGaps(state.plan.days, state.pool, state.actmap, state.catBucket, state.opts);
+    var placed = before - gaps();
+    refreshDay(0);
+    status(placed > 0
+      ? '🎲 Surprise! Filled ' + placed + ' gap' + (placed === 1 ? '' : 's') + ' with fresh picks.'
+      : 'No gap could be filled with those constraints — loosen a filter and try again.');
+  }
+
+  /* ---------------- saved plans (localStorage) ---------------- */
+
+  function loadSaved() {
+    try {
+      var raw = localStorage.getItem(PLANS_KEY);
+      var arr = raw ? JSON.parse(raw) : [];
+      return Array.isArray(arr) ? arr : [];
+    } catch (e) { return []; }
+  }
+  function storeSaved(arr) {
+    try { localStorage.setItem(PLANS_KEY, JSON.stringify(arr)); }
+    catch (e) { status('Could not save — browser storage is unavailable.'); }
+  }
+
+  function renderSaved() {
+    var host = document.getElementById('saved-plans');
+    host.innerHTML = '';
+    var plans = loadSaved();
+    if (!plans.length) {
+      host.appendChild(el('p', 'muted', 'No saved plans yet — build a week, name it, hit Save.'));
+      return;
+    }
+    plans.forEach(function (rec, i) {
+      var li = el('li', 'saved-plan');
+      li.appendChild(el('span', 'saved-plan-name', rec.name));
+      li.appendChild(el('span', 'saved-plan-meta',
+        ' · ' + rec.days.length + ' days · saved ' +
+        new Date(rec.created).toLocaleDateString(undefined, { month: 'short', day: 'numeric' })));
+      var loadBtn = el('button', 'btn btn-small', 'Load');
+      loadBtn.type = 'button';
+      loadBtn.addEventListener('click', function () { loadPlanRecord(rec); });
+      var delBtn = el('button', 'btn btn-small btn-ghost', 'Delete');
+      delBtn.type = 'button';
+      delBtn.setAttribute('aria-label', 'Delete saved plan ' + rec.name);
+      delBtn.addEventListener('click', function () {
+        var arr = loadSaved();
+        arr.splice(i, 1);
+        storeSaved(arr);
+        renderSaved();
+        status('Deleted saved plan “' + rec.name + '”.');
+      });
+      li.appendChild(loadBtn);
+      li.appendChild(delBtn);
+      host.appendChild(li);
+    });
+  }
+
+  function saveCurrentPlan() {
+    if (!state.plan) { status('Generate a week first, then save it.'); return; }
+    var nameInput = document.getElementById('plan-name-input');
+    var name = (nameInput.value || '').trim() || defaultPlanName();
+    var rec = P.savedPlanRecord(name, state.opts, state.plan.days);
+    rec.opts = state.opts; // full constraint snapshot so swaps/fills keep working
+    var arr = loadSaved();
+    var dup = arr.map(function (r) { return r.name; }).indexOf(name);
+    if (dup !== -1) arr.splice(dup, 1);
+    arr.unshift(rec);
+    storeSaved(arr);
+    renderSaved();
+    status('Saved “' + name + '” — it lives only in this browser.');
+  }
+
+  function loadPlanRecord(rec) {
+    var validated = P.validatePlanData(rec, state.actmap);
+    state.opts = rec.opts || Object.assign(getForm(), {
+      programType: validated.programType, maxTime: validated.maxTime
+    });
+    setForm(state.opts);
+    state.pool = P.filterPool(state.activities, state.opts);
+    state.plan = {
+      version: 1, name: rec.name,
+      programType: validated.programType, maxTime: validated.maxTime,
+      ageBand: state.opts.ageBand, days: validated.days
+    };
+    renderPlan();
+    buildPrintDeck();
+    document.getElementById('plan-actions').hidden = false;
+    status('Loaded “' + rec.name + '”.');
+  }
+
+  /* ---------------- exports ---------------- */
+
   function cardUrl(rel) {
-    // Deep link: absolute when served over http(s), relative path otherwise.
     try { return new URL(rel, document.baseURI).href; }
     catch (e) { return rel; }
   }
@@ -175,46 +474,72 @@
     } else { fallback(); }
   }
 
-  function copyWeek() {
-    var lines = ['📅 My week — Activity Vault', ''];
-    state.plan.forEach(function (d) {
-      lines.push(d.day);
-      d.slots.forEach(function (s) {
-        if (!s.a) { lines.push('  Slot ' + s.slot + ' — open slot'); return; }
-        var a = s.a;
-        lines.push('  Slot ' + s.slot + ' — ' + a.name);
-        lines.push('    Ages ' + a.age_min + '–' + a.age_max + ' · ' +
-          a.time_min + '–' + a.time_max + ' min · Group ' + a.group_min + '–' + a.group_max +
-          (a.no_prep ? ' · no prep' : ''));
-        // The visitor's own rating + reflections (localStorage) — exportable notes.
-        var RR = window.VaultRatings;
-        var mine2 = RR ? RR.getRating(a.id) : null;
-        if (mine2) {
-          lines.push('    Your rating: ' + mine2.stars + '/5 stars' +
-            (mine2.note ? ' — ' + mine2.note : ''));
-          if (mine2.reflections) {
-            if (mine2.reflections.change) lines.push('    Reflection — change next time: ' + mine2.reflections.change);
-            if (mine2.reflections.age_band) lines.push('    Reflection — age band that shone: ' + mine2.reflections.age_band);
-            if (mine2.reflections.again) lines.push('    Reflection — run it again? ' + mine2.reflections.again);
-          }
-        }
-        lines.push('    ' + cardUrl('activity/' + a.id + '.html'));
-      });
-      lines.push('');
-    });
-    lines.push('Full cards: ' + cardUrl('index.html'));
-    lines.push('Paste this into your newsletter or email — every link opens the right activity card.');
-    copyText(lines.join('\n'), document.getElementById('copy-week-status'));
+  function ratingExportLine(a) {
+    var R = window.VaultRatings;
+    var mine = R ? R.getRating(a.id) : null;
+    if (!mine) return null;
+    var line = 'Your rating: ' + mine.stars + '/5 stars' + (mine.note ? ' — ' + mine.note : '');
+    if (mine.reflections) {
+      if (mine.reflections.change) line += ' | change next time: ' + mine.reflections.change;
+      if (mine.reflections.age_band) line += ' | age band that shone: ' + mine.reflections.age_band;
+      if (mine.reflections.again) line += ' | run it again? ' + mine.reflections.again;
+    }
+    return line;
   }
 
-  // Print deck: one full card per scheduled activity, one page each in print.
+  function copyWeek() {
+    if (!state.plan) return;
+    var text = P.planText(state.plan, state.actmap, catName, ratingExportLine);
+    // Deep links: absolute URLs when served over http(s).
+    text = text.split('\n').map(function (line) {
+      if (/^(activity|index)\//.test(line.trim())) {
+        return line.replace(/(activity\/[a-z0-9-]+\.html|index\.html)/, function (m) {
+          return cardUrl(m);
+        });
+      }
+      return line;
+    }).join('\n');
+    copyText(text, document.getElementById('copy-week-status'));
+  }
+
+  function copyPlanLink() {
+    if (!state.plan) return;
+    var url = cardUrl('planner.html') + '?plan=' + P.encodePlan(state.plan);
+    copyText(url, document.getElementById('copy-link-status'));
+  }
+
+  function exportICS() {
+    if (!state.plan) return;
+    var ics = P.exportICS(state.plan, state.actmap, new Date());
+    var blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'activity-vault-week.ics';
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function () {
+      URL.revokeObjectURL(a.href);
+      document.body.removeChild(a);
+    }, 1000);
+    status('Downloaded activity-vault-week.ics — import it into any calendar app.');
+  }
+
+  /* ---------------- print deck (wave 7 pattern + balance lines) ---------------- */
+
   function buildPrintDeck() {
     var host = document.getElementById('print-week-cards');
     host.textContent = '';
-    state.plan.forEach(function (d) {
+    if (!state.plan) return;
+    state.plan.days.forEach(function (d) {
+      var bal = P.balanceOf(d.slots, state.actmap, state.catBucket);
+      var dayHead = el('div', 'print-day-head');
+      dayHead.appendChild(el('h3', null, d.day));
+      dayHead.appendChild(el('p', null, 'Energy balance: ' +
+        P.BUCKETS.map(function (b) { return b.glyph + ' ' + bal.counts[b.id]; }).join(' · ')));
+      host.appendChild(dayHead);
       d.slots.forEach(function (s) {
-        if (!s.a) return;
-        var a = s.a;
+        var a = s.activityId && state.actmap[s.activityId];
+        if (!a) return;
         var card = el('section', 'print-week-card');
         card.setAttribute('aria-label', 'Print card: ' + a.name);
         card.appendChild(el('h3', null, d.day + ' — Slot ' + s.slot));
@@ -244,6 +569,8 @@
       });
     });
   }
+
+  /* ---------------- season strip (kept from 1.0) ---------------- */
 
   var SEASON_LABELS = {
     'season:fall': '🎃 Fall', 'season:winter': '❄️ Winter',
@@ -288,9 +615,36 @@
     host.hidden = false;
   }
 
+  /* ---------------- form build ---------------- */
+
   function buildForm() {
     buildSeasonStrip();
-    // category checkboxes
+
+    // Program presets + age bands.
+    var progSel = document.getElementById('p-program');
+    Object.keys(P.PROGRAMS).forEach(function (k) {
+      var o = el('option', null, P.PROGRAMS[k].label);
+      o.value = k;
+      progSel.appendChild(o);
+    });
+    var bandSel = document.getElementById('p-ageband');
+    Object.keys(P.AGE_BANDS).forEach(function (k) {
+      var o = el('option', null, P.AGE_BANDS[k].label);
+      o.value = k;
+      bandSel.appendChild(o);
+    });
+    bandSel.value = 'g3-5';
+    progSel.addEventListener('change', programDefaults);
+
+    // Collection seed dropdown.
+    var collSel = document.getElementById('p-collection');
+    state.collections.forEach(function (c) {
+      var o = el('option', null, c.glyph + ' ' + c.title + ' (' + c.picks.length + ')');
+      o.value = c.id;
+      collSel.appendChild(o);
+    });
+
+    // Category chips.
     var host = document.getElementById('pcat-row');
     state.categories.forEach(function (c) {
       var lab = el('label', 'chip');
@@ -307,25 +661,95 @@
       host.appendChild(lab);
     });
 
-    document.getElementById('generate').addEventListener('click', generate);
+    document.getElementById('slots-per-day').addEventListener('change', updateDayMinutes);
+    document.getElementById('max-time').addEventListener('change', updateDayMinutes);
+
+    document.getElementById('generate').addEventListener('click', function () { generate(); });
+    document.getElementById('regenerate').addEventListener('click', function () { generate(); });
+    document.getElementById('surprise-fill').addEventListener('click', surpriseFill);
     document.getElementById('print-plan').addEventListener('click', function () { window.print(); });
     document.getElementById('copy-week').addEventListener('click', copyWeek);
-    document.getElementById('regenerate').addEventListener('click', generate);
+    document.getElementById('copy-plan-link').addEventListener('click', copyPlanLink);
+    document.getElementById('export-ics').addEventListener('click', exportICS);
+    document.getElementById('save-plan').addEventListener('click', saveCurrentPlan);
+
+    renderSaved();
+    programDefaults();
+    handleDeepLinks();
   }
+
+  /* ---------------- deep links ---------------- */
+
+  function handleDeepLinks() {
+    var q = {};
+    window.location.search.replace(/^\?/, '').split('&').forEach(function (pair) {
+      var kv = pair.split('=');
+      if (kv[0]) q[decodeURIComponent(kv[0])] = decodeURIComponent(kv[1] || '');
+    });
+
+    if (q.plan) {
+      try {
+        var data = P.validatePlanData(P.decodePlan(q.plan), state.actmap);
+        if (!data.days.length) {
+          status('That plan link didn\u2019t contain any usable days — it may be from an older version.');
+          return;
+        }
+        var opts = getForm();
+        opts.programType = data.programType;
+        opts.maxTime = data.maxTime;
+        state.opts = opts;
+        setForm(opts);
+        state.pool = P.filterPool(state.activities, opts);
+        state.plan = {
+          version: 1, name: data.name,
+          programType: data.programType, maxTime: data.maxTime,
+          ageBand: opts.ageBand, days: data.days
+        };
+        renderPlan();
+        buildPrintDeck();
+        document.getElementById('plan-actions').hidden = false;
+        var msg = 'Opened shared plan “' + data.name + '”.';
+        if (data.dropped.length) msg += ' ' + data.dropped.length + ' activit' +
+          (data.dropped.length === 1 ? 'y' : 'ies') + ' in the link aren\u2019t in the library and were skipped.';
+        status(msg);
+      } catch (e) {
+        status('That plan link couldn\u2019t be read — it may be corrupted.');
+      }
+      return;
+    }
+
+    if (q.from && q.from.indexOf('collection:') === 0) {
+      var cid = q.from.slice('collection:'.length);
+      var coll = state.collections.filter(function (c) { return c.id === cid; })[0];
+      if (coll) {
+        document.getElementById('p-collection').value = cid;
+        generate(coll.picks.map(function (p) { return p.id; }),
+          'Seeded from ' + coll.glyph + ' ' + coll.title + '. ');
+      } else {
+        status('Collection “' + cid + '” not found — showing the plain planner.');
+      }
+    }
+  }
+
+  /* ---------------- init ---------------- */
 
   function init() {
     if (!document.getElementById('week-plan')) return;
     Promise.all([
       fetch('data/activities.json').then(function (r) { return r.json(); }),
-      fetch('data/categories.json').then(function (r) { return r.json(); })
+      fetch('data/categories.json').then(function (r) { return r.json(); }),
+      fetch('data/balance-buckets.json').then(function (r) { return r.json(); }),
+      fetch('data/collections.json').then(function (r) { return r.json(); })
     ]).then(function (res) {
       state.activities = res[0];
       state.categories = res[1];
       res[1].forEach(function (c) { state.catMap[c.id] = c; });
+      state.activities.forEach(function (a) { state.actmap[a.id] = a; });
+      state.catBucket = P.buildCatBucket(res[2].mapping);
+      state.collections = res[3].collections;
       buildForm();
     }).catch(function () {
-      document.getElementById('plan-note').textContent =
-        'Could not load the activity library. Check your connection and reload.';
+      status('Could not load the activity library. Check your connection and reload.');
     });
   }
 

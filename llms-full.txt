@@ -24,9 +24,11 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
 - api/v1/filters.json — filter configuration
 - api/v1/skills.json — skills registry
 - api/v1/collections.json — curated collections
+- api/v1/balance-buckets.json — energy balance buckets
 
 ## Skills
 - skills/activity-finder.md — Find the right activity fast using age, time, group size, and materials-on-hand filters.
+- skills/balanced-week-builder.md — Build an auto-balanced week of activities with an energy balance meter, prep caps, and no repeats — the Smart Weekly Planner 2.0 recipe.
 - skills/halloween-party-planner.md — Turn party constraints into a timed station-rotation plan from seasonal activities. Covers the Halloween and winter party presets.
 - skills/icebreaker-chooser.md — Pick first-day and new-group icebreakers matched to group size and shyness level.
 - skills/no-prep-rescue.md — Grab-and-go activities that need zero prep and zero (or near-zero) materials.
@@ -45,8 +47,11 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
   Pick a theme, class size, minutes, stations, and budget — generates a timed
   station-rotation plan from seasonal activities, plus a setup list and a
   print-ready run sheet.
-- planner.html — Plan-my-week planner: days, slots per day, and filters →
-  a no-repeat week of activities with a print-ready sheet.
+- planner.html — Smart Weekly Planner 2.0: program presets (after-school / camp /
+  classroom), age bands, auto-built no-repeat weeks with a per-day energy balance meter,
+  drag-and-drop reorder, per-slot swap, surprise gap-fill, prep-level caps, collection
+  seeding (?from=collection:<id>), named saved plans, .ics calendar export, shareable
+  ?plan= links, and a print-ready card deck.
 - collections.html — Curated collections: 8 teacher-ready bundles (rainy-day
   rescue, first day, sub tub, winter party, no-prep, calm-down…) each with a
   curator's note per pick; printable and copy-able per collection.

@@ -1,0 +1,115 @@
+{
+ "buckets": [
+  {
+   "description": "Run, jump, dance — the wiggles-burners that tire the room out (in a good way).",
+   "glyph": "⚡",
+   "id": "movement",
+   "label": "High-energy movement"
+  },
+  {
+   "description": "Wind-down worthy — quiet, focused, individual or small-group energy.",
+   "glyph": "🧘",
+   "id": "calm",
+   "label": "Calm & focus"
+  },
+  {
+   "description": "Hands-on making and music — expressive, sometimes messy, take-home energy.",
+   "glyph": "🎨",
+   "id": "creative",
+   "label": "Creative & messy"
+  },
+  {
+   "description": "Fresh air — fields, playgrounds, and nature walks.",
+   "glyph": "🌳",
+   "id": "outdoor",
+   "label": "Outdoor"
+  },
+  {
+   "description": "Flexible energy — social, seasonal, or first-day friendly; fits anywhere.",
+   "glyph": "🔀",
+   "id": "mixed",
+   "label": "All-rounder"
+  }
+ ],
+ "mapping": [
+  {
+   "category": "seasons",
+   "category_name": "Seasons",
+   "bucket": "mixed",
+   "bucket_label": "All-rounder",
+   "bucket_glyph": "🔀"
+  },
+  {
+   "category": "holidays",
+   "category_name": "Holidays",
+   "bucket": "mixed",
+   "bucket_label": "All-rounder",
+   "bucket_glyph": "🔀"
+  },
+  {
+   "category": "crafts",
+   "category_name": "Crafts",
+   "bucket": "creative",
+   "bucket_label": "Creative & messy",
+   "bucket_glyph": "🎨"
+  },
+  {
+   "category": "stem",
+   "category_name": "STEM",
+   "bucket": "mixed",
+   "bucket_label": "All-rounder",
+   "bucket_glyph": "🔀"
+  },
+  {
+   "category": "pe-movement",
+   "category_name": "PE & Movement",
+   "bucket": "movement",
+   "bucket_label": "High-energy movement",
+   "bucket_glyph": "⚡"
+  },
+  {
+   "category": "team-community",
+   "category_name": "Team & Community",
+   "bucket": "mixed",
+   "bucket_label": "All-rounder",
+   "bucket_glyph": "🔀"
+  },
+  {
+   "category": "icebreakers",
+   "category_name": "Icebreakers",
+   "bucket": "mixed",
+   "bucket_label": "All-rounder",
+   "bucket_glyph": "🔀"
+  },
+  {
+   "category": "outdoor",
+   "category_name": "Outdoor",
+   "bucket": "outdoor",
+   "bucket_label": "Outdoor",
+   "bucket_glyph": "🌳"
+  },
+  {
+   "category": "rainy-day",
+   "category_name": "Rainy Day",
+   "bucket": "mixed",
+   "bucket_label": "All-rounder",
+   "bucket_glyph": "🔀"
+  },
+  {
+   "category": "quiet-focus",
+   "category_name": "Quiet & Focus",
+   "bucket": "calm",
+   "bucket_label": "Calm & focus",
+   "bucket_glyph": "🧘"
+  },
+  {
+   "category": "music-rhythm",
+   "category_name": "Music & Rhythm",
+   "bucket": "creative",
+   "bucket_label": "Creative & messy",
+   "bucket_glyph": "🎨"
+  }
+ ],
+ "count": 11,
+ "updated": "2026-10-12"
+}

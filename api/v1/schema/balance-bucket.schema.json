@@ -1,0 +1,32 @@
+{
+ "$schema": "http://json-schema.org/draft-07/schema#",
+ "title": "BalanceBucket",
+ "type": "object",
+ "required": [
+  "id",
+  "label",
+  "glyph",
+  "description"
+ ],
+ "properties": {
+  "id": {
+   "type": "string",
+   "enum": [
+    "movement",
+    "calm",
+    "creative",
+    "outdoor",
+    "mixed"
+   ]
+  },
+  "label": {
+   "type": "string"
+  },
+  "glyph": {
+   "type": "string"
+  },
+  "description": {
+   "type": "string"
+  }
+ }
+}

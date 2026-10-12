@@ -46,7 +46,8 @@ for ep in manifest['endpoints']:
     # record counts agree
     if 'records' in ep and ep['records'] is not None:
         n = len(payload.get('activities') or payload.get('categories')
-                or payload.get('skills') or payload.get('collections') or [])
+                or payload.get('skills') or payload.get('collections')
+                or payload.get('mapping') or [])
         check("count matches: " + ep['path'], n == ep['records'], f"{n} vs {ep['records']}")
     if 'updated' in ep and ep['updated'] and 'updated' in payload:
         check("updated date-only: " + ep['path'],
@@ -81,6 +82,22 @@ check("collections: every pick resolves to a real activity id",
       f"{sum(len(c['picks']) for c in colls)} picks resolve")
 check("collections: curator note on every pick",
       all((p.get('curator_note') or '').strip() for c in colls for p in c['picks']))
+
+# ---------- 2c. Wave 10: balance-buckets — every category maps to one bucket ----------
+bb_payload = json.load(open(os.path.join(API, 'balance-buckets.json')))
+bb_map = bb_payload['mapping']
+bb_buckets = bb_payload['buckets']
+cat_ids = {c['id'] for c in json.load(open(os.path.join(API, 'categories.json')))['categories']}
+check("balance-buckets: 11 mappings", len(bb_map) == 11, f"{len(bb_map)} found")
+check("balance-buckets: every category mapped once",
+      {r['category'] for r in bb_map} == cat_ids)
+check("balance-buckets: bucket vocab fixed",
+      all(r['bucket'] in ('movement', 'calm', 'creative', 'outdoor', 'mixed') for r in bb_map))
+check("balance-buckets: 5 bucket definitions", len(bb_buckets) == 5,
+      str([b['id'] for b in bb_buckets]))
+check("balance-buckets: mapping labels match defs",
+      all(any(b['id'] == r['bucket'] and b['label'] == r['bucket_label']
+                and b['glyph'] == r['bucket_glyph'] for b in bb_buckets) for r in bb_map))
 
 # ---------- 3. AGENT.md workflow 1: rainy-day for 8-year-olds ----------
 w1 = [a for a in acts

@@ -38,7 +38,32 @@ def load():
     acts = json.load(open(os.path.join(DATA, 'activities.json')))
     cats = json.load(open(os.path.join(DATA, 'categories.json')))
     colls = json.load(open(os.path.join(DATA, 'collections.json')))['collections']
-    return acts, cats, colls
+    buckets = json.load(open(os.path.join(DATA, 'balance-buckets.json')))
+    return acts, cats, colls, buckets
+
+BUCKET_IDS = ('movement', 'calm', 'creative', 'outdoor', 'mixed')
+
+def validate_balance_buckets(bdata, cats):
+    """Wave 10: every category maps to exactly one fixed-vocabulary bucket."""
+    errs = []
+    cat_ids = {c['id'] for c in cats}
+    bdefs = {b['id'] for b in bdata.get('buckets', [])}
+    if bdefs != set(BUCKET_IDS):
+        errs.append(f"balance-buckets: bucket defs must be exactly {BUCKET_IDS}, got {sorted(bdefs)}")
+    seen = set()
+    for row in bdata.get('mapping', []):
+        cat, bucket = row.get('category'), row.get('bucket')
+        if cat in seen:
+            errs.append(f"balance-buckets: category '{cat}' mapped twice")
+        seen.add(cat)
+        if cat not in cat_ids:
+            errs.append(f"balance-buckets: '{cat}' is not a real category id")
+        if bucket not in BUCKET_IDS:
+            errs.append(f"balance-buckets: '{cat}' -> unknown bucket '{bucket}'")
+    missing = cat_ids - seen
+    if missing:
+        errs.append(f"balance-buckets: categories without a bucket: {sorted(missing)}")
+    return errs
 
 def validate_collections(colls, acts):
     errs = []
@@ -400,9 +425,10 @@ def render_activity(a, catmap):
         safety_block=safety, source_block=source)
 
 def main():
-    acts, cats, colls = load()
+    acts, cats, colls, buckets = load()
     errs = validate(acts, cats)
     errs.extend(validate_collections(colls, acts))  # wave 9: picks resolve to real ids
+    errs.extend(validate_balance_buckets(buckets, cats))  # wave 10: category->bucket map
     if errs:
         print("VALIDATION FAILED:")
         for e in errs: print(" -", e)
@@ -412,6 +438,9 @@ def main():
     assert len(colls) == 8, f"expected 8 collections, got {len(colls)}"
     assert all(p['id'] in actmap for c in colls for p in c['picks']), \
         "collection pick does not resolve to a real activity id"
+    # Wave 10 explicit assert: balance-buckets covers all 11 categories.
+    assert len(buckets['mapping']) == len(cats) == 11, \
+        f"expected 11 bucket mappings, got {len(buckets['mapping'])}"
     catmap = {c['id']: c for c in cats}
     today = date.today().isoformat()
 
@@ -460,6 +489,18 @@ def main():
     coll_records = build_collection_records(colls, actmap)
     json.dump({"collections": coll_records, "count": len(coll_records), "updated": today},
               open(os.path.join(api, 'collections.json'), 'w'), indent=1, ensure_ascii=False)
+    # 2d. balance buckets (wave 10): enriched mapping records for the planner's energy meter
+    bucket_defs = {b['id']: b for b in buckets['buckets']}
+    bucket_records = [{
+        "category": r["category"],
+        "category_name": catmap[r["category"]]["name"],
+        "bucket": r["bucket"],
+        "bucket_label": bucket_defs[r["bucket"]]["label"],
+        "bucket_glyph": bucket_defs[r["bucket"]]["glyph"],
+    } for r in buckets['mapping']]
+    json.dump({"buckets": buckets['buckets'], "mapping": bucket_records,
+               "count": len(bucket_records), "updated": today},
+              open(os.path.join(api, 'balance-buckets.json'), 'w'), indent=1, ensure_ascii=False)
     endpoints = [
         {"path": "api/v1/index.json",
          "title": "API manifest",
@@ -497,6 +538,13 @@ def main():
                         "curator's one-line note on why each was picked, plus age/time spans.",
          "schema": "api/v1/schema/collections.schema.json",
          "updated": today, "records": len(coll_records), "stability": "stable"},
+        {"path": "api/v1/balance-buckets.json",
+         "title": "Energy balance buckets",
+         "description": "The 5 energy buckets (movement, calm, creative, outdoor, all-rounder) "
+                      "and the category-to-bucket mapping the Smart Weekly Planner's balance "
+                      "meter uses. An activity's bucket comes from its primary category.",
+         "schema": "api/v1/schema/balance-buckets.schema.json",
+         "updated": today, "records": len(bucket_records), "stability": "stable"},
         {"path": "pipeline/review-queue.json",
          "title": "RSS review queue",
          "description": "RSS-pipeline working queue: accepted / rejected / deferred activity candidates "
@@ -642,6 +690,44 @@ def main():
     json.dump(coll_schema, open(os.path.join(schemadir, 'collection.schema.json'), 'w'), indent=1)
     json.dump(envelope("CollectionsResponse", coll_schema, "collections"),
               open(os.path.join(schemadir, 'collections.schema.json'), 'w'), indent=1)
+    # Wave 10: balance-bucket record schema + envelope (draft-07), same two-file convention.
+    bucket_schema = {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "title": "BalanceBucket", "type": "object",
+        "required": ["id", "label", "glyph", "description"],
+        "properties": {
+            "id": {"type": "string",
+                   "enum": ["movement", "calm", "creative", "outdoor", "mixed"]},
+            "label": {"type": "string"},
+            "glyph": {"type": "string"},
+            "description": {"type": "string"},
+        },
+    }
+    json.dump(bucket_schema, open(os.path.join(schemadir, 'balance-bucket.schema.json'), 'w'), indent=1)
+    json.dump({
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "title": "BalanceBucketsResponse", "type": "object",
+        "required": ["buckets", "mapping", "count", "updated"],
+        "properties": {
+            "buckets": {"type": "array", "items": bucket_schema},
+            "mapping": {"type": "array", "minItems": 11, "maxItems": 11,
+                      "items": {
+                          "type": "object",
+                          "required": ["category", "category_name", "bucket",
+                                     "bucket_label", "bucket_glyph"],
+                          "properties": {
+                              "category": {"type": "string"},
+                              "category_name": {"type": "string"},
+                              "bucket": {"type": "string",
+                                       "enum": ["movement", "calm", "creative",
+                                              "outdoor", "mixed"]},
+                              "bucket_label": {"type": "string"},
+                              "bucket_glyph": {"type": "string"},
+                          }}},
+            "count": {"type": "integer", "minimum": 0},
+            "updated": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+        },
+    }, open(os.path.join(schemadir, 'balance-buckets.schema.json'), 'w'), indent=1)
     json.dump({
         "$schema": "http://json-schema.org/draft-07/schema#",
         "title": "ApiManifest", "type": "object",
@@ -703,8 +789,11 @@ def main():
               "  Pick a theme, class size, minutes, stations, and budget — generates a timed",
               "  station-rotation plan from seasonal activities, plus a setup list and a",
               "  print-ready run sheet.",
-              "- planner.html — Plan-my-week planner: days, slots per day, and filters →",
-              "  a no-repeat week of activities with a print-ready sheet.",
+              "- planner.html — Smart Weekly Planner 2.0: program presets (after-school / camp /",
+              "  classroom), age bands, auto-built no-repeat weeks with a per-day energy balance meter,",
+              "  drag-and-drop reorder, per-slot swap, surprise gap-fill, prep-level caps, collection",
+              "  seeding (?from=collection:<id>), named saved plans, .ics calendar export, shareable",
+              "  ?plan= links, and a print-ready card deck.",
               "- collections.html — Curated collections: 8 teacher-ready bundles (rainy-day",
               "  rescue, first day, sub tub, winter party, no-prep, calm-down…) each with a",
               "  curator's note per pick; printable and copy-able per collection.",
@@ -736,6 +825,7 @@ def main():
 
     print(f"BUILD OK — {len(acts)} activities, {rendered} pages rendered, "
           f"{len(cats)} categories, {len(coll_records)} collections, "
+          f"{len(bucket_records)} balance-bucket mappings, "
           f"api + llms + sitemap written.")
 
 if __name__ == '__main__':

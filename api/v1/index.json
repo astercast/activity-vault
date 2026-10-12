@@ -2,7 +2,7 @@
  "meta": {
   "site": "Activity Vault",
   "version": "1.0.0",
-  "generated": "2026-10-12T01:37:54Z",
+  "generated": "2026-10-12T01:53:43Z",
   "source_snapshot": "data/activities.json + data/categories.json — 238 activities, 11 categories"
  },
  "endpoints": [
@@ -46,7 +46,7 @@
    "description": "Registry of the reusable skill recipes in skills/: id, description, and file path.",
    "schema": null,
    "updated": "2026-10-12",
-   "records": 10,
+   "records": 11,
    "stability": "stable"
   },
   {
@@ -56,6 +56,15 @@
    "schema": "api/v1/schema/collections.schema.json",
    "updated": "2026-10-12",
    "records": 8,
+   "stability": "stable"
+  },
+  {
+   "path": "api/v1/balance-buckets.json",
+   "title": "Energy balance buckets",
+   "description": "The 5 energy buckets (movement, calm, creative, outdoor, all-rounder) and the category-to-bucket mapping the Smart Weekly Planner's balance meter uses. An activity's bucket comes from its primary category.",
+   "schema": "api/v1/schema/balance-buckets.schema.json",
+   "updated": "2026-10-12",
+   "records": 11,
    "stability": "stable"
   },
   {

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Plan my week — Activity Vault</title>
-<meta name="description" content="Build your week's activity plan in seconds: pick days, slots, and constraints — get a no-repeat plan with printable cards.">
+<title>Smart Weekly Planner 2.0 — Activity Vault</title>
+<meta name="description" content="Auto-build balanced weeks: pick a program, age group, and days — get a no-repeat week with an energy balance meter, drag-and-drop, swap, .ics export, and saveable plans.">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -27,28 +27,46 @@
 
 <main class="wrap">
   <section class="hero" aria-labelledby="hero-title">
-    <span class="kicker no-print">📅 Plan my week</span>
-    <h1 id="hero-title">Your week, planned.</h1>
-    <p class="lede no-print">Pick your days and time slots, set your constraints, and the Vault builds a no-repeat week from matching activities — with a note on why each one fits.</p>
+    <span class="kicker no-print">📅 Smart Weekly Planner 2.0</span>
+    <h1 id="hero-title">Your week, auto-built and balanced.</h1>
+    <p class="lede no-print">Pick a program, an age group, and your days — the Vault deals a no-repeat week from 238 real activities, balances the energy across every day, and warns you when a day is lopsided. Then drag it into shape.</p>
   </section>
 
-  <p class="plan-note no-print">📚 Short on inspiration? <a href="collections.html">Start from a curated collection</a> — hand-picked bundles for rainy days, first days, sub coverage, and more.</p>
+  <p class="plan-note no-print">📚 Short on inspiration? <a href="collections.html">Start from a curated collection</a> — or seed the planner straight from one: every collection has a “🗓️ Plan a week from this” button.</p>
 
   <aside class="season-strip no-print" id="season-strip" aria-label="Seasonal picks" hidden></aside>
 
   <form class="planner-form no-print" id="planner-form" onsubmit="return false;" aria-label="Week planner options">
     <fieldset>
-      <legend>Days</legend>
+      <legend>Program &amp; kids</legend>
+      <div class="filter-group">
+        <label class="flabel" for="p-program">Program type</label>
+        <select id="p-program"></select>
+        <p class="field-hint">Sets sensible defaults for slots, minutes, and location — you can override them.</p>
+      </div>
+      <div class="filter-group">
+        <label class="flabel" for="p-ageband">Age group</label>
+        <select id="p-ageband"></select>
+      </div>
+      <div class="filter-group">
+        <label class="flabel" for="p-collection">Seed from a curated collection (optional)</label>
+        <select id="p-collection">
+          <option value="">No seed — build from the full library</option>
+        </select>
+        <p class="field-hint">Curator picks go in first; the rest of the week fills automatically.</p>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Days &amp; time</legend>
       <div class="day-row" role="group" aria-label="Days of the week">
         <label class="chip"><input type="checkbox" name="day" value="Monday" checked> Mon</label>
         <label class="chip"><input type="checkbox" name="day" value="Tuesday" checked> Tue</label>
         <label class="chip"><input type="checkbox" name="day" value="Wednesday" checked> Wed</label>
         <label class="chip"><input type="checkbox" name="day" value="Thursday" checked> Thu</label>
         <label class="chip"><input type="checkbox" name="day" value="Friday" checked> Fri</label>
+        <label class="chip"><input type="checkbox" name="day" value="Saturday"> Sat</label>
+        <label class="chip"><input type="checkbox" name="day" value="Sunday"> Sun</label>
       </div>
-    </fieldset>
-    <fieldset>
-      <legend>Slots &amp; limits</legend>
       <div class="filter-group">
         <label class="flabel" for="slots-per-day">Activity slots per day</label>
         <select id="slots-per-day">
@@ -59,15 +77,15 @@
         </select>
       </div>
       <div class="filter-group">
-        <label class="flabel" for="max-time">Max minutes per activity</label>
+        <label class="flabel" for="max-time">Minutes per activity</label>
         <select id="max-time">
-          <option value="">No limit</option>
           <option value="15">15 min</option>
           <option value="20">20 min</option>
           <option value="30" selected>30 min</option>
           <option value="45">45 min</option>
           <option value="60">60 min</option>
         </select>
+        <p class="field-hint" id="day-minutes" aria-live="polite">≈ 60 min/day</p>
       </div>
     </fieldset>
     <fieldset>
@@ -76,11 +94,22 @@
     </fieldset>
     <fieldset>
       <legend>Constraints</legend>
+      <div class="filter-group">
+        <label class="flabel" for="p-prepcap">Max prep-heavy activities per week</label>
+        <select id="p-prepcap">
+          <option value="0">0 — no prep at all</option>
+          <option value="1">1</option>
+          <option value="2" selected>2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
       <label class="toggle-row"><input type="checkbox" id="p-noprep"> Only no-prep activities</label>
       <label class="toggle-row"><input type="checkbox" id="p-indoor"> Indoor only</label>
       <label class="toggle-row"><input type="checkbox" id="p-repeats"> Allow repeats if I run out</label>
     </fieldset>
-    <button class="btn" id="generate" type="button">✨ Generate my week</button>
+    <button class="btn" id="generate" type="button">✨ Build my balanced week</button>
   </form>
 
   <p id="plan-note" role="status" aria-live="polite"></p>
@@ -90,8 +119,23 @@
     <button class="btn" id="print-plan" type="button">🖨️ Print week plan</button>
     <button class="btn btn-ghost" id="copy-week" type="button">📋 Copy my week</button>
     <span class="copy-status" id="copy-week-status" role="status" aria-live="polite"></span>
-    <button class="btn btn-ghost" id="regenerate" type="button">🎲 Shuffle again</button>
+    <button class="btn btn-ghost" id="copy-plan-link" type="button">🔗 Copy plan link</button>
+    <span class="copy-status" id="copy-link-status" role="status" aria-live="polite"></span>
+    <button class="btn btn-ghost" id="export-ics" type="button">📥 Export .ics</button>
+    <button class="btn btn-ghost" id="surprise-fill" type="button">🎲 Surprise me</button>
+    <button class="btn btn-ghost" id="regenerate" type="button">🔀 Shuffle again</button>
   </div>
+
+  <section class="saved-plans no-print" id="saved-section" aria-labelledby="saved-title">
+    <h2 id="saved-title">💾 Saved plans</h2>
+    <p class="muted">Plans live only in this browser — nothing is uploaded anywhere.</p>
+    <div class="save-row">
+      <label class="flabel" for="plan-name-input">Name this week</label>
+      <input type="text" id="plan-name-input" maxlength="80" placeholder="e.g. Rainy week backup">
+      <button class="btn btn-small" id="save-plan" type="button">💾 Save current plan</button>
+    </div>
+    <ul class="saved-plan-list" id="saved-plans"></ul>
+  </section>
 
   <section class="print-only print-deck" id="print-week-cards" aria-label="Week card deck (print)" aria-hidden="true"></section>
   <p class="no-print" style="margin-bottom:3rem;"><a href="index.html">← Back to browsing</a></p>
@@ -102,6 +146,7 @@
 </footer>
 
 <script src="assets/ratings.js" defer></script>
+<script src="assets/planner-core.js" defer></script>
 <script src="assets/planner.js" defer></script>
 </body>
 </html>

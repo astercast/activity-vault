@@ -2,6 +2,28 @@
 
 Running record of build waves. Newest first.
 
+## Wave 10 — 2026-10-11 — Smart Weekly Planner 2.0 (flagship interactive tool)
+
+**What shipped:**
+- **Auto-built balanced weeks** (`assets/planner-core.js` — pure, UMD, works in browser + Node): pick program type (`after-school` / `camp` / `classroom` presets with slots, minutes, indoor rules, `.ics` start hours), age band (`prek-k` → `all`), days (Mon–Sun), slots/day (1–4), minutes/activity, and the core deals a no-repeat week from the real 238 via balance-aware scoring (`day_bucket_count × 3 + week_bucket_count + 2 × used_category`, ties shuffled, seeded PRNG for reproducibility).
+- **Balance meter**: 5 energy buckets from new `data/balance-buckets.json` (⚡ movement, 🧘 calm, 🎨 creative, 🌳 outdoor, 🔀 all-rounder — every one of the 11 categories maps to exactly one; an activity's bucket = its primary category). Per-day + whole-week visual meters (segmented bars, `role="img"` + text legend) with human warnings: non-`mixed` bucket > 50% of a day's slots (movement → "lands softly", calm → "sleepy", creative → "cleanup", outdoor → "indoor backup", 3+ slots zero calm → "quiet landing"), plus week checks (no movement across 4+ slots, no calm across 6+).
+- **No-repeat logic + prep caps**: configurable max prep-heavy activities/week (0–5, default 2); repeats only when explicitly allowed; gaps stay visible as open slots instead of silent repeats.
+- **Day shaping tools**: drag-and-drop reorder within days (HTML5 DnD; ↑/↓ buttons as the keyboard path, moves announced via `aria-live`), per-slot 🔀 swap (balance-friendly fresh pick, never repeats, respects prep cap), 🎲 "Surprise me" gap fill.
+- **Saved plans + exports**: multiple named plans in `localStorage` (`activityvault.plans.v1`, browser-only — the honesty copy says so), client-side **`.ics` download** (floating local times from the program start hour on the next matching weekday, `DURATION = min(time_max, maxTime)`), print week plan (wave-7 card deck + per-day energy-balance header), 📋 Copy my week (wave-7 pattern incl. your ratings/reflections), 🔗 Copy plan link (`planner.html?plan=<base64url>`, validated on import — unknown ids dropped with a visible note).
+- **Deep links**: `planner.html?from=collection:<id>` pre-seeds from any of the 8 collections (picks filtered by constraints, skips reported); every collection now has a "🗓️ Plan a week from this" button back to the planner.
+- **API/agentic**: `api/v1/balance-buckets.json` (manifest-registered, records=11, stability stable) with enriched mapping (`category_name`, `bucket_label`, `bucket_glyph`); new draft-07 schemas `balance-bucket.schema.json` (record) + `balance-buckets.schema.json` (envelope) following the collection two-file convention; `scripts/build.py` asserts all 11 categories map exactly once. AGENT.md: week-planner input shape rewritten for 2.0 + new **Workflow 4** (programmatic week build, plan payload shape, `?plan=` link, `.ics` recipe); API.md: `GET api/v1/balance-buckets.json` + schema sections, planner deep links; `llms.txt`/`llms-full.txt` regenerated (no stale links). New skill **`skills/balanced-week-builder.md`** (11 skills registered) in the standard format.
+- **Guardrails kept**: all picks resolve to real activity ids (asserted by build + headless tests); original descriptions untouched; only your own ratings shown; semantic HTML + ARIA + keyboard + `prefers-reduced-motion` (existing global rule covers the new bits); mobile-first, existing design system untouched.
+
+**Validation (wave 10):**
+- `scripts/build.py`: BUILD OK — 238 activities, 238 pages rendered, 11 categories, 8 collections, **11 balance-bucket mappings**, 0 dupes
+- `scripts/check_api.py`: ALL CHECKS PASSED — 40 checks incl. new endpoint schema validation, count 11 vs 11, 11 mappings / every category mapped once / fixed bucket vocab / 5 bucket defs / mapping labels match defs; link check 244 pages 0 broken; llms.txt links resolve
+- `node --check`: planner-core.js, planner.js, collections.js, test-planner-core.js — clean
+- `scripts/test-planner-core.js` (headless, new): 39 assertions pass — pool filter semantics, week respects constraints/no-repeats/prep cap, seeded determinism, collection seed placement + bogus-id drop, balance math, bucket coverage of all 238, warnings (movement/calm-heavy warn, balanced day quiet, no-calm 3-slot warns), swap (fresh id, null when exhausted), fillGaps, `.ics` (VEVENT count, DTSTART format, Monday lands on the right date, CRLF), plan encode/decode round-trip, import drops unknown ids + bad day names
+- `planner.js` UI smoke test (fake-DOM, headless): 15 checks pass — generate renders 5 day cards + week balance + 10 slots + 6 meters, swap buttons present, surprise-fill no-op message, save→localStorage round-trip with real ids, copy plan link, `.ics` download anchor, `?plan=` import (dropped id noted), `?from=collection:rainy-day-rescue` seeding
+- DOM id cross-check: all 28 `getElementById` ids in planner.js exist in planner.html
+
+**Wave 10 push resolution:** _pending — filled after push._
+
 ## Wave 9 — 2026-10-11 — Curated collections (content + browse feature wave)
 
 **What shipped:**

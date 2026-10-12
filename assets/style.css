@@ -452,3 +452,57 @@ input[type="number"] {
   .pick-list { grid-template-columns: 1fr 1fr; }
   .pick { break-inside: avoid; border: 1px solid #999; }
 }
+
+/* ================= WAVE 10 — Smart Weekly Planner 2.0 ================= */
+.field-hint { font-size: .82rem; color: var(--ink-soft); margin: .25rem 0 0; }
+.muted { color: var(--ink-soft); font-size: .9rem; }
+
+/* energy balance meter */
+.meter {
+  display: flex; height: 14px; border-radius: 999px; overflow: hidden;
+  background: var(--paper-deep); border: 1px solid var(--line); margin: .4rem 0 .2rem;
+}
+.meter-seg { height: 100%; min-width: 2px; }
+.meter-movement { background: #e07b39; }
+.meter-calm { background: #7aa7c7; }
+.meter-creative { background: #a06bc5; }
+.meter-outdoor { background: #6aa84f; }
+.meter-mixed { background: #b9a88f; }
+.meter-legend { font-size: .82rem; color: var(--ink-soft); margin: .2rem 0 0; }
+.meter-warnings { list-style: none; padding: 0; margin: .5rem 0 0; }
+.meter-warnings li {
+  font-size: .88rem; background: #fdf3d8; border: 1px solid #ecd9a0;
+  border-radius: 10px; padding: .5rem .8rem; margin-bottom: .4rem;
+}
+.week-balance {
+  background: var(--card); border: 2px solid var(--line); border-radius: var(--radius);
+  padding: 1rem 1.1rem; margin-bottom: 1rem;
+}
+.week-balance h3 { margin: 0 0 .4rem; }
+
+/* slot list: ordered, draggable rows */
+.slot-list { list-style: none; padding: 0; margin: .4rem 0 0; }
+li.slot { display: flex; gap: .6rem; align-items: flex-start; }
+.slot-body { flex: 1; min-width: 0; }
+.slot-actions { display: flex; gap: .3rem; flex-wrap: wrap; padding-top: .2rem; }
+.slot-bucket { font-size: .9em; }
+.slot-empty { color: var(--ink-soft); font-weight: 400; }
+li.slot.dragging { opacity: .5; }
+li.slot.drag-over { outline: 3px dashed var(--accent); outline-offset: 3px; border-radius: 8px; }
+
+/* saved plans */
+.saved-plans { margin: 2.5rem 0; }
+.save-row { display: flex; gap: .6rem; align-items: flex-end; flex-wrap: wrap; margin-bottom: 1rem; }
+.save-row .flabel { margin: 0; }
+#plan-name-input {
+  font: inherit; padding: .5rem .8rem; border: 2px solid var(--line);
+  border-radius: 10px; background: var(--card); color: var(--ink); min-width: 16rem;
+}
+.saved-plan-list { list-style: none; padding: 0; margin: 0; }
+.saved-plan { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; padding: .5rem 0; border-top: 1px dashed var(--line); }
+.saved-plan-name { font-weight: 700; }
+.saved-plan-meta { color: var(--ink-soft); font-size: .85rem; margin-right: auto; }
+
+/* print: day balance header inside the card deck */
+.print-day-head h3 { font-size: 16pt; margin: 14pt 0 2pt; }
+.print-day-head p { font-size: 10pt; color: #333; margin: 0 0 6pt; }

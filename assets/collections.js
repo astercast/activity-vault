@@ -125,8 +125,11 @@
     copyStatus.setAttribute('role', 'status');
     copyStatus.setAttribute('aria-live', 'polite');
     copyBtn.addEventListener('click', function () { copyOne(c, actmap, copyStatus); });
+    var planLink = el('a', 'btn btn-small btn-ghost', '🗓️ Plan a week from this');
+    planLink.href = 'planner.html?from=collection:' + encodeURIComponent(c.id);
     actions.appendChild(printBtn);
     actions.appendChild(copyBtn);
+    actions.appendChild(planLink);
     actions.appendChild(copyStatus);
     sec.appendChild(actions);
 

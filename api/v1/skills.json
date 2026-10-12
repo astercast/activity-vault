@@ -6,6 +6,11 @@
    "file": "skills/activity-finder.md"
   },
   {
+   "id": "balanced-week-builder",
+   "description": "Build an auto-balanced week of activities with an energy balance meter, prep caps, and no repeats — the Smart Weekly Planner 2.0 recipe.",
+   "file": "skills/balanced-week-builder.md"
+  },
+  {
    "id": "halloween-party-planner",
    "description": "Turn party constraints into a timed station-rotation plan from seasonal activities. Covers the Halloween and winter party presets.",
    "file": "skills/halloween-party-planner.md"
@@ -51,6 +56,6 @@
    "file": "skills/week-planner.md"
   }
  ],
- "count": 10,
+ "count": 11,
  "updated": "2026-10-12"
 }

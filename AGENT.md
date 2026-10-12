@@ -19,9 +19,10 @@ This archive is built to be driven by agents, no browser needed. Everything is s
 | `api/v1/skills.json` | Registry of the 10 reusable skill recipes in `skills/` | (self-describing) |
 | `api/v1/collections.json` | 8 curated collections (rainy-day, first day, sub tub, winter party…): activity ids + curator notes | `api/v1/schema/collections.schema.json` |
 | `api/v1/index.json` | The manifest itself | `api/v1/schema/index.schema.json` |
+| `api/v1/balance-buckets.json` | The 5 energy buckets + the category→bucket mapping the Smart Weekly Planner's balance meter uses | `api/v1/schema/balance-buckets.schema.json` |
 | `pipeline/review-queue.json` | RSS-pipeline working queue (accepted/rejected/deferred candidates) — **internal, not a stable public API** | — |
 
-Record-level schemas also exist: `api/v1/schema/activity.schema.json`, `api/v1/schema/category.schema.json`, and `api/v1/schema/collection.schema.json`.
+Record-level schemas also exist: `api/v1/schema/activity.schema.json`, `api/v1/schema/category.schema.json`, `api/v1/schema/collection.schema.json`, and `api/v1/schema/balance-bucket.schema.json`.
 
 ## Curated collections (wave 9)
 
@@ -51,7 +52,7 @@ The three tools (`sub.html`, `party.html`, `planner.html`) are thin clients over
 
 **Party planner** (`party.html`) — inputs: `theme` ∈ {`halloween`, `winter`}, `class_size` (4–60), `minutes`, `stations`, `budget` ∈ {`shoestring`, `moderate`, `splurge`}. Logic: `round_min = floor((minutes - 10) / stations)` (5 min intro + 5 min wrap); winter theme also reserves a 5-min ☕ warm-up break midway, so `round_min = floor((minutes - 15) / stations)`; `per_group = ceil(class_size / stations)`. Pool by theme: Halloween = activity carries ANY of [`holiday:halloween`, `holiday:dia-de-muertos`, `season:fall`, `theme:spooky`]; Winter = ANY of [`holiday:christmas`, `holiday:new-year`, `season:winter`] — and ANY of [`crafts`, `pe-movement`, `rainy-day`, `quiet-focus`, `team-community`, `icebreakers`]; `time_min <= round_min + 5`; group range must include `per_group`; `shoestring` budget keeps only activities with no materials or all-cheap materials (paper, crayon, marker, pencil, pen, glue, scissors, tape, balloon, bag, plate, cup, string, yarn, dice, card, chalk, sticker, ribbon, towel, tissue, newspaper, box, sock, button, cotton, pipe cleaner, toothpick). Stations picked by: no-prep first, then longest `time_max`, preferring categories not yet used. Full logic: `assets/party.js`.
 
-**Week planner** (`planner.html`) — inputs: `days[]`, `slots` per day (1–4), optional `cats` set, `maxTime`, `noPrepOnly`, `indoorOnly`, `allowRepeats`. Logic: pool = filter above; shuffle; deal round-robin across days × slots; prefer activities whose categories haven't appeared yet that week (`usedCats`), skip already-used ids unless `allowRepeats`. Seasonal suggestions strip (top of page, month-driven): links to `index.html?tag=<tag>` with live counts — the browse page pre-selects a `?tag=` value from the tag vocabulary. Full logic: `assets/planner.js`.
+**Week planner** (`planner.html` — Smart Weekly Planner 2.0) — inputs: `programType` ∈ {`after-school`, `camp`, `classroom`} (presets: slots/day 2/3/2, minutes 30/45/20, indoor-only for classroom; slot start hours 15:00/9:00/13:00 for `.ics`), `ageBand` ∈ {`prek-k`, `g1-2`, `g3-5`, `g6-8`, `all`}, `days[]` (Mon–Sun), `slots` per day (1–4), `maxTime`, optional `cats` set, `noPrepOnly`, `indoorOnly`, `allowRepeats`, `maxPrepHeavy` (default 2), optional `seedIds` from a collection. Logic: pool = filter above; seed picks first (skipped if they fail filters); deal round-robin, scoring candidates by `day_bucket_count × 3 + week_bucket_count + 2 × used_category` (shuffle ties, lowest wins), skip used ids unless `allowRepeats`, skip prep-heavy picks past the weekly cap. **Balance meter** (`api/v1/balance-buckets.json`): an activity's bucket = its primary (first) category's bucket; warn when a non-`mixed` bucket holds > 50% of a day's filled slots (movement-heavy → "lands softly"; calm-heavy → "sleepy"; creative-heavy → "cleanup"; outdoor-heavy → "indoor backup"; 3+ slots with zero calm → "quiet landing"), plus week checks (4+ slots, zero movement → "kids need to move"; 6+, zero calm → "plan a calm landing"). Deep links: `planner.html?from=collection:<id>` seeds from a curated collection; `planner.html?plan=<base64url>` opens a shared plan (payload shape in Workflow 4). The `.ics` export (client-side) uses floating local times from the program's start hour on the next matching weekday. Saved plans live in `localStorage` key `activityvault.plans.v1` (never uploaded). Full logic: `assets/planner-core.js` (pure, UMD — require it in Node for headless builds/tests) + `assets/planner.js` (DOM). Seasonal suggestions strip (top of page, month-driven): links to `index.html?tag=<tag>` with live counts — the browse page pre-selects a `?tag=` value from the tag vocabulary.
 
 ---
 
@@ -134,11 +135,33 @@ Rules for agents and for the UI copy (standing):
 
 **Expected result:** 10 distinct activities across 5 days, covering ≥ 5 different categories.
 
+## Workflow 4 — Build a balanced week programmatically (planner 2.0, no browser)
+
+**Situation:** after-school program, grades 3–5, Mon–Fri, 2 slots/day, ≤30 min, max 2 prep-heavy activities, seeded from the `rainy-day-rescue` collection — and the teacher wants a shareable link they can open in `planner.html`.
+
+1. `GET api/v1/activities.json`, `api/v1/balance-buckets.json`, `api/v1/collections.json`. Build `catBucket`: `mapping` → `{category: bucket}`. An activity's bucket is `catBucket[activity.categories[0]]` (primary category only).
+2. Pool: `age_min <= 11 and age_max >= 8` (overlap), `time_min <= 30`. (No category filter, no no-prep gate here.)
+3. Seeds: the `rainy-day-rescue` collection's 12 `activity_id`s in order; place each if it's in the pool and unused.
+4. For each of the 5 days × 2 slots: shuffle the remaining pool; score each candidate `day_bucket_count × 3 + week_bucket_count + 2 × (categories already used this week)`; take the lowest; skip used ids (repeats off); skip `no_prep == false` picks once 2 are placed.
+5. Balance check per day: bucket counts across filled slots; if a non-`mixed` bucket holds > 50% of the day's slots, attach the warning (movement → "add a calm or creative slot so the room lands softly"; calm → "the room may get sleepy; mix in some movement"; creative → "budget extra cleanup time"; outdoor → "keep an indoor backup ready"). 3+ slots with zero calm → "consider a quiet landing". Week check: 4+ filled slots, zero movement → "No high-energy slot all week — kids need to move."
+6. Assemble the shareable plan payload (v1) and base64url-encode it (`+`→`-`, `/`→`_`, strip `=`):
+   ```json
+   { "version": 1, "name": "Rainy-week backup", "programType": "after-school",
+     "maxTime": 30, "ageBand": "g3-5",
+     "days": [ {"day": "Monday",
+       "slots": [ {"slot": 1, "activityId": "freeze-dance"},
+                  {"slot": 2, "activityId": "silent-ball"} ]} ] }
+   ```
+   Deep link: `planner.html?plan=<base64url>`. The planner validates every `activityId` against the real library and drops unknown ids with a visible note — never invent an id.
+7. Optional `.ics`: one `VEVENT` per filled slot, `DTSTART` floating local time at the program start hour (after-school 15:00) on the next matching weekday, `DURATION` = `min(time_max, maxTime)` minutes, `UID` `av-<id>-<date>-<slot>@activityvault`.
+
+**Expected result:** 10 distinct real activity ids across 5 days, ≤ 2 prep-heavy, a per-day bucket breakdown with any dominance warnings, and a `?plan=` link the teacher can open, print, or `.ics`-export.
+
 ---
 
 ## Skills
 
-Ten reusable recipes live in `skills/` (registry at `api/v1/skills.json`): `activity-finder`, `week-planner`, `rainy-day-rescue`, `stem-demo-picker`, `icebreaker-chooser`, `quiet-focus-picker`, `sub-tub-rescue`, `halloween-party-planner`, `no-prep-rescue`, `outdoor-play-picker`. Each has "Use when", inputs, a step-by-step procedure, a worked example, API references, and pitfalls.
+Eleven reusable recipes live in `skills/` (registry at `api/v1/skills.json`): `activity-finder`, `balanced-week-builder`, `week-planner`, `rainy-day-rescue`, `stem-demo-picker`, `icebreaker-chooser`, `quiet-focus-picker`, `sub-tub-rescue`, `halloween-party-planner`, `no-prep-rescue`, `outdoor-play-picker`. Each has "Use when", inputs, a step-by-step procedure, a worked example, API references, and pitfalls.
 
 ## Rate / expectation notes
 
