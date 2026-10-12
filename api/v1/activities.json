@@ -2657,7 +2657,10 @@
    "variations": {
     "easier": "Use food coloring instead of paint for zero-stain cleanup.",
     "harder": "Paint on black paper — the colors pop dramatically."
-   }
+   },
+   "tags": [
+    "season:summer"
+   ]
   },
   {
    "age_max": 12,
@@ -5183,7 +5186,10 @@
    "variations": {
     "easier": "Free draw with no theme.",
     "harder": "Each square must connect to its neighbors as one continuous mural."
-   }
+   },
+   "tags": [
+    "season:summer"
+   ]
   },
   {
    "id": "parachute-games",
@@ -5270,7 +5276,10 @@
    "variations": {
     "easier": "Shorten the distance between buckets.",
     "harder": "Sponges must be carried overhead."
-   }
+   },
+   "tags": [
+    "season:summer"
+   ]
   },
   {
    "id": "shadow-tag",
@@ -6913,7 +6922,10 @@
    "variations": {
     "easier": "One class bag everyone watches together.",
     "harder": "Two bags — one in sun, one in shade — and compare condensation speed."
-   }
+   },
+   "tags": [
+    "season:summer"
+   ]
   },
   {
    "age_max": 8,
@@ -11716,8 +11728,1259 @@
    "tags": [
     "season:spring"
    ]
+  },
+  {
+   "id": "water-balloon-toss",
+   "name": "Water Balloon Toss",
+   "tagline": "Partners toss a water balloon back and forth, stepping back after every catch.",
+   "categories": [
+    "outdoor",
+    "pe-movement",
+    "seasons"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 30,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "water balloons (fill 3 per pair)"
+    },
+    {
+     "item": "a hose or bucket for filling"
+    },
+    {
+     "item": "a trash bag for the pieces"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Fill balloons ahead — about 3 per pair — and keep them in a bucket or cooler. Mark two facing lines on the grass and hand out the trash bag.",
+   "steps": [
+    "Pair everyone up and line the pairs up facing each other, one big step apart.",
+    "One partner tosses the balloon to the other. Catch it, don't spike it.",
+    "Every successful catch: both partners take one big step back.",
+    "Dropped or popped balloon? That pair is out — they become the cheering section.",
+    "Last dry pair wins. Cleanup first: everyone hunts balloon pieces before the next game."
+   ],
+   "variations": {
+    "easier": "Partners stay at arm's length the whole game — no stepping back.",
+    "harder": "Bonus round: the final two pairs keep going until there is one balloon left."
+   },
+   "safety": "Pick up every balloon piece — they are a choking hazard for small kids and litter for the yard. Toss underhand only, never at faces.",
+   "tags": [
+    "season:summer"
+   ]
+  },
+  {
+   "id": "drip-drip-drop",
+   "name": "Drip Drip Drop",
+   "tagline": "Duck-duck-goose with a wet sponge — the 'goose' gets a squeeze overhead.",
+   "categories": [
+    "outdoor",
+    "pe-movement",
+    "seasons"
+   ],
+   "age_min": 4,
+   "age_max": 10,
+   "group_min": 6,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "one big soft sponge"
+    },
+    {
+     "item": "a bucket of water"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Fill the bucket, soak the sponge, and wring it once so it drips but doesn't pour. Kids sit in a circle on the grass.",
+   "steps": [
+    "One kid is it and walks the circle with the dripping sponge, tapping heads: 'drip, drip, drip…'",
+    "On 'DROP!' they squeeze the sponge over that kid's head and run.",
+    "The dropped-on kid chases them around the circle for the empty spot.",
+    "Caught? The chaser stays it. Made it around? The chaser sits and the runner picks the next it.",
+    "Re-soak the sponge every few rounds — a dry sponge is just a head tap."
+   ],
+   "variations": {
+    "easier": "The teacher is always it; kids only run the chase.",
+    "harder": "Two sponges, two runners — twice the sprints, half the waiting."
+   },
+   "safety": "Squeeze gently, never hard. Barefoot-friendly grass only — no running on wet concrete.",
+   "tags": [
+    "season:summer"
+   ]
+  },
+  {
+   "id": "bucket-brigade-race",
+   "name": "Bucket Brigade Race",
+   "tagline": "Teams pass water down a line — over heads, under legs — to fill the far bucket.",
+   "categories": [
+    "outdoor",
+    "team-community",
+    "seasons"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 8,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "2 buckets per team"
+    },
+    {
+     "item": "1 cup or small pitcher per kid"
+    },
+    {
+     "item": "a hose or water source for refills"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Set a full bucket at each team's start and an empty one at the far end, about 15 feet away. Line teams up between them.",
+   "steps": [
+    "On 'go', the first kid dips their cup, lifts it overhead, and pours it into the cup of the kid behind them — no looking back.",
+    "The water travels down the line, cup to cup, to the last kid, who dumps it in the far bucket and runs the empty cup back to the front.",
+    "Rotate the line order every round so everyone gets the anchor spot.",
+    "First team to fill their far bucket to the tape line wins.",
+    "Losers' prize: everyone gets to dump their own bucket over their own head."
+   ],
+   "variations": {
+    "easier": "Short lines of 4, and kids pour hand-to-hand at chest height instead of overhead.",
+    "harder": "Backwards round: the line faces the other way and passes under their legs."
+   },
+   "safety": "Wet ground gets slippery — run it on grass, not pavement. Water breaks for the runners, not just the buckets.",
+   "tags": [
+    "season:summer"
+   ]
+  },
+  {
+   "id": "sponge-launch-bullseye",
+   "name": "Sponge Launch Bullseye",
+   "tagline": "Soaked sponges fly at chalk targets — points for the bullseye, splash for style.",
+   "categories": [
+    "outdoor",
+    "pe-movement",
+    "seasons"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 30,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "big soft sponges (2 per kid)"
+    },
+    {
+     "item": "buckets of water"
+    },
+    {
+     "item": "sidewalk chalk"
+    },
+    {
+     "item": "masking tape for the throw line"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Draw 3 or 4 big bullseye targets on pavement with chalk, numbered 10-25-50. Tape a throw line 10 feet back. Soak the sponges.",
+   "steps": [
+    "Each kid gets two throws per round at any target they choose.",
+    "Points are where the sponge's wet splat mark lands — argue the line calls like pros.",
+    "Re-soak between rounds; a dry sponge doesn't count.",
+    "After 5 rounds, the top two scorers face off in a sudden-death bullseye round.",
+    "Rinse-off finale: leftover sponges get launched at the teacher's feet (permission granted, aim low)."
+   ],
+   "variations": {
+    "easier": "Bigger targets, closer line, one throw per round.",
+    "harder": "Moving bonus: a volunteer walks a sponge-bucket slowly across the back — hit it mid-walk for double points."
+   },
+   "safety": "Throw sponges, never at faces. Re-chalk targets when they wash away — slippery chalk dust underfoot gets swept.",
+   "tags": [
+    "season:summer"
+   ]
+  },
+  {
+   "id": "foam-noodle-tag",
+   "name": "Foam Noodle Tag",
+   "tagline": "Tag with foam pool noodles — everyone is armed, nobody gets hurt.",
+   "categories": [
+    "outdoor",
+    "pe-movement",
+    "seasons"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 6,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "foam pool noodles (1 per kid, cut in half)"
+    },
+    {
+     "item": "cones or chalk for boundaries"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Cut full noodles in half — short noodles, less whipping. Mark clear boundaries with cones. Everyone gets a noodle, including it.",
+   "steps": [
+    "One kid is it. A noodle tap — arm or leg only — makes you it.",
+    "New it must drop their noodle for 3 seconds (the 'cooldown') before chasing — no instant revenge tags.",
+    "Tag-backs are banned for 30 seconds: count it out loud together.",
+    "Every 3 minutes, freeze and rotate: the last three its become safe-zone guards for one round.",
+    "End with the noodle salute: everyone taps noodles overhead at once."
+   ],
+   "variations": {
+    "easier": "Walk, don't run — and noodles stay at waist height or below.",
+    "harder": "Shadow tag round: its tag by stepping on shadows; noodles become victory flags."
+   },
+   "safety": "Foam only, never wood or plastic bats. Head and face are off-limits — a head tap resets the game, not the tag.",
+   "tags": [
+    "season:summer"
+   ]
+  },
+  {
+   "id": "sprinkler-limbo",
+   "name": "Sprinkler Limbo",
+   "tagline": "Limbo under the sprinkler stream — how low can you go before you're soaked?",
+   "categories": [
+    "outdoor",
+    "pe-movement",
+    "seasons"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "an oscillating or fan sprinkler"
+    },
+    {
+     "item": "a hose"
+    },
+    {
+     "item": "towels"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Set the sprinkler on grass with room to approach and exit. Mark the limbo lane with chalk — straight at the stream.",
+   "steps": [
+    "The sprinkler arcs overhead; kids limbo-walk under the stream one at a time.",
+    "Touch the water? You're 'soaked out' — grab a towel and join the cheering line.",
+    "Each round, lower the sprinkler arc (or the bar-pole beside it) one notch.",
+    "Last kid still dry-ish wins the Golden Towel.",
+    "Everyone finishes with a full run through the sprinkler — no dry witnesses."
+   ],
+   "variations": {
+    "easier": "No limbo: just run through the stream and strike a pose at the end.",
+    "harder": "Team edition: pairs limbo together holding hands — coordination beats flexibility."
+   },
+   "safety": "Grass only — wet pavement plus limbo is a fall waiting to happen. Shade and water breaks between rounds on hot days.",
+   "tags": [
+    "season:summer"
+   ]
+  },
+  {
+   "id": "capture-the-flag-basics",
+   "name": "Capture the Flag Basics",
+   "tagline": "Two teams, two flags, one field — the summer-camp classic, simplified.",
+   "categories": [
+    "outdoor",
+    "team-community",
+    "seasons"
+   ],
+   "age_min": 7,
+   "age_max": 12,
+   "group_min": 8,
+   "group_max": 30,
+   "time_min": 25,
+   "time_max": 45,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "2 bandanas or flags"
+    },
+    {
+     "item": "cones for the center line and jail zones"
+    },
+    {
+     "item": "whistle"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Split the field with cones, mark a jail box on each side, and plant each flag where it is visible but not trivial. Two even teams.",
+   "steps": [
+    "Each team hides nothing — flags stay visible from the center line at all times.",
+    "Cross into enemy territory to grab their flag; get tagged and you sit in jail.",
+    "A teammate can free you with a hand-tag — both of you get a free walk back to your side.",
+    "First team to carry the enemy flag across the center line wins the round.",
+    "Best of three rounds, then the MVPs pick the next game's teams."
+   ],
+   "variations": {
+    "easier": "Smaller field, flags on poles (no hiding), and jail is a 30-second time-out instead of waiting.",
+    "harder": "Night-vision round at dusk with glow bracelets for team colors."
+   },
+   "safety": "Set hard boundaries before starting — roads and parking lots are out of bounds, no exceptions. Sunscreen, shade, and water breaks; call the game at the first sign of heat exhaustion.",
+   "tags": [
+    "season:summer"
+   ]
+  },
+  {
+   "id": "flashlight-tag",
+   "name": "Flashlight Tag",
+   "tagline": "Tag by flashlight beam on a summer evening — freeze when the light finds you.",
+   "categories": [
+    "outdoor",
+    "pe-movement",
+    "seasons"
+   ],
+   "age_min": 6,
+   "age_max": 12,
+   "group_min": 6,
+   "group_max": 24,
+   "time_min": 20,
+   "time_max": 35,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "one flashlight per 4 kids (it holds one)"
+    },
+    {
+     "item": "glow bracelet for it"
+    },
+    {
+     "item": "cones for boundaries"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Play at dusk in a familiar, enclosed yard — no woods, no streets. Bound it tight with cones. One flashlight for it, glow bracelet so everyone can see them.",
+   "steps": [
+    "It counts to 30 with eyes closed while everyone hides within bounds.",
+    "It sweeps the flashlight beam — anyone the beam touches freezes in place.",
+    "Frozen players can be unfrozen by a free player tagging their shadow (no beam needed, just a hand tag).",
+    "Round ends when everyone is frozen or the whistle blows at 10 minutes.",
+    "New it: the first player frozen becomes it next round."
+   ],
+   "variations": {
+    "easier": "Daylight version: tag by pointing, no hiding — just the beam-freeze rule.",
+    "harder": "Two flashlights, two its, and frozen players become 'lighthouses' who can freeze others with finger-beams."
+   },
+   "safety": "Stay inside the coned boundary — no hiding near roads, water, or parking lots. An adult holds the boundary line the whole game.",
+   "tags": [
+    "season:summer"
+   ]
+  },
+  {
+   "id": "chalk-obstacle-course",
+   "name": "Chalk Obstacle Course",
+   "tagline": "Draw the course, then run it: hop, spin, crab-walk, and freeze between stations.",
+   "categories": [
+    "outdoor",
+    "pe-movement",
+    "crafts",
+    "seasons"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 40,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "sidewalk chalk (lots)"
+    },
+    {
+     "item": "a stopwatch or phone timer"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Find a stretch of pavement and sketch the course first: stations every 10 feet or so, arrows between them.",
+   "steps": [
+    "Station ideas: hopscotch squares, a spin circle ('spin 3 times'), crab-walk lane, balance line, jumping jacks box, freeze square.",
+    "Kids run the course in order, doing each station's move before advancing.",
+    "Time the runs — then let kids redesign one station and run it again.",
+    "Team relay: each runner does two stations, then tags the next.",
+    "Championship: the course design contest — best new station gets added permanently."
+   ],
+   "variations": {
+    "easier": "Four stations max, all walking-speed, with picture labels.",
+    "harder": "Blindfold-guide round: one partner calls directions through the course while the other (eyes open, promise) follows exactly."
+   },
+   "safety": "Chalk dust is slippery when thick — sweep the lane between runs. Hats and water on hot pavement days.",
+   "tags": [
+    "season:summer"
+   ]
+  },
+  {
+   "id": "frisbee-golf-nine",
+   "name": "Frisbee Golf Nine",
+   "tagline": "Nine chalk-and-cone 'holes' around the field — fewest throws wins.",
+   "categories": [
+    "outdoor",
+    "pe-movement",
+    "seasons"
+   ],
+   "age_min": 6,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 24,
+   "time_min": 25,
+   "time_max": 45,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "frisbees or foam discs (1 per 2 kids)"
+    },
+    {
+     "item": "9 cones or buckets as holes"
+    },
+    {
+     "item": "chalk for tee markers"
+    },
+    {
+     "item": "scorecards and pencils"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Set 9 holes around the field — cones, buckets, or chalk circles — each with a tee marker 20 to 40 feet back. Number them with chalk.",
+   "steps": [
+    "Groups of 2 to 4 start at different holes to avoid traffic jams.",
+    "Throw from the tee; wherever the disc lands, that's your next lie.",
+    "Hole is finished when the disc lands inside the target circle.",
+    "Count every throw. Lowest total after 9 holes wins.",
+    "Award ceremony: longest throw, best recovery, most creative throwing style."
+   ],
+   "variations": {
+    "easier": "Five holes, closer tees, and buckets instead of circles — bigger targets.",
+    "harder": "Trick-shot hole: one hole must be played between the legs or behind the back."
+   },
+   "safety": "Foam discs only near groups — never throw toward another hole's players. Call 'fore!' (or just 'heads up!') on wild throws.",
+   "tags": [
+    "season:summer"
+   ]
+  },
+  {
+   "id": "nature-color-scavenger",
+   "name": "Nature Color Scavenger",
+   "tagline": "Find something in nature for every color of the rainbow — no picking allowed.",
+   "categories": [
+    "outdoor",
+    "seasons",
+    "quiet-focus"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 35,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "paper color cards or a printed rainbow strip per team"
+    },
+    {
+     "item": "bags for fallen items only"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Make color cards (red, orange, yellow, green, blue, purple, brown, gray). Set the search boundary — the yard, the garden beds, the nature strip.",
+   "steps": [
+    "Teams get a color card set and 15 minutes on the clock.",
+    "Find something in nature matching each color — a fallen leaf, a pebble, a petal already on the ground.",
+    "Nothing gets picked, pulled, or dug up: fallen and found only.",
+    "Back at base, each team lays out its rainbow and tells the story of the hardest color.",
+    "Bonus point for the weirdest natural object that still counts as a color."
+   ],
+   "variations": {
+    "easier": "Four colors instead of eight, and the teacher pre-hides painted rocks as guaranteed finds.",
+    "harder": "Texture round: find something smooth, rough, bumpy, and soft — then rank them by touch alone, blindfolded."
+   },
+   "safety": "Look with eyes first near bushes and logs — check for bees and thorns before reaching. Wash hands after handling soil and found objects.",
+   "tags": [
+    "season:summer"
+   ]
+  },
+  {
+   "id": "friendship-bracelet-basics",
+   "name": "Friendship Bracelet Basics",
+   "tagline": "The camp classic: knotted embroidery floss bracelets, learned in one sitting.",
+   "categories": [
+    "crafts",
+    "quiet-focus",
+    "seasons"
+   ],
+   "age_min": 7,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 25,
+   "time_max": 45,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "embroidery floss in many colors"
+    },
+    {
+     "item": "safety pins or tape"
+    },
+    {
+     "item": "scissors"
+    },
+    {
+     "item": "pillows or clipboards to pin to"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Cut floss into arm-length strands (3 per bracelet). Knot the tops together and pin them to pillows — one workstation per kid.",
+   "steps": [
+    "Pick 3 colors and knot them together at the top.",
+    "Learn the only knot that matters: the forward knot — make a '4' with the working thread, pull the tail through, slide it up. Twice per knot.",
+    "Work left to right, one color at a time, until the bracelet fits around a wrist.",
+    "Tie the end in a knot, braid the tails, and gift it — bracelets are for giving.",
+    "Trade-up round: everyone makes one for the person on their left."
+   ],
+   "variations": {
+    "easier": "Two colors, chunky yarn instead of floss, and the teacher ties the starting knot.",
+    "harder": "Pattern challenge: stripes, chevrons, then the diamond — photograph each stage for the camp board."
+   },
+   "safety": "Safety pins pin to pillows or denim, never to skin. Scissors cut away from fingers.",
+   "tags": [
+    "season:summer"
+   ]
+  },
+  {
+   "id": "sun-print-cards",
+   "name": "Sun Print Cards",
+   "tagline": "Lay objects on sun-sensitive paper, let the sun do the printing.",
+   "categories": [
+    "crafts",
+    "stem",
+    "seasons"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 35,
+   "location": [
+    "outdoor",
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "sunprint (cyanotype) paper"
+    },
+    {
+     "item": "flat interesting objects: leaves, keys, lace, coins"
+    },
+    {
+     "item": "a shallow tray of water"
+    },
+    {
+     "item": "cardstock for mounting"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Keep the sunprint paper in its black bag until the last second — it exposes fast. Set up a water rinse tray in the shade.",
+   "steps": [
+    "In the shade, arrange flat objects on the blue side of the paper.",
+    "Carry it into full sun and wait 3 to 5 minutes — the paper darkens around the objects.",
+    "Rinse the paper in the water tray for one minute: the background turns deep blue, the shapes stay white.",
+    "Lay flat to dry, then mount on cardstock for a finished card.",
+    "Experiment round: half the exposure time, double it — compare the three blues."
+   ],
+   "variations": {
+    "easier": "The teacher handles the paper; kids only arrange objects and carry with two hands.",
+    "harder": "Negative-space art: spell a name in objects and print the whole word in one exposure."
+   },
+   "safety": "Don't stare at the sun while timing exposures — use a timer and look away. Rinse water only, no chemicals to handle.",
+   "tags": [
+    "season:summer"
+   ]
+  },
+  {
+   "id": "pinwheel-garden",
+   "name": "Pinwheel Garden",
+   "tagline": "Paper pinwheels on sticks — then plant the whole spinning garden.",
+   "categories": [
+    "crafts",
+    "seasons"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 35,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "square paper (6 inch)"
+    },
+    {
+     "item": "pencils with erasers"
+    },
+    {
+     "item": "pushpins"
+    },
+    {
+     "item": "scissors"
+    },
+    {
+     "item": "straws or dowels"
+    },
+    {
+     "item": "tape"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Pre-cut 6-inch squares for little ones. Push the pins through pencil erasers ahead of time so no one is forcing them.",
+   "steps": [
+    "Fold the square corner to corner both ways and unfold — find the center.",
+    "Cut along each fold from the corner toward the center, stopping a thumb's width short.",
+    "Fold every other point into the center and pin through all layers into the pencil eraser.",
+    "Tape the pencil to a straw for height.",
+    "Plant the garden: stick them in the ground along the walkway and watch the wind do the work."
+   ],
+   "variations": {
+    "easier": "The teacher does all cutting and pinning; kids decorate and plant.",
+    "harder": "Two-tone pinwheels: glue two contrasting squares back to back before cutting."
+   },
+   "safety": "Pushpins are teacher-handled — pinched fingers, not pierced ones. Blow, don't run with the pinwheel.",
+   "tags": [
+    "season:summer"
+   ]
+  },
+  {
+   "id": "sand-art-bottles",
+   "name": "Sand Art Bottles",
+   "tagline": "Layered colored sand in clear bottles — desert landscapes you can shake.",
+   "categories": [
+    "crafts",
+    "seasons"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 35,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "clear plastic bottles with caps"
+    },
+    {
+     "item": "colored craft sand"
+    },
+    {
+     "item": "paper funnels or rolled paper"
+    },
+    {
+     "item": "trays to catch spills"
+    },
+    {
+     "item": "corks or caps"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Pour each sand color into its own tray with a funnel. One bottle per kid, caps off, trays under everything — sand travels.",
+   "steps": [
+    "Pick your first color and funnel in one inch of sand.",
+    "Tilt the bottle and pour the next color against the side — layers stay cleaner on a tilt.",
+    "Alternate colors and thicknesses: thin stripes, thick bands, a mountain layer.",
+    "Top it off to the very brim so the layers can't shift, then cap it tight.",
+    "Name your landscape and shelve it where the light hits — do not shake (or do, once, to learn why not)."
+   ],
+   "variations": {
+    "easier": "Three colors max, wide-mouth bottles, and the teacher pours while the kid picks colors.",
+    "harder": "Pattern challenge: symmetrical layers mirrored top to bottom."
+   },
+   "safety": "Sand stays in the trays — no throwing, no rubbing eyes. Shake hands clean before touching faces.",
+   "tags": [
+    "season:summer"
+   ]
+  },
+  {
+   "id": "ice-excavation-dig",
+   "name": "Ice Excavation Dig",
+   "tagline": "Tiny toys frozen in a block of ice — excavate them with salt and droppers.",
+   "categories": [
+    "stem",
+    "quiet-focus",
+    "rainy-day",
+    "seasons"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 25,
+   "time_max": 45,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "small plastic toys or figures"
+    },
+    {
+     "item": "freezer containers"
+    },
+    {
+     "item": "salt in shakers"
+    },
+    {
+     "item": "water droppers or spray bottles"
+    },
+    {
+     "item": "trays and towels"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Freeze the night before: toys in water-filled containers, frozen solid. One block per pair, each on a tray with towels underneath.",
+   "steps": [
+    "Pop each block out and set the excavation challenge: free every toy.",
+    "Tools allowed: salt shakers, water droppers, and patience. No hammers, no teeth.",
+    "Sprinkle salt on the ice, wait 30 seconds, then drip warm water on the salty spots — watch the tunnels form.",
+    "First pair to free all their toys calls 'excavation complete'.",
+    "Science talk: why did the salt spots melt first? Test it — one cube with salt, one without, race them."
+   ],
+   "variations": {
+    "easier": "Crushed-ice cups instead of solid blocks: toys half-buried, dig with spoons.",
+    "harder": "Timed paleontology: photograph each freed toy like a museum specimen and label the 'strata' it came from."
+   },
+   "safety": "Meltwater goes in trays, not on the floor — wet floors, wet socks, slipped kids. Towels down before blocks come out.",
+   "tags": [
+    "season:summer"
+   ]
+  },
+  {
+   "id": "fan-boat-races",
+   "name": "Fan Boat Races",
+   "tagline": "Paper boats race across a tub — powered by nothing but fanned air.",
+   "categories": [
+    "stem",
+    "rainy-day",
+    "seasons"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 25,
+   "time_max": 45,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper for folding boats"
+    },
+    {
+     "item": "a long shallow tub or storage bin"
+    },
+    {
+     "item": "hand fans or stiff paper fans"
+    },
+    {
+     "item": "towels"
+    },
+    {
+     "item": "tape for lane lines"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Fill the tub a few inches deep and tape two lane lines. Fold one demo boat slowly so everyone sees the steps; stack paper for the fleet.",
+   "steps": [
+    "Everyone folds a classic paper boat — teacher demos, kids follow.",
+    "Float-test: set boats in the tub. Leakers get 2 minutes of repairs.",
+    "Racers stand at one end with fans. On 'go', fan your boat down the lane — no touching the boat, no blowing with mouths.",
+    "First boat to cross the far tape wins the heat; winners race winners.",
+    "Redesign round: fold a wider, narrower, or double-hull boat and re-race."
+   ],
+   "variations": {
+    "easier": "Pre-folded boats; kids decorate and fan only.",
+    "harder": "Storm round: everyone fans at once from both ends — last boat floating upright wins."
+   },
+   "safety": "Towels around the tub before racing starts — splashes happen. Paper cuts: fold slowly, crease with a ruler edge.",
+   "tags": [
+    "season:summer"
+   ]
+  },
+  {
+   "id": "indoor-campfire-circle",
+   "name": "Indoor Campfire Circle",
+   "tagline": "Build a paper campfire, kill the lights, and tell stories around it.",
+   "categories": [
+    "rainy-day",
+    "quiet-focus",
+    "team-community",
+    "seasons"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 35,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "brown paper bags or construction paper"
+    },
+    {
+     "item": "red, orange, yellow tissue paper"
+    },
+    {
+     "item": "a battery tea light or flashlight"
+    },
+    {
+     "item": "stones or gray paper for the ring"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Tear or cut brown paper into log shapes. Cut tissue into flame shapes. Arrange seating in a tight circle before building.",
+   "steps": [
+    "Build the fire ring: gray paper stones in a circle on the floor.",
+    "Crisscross the paper logs teepee-style inside the ring.",
+    "Tuck tissue flames up through the logs — red outside, yellow inside.",
+    "Set the battery light in the middle, dim the room lights, and gather around.",
+    "Story rounds: each kid adds one sentence to the campfire tale. The flames 'grow' (add tissue) when the story gets exciting."
+   ],
+   "variations": {
+    "easier": "The teacher builds the fire; kids add flames and tell the story.",
+    "harder": "Shadow round: one flashlight behind the fire throws giant story shadows on the wall — act out the tale."
+   },
+   "safety": "Battery lights only — no real flames, ever, indoors. Keep the circle wide enough that no one trips into the 'fire'.",
+   "tags": [
+    "season:summer"
+   ]
+  },
+  {
+   "id": "shadow-puppet-matinee",
+   "name": "Shadow Puppet Matinee",
+   "tagline": "Cardboard puppets, one flashlight, a dark room — the hottest-hour show.",
+   "categories": [
+    "crafts",
+    "quiet-focus",
+    "rainy-day",
+    "seasons"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 30,
+   "time_max": 50,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "black cardstock"
+    },
+    {
+     "item": "scissors"
+    },
+    {
+     "item": "tape"
+    },
+    {
+     "item": "sticks, straws, or pencils"
+    },
+    {
+     "item": "a flashlight"
+    },
+    {
+     "item": "a white sheet or blank wall"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Hang the sheet or clear a blank wall. Test the flashlight distance — about 6 feet back gives big, sharp shadows. Pre-cut puppet blanks for little ones.",
+   "steps": [
+    "Draw a character on black cardstock — animals read best in shadow — and cut it out.",
+    "Tape it to a stick. That's your actor.",
+    "Rehearse behind the sheet: figure out which way is up in shadow-land (it's backwards the first time, every time).",
+    "Groups of 3 get 5 minutes to stage a one-minute scene.",
+    "Matinee: lights down, audience seated, each troupe performs. Applause is mandatory.",
+    "Encore: the whole cast does a shadow dance finale behind the sheet."
+   ],
+   "variations": {
+    "easier": "Pre-cut animal shapes; kids tape and perform only.",
+    "harder": "Multi-light show: two flashlights at angles make double shadows — choreograph them."
+   },
+   "safety": "Scissors safety as always. Flashlights never pointed at eyes — the beam aims at the sheet, period.",
+   "tags": [
+    "season:summer"
+   ]
+  },
+  {
+   "id": "camp-week-kickoff",
+   "name": "Camp Week Kickoff",
+   "tagline": "The opening assembly that turns 30 strangers into one camp: cheer, map, first mission.",
+   "categories": [
+    "team-community",
+    "icebreakers",
+    "outdoor",
+    "seasons"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 10,
+   "group_max": 60,
+   "time_min": 30,
+   "time_max": 50,
+   "location": [
+    "outdoor",
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "a big paper week-map or whiteboard"
+    },
+    {
+     "item": "markers"
+    },
+    {
+     "item": "a camp cheer (made up on the spot)"
+    },
+    {
+     "item": "name tags and markers"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Draw the week-map: five big boxes labeled with each day's theme. Set chairs in a wide circle. Have name tags ready.",
+   "steps": [
+    "Everyone writes a name tag with their name plus one summer thing they love.",
+    "Name game lightning round: each kid says their name with a move; the whole circle repeats it.",
+    "Invent the camp cheer together — three words, one stomp, one clap. Practice it twice.",
+    "Unveil the week-map: walk through each day's headline so the week has a shape.",
+    "First mission: mixed teams get one 15-minute challenge (chalk the camp motto on the walkway) and report back.",
+    "Close with the cheer. Camp has officially started."
+   ],
+   "variations": {
+    "easier": "Shorter circle, teacher-led cheer, and the mission is a group drawing instead of a challenge.",
+    "harder": "Legacy round: each week adds one box to a season-long map — by August the wall tells the whole summer."
+   },
+   "safety": "Keep the circle in shade if outdoors — opening assemblies run long and kids wilt. Water within reach.",
+   "tags": [
+    "season:summer"
+   ]
+  },
+  {
+   "id": "talent-showcase-night",
+   "name": "Talent Showcase Night",
+   "tagline": "A low-pressure camp talent night format: every act gets 90 seconds and a roaring crowd.",
+   "categories": [
+    "team-community",
+    "music-rhythm",
+    "seasons"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 8,
+   "group_max": 60,
+   "time_min": 40,
+   "time_max": 60,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "a sign-up sheet"
+    },
+    {
+     "item": "a timer"
+    },
+    {
+     "item": "a simple 'stage' area with seating"
+    },
+    {
+     "item": "paper programs (kids make them)"
+    },
+    {
+     "item": "a flashlight 'spotlight'"
+    }
+   ],
+   "no_prep": true,
+   "setup": "Tape the sign-up sheet up at lunch — acts sign themselves up, no auditions. Mark the stage area and set out seating.",
+   "steps": [
+    "Acts sign up in pairs or solos — every act gets exactly 90 seconds, timed kindly.",
+    "Emcees (two volunteers) introduce each act with a made-up fancy title.",
+    "The audience rule, stated up front: every act gets cheers, no act gets booed — that's the whole contract.",
+    "Between acts, the emcees run 30-second crowd games (stand up if you love pizza).",
+    "Finale: the counselors do a deliberately terrible act. The kids judge them, loudly.",
+    "Programs get signed like yearbooks afterward."
+   ],
+   "variations": {
+    "easier": "Group acts only, 60 seconds, and the teacher emcees.",
+    "harder": "Theme night: every act must involve water, or shadows, or things found outside — watch creativity spike."
+   },
+   "safety": "No live flames, no throwing acts, no rooftop anything — the emcees check each act's plan at sign-up. Keep volume neighbor-friendly after dark.",
+   "tags": [
+    "season:summer"
+   ]
+  },
+  {
+   "id": "star-spangled-shoebox-parade",
+   "name": "Star-Spangled Shoebox Parade",
+   "tagline": "Decorate shoebox floats in red, white, and blue — then parade the whole route.",
+   "categories": [
+    "crafts",
+    "holidays",
+    "seasons"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 30,
+   "time_max": 50,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "shoeboxes (1 per kid)"
+    },
+    {
+     "item": "red, white, and blue paper, streamers, and stickers"
+    },
+    {
+     "item": "glue sticks and tape"
+    },
+    {
+     "item": "scissors"
+    },
+    {
+     "item": "string for pulling"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Collect shoeboxes ahead — one per kid. Cut streamer lengths and sort the red/white/blue supplies into trays by color.",
+   "steps": [
+    "Flip each shoebox upside down: that's the float base.",
+    "Cover it in paper — stripes, stars, or solid colors with sticker constellations.",
+    "Add streamers to the back so it flies while parading. Tie on a pull string.",
+    "Line up by height, count down from ten, and parade the route: around the building, past the office, back to the room.",
+    "Judging categories: most stars, best streamers, loudest cheers from the audience.",
+    "Floats go home the same day — parade glory is perishable."
+   ],
+   "variations": {
+    "easier": "Pre-covered boxes; kids add stickers and streamers only.",
+    "harder": "Night parade: tape glow bracelets to the floats and parade at dusk."
+   },
+   "safety": "Scissors supervision. Parade route checked ahead for tripping hazards and traffic — sidewalks and fields only, never streets.",
+   "tags": [
+    "season:summer",
+    "holiday:july-4th"
+   ]
+  },
+  {
+   "id": "liberty-quiz-bowl",
+   "name": "Liberty Quiz Bowl",
+   "tagline": "Team trivia on July 4th basics — the Declaration, the 13 colonies, the 50 stars.",
+   "categories": [
+    "team-community",
+    "quiet-focus",
+    "holidays",
+    "seasons"
+   ],
+   "age_min": 7,
+   "age_max": 12,
+   "group_min": 6,
+   "group_max": 40,
+   "time_min": 20,
+   "time_max": 35,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "question cards (teacher-made)"
+    },
+    {
+     "item": "buzzers or bells (or just hands)"
+    },
+    {
+     "item": "a scoreboard"
+    },
+    {
+     "item": "small prizes or stickers"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Write 20 to 30 questions on cards, easy to hard. Split the room into 3 or 4 teams. Set the scoreboard where everyone sees it.",
+   "steps": [
+    "Sample rounds, all real facts: What year was the Declaration of Independence signed? (1776.) How many colonies became the first states? (13.) How many stars on the flag? (50 — one per state.) What city was the first capital under the Constitution? (New York.)",
+    "Teams huddle 15 seconds, then the captain answers.",
+    "Steal rule: a wrong answer bounces to the next team for half points.",
+    "Halftime show: each team performs its answer to 'what does freedom mean at camp?' in 30 seconds.",
+    "Winners get the Golden Bell until next year; everyone gets a sticker.",
+    "Fact-check any disputed answer together — the atlas and the encyclopedia outrank the loudest team."
+   ],
+   "variations": {
+    "easier": "True-or-false only, teams answer together with thumbs up or down.",
+    "harder": "Kids write the next year's question cards — the question-writers learn twice as much."
+   },
+   "safety": "Keep rivalry friendly: the emcee calls a reset the moment anyone's feelings get louder than the game.",
+   "tags": [
+    "season:summer",
+    "holiday:july-4th"
+   ]
+  },
+  {
+   "id": "longest-day-shadow-track",
+   "name": "Longest Day Shadow Track",
+   "tagline": "Track one shadow from morning to afternoon on the solstice — the sun draws the graph.",
+   "categories": [
+    "stem",
+    "outdoor",
+    "seasons"
+   ],
+   "age_min": 6,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 30,
+   "time_max": 60,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "a tall stick or pole"
+    },
+    {
+     "item": "sidewalk chalk in several colors"
+    },
+    {
+     "item": "a measuring tape"
+    },
+    {
+     "item": "a clipboard log sheet"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Plant the stick upright in a sunny paved spot first thing in the morning. Draw the first shadow outline in chalk and label it with the time.",
+   "steps": [
+    "Every hour, on the hour, trace the shadow's new position in a new chalk color and log the time and length.",
+    "Predict at lunch: where will the 2 p.m. shadow fall? Mark guesses with initials.",
+    "At day's end, connect the dots: the shadow drew an arc across the pavement.",
+    "Read the arc together: shortest shadow = the sun at its highest = solar noon, near the longest day of the year.",
+    "Photo the finished arc for the camp board — the sun signed its work."
+   ],
+   "variations": {
+    "easier": "Three tracings only (morning, noon, afternoon) with the teacher handling the chalk.",
+    "harder": "Week-long edition: trace the noon shadow every day for a week and watch the arc creep."
+   },
+   "safety": "Never look directly at the sun while tracking — watch the shadow, not the source. Shade, hats, and water for the trackers; rotate the job so nobody bakes.",
+   "tags": [
+    "season:summer"
+   ]
+  },
+  {
+   "id": "giant-bubble-chase",
+   "name": "Giant Bubble Chase",
+   "tagline": "Blow the biggest bubbles you can — then chase and pop them before they land.",
+   "categories": [
+    "outdoor",
+    "pe-movement",
+    "seasons"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "bubble wands (big loops work best)"
+    },
+    {
+     "item": "bubble solution (dish soap + water + a spoon of sugar)"
+    },
+    {
+     "item": "shallow trays"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Mix the solution ahead: roughly 6 cups water, 1 cup dish soap, 1 tablespoon sugar — stir gently, no foam. Pour into shallow trays, one per 4 kids.",
+   "steps": [
+    "Demo the slow pull: dip the big loop, lift it dripping, and walk backward — the bubble grows behind you.",
+    "Chasers line up downwind. Blowers launch; chasers pop before landing.",
+    "Rules of the chase: pop with a fingertip, not a face; one pop per bubble (no hogging).",
+    "Switch roles every 5 minutes — everyone blows, everyone chases.",
+    "Grand finale: the whole group launches at once and the field fills with bubbles."
+   ],
+   "variations": {
+    "easier": "Small wands, seated blowing, and the teacher does the chasing demo.",
+    "harder": "Bubble snake pit: everyone blows at once into one corner and counts how many bubbles fit in a hula hoop."
+   },
+   "safety": "Bubble solution stings eyes — keep a water bottle handy for rinses and remind kids to pop with fingers, not faces. Slippery when spilled: trays on grass, not pavement.",
+   "tags": [
+    "season:summer"
+   ]
   }
  ],
- "count": 263,
+ "count": 288,
  "updated": "2026-10-12"
 }

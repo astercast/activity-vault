@@ -574,18 +574,22 @@
 
   var SEASON_LABELS = {
     'season:fall': '🎃 Fall', 'season:winter': '❄️ Winter', 'season:spring': '🌷 Spring',
+    'season:summer': '☀️ Summer',
     'holiday:halloween': '👻 Halloween', 'holiday:dia-de-muertos': '💀 Día de los Muertos',
     'holiday:christmas': '🎄 Christmas', 'holiday:hanukkah': '🕎 Hanukkah',
     'holiday:kwanzaa': '🖤 Kwanzaa', 'holiday:new-year': '🎆 New Year',
     'holiday:easter': '🐣 Easter', 'holiday:earth-day': '🌎 Earth Day',
+    'holiday:july-4th': '🇺🇸 July 4th',
     'theme:spooky': '🕸️ Spooky (not scary)'
   };
   var SEASON_BY_MONTH = { 8: 'season:fall', 9: 'season:fall', 10: 'season:fall',
                           11: 'season:winter', 0: 'season:winter', 1: 'season:winter',
-                          2: 'season:spring', 3: 'season:spring', 4: 'season:spring' };
+                          2: 'season:spring', 3: 'season:spring', 4: 'season:spring',
+                          5: 'season:summer', 6: 'season:summer', 7: 'season:summer' };
   var HOLIDAY_BY_MONTH = {
     2: ['holiday:easter'],
     3: ['holiday:easter', 'holiday:earth-day'],
+    6: ['holiday:july-4th'],
     9: ['holiday:halloween', 'holiday:dia-de-muertos'],
     10: ['holiday:hanukkah', 'holiday:kwanzaa'],
     11: ['holiday:christmas', 'holiday:new-year', 'holiday:hanukkah', 'holiday:kwanzaa'],

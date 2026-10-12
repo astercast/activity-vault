@@ -5,17 +5,17 @@ Hundreds of real, classic, public-domain activity concepts — filterable by age
 group size, materials, and category. Plan-my-week planner. Printable one-page cards.
 
 ## Categories
-- Seasons: 34 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
-- Holidays: 41 activities — Festive projects and games for the days the whole group looks forward to.
-- Crafts: 84 activities — Hands-on making: fold it, paint it, build it, take it home.
-- STEM: 64 activities — Experiments, engineering challenges, and satisfying science demos.
-- PE & Movement: 52 activities — Run, jump, dance — activities that burn off the wiggles.
-- Team & Community: 48 activities — Turn a group into a crew: cooperation, trust, and belonging.
-- Icebreakers: 30 activities — First-day friendly: learn names, laugh, and loosen up fast.
-- Outdoor: 53 activities — Fresh-air activities for fields, playgrounds, and nature walks.
-- Rainy Day: 31 activities — Stuck inside? These keep a roomful of kids happy without a gym.
-- Quiet & Focus: 54 activities — Wind-down worthy: calm, creative, individual or small-group.
-- Music & Rhythm: 9 activities — Drums, shakers, rhythm games, and songs — make some noise.
+- Seasons: 59 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
+- Holidays: 43 activities — Festive projects and games for the days the whole group looks forward to.
+- Crafts: 91 activities — Hands-on making: fold it, paint it, build it, take it home.
+- STEM: 68 activities — Experiments, engineering challenges, and satisfying science demos.
+- PE & Movement: 61 activities — Run, jump, dance — activities that burn off the wiggles.
+- Team & Community: 54 activities — Turn a group into a crew: cooperation, trust, and belonging.
+- Icebreakers: 31 activities — First-day friendly: learn names, laugh, and loosen up fast.
+- Outdoor: 67 activities — Fresh-air activities for fields, playgrounds, and nature walks.
+- Rainy Day: 35 activities — Stuck inside? These keep a roomful of kids happy without a gym.
+- Quiet & Focus: 60 activities — Wind-down worthy: calm, creative, individual or small-group.
+- Music & Rhythm: 10 activities — Drums, shakers, rhythm games, and songs — make some noise.
 
 ## API — start at api/v1/index.json (self-describing manifest)
 - api/v1/index.json — api manifest
@@ -43,21 +43,24 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
 - sub.html — Sub Tub: the substitute-teacher rescue kit.
   Pick grade band, minutes to fill, materials on hand, location —
   generates a sequenced print-ready emergency plan plus a 'Dear sub' note template.
-- party.html — Party Planner (Halloween, winter, and spring presets).
+- party.html — Party Planner (Halloween, winter, spring, and summer presets).
   Pick a theme, class size, minutes, stations, and budget — generates a timed
   station-rotation plan from seasonal activities, plus a setup list and a
   print-ready run sheet.
 - spring.html — Spring hub: the spring 2027 pack's crafts, outdoor games,
   spring science, rainy-day backups, and spring-holiday activities, plus the
   Spring Burst collection and a spring party-theme shortcut.
+- summer.html — Summer hub: the summer 2027 pack's water play, outdoor games,
+  summer crafts, beat-the-heat indoor backups, and camp + July 4th activities,
+  plus the Summer Splash collection and a summer party-theme shortcut.
 - planner.html — Smart Weekly Planner 2.0: program presets (after-school / camp /
   classroom), age bands, auto-built no-repeat weeks with a per-day energy balance meter,
   drag-and-drop reorder, per-slot swap, surprise gap-fill, prep-level caps, collection
   seeding (?from=collection:<id>), named saved plans, .ics calendar export, shareable
   ?plan= links, and a print-ready card deck.
-- collections.html — Curated collections: 9 teacher-ready bundles (rainy-day
-  rescue, first day, sub tub, winter party, no-prep, calm-down…) each with a
-  curator's note per pick; printable and copy-able per collection.
+- collections.html — Curated collections: 10 teacher-ready bundles (rainy-day
+  rescue, first day, sub tub, winter party, spring burst, summer splash…)
+  each with a curator's note per pick; printable and copy-able per collection.
 - api.html — API docs with a Try-the-API console (endpoint picker, fetch, pretty JSON).
 
 ## Docs

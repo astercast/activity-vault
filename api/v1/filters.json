@@ -48,6 +48,7 @@
     "season:fall",
     "season:winter",
     "season:spring",
+    "season:summer",
     "holiday:halloween",
     "holiday:dia-de-muertos",
     "holiday:christmas",
@@ -56,12 +57,14 @@
     "holiday:new-year",
     "holiday:easter",
     "holiday:earth-day",
+    "holiday:july-4th",
     "theme:spooky"
    ],
    "labels": {
     "season:fall": "\ud83c\udf83 Fall",
     "season:winter": "\u2744\ufe0f Winter",
     "season:spring": "\ud83c\udf37 Spring",
+    "season:summer": "\u2600\ufe0f Summer",
     "holiday:halloween": "\ud83d\udc7b Halloween",
     "holiday:dia-de-muertos": "\ud83d\udc80 D\u00eda de los Muertos",
     "holiday:christmas": "\ud83c\udf84 Christmas",
@@ -70,6 +73,7 @@
     "holiday:new-year": "\ud83c\udf86 New Year",
     "holiday:easter": "\ud83d\udc23 Easter",
     "holiday:earth-day": "\ud83c\udf0e Earth Day",
+    "holiday:july-4th": "\ud83c\uddfa\ud83c\uddf8 July 4th",
     "theme:spooky": "\ud83d\udd78\ufe0f Spooky (not scary)"
    },
    "description": "Season/occasion tags. Activity fits if it carries ANY selected tag."

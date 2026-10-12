@@ -123,6 +123,7 @@
      "season:fall",
      "season:winter",
      "season:spring",
+     "season:summer",
      "holiday:halloween",
      "holiday:dia-de-muertos",
      "holiday:christmas",
@@ -131,6 +132,7 @@
      "holiday:new-year",
      "holiday:easter",
      "holiday:earth-day",
+     "holiday:july-4th",
      "theme:spooky"
     ]
    },

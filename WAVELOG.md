@@ -2,6 +2,28 @@
 
 Running record of build waves. Newest first.
 
+## Wave 12 — 2026-10-11 — Summer 2027 pack (+25 → 288) + summer hub + Party Planner summer theme
+
+**What shipped:**
+- **Summer seasonal pack** — 25 new original activities (`scripts/add_wave12.py`, all original words per PIPELINE.md): water play (`water-balloon-toss`, `drip-drip-drop`, `bucket-brigade-race`, `sponge-launch-bullseye`, `foam-noodle-tag`, `sprinkler-limbo`), outdoor/camp games (`capture-the-flag-basics`, `flashlight-tag`, `chalk-obstacle-course`, `frisbee-golf-nine`, `nature-color-scavenger`), summer crafts (`friendship-bracelet-basics`, `sun-print-cards`, `pinwheel-garden`, `sand-art-bottles`), beat-the-heat indoor backups (`ice-excavation-dig`, `fan-boat-races`, `indoor-campfire-circle`, `shadow-puppet-matinee`), camp program (`camp-week-kickoff`, `talent-showcase-night`), July 4th (`star-spangled-shoebox-parade`, `liberty-quiz-bowl` — quiz facts are real: 1776, 13 colonies, 50 stars, first capital New York), solstice (`longest-day-shadow-track`), plus `giant-bubble-chase`. Sun/heat/water safety notes are practical only (shade, water breaks, clean up balloon pieces) — no medical claims anywhere.
+- **Tag vocabulary grown** — `season:summer`, `holiday:july-4th` added to the `scripts/build.py` validator, `assets/app.js` labels/order, `api/v1/filters.json`, the activity schema tag enum, and the docs. 4 older summer activities retro-tagged with tags only (descriptions untouched): `ice-cube-painting`, `water-relay`, `chalk-art`, `water-cycle-in-a-bag` → `season:summer`.
+- **Summer hub** (`summer.html` + new `assets/summer.js`) — 5 curated sections with build-validated id lists: water play, outdoor & camp games, summer crafts, beat-the-heat indoor (ties to the rainy-day-rescue collection for storm days), summer holidays & camp (July 4th + camp-week groups with `?tag=` browse chips). Hero shortcuts: 🗓️ Plan a summer week (`planner.html?from=collection:summer-splash`), 📚 Summer Splash collection, 🎉 summer party theme. Client-side render from `api/v1/activities.json`; your-own rating badges (localStorage only); semantic HTML + ARIA + keyboard-native; mobile-first, existing design system.
+- **Summer Splash collection** — 10th collection in `data/collections.json` (☀️, 12 picks, every pick with a curator note, all ids validated).
+- **Party Planner summer theme** — fourth theme in `assets/party.js` (`holiday:july-4th`/`season:summer` pool — 28 candidates; group names Sharks, Sunbeams, Dolphins, Wave Riders, Sand Dollars, Beach Balls; 5-min shade-and-water break midway); `party.html` gains the ☀️ Summer radio chip, updated title/meta, and a Summer Splash collection tie-in note. Theme switching stays data-driven.
+- **Planner + homepage seasonal tie-ins** — planner "This season in the Vault" strip now maps May–Jul → `season:summer`, Jul → `holiday:july-4th`; homepage shows a month-gated (Jun–Aug, client-side) ☀️ Summer promo banner linking to `summer.html` (spring banner kept for Mar–May); "Summer ☀️" nav link added to all page shells including the 288 generated activity pages.
+- **Seasonal freshness pass** — scanned all 288 records for year/time-relative staleness: only generic recurring-use phrasing ("until next year", "next year's question cards") in the new Liberty Quiz Bowl; all summer copy clean, no invented details.
+- **Agentic surface** — `api/v1/index.json` manifest auto-updated (288 activities, 10 collections, v1.0.0); schemas regenerated (tag enum); `llms.txt`/`llms-full.txt`/`sitemap.xml` regenerated (summer.html tool line, 10 collections, sitemap gains `summer.html`); `AGENT.md` (counts, tag vocabulary, summer hub section, summer party theme + pool + break, strip month map), `API.md` (counts, tag lists, 10 collections), `README.md` (288 activities, summer hub, tag chips, summer promo months) updated by hand.
+- **No new skill** — no genuine gap: water/outdoor games covered by `outdoor-play-picker`, summer crafts by `activity-finder`, heat-day indoor backups by `rainy-day-rescue`/`no-prep-rescue`, summer STEM by `stem-demo-picker`, camp weeks by the week planner's camp preset + `balanced-week-builder`.
+- **check_api.py + build.py counts** — collection count asserts updated 9 → 10; `scripts/test-spring.js` count snapshots updated to the new totals (288 activities, 10 collections) — it now reports 377 assertions.
+
+**Validation (wave 12):**
+- `scripts/build.py`: BUILD OK — 288 activities, 288 pages rendered, 11 categories, 10 collections, 11 balance-bucket mappings, 0 dupes
+- `scripts/check_api.py`: ALL CHECKS PASSED — link check 296 pages, 0 broken; llms.txt 28 links resolve
+- `scripts/test-summer.js` (new): 498 assertions pass — 25 wave-12 ids present/unique, tag splits (23 summer-only / 2 july-4th), steps + easier/harder + sane age/time floors on all 25, no medical-claim strings, retro-tags exact, collections valid (10 unique, summer-splash 12 picks all resolving with notes), every `summer.js` curated id resolves, planner month→summer mapping + labels, party summer theme shape + pool ≥ 6 (28 actual), `app.js` tags + summer promo hook, filters.json tags, manifest records 288/10, schema enum tags, summer.html nav on all 8 shells + generated pages
+- `scripts/test-spring.js`: 377/377 pass (count snapshots refreshed for the new totals)
+- `scripts/test-planner-core.js`: 39/39 pass (unchanged)
+- `node --check`: app.js, planner.js, party.js, summer.js, spring.js, collections.js, ratings.js, sub.js, planner-core.js, test-summer.js — clean
+
 ## Wave 11 — 2026-10-11 — Spring 2027 pack (+25 → 263) + spring hub + Party Planner spring theme + RSS sweep
 
 **What shipped:**

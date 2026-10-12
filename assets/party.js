@@ -1,4 +1,4 @@
-/* Activity Vault — class-party planner (Halloween, winter + spring presets).
+/* Activity Vault — class-party planner (Halloween, winter, spring + summer presets).
    Fetches data/activities.json, builds a timed station-rotation plan
    from seasonal activities for theme + class size + minutes + stations + budget. */
 (function () {
@@ -43,6 +43,19 @@
       planTitle: 'Spring party',
       breakMin: 0,
       closingIntro: '0:05 — Welcome & spring hello (5 min). Then rotate on the timer.',
+      closingRegroup: 'Regroup: show off what each station made, hand out take-homes, clean stations'
+    },
+    summer: {
+      label: 'Summer',
+      tags: ['holiday:july-4th', 'season:summer'],
+      groupNames: ['Sharks', 'Sunbeams', 'Dolphins', 'Wave Riders', 'Sand Dollars', 'Beach Balls'],
+      heroKicker: '☀️ Party Planner',
+      heroTitle: 'The summer<br>class-party planner.',
+      heroLede: 'Tell it your class size, how long the party runs, how many stations you can staff, and your budget — it builds a timed station-rotation plan from the Vault\'s summer activities (water games, outdoor games, summer crafts, and July 4th stations), with a shade-and-water break halfway through, a merged setup list, and a print-ready run sheet.',
+      planKicker: '☀️ Summer class-party run sheet',
+      planTitle: 'Summer party',
+      breakMin: 5,
+      closingIntro: '0:05 — Welcome & sunscreen check (5 min). Then rotate on the timer, with a shade-and-water break halfway.',
       closingRegroup: 'Regroup: show off what each station made, hand out take-homes, clean stations'
     }
   };

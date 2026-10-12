@@ -576,8 +576,73 @@
     60
    ],
    "page": "collections.html#spring-burst"
+  },
+  {
+   "id": "summer-splash",
+   "title": "Summer splash",
+   "glyph": "☀️",
+   "when_to_use": "The days are long, the kids are restless, and the hose is already out. This is the summer 2027 pack's greatest hits plus the Vault's best older summer picks — water play, camp games, sun crafts, beat-the-heat backups, and July 4th stations.",
+   "picks": [
+    {
+     "activity_id": "water-balloon-toss",
+     "curator_note": "Step back after every catch — the rare game where staying dry is the skill."
+    },
+    {
+     "activity_id": "drip-drip-drop",
+     "curator_note": "Duck-duck-goose with a wet sponge: instant summer legend status."
+    },
+    {
+     "activity_id": "bucket-brigade-race",
+     "curator_note": "Over heads, cup to cup — the loudest fifteen minutes of the week."
+    },
+    {
+     "activity_id": "sponge-launch-bullseye",
+     "curator_note": "Chalk targets, wet splat marks, argued line calls like pros."
+    },
+    {
+     "activity_id": "sprinkler-limbo",
+     "curator_note": "How low before you're soaked? The heat-wave answer."
+    },
+    {
+     "activity_id": "ice-excavation-dig",
+     "curator_note": "The indoor rescue for scorcher days: salt, droppers, real melting science."
+    },
+    {
+     "activity_id": "friendship-bracelet-basics",
+     "curator_note": "The camp classic — one knot, endless trading."
+    },
+    {
+     "activity_id": "sun-print-cards",
+     "curator_note": "The sun does the printing; the kids just arrange and wait."
+    },
+    {
+     "activity_id": "capture-the-flag-basics",
+     "curator_note": "Simplified so it actually finishes inside 45 minutes."
+    },
+    {
+     "activity_id": "chalk-obstacle-course",
+     "curator_note": "Draw it, run it, then let the kids redesign it."
+    },
+    {
+     "activity_id": "star-spangled-shoebox-parade",
+     "curator_note": "Red, white, and blue floats — parade the whole route."
+    },
+    {
+     "activity_id": "longest-day-shadow-track",
+     "curator_note": "Trace one shadow all solstice day; the sun draws the graph."
+    }
+   ],
+   "age_span": [
+    4,
+    12
+   ],
+   "time_span": [
+    15,
+    60
+   ],
+   "page": "collections.html#summer-splash"
   }
  ],
- "count": 9,
+ "count": 10,
  "updated": "2026-10-12"
 }

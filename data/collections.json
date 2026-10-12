@@ -495,6 +495,62 @@
      "note": "One trash bag, one tally chart, one class that never sees litter the same way."
     }
    ]
+  },
+  {
+   "id": "summer-splash",
+   "title": "Summer splash",
+   "glyph": "☀️",
+   "when_to_use": "The days are long, the kids are restless, and the hose is already out. This is the summer 2027 pack's greatest hits plus the Vault's best older summer picks — water play, camp games, sun crafts, beat-the-heat backups, and July 4th stations.",
+   "picks": [
+    {
+     "id": "water-balloon-toss",
+     "note": "Step back after every catch — the rare game where staying dry is the skill."
+    },
+    {
+     "id": "drip-drip-drop",
+     "note": "Duck-duck-goose with a wet sponge: instant summer legend status."
+    },
+    {
+     "id": "bucket-brigade-race",
+     "note": "Over heads, cup to cup — the loudest fifteen minutes of the week."
+    },
+    {
+     "id": "sponge-launch-bullseye",
+     "note": "Chalk targets, wet splat marks, argued line calls like pros."
+    },
+    {
+     "id": "sprinkler-limbo",
+     "note": "How low before you're soaked? The heat-wave answer."
+    },
+    {
+     "id": "ice-excavation-dig",
+     "note": "The indoor rescue for scorcher days: salt, droppers, real melting science."
+    },
+    {
+     "id": "friendship-bracelet-basics",
+     "note": "The camp classic — one knot, endless trading."
+    },
+    {
+     "id": "sun-print-cards",
+     "note": "The sun does the printing; the kids just arrange and wait."
+    },
+    {
+     "id": "capture-the-flag-basics",
+     "note": "Simplified so it actually finishes inside 45 minutes."
+    },
+    {
+     "id": "chalk-obstacle-course",
+     "note": "Draw it, run it, then let the kids redesign it."
+    },
+    {
+     "id": "star-spangled-shoebox-parade",
+     "note": "Red, white, and blue floats — parade the whole route."
+    },
+    {
+     "id": "longest-day-shadow-track",
+     "note": "Trace one shadow all solstice day; the sun draws the graph."
+    }
+   ]
   }
  ]
 }

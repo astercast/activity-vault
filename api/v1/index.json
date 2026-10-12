@@ -2,8 +2,8 @@
  "meta": {
   "site": "Activity Vault",
   "version": "1.0.0",
-  "generated": "2026-10-12T02:02:32Z",
-  "source_snapshot": "data/activities.json + data/categories.json — 263 activities, 11 categories"
+  "generated": "2026-10-12T02:17:41Z",
+  "source_snapshot": "data/activities.json + data/categories.json — 288 activities, 11 categories"
  },
  "endpoints": [
   {
@@ -20,7 +20,7 @@
    "description": "Every activity record: filters (age, time, group, location, materials, no_prep), setup, steps, variations, safety, optional season/occasion tags, optional source URL.",
    "schema": "api/v1/schema/activities.schema.json",
    "updated": "2026-10-12",
-   "records": 263,
+   "records": 288,
    "stability": "stable"
   },
   {
@@ -55,7 +55,7 @@
    "description": "Teacher-ready activity bundles for specific moments (rainy days, first days, last 10 minutes, bus rides, sub coverage, winter parties, no-prep gaps, calm-down needs). Each collection lists activity ids with a curator's one-line note on why each was picked, plus age/time spans.",
    "schema": "api/v1/schema/collections.schema.json",
    "updated": "2026-10-12",
-   "records": 9,
+   "records": 10,
    "stability": "stable"
   },
   {
