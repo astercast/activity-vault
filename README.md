@@ -2,7 +2,7 @@
 
 The all-in-one activity archive for teachers & after-school program teachers.
 
-**550 activities** across 11 color-coded categories — seasons, holidays, crafts, STEM, PE & movement, team & community, icebreakers, outdoor, rainy-day, quiet & focus, and music & rhythm. Every activity is a real, classic, public-domain concept described in our own words: name, age range, group size, time, materials (with no-prep flags), setup, step-by-step instructions, easier/harder variations, and common-sense safety notes. Research-backed extras: 🖨️ copy-free flags (173 verified zero-printing), ♾️ no-elimination flags (47 — nobody sits out), 🔬 "why it works" research notes, 🤝 inclusion adaptations, and source attributions.
+**564 activities** across 11 color-coded categories — seasons, holidays, crafts, STEM, PE & movement, team & community, icebreakers, outdoor, rainy-day, quiet & focus, and music & rhythm. Every activity is a real, classic, public-domain concept described in our own words: name, age range, group size, time, materials (with no-prep flags), setup, step-by-step instructions, easier/harder variations, and common-sense safety notes. Research-backed extras: 🖨️ copy-free flags (184 verified zero-printing), ♾️ no-elimination flags (51 — nobody sits out), 🔬 "why it works" research notes, 🤝 inclusion adaptations, and source attributions.
 
 ## What it does
 
@@ -35,7 +35,7 @@ No build tools, no dependencies beyond Python 3. Open `index.html` in a browser 
 ## Repo layout
 
 ```
-data/activities.json      ← source of truth (550 activities)
+data/activities.json      ← source of truth (564 activities)
 data/categories.json      ← 11 categories (color, glyph, blurb)
 scripts/build.py          ← validator + static generator
 assets/                   ← style.css, app.js (browser), planner.js, sub.js, party.js, halloween.js, thanksgiving.js

@@ -11,6 +11,13 @@ What is wired into the live release repo `astercast/activity-vault-live`
 - Track rule: push `-live` only on an explicit user "push"/"ship it".
   Verify the remote URL before every push.
 
+## Working-repo state (2026-10-12, wave 26)
+
+- Working repo (this repo, never deployed): **564 activities, 16
+  collections**, 4 Scout functions unchanged this wave. The live
+  snapshot below is still the 2026-10-11 one — it updates only on an
+  explicit user "push"/"ship it" order.
+
 ## Snapshot contents (2026-10-11, commit `484ec0a` + function layer)
 
 - 455 activities → 455 `activity/*.html` pages; 13 top-level pages

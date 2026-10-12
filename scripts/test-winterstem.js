@@ -18,7 +18,7 @@ const IDS = [
   'red-nose-green-nose','winter-hide-and-seek',
 ];
 
-ok(api.count === 550, `count 550, got ${api.count}`);
+ok(api.count === 564, `count 564, got ${api.count}`);
 ok(acts.length === new Set(acts.map(a => a.id)).size, 'ids unique');
 IDS.forEach(id => ok(byId.has(id), `wave16 id present: ${id}`));
 

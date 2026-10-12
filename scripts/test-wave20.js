@@ -33,7 +33,7 @@ const W20 = [
 ];
 
 // 1. ids present and unique; total count
-ok(acts.length === 550, '550 activities total', String(acts.length));
+ok(acts.length === 564, '564 activities total', String(acts.length));
 ok(new Set(acts.map(a => a.id)).size === acts.length, 'all ids unique');
 W20.forEach(id => ok(!!byId[id], 'wave-20 id present: ' + id));
 
@@ -123,7 +123,7 @@ W20.forEach(id => ok(fs.existsSync(path.join(ROOT, 'activity', id + '.html')), '
 
 // 9. halloween-week collection: 13 collections, 12 picks, notes, resolves
 const cols = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/collections.json'), 'utf8')).collections;
-ok(cols.length === 15, '15 collections', String(cols.length));
+ok(cols.length === 16, '16 collections', String(cols.length));
 const hw = cols.filter(c => c.id === 'halloween-week')[0];
 ok(!!hw, 'halloween-week collection exists');
 ok(hw.picks.length === 12, 'halloween-week 12 picks', String(hw.picks.length));
@@ -169,9 +169,9 @@ ok(plSrc.includes('function collTitle'), 'planner has collTitle helper');
 // 15. api manifest + sitemap + llms reflect the new totals
 const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/index.json'), 'utf8'));
 const actEp = manifest.endpoints.filter(e => e.path === 'data/v1/activities.json')[0];
-ok(actEp && actEp.records === 550, 'manifest activities records=550', String(actEp && actEp.records));
+ok(actEp && actEp.records === 564, 'manifest activities records=564', String(actEp && actEp.records));
 const apiColls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/collections.json'), 'utf8'));
-ok(apiColls.count === 15 && apiColls.collections.length === 15, 'api collections count 15');
+ok(apiColls.count === 16 && apiColls.collections.length === 16, 'api collections count 16');
 const sm = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
 ok(sm.includes('activity/roll-a-monster-dice-draw.html'), 'sitemap has a wave-20 page');
 ok(sm.includes('collections.html'), 'sitemap has collections');

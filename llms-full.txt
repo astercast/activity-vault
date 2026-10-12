@@ -5,17 +5,17 @@ Hundreds of real, classic, public-domain activity concepts — filterable by age
 group size, materials, and category. Plan-my-week planner. Printable one-page cards.
 
 ## Categories
-- Seasons: 99 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
-- Holidays: 109 activities — Festive projects and games for the days the whole group looks forward to.
-- Crafts: 151 activities — Hands-on making: fold it, paint it, build it, take it home.
-- STEM: 140 activities — Experiments, engineering challenges, and satisfying science demos.
-- PE & Movement: 103 activities — Run, jump, dance — activities that burn off the wiggles.
-- Team & Community: 133 activities — Turn a group into a crew: cooperation, trust, and belonging.
-- Icebreakers: 59 activities — First-day friendly: learn names, laugh, and loosen up fast.
-- Outdoor: 93 activities — Fresh-air activities for fields, playgrounds, and nature walks.
-- Rainy Day: 50 activities — Stuck inside? These keep a roomful of kids happy without a gym.
-- Quiet & Focus: 119 activities — Wind-down worthy: calm, creative, individual or small-group.
-- Music & Rhythm: 30 activities — Drums, shakers, rhythm games, and songs — make some noise.
+- Seasons: 100 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
+- Holidays: 113 activities — Festive projects and games for the days the whole group looks forward to.
+- Crafts: 153 activities — Hands-on making: fold it, paint it, build it, take it home.
+- STEM: 142 activities — Experiments, engineering challenges, and satisfying science demos.
+- PE & Movement: 106 activities — Run, jump, dance — activities that burn off the wiggles.
+- Team & Community: 135 activities — Turn a group into a crew: cooperation, trust, and belonging.
+- Icebreakers: 60 activities — First-day friendly: learn names, laugh, and loosen up fast.
+- Outdoor: 94 activities — Fresh-air activities for fields, playgrounds, and nature walks.
+- Rainy Day: 53 activities — Stuck inside? These keep a roomful of kids happy without a gym.
+- Quiet & Focus: 124 activities — Wind-down worthy: calm, creative, individual or small-group.
+- Music & Rhythm: 31 activities — Drums, shakers, rhythm games, and songs — make some noise.
 
 ## API — start at data/v1/index.json (self-describing manifest)
 - data/v1/index.json — api manifest
@@ -332,6 +332,11 @@ A sock, a bottle, and some soapy water — blow a bubble snake a foot long.
 Categories: STEM, Outdoor | Ages 4-12 | Group 2-30 | 15-25 min | Prep needed | outdoor
 Page: activity/bubble-snake-blower.html
 
+### Bubble Wrap Stomp Path
+A taped-down strip of bubble wrap and three ways to cross it: stomp it loud, tiptoe it silent, crawl it popping.
+Categories: PE & Movement, Rainy Day | Ages 3-5 | Group 2-16 | 10-15 min | Prep needed | indoor
+Page: activity/bubble-wrap-stomp-path.html
+
 ### Bucket Brigade Race
 Teams pass water down a line — over heads, under legs — to fill the far bucket.
 Categories: Outdoor, Team & Community, Seasons | Ages 5-12 | Group 8-30 | 15-25 min | Prep needed | outdoor
@@ -421,6 +426,11 @@ Page: activity/card-making-station.html
 Teams of engineers build a cardboard metropolis — houses, shops, landmarks — then connect their blocks into one city.
 Categories: Crafts, STEM, Team & Community | Ages 6-12 | Group 4-25 | 60-60 min | Prep needed | indoor
 Page: activity/cardboard-city.html
+
+### Cardboard Tunnel Crawl
+Big boxes taped into a crawl-through tunnel with peek windows — greeters wave from outside, crawlers travel through.
+Categories: PE & Movement | Ages 3-5 | Group 2-16 | 15-25 min | Prep needed | indoor/outdoor
+Page: activity/cardboard-tunnel-crawl.html
 
 ### Celebration Circle
 One sentence: a celebration your family loves.
@@ -877,6 +887,11 @@ Tag with foam pool noodles — everyone is armed, nobody gets hurt.
 Categories: Outdoor, PE & Movement, Seasons | Ages 5-12 | Group 6-30 | 15-25 min | Prep needed | outdoor
 Page: activity/foam-noodle-tag.html
 
+### Fold-and-Open Symmetry Hearts
+Fold, draw half a heart on the fold, cut, open — the fold did the matching. Symmetry you can hold up to the light.
+Categories: Holidays, STEM | Ages 4-8 | Group 2-28 | 15-25 min | Prep needed | indoor
+Page: activity/fold-and-open-hearts.html
+
 ### Food Drive Planning
 Kids plan the whole canned-food drive: goal, posters, collection crew.
 Categories: Team & Community, Holidays | Ages 7-12 | Group 4-30 | 30-45 min | Prep needed | indoor
@@ -1197,6 +1212,11 @@ Paper hearts hidden around the room, each with a clue, riddle, or kind task lead
 Categories: Holidays, Rainy Day | Ages 4-10 | Group 2-20 | 25-25 min | Prep needed | indoor
 Page: activity/valentine-heart-hunt.html
 
+### Hello Ball Greetings
+Sit in a circle, roll a soft ball to a friend, and say their name out loud — the first icebreaker that works at three.
+Categories: Icebreakers, Team & Community | Ages 3-5 | Group 4-20 | 10-15 min | No prep | indoor/outdoor
+Page: activity/hello-ball-greetings.html
+
 ### Helping Hands Pledge
 Name one way you will help the class this week — then do it.
 Categories: Team & Community | Ages 5-14 | Group 4-60 | 5-8 min | No prep | indoor
@@ -1371,6 +1391,11 @@ Page: activity/kindness-egg-missions.html
 Each link holds a secret act of kindness. Tear one off daily and watch the chain — and the kindness — shrink toward the holiday.
 Categories: Holidays, Team & Community | Ages 4-12 | Group 1-30 | 30-30 min | Prep needed | indoor
 Page: activity/winter-kindness-chain.html
+
+### Kindness Post Office
+A working classroom post office for Valentine's Day — named mailboxes, stamped cards, and a ledger that guarantees nobody gets nothing.
+Categories: Holidays, Team & Community | Ages 4-9 | Group 6-32 | 25-40 min | Prep needed | indoor
+Page: activity/kindness-post-office.html
 
 ### Kindness Poster Campaign
 Pairs design posters with one clear kindness message — then the hallways become the gallery.
@@ -1662,6 +1687,11 @@ Bingo cards meet the great outdoors — mark what you spot.
 Categories: Outdoor | Ages 6-11 | Group 2-30 | 15-35 min | No prep | outdoor
 Page: activity/nature-bingo.html
 
+### Nature Color Match Walk
+Three colors on a ring, one short walk — hold your card against the leaf, the bark, the flower, and call the match.
+Categories: Outdoor, Seasons | Ages 3-6 | Group 2-20 | 15-25 min | Prep needed | outdoor
+Page: activity/nature-color-match-walk.html
+
 ### Nature Color Scavenger
 Find something in nature for every color of the rainbow — no picking allowed.
 Categories: Outdoor, Seasons, Quiet & Focus | Ages 4-12 | Group 2-30 | 20-35 min | Prep needed | outdoor
@@ -1912,10 +1942,20 @@ Read poems aloud, steal your favorite line, and share why it stuck.
 Categories: Quiet & Focus | Ages 7-12 | Group 2-30 | 25-45 min | Prep needed | indoor
 Page: activity/poetry-share-circle.html
 
+### Pom-Pom Drop Tubes
+Cardboard tubes taped to a wall, big pom-poms dropped in the top — where did it go? There it is, in the cup.
+Categories: Quiet & Focus, Rainy Day | Ages 3-5 | Group 1-8 | 10-20 min | Prep needed | indoor
+Page: activity/pom-pom-drop-tubes.html
+
 ### Popcorn Pops
 Crouch low like a kernel — pop high when your word is called.
 Categories: PE & Movement, Icebreakers | Ages 4-10 | Group 4-40 | 5-8 min | No prep | indoor
 Page: activity/popcorn-jumps.html
+
+### Pouring Practice Trays
+A small pitcher, two cups, and a tray to catch the evidence — pouring water without flooding the table is a real skill.
+Categories: Quiet & Focus | Ages 3-5 | Group 1-6 | 10-20 min | Prep needed | indoor
+Page: activity/pouring-practice-trays.html
 
 ### Pressed Flower Bookmarks
 Real pressed flowers sealed into a bookmark — a spring keepsake that lasts.
@@ -2026,6 +2066,11 @@ Page: activity/rangoli-pattern-art.html
 Yesterday's scrap paper becomes tomorrow's paper — blended, scooped, and pressed.
 Categories: STEM, Crafts | Ages 7-12 | Group 2-30 | 30-50 min | Prep needed | indoor
 Page: activity/recycled-paper-making.html
+
+### Red Envelope Wishes
+The real hongbao carries money and luck from elders — the classroom version carries the other half of the custom: a wish.
+Categories: Holidays, Crafts | Ages 5-11 | Group 2-30 | 20-35 min | Prep needed | indoor
+Page: activity/red-envelope-wishes.html
 
 ### Red Light, Green Light
 Sprint on green, freeze on red — get caught moving and start over.
@@ -2342,6 +2387,11 @@ Groups become living sound effects — thunder, rain, wind — performing a stor
 Categories: Music & Rhythm, Rainy Day | Ages 5-10 | Group 3-20 | 20-20 min | No prep | indoor
 Page: activity/sound-story.html
 
+### Sound-Match Shakers
+Pairs of sealed shakers that sound the same — shake by your ear, walk the rug, and find the one that matches yours.
+Categories: Music & Rhythm, Quiet & Focus | Ages 3-6 | Group 2-12 | 10-20 min | Prep needed | indoor
+Page: activity/sound-match-shakers.html
+
 ### Spaghetti Tower
 The tallest free-standing tower wins — built from dry spaghetti and marshmallows.
 Categories: STEM, Team & Community | Ages 7-12 | Group 4-30 | 25-45 min | Prep needed | indoor
@@ -2381,6 +2431,11 @@ Page: activity/sponge-bucket-relay.html
 Soaked sponges fly at chalk targets — points for the bullseye, splash for style.
 Categories: Outdoor, PE & Movement, Seasons | Ages 5-12 | Group 4-30 | 15-30 min | Prep needed | outdoor
 Page: activity/sponge-launch-bullseye.html
+
+### Sponge Squeeze Station
+Two tubs, one sponge, and a fill line to reach — moving water one squeeze at a time is the whole job, and it's enough.
+Categories: Quiet & Focus, STEM | Ages 3-5 | Group 1-6 | 10-20 min | Prep needed | indoor
+Page: activity/sponge-squeeze-station.html
 
 ### Sponge Water Relay
 Sponge-soak, sprint, squeeze — teams race to transfer the most water bucket-to-bucket. Everyone gets soaked.
@@ -2512,6 +2567,11 @@ A laser maze made of masking tape — crawl under, step over, don't touch.
 Categories: Rainy Day, PE & Movement | Ages 5-12 | Group 2-24 | 15-30 min | Prep needed | indoor
 Page: activity/tape-maze-challenge.html
 
+### Tape Path Balance Walk
+Painter's tape on the floor becomes a balance path — straight, zigzag, and curvy lines walked one slow step at a time.
+Categories: PE & Movement, Rainy Day | Ages 3-5 | Group 2-20 | 10-20 min | Prep needed | indoor
+Page: activity/tape-path-balance-walk.html
+
 ### Teach-a-Move Dance Tutorial
 Each group invents a dance move, teaches it to everyone, then strings them all into one epic group routine.
 Categories: Music & Rhythm, PE & Movement | Ages 6-12 | Group 4-25 | 25-25 min | Prep needed | indoor
@@ -2596,6 +2656,11 @@ Page: activity/thunderstorm-clap-along.html
 Twisted paper branches covered in pink tissue blooms — spring on a branch.
 Categories: Crafts | Ages 4-12 | Group 2-30 | 20-40 min | Prep needed | indoor
 Page: activity/tissue-paper-cherry-blossoms.html
+
+### Torn Paper Collage
+No scissors, no lines to follow — tear colored paper with your hands and glue the pieces into a picture only you planned.
+Categories: Crafts | Ages 3-5 | Group 2-24 | 15-25 min | Prep needed | indoor
+Page: activity/torn-paper-collage.html
 
 ### Tower of Trust Build
 Build a cup pyramid touching only strings — one rubber band, whole team.
@@ -2846,6 +2911,11 @@ Page: activity/year-in-review-quilt.html
 Point, pass the energy, and do not break the chain.
 Categories: Icebreakers | Ages 8-14 | Group 6-30 | 5-10 min | No prep | indoor
 Page: activity/zip-zap-zop.html
+
+### Zodiac Great Race — Story Sequence
+The folk tale of the Jade Emperor's river race, told straight — then twelve animal cards to put back in finishing order.
+Categories: Holidays, Quiet & Focus | Ages 5-10 | Group 2-24 | 20-30 min | Prep needed | indoor
+Page: activity/zodiac-great-race-sequence.html
 
 ### Zombie Walk Relay
 Each leg is a different monster walk - zombie shuffle to ghost glide.

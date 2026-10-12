@@ -831,6 +831,62 @@
      "note": "December closes with the take-home gift parents actually keep."
     }
    ]
+  },
+  {
+   "id": "little-hands-first-years",
+   "title": "Little Hands, First Years",
+   "glyph": "🧸",
+   "when_to_use": "Built for the youngest kids in the building: every pick here was designed for three-year-olds first — short runs, big pieces, one rule per game, and honest about what small hands can actually do. The shelf to grab when the little-kid group lands on you at the last minute.",
+   "picks": [
+    {
+     "id": "tape-path-balance-walk",
+     "note": "The first balance beam is a line of tape — slow feet, airplane arms, and nobody falls off a line."
+    },
+    {
+     "id": "pom-pom-drop-tubes",
+     "note": "Drop, wait, there it is — cause and effect at exactly the speed a three-year-old runs it."
+    },
+    {
+     "id": "sponge-squeeze-station",
+     "note": "Moving water one squeeze at a time, with the towel counted as part of the job."
+    },
+    {
+     "id": "sound-match-shakers",
+     "note": "Find the shaker that sounds like yours — sealed tight by an adult, matched by ear or by colored dot."
+    },
+    {
+     "id": "bubble-wrap-stomp-path",
+     "note": "Stomp round, tiptoe round, crawl round. The tiptoe round is harder than it looks."
+    },
+    {
+     "id": "cardboard-tunnel-crawl",
+     "note": "Adult-built and staple-checked, both ends open. The window greeters have the best job in the room."
+    },
+    {
+     "id": "hello-ball-greetings",
+     "note": "The first icebreaker that works at three: roll, catch, 'Hello, Sam.'"
+    },
+    {
+     "id": "pouring-practice-trays",
+     "note": "A half-full pitcher and a tray underneath — spills are expected, and wiping them is part of the work."
+    },
+    {
+     "id": "nature-color-match-walk",
+     "note": "Three colors on a ring, a short route, and the rule that living things stay where they live."
+    },
+    {
+     "id": "torn-paper-collage",
+     "note": "Tearing is the skill scissors come after. Glue on the sheet, palm-pat, done when they say so."
+    },
+    {
+     "id": "color-sorting-trays",
+     "note": "The shelf's old faithful — sorting by color with big pieces and no way to be wrong."
+    },
+    {
+     "id": "big-brush-painting",
+     "note": "Big brushes, big paper, whole-arm strokes — painting at the scale a three-year-old's shoulder actually works at."
+    }
+   ]
   }
  ]
 }
