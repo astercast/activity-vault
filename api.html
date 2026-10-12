@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>API docs — Activity Vault</title>
+<meta name="description" content="Activity Vault API: endpoints, shared conventions, JSON schemas, and a Try-the-API console.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#console">Skip to the Try-the-API console</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Activity Vault home">
+      <span class="brand-mark" aria-hidden="true">🗂️</span>
+      <span class="brand-text">Activity <strong>Vault</strong></span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="index.html">Browse</a>
+      <a href="planner.html">Plan my week</a>
+      <a href="sub.html">Sub Tub 🆘</a>
+      <a href="party.html">Party Planner 🎃</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap docs-page">
+  <h1>API docs</h1>
+  <p class="lede">The whole archive is static JSON — no auth, no keys, no rate limits. Agents: start at <code>api/v1/index.json</code> (or read <code>AGENT.md</code> for worked end-to-end examples).</p>
+
+  <section aria-labelledby="h-conventions">
+    <h2 id="h-conventions">Shared API conventions (all sites)</h2>
+    <ul>
+      <li>Base: <code>api/v1/</code> relative to the site root. Works on any static host; no auth, no keys, no rate limits.</li>
+      <li>Manifest: <code>api/v1/index.json</code> lists every endpoint with its schema URL, <code>updated</code> timestamp, and notes. Start here.</li>
+      <li>Timestamps: ISO-8601 UTC (<code>2026-10-11T00:00:00Z</code>). Date-only fields are <code>YYYY-MM-DD</code>.</li>
+      <li>Versions: <code>meta.version</code> semver on the manifest; breaking changes get a new <code>v2/</code> path, never a silent shape change.</li>
+      <li>Errors: static files can't return error bodies. A missing endpoint means a wrong path — re-read <code>index.json</code>. Empty results are <code>[]</code>, never <code>null</code>. Every record carries its provenance (<code>source</code>, <code>observed</code>/<code>updated</code>).</li>
+      <li>Pagination: not needed — payloads are complete snapshots sized for client-side filtering. If a future endpoint paginates, it will use <code>?page=</code> and document it here.</li>
+      <li>Freshness: every payload states when it was generated and from what snapshot. Treat undated numbers as stale.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="h-endpoints">
+    <h2 id="h-endpoints">Endpoints</h2>
+    <div class="table-wrap">
+    <table class="api-table">
+      <thead><tr><th scope="col">Endpoint</th><th scope="col">What it is</th><th scope="col">Schema</th></tr></thead>
+      <tbody>
+        <tr><td><code>api/v1/index.json</code></td><td>Self-describing manifest — every endpoint, schema URL, updated timestamp, record counts, stability. Start here.</td><td><a href="api/v1/schema/index.schema.json">index.schema.json</a></td></tr>
+        <tr><td><code>api/v1/activities.json</code></td><td>All 213 activity records: filters, setup, steps, materials, variations, safety, season/occasion tags.</td><td><a href="api/v1/schema/activities.schema.json">activities.schema.json</a></td></tr>
+        <tr><td><code>api/v1/categories.json</code></td><td>The 11 categories: id, name, blurb, color, glyph.</td><td><a href="api/v1/schema/categories.schema.json">categories.schema.json</a></td></tr>
+        <tr><td><code>api/v1/filters.json</code></td><td>Machine-readable filter config — the same matching logic the browser UI uses.</td><td><a href="api/v1/schema/filters.schema.json">filters.schema.json</a></td></tr>
+        <tr><td><code>api/v1/skills.json</code></td><td>Registry of the 10 reusable skill recipes in <code>skills/</code>.</td><td>self-describing</td></tr>
+        <tr><td><code>pipeline/review-queue.json</code></td><td>RSS-pipeline working queue — internal, not a stable public API.</td><td>—</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Record-level schemas: <a href="api/v1/schema/activity.schema.json">activity.schema.json</a>, <a href="api/v1/schema/category.schema.json">category.schema.json</a>. Full written reference: <a href="API.md">API.md</a> · agent guide: <a href="AGENT.md">AGENT.md</a>.</p>
+  </section>
+
+  <section aria-labelledby="h-console">
+    <h2 id="h-console">Try the API</h2>
+    <p>Pick an endpoint, fetch it, and see the JSON — everything runs in your browser, nothing leaves the page.</p>
+    <form id="api-console" class="console-form" onsubmit="return false;">
+      <label for="endpoint-picker">Endpoint</label>
+      <select id="endpoint-picker" aria-describedby="console-status">
+        <option value="">Loading endpoints…</option>
+      </select>
+      <button type="button" class="btn" id="fetch-btn">Fetch</button>
+      <p class="console-hint" id="console-status" role="status" aria-live="polite"></p>
+    </form>
+    <pre id="console-output" class="console-output" tabindex="0" aria-label="API response"><code>Pick an endpoint and press Fetch.</code></pre>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>Activity Vault</strong> — the all-in-one activity archive for teachers &amp; after-school programs.</p>
+    <p><a href="api/v1/index.json">API manifest</a> · <a href="llms.txt">llms.txt</a> · <a href="AGENT.md">Agent guide</a></p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  var picker = document.getElementById('endpoint-picker');
+  var btn = document.getElementById('fetch-btn');
+  var status = document.getElementById('console-status');
+  var output = document.getElementById('console-output');
+  var MAX_CHARS = 200000;
+
+  function show(text, isError) {
+    var truncated = text;
+    if (truncated.length > MAX_CHARS) {
+      truncated = truncated.slice(0, MAX_CHARS) +
+        '\n… [truncated: response too long to display fully]';
+    }
+    output.textContent = truncated;
+    status.textContent = isError ? 'Error: ' + text.split('\n')[0]
+                                : 'Loaded ' + truncated.length.toLocaleString() + ' characters.';
+  }
+
+  function loadJSON(url, ok, fail) {
+    fetch(url, { headers: { 'Accept': 'application/json' } })
+      .then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status + ' — ' + url);
+        return res.json();
+      })
+      .then(ok)
+      .catch(function (err) { fail(err && err.message ? err.message : String(err)); });
+  }
+
+  btn.disabled = true;
+  loadJSON('api/v1/index.json', function (manifest) {
+    picker.textContent = '';
+    (manifest.endpoints || []).forEach(function (ep) {
+      if (typeof ep.path !== 'string') return;
+      var opt = document.createElement('option');
+      opt.value = ep.path;
+      opt.textContent = ep.path + ' — ' + (ep.title || '');
+      picker.appendChild(opt);
+    });
+    btn.disabled = false;
+    status.textContent = manifest.endpoints.length + ' endpoints loaded from the manifest.';
+  }, function (err) {
+    picker.textContent = '';
+    var opt = document.createElement('option');
+    opt.value = 'api/v1/index.json';
+    opt.textContent = 'api/v1/index.json — manifest (fallback)';
+    picker.appendChild(opt);
+    btn.disabled = false;
+    show('Could not load api/v1/index.json (' + err + '). The manifest itself is pre-selected as a fallback.', true);
+  });
+
+  btn.addEventListener('click', function () {
+    var url = picker.value;
+    if (!url) return;
+    status.textContent = 'Fetching ' + url + '…';
+    loadJSON(url, function (data) {
+      show(JSON.stringify(data, null, 2), false);
+    }, function (err) {
+      show('Fetch failed: ' + err + '\n\nTip: this console only reads the static JSON files listed in api/v1/index.json. A 404 means a wrong path.', true);
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -2,11 +2,12 @@
 """Activity Vault build script.
 
 Source of truth: data/activities.json + data/categories.json
-Generates: activity/*.html, api/v1/*.json, llms.txt, llms-full.txt, sitemap.xml
+Generates: activity/*.html, api/v1/*.json, api/v1/schema/*.schema.json,
+           llms.txt, llms-full.txt, sitemap.xml
 Validates: schema, ids, categories, required fields, render check for every activity.
 """
 import json, os, re, sys, html
-from datetime import date
+from datetime import date, datetime, timezone
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, 'data')
@@ -30,6 +31,35 @@ def load():
     acts = json.load(open(os.path.join(DATA, 'activities.json')))
     cats = json.load(open(os.path.join(DATA, 'categories.json')))
     return acts, cats
+
+def load_skills():
+    """Parse skills/*.md frontmatter -> [{'id', 'description', 'file'}], sorted by id."""
+    out = []
+    sdir = os.path.join(ROOT, 'skills')
+    for fn in sorted(os.listdir(sdir)):
+        if not fn.endswith('.md'):
+            continue
+        text = open(os.path.join(sdir, fn)).read()
+        sid, desc = fn[:-3], ''
+        if text.startswith('---'):
+            end = text.find('---', 3)
+            if end != -1:
+                for line in text[3:end].splitlines():
+                    if ':' in line:
+                        k, v = line.split(':', 1)
+                        k, v = k.strip(), v.strip()
+                        if k == 'name':
+                            sid = v
+                        elif k == 'description':
+                            desc = v
+        if not desc:
+            for line in text.splitlines():
+                line = line.strip()
+                if line and not line.startswith('#') and not line.startswith('---'):
+                    desc = line
+                    break
+        out.append({'id': sid, 'description': desc, 'file': 'skills/' + fn})
+    return sorted(out, key=lambda s: s['id'])
 
 def validate(acts, cats):
     errs = []
@@ -229,6 +259,62 @@ def main():
     }
     json.dump({"filters": filters, "updated": today},
               open(os.path.join(api, 'filters.json'), 'w'), indent=1)
+
+    # 2b. skills registry + self-describing manifest
+    skills = load_skills()
+    endpoints = [
+        {"path": "api/v1/index.json",
+         "title": "API manifest",
+         "description": "Self-describing manifest of every API endpoint: title, description, schema URL, "
+                        "updated timestamp, record counts, stability, and deprecation notes. Start here.",
+         "schema": "api/v1/schema/index.schema.json",
+         "updated": today, "stability": "stable"},
+        {"path": "api/v1/activities.json",
+         "title": "Full activity library",
+         "description": "Every activity record: filters (age, time, group, location, materials, no_prep), "
+                        "setup, steps, variations, safety, optional season/occasion tags, optional source URL.",
+         "schema": "api/v1/schema/activities.schema.json",
+         "updated": today, "records": len(acts), "stability": "stable"},
+        {"path": "api/v1/categories.json",
+         "title": "Category definitions",
+         "description": "The 11 categories: id, name, blurb, color, glyph.",
+         "schema": "api/v1/schema/categories.schema.json",
+         "updated": today, "records": len(cats), "stability": "stable"},
+        {"path": "api/v1/filters.json",
+         "title": "Filter configuration",
+         "description": "Machine-readable filter configuration — the same matching logic the browser UI uses "
+                        "(range, select, multiselect, boolean, text search across name/tagline/materials/steps).",
+         "schema": "api/v1/schema/filters.schema.json",
+         "updated": today, "stability": "stable"},
+        {"path": "api/v1/skills.json",
+         "title": "Skills registry",
+         "description": "Registry of the reusable skill recipes in skills/: id, description, and file path.",
+         "schema": None,
+         "updated": today, "records": len(skills), "stability": "stable"},
+        {"path": "pipeline/review-queue.json",
+         "title": "RSS review queue",
+         "description": "RSS-pipeline working queue: accepted / rejected / deferred activity candidates "
+                        "under review, with decisions and source links.",
+         "schema": None, "updated": None, "stability": "internal",
+         "notes": "Not a stable public API — statuses and shape change as the pipeline runs. "
+                  "Treat undated numbers as stale."},
+    ]
+    manifest = {
+        "meta": {
+            "site": "Activity Vault",
+            "version": "1.0.0",
+            "generated": datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
+            "source_snapshot": ("data/activities.json + data/categories.json — "
+                                f"{len(acts)} activities, {len(cats)} categories"),
+        },
+        "endpoints": endpoints,
+        "deprecation_notes": "No endpoints are deprecated as of 1.0.0. Breaking changes get a new "
+                             "v2/ path, never a silent shape change.",
+    }
+    json.dump(manifest, open(os.path.join(api, 'index.json'), 'w'), indent=1, ensure_ascii=False)
+    json.dump({"skills": skills, "count": len(skills), "updated": today},
+              open(os.path.join(api, 'skills.json'), 'w'), indent=1, ensure_ascii=False)
+
     act_schema = {
         "$schema": "http://json-schema.org/draft-07/schema#",
         "title": "Activity", "type": "object",
@@ -268,6 +354,91 @@ def main():
         }
     }, open(os.path.join(schemadir, 'category.schema.json'), 'w'), indent=1)
 
+    # Envelope + config schemas (one draft-07 schema per endpoint payload).
+    def envelope(title, item_schema, item_key):
+        return {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": title, "type": "object",
+            "required": [item_key, "count", "updated"],
+            "properties": {
+                item_key: {"type": "array", "items": item_schema},
+                "count": {"type": "integer", "minimum": 0},
+                "updated": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+            },
+        }
+    json.dump(envelope("ActivitiesResponse", act_schema, "activities"),
+              open(os.path.join(schemadir, 'activities.schema.json'), 'w'), indent=1)
+    json.dump(envelope("CategoriesResponse", {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "title": "Category", "type": "object",
+        "required": ["id", "name", "blurb", "color", "glyph"],
+        "properties": {
+            "id": {"type": "string"}, "name": {"type": "string"},
+            "blurb": {"type": "string"}, "color": {"type": "string"},
+            "glyph": {"type": "string"}}}, "categories"),
+              open(os.path.join(schemadir, 'categories.schema.json'), 'w'), indent=1)
+    json.dump({
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "title": "FiltersResponse", "type": "object",
+        "required": ["filters", "updated"],
+        "properties": {
+            "filters": {
+                "type": "object", "minProperties": 1,
+                "additionalProperties": {
+                    "type": "object",
+                    "required": ["type"],
+                    "properties": {
+                        "type": {"type": "string",
+                                 "enum": ["range", "select", "multiselect", "boolean", "text"]},
+                        "min": {"type": "number"}, "max": {"type": "number"},
+                        "unit": {"type": "string"},
+                        "options": {"type": "array"},
+                        "labels": {"type": "object"},
+                        "fields": {"type": "array", "items": {"type": "string"}},
+                        "description": {"type": "string"},
+                    },
+                },
+            },
+            "updated": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+        },
+    }, open(os.path.join(schemadir, 'filters.schema.json'), 'w'), indent=1)
+    json.dump({
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "title": "ApiManifest", "type": "object",
+        "required": ["meta", "endpoints"],
+        "properties": {
+            "meta": {
+                "type": "object",
+                "required": ["site", "version", "generated", "source_snapshot"],
+                "properties": {
+                    "site": {"type": "string"},
+                    "version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
+                    "generated": {"type": "string",
+                                  "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"},
+                    "source_snapshot": {"type": "string"},
+                },
+            },
+            "endpoints": {
+                "type": "array", "minItems": 1,
+                "items": {
+                    "type": "object",
+                    "required": ["path", "title", "description", "stability"],
+                    "properties": {
+                        "path": {"type": "string"},
+                        "title": {"type": "string"},
+                        "description": {"type": "string"},
+                        "schema": {"type": ["string", "null"]},
+                        "updated": {"type": ["string", "null"]},
+                        "records": {"type": "integer", "minimum": 0},
+                        "stability": {"type": "string", "enum": ["stable", "internal"]},
+                        "notes": {"type": "string"},
+                    },
+                },
+            },
+            "deprecation_notes": {"type": "string"},
+        },
+    }, open(os.path.join(schemadir, 'index.schema.json'), 'w'), indent=1)
+
     # 3. llms.txt + llms-full.txt
     lines = ["# Activity Vault", "",
              "The all-in-one activity archive for teachers and after-school program teachers.",
@@ -277,21 +448,26 @@ def main():
     for c in cats:
         n = sum(1 for a in acts if c['id'] in a['categories'])
         lines.append(f"- {c['name']}: {n} activities — {c['blurb']}")
-    lines += ["", "## API", "- api/v1/activities.json — full activity records",
-              "- api/v1/categories.json — category definitions",
-              "- api/v1/filters.json — filter configuration",
-              "- api/v1/schema/activity.schema.json — JSON schema",
-              "", "## Skills", "- skills/activity-finder.md", "- skills/week-planner.md",
-              "- skills/rainy-day-rescue.md", "- skills/stem-demo-picker.md",
-              "- skills/icebreaker-chooser.md", "- skills/quiet-focus-picker.md",
-              "- skills/sub-tub-rescue.md", "- skills/halloween-party-planner.md",
-              "", "## Tools", "- sub.html — Sub Tub: the substitute-teacher rescue kit.",
+    lines += ["", "## API — start at api/v1/index.json (self-describing manifest)"]
+    for ep in endpoints:
+        if ep['path'].startswith('api/'):
+            lines.append(f"- {ep['path']} — {ep['title'].lower()}")
+    lines += ["", "## Skills"]
+    for s in skills:
+        lines.append(f"- {s['file']} — {s['description']}")
+    lines += ["", "## Tools",
+              "- sub.html — Sub Tub: the substitute-teacher rescue kit.",
               "  Pick grade band, minutes to fill, materials on hand, location —",
               "  generates a sequenced print-ready emergency plan plus a 'Dear sub' note template.",
               "- party.html — Halloween Class-Party Planner.",
               "  Pick class size, minutes, stations, and budget — generates a timed station-rotation",
               "  plan from seasonal activities, plus a setup list and a print-ready run sheet.",
-              "", "## Docs", "- API.md — full API reference", "- PIPELINE.md — how the library grows"]
+              "- planner.html — Plan-my-week planner: days, slots per day, and filters →",
+              "  a no-repeat week of activities with a print-ready sheet.",
+              "- api.html — API docs with a Try-the-API console (endpoint picker, fetch, pretty JSON).",
+              "", "## Docs", "- API.md — full API reference", "- PIPELINE.md — how the library grows",
+              "- AGENT.md — how an agent uses this archive: endpoints, example requests,",
+              "  end-to-end workflows (filtering, party planning, week planning)"]
     open(os.path.join(SITE, 'llms.txt'), 'w').write('\n'.join(lines) + '\n')
 
     full = lines + ["", "## All activities"]
@@ -306,7 +482,7 @@ def main():
     open(os.path.join(SITE, 'llms-full.txt'), 'w').write('\n'.join(full) + '\n')
 
     # 4. sitemap.xml
-    urls = ["", "planner.html", "sub.html", "party.html"] + [f"activity/{a['id']}.html" for a in acts]
+    urls = ["", "planner.html", "sub.html", "party.html", "api.html"] + [f"activity/{a['id']}.html" for a in acts]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:

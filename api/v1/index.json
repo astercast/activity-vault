@@ -1,0 +1,63 @@
+{
+ "meta": {
+  "site": "Activity Vault",
+  "version": "1.0.0",
+  "generated": "2026-10-12T00:42:09Z",
+  "source_snapshot": "data/activities.json + data/categories.json — 213 activities, 11 categories"
+ },
+ "endpoints": [
+  {
+   "path": "api/v1/index.json",
+   "title": "API manifest",
+   "description": "Self-describing manifest of every API endpoint: title, description, schema URL, updated timestamp, record counts, stability, and deprecation notes. Start here.",
+   "schema": "api/v1/schema/index.schema.json",
+   "updated": "2026-10-12",
+   "stability": "stable"
+  },
+  {
+   "path": "api/v1/activities.json",
+   "title": "Full activity library",
+   "description": "Every activity record: filters (age, time, group, location, materials, no_prep), setup, steps, variations, safety, optional season/occasion tags, optional source URL.",
+   "schema": "api/v1/schema/activities.schema.json",
+   "updated": "2026-10-12",
+   "records": 213,
+   "stability": "stable"
+  },
+  {
+   "path": "api/v1/categories.json",
+   "title": "Category definitions",
+   "description": "The 11 categories: id, name, blurb, color, glyph.",
+   "schema": "api/v1/schema/categories.schema.json",
+   "updated": "2026-10-12",
+   "records": 11,
+   "stability": "stable"
+  },
+  {
+   "path": "api/v1/filters.json",
+   "title": "Filter configuration",
+   "description": "Machine-readable filter configuration — the same matching logic the browser UI uses (range, select, multiselect, boolean, text search across name/tagline/materials/steps).",
+   "schema": "api/v1/schema/filters.schema.json",
+   "updated": "2026-10-12",
+   "stability": "stable"
+  },
+  {
+   "path": "api/v1/skills.json",
+   "title": "Skills registry",
+   "description": "Registry of the reusable skill recipes in skills/: id, description, and file path.",
+   "schema": null,
+   "updated": "2026-10-12",
+   "records": 10,
+   "stability": "stable"
+  },
+  {
+   "path": "pipeline/review-queue.json",
+   "title": "RSS review queue",
+   "description": "RSS-pipeline working queue: accepted / rejected / deferred activity candidates under review, with decisions and source links.",
+   "schema": null,
+   "updated": null,
+   "stability": "internal",
+   "notes": "Not a stable public API — statuses and shape change as the pipeline runs. Treat undated numbers as stale."
+  }
+ ],
+ "deprecation_notes": "No endpoints are deprecated as of 1.0.0. Breaking changes get a new v2/ path, never a silent shape change."
+}

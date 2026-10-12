@@ -1,0 +1,52 @@
+{
+ "$schema": "http://json-schema.org/draft-07/schema#",
+ "title": "CategoriesResponse",
+ "type": "object",
+ "required": [
+  "categories",
+  "count",
+  "updated"
+ ],
+ "properties": {
+  "categories": {
+   "type": "array",
+   "items": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Category",
+    "type": "object",
+    "required": [
+     "id",
+     "name",
+     "blurb",
+     "color",
+     "glyph"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "name": {
+      "type": "string"
+     },
+     "blurb": {
+      "type": "string"
+     },
+     "color": {
+      "type": "string"
+     },
+     "glyph": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "count": {
+   "type": "integer",
+   "minimum": 0
+  },
+  "updated": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+  }
+ }
+}

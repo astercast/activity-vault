@@ -17,21 +17,24 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
 - Quiet & Focus: 50 activities — Wind-down worthy: calm, creative, individual or small-group.
 - Music & Rhythm: 7 activities — Drums, shakers, rhythm games, and songs — make some noise.
 
-## API
-- api/v1/activities.json — full activity records
+## API — start at api/v1/index.json (self-describing manifest)
+- api/v1/index.json — api manifest
+- api/v1/activities.json — full activity library
 - api/v1/categories.json — category definitions
 - api/v1/filters.json — filter configuration
-- api/v1/schema/activity.schema.json — JSON schema
+- api/v1/skills.json — skills registry
 
 ## Skills
-- skills/activity-finder.md
-- skills/week-planner.md
-- skills/rainy-day-rescue.md
-- skills/stem-demo-picker.md
-- skills/icebreaker-chooser.md
-- skills/quiet-focus-picker.md
-- skills/sub-tub-rescue.md
-- skills/halloween-party-planner.md
+- skills/activity-finder.md — Find the right activity fast using age, time, group size, and materials-on-hand filters.
+- skills/halloween-party-planner.md — Turn party constraints into a timed station-rotation plan from seasonal activities.
+- skills/icebreaker-chooser.md — Pick first-day and new-group icebreakers matched to group size and shyness level.
+- skills/no-prep-rescue.md — Grab-and-go activities that need zero prep and zero (or near-zero) materials.
+- skills/outdoor-play-picker.md — Pick the right outdoor activity for the space, weather, and energy level you have.
+- skills/quiet-focus-picker.md — Pick wind-down and calm-focus activities to land a loud group or fill a calm slot.
+- skills/rainy-day-rescue.md — Instant indoor plan when the weather kills outdoor time.
+- skills/stem-demo-picker.md — Pick the right STEM demo or engineering challenge for the age group and time available.
+- skills/sub-tub-rescue.md — Build a print-ready substitute-teacher emergency plan for any grade band and time gap.
+- skills/week-planner.md — Build a no-repeat week of activities from days, slots, and constraints.
 
 ## Tools
 - sub.html — Sub Tub: the substitute-teacher rescue kit.
@@ -40,10 +43,15 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
 - party.html — Halloween Class-Party Planner.
   Pick class size, minutes, stations, and budget — generates a timed station-rotation
   plan from seasonal activities, plus a setup list and a print-ready run sheet.
+- planner.html — Plan-my-week planner: days, slots per day, and filters →
+  a no-repeat week of activities with a print-ready sheet.
+- api.html — API docs with a Try-the-API console (endpoint picker, fetch, pretty JSON).
 
 ## Docs
 - API.md — full API reference
 - PIPELINE.md — how the library grows
+- AGENT.md — how an agent uses this archive: endpoints, example requests,
+  end-to-end workflows (filtering, party planning, week planning)
 
 ## All activities
 

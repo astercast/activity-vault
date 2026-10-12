@@ -1,0 +1,56 @@
+{
+ "skills": [
+  {
+   "id": "activity-finder",
+   "description": "Find the right activity fast using age, time, group size, and materials-on-hand filters.",
+   "file": "skills/activity-finder.md"
+  },
+  {
+   "id": "halloween-party-planner",
+   "description": "Turn party constraints into a timed station-rotation plan from seasonal activities.",
+   "file": "skills/halloween-party-planner.md"
+  },
+  {
+   "id": "icebreaker-chooser",
+   "description": "Pick first-day and new-group icebreakers matched to group size and shyness level.",
+   "file": "skills/icebreaker-chooser.md"
+  },
+  {
+   "id": "no-prep-rescue",
+   "description": "Grab-and-go activities that need zero prep and zero (or near-zero) materials.",
+   "file": "skills/no-prep-rescue.md"
+  },
+  {
+   "id": "outdoor-play-picker",
+   "description": "Pick the right outdoor activity for the space, weather, and energy level you have.",
+   "file": "skills/outdoor-play-picker.md"
+  },
+  {
+   "id": "quiet-focus-picker",
+   "description": "Pick wind-down and calm-focus activities to land a loud group or fill a calm slot.",
+   "file": "skills/quiet-focus-picker.md"
+  },
+  {
+   "id": "rainy-day-rescue",
+   "description": "Instant indoor plan when the weather kills outdoor time.",
+   "file": "skills/rainy-day-rescue.md"
+  },
+  {
+   "id": "stem-demo-picker",
+   "description": "Pick the right STEM demo or engineering challenge for the age group and time available.",
+   "file": "skills/stem-demo-picker.md"
+  },
+  {
+   "id": "sub-tub-rescue",
+   "description": "Build a print-ready substitute-teacher emergency plan for any grade band and time gap.",
+   "file": "skills/sub-tub-rescue.md"
+  },
+  {
+   "id": "week-planner",
+   "description": "Build a no-repeat week of activities from days, slots, and constraints.",
+   "file": "skills/week-planner.md"
+  }
+ ],
+ "count": 10,
+ "updated": "2026-10-12"
+}

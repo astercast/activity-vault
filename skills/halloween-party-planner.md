@@ -1,3 +1,8 @@
+---
+name: halloween-party-planner
+description: Turn party constraints into a timed station-rotation plan from seasonal activities.
+---
+
 # Halloween Party Planner skill
 
 Turn a teacher's party constraints into a timed station-rotation plan using the Activity Vault library.
