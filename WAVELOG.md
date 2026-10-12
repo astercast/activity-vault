@@ -2,6 +2,28 @@
 
 Running record of build waves. Newest first.
 
+## Wave 17 — 2026-10-11 — "The Teacher's Desk" visual identity rework (wave 1)
+
+**What shipped:** full identity overhaul, content untouched (355 activities, 11 categories, planner/Sub Tub/field-trip/API/RSS all intact — CSS + shell chrome only, zero activity-data edits).
+- **Typography of its own** — Google Fonts (display=swap, system fallbacks): **Fraunces** (display serif, 800/900 heads), **Caveat** (handwritten marginalia: taglines, desk notes), **Courier Prime** (typewriter: facts, meta, labels, footer colophon), **Archivo Black** (rubber-stamp text: brand, kickers, chips, buttons). Nothing shared with the other sites' stacks.
+- **Teacher's-desk texture** — kraft-blotter body (layered radial vignettes on `--desk`), SVG-turbulence paper grain (`--grain` token), all re-skin-friendly tokens (`--desk/--paper/--margin-red/--rule-blue/--sticky/--grain/--grunge/--squiggle` + the existing `--dur-*`/`--ease-*` motion tokens).
+- **Index cards** — browse `.act-card`s are ruled cards: blue rule lines, red margin line, washi-tape strip tinted per category (`--cat`, alternating tilt, torn-edge clip-path), alternating ±0.4° rotation, deep paper-lift shadow. Planner day-cards, plan sheets/blocks, and filter panels reuse the card language.
+- **Rubber stamps** — brand lockup, hero kicker, category chips (double-border, uppercase, category-inked via `color-mix`, alternating rotation, `--grunge` ink-wear mask), "FILED ✓" stamp on every activity sheet (new decorative span in the build template), safety-box header, primary buttons.
+- **Binder rings** — activity sheet gets punched holes + metal rings down the binding edge (pure CSS radial-gradient stacks on `::before`/`::after`); on ≤700px they move to the top edge. Punched-hole strip also runs along the header top.
+- **Sticker sheets** — filter chips are white-halo stickers with alternating tilts, hover straighten+scale, `:active` peel-and-stick pop keyframe; pressed state becomes a stamped fill.
+- **Manila folders** — collection cards with folder tabs. **Sticky notes** — hero desk-note with push-pin (Caveat, "everything's filed & ready — grab a card ↓"), brain-break/meter-warning extras. **Hand-drawn squiggle** underlines (SVG `--squiggle`) on hero "one vault." + activity section heads. **Folder-tab nav** with raised active tab; typewriter footer colophon.
+- **Signature motion** — (1) index-card stagger reveals: `IntersectionObserver` in `site.js` adds `.in` with per-card `--i` stagger delay (app.js sets `--i`; a `MutationObserver` catches late-rendered cards on planner/collections/sub/party/field-trip with zero changes to those files); progressive enhancement via `html.js` gate — no JS/IO = no hiding, ever. (2) stamp/ink-wipe view transitions: the incoming page slams in like a rubber stamp (`vt-stamp-in`: scale 1.22→0.985 + −2.5° rotation, `--dur-slow`/`--ease-decelerate`). (3) sticker press pop. All killed by `data-calm="true"` (verified: toggle → transitions 0s, all cards instantly visible, persists via localStorage) and `prefers-reduced-motion`.
+- **Mobile** — header reflows to brand row + scrollable folder-tab strip; binder rings move to card top edge (verified at 390px).
+
+**Validation (wave 17):**
+- `scripts/build.py`: BUILD OK — 355 activities, 355 pages, 0 dupes (template changes: font links + file-stamp span regenerated into all pages)
+- `scripts/check_api.py`: ALL CHECKS PASSED
+- `node --check`: site.js, app.js clean; all 7 JS test suites PASS (planner-core, fieldtrip, spring, summer, halloween, thanksgiving, winterstem)
+- Headless Chromium (puppeteer-core, request-interception harness — sandbox blocks localhost via LNA checks and has no internet, so Google Fonts fell back to system stacks in shots): index, collections, activity page, planner, mobile activity — desk identity renders, **zero console errors / zero pageerrors** (only pre-existing favicon 404 + font tunnel failures from the sandbox having no net). Calm toggle verified on/off + persistence.
+- Screenshots: `~/workspace/w17cdp/shots/` (index2, activity2, collections, planner, mobile-activity)
+
+**Wave 17 push resolution:** (filled after push)
+
 ## Wave 16 — 2026-10-11 — Winter Holiday Build Lab pack (+26 → 355, MERGED)
 
 **What shipped:**

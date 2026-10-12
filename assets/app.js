@@ -200,9 +200,14 @@
       }
       grid.appendChild(empty);
     } else {
-      list.forEach(function (a) { grid.appendChild(renderCard(a)); });
+      list.forEach(function (a, idx) {
+        var c = renderCard(a);
+        c.style.setProperty('--i', String(idx % 9)); /* stagger order for the desk reveal */
+        grid.appendChild(c);
+      });
     }
     countEl.textContent = list.length + (list.length === 1 ? ' activity' : ' activities');
+    if (window.VaultReveal) window.VaultReveal.watch(grid);
   }
 
   // ---------- share a collection ----------

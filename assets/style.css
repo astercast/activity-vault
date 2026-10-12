@@ -2,18 +2,31 @@
    Warm paper, strong type, color-coded categories. Mobile-first. */
 
 :root {
-  --paper: #faf5ec;
-  --paper-deep: #f3ecdd;
-  --ink: #2a241c;
-  --ink-soft: #5c5344;
-  --line: #e2d8c3;
-  --card: #fffdf8;
+  --paper: #fffdf7;
+  --paper-deep: #f5eeda;
+  --desk: #e7d9b8;
+  --desk-deep: #d9c69a;
+  --ink: #2b251c;
+  --ink-soft: #6b5f4c;
+  --line: #ddd0b4;
+  --card: #fffdf7;
   --accent: #b7413c;
   --accent-ink: #fff;
+  --margin-red: #d4695e;
+  --rule-blue: rgba(74, 112, 160, .16);
+  --sticky: #fbe9a7;
   --radius: 14px;
   --shadow: 0 2px 10px rgba(42, 36, 28, .08);
-  --font-display: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+  --shadow-lift: 0 1px 2px rgba(42, 36, 28, .14), 0 10px 24px rgba(42, 36, 28, .10);
+  --font-display: "Fraunces", Georgia, 'Iowan Old Style', 'Times New Roman', serif;
   --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-hand: "Caveat", 'Segoe Script', cursive;
+  --font-type: "Courier Prime", 'Courier New', Courier, monospace;
+  --font-stamp: "Archivo Black", 'Arial Black', 'Archivo', sans-serif;
+  /* paper grain + ink grunge (data-URI SVG turbulence; re-skin by swapping these two) */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.23 0 0 0 0 0.19 0 0 0 0 0.13 0 0 0 0.07 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  --grunge: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 3.5 -1.05'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23g)'/%3E%3C/svg%3E");
+  --squiggle: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='8' viewBox='0 0 60 8'%3E%3Cpath d='M1 5 Q 8 1, 15 4 T 29 4 T 43 4 T 59 4' fill='none' stroke='%23b7413c' stroke-width='2.6' stroke-linecap='round' opacity='0.75'/%3E%3C/svg%3E");
   /* motion tokens (web-craft 2026-10-11): 3–5 named durations + easings, one scale */
   --ease-standard: cubic-bezier(0.2, 0, 0, 1);
   --ease-decelerate: cubic-bezier(0, 0, 0, 1);
@@ -28,22 +41,24 @@ html { -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
-  background: var(--paper);
+  background:
+    radial-gradient(ellipse 120% 55% at 50% -8%, rgba(255, 253, 244, .55), transparent 60%),
+    radial-gradient(ellipse 90% 40% at 50% 110%, rgba(120, 90, 50, .14), transparent 60%),
+    var(--desk);
   color: var(--ink);
   font-family: var(--font-body);
   line-height: 1.55;
   font-size: 1rem;
 }
 
-/* subtle paper texture via layered gradient */
+/* teacher's-desk texture: kraft grain over the blotter */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background:
-    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(183, 65, 60, .05), transparent),
-    repeating-linear-gradient(0deg, transparent 0 31px, rgba(42,36,28,.025) 31px 32px);
+  background-image: var(--grain);
+  background-size: 160px 160px;
   z-index: -1;
 }
 
@@ -706,3 +721,622 @@ li.slot.drag-over { outline: 3px dashed var(--accent); outline-offset: 3px; bord
 /* print: day balance header inside the card deck */
 .print-day-head h3 { font-size: 16pt; margin: 14pt 0 2pt; }
 .print-day-head p { font-size: 10pt; color: #333; margin: 0 0 6pt; }
+
+/* =====================================================================
+   WAVE 17 — "The Teacher's Desk" visual identity
+   Warm paper craft pushed fully: index cards, rubber stamps, binder
+   rings, sticker sheets, teacher's-desk texture. Token-based and
+   re-skin-friendly (swap the --paper/--desk/--grain/--grunge tokens and
+   the whole desk re-skins). Motion runs on the --dur-*/--ease-* tokens;
+   the data-calm kill switch and prefers-reduced-motion rules below still
+   silence everything. Identity overhaul only — no markup contract changes.
+   ===================================================================== */
+
+/* ---------- typography: the desk's own voice ---------- */
+h1, h2, h3 { font-family: var(--font-display); }
+h1 { font-weight: 800; letter-spacing: -.022em; }
+h2 { font-weight: 700; letter-spacing: -.015em; }
+
+/* hand-drawn squiggle underline for display heads that earn it */
+.squiggle {
+  background: var(--squiggle) repeat-x left bottom / 60px 8px;
+  padding-bottom: .12em;
+}
+
+/* ---------- header: binder strip + rubber-stamp brand ---------- */
+.site-header {
+  background: var(--card);
+  border-bottom: 3px solid var(--ink);
+  position: sticky; top: 0; z-index: 50;
+}
+.site-header::before {
+  /* punched binder holes along the top edge */
+  content: ""; display: block; height: 13px;
+  background-image: radial-gradient(circle 4.5px at 50% 50%,
+    rgba(74, 58, 34, .30) 3.6px, rgba(255, 255, 255, .75) 4.4px, transparent 5px);
+  background-size: 52px 13px;
+  background-repeat: repeat-x;
+  background-position: center;
+  border-bottom: 1px dashed var(--line);
+}
+.header-inner { align-items: flex-end; }
+.brand-text {
+  font-family: var(--font-stamp);
+  font-size: 1.02rem;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--accent);
+  border: 3px double var(--accent);
+  border-radius: 5px;
+  padding: .18rem .65rem .12rem;
+  transform: rotate(-2deg);
+  -webkit-mask-image: var(--grunge);
+  mask-image: var(--grunge);
+  background: rgba(183, 65, 60, .04);
+  white-space: nowrap;
+}
+.brand-mark { font-size: 1.5rem; transform: rotate(6deg); display: inline-block; }
+
+/* nav tabs: manila folder tabs; the current page is the raised tab */
+.site-header nav { flex-wrap: wrap; row-gap: .15rem; }
+.site-header nav a {
+  font-family: var(--font-type);
+  font-size: .8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  border: 2px solid var(--line);
+  border-bottom: 0;
+  border-radius: 10px 12px 0 0;
+  background: var(--paper-deep);
+  padding: .5rem .8rem .35rem;
+  margin-top: 6px;
+  box-shadow: inset 0 -4px 6px rgba(42, 36, 28, .06);
+}
+.site-header nav a:hover { border-color: var(--ink-soft); background: var(--card); }
+.site-header nav a[aria-current="page"] {
+  background: var(--card);
+  color: var(--accent);
+  border-color: var(--ink);
+  margin-top: 0;
+  padding-top: .75rem;
+  box-shadow: 0 -3px 8px rgba(42, 36, 28, .10);
+  position: relative;
+  top: 3px;
+}
+
+/* ---------- hero: stamp kicker, desk note ---------- */
+.hero { position: relative; }
+.hero .kicker {
+  font-family: var(--font-stamp);
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 3px double var(--accent);
+  border-radius: 5px;
+  padding: .3rem .8rem .22rem;
+  background: rgba(183, 65, 60, .05);
+  transform: rotate(-1.4deg);
+  display: inline-block;
+  -webkit-mask-image: var(--grunge);
+  mask-image: var(--grunge);
+}
+.hero h1 { font-size: clamp(2.1rem, 5.4vw, 3.2rem); }
+.hero p.lede { font-size: 1.12rem; max-width: 44rem; }
+.hero .stat b {
+  font-family: var(--font-type);
+  font-weight: 700;
+  font-size: 1.7rem;
+  color: var(--accent);
+  border-bottom: 3px solid var(--accent);
+}
+/* handwritten marginalia pinned to the hero */
+.desk-note {
+  font-family: var(--font-hand);
+  font-size: 1.45rem;
+  line-height: 1.25;
+  color: #4a3f30;
+  background: var(--sticky);
+  padding: .9rem 1.1rem .7rem;
+  max-width: 15rem;
+  transform: rotate(2.2deg);
+  box-shadow: var(--shadow-lift);
+  position: relative;
+  margin: 1.4rem 0 0;
+}
+.desk-note::before {
+  /* push-pin */
+  content: ""; position: absolute; top: -9px; left: 50%; margin-left: -9px;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #e88, var(--accent) 65%, #7e2a26);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .35);
+}
+@media (min-width: 900px) {
+  .hero { padding-right: 17rem; }
+  .desk-note { position: absolute; right: .5rem; top: 2.4rem; margin: 0; }
+}
+
+/* ---------- index cards: the browse grid ---------- */
+.act-card {
+  background:
+    linear-gradient(90deg, transparent 0 42px, var(--margin-red) 42px 44px, transparent 44px),
+    repeating-linear-gradient(180deg, transparent 0 29px, var(--rule-blue) 29px 30px),
+    var(--card);
+  border: 1px solid var(--line);
+  border-top: 1px solid var(--line);
+  border-radius: 5px;
+  box-shadow: var(--shadow-lift);
+  padding: 2.3rem 1.1rem 1rem 3.4rem;
+}
+.act-card:nth-child(odd) { transform: rotate(-.45deg); }
+.act-card:nth-child(even) { transform: rotate(.35deg); }
+.act-card:hover {
+  transform: rotate(0deg) translateY(-4px);
+  box-shadow: 0 2px 3px rgba(42,36,28,.12), 0 16px 32px rgba(42,36,28,.14);
+}
+/* washi tape strip, category-tinted, alternating tilt */
+.act-card::before {
+  content: ""; position: absolute; top: -13px; left: 50%;
+  width: 112px; height: 27px;
+  background: color-mix(in srgb, var(--cat, var(--accent)) 42%, #fdfdf8);
+  opacity: .92;
+  transform: translateX(-50%) rotate(-3deg);
+  clip-path: polygon(1.5% 6%, 98% 0%, 100% 88%, 97% 100%, 2% 94%, 0% 12%);
+  box-shadow: 0 1px 3px rgba(42, 36, 28, .25);
+  border-left: 1px dashed rgba(42,36,28,.15);
+  border-right: 1px dashed rgba(42,36,28,.15);
+}
+.act-card:nth-child(even)::before { transform: translateX(-50%) rotate(2.6deg); }
+.act-card h3 { font-size: 1.22rem; font-weight: 700; }
+.act-card .tagline { font-size: .94rem; }
+.act-card .meta {
+  font-family: var(--font-type);
+  font-size: .78rem;
+  letter-spacing: .01em;
+}
+.act-card .meta b { font-weight: 700; }
+
+/* rubber-stamp category chips on cards */
+.cat-chips { padding-top: .15rem; }
+.cat-chips .chip.cat-chip {
+  font-family: var(--font-stamp);
+  font-size: .6rem;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--cat, var(--accent)) 78%, #1a1510);
+  background: transparent;
+  border: 2px solid currentColor;
+  outline: 1px solid currentColor;
+  outline-offset: 2.5px;
+  border-radius: 4px;
+  padding: .32rem .55rem .24rem;
+  transform: rotate(-2deg);
+  -webkit-mask-image: var(--grunge);
+  mask-image: var(--grunge);
+  cursor: default;
+}
+.cat-chips .chip.cat-chip:nth-child(even) { transform: rotate(1.7deg); }
+/* tag chips: dashed typewriter stickers */
+.cat-chips .chip.tag-chip {
+  font-family: var(--font-type);
+  font-size: .72rem;
+  font-weight: 700;
+  border: 1.5px dashed var(--ink-soft);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 0 0 2px #fff, 0 2px 5px rgba(42,36,28,.14);
+  padding: .22rem .55rem;
+  --cat: var(--ink-soft);
+}
+.cat-chips .chip.tag-chip:nth-child(3n+1) { transform: rotate(-1.2deg); }
+.cat-chips .chip.tag-chip:nth-child(3n+2) { transform: rotate(1deg); }
+
+/* ---------- sticker-sheet filter chips ---------- */
+.chip-row { padding: .35rem .2rem .5rem; }
+.chip-row .chip {
+  font-family: var(--font-type);
+  font-size: .8rem;
+  font-weight: 700;
+  background: #fff;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 0 0 2.5px #fff, 0 3px 8px rgba(42, 36, 28, .16);
+  padding: .34rem .75rem;
+  transition: transform var(--dur-fast) var(--ease-standard), box-shadow var(--dur-fast) var(--ease-standard);
+}
+.chip-row .chip:nth-child(4n+1) { transform: rotate(-1.7deg); }
+.chip-row .chip:nth-child(4n+2) { transform: rotate(1.3deg); }
+.chip-row .chip:nth-child(4n+3) { transform: rotate(-.8deg); }
+.chip-row .chip:nth-child(4n) { transform: rotate(1.8deg); }
+.chip-row .chip:hover { transform: rotate(0deg) scale(1.05); z-index: 2; position: relative; }
+.chip-row .chip[aria-pressed="true"] {
+  /* peeled-and-stamped: filled, stamped type */
+  font-family: var(--font-stamp);
+  font-size: .68rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  transform: rotate(-1deg) scale(1.04);
+  box-shadow: 0 0 0 2.5px #fff, 0 4px 10px rgba(42, 36, 28, .22);
+  -webkit-mask-image: var(--grunge);
+  mask-image: var(--grunge);
+}
+.filters {
+  background:
+    linear-gradient(90deg, transparent 0 30px, var(--margin-red) 30px 32px, transparent 32px),
+    var(--card);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-lift);
+  border-radius: 5px;
+  padding-left: 2.6rem;
+}
+.filters h2 {
+  font-family: var(--font-type);
+  font-size: .95rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+.filter-group legend, .filter-group > .flabel {
+  font-family: var(--font-type);
+  font-size: .78rem;
+}
+
+/* ---------- activity sheet: the binder page ---------- */
+.activity-card {
+  position: relative;
+  background:
+    linear-gradient(90deg, transparent 0 62px, var(--margin-red) 62px 64px, transparent 64px),
+    var(--card);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  box-shadow: var(--shadow-lift);
+  padding-left: clamp(4.6rem, 9vw, 5.6rem);
+  overflow: hidden;
+}
+.activity-card::before {
+  /* punched holes down the binding edge */
+  content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 54px;
+  background-image: radial-gradient(circle 8.5px at 27px 84px,
+    rgba(74, 58, 34, .32) 7.5px, rgba(255, 255, 255, .85) 8.6px, rgba(42,36,28,.14) 9.6px, transparent 10.5px);
+  background-size: 54px 168px;
+  background-repeat: repeat-y;
+  pointer-events: none;
+}
+.activity-card::after {
+  /* the binder rings themselves */
+  content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 54px;
+  background-image: radial-gradient(circle 12.5px at 27px 84px,
+    transparent 8.8px, #8d8d95 9.3px, #d9d9de 11.4px, #76767e 12.6px, transparent 13.4px);
+  background-size: 54px 168px;
+  background-repeat: repeat-y;
+  pointer-events: none;
+}
+/* "filed" rubber stamp, top-right of the sheet */
+.file-stamp {
+  position: absolute; top: 1.1rem; right: 1.2rem;
+  font-family: var(--font-stamp);
+  font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--accent);
+  border: 3px double var(--accent); border-radius: 5px;
+  padding: .32rem .7rem .24rem;
+  transform: rotate(7deg);
+  -webkit-mask-image: var(--grunge); mask-image: var(--grunge);
+  background: rgba(183, 65, 60, .05);
+  pointer-events: none;
+}
+.activity-card > h1 { font-weight: 800; max-width: 22ch; }
+.activity-card .tagline {
+  font-family: var(--font-hand);
+  font-size: 1.5rem;
+  font-style: normal;
+  color: #57503f;
+  line-height: 1.3;
+}
+/* fact grid: the field-notes slip */
+.fact-grid {
+  font-family: var(--font-type);
+  background:
+    repeating-linear-gradient(180deg, transparent 0 27px, var(--rule-blue) 27px 28px),
+    #fdf9ee;
+  border: 2px dashed var(--ink-soft);
+  border-radius: 4px;
+}
+.fact-grid dt { font-family: var(--font-type); }
+.fact-grid dd { font-weight: 700; }
+/* section heads get the hand-drawn underline */
+.activity-card section h2 { border-bottom: 0; padding-bottom: .5rem; position: relative; }
+.activity-card section h2::after {
+  content: ""; position: absolute; left: 0; bottom: 0;
+  width: 8.5rem; height: 8px;
+  background: var(--squiggle) repeat-x left center / 60px 8px;
+}
+/* safety box: stamped warning slip */
+.safety {
+  background: #fff8e6;
+  border: 2px solid #d9a821;
+  border-radius: 4px;
+  position: relative;
+  box-shadow: var(--shadow);
+}
+.safety h2 {
+  font-family: var(--font-stamp) !important;
+  font-size: .95rem !important;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #8a5c00;
+}
+.safety h2::after { display: none; }
+.crumbs { font-family: var(--font-type); font-size: .82rem; }
+
+/* rating stars keep their color story on the new paper */
+.rate-box {
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background:
+    linear-gradient(90deg, transparent 0 30px, var(--margin-red) 30px 32px, transparent 32px),
+    var(--card);
+  padding-left: 2.6rem;
+}
+.rate-box h2 { font-size: 1.2rem; }
+
+/* ---------- collections: manila folders ---------- */
+.collection-card {
+  position: relative;
+  background: linear-gradient(180deg, #f6e7c2 0%, #f0ddb0 100%);
+  border: 2px solid #d9c08a;
+  border-radius: 4px 14px 10px 10px;
+  box-shadow: var(--shadow-lift);
+  border-top: 2px solid #d9c08a;
+  margin-top: 14px;
+  padding-top: 1.4rem;
+}
+.collection-card::before {
+  /* folder tab */
+  content: ""; position: absolute; top: -16px; left: 14px;
+  width: 118px; height: 20px;
+  background: #f6e7c2;
+  border: 2px solid #d9c08a;
+  border-bottom: 0;
+  border-radius: 10px 14px 0 0;
+}
+.collection-card:hover { transform: rotate(-.5deg) translateY(-3px); }
+.collection-title { font-weight: 800; }
+.collection-count {
+  font-family: var(--font-type);
+  font-size: .85rem;
+}
+.collection-section {
+  border-radius: 5px;
+  box-shadow: var(--shadow-lift);
+  border: 1px solid var(--line);
+}
+.pick {
+  border-radius: 4px;
+  background:
+    repeating-linear-gradient(180deg, transparent 0 25px, var(--rule-blue) 25px 26px),
+    #fff;
+}
+
+/* ---------- planner: week sheets on the desk ---------- */
+.planner-form {
+  border-radius: 5px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-lift);
+  background:
+    linear-gradient(90deg, transparent 0 30px, var(--margin-red) 30px 32px, transparent 32px),
+    var(--card);
+  padding-left: 2.6rem;
+}
+.planner-form legend { font-weight: 800; }
+.day-card {
+  background:
+    linear-gradient(90deg, transparent 0 34px, var(--margin-red) 34px 36px, transparent 36px),
+    repeating-linear-gradient(180deg, transparent 0 29px, var(--rule-blue) 29px 30px),
+    var(--card);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  box-shadow: var(--shadow-lift);
+  padding-left: 2.9rem;
+  position: relative;
+}
+.day-card h3 { font-weight: 800; }
+.day-card:nth-child(odd) { transform: rotate(-.3deg); }
+.day-card:nth-child(even) { transform: rotate(.25deg); }
+.week-head { font-weight: 800; }
+.week-head-sub { font-family: var(--font-type); }
+.slot-time, .slot .slot-time { font-family: var(--font-type); }
+/* sticky-note extras */
+.extra-section, .brain-break, .top-rated-note, .meter-warnings li {
+  background: var(--sticky);
+  border: 1px solid #e3cf7e;
+  border-radius: 3px;
+  box-shadow: var(--shadow);
+}
+.extra-section:nth-of-type(odd) { transform: rotate(-.3deg); }
+.plan-sections .chip {
+  font-family: var(--font-type); font-size: .8rem; font-weight: 700;
+  border-radius: 10px;
+  box-shadow: 0 0 0 2px #fff, 0 2px 6px rgba(42,36,28,.14);
+}
+
+/* ---------- sub tub / party / field trip: same desk, same paper ---------- */
+.plan-sheet {
+  border-radius: 5px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-lift);
+  background:
+    linear-gradient(90deg, transparent 0 40px, var(--margin-red) 40px 42px, transparent 42px),
+    var(--card);
+  padding-left: 3.2rem;
+  position: relative;
+}
+.plan-sheet::before {
+  content: ""; position: absolute; top: -13px; left: 50%;
+  width: 120px; height: 27px;
+  background: rgba(183, 65, 60, .35);
+  transform: translateX(-50%) rotate(1.8deg);
+  clip-path: polygon(1.5% 6%, 98% 0%, 100% 88%, 97% 100%, 2% 94%, 0% 12%);
+  box-shadow: 0 1px 3px rgba(42, 36, 28, .25);
+}
+.plan-block {
+  border-radius: 4px;
+  background:
+    repeating-linear-gradient(180deg, transparent 0 25px, var(--rule-blue) 25px 26px),
+    #fff;
+}
+.plan-head .kicker {
+  font-family: var(--font-stamp);
+  font-size: .68rem;
+  letter-spacing: .14em;
+  border: 3px double var(--accent);
+  border-radius: 5px;
+  transform: rotate(-1.2deg);
+  display: inline-block;
+  -webkit-mask-image: var(--grunge); mask-image: var(--grunge);
+}
+.plan-time { font-family: var(--font-type); }
+.setup-col { border-radius: 4px; box-shadow: var(--shadow); }
+.ft-check { border-radius: 4px; }
+.ft-table th { font-family: var(--font-type); font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; }
+
+/* ---------- buttons: stamp the primary, type the rest ---------- */
+.btn {
+  font-family: var(--font-stamp);
+  font-size: .82rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  border-radius: 6px;
+  padding: .7rem 1.35rem .6rem;
+  transform: rotate(-.6deg);
+  box-shadow: 0 3px 0 rgba(90, 28, 25, .9), 0 6px 12px rgba(42, 36, 28, .18);
+  -webkit-mask-image: var(--grunge); mask-image: var(--grunge);
+  transition: transform var(--dur-fast) var(--ease-standard), box-shadow var(--dur-fast) var(--ease-standard), filter var(--dur-fast) var(--ease-standard);
+}
+.btn:hover { filter: brightness(1.08); transform: rotate(-.6deg) translateY(-1px); box-shadow: 0 4px 0 rgba(90,28,25,.9), 0 8px 14px rgba(42,36,28,.2); }
+.btn:active { transform: rotate(-.6deg) translateY(2px); box-shadow: 0 1px 0 rgba(90,28,25,.9); }
+.btn-ghost {
+  font-family: var(--font-type);
+  text-transform: none;
+  letter-spacing: .02em;
+  -webkit-mask-image: none; mask-image: none;
+  transform: none;
+  box-shadow: none;
+  border-radius: 10px;
+}
+.btn-ghost:hover { transform: translateY(-1px); box-shadow: 0 3px 8px rgba(42,36,28,.14); }
+.btn-small { font-size: .72rem; }
+
+/* ---------- footer: desk-drawer colophon ---------- */
+.site-footer {
+  border-top: 4px double var(--ink);
+  background: var(--card);
+  font-family: var(--font-type);
+  font-size: .82rem;
+  text-align: center;
+}
+.site-footer p { max-width: 60ch; margin-left: auto; margin-right: auto; }
+
+/* ---------- signature motion ---------- */
+/* index-card stagger reveals: JS adds .reveal + --i, IntersectionObserver adds .in.
+   Progressive enhancement — no .js class, no hiding, ever. */
+@media (prefers-reduced-motion: no-preference) {
+  html.js:not([data-calm="true"]) .reveal {
+    opacity: 0;
+    transform: translateY(18px) rotate(.5deg);
+    transition:
+      opacity var(--dur-slow) var(--ease-decelerate),
+      transform var(--dur-slow) var(--ease-decelerate);
+    transition-delay: calc(var(--i, 0) * 55ms);
+  }
+  html.js:not([data-calm="true"]) .reveal.in {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* stamp/ink-wipe view transitions: the new page slams down like a rubber stamp */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+}
+@keyframes vt-stamp-in {
+  0% { opacity: 0; transform: scale(1.22) rotate(-2.5deg); }
+  55% { opacity: 1; transform: scale(.985) rotate(.4deg); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes vt-ink-out {
+  to { opacity: 0; }
+}
+::view-transition-old(root) { animation: vt-ink-out var(--dur-fast) var(--ease-standard); }
+::view-transition-new(root) { animation: vt-stamp-in var(--dur-slow) var(--ease-decelerate); }
+/* calm mode: the stamp becomes an instant swap (no motion at all) */
+html[data-calm="true"] ::view-transition-group(*),
+html[data-calm="true"] ::view-transition-old(*),
+html[data-calm="true"] ::view-transition-new(*) { animation: none !important; }
+
+/* sticker press: a tiny peel-and-stick pop */
+@keyframes sticker-pop {
+  0% { transform: scale(.92) rotate(-4deg); }
+  60% { transform: scale(1.06) rotate(1.5deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  html:not([data-calm="true"]) .chip-row .chip:active { animation: sticker-pop var(--dur-base) var(--ease-standard); }
+}
+
+/* desk-note pin wobble on hover */
+@media (prefers-reduced-motion: no-preference) {
+  html:not([data-calm="true"]) .desk-note:hover { transform: rotate(.5deg) scale(1.02); }
+  .desk-note { transition: transform var(--dur-base) var(--ease-standard); }
+}
+
+/* ---------- responsive: the desk gets smaller, not plainer ---------- */
+@media (max-width: 700px) {
+  /* header: brand row on top, folder tabs get their own scrollable strip */
+  .header-inner { flex-wrap: wrap; row-gap: .35rem; align-items: center; }
+  .brand { order: 1; }
+  #site-calm-toggle { order: 2; margin-left: auto; }
+  .site-header nav {
+    order: 3; flex-basis: 100%;
+    flex-wrap: nowrap; overflow-x: auto;
+    padding-bottom: 3px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .site-header nav a { white-space: nowrap; flex: 0 0 auto; }
+  .site-header nav a[aria-current="page"] { top: 0; margin-top: 6px; padding-top: .5rem; }
+  /* binder rings move to the top edge on narrow sheets */
+  .activity-card { padding-left: clamp(1.2rem, 4vw, 2.2rem); padding-top: 3.4rem; }
+  .activity-card::before, .activity-card::after {
+    top: 0; bottom: auto; left: 0; right: 0; width: auto; height: 44px;
+    background-size: 120px 44px;
+    background-repeat: repeat-x;
+  }
+  .activity-card::before {
+    background-image: radial-gradient(circle 8.5px at 60px 22px,
+      rgba(74, 58, 34, .32) 7.5px, rgba(255, 255, 255, .85) 8.6px, rgba(42,36,28,.14) 9.6px, transparent 10.5px);
+  }
+  .activity-card::after {
+    background-image: radial-gradient(circle 12.5px at 60px 22px,
+      transparent 8.8px, #8d8d95 9.3px, #d9d9de 11.4px, #76767e 12.6px, transparent 13.4px);
+  }
+  .file-stamp { top: 3.4rem; }
+  .act-card { padding-left: 2.9rem; }
+  .brand-text { font-size: .85rem; }
+}
+
+/* ---------- print: the desk folds away, the paper stays ---------- */
+@media print {
+  body::before { display: none; }
+  body { background: #fff; }
+  .act-card, .activity-card, .day-card, .plan-sheet, .filters, .collection-card, .extra-section {
+    transform: none !important;
+    box-shadow: none;
+  }
+  .act-card::before, .plan-sheet::before, .desk-note::before { display: none; }
+  .file-stamp { -webkit-mask-image: none; mask-image: none; }
+  .activity-card::before, .activity-card::after { display: none; }
+  .activity-card { padding-left: 0; }
+  .brand-text { -webkit-mask-image: none; mask-image: none; transform: none; }
+  .btn { -webkit-mask-image: none; mask-image: none; transform: none; box-shadow: none; }
+}
+
+/* ================= END WAVE 17 ================= */
