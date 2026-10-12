@@ -92,9 +92,21 @@ Machine-readable filter configuration — the same logic the browser UI uses:
 }
 ```
 
-### `GET api/v1/schema/activity.schema.json` / `category.schema.json`
+### `GET api/v1/collections.json`
 
-JSON Schema (draft-07) for the two record types. `scripts/build.py` validates every record against these rules before generating anything.
+Curated collections — 8 teacher-ready bundles (`rainy-day-rescue`, `first-day-of-program`, `last-10-minutes`, `field-trip-bus-ride`, `sub-tub-essentials`, `winter-party-night`, `no-prep-lifesavers`, `calm-down-corner`). Each record: `id`, `title`, `glyph`, `when_to_use`, `picks[]` of `{activity_id, curator_note}`, computed `age_span`/`time_span`, and `page` (deep link). Every `activity_id` is a real record in `activities.json`.
+
+```json
+{ "collections": [ {"id": "rainy-day-rescue", "title": "Rainy-day rescue", "glyph": "🌧️",
+    "when_to_use": "Recess just got cancelled…",
+    "picks": [ {"activity_id": "freeze-dance", "curator_note": "Ten minutes of full-body movement…"} ],
+    "age_span": [5, 12], "time_span": [10, 45], "page": "collections.html#rainy-day-rescue"} ],
+  "count": 8, "updated": "…" }
+```
+
+### `GET api/v1/schema/activity.schema.json` / `category.schema.json` / `collection.schema.json`
+
+JSON Schema (draft-07) for the three record types. `scripts/build.py` validates every record against these rules before generating anything.
 
 ### `GET api/v1/skills.json`
 
@@ -105,7 +117,7 @@ Registry of the reusable skill recipes in `skills/`: `id`, `description`, `file`
   "count": 10, "updated": "..." }
 ```
 
-### `GET api/v1/schema/activities.schema.json` / `categories.schema.json` / `filters.schema.json` / `index.schema.json`
+### `GET api/v1/schema/activities.schema.json` / `categories.schema.json` / `filters.schema.json` / `index.schema.json` / `collections.schema.json`
 
 JSON Schema (draft-07) for each endpoint's full payload (envelope + records). One schema per endpoint, all validating — see `scripts/check_api.py`.
 

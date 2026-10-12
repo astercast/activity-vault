@@ -37,8 +37,48 @@ TAG_LABELS = {
 def load():
     acts = json.load(open(os.path.join(DATA, 'activities.json')))
     cats = json.load(open(os.path.join(DATA, 'categories.json')))
-    return acts, cats
+    colls = json.load(open(os.path.join(DATA, 'collections.json')))['collections']
+    return acts, cats, colls
 
+def validate_collections(colls, acts):
+    errs = []
+    act_ids = {a['id'] for a in acts}
+    seen = set()
+    for c in colls:
+        tag = c.get('id', '?')
+        if tag in seen:
+            errs.append(f"collection {tag}: duplicate id")
+        seen.add(tag)
+        if not ID_RE.match(tag or ''):
+            errs.append(f"collection {tag}: bad id format")
+        for f in ('title', 'glyph', 'when_to_use', 'picks'):
+            if f not in c:
+                errs.append(f"collection {tag}: missing field '{f}'")
+        n = len(c.get('picks', []))
+        if not (8 <= n <= 12):
+            errs.append(f"collection {tag}: needs 8-12 picks, has {n}")
+        for p in c.get('picks', []):
+            if p.get('id') not in act_ids:
+                errs.append(f"collection {tag}: pick '{p.get('id')}' is not a real activity id")
+            if not (p.get('note') or '').strip():
+                errs.append(f"collection {tag}: pick '{p.get('id')}' needs a curator note")
+    return errs
+
+def build_collection_records(colls, actmap):
+    """Enrich each collection with computed age/time spans across its picks."""
+    out = []
+    for c in colls:
+        picks = c['picks']
+        sel = [actmap[p['id']] for p in picks]  # KeyError impossible: validated above
+        out.append({
+            "id": c["id"], "title": c["title"], "glyph": c["glyph"],
+            "when_to_use": c["when_to_use"],
+            "picks": [{"activity_id": p["id"], "curator_note": p["note"]} for p in picks],
+            "age_span": [min(a["age_min"] for a in sel), max(a["age_max"] for a in sel)],
+            "time_span": [min(a["time_min"] for a in sel), max(a["time_max"] for a in sel)],
+            "page": f"collections.html#{c['id']}",
+        })
+    return out
 def load_skills():
     """Parse skills/*.md frontmatter -> [{'id', 'description', 'file'}], sorted by id."""
     out = []
@@ -135,6 +175,7 @@ ACTIVITY_TEMPLATE = """<!DOCTYPE html>
       <a href="../planner.html">Plan my week</a>
       <a href="../sub.html">Sub Tub 🆘</a>
       <a href="../party.html">Party Planner 🎃</a>
+      <a href="../collections.html">Collections 📚</a>
     </nav>
   </div>
 </header>
@@ -359,12 +400,18 @@ def render_activity(a, catmap):
         safety_block=safety, source_block=source)
 
 def main():
-    acts, cats = load()
+    acts, cats, colls = load()
     errs = validate(acts, cats)
+    errs.extend(validate_collections(colls, acts))  # wave 9: picks resolve to real ids
     if errs:
         print("VALIDATION FAILED:")
         for e in errs: print(" -", e)
         sys.exit(1)
+    actmap = {a['id']: a for a in acts}
+    # Wave 9 explicit assert: every collection pick resolves to a real activity id.
+    assert len(colls) == 8, f"expected 8 collections, got {len(colls)}"
+    assert all(p['id'] in actmap for c in colls for p in c['picks']), \
+        "collection pick does not resolve to a real activity id"
     catmap = {c['id']: c for c in cats}
     today = date.today().isoformat()
 
@@ -409,6 +456,10 @@ def main():
 
     # 2b. skills registry + self-describing manifest
     skills = load_skills()
+    # 2c. curated collections (wave 9): enriched records, assert-backed in main()
+    coll_records = build_collection_records(colls, actmap)
+    json.dump({"collections": coll_records, "count": len(coll_records), "updated": today},
+              open(os.path.join(api, 'collections.json'), 'w'), indent=1, ensure_ascii=False)
     endpoints = [
         {"path": "api/v1/index.json",
          "title": "API manifest",
@@ -438,6 +489,14 @@ def main():
          "description": "Registry of the reusable skill recipes in skills/: id, description, and file path.",
          "schema": None,
          "updated": today, "records": len(skills), "stability": "stable"},
+        {"path": "api/v1/collections.json",
+         "title": "Curated collections",
+         "description": "Teacher-ready activity bundles for specific moments (rainy days, first "
+                        "days, last 10 minutes, bus rides, sub coverage, winter parties, no-prep "
+                        "gaps, calm-down needs). Each collection lists activity ids with a "
+                        "curator's one-line note on why each was picked, plus age/time spans.",
+         "schema": "api/v1/schema/collections.schema.json",
+         "updated": today, "records": len(coll_records), "stability": "stable"},
         {"path": "pipeline/review-queue.json",
          "title": "RSS review queue",
          "description": "RSS-pipeline working queue: accepted / rejected / deferred activity candidates "
@@ -549,6 +608,40 @@ def main():
             "updated": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
         },
     }, open(os.path.join(schemadir, 'filters.schema.json'), 'w'), indent=1)
+    # Wave 9: collection record schema + envelope (draft-07), same convention as
+    # activity.schema.json (standalone record) + activities.schema.json (inline envelope).
+    coll_schema = {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "title": "Collection", "type": "object",
+        "required": ["id", "title", "glyph", "when_to_use", "picks",
+                     "age_span", "time_span", "page"],
+        "properties": {
+            "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+            "title": {"type": "string"},
+            "glyph": {"type": "string"},
+            "when_to_use": {"type": "string"},
+            "picks": {"type": "array", "minItems": 8, "maxItems": 12,
+                      "items": {
+                          "type": "object",
+                          "required": ["activity_id", "curator_note"],
+                          "properties": {
+                              "activity_id": {"type": "string",
+                                              "pattern": "^[a-z0-9-]+$"},
+                              "curator_note": {"type": "string"},
+                          }}},
+            "age_span": {"type": "array", "items": {"type": "integer"},
+                         "minItems": 2, "maxItems": 2,
+                         "description": "[min age_min, max age_max] across picks."},
+            "time_span": {"type": "array", "items": {"type": "integer"},
+                          "minItems": 2, "maxItems": 2,
+                          "description": "[min time_min, max time_max] across picks."},
+            "page": {"type": "string",
+                     "description": "Deep link to the collection page (hash route)."},
+        },
+    }
+    json.dump(coll_schema, open(os.path.join(schemadir, 'collection.schema.json'), 'w'), indent=1)
+    json.dump(envelope("CollectionsResponse", coll_schema, "collections"),
+              open(os.path.join(schemadir, 'collections.schema.json'), 'w'), indent=1)
     json.dump({
         "$schema": "http://json-schema.org/draft-07/schema#",
         "title": "ApiManifest", "type": "object",
@@ -612,6 +705,9 @@ def main():
               "  print-ready run sheet.",
               "- planner.html — Plan-my-week planner: days, slots per day, and filters →",
               "  a no-repeat week of activities with a print-ready sheet.",
+              "- collections.html — Curated collections: 8 teacher-ready bundles (rainy-day",
+              "  rescue, first day, sub tub, winter party, no-prep, calm-down…) each with a",
+              "  curator's note per pick; printable and copy-able per collection.",
               "- api.html — API docs with a Try-the-API console (endpoint picker, fetch, pretty JSON).",
               "", "## Docs", "- API.md — full API reference", "- PIPELINE.md — how the library grows",
               "- AGENT.md — how an agent uses this archive: endpoints, example requests,",
@@ -630,7 +726,7 @@ def main():
     open(os.path.join(SITE, 'llms-full.txt'), 'w').write('\n'.join(full) + '\n')
 
     # 4. sitemap.xml
-    urls = ["", "planner.html", "sub.html", "party.html", "api.html"] + [f"activity/{a['id']}.html" for a in acts]
+    urls = ["", "planner.html", "sub.html", "party.html", "collections.html", "api.html"] + [f"activity/{a['id']}.html" for a in acts]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:
@@ -639,7 +735,8 @@ def main():
     open(os.path.join(SITE, 'sitemap.xml'), 'w').write('\n'.join(sm) + '\n')
 
     print(f"BUILD OK — {len(acts)} activities, {rendered} pages rendered, "
-          f"{len(cats)} categories, api + llms + sitemap written.")
+          f"{len(cats)} categories, {len(coll_records)} collections, "
+          f"api + llms + sitemap written.")
 
 if __name__ == '__main__':
     main()

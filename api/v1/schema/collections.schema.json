@@ -1,0 +1,96 @@
+{
+ "$schema": "http://json-schema.org/draft-07/schema#",
+ "title": "CollectionsResponse",
+ "type": "object",
+ "required": [
+  "collections",
+  "count",
+  "updated"
+ ],
+ "properties": {
+  "collections": {
+   "type": "array",
+   "items": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Collection",
+    "type": "object",
+    "required": [
+     "id",
+     "title",
+     "glyph",
+     "when_to_use",
+     "picks",
+     "age_span",
+     "time_span",
+     "page"
+    ],
+    "properties": {
+     "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+     },
+     "title": {
+      "type": "string"
+     },
+     "glyph": {
+      "type": "string"
+     },
+     "when_to_use": {
+      "type": "string"
+     },
+     "picks": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 12,
+      "items": {
+       "type": "object",
+       "required": [
+        "activity_id",
+        "curator_note"
+       ],
+       "properties": {
+        "activity_id": {
+         "type": "string",
+         "pattern": "^[a-z0-9-]+$"
+        },
+        "curator_note": {
+         "type": "string"
+        }
+       }
+      }
+     },
+     "age_span": {
+      "type": "array",
+      "items": {
+       "type": "integer"
+      },
+      "minItems": 2,
+      "maxItems": 2,
+      "description": "[min age_min, max age_max] across picks."
+     },
+     "time_span": {
+      "type": "array",
+      "items": {
+       "type": "integer"
+      },
+      "minItems": 2,
+      "maxItems": 2,
+      "description": "[min time_min, max time_max] across picks."
+     },
+     "page": {
+      "type": "string",
+      "description": "Deep link to the collection page (hash route)."
+     }
+    }
+   }
+  },
+  "count": {
+   "type": "integer",
+   "minimum": 0
+  },
+  "updated": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+  }
+ }
+}

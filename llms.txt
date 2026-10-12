@@ -23,6 +23,7 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
 - api/v1/categories.json — category definitions
 - api/v1/filters.json — filter configuration
 - api/v1/skills.json — skills registry
+- api/v1/collections.json — curated collections
 
 ## Skills
 - skills/activity-finder.md — Find the right activity fast using age, time, group size, and materials-on-hand filters.
@@ -46,6 +47,9 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
   print-ready run sheet.
 - planner.html — Plan-my-week planner: days, slots per day, and filters →
   a no-repeat week of activities with a print-ready sheet.
+- collections.html — Curated collections: 8 teacher-ready bundles (rainy-day
+  rescue, first day, sub tub, winter party, no-prep, calm-down…) each with a
+  curator's note per pick; printable and copy-able per collection.
 - api.html — API docs with a Try-the-API console (endpoint picker, fetch, pretty JSON).
 
 ## Docs

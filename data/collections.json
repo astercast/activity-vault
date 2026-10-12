@@ -1,0 +1,440 @@
+{
+ "collections": [
+  {
+   "id": "rainy-day-rescue",
+   "title": "Rainy-day rescue",
+   "glyph": "🌧️",
+   "when_to_use": "Recess just got cancelled and 25 kids are stuck inside. Pick any three — they run back-to-back with no setup between them.",
+   "picks": [
+    {
+     "id": "freeze-dance",
+     "note": "Ten minutes of full-body movement — the fastest way to burn off rain-stuck wiggles."
+    },
+    {
+     "id": "silent-ball",
+     "note": "Competitive but silent: the only indoor game that calms the room while it plays."
+    },
+    {
+     "id": "telephone-game",
+     "note": "Zero materials, huge laughs — works while you quietly re-arrange the room."
+    },
+    {
+     "id": "would-you-rather-circle",
+     "note": "Everyone participates; nobody needs any skill, supplies, or setup."
+    },
+    {
+     "id": "charades",
+     "note": "Scales from silly to clever — pairs perfectly with a restless afternoon."
+    },
+    {
+     "id": "mad-libs-live",
+     "note": "Reads like pure mischief, practices language — they'll never notice the learning."
+    },
+    {
+     "id": "card-tower-challenge",
+     "note": "Steady hands after chaos: a calm-down disguised as a building challenge."
+    },
+    {
+     "id": "story-dice",
+     "note": "A full story in twenty minutes with nothing but imagination and dice."
+    },
+    {
+     "id": "indoor-scavenger-hunt",
+     "note": "Rediscovers your own classroom — pair up kids who never talk."
+    },
+    {
+     "id": "musical-chairs",
+     "note": "The old reliable: when energy peaks, chair count beats any fancy game."
+    },
+    {
+     "id": "balloon-tennis",
+     "note": "Big rallies, zero breakage risk — hallway-safe and endlessly replayable."
+    },
+    {
+     "id": "paper-mitten-match",
+     "note": "Matching plus fine motor: quietly absorbs twenty minutes of indoor time."
+    }
+   ]
+  },
+  {
+   "id": "first-day-of-program",
+   "title": "First day of the program",
+   "glyph": "👋",
+   "when_to_use": "New faces, new room, first impressions. Run these in order on day one — names first, kindness last.",
+   "picks": [
+    {
+     "id": "name-chain",
+     "note": "Names stick fast when every kid says them out loud twice in one game."
+    },
+    {
+     "id": "name-memory-chain",
+     "note": "The day-two sequel — run it and watch last week's strangers light up."
+    },
+    {
+     "id": "bingo-mingle",
+     "note": "Gets every kid talking to five kids they don't know yet."
+    },
+    {
+     "id": "human-bingo",
+     "note": "Same magic, written down — a lifeline for the shy joiners."
+    },
+    {
+     "id": "rhythm-name-game",
+     "note": "Names with a beat — the wigglers remember this one all year."
+    },
+    {
+     "id": "birthday-lineup",
+     "note": "Silent sorting means nobody needs words to belong on day one."
+    },
+    {
+     "id": "compliment-circle",
+     "note": "Sets the tone immediately: this room is a kind place."
+    },
+    {
+     "id": "compliment-chain",
+     "note": "Passes warmth around the circle, literally hand to hand."
+    },
+    {
+     "id": "two-truths-and-a-lie",
+     "note": "The classic first-day reveal — strangers become interesting fast."
+    },
+    {
+     "id": "common-ground",
+     "note": "Finds the surprising thing three kids all share."
+    },
+    {
+     "id": "story-chain",
+     "note": "One word each: by the end, the whole room owns the same story."
+    },
+    {
+     "id": "duck-duck-goose",
+     "note": "Ends the first day on a giggle for the younger half of the group."
+    }
+   ]
+  },
+  {
+   "id": "last-10-minutes",
+   "title": "Last 10 minutes",
+   "glyph": "⏱️",
+   "when_to_use": "The clock is dying and dismissal is ten minutes of chaos. These run cold — no setup, and every one ends with a settled room.",
+   "picks": [
+    {
+     "id": "calm-breathing-shapes",
+     "note": "Five shapes, five breaths — the reset button you can run daily."
+    },
+    {
+     "id": "listening-bell",
+     "note": "Ten near-silent minutes that feel like magic to a loud room."
+    },
+    {
+     "id": "breathing-buddies",
+     "note": "Belly breathing with a stuffed buddy riding on top — little ones leave settled."
+    },
+    {
+     "id": "warm-up-countdown",
+     "note": "Counts down to dismissal with movement instead of fidgeting."
+    },
+    {
+     "id": "name-chain",
+     "note": "One fast round while coats go on — names and laughter to close the day."
+    },
+    {
+     "id": "animal-walk-relay",
+     "note": "Silly movement that eats ten minutes and leaves everyone smiling."
+    },
+    {
+     "id": "freeze-dance",
+     "note": "One song, freeze on cue — energy out, coats on, done."
+    },
+    {
+     "id": "red-light-green-light",
+     "note": "Ten minutes, one voice, total focus: the classic closer."
+    },
+    {
+     "id": "would-you-rather-circle",
+     "note": "Zero setup — just one question the whole group can argue about."
+    },
+    {
+     "id": "compliment-circle",
+     "note": "Fifteen minutes of kindness on the way out the door."
+    }
+   ]
+  },
+  {
+   "id": "field-trip-bus-ride",
+   "title": "Field-trip bus ride",
+   "glyph": "🚌",
+   "when_to_use": "Thirty seats, one long road, no chaos allowed. Seated, quiet-ish, and everything fits on a tray table.",
+   "picks": [
+    {
+     "id": "twenty-questions",
+     "note": "The perfect bus game — one voice at a time, whole bus listening."
+    },
+    {
+     "id": "telephone-game",
+     "note": "Works beautifully down a bus aisle, seat row to seat row."
+    },
+    {
+     "id": "would-you-rather-circle",
+     "note": "Debate fuel for mile forty — no materials required."
+    },
+    {
+     "id": "story-chain-writing",
+     "note": "Pass-the-paper storytelling: the bus writes a novel by arrival."
+    },
+    {
+     "id": "mad-libs-live",
+     "note": "Mad Libs at full volume — check with the driver first."
+    },
+    {
+     "id": "mandala-drawing",
+     "note": "Quiet, absorbing coloring for the long middle stretch."
+    },
+    {
+     "id": "mandala-coloring",
+     "note": "Print-and-go calm — pack a stack of copies before you board."
+    },
+    {
+     "id": "story-dice",
+     "note": "Tiny dice, endless plots — fits on a seatback tray."
+    },
+    {
+     "id": "cloud-spotting-guide",
+     "note": "Every window becomes a science lab; bring the sky along."
+    },
+    {
+     "id": "sound-story",
+     "note": "The bus provides the sound effects — the kids build the story."
+    },
+    {
+     "id": "two-truths-and-a-lie",
+     "note": "Learn the one thing nobody knew about the kid in seat 12B."
+    },
+    {
+     "id": "appreciation-postcards",
+     "note": "Write one kind postcard before you arrive — hand them out at pickup."
+    }
+   ]
+  },
+  {
+   "id": "sub-tub-essentials",
+   "title": "Sub Tub essentials",
+   "glyph": "🆘",
+   "when_to_use": "The ten cards every sub folder needs — pairs with the Sub Tub kit (sub.html). Every pick runs from its card alone: no hidden setup, no weird supplies.",
+   "picks": [
+    {
+     "id": "freeze-dance",
+     "note": "Foolproof energy burner — the sub just presses play."
+    },
+    {
+     "id": "simon-says",
+     "note": "Every sub knows it, every kid obeys it, zero explanation needed."
+    },
+    {
+     "id": "telephone-game",
+     "note": "No materials, no mess, nothing to follow up on."
+    },
+    {
+     "id": "silent-ball",
+     "note": "Quiet competition — the room practically manages itself."
+    },
+    {
+     "id": "mad-libs-live",
+     "note": "Reading practice that feels like mischief."
+    },
+    {
+     "id": "story-dice",
+     "note": "A full language block from a cup of dice."
+    },
+    {
+     "id": "would-you-rather-circle",
+     "note": "Discussion for any age — fills any gap in the day."
+    },
+    {
+     "id": "comic-strip-creations",
+     "note": "Quiet seat work a sub can stretch to forty-five minutes."
+    },
+    {
+     "id": "exquisite-corpse-draw",
+     "note": "Guaranteed weird results — no drawing skill needed to run it."
+    },
+    {
+     "id": "compliment-chain",
+     "note": "Kindness-based: leaves the room better than the sub found it."
+    },
+    {
+     "id": "paper-airplane-challenge",
+     "note": "Paper only — the classic that has never once failed."
+    }
+   ]
+  },
+  {
+   "id": "winter-party-night",
+   "title": "Winter party night",
+   "glyph": "❄️",
+   "when_to_use": "The winter pack's greatest hits — pairs with the Party Planner's ❄️ Winter theme (party.html). Rotate these through three stations and close with the countdown.",
+   "picks": [
+    {
+     "id": "snowflake-paper-patterns",
+     "note": "Every kid leaves with a window-worthy snowflake — and it needs zero prep."
+    },
+    {
+     "id": "homemade-christmas-ornaments",
+     "note": "The take-home gift parents actually keep."
+    },
+    {
+     "id": "winter-gingerbread-build",
+     "note": "Build with paper shapes — no royal-icing disasters."
+    },
+    {
+     "id": "snowball-toss-math",
+     "note": "Snowball fight plus math facts: this is your movement station."
+    },
+    {
+     "id": "freeze-dance-winter",
+     "note": "The dance break between stations — one playlist, done."
+    },
+    {
+     "id": "midnight-countdown-rehearsal",
+     "note": "Practice the big countdown — pure party energy to close the night."
+    },
+    {
+     "id": "cotton-ball-penguin",
+     "note": "Irresistible craft that doubles as a party favor."
+    },
+    {
+     "id": "winter-wreath-collage",
+     "note": "A collaborative wreath for the classroom door."
+    },
+    {
+     "id": "resolution-ladder",
+     "note": "The quiet reflection corner while glue dries."
+    },
+    {
+     "id": "year-in-review-quilt",
+     "note": "Everyone contributes one square — hang it in January."
+    },
+    {
+     "id": "ice-ornaments",
+     "note": "Hang them outside and catch the morning light."
+    },
+    {
+     "id": "winter-tall-tale",
+     "note": "One outrageous winter story, told by the whole party at once."
+    }
+   ]
+  },
+  {
+   "id": "no-prep-lifesavers",
+   "title": "No-prep lifesavers",
+   "glyph": "⚡",
+   "when_to_use": "Grab-and-go, zero setup, any time the plan falls apart. If you only memorize one collection, make it this one.",
+   "picks": [
+    {
+     "id": "two-truths-and-a-lie",
+     "note": "The opener that has never missed — run it with total strangers."
+    },
+    {
+     "id": "twenty-questions",
+     "note": "Any topic, any group, instantly running in under a minute."
+    },
+    {
+     "id": "story-chain",
+     "note": "One word each — the story surprises everyone, including you."
+    },
+    {
+     "id": "compliment-chain",
+     "note": "Five minutes to a measurably warmer room."
+    },
+    {
+     "id": "human-knot",
+     "note": "The team-builder that needs nothing but hands."
+    },
+    {
+     "id": "birthday-lineup",
+     "note": "Silent sorting by birthdays — no words, no materials, full focus."
+    },
+    {
+     "id": "secret-kindness-missions",
+     "note": "Kids will sneak kindness all week after this one."
+    },
+    {
+     "id": "appreciation-postcards",
+     "note": "Gratitude in ten minutes — send them home at pickup."
+    },
+    {
+     "id": "storytelling-circle",
+     "note": "One story passed around the circle; everybody owns the ending."
+    },
+    {
+     "id": "duck-duck-goose",
+     "note": "The littles' favorite — zero setup, maximum joy."
+    },
+    {
+     "id": "red-light-green-light",
+     "note": "Ten minutes, one voice, total focus."
+    },
+    {
+     "id": "shadow-tag",
+     "note": "Tag without touching — perfect for mixed ages outdoors."
+    }
+   ]
+  },
+  {
+   "id": "calm-down-corner",
+   "title": "Calm-down corner",
+   "glyph": "🧘",
+   "when_to_use": "For the wired, the wobbly, and the overstimulated. Keep these on a ring by the quiet corner — any kid can self-select.",
+   "picks": [
+    {
+     "id": "calm-breathing-shapes",
+     "note": "Five shapes, five breaths — the reset button."
+    },
+    {
+     "id": "listening-bell",
+     "note": "Follow the bell until the sound disappears — instant quiet."
+    },
+    {
+     "id": "breathing-buddies",
+     "note": "Belly breathing with a buddy riding on top."
+    },
+    {
+     "id": "glitter-calm-jars",
+     "note": "Shake it, watch it settle — the metaphor does the teaching."
+    },
+    {
+     "id": "coping-strategy-cards",
+     "note": "Name your tools before the big feelings arrive."
+    },
+    {
+     "id": "mandala-drawing",
+     "note": "Repetitive and absorbing — minds quiet down on their own."
+    },
+    {
+     "id": "mandala-coloring",
+     "note": "Simple patterns, no decisions, pure calm."
+    },
+    {
+     "id": "gratitude-journals",
+     "note": "Three good things — the fastest perspective shift there is."
+    },
+    {
+     "id": "storytelling-dice",
+     "note": "Gentle storytelling with zero pressure to perform."
+    },
+    {
+     "id": "listening-walk",
+     "note": "The outdoor reset: five sounds, four textures, one calmer kid."
+    },
+    {
+     "id": "rock-cairn-balance",
+     "note": "Stacking stones forces slow, careful focus."
+    },
+    {
+     "id": "gratitude-tree",
+     "note": "Pin a leaf for something good — the corner grows its own forest."
+    }
+   ]
+  }
+ ]
+}

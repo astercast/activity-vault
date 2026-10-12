@@ -45,7 +45,8 @@ for ep in manifest['endpoints']:
         check("schema: " + ep['path'], False, str(e)[:200])
     # record counts agree
     if 'records' in ep and ep['records'] is not None:
-        n = len(payload.get('activities') or payload.get('categories') or payload.get('skills') or [])
+        n = len(payload.get('activities') or payload.get('categories')
+                or payload.get('skills') or payload.get('collections') or [])
         check("count matches: " + ep['path'], n == ep['records'], f"{n} vs {ep['records']}")
     if 'updated' in ep and ep['updated'] and 'updated' in payload:
         check("updated date-only: " + ep['path'],
@@ -64,6 +65,22 @@ check(f"all {len(acts)} activity records validate against activity.schema.json",
 check("0 duplicate ids", len({a['id'] for a in acts}) == len(acts))
 check("tags use fixed vocabulary",
       all(t in TAG_IDS for a in acts for t in a.get('tags', [])))
+
+# ---------- 2b. Wave 9: collections — every pick resolves to a real activity id ----------
+coll_payload = json.load(open(os.path.join(API, 'collections.json')))
+colls = coll_payload['collections']
+act_ids = {a['id'] for a in acts}
+check("collections: 8 collections", len(colls) == 8, f"{len(colls)} found")
+check("collections: unique ids", len({c['id'] for c in colls}) == len(colls))
+check("collections: 8-12 picks each",
+      all(8 <= len(c['picks']) <= 12 for c in colls))
+unresolved = [(c['id'], p['activity_id']) for c in colls for p in c['picks']
+              if p['activity_id'] not in act_ids]
+check("collections: every pick resolves to a real activity id",
+      not unresolved, str(unresolved[:5]) if unresolved else
+      f"{sum(len(c['picks']) for c in colls)} picks resolve")
+check("collections: curator note on every pick",
+      all((p.get('curator_note') or '').strip() for c in colls for p in c['picks']))
 
 # ---------- 3. AGENT.md workflow 1: rainy-day for 8-year-olds ----------
 w1 = [a for a in acts

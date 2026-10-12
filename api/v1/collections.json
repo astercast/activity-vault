@@ -1,0 +1,514 @@
+{
+ "collections": [
+  {
+   "id": "rainy-day-rescue",
+   "title": "Rainy-day rescue",
+   "glyph": "🌧️",
+   "when_to_use": "Recess just got cancelled and 25 kids are stuck inside. Pick any three — they run back-to-back with no setup between them.",
+   "picks": [
+    {
+     "activity_id": "freeze-dance",
+     "curator_note": "Ten minutes of full-body movement — the fastest way to burn off rain-stuck wiggles."
+    },
+    {
+     "activity_id": "silent-ball",
+     "curator_note": "Competitive but silent: the only indoor game that calms the room while it plays."
+    },
+    {
+     "activity_id": "telephone-game",
+     "curator_note": "Zero materials, huge laughs — works while you quietly re-arrange the room."
+    },
+    {
+     "activity_id": "would-you-rather-circle",
+     "curator_note": "Everyone participates; nobody needs any skill, supplies, or setup."
+    },
+    {
+     "activity_id": "charades",
+     "curator_note": "Scales from silly to clever — pairs perfectly with a restless afternoon."
+    },
+    {
+     "activity_id": "mad-libs-live",
+     "curator_note": "Reads like pure mischief, practices language — they'll never notice the learning."
+    },
+    {
+     "activity_id": "card-tower-challenge",
+     "curator_note": "Steady hands after chaos: a calm-down disguised as a building challenge."
+    },
+    {
+     "activity_id": "story-dice",
+     "curator_note": "A full story in twenty minutes with nothing but imagination and dice."
+    },
+    {
+     "activity_id": "indoor-scavenger-hunt",
+     "curator_note": "Rediscovers your own classroom — pair up kids who never talk."
+    },
+    {
+     "activity_id": "musical-chairs",
+     "curator_note": "The old reliable: when energy peaks, chair count beats any fancy game."
+    },
+    {
+     "activity_id": "balloon-tennis",
+     "curator_note": "Big rallies, zero breakage risk — hallway-safe and endlessly replayable."
+    },
+    {
+     "activity_id": "paper-mitten-match",
+     "curator_note": "Matching plus fine motor: quietly absorbs twenty minutes of indoor time."
+    }
+   ],
+   "age_span": [
+    4,
+    12
+   ],
+   "time_span": [
+    10,
+    40
+   ],
+   "page": "collections.html#rainy-day-rescue"
+  },
+  {
+   "id": "first-day-of-program",
+   "title": "First day of the program",
+   "glyph": "👋",
+   "when_to_use": "New faces, new room, first impressions. Run these in order on day one — names first, kindness last.",
+   "picks": [
+    {
+     "activity_id": "name-chain",
+     "curator_note": "Names stick fast when every kid says them out loud twice in one game."
+    },
+    {
+     "activity_id": "name-memory-chain",
+     "curator_note": "The day-two sequel — run it and watch last week's strangers light up."
+    },
+    {
+     "activity_id": "bingo-mingle",
+     "curator_note": "Gets every kid talking to five kids they don't know yet."
+    },
+    {
+     "activity_id": "human-bingo",
+     "curator_note": "Same magic, written down — a lifeline for the shy joiners."
+    },
+    {
+     "activity_id": "rhythm-name-game",
+     "curator_note": "Names with a beat — the wigglers remember this one all year."
+    },
+    {
+     "activity_id": "birthday-lineup",
+     "curator_note": "Silent sorting means nobody needs words to belong on day one."
+    },
+    {
+     "activity_id": "compliment-circle",
+     "curator_note": "Sets the tone immediately: this room is a kind place."
+    },
+    {
+     "activity_id": "compliment-chain",
+     "curator_note": "Passes warmth around the circle, literally hand to hand."
+    },
+    {
+     "activity_id": "two-truths-and-a-lie",
+     "curator_note": "The classic first-day reveal — strangers become interesting fast."
+    },
+    {
+     "activity_id": "common-ground",
+     "curator_note": "Finds the surprising thing three kids all share."
+    },
+    {
+     "activity_id": "story-chain",
+     "curator_note": "One word each: by the end, the whole room owns the same story."
+    },
+    {
+     "activity_id": "duck-duck-goose",
+     "curator_note": "Ends the first day on a giggle for the younger half of the group."
+    }
+   ],
+   "age_span": [
+    5,
+    12
+   ],
+   "time_span": [
+    10,
+    35
+   ],
+   "page": "collections.html#first-day-of-program"
+  },
+  {
+   "id": "last-10-minutes",
+   "title": "Last 10 minutes",
+   "glyph": "⏱️",
+   "when_to_use": "The clock is dying and dismissal is ten minutes of chaos. These run cold — no setup, and every one ends with a settled room.",
+   "picks": [
+    {
+     "activity_id": "calm-breathing-shapes",
+     "curator_note": "Five shapes, five breaths — the reset button you can run daily."
+    },
+    {
+     "activity_id": "listening-bell",
+     "curator_note": "Ten near-silent minutes that feel like magic to a loud room."
+    },
+    {
+     "activity_id": "breathing-buddies",
+     "curator_note": "Belly breathing with a stuffed buddy riding on top — little ones leave settled."
+    },
+    {
+     "activity_id": "warm-up-countdown",
+     "curator_note": "Counts down to dismissal with movement instead of fidgeting."
+    },
+    {
+     "activity_id": "name-chain",
+     "curator_note": "One fast round while coats go on — names and laughter to close the day."
+    },
+    {
+     "activity_id": "animal-walk-relay",
+     "curator_note": "Silly movement that eats ten minutes and leaves everyone smiling."
+    },
+    {
+     "activity_id": "freeze-dance",
+     "curator_note": "One song, freeze on cue — energy out, coats on, done."
+    },
+    {
+     "activity_id": "red-light-green-light",
+     "curator_note": "Ten minutes, one voice, total focus: the classic closer."
+    },
+    {
+     "activity_id": "would-you-rather-circle",
+     "curator_note": "Zero setup — just one question the whole group can argue about."
+    },
+    {
+     "activity_id": "compliment-circle",
+     "curator_note": "Fifteen minutes of kindness on the way out the door."
+    }
+   ],
+   "age_span": [
+    4,
+    12
+   ],
+   "time_span": [
+    5,
+    25
+   ],
+   "page": "collections.html#last-10-minutes"
+  },
+  {
+   "id": "field-trip-bus-ride",
+   "title": "Field-trip bus ride",
+   "glyph": "🚌",
+   "when_to_use": "Thirty seats, one long road, no chaos allowed. Seated, quiet-ish, and everything fits on a tray table.",
+   "picks": [
+    {
+     "activity_id": "twenty-questions",
+     "curator_note": "The perfect bus game — one voice at a time, whole bus listening."
+    },
+    {
+     "activity_id": "telephone-game",
+     "curator_note": "Works beautifully down a bus aisle, seat row to seat row."
+    },
+    {
+     "activity_id": "would-you-rather-circle",
+     "curator_note": "Debate fuel for mile forty — no materials required."
+    },
+    {
+     "activity_id": "story-chain-writing",
+     "curator_note": "Pass-the-paper storytelling: the bus writes a novel by arrival."
+    },
+    {
+     "activity_id": "mad-libs-live",
+     "curator_note": "Mad Libs at full volume — check with the driver first."
+    },
+    {
+     "activity_id": "mandala-drawing",
+     "curator_note": "Quiet, absorbing coloring for the long middle stretch."
+    },
+    {
+     "activity_id": "mandala-coloring",
+     "curator_note": "Print-and-go calm — pack a stack of copies before you board."
+    },
+    {
+     "activity_id": "story-dice",
+     "curator_note": "Tiny dice, endless plots — fits on a seatback tray."
+    },
+    {
+     "activity_id": "cloud-spotting-guide",
+     "curator_note": "Every window becomes a science lab; bring the sky along."
+    },
+    {
+     "activity_id": "sound-story",
+     "curator_note": "The bus provides the sound effects — the kids build the story."
+    },
+    {
+     "activity_id": "two-truths-and-a-lie",
+     "curator_note": "Learn the one thing nobody knew about the kid in seat 12B."
+    },
+    {
+     "activity_id": "appreciation-postcards",
+     "curator_note": "Write one kind postcard before you arrive — hand them out at pickup."
+    }
+   ],
+   "age_span": [
+    5,
+    12
+   ],
+   "time_span": [
+    10,
+    45
+   ],
+   "page": "collections.html#field-trip-bus-ride"
+  },
+  {
+   "id": "sub-tub-essentials",
+   "title": "Sub Tub essentials",
+   "glyph": "🆘",
+   "when_to_use": "The ten cards every sub folder needs — pairs with the Sub Tub kit (sub.html). Every pick runs from its card alone: no hidden setup, no weird supplies.",
+   "picks": [
+    {
+     "activity_id": "freeze-dance",
+     "curator_note": "Foolproof energy burner — the sub just presses play."
+    },
+    {
+     "activity_id": "simon-says",
+     "curator_note": "Every sub knows it, every kid obeys it, zero explanation needed."
+    },
+    {
+     "activity_id": "telephone-game",
+     "curator_note": "No materials, no mess, nothing to follow up on."
+    },
+    {
+     "activity_id": "silent-ball",
+     "curator_note": "Quiet competition — the room practically manages itself."
+    },
+    {
+     "activity_id": "mad-libs-live",
+     "curator_note": "Reading practice that feels like mischief."
+    },
+    {
+     "activity_id": "story-dice",
+     "curator_note": "A full language block from a cup of dice."
+    },
+    {
+     "activity_id": "would-you-rather-circle",
+     "curator_note": "Discussion for any age — fills any gap in the day."
+    },
+    {
+     "activity_id": "comic-strip-creations",
+     "curator_note": "Quiet seat work a sub can stretch to forty-five minutes."
+    },
+    {
+     "activity_id": "exquisite-corpse-draw",
+     "curator_note": "Guaranteed weird results — no drawing skill needed to run it."
+    },
+    {
+     "activity_id": "compliment-chain",
+     "curator_note": "Kindness-based: leaves the room better than the sub found it."
+    },
+    {
+     "activity_id": "paper-airplane-challenge",
+     "curator_note": "Paper only — the classic that has never once failed."
+    }
+   ],
+   "age_span": [
+    5,
+    12
+   ],
+   "time_span": [
+    10,
+    45
+   ],
+   "page": "collections.html#sub-tub-essentials"
+  },
+  {
+   "id": "winter-party-night",
+   "title": "Winter party night",
+   "glyph": "❄️",
+   "when_to_use": "The winter pack's greatest hits — pairs with the Party Planner's ❄️ Winter theme (party.html). Rotate these through three stations and close with the countdown.",
+   "picks": [
+    {
+     "activity_id": "snowflake-paper-patterns",
+     "curator_note": "Every kid leaves with a window-worthy snowflake — and it needs zero prep."
+    },
+    {
+     "activity_id": "homemade-christmas-ornaments",
+     "curator_note": "The take-home gift parents actually keep."
+    },
+    {
+     "activity_id": "winter-gingerbread-build",
+     "curator_note": "Build with paper shapes — no royal-icing disasters."
+    },
+    {
+     "activity_id": "snowball-toss-math",
+     "curator_note": "Snowball fight plus math facts: this is your movement station."
+    },
+    {
+     "activity_id": "freeze-dance-winter",
+     "curator_note": "The dance break between stations — one playlist, done."
+    },
+    {
+     "activity_id": "midnight-countdown-rehearsal",
+     "curator_note": "Practice the big countdown — pure party energy to close the night."
+    },
+    {
+     "activity_id": "cotton-ball-penguin",
+     "curator_note": "Irresistible craft that doubles as a party favor."
+    },
+    {
+     "activity_id": "winter-wreath-collage",
+     "curator_note": "A collaborative wreath for the classroom door."
+    },
+    {
+     "activity_id": "resolution-ladder",
+     "curator_note": "The quiet reflection corner while glue dries."
+    },
+    {
+     "activity_id": "year-in-review-quilt",
+     "curator_note": "Everyone contributes one square — hang it in January."
+    },
+    {
+     "activity_id": "ice-ornaments",
+     "curator_note": "Hang them outside and catch the morning light."
+    },
+    {
+     "activity_id": "winter-tall-tale",
+     "curator_note": "One outrageous winter story, told by the whole party at once."
+    }
+   ],
+   "age_span": [
+    4,
+    12
+   ],
+   "time_span": [
+    10,
+    45
+   ],
+   "page": "collections.html#winter-party-night"
+  },
+  {
+   "id": "no-prep-lifesavers",
+   "title": "No-prep lifesavers",
+   "glyph": "⚡",
+   "when_to_use": "Grab-and-go, zero setup, any time the plan falls apart. If you only memorize one collection, make it this one.",
+   "picks": [
+    {
+     "activity_id": "two-truths-and-a-lie",
+     "curator_note": "The opener that has never missed — run it with total strangers."
+    },
+    {
+     "activity_id": "twenty-questions",
+     "curator_note": "Any topic, any group, instantly running in under a minute."
+    },
+    {
+     "activity_id": "story-chain",
+     "curator_note": "One word each — the story surprises everyone, including you."
+    },
+    {
+     "activity_id": "compliment-chain",
+     "curator_note": "Five minutes to a measurably warmer room."
+    },
+    {
+     "activity_id": "human-knot",
+     "curator_note": "The team-builder that needs nothing but hands."
+    },
+    {
+     "activity_id": "birthday-lineup",
+     "curator_note": "Silent sorting by birthdays — no words, no materials, full focus."
+    },
+    {
+     "activity_id": "secret-kindness-missions",
+     "curator_note": "Kids will sneak kindness all week after this one."
+    },
+    {
+     "activity_id": "appreciation-postcards",
+     "curator_note": "Gratitude in ten minutes — send them home at pickup."
+    },
+    {
+     "activity_id": "storytelling-circle",
+     "curator_note": "One story passed around the circle; everybody owns the ending."
+    },
+    {
+     "activity_id": "duck-duck-goose",
+     "curator_note": "The littles' favorite — zero setup, maximum joy."
+    },
+    {
+     "activity_id": "red-light-green-light",
+     "curator_note": "Ten minutes, one voice, total focus."
+    },
+    {
+     "activity_id": "shadow-tag",
+     "curator_note": "Tag without touching — perfect for mixed ages outdoors."
+    }
+   ],
+   "age_span": [
+    5,
+    12
+   ],
+   "time_span": [
+    10,
+    40
+   ],
+   "page": "collections.html#no-prep-lifesavers"
+  },
+  {
+   "id": "calm-down-corner",
+   "title": "Calm-down corner",
+   "glyph": "🧘",
+   "when_to_use": "For the wired, the wobbly, and the overstimulated. Keep these on a ring by the quiet corner — any kid can self-select.",
+   "picks": [
+    {
+     "activity_id": "calm-breathing-shapes",
+     "curator_note": "Five shapes, five breaths — the reset button."
+    },
+    {
+     "activity_id": "listening-bell",
+     "curator_note": "Follow the bell until the sound disappears — instant quiet."
+    },
+    {
+     "activity_id": "breathing-buddies",
+     "curator_note": "Belly breathing with a buddy riding on top."
+    },
+    {
+     "activity_id": "glitter-calm-jars",
+     "curator_note": "Shake it, watch it settle — the metaphor does the teaching."
+    },
+    {
+     "activity_id": "coping-strategy-cards",
+     "curator_note": "Name your tools before the big feelings arrive."
+    },
+    {
+     "activity_id": "mandala-drawing",
+     "curator_note": "Repetitive and absorbing — minds quiet down on their own."
+    },
+    {
+     "activity_id": "mandala-coloring",
+     "curator_note": "Simple patterns, no decisions, pure calm."
+    },
+    {
+     "activity_id": "gratitude-journals",
+     "curator_note": "Three good things — the fastest perspective shift there is."
+    },
+    {
+     "activity_id": "storytelling-dice",
+     "curator_note": "Gentle storytelling with zero pressure to perform."
+    },
+    {
+     "activity_id": "listening-walk",
+     "curator_note": "The outdoor reset: five sounds, four textures, one calmer kid."
+    },
+    {
+     "activity_id": "rock-cairn-balance",
+     "curator_note": "Stacking stones forces slow, careful focus."
+    },
+    {
+     "activity_id": "gratitude-tree",
+     "curator_note": "Pin a leaf for something good — the corner grows its own forest."
+    }
+   ],
+   "age_span": [
+    4,
+    12
+   ],
+   "time_span": [
+    5,
+    45
+   ],
+   "page": "collections.html#calm-down-corner"
+  }
+ ],
+ "count": 8,
+ "updated": "2026-10-12"
+}

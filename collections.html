@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Curated collections — Activity Vault</title>
+<meta name="description" content="Eight hand-picked activity collections for teachers: rainy days, first days, the last 10 minutes, bus rides, sub coverage, winter parties, no-prep gaps, and calm-down corners. Printable, copyable, each pick with a curator's note.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#collections-main">Skip to collections</a>
+<header class="site-header no-print">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Activity Vault home">
+      <span class="brand-mark" aria-hidden="true">🗂️</span>
+      <span class="brand-text">Activity <strong>Vault</strong></span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="index.html">Browse</a>
+      <a href="planner.html">Plan my week</a>
+      <a href="sub.html">Sub Tub 🆘</a>
+      <a href="party.html">Party Planner 🎉</a>
+      <a href="collections.html" aria-current="page">Collections 📚</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="collections-main">
+  <section class="hero" aria-labelledby="hero-title">
+    <span class="kicker no-print">📚 Curated collections</span>
+    <h1 id="hero-title">Bundles for the moments that matter.</h1>
+    <p class="lede no-print">Eight teacher-ready bundles — rainy days, first days, sub coverage, winter parties — hand-picked from the Vault's 238 activities. Every pick carries a curator's one-line note on why it earned its spot. Print one, copy one, run it today.</p>
+  </section>
+
+  <p id="coll-status" role="status" aria-live="polite">Loading collections…</p>
+
+  <nav class="collection-grid no-print" id="collection-grid" aria-label="All collections" hidden></nav>
+
+  <div id="collection-sections"></div>
+
+  <p class="no-print" style="margin-bottom:3rem;" id="all-link-wrap" hidden><a href="collections.html">← All collections</a></p>
+</main>
+
+<footer class="site-footer no-print">
+  <div class="wrap"><p><strong>Activity Vault</strong> — the all-in-one activity archive for teachers &amp; after-school programs. All activities are classic, public-domain concepts described in our own words.</p></div>
+</footer>
+
+<script src="assets/ratings.js" defer></script>
+<script src="assets/collections.js" defer></script>
+</body>
+</html>

@@ -2,6 +2,23 @@
 
 Running record of build waves. Newest first.
 
+## Wave 9 — 2026-10-11 — Curated collections (content + browse feature wave)
+
+**What shipped:**
+- **8 launch collections** (`data/collections.json`, hand-curated from the 238 — 93 picks total, every id real): 🌧️ **Rainy-day rescue** (12), 👋 **First day of the program** (12), ⏱️ **Last 10 minutes** (10), 🚌 **Field-trip bus ride** (12), 🆘 **Sub Tub essentials** (11 — ties to the Sub Tub kit), ❄️ **Winter party night** (12 — ties to the winter pack / Party Planner winter theme), ⚡ **No-prep lifesavers** (12, all no-prep), 🧘 **Calm-down corner** (12). Each pick carries a curator's one-line "why this one" note; each collection a "when to reach for it" blurb.
+- **Collections browse surface** (`collections.html` + new `assets/collections.js`, mobile-first): collection card grid with counts + age/time spans; each collection renders as a section with pick cards (curator note + **your own rating badges** — "⭐ 4★ — your rating", `localStorage` only, never aggregates), a "pairs with" tie-link for the Sub Tub / Winter Party collections, per-collection **🖨️ Print this collection** (print-one via `@media print` + `afterprint` cleanup) and **📋 Copy this collection** (wave-7 text pattern + curator notes + your ratings). Hash deep links (`collections.html#winter-party-night`) open a single-collection view with an "← All collections" back link.
+- **API**: `api/v1/collections.json` (manifest-registered, records=8, stability stable) — records carry `id`, `title`, `glyph`, `when_to_use`, `picks[]` (`activity_id` + `curator_note`), computed `age_span`/`time_span`, and `page` deep link. New draft-07 schemas: `api/v1/schema/collections.schema.json` (envelope) + `api/v1/schema/collection.schema.json` (record), following the activity/category two-file convention.
+- **Cross-links**: planner → "📚 Start from a curated collection"; sub.html → Sub Tub essentials collection; party.html → Winter Party Night collection; collections page → back to sub.html / party.html for the two tied collections. Nav gains "Collections 📚" on all 6 page shells (incl. the 238 generated activity pages).
+- **Docs**: AGENT.md key-endpoints table row + "Curated collections (wave 9)" section; API.md `GET api/v1/collections.json` section + record/envelope schema mentions; `llms.txt` tools line; `sitemap.xml` gains `collections.html`.
+- **Guardrails**: `scripts/build.py` asserts 8 collections and that every pick resolves to a real activity id (build fails otherwise); `scripts/check_api.py` re-checks counts, 8–12 picks, pick resolution, and a curator note on every pick.
+
+**Validation (wave 9):**
+- `scripts/build.py`: BUILD OK — 238 activities, 238 pages rendered, 11 categories, **8 collections**, 0 dupes
+- `scripts/check_api.py`: ALL CHECKS PASSED — new endpoint validates against `collections.schema.json`, count 8 vs 8; collections: 8 collections / unique ids / 8–12 picks each / **all 93 picks resolve to a real activity id** / curator note on every pick; link check 244 pages 0 broken; llms.txt links resolve
+- `node --check`: assets/collections.js + all 5 existing assets — clean
+- Logic test (node): computed age_span/time_span in the API match the picks; no-prep-lifesavers is 100% no_prep; last-10-minutes all run cold at ≤15 min floors; winter-party-night picks all winter-tagged except winter-gingerbread-build (name is the tag — Paper Gingerbread Houses, holidays/crafts, wave-6 winter pack)
+- Curator-note honesty check: every note is a one-line "why this one", no invented activities, original descriptions untouched
+
 ## Wave 8 — 2026-10-11 — Ratings + "top rated" (interactive tools wave)
 
 **What shipped:**

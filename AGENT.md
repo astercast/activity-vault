@@ -17,10 +17,15 @@ This archive is built to be driven by agents, no browser needed. Everything is s
 | `api/v1/categories.json` | The 11 categories (`id`, `name`, `blurb`, `color`, `glyph`) | `api/v1/schema/categories.schema.json` |
 | `api/v1/filters.json` | Machine-readable filter config — the same matching logic the browser UI uses | `api/v1/schema/filters.schema.json` |
 | `api/v1/skills.json` | Registry of the 10 reusable skill recipes in `skills/` | (self-describing) |
+| `api/v1/collections.json` | 8 curated collections (rainy-day, first day, sub tub, winter party…): activity ids + curator notes | `api/v1/schema/collections.schema.json` |
 | `api/v1/index.json` | The manifest itself | `api/v1/schema/index.schema.json` |
 | `pipeline/review-queue.json` | RSS-pipeline working queue (accepted/rejected/deferred candidates) — **internal, not a stable public API** | — |
 
-Record-level schemas also exist: `api/v1/schema/activity.schema.json` and `api/v1/schema/category.schema.json`.
+Record-level schemas also exist: `api/v1/schema/activity.schema.json`, `api/v1/schema/category.schema.json`, and `api/v1/schema/collection.schema.json`.
+
+## Curated collections (wave 9)
+
+`api/v1/collections.json` — 8 teacher-ready bundles, each with `id`, `title`, `glyph`, `when_to_use` (the moment to reach for it), `picks[]` (`activity_id` + `curator_note` — the curator's one-line "why this one"), `age_span`/`time_span` (min/max across picks), and `page` (deep link, e.g. `collections.html#rainy-day-rescue`). The eight: `rainy-day-rescue`, `first-day-of-program`, `last-10-minutes`, `field-trip-bus-ride`, `sub-tub-essentials` (pairs with the Sub Tub kit, `sub.html`), `winter-party-night` (pairs with the Party Planner's ❄️ Winter theme, `party.html`), `no-prep-lifesavers`, `calm-down-corner`. Every `activity_id` resolves to a record in `activities.json` — asserted by `scripts/build.py` and re-checked by `scripts/check_api.py`. Browse surface: `collections.html` (printable per collection; "📋 Copy this collection" text export carries the curator notes; activities you've rated show your own rating badges on their picks — your ratings only, never aggregates).
 
 ## The activity record
 
