@@ -118,17 +118,14 @@
   /* ---- auto-build a full week ----
      opts: {days[], slotsPerDay, ageMin, ageMax, maxTime, cats[], noPrepOnly,
             indoorOnly, allowRepeats, maxPrepHeavy, seedIds[]}
-     carry (optional): {used:{}} shared across weeks so multi-week plans don't
-     repeat activities unless allowRepeats. Pass the same object to each call.
      Returns {days: [{day, slots: [{slot, activityId}]}], notes[], seedPlaced, seedSkipped} */
-  function buildWeek(activities, opts, catBucket, seed, carry) {
+  function buildWeek(activities, opts, catBucket, seed) {
     var rng = mulberry32(seed == null ? Math.floor(Math.random() * 0xffffffff) : seed);
     var byId = {};
     activities.forEach(function (a) { byId[a.id] = a; });
     var pool = filterPool(activities, opts);
     var poolIds = toSet(pool.map(function (a) { return a.id; }));
-    var used = (carry && carry.used) || {};   // activity id -> true (whole week, unless allowRepeats)
-    if (carry) carry.used = used;               // keep the shared object live across weeks
+    var used = {};           // activity id -> true (whole week, unless allowRepeats)
     var weekCats = {};
     var weekCounts = emptyCounts();
     var prepHeavy = 0;
@@ -356,173 +353,24 @@
     return planDays;
   }
 
-  /* ---- multi-week planning (3.0) ----
-     opts.weeks: 1–4 (clamped). Seeds (opts.seedIds) apply to week 1 only.
-     No repeats across weeks unless allowRepeats. Returns
-     {weeks: [{weekNum, days, notes, seedPlaced, seedSkipped}], notes[]} */
-  function clampWeeks(n) {
-    n = parseInt(n, 10);
-    if (isNaN(n) || n < 1) return 1;
-    return Math.min(n, 4);
-  }
-
-  function buildMultiWeek(activities, opts, catBucket, seed) {
-    var n = clampWeeks(opts.weeks);
-    var base = seed == null ? Math.floor(Math.random() * 0xffffffff) : seed;
-    var carry = { used: {} }; // shared no-repeat set across all weeks
-    var weeks = [];
-    for (var w = 0; w < n; w++) {
-      var wopts = {};
-      for (var k in opts) { if (Object.prototype.hasOwnProperty.call(opts, k)) wopts[k] = opts[k]; }
-      if (w > 0) wopts.seedIds = []; // collection seeds go in week 1 only
-      var res = buildWeek(activities, wopts, catBucket, base + w, carry);
-      weeks.push({ weekNum: w + 1, days: res.days, notes: res.notes,
-                   seedPlaced: res.seedPlaced, seedSkipped: res.seedSkipped });
-    }
-    return { weeks: weeks, notes: [] };
-  }
-
-  /* ---- brain break of the day (3.0) ----
-     Research-backed microbreak (angle-3): <10 min, structured movement, ideally
-     student-led. Picks a movement-bucket activity that runs cold in ≤10 min,
-     not already scheduled. Returns the activity id, or null. */
-  function brainBreak(pool, usedIds, byId, catBucket, seed) {
-    var rng = mulberry32(seed == null ? 1 : seed);
-    var cands = (pool || []).filter(function (a) {
-      return !usedIds[a.id] && bucketFor(a, catBucket) === 'movement' && a.time_min <= 10;
-    });
-    if (!cands.length) return null;
-    cands = shuffled(cands, rng);
-    cands.sort(function (x, y) { return (x.no_prep ? 0 : 1) - (y.no_prep ? 0 : 1); });
-    return cands[0].id;
-  }
-
-  /* ---- weather-aware backups (3.0) ----
-     An outdoor-only slot gets an indoor backup so rain never kills the day. */
-  function needsWeatherBackup(a) {
-    return !!(a && a.location &&
-      a.location.indexOf('outdoor') !== -1 && a.location.indexOf('indoor') === -1);
-  }
-
-  function weatherBackupFor(a, pool, usedIds, byId, catBucket, opts, seed) {
-    if (!needsWeatherBackup(a)) return null;
-    var rng = mulberry32(seed == null ? 2 : seed);
-    var cands = (pool || []).filter(function (c) {
-      return c.id !== a.id && !usedIds[c.id] &&
-        c.location.indexOf('indoor') !== -1 &&
-        c.age_min <= opts.ageMax && c.age_max >= opts.ageMin &&
-        (opts.maxTime == null || c.time_min <= opts.maxTime);
-    });
-    if (!cands.length) return null;
-    cands = shuffled(cands, rng);
-    cands.sort(function (x, y) {
-      function score(c) {
-        return (c.no_prep ? 0 : 2) + (bucketFor(c, catBucket) === 'movement' ? 0 : 1);
-      }
-      return score(x) - score(y); // no-prep first, then high-energy (kids still need to move)
-    });
-    return cands[0].id;
-  }
-
-  /* ---- substitute kit (3.0) ----
-     Research-backed "any sub can run this" backup (angle-5): zero materials,
-     zero prep ("copy-free" is the 2026 gold standard), plain-language steps on
-     the card. Prefers indoor, weather-proof picks. Returns the id, or null. */
-  function subBackupFor(a, pool, usedIds, byId, catBucket, opts, seed) {
-    var rng = mulberry32(seed == null ? 3 : seed);
-    var maxT = opts.maxTime || 30;
-    var cands = (pool || []).filter(function (c) {
-      return c.id !== a.id && !usedIds[c.id] && c.no_prep &&
-        c.age_min <= opts.ageMax && c.age_max >= opts.ageMin &&
-        c.time_min <= maxT;
-    });
-    if (!cands.length) return null;
-    cands = shuffled(cands, rng);
-    cands.sort(function (x, y) {
-      function score(c) {
-        return (c.location.indexOf('indoor') === -1 ? 2 : 0) +
-               (bucketFor(c, catBucket) === 'outdoor' ? 2 : 0);
-      }
-      return score(x) - score(y); // indoor + weather-proof first
-    });
-    return cands[0].id;
-  }
-
-  /* ---- supply-list aggregation (3.0) ----
-     One shopping/prep list across the whole plan: group equivalent material
-     strings ("printer paper (a stack)" + "printer paper"), count the scheduled
-     slots that need each item, list the days. Sorted by demand, then name. */
-  function normalizeSupplyItem(s) {
-    return String(s).toLowerCase()
-      .replace(/\([^)]*\)/g, ' ')                       // drop "(a stack)", "(one per kid)"
-      .replace(/\b(one|two|three|four|five|six|a|an|per|each|of|the|for|to)\b/g, ' ')
-      .replace(/[^a-z0-9\s-]/g, ' ')
-      .replace(/\s+/g, ' ').trim();
-  }
-
-  function aggregateSupplies(planWeeks, byId) {
-    var groups = {};
-    (planWeeks || []).forEach(function (w) {
-      (w.days || []).forEach(function (d) {
-        (d.slots || []).forEach(function (s) {
-          var a = s.activityId && byId[s.activityId];
-          if (!a || !a.materials) return;
-          a.materials.forEach(function (m) {
-            var raw = (m && m.item) || '';
-            var key = normalizeSupplyItem(raw);
-            if (!key) return;
-            var g = groups[key];
-            if (!g) g = groups[key] = { key: key, display: raw, rawCounts: {}, slots: [] };
-            g.rawCounts[raw] = (g.rawCounts[raw] || 0) + 1;
-            g.slots.push({ weekNum: w.weekNum, day: d.day, slot: s.slot,
-                           activityId: a.id, activityName: a.name });
-          });
-        });
-      });
-    });
-    var list = Object.keys(groups).map(function (k) { return groups[k]; });
-    list.forEach(function (g) {
-      var best = g.display, bestN = 0; // display = most common raw wording
-      Object.keys(g.rawCounts).forEach(function (r) {
-        if (g.rawCounts[r] > bestN) { bestN = g.rawCounts[r]; best = r; }
-      });
-      g.display = best;
-      g.count = g.slots.length;
-      var days = {};
-      g.slots.forEach(function (sl) { days['W' + sl.weekNum + ' ' + sl.day.slice(0, 3)] = true; });
-      g.dayLabels = Object.keys(days).sort();
-      delete g.rawCounts;
-    });
-    list.sort(function (x, y) { return (y.count - x.count) || (x.display < y.display ? -1 : (x.display > y.display ? 1 : 0)); });
-    return list;
-  }
-
-  /* ---- plan text export (wave-7 pattern) ----
-     3.0: plan.weeks (v2 payload) prints WEEK n of N headers; v1 days still work. */
+  /* ---- plan text export (wave-7 pattern) ---- */
   function planText(plan, byId, catName, ratingLine) {
     var lines = ['📅 ' + (plan.name || 'My week') + ' — Activity Vault', ''];
     if (plan.balanceNote) lines.push(plan.balanceNote, '');
-    var weeks = (plan.weeks && plan.weeks.length)
-      ? plan.weeks
-      : [{ weekNum: 1, days: plan.days || [] }];
-    var multi = weeks.length > 1;
-    weeks.forEach(function (w) {
-      if (multi) lines.push('WEEK ' + w.weekNum + ' of ' + weeks.length, '');
-      w.days.forEach(function (d) {
-        lines.push(d.day);
-        d.slots.forEach(function (s) {
-          var a = s.activityId && byId[s.activityId];
-          if (!a) { lines.push('  Slot ' + s.slot + ' — open slot'); return; }
-          lines.push('  Slot ' + s.slot + ' — ' + a.name);
-          lines.push('    Ages ' + a.age_min + '–' + a.age_max + ' · ' +
-            a.time_min + '–' + a.time_max + ' min · Group ' + a.group_min + '–' + a.group_max +
-            (a.no_prep ? ' · no prep' : ''));
-          var rl = ratingLine ? ratingLine(a) : null;
-          if (rl) lines.push('    ' + rl);
-          lines.push('    activity/' + a.id + '.html');
-        });
-        lines.push('');
+    plan.days.forEach(function (d) {
+      lines.push(d.day);
+      d.slots.forEach(function (s) {
+        var a = s.activityId && byId[s.activityId];
+        if (!a) { lines.push('  Slot ' + s.slot + ' — open slot'); return; }
+        lines.push('  Slot ' + s.slot + ' — ' + a.name);
+        lines.push('    Ages ' + a.age_min + '–' + a.age_max + ' · ' +
+          a.time_min + '–' + a.time_max + ' min · Group ' + a.group_min + '–' + a.group_max +
+          (a.no_prep ? ' · no prep' : ''));
+        var rl = ratingLine ? ratingLine(a) : null;
+        if (rl) lines.push('    ' + rl);
+        lines.push('    activity/' + a.id + '.html');
       });
+      lines.push('');
     });
     lines.push('Full cards: index.html');
     lines.push('Paste this into your newsletter or email — every link opens the right activity card.');
@@ -542,22 +390,18 @@
   var WD_IDX = { Sunday: 0, Monday: 1, Tuesday: 2, Wednesday: 3, Thursday: 4, Friday: 5, Saturday: 6 };
 
   /* plan: {name, programType, days:[{day, slots:[{slot, activityId}]}]}
-     now: Date (injectable for tests). weekOffset: 0-based week index for
-     multi-week plans — shifts every event +7 days and keeps UIDs unique.
-     Returns the .ics file text. */
-  function exportICS(plan, byId, now, weekOffset) {
+     now: Date (injectable for tests). Returns the .ics file text. */
+  function exportICS(plan, byId, now) {
     var prog = PROGRAMS[plan.programType] || PROGRAMS['after-school'];
     now = now || new Date();
-    var wk = weekOffset || 0;
     var maxTime = plan.maxTime;
-    var out = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Activity Vault//Week Planner 3.0//EN',
+    var out = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Activity Vault//Week Planner 2.0//EN',
                'X-WR-CALNAME:' + icsEscape(plan.name || 'Activity Vault week plan')];
     var stamp = icsDate(now);
     plan.days.forEach(function (d) {
       var target = WD_IDX[d.day] == null ? 1 : WD_IDX[d.day];
       var date = new Date(now.getFullYear(), now.getMonth(), now.getDate());
       while (date.getDay() !== target) date.setDate(date.getDate() + 1); // today-or-next
-      date.setDate(date.getDate() + 7 * wk);
       d.slots.forEach(function (s, i) {
         var a = s.activityId && byId[s.activityId];
         if (!a) return;
@@ -567,11 +411,11 @@
         var facts = 'Ages ' + a.age_min + '–' + a.age_max + ' · Group ' +
                     a.group_min + '–' + a.group_max + (a.no_prep ? ' · no prep' : ' · prep needed');
         out.push('BEGIN:VEVENT');
-        out.push('UID:av-' + a.id + '-' + icsDate(date) + '-' + s.slot + (wk ? '-w' + wk : '') + '@activityvault');
+        out.push('UID:av-' + a.id + '-' + icsDate(date) + '-' + s.slot + '@activityvault');
         out.push('DTSTAMP:' + stamp);
         out.push('DTSTART:' + icsDate(start));
         out.push('DURATION:PT' + mins + 'M');
-        out.push('SUMMARY:' + icsEscape(a.name + ' (' + d.day + (wk ? ', week ' + (wk + 1) : '') + ')'));
+        out.push('SUMMARY:' + icsEscape(a.name + ' (' + d.day + ')'));
         out.push('DESCRIPTION:' + icsEscape(facts + '\n' + a.tagline));
         out.push('END:VEVENT');
       });
@@ -581,9 +425,8 @@
   }
 
   /* ---- plan share/import ----
-     Shareable plan payload (v2 — 3.0). Deep link: planner.html?plan=<base64url>.
-     v1 payloads (flat `days`) still import: they're wrapped as week 1. */
-  var PLAN_VERSION = 2;
+     Shareable plan payload (v1). Deep link: planner.html?plan=<base64url>. */
+  var PLAN_VERSION = 1;
   function encodePlan(plan) {
     var json = JSON.stringify(plan);
     var b64 = (typeof Buffer !== 'undefined')
@@ -599,45 +442,32 @@
       : decodeURIComponent(escape(atob(std)));
     return JSON.parse(json);
   }
-  /* Validate an imported plan: ids must resolve to real activities.
-     Accepts v2 ({weeks:[{weekNum, days}]}) and v1 ({days}) payloads.
-     Returns {version, name, programType, maxTime, weeks, dropped}. */
+  /* Validate an imported plan: ids must resolve to real activities. */
   function validatePlanData(data, byId) {
     var dropped = [];
-    function cleanDays(days) {
-      var out = [];
-      (days || []).forEach(function (d) {
-        if (WEEKDAYS.indexOf(d.day) === -1) return;
-        var slots = [];
-        (d.slots || []).forEach(function (s, i) {
-          var id = s && s.activityId;
-          if (id && !byId[id]) { dropped.push(id); id = null; }
-          slots.push({ slot: (s && s.slot) || (i + 1), activityId: id || null });
-        });
-        out.push({ day: d.day, slots: slots });
+    var days = [];
+    (data.days || []).forEach(function (d) {
+      if (WEEKDAYS.indexOf(d.day) === -1) return;
+      var slots = [];
+      (d.slots || []).forEach(function (s, i) {
+        var id = s && s.activityId;
+        if (id && !byId[id]) { dropped.push(id); id = null; }
+        slots.push({ slot: (s && s.slot) || (i + 1), activityId: id || null });
       });
-      return out;
-    }
-    var weeks = [];
-    if (data.weeks && data.weeks.length) {
-      data.weeks.forEach(function (w, i) {
-        weeks.push({ weekNum: w.weekNum || (i + 1), days: cleanDays(w.days) });
-      });
-    } else {
-      weeks.push({ weekNum: 1, days: cleanDays(data.days) });
-    }
+      days.push({ day: d.day, slots: slots });
+    });
     return {
       version: data.version || PLAN_VERSION,
       name: data.name || 'Shared week plan',
       programType: PROGRAMS[data.programType] ? data.programType : 'after-school',
       maxTime: data.maxTime || null,
-      weeks: weeks,
+      days: days,
       dropped: dropped
     };
   }
 
-  /* localStorage plan record shape (v2) for named saved plans. */
-  function savedPlanRecord(name, opts, weeks) {
+  /* localStorage plan record shape (v1) for named saved plans. */
+  function savedPlanRecord(name, opts, planDays) {
     return {
       version: PLAN_VERSION,
       name: name,
@@ -645,11 +475,9 @@
       programType: opts.programType,
       maxTime: opts.maxTime,
       ageBand: opts.ageBand,
-      weeks: (weeks || []).map(function (w) {
-        return { weekNum: w.weekNum, days: w.days.map(function (d) {
-          return { day: d.day, slots: d.slots.map(function (s) {
-            return { slot: s.slot, activityId: s.activityId };
-          }) };
+      days: planDays.map(function (d) {
+        return { day: d.day, slots: d.slots.map(function (s) {
+          return { slot: s.slot, activityId: s.activityId };
         }) };
       })
     };
@@ -666,20 +494,12 @@
     filterPool: filterPool,
     whyFits: whyFits,
     buildWeek: buildWeek,
-    buildMultiWeek: buildMultiWeek,
-    clampWeeks: clampWeeks,
     balanceOf: balanceOf,
     bucketLabel: bucketLabel,
     dayWarnings: dayWarnings,
     weekWarnings: weekWarnings,
     swapCandidate: swapCandidate,
     fillGaps: fillGaps,
-    brainBreak: brainBreak,
-    needsWeatherBackup: needsWeatherBackup,
-    weatherBackupFor: weatherBackupFor,
-    subBackupFor: subBackupFor,
-    normalizeSupplyItem: normalizeSupplyItem,
-    aggregateSupplies: aggregateSupplies,
     planText: planText,
     exportICS: exportICS,
     encodePlan: encodePlan,

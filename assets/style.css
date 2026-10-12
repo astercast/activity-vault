@@ -14,6 +14,14 @@
   --shadow: 0 2px 10px rgba(42, 36, 28, .08);
   --font-display: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
   --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  /* motion tokens (wave 14, per 2026 motion research: entrances decelerate,
+     never ease-in; nothing exceeds 500ms; transform + opacity only) */
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+  --dur-moderate: 320ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-decelerate: cubic-bezier(0, 0, 0, 1);
+  --ease-accelerate: cubic-bezier(0.3, 0, 1, 1);
 }
 
 * { box-sizing: border-box; }
@@ -222,7 +230,10 @@ input[type="number"] {
 .planner-form fieldset { border: 0; padding: 0; margin: 0 0 1.1rem; }
 .planner-form legend { font-weight: 800; margin-bottom: .5rem; font-family: var(--font-display); font-size: 1.05rem; }
 .day-row { display: flex; flex-wrap: wrap; gap: .5rem; }
-.week-plan { display: grid; gap: 1rem; margin-bottom: 2rem; }
+.week-plan {
+  display: grid; gap: 1rem; margin-bottom: 2rem;
+  container-type: inline-size; container-name: weekplan;
+}
 @media (min-width: 800px) { .week-plan { grid-template-columns: repeat(2, 1fr); } }
 .day-card { background: var(--card); border: 2px solid var(--line); border-radius: var(--radius); padding: 1rem 1.1rem; }
 .day-card h3 { margin: 0 0 .6rem; border-bottom: 3px solid var(--accent); display: inline-block; padding-bottom: .15rem; }
@@ -304,10 +315,136 @@ input[type="number"] {
   padding: .7rem 1rem; margin: 0 0 1rem; font-size: .92rem;
 }
 
+/* ================= WAVE 15 — Smart Weekly Planner 3.0 ================= */
+/* Design craft: container queries, sticky section nav, fluid week heads,
+   scroll-driven card entrance (no-preference only), DnD affordances.
+   Keeps the site's warm-paper identity — no generic redesign. */
+
+/* week sections: each week is its own landmark with a fluid-type head */
+.week-section { margin-bottom: 2.2rem; }
+.week-head {
+  font-size: clamp(1.35rem, 1.1rem + 1.6vw, 1.8rem);
+  margin: 0 0 .8rem;
+  display: flex; align-items: baseline; gap: .6rem; flex-wrap: wrap;
+}
+.week-head-anchor { scroll-margin-top: 4.5rem; }
+.week-head-sub { font-family: var(--font-body); font-size: .85rem; color: var(--ink-soft); font-weight: 400; }
+
+/* sticky jump-to nav for multi-week plans + 3.0 extras */
+.plan-sections {
+  position: sticky; top: 0; z-index: 20;
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  backdrop-filter: blur(6px);
+  padding: .55rem 0; margin-bottom: 1rem;
+  border-bottom: 2px solid var(--line);
+  display: flex; gap: .6rem; align-items: center; flex-wrap: wrap;
+}
+.plan-sections-label { font-weight: 700; font-size: .9rem; }
+.plan-sections[hidden] { display: none; }
+.plan-sections .chip { font-size: .85rem; }
+
+/* container queries: day cards adapt to the grid column they're in, not the viewport */
+@container weekplan (max-width: 640px) {
+  .slot-actions { gap: .25rem; }
+  .slot-actions .btn { padding: .3rem .55rem; font-size: .82rem; }
+  .meter-legend { font-size: .76rem; }
+}
+@container weekplan (min-width: 641px) {
+  .day-card { padding: 1.15rem 1.3rem; }
+}
+
+/* 3.0 extras: weather backups, supply list, substitute kit */
+.extra-section {
+  background: var(--card); border: 2px solid var(--line); border-radius: var(--radius);
+  padding: 1.1rem 1.2rem; margin-bottom: 1.4rem; box-shadow: var(--shadow);
+}
+.extra-head { font-size: 1.25rem; margin: 0 0 .4rem; }
+.extra-head span { scroll-margin-top: 4.5rem; }
+.backup-list, .supply-list, .subkit-list { list-style: none; padding: 0; margin: .6rem 0 0; }
+.backup-row, .supply-row, .subkit-row {
+  padding: .55rem 0; border-top: 1px dashed var(--line);
+  display: flex; gap: .5rem; align-items: baseline; flex-wrap: wrap;
+}
+.backup-from { font-weight: 600; }
+.supply-item { font-weight: 700; }
+.supply-count { color: var(--accent); font-weight: 700; font-variant-numeric: tabular-nums; }
+.supply-days { color: var(--ink-soft); font-size: .85rem; }
+.subkit-week { font-size: 1.05rem; margin: 1.1rem 0 .2rem; }
+.subkit-row { display: block; }
+.subkit-head { margin: 0 0 .25rem; }
+.subkit-steps { margin: .2rem 0 .4rem 1.2rem; padding: 0; font-size: .92rem; color: var(--ink-soft); }
+
+/* brain-break line on each day card */
+.brain-break {
+  font-size: .88rem; background: #fdf3d8; border: 1px solid #ecd9a0;
+  border-radius: 10px; padding: .45rem .7rem; margin: .5rem 0 0;
+}
+.slot-time { font-variant-numeric: tabular-nums; font-weight: 700; font-size: .85rem; color: var(--ink-soft); }
+.slot-name { font-weight: 700; }
+
+/* drag-and-drop affordances: grip hint, grab cursor, visible drop bar */
+li.slot { cursor: grab; border-radius: 10px; padding: .35rem .45rem; margin: 0 -.45rem; }
+li.slot:active { cursor: grabbing; }
+li.slot.dragging { opacity: .45; cursor: grabbing; }
+li.slot.drag-over {
+  outline: none; border-radius: 10px;
+  box-shadow: inset 0 4px 0 var(--accent);
+  background: color-mix(in srgb, var(--accent) 7%, transparent);
+}
+li.slot.drag-over::before {
+  content: "Drop here"; display: block; font-size: .75rem; font-weight: 700;
+  color: var(--accent); text-transform: uppercase; letter-spacing: .06em;
+  margin-bottom: .15rem;
+}
+
+/* scroll-driven entrance for day cards: subtle rise as they scroll into view.
+   Progressive enhancement — no animation without support; killed entirely
+   for reduced-motion users by the global rule. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .day-card {
+      animation: card-enter .5s ease-out both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 30%;
+    }
+    @keyframes card-enter {
+      from { opacity: .25; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  }
+}
+
+/* view transitions: keep the crossfade short and calm */
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .18s; }
+
+/* print: the 3.0 extras ride along in the deck */
+@media print {
+  .plan-sections, .plan-extras { display: none !important; }
+  .print-week-head h2 { font-size: 20pt; margin: 18pt 0 6pt; border-bottom: 3px solid #000; padding-bottom: 4pt; }
+  .print-supply, .print-subkit { break-before: page; }
+  .print-supply h3, .print-subkit h3 { font-size: 16pt; margin: 0 0 6pt; }
+  .print-supply ul, .print-subkit ul { font-size: 10pt; }
+  .print-supply li, .print-subkit li { margin-bottom: 3pt; }
+  .print-subkit h4 { font-size: 12pt; margin: 10pt 0 3pt; }
+}
+
+/* ================= END WAVE 15 ================= */
+
 /* ---------- reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+/* ---------- view transitions (progressive enhancement) ----------
+   Same-document transitions are Baseline; cross-document (MPA) transitions
+   apply in Chromium/Safari and degrade cleanly elsewhere. The reduced-motion
+   rule above already neutralizes them for motion-sensitive visitors. */
+@view-transition {
+  navigation: auto;
+}
+
+/* ---------- balanced headlines (Baseline 2024) ---------- */
+h1, h2 { text-wrap: balance; }
 
 /* ================= PRINT ================= */
 @media print {
@@ -419,6 +556,11 @@ input[type="number"] {
 .collection-section {
   background: var(--card); border: 2px solid var(--line); border-radius: var(--radius);
   padding: clamp(1.2rem, 4vw, 2rem); box-shadow: var(--shadow); margin: 0 0 2.5rem;
+  /* component layout container: pick-list columns respond to the section's
+     width (container query), not the viewport (2026 craft rule: page layout =
+     media queries, component layout = container queries) */
+  container-type: inline-size;
+  container-name: vault-section;
 }
 .collection-head { display: flex; align-items: center; gap: .8rem; }
 .collection-glyph-lg { font-size: 2.4rem; line-height: 1; }
@@ -428,7 +570,9 @@ input[type="number"] {
 .collection-tie { margin: 0 0 1rem; font-weight: 600; }
 
 .pick-list { list-style: none; margin: 1rem 0; padding: 0; display: grid; gap: .8rem; }
-@media (min-width: 800px) { .pick-list { grid-template-columns: 1fr 1fr; } }
+@container vault-section (min-width: 620px) {
+  .pick-list { grid-template-columns: 1fr 1fr; }
+}
 .pick {
   border: 1px solid var(--line); border-radius: 10px; padding: .8rem 1rem;
   background: var(--paper); break-inside: avoid;
@@ -443,6 +587,41 @@ input[type="number"] {
   border: 1px solid #d9a821; border-radius: 999px; padding: .15rem .6rem; white-space: nowrap;
 }
 .collection-actions { display: flex; gap: .7rem; flex-wrap: wrap; align-items: center; margin-top: 1.2rem; }
+
+/* ---------- scroll-driven section reveals (progressive enhancement) ----------
+   Runs on the compositor thread (zero jank). Only where the engine supports
+   animation-timeline: view(); only for visitors without reduced-motion
+   preference; transform + opacity only; entrance decelerates into place. */
+@keyframes vault-rise {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .collection-section {
+      animation: vault-rise var(--dur-moderate) var(--ease-decelerate) both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 30%;
+    }
+  }
+}
+
+/* ---------- breadcrumbs (activity pages) ---------- */
+.crumbs { font-size: .9rem; color: var(--ink-soft); margin: 0 0 1rem; }
+.crumbs ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; }
+.crumbs li + li::before { content: "›"; margin-right: .4rem; color: var(--ink-soft); }
+.crumbs [aria-current="page"] { color: var(--ink); font-weight: 600; }
+
+/* ---------- field trip planner ---------- */
+.ft-table { border-collapse: collapse; width: 100%; font-size: .88rem; margin: 1rem 0; }
+.ft-table th, .ft-table td { text-align: left; padding: .5rem .6rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+.ft-table thead th { background: var(--paper-deep); font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; }
+.ft-table td.ft-cell { height: 2.2rem; min-width: 6rem; }
+.ft-warning {
+  background: #fdf3d8; border: 2px solid #d9a821; border-radius: 10px;
+  padding: .7rem 1rem; font-weight: 600;
+}
+.table-wrap { overflow-x: auto; }
 
 /* single-collection view: grid hides, deep-linkable sections */
 .collection-section[hidden] { display: none; }
