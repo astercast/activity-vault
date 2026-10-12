@@ -771,8 +771,73 @@
     45
    ],
    "page": "collections.html#grateful-gathering"
+  },
+  {
+   "id": "halloween-week",
+   "title": "Halloween week",
+   "glyph": "🎃",
+   "when_to_use": "October 31 is coming and the class can feel it. Twelve picks that run as a countdown to Halloween - one a day, or a full party-week plan.",
+   "picks": [
+    {
+     "activity_id": "halloween-countdown-calendar",
+     "curator_note": "The spine of the week: thirteen doors, thirteen mini-activities, one opened daily until the 31st."
+    },
+    {
+     "activity_id": "roll-a-monster-dice-draw",
+     "curator_note": "Every monster comes out different - the dice-draw craft that starts every Halloween week right."
+    },
+    {
+     "activity_id": "halloween-inference-riddles",
+     "curator_note": "Zero-prep inference practice in a witch hat - cite your clue or it doesn't count."
+    },
+    {
+     "activity_id": "glow-stick-temperature-lab",
+     "curator_note": "The not-too-spooky science anchor: same glow sticks, three temperatures, real data."
+    },
+    {
+     "activity_id": "witch-broomstick-relay",
+     "curator_note": "Pool-noodle broomsticks, full-speed relay - the wiggles-burner of the pack."
+    },
+    {
+     "activity_id": "pumpkin-bowling",
+     "curator_note": "Mini pumpkins vs. bottle pins: the rainy-day insurance policy."
+    },
+    {
+     "activity_id": "ghost-banana-pops",
+     "curator_note": "Two-ingredient frozen ghosts - the treat activity that needs no oven."
+    },
+    {
+     "activity_id": "costume-swap-shop",
+     "curator_note": "Outgrown costumes find new kids - the community-minded centerpiece."
+    },
+    {
+     "activity_id": "kindness-pumpkins",
+     "curator_note": "Paint them kind, deliver them in pairs - trick-or-treating in reverse."
+    },
+    {
+     "activity_id": "teal-pumpkin-project",
+     "curator_note": "The Vault's allergy-aware must-do - teal pumpkin, non-food treat box, Halloween for every kid."
+    },
+    {
+     "activity_id": "monster-mash-dance",
+     "curator_note": "Freeze in your spookiest pose when the music stops - the party classic."
+    },
+    {
+     "activity_id": "marigold-cempasuchil-flowers",
+     "curator_note": "A respectful Dia de los Muertos craft about remembrance - learning, not dressing up."
+    }
+   ],
+   "age_span": [
+    4,
+    14
+   ],
+   "time_span": [
+    10,
+    45
+   ],
+   "page": "collections.html#halloween-week"
   }
  ],
- "count": 12,
+ "count": 13,
  "updated": "2026-10-12"
 }

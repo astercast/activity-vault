@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /* Wave 18 assertions: After-School Kit integrity.
    - kit-core.js pure logic (pantry matching, filters, kit dealing, run-of-show,
-     checklist aggregation, URL encode/decode) on the REAL 415-activity dataset
+     checklist aggregation, URL encode/decode) on the REAL 455-activity dataset
    - kit.html structure + kit.js DOM-id cross-check
    - nav aria-current across all 12 shells, llms.txt / sitemap.xml entries,
      calm toggle wiring

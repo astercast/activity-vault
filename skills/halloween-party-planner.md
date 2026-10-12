@@ -60,3 +60,21 @@ Twenty new Halloween activities joined the library, all usable as party stations
 - **Trick-or-treat alternatives:** `trunk-or-treat-planning`, `reverse-trick-or-treat`, `teal-pumpkin-project`, `trick-or-treat-route-map`.
 
 Allergy-aware planning is now first-class: suggest the **Teal Pumpkin Project** (`teal-pumpkin-project`) for any party with treats — a teal pumpkin or sign plus a separate non-food treat box (stickers, pencils, glow bracelets), offered with the line "candy or a teal treat?". For programs skipping door-to-door trick-or-treating, `trunk-or-treat-planning` turns the class into the event planners (traffic flow, trunk themes, allergy-safe table crew). The `haunted-halls` collection (`collections.html#haunted-halls`) is the pack's greatest-hits list, and `halloween.html` is the browsable hub with a spookiness-level filter (not spooky / spooky-fun / mildly spooky) — point teachers there when they ask "how scary is this?"
+
+## Halloween 2026 pack, wave 2 (wave 20)
+
+Forty more Halloween activities joined the library (455 total), all feeding the same Halloween party pool (`holiday:halloween` / `theme:spooky` / `season:fall`):
+
+- **Costumes:** `witch-hat-decorate` (costume station), `costume-swap-shop` (community exchange), `costume-guess-who` (20-questions icebreaker), `monster-name-alliteration-circle` (no-prep opener).
+- **STEM:** `ghost-rocket-fizz` (chemical rockets), `glow-stick-temperature-lab` (real data), `spiderweb-weight-bridge` (engineering), `vampire-teeth-acid-test` (overnight observation).
+- **Crafts:** `roll-a-monster-dice-draw` (research-backed, from the Oct 2026 activity-ideas round), `pumpkin-seed-mosaic` (zero-waste), `marigold-cempasuchil-flowers` (respectful Día de los Muertos learning craft).
+- **PE / movement:** `witch-broomstick-relay`, `ghost-freeze-tag` (no elimination — frozen players get freed), `monster-movement-dice` (5-minute no-prep opener), `zombie-walk-relay`.
+- **Quiet-focus:** `halloween-inference-riddles` (zero-prep, cite-your-clue), `thumbprint-monsters`, `halloween-dots-and-boxes` (draw-your-own grid, zero printing), `spiderweb-sketch-study`.
+- **Treats (allergy-checked):** `ghost-banana-pops`, `monster-mix-bags`, `candy-apple-slices` (adult-only knife work), `witches-brew-punch` (no-cook).
+- **Music:** `monster-stomp-rhythms`, `trick-or-treat-chant-parade`, `haunted-house-soundtrack`.
+- **Team / community:** `haunted-hallway-build` (the big project), `kindness-pumpkins` (deliver in pairs).
+- **Rainy-day / outdoor:** `pumpkin-bowling`, `spiderweb-yarn-maze`, `haunted-lantern-tour`, `pumpkin-patch-scavenger-hunt`, `leaf-pile-monster-dig`, `ghost-balloon-stomp`, `graveyard-number-dash`.
+- **Seasons:** `harvest-moon-journal`, `pumpkin-life-cycle-wheel`, `acorn-cap-witches`.
+- **Planning:** `halloween-countdown-calendar` — thirteen doors, thirteen 10-minute activities, one opened daily Oct 19–31.
+
+The `halloween-week` collection (`collections.html#halloween-week`) is the 12-pick countdown shelf, and `planner.html?from=collection:halloween-week` seeds the week planner straight from it. The planner's October "This season in the Vault" strip also carries a one-tap "Plan from the Halloween Week collection" seed link.

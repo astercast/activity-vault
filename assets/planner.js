@@ -37,10 +37,25 @@
   }
 
   /* View-transition-safe re-render: crossfades slot changes, skipped for
-     reduced-motion users, calm-mode users, and older browsers (plain render). */
+     reduced-motion users, calm-mode users, and older browsers (plain render).
+     The finished-promise catch swallows headless/aborted transitions
+     ("Transition was skipped") so they never surface as page errors. */
   function transitionRender(fn) {
     if (!reduceMotion() && !calmMode() && document.startViewTransition) {
-      document.startViewTransition(function () { fn(); });
+      var ran = false;
+      try {
+        var t = document.startViewTransition(function () { ran = true; fn(); });
+        /* Swallow aborted-transition rejections ("Transition was skipped")
+           on every promise the ViewTransition exposes, so they never surface
+           as page errors (headless Chromium aborts them on early-load renders;
+           real browsers are unaffected). */
+        ['finished', 'ready', 'updateCallbackDone'].forEach(function (k) {
+          try {
+            var p = t && t[k];
+            if (p && p.catch) p.catch(function () {});
+          } catch (e2) { /* ignore */ }
+        });
+      } catch (e) { if (!ran) fn(); }
     } else { fn(); }
   }
 
@@ -1073,8 +1088,30 @@
       a.href = 'index.html?tag=' + encodeURIComponent(c.tag);
       row.appendChild(a);
     });
+    /* Seasonal collection seeds (wave 20): one-tap "plan from this shelf" for
+       the holiday months. Uses the same ?from=collection: mechanism as the
+       seasonal hubs — planner.html reads it on load and seeds the collection
+       dropdown. */
+    var SEASON_COLLECTION = {
+      'holiday:halloween': 'halloween-week',
+      'holiday:thanksgiving': 'grateful-gathering'
+    };
+    chips.forEach(function (c) {
+      var cid = SEASON_COLLECTION[c.tag];
+      if (!cid) return;
+      var seed = el('a', 'chip chip-link', '🗓️ Plan from the ' +
+        collTitle(cid) + ' collection');
+      seed.href = 'planner.html?from=collection:' + encodeURIComponent(cid);
+      row.appendChild(seed);
+    });
     host.appendChild(row);
     host.hidden = false;
+  }
+
+  /* Collection title lookup for the seasonal seed links. */
+  function collTitle(cid) {
+    var found = (state.collections || []).filter(function (c) { return c.id === cid; })[0];
+    return found ? found.title : cid;
   }
 
   /* ---------------- form build ---------------- */

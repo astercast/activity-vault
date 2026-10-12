@@ -18555,8 +18555,1957 @@
     "harder": "The notes must name something specific the person did."
    },
    "safety": "Kind and true — if you cannot say it kindly, pick someone else."
+  },
+  {
+   "id": "roll-a-monster-dice-draw",
+   "name": "Roll-a-Monster Dice Draw",
+   "tagline": "Roll the dice, draw the parts: every monster comes out gloriously different.",
+   "categories": [
+    "crafts",
+    "rainy-day"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper"
+    },
+    {
+     "item": "pencils or crayons"
+    },
+    {
+     "item": "one dice per pair"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Draw a 6-column chart on the board: eyes / horns / mouth / arms / pattern / extra. Fill each column with 6 options (1 = one big eye, 6 = six tiny eyes...).",
+   "steps": [
+    "Roll the dice six times - once per column - and write down each result.",
+    "Draw your monster exactly as the rolls say. No re-rolls: weird is good.",
+    "Give it a name and one silly power (shoots glitter, naps standing up).",
+    "Monster meet-and-greet: introduce yours to the table in your monster voice."
+   ],
+   "variations": {
+    "easier": "Choice-only version: pick parts from the chart instead of rolling.",
+    "harder": "Two dice per kid - roll for each body part twice and pick the better roll."
+   },
+   "safety": "Dice are small - keep them on tables, not in mouths.",
+   "tags": [
+    "holiday:halloween",
+    "theme:spooky"
+   ],
+   "copy_free": true,
+   "why_it_works": "Pen-and-paper making beats a screen: a Sept 2026 survey of 2,501 teachers (DonorsChoose/EdWeek) found more hands-on analog work was the most-cited classroom change this year.",
+   "inclusion": "Monsters can be described aloud instead of drawn; the choice-only version skips dice entirely."
+  },
+  {
+   "id": "marigold-cempasuchil-flowers",
+   "name": "Marigold Paper Flowers",
+   "tagline": "Tissue-paper cempasuchil - learning about Dia de los Muertos through making.",
+   "categories": [
+    "crafts",
+    "seasons"
+   ],
+   "age_min": 6,
+   "age_max": 14,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 35,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "orange and yellow tissue paper"
+    },
+    {
+     "item": "green pipe cleaners or sticks"
+    },
+    {
+     "item": "scissors"
+    },
+    {
+     "item": "tape"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Cut tissue into 6-inch squares, 8 sheets per flower. One pipe cleaner per flower for the stem.",
+   "steps": [
+    "Stack 8 tissue squares and fold them back and forth like a fan.",
+    "Pinch the middle and twist a pipe cleaner tightly around it.",
+    "Round the fan ends with scissors - these become the petals.",
+    "Gently pull each tissue layer up toward the center, fluffing into a bloom.",
+    "While you work: marigolds (cempasuchil) guide loved ones home on Dia de los Muertos, Nov 1-2 - a real Mexican holiday of remembrance."
+   ],
+   "variations": {
+    "easier": "Use 4 sheets instead of 8 and skip rounding the ends.",
+    "harder": "Make a full garland: tape finished flowers to a long string for the room."
+   },
+   "safety": "Scissors stay at the table; younger kids get pre-folded fans.",
+   "tags": [
+    "holiday:dia-de-muertos",
+    "season:fall"
+   ],
+   "inclusion": "Respectful learning framing: we study a real holiday of remembrance; nobody dresses it up as a costume or invents new rituals."
+  },
+  {
+   "id": "pumpkin-seed-mosaic",
+   "name": "Pumpkin Seed Mosaics",
+   "tagline": "Roasted seeds become jack-o'-lantern mosaics - zero-waste art from pumpkin guts.",
+   "categories": [
+    "crafts",
+    "seasons"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 40,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "clean dry pumpkin seeds"
+    },
+    {
+     "item": "cardboard squares"
+    },
+    {
+     "item": "glue"
+    },
+    {
+     "item": "orange and black paint or markers"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Rinse and fully dry pumpkin seeds ahead of time (damp seeds won't glue). Tint half the seeds orange with paint the day before, or leave natural.",
+   "steps": [
+    "Draw a big pumpkin outline on your cardboard square.",
+    "Glue seeds inside the outline, overlapping like scales - orange outside.",
+    "Fill the stem with green-tinted or natural seeds.",
+    "Add a black-seed jack-o'-lantern face: triangles for eyes, zigzag mouth.",
+    "Set flat to dry. Sign the back - gallery wall ready."
+   ],
+   "variations": {
+    "easier": "Skip the face - a plain seed-filled pumpkin still looks great.",
+    "harder": "Sort seeds by size first and work in shaded rows, like a real mosaic artist."
+   },
+   "safety": "Check the seed supply against the class allergy list - seeds are food. No tasting the craft seeds; painted seeds are not for eating.",
+   "tags": [
+    "season:fall",
+    "holiday:halloween"
+   ]
+  },
+  {
+   "id": "witch-hat-decorate",
+   "name": "Decorate-a-Witch-Hat",
+   "tagline": "Plain black hats in, runway-ready witch hats out - the costume station classic.",
+   "categories": [
+    "crafts",
+    "holidays"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 35,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "black paper party hats or cones"
+    },
+    {
+     "item": "stickers, ribbon, and paper scraps"
+    },
+    {
+     "item": "glue sticks"
+    },
+    {
+     "item": "markers"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Set out the decorating supplies in trays - one tray per table keeps the line moving.",
+   "steps": [
+    "Claim a hat and try it on - check the fit before you decorate.",
+    "Wrap ribbon or paper strips around the base for the hat band.",
+    "Add the spooky-cute: paper bats, stars, a buckle cut from foil.",
+    "Write your witch name on the inside brim in marker.",
+    "Witch hat runway: strut, pose, and introduce your hat's magic power."
+   ],
+   "variations": {
+    "easier": "Pre-cut the paper shapes so it's stickers-and-glue only.",
+    "harder": "Engineer a hat that survives the playground: reinforce the cone seam."
+   },
+   "safety": "Keep small stickers away from mouths for the youngest kids.",
+   "tags": [
+    "holiday:halloween",
+    "theme:spooky"
+   ]
+  },
+  {
+   "id": "ghost-rocket-fizz",
+   "name": "Ghost Rocket Fizz",
+   "tagline": "Film-canister rockets in ghost costumes - chemistry does the launching.",
+   "categories": [
+    "stem",
+    "outdoor"
+   ],
+   "age_min": 6,
+   "age_max": 14,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 30,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "film canisters or small snap-lid tubes"
+    },
+    {
+     "item": "baking soda"
+    },
+    {
+     "item": "vinegar"
+    },
+    {
+     "item": "tissue paper"
+    },
+    {
+     "item": "markers"
+    },
+    {
+     "item": "safety glasses or sunglasses"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Work outside with a clear launch zone. Draw ghost faces on tissue squares and tape one loosely around each canister - decoration only, nothing blocking the lid.",
+   "steps": [
+    "Put one spoonful of baking soda in the canister.",
+    "Pour in vinegar to about one-third full - then snap the lid on FAST.",
+    "Set the canister lid-down on the ground and step back 10 feet.",
+    "Watch: fizz builds pressure until POP - the ghost launches.",
+    "Try it again: more baking soda or more vinegar - which flies higher?"
+   ],
+   "variations": {
+    "easier": "The teacher does the snap-and-set while kids watch from the line.",
+    "harder": "Time the launches and graph height vs. spoonfuls of baking soda."
+   },
+   "safety": "Safety glasses on for the launcher. Everyone behind the line before the lid snaps - never point a loaded canister at anyone.",
+   "tags": [
+    "holiday:halloween",
+    "theme:spooky"
+   ]
+  },
+  {
+   "id": "glow-stick-temperature-lab",
+   "name": "Glow Stick Temperature Lab",
+   "tagline": "Same glow sticks, three cups of water - temperature changes the light.",
+   "categories": [
+    "stem",
+    "rainy-day"
+   ],
+   "age_min": 7,
+   "age_max": 14,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "glow sticks (one per group)"
+    },
+    {
+     "item": "three clear cups"
+    },
+    {
+     "item": "ice water"
+    },
+    {
+     "item": "room-temperature water"
+    },
+    {
+     "item": "warm (not hot) water"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Fill the three cups: ice water, room-temp water, warm tap water. Label them COLD, ROOM, WARM. Crack each glow stick to activate right before the test.",
+   "steps": [
+    "Drop one activated glow stick in each cup at the same time.",
+    "Dim the lights and compare: which cup glows brightest right now?",
+    "Wait 5 minutes and compare again - did the order change?",
+    "Feel the cups: the warm cup's stick fades fastest. Heat speeds the chemical reaction up - and uses it up faster.",
+    "Write the rule in your own words: warmer = brighter but shorter."
+   ],
+   "variations": {
+    "easier": "Teacher runs the demo up front while kids call out observations.",
+    "harder": "Add a fourth cup - freezer-cold vs. fridge-cold - and time the fade with a stopwatch."
+   },
+   "safety": "Don't cut glow sticks open; the liquid inside stays inside. Cracked or leaking sticks go straight in the trash - wash hands after handling.",
+   "tags": [
+    "holiday:halloween",
+    "theme:spooky"
+   ]
+  },
+  {
+   "id": "spiderweb-weight-bridge",
+   "name": "Spiderweb Weight Bridge",
+   "tagline": "Weave a yarn web, then load it with pennies - how strong is your silk?",
+   "categories": [
+    "stem",
+    "crafts"
+   ],
+   "age_min": 7,
+   "age_max": 14,
+   "group_min": 2,
+   "group_max": 24,
+   "time_min": 25,
+   "time_max": 45,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "yarn or string"
+    },
+    {
+     "item": "paper plates with the centers cut out"
+    },
+    {
+     "item": "tape"
+    },
+    {
+     "item": "pennies or washers"
+    },
+    {
+     "item": "scissors"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Cut the center out of each paper plate, leaving a 2-inch rim - the web frame. Tape one end of yarn to the rim.",
+   "steps": [
+    "Weave yarn across the plate ring: spokes first, then spiral around them. Tie off the end.",
+    "Set your web across two books with the middle hanging free.",
+    "Add pennies one at a time to the center of the web. Count as you go.",
+    "Record the breaking point - the number of pennies your web held.",
+    "Rebuild round two: tighter spiral or double yarn - beat your record."
+   ],
+   "variations": {
+    "easier": "Weave a simple 6-spoke web and test with crayons instead of pennies.",
+    "harder": "Real spiders vary silk thickness - test thin yarn vs. thick yarn webs."
+   },
+   "safety": "Scissors at the table only. Keep yarn below shoulder height.",
+   "tags": [
+    "holiday:halloween",
+    "theme:spooky"
+   ]
+  },
+  {
+   "id": "vampire-teeth-acid-test",
+   "name": "Vampire Teeth Acid Test",
+   "tagline": "Eggshell 'fangs' soak overnight - which liquid is toughest on teeth?",
+   "categories": [
+    "stem",
+    "quiet-focus"
+   ],
+   "age_min": 7,
+   "age_max": 14,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 20,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "eggshell halves (rinsed)"
+    },
+    {
+     "item": "clear cups"
+    },
+    {
+     "item": "vinegar"
+    },
+    {
+     "item": "water"
+    },
+    {
+     "item": "milk (optional third cup)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Rinse eggshell halves and label cups: VINEGAR, WATER, (MILK). One shell half per cup. Set up the day before you want results.",
+   "steps": [
+    "Drop one eggshell half in each cup - these are our stand-in 'teeth.'",
+    "Predict: which liquid will change its shell the most by tomorrow?",
+    "Wait 24 hours. Lift each shell: look, feel, and compare.",
+    "The vinegar shell turns soft and bubbly - acid wears the shell down. Water barely changes it.",
+    "Connect it: that's why dentists nag about brushing - acid is the enemy."
+   ],
+   "variations": {
+    "easier": "Teacher sets up the cups; kids observe and vote on predictions.",
+    "harder": "Test more liquids: juice, soda, soapy water - rank them toughest to gentlest."
+   },
+   "safety": "Vinegar is food-safe but stings eyes - no splashing, wash hands after. This is a model, not a mouth: eggshells stand in for enamel.",
+   "tags": [
+    "holiday:halloween",
+    "theme:spooky"
+   ]
+  },
+  {
+   "id": "witch-broomstick-relay",
+   "name": "Witch Broomstick Relay",
+   "tagline": "Ride a pool-noodle broomstick around the cones - cackling encouraged.",
+   "categories": [
+    "pe-movement",
+    "outdoor"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 32,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "pool noodles (one per team)"
+    },
+    {
+     "item": "cones or chairs"
+    },
+    {
+     "item": "witch hats (optional)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Set two cones 30 feet apart per team. Hand each team a pool noodle 'broomstick.'",
+   "steps": [
+    "First rider straddles the noodle like a broomstick - hands on the front.",
+    "Ride to the far cone, circle it, and ride back. Noodle stays between your legs the whole way.",
+    "Hand off the broomstick to the next witch in line.",
+    "Fallen off? Pick it up, climb back on, keep riding - no penalty.",
+    "Winning team takes a victory lap with their best witch cackles."
+   ],
+   "variations": {
+    "easier": "Shorten the course and let kids walk the noodle instead of running.",
+    "harder": "Add a spell-casting stop: freeze at the far cone and shout your spell before riding back."
+   },
+   "safety": "Clear the course of anything trippable. Noodles are for riding, not dueling.",
+   "tags": [
+    "holiday:halloween",
+    "theme:spooky"
+   ],
+   "copy_free": true,
+   "no_elimination": true,
+   "why_it_works": "Short active bursts reset focus - reviews of classroom brain-break research (IJRESS) find under-10-minute movement breaks counter cognitive fatigue.",
+   "inclusion": "Riders set their own speed; walking the course counts fully."
+  },
+  {
+   "id": "ghost-freeze-tag",
+   "name": "Ghost Freeze Tag",
+   "tagline": "Tagged? Freeze like a ghost. A teammate's 'BOO!' sets you free.",
+   "categories": [
+    "pe-movement",
+    "outdoor"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 6,
+   "group_max": 32,
+   "time_min": 10,
+   "time_max": 20,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "setup": "Pick 2 ghosts (taggers). Everyone else haunts the play area. No equipment needed.",
+   "steps": [
+    "Ghosts chase; a touch turns you into a frozen statue - arms up, spooky face.",
+    "Unfreeze a statue by floating past and whispering 'BOO!' - then both float away.",
+    "A frozen player can't be tagged again until they're freed.",
+    "Rotate ghosts every 3 minutes so everyone gets to haunt.",
+    "Last round: EVERYONE is a ghost and the teacher is the only haunter."
+   ],
+   "variations": {
+    "easier": "One ghost only, and a smaller play area.",
+    "harder": "Frozen ghosts must freeze mid-pose from a category: animals, monsters, dancers."
+   },
+   "safety": "Tag is touch-only, never push. Play away from walls and furniture.",
+   "tags": [
+    "holiday:halloween",
+    "theme:spooky"
+   ],
+   "copy_free": true,
+   "no_elimination": true,
+   "why_it_works": "Freeze-play mixes sprinting with stillness - short movement breaks in this format are what brain-break reviews (IJRESS) link to recharged attention.",
+   "inclusion": "A seated 'home base' role: frozen players can also be freed by a buddy calling their name from base."
+  },
+  {
+   "id": "monster-movement-dice",
+   "name": "Monster Movement Dice",
+   "tagline": "Roll the die, move like the monster: zombie shuffle, bat flap, ghost glide.",
+   "categories": [
+    "pe-movement",
+    "icebreakers"
+   ],
+   "age_min": 4,
+   "age_max": 10,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "one big dice"
+    },
+    {
+     "item": "monster-move chart (drawn on the board)"
+    }
+   ],
+   "no_prep": true,
+   "setup": "Draw the chart on the board: 1 = zombie shuffle, 2 = bat flap, 3 = ghost glide, 4 = witch swoop, 5 = mummy march, 6 = monster's choice.",
+   "steps": [
+    "Everyone stands in a circle with room to move.",
+    "Roll the big dice - the whole group moves like that monster for 30 seconds.",
+    "Roll again: new monster, new movement. Keep the energy up.",
+    "Monster's choice: the roller picks any move and everyone copies.",
+    "Cool-down roll: whatever you roll, do it in slow motion."
+   ],
+   "variations": {
+    "easier": "Roll once and move like that monster for the whole round.",
+    "harder": "Kids invent moves 7-12 on a second chart for two-dice chaos."
+   },
+   "safety": "Clear a wide circle first - flapping bats need elbow room.",
+   "tags": [
+    "holiday:halloween"
+   ],
+   "copy_free": true,
+   "no_elimination": true
+  },
+  {
+   "id": "zombie-walk-relay",
+   "name": "Zombie Walk Relay",
+   "tagline": "Each leg is a different monster walk - zombie shuffle to ghost glide.",
+   "categories": [
+    "pe-movement",
+    "team-community"
+   ],
+   "age_min": 6,
+   "age_max": 14,
+   "group_min": 8,
+   "group_max": 32,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "cones"
+    },
+    {
+     "item": "monster-walk cards (zombie, witch, bat, ghost)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Mark a there-and-back lane with cones. Deal each team four monster-walk cards in order.",
+   "steps": [
+    "Leg 1: the zombie shuffles to the cone and back - arms out, groaning.",
+    "Leg 2: the witch swoops - bent over, 'flying' low and fast.",
+    "Leg 3: the bat flaps - arms as wings, quick little steps.",
+    "Leg 4: the ghost glides - slow, silent, arms floating.",
+    "Tag the next monster with a high-five. Best monster walk wins the round - the team votes."
+   ],
+   "variations": {
+    "easier": "Two legs instead of four; walking pace for every monster.",
+    "harder": "Add a fifth mystery leg: the team invents a brand-new monster walk."
+   },
+   "safety": "Monster walks stay in the lane - no wandering zombies near other teams.",
+   "tags": [
+    "holiday:halloween",
+    "theme:spooky"
+   ],
+   "copy_free": true,
+   "no_elimination": true
+  },
+  {
+   "id": "halloween-inference-riddles",
+   "name": "Halloween Inference Riddles",
+   "tagline": "Read the riddle, cite your clue: inference practice in a witch hat.",
+   "categories": [
+    "quiet-focus",
+    "icebreakers"
+   ],
+   "age_min": 6,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 35,
+   "time_min": 10,
+   "time_max": 15,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "setup": "None - read from this bank (or make your own): 1) 'I have a face but no eyes, I glow but I'm not a lamp' (jack-o'-lantern) 2) 'I fly at night but I'm not a bird, I sleep upside down' (bat) 3) 'I'm orange, I wear no costume, kids paint my grin' (pumpkin) 4) 'I say boo but I'm not scary, I'm made of an old sheet' (ghost costume).",
+   "steps": [
+    "Read a riddle aloud - slowly, twice.",
+    "Hands up when you think you know it - but answers need a clue citation: 'I know because it says...'",
+    "The group decides: did the clue really prove it?",
+    "Kids take turns being the riddle-reader for the next round.",
+    "Lightning round: everyone writes one riddle of their own for tomorrow."
+   ],
+   "variations": {
+    "easier": "Give the answer bank up front - kids match riddles to answers.",
+    "harder": "No answer bank, and riddles must cite TWO clues instead of one."
+   },
+   "safety": "No materials, no hazards - just voices. Keep the volume neighbor-friendly during the lightning round.",
+   "tags": [
+    "holiday:halloween"
+   ],
+   "copy_free": true,
+   "why_it_works": "Inferring from clues is reading comprehension in disguise - and it's fully unplugged, the direction the Sept 2026 DonorsChoose/EdWeek teacher survey points.",
+   "inclusion": "Answers can be choral; every riddle is read twice; picture clues on the board support multilingual learners."
+  },
+  {
+   "id": "thumbprint-monsters",
+   "name": "Thumbprint Monsters",
+   "tagline": "One ink thumbprint becomes a monster: add eyes, horns, and attitude.",
+   "categories": [
+    "quiet-focus",
+    "crafts"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "washable ink pads"
+    },
+    {
+     "item": "paper"
+    },
+    {
+     "item": "fine markers"
+    },
+    {
+     "item": "wet wipes"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Set out ink pads and paper. Keep wet wipes in the middle of every table.",
+   "steps": [
+    "Press your thumb on the ink pad, then stamp it on the paper - one print per monster.",
+    "Turn the print: which way looks most like a monster body?",
+    "Add the features with fine marker: eyes, horns, fangs, arms, spots.",
+    "Give it a name and write one sentence about what it does all day.",
+    "Gallery walk: line them up and vote - spookiest, silliest, most likely to hug."
+   ],
+   "variations": {
+    "easier": "Use finger-paint dots instead of ink pads for the youngest kids.",
+    "harder": "Thumbprint monster comic: three prints, three panels, one tiny story."
+   },
+   "safety": "Washable ink only. Wipe hands before touching anything else.",
+   "tags": [
+    "holiday:halloween",
+    "theme:spooky"
+   ],
+   "why_it_works": "Low-stakes making with real materials: a Sept 2026 survey of 2,501 teachers (DonorsChoose/EdWeek) found more hands-on analog work was the most-cited classroom change this year.",
+   "inclusion": "Stamped prints need no drawing skill to start - the monster emerges from the print, not from a blank page."
+  },
+  {
+   "id": "halloween-dots-and-boxes",
+   "name": "Halloween Dots & Boxes",
+   "tagline": "The pencil-and-paper classic, Halloween edition: claim boxes, draw the face.",
+   "categories": [
+    "quiet-focus",
+    "rainy-day"
+   ],
+   "age_min": 6,
+   "age_max": 14,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 10,
+   "time_max": 20,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper"
+    },
+    {
+     "item": "pencils"
+    }
+   ],
+   "no_prep": true,
+   "setup": "None - each pair draws their own 5x5 dot grid. No printing needed.",
+   "steps": [
+    "Draw a 5x5 grid of dots on your paper.",
+    "Take turns drawing one line between two dots - horizontal or vertical.",
+    "Complete a box and it's yours: initial it AND draw a tiny pumpkin face inside.",
+    "Most boxes wins. Ties broken by silliest pumpkin face - group vote.",
+    "Rematch round: 6x6 grid, and every box needs a different face."
+   ],
+   "variations": {
+    "easier": "4x4 grid, and the teacher plays alongside the youngest kids.",
+    "harder": "Mystery grid: play on a 7x7 and track your score as a running total."
+   },
+   "safety": "Pencils stay on paper - no sword fights.",
+   "tags": [
+    "holiday:halloween"
+   ],
+   "copy_free": true,
+   "no_elimination": true
+  },
+  {
+   "id": "spiderweb-sketch-study",
+   "name": "Spiderweb Sketch Study",
+   "tagline": "Find a real web, sketch it slow, label the spokes: quiet science.",
+   "categories": [
+    "quiet-focus",
+    "stem"
+   ],
+   "age_min": 7,
+   "age_max": 14,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 30,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "paper"
+    },
+    {
+     "item": "pencils"
+    },
+    {
+     "item": "clipboards (optional)"
+    },
+    {
+     "item": "magnifiers (optional)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Scout the area ahead of time for real webs - fence corners, playground equipment, bushes. Morning dew makes them easy to spot.",
+   "steps": [
+    "Find a web and settle in - no touching, just looking.",
+    "Sketch what you see: the anchor lines, the spokes, the spiral. Slow is the whole point.",
+    "Label the parts: spokes (the straight lines), spiral (the sticky circle), anchor (where it ties off).",
+    "Watch for 5 quiet minutes: does the spider move? Does anything land?",
+    "Back inside: compare sketches - no two real webs match."
+   ],
+   "variations": {
+    "easier": "Sketch from a printed photo of a web at the table.",
+    "harder": "Measure your web's diameter and count the spokes - real field data."
+   },
+   "safety": "Look with eyes and magnifiers only - never poke a web or its spider.",
+   "tags": [
+    "season:fall",
+    "holiday:halloween",
+    "theme:spooky"
+   ],
+   "why_it_works": "Slow looking is attention training: close observation and sketching give selective attention a real workout.",
+   "inclusion": "Photo-based version works for anyone who can't get to the webs; sketching needs no art skill - labels count as success."
+  },
+  {
+   "id": "ghost-banana-pops",
+   "name": "Ghost Banana Pops",
+   "tagline": "Frozen banana ghosts on sticks - the two-ingredient Halloween treat.",
+   "categories": [
+    "holidays",
+    "crafts"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 20,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "bananas"
+    },
+    {
+     "item": "craft sticks or popsicle sticks"
+    },
+    {
+     "item": "mini chocolate chips"
+    },
+    {
+     "item": "plastic table knives"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Peel bananas and cut each in half crosswise. Set out chips in small bowls. Freeze the finished ghosts at least 2 hours before serving.",
+   "steps": [
+    "Push a craft stick into the cut end of each banana half.",
+    "Press two mini chocolate chips in for eyes - and one for the mouth.",
+    "Stand the ghosts upright in a cup and freeze until solid.",
+    "Serve straight from the freezer: cold, sweet, and not remotely scary."
+   ],
+   "variations": {
+    "easier": "Skip the sticks - banana ghost bites in a cup with a spoon.",
+    "harder": "Dip in yogurt before freezing, then add the chip faces."
+   },
+   "safety": "Check the class allergy list first (chocolate contains milk/soy). Adults handle any sharp knives; kids use plastic table knives on the soft banana. Treats are made to take home or eat at the party - not during craft time.",
+   "tags": [
+    "holiday:halloween"
+   ],
+   "inclusion": "Dairy-free chips swap in with no recipe change; kids who can't have banana make ghost cups with the same faces."
+  },
+  {
+   "id": "monster-mix-bags",
+   "name": "Monster Mix Bags",
+   "tagline": "Scoop, mix, bag: every kid builds their own Halloween trail mix.",
+   "categories": [
+    "holidays",
+    "team-community"
+   ],
+   "age_min": 4,
+   "age_max": 14,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "pretzels"
+    },
+    {
+     "item": "cereal squares"
+    },
+    {
+     "item": "raisins"
+    },
+    {
+     "item": "candy corn"
+    },
+    {
+     "item": "small paper bags"
+    },
+    {
+     "item": "scoops or cups"
+    },
+    {
+     "item": "markers"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Pour each ingredient into its own bowl with a scoop. Set out one bag per kid plus a marker for decorating.",
+   "steps": [
+    "Decorate your bag first: monster face, your name, the works.",
+    "Scoop one scoop of each ingredient into your bag - your mix, your rules.",
+    "Add the candy corn last - it's the treasure on top.",
+    "Seal the bag with a fold and a sticker. Shake it like a maraca.",
+    "Monster mix taste test: trade one handful with a neighbor and compare."
+   ],
+   "variations": {
+    "easier": "Teacher pre-portions the ingredients - kids just decorate and shake.",
+    "harder": "Write the 'recipe' on the bag: ingredient amounts as a real recipe card."
+   },
+   "safety": "Check the class allergy list BEFORE buying anything - nuts, gluten, and dairy are all common in trail mix. Keep ingredient labels out so kids can read them. No double-dipping scoops.",
+   "tags": [
+    "holiday:halloween"
+   ],
+   "inclusion": "Allergy-safe kids get the same job with safe ingredients - nobody sits out the assembly line."
+  },
+  {
+   "id": "candy-apple-slices",
+   "name": "Candy Apple Slices",
+   "tagline": "All the caramel-apple joy, none of the whole-apple wrestling: slice bar.",
+   "categories": [
+    "holidays",
+    "seasons"
+   ],
+   "age_min": 5,
+   "age_max": 14,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 30,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "apples"
+    },
+    {
+     "item": "caramel dip"
+    },
+    {
+     "item": "toppings: mini chips, sprinkles, crushed pretzels"
+    },
+    {
+     "item": "paper plates"
+    },
+    {
+     "item": "popsicle sticks (optional)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "An adult slices the apples into thick wedges just before serving so they stay crisp. Set toppings in bowls with spoons.",
+   "steps": [
+    "Skewer a slice on a popsicle stick - instant handle.",
+    "Dip or drizzle with caramel - thin coat sticks best.",
+    "Roll the caramel side through your pick of toppings.",
+    "Stand slices upright on a plate: a whole candy-apple garden.",
+    "Vote: which topping combo wins the class taste test?"
+   ],
+   "variations": {
+    "easier": "Skip the sticks - apple slices with caramel for dipping, fork-style.",
+    "harder": "Blind taste test: three apple varieties, sliced - graph the class favorite."
+   },
+   "safety": "Only an adult uses a sharp knife - apples are hard and round. Check the allergy list (milk in caramel, gluten in pretzels). Slices are eaten at the party, not saved.",
+   "tags": [
+    "season:fall",
+    "holiday:halloween"
+   ],
+   "inclusion": "Topping bowls labeled; kids with dairy/gluten limits build from the safe bowls - same bar, same fun."
+  },
+  {
+   "id": "witches-brew-punch",
+   "name": "Witches' Brew Punch",
+   "tagline": "No-cook punch mixing: the class brews a cauldron of something delicious.",
+   "categories": [
+    "holidays",
+    "team-community"
+   ],
+   "age_min": 4,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 20,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "apple cider or juice"
+    },
+    {
+     "item": "ginger ale"
+    },
+    {
+     "item": "orange sherbet"
+    },
+    {
+     "item": "large punch bowl or pot"
+    },
+    {
+     "item": "ladle and cups"
+    },
+    {
+     "item": "gummy worms"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Chill everything ahead of time. Set the 'cauldron' (punch bowl) where everyone can reach with the ladle.",
+   "steps": [
+    "Pour the cider into the cauldron - two big glugs per kid, taking turns.",
+    "Add ginger ale: pour it down the side so it stays fizzy.",
+    "Scoop in sherbet - it melts into spooky green-orange swirls.",
+    "Stir three times clockwise while everyone chants the magic words.",
+    "Ladle into cups, drop in one gummy worm each, and toast the brew."
+   ],
+   "variations": {
+    "easier": "Teacher mixes; kids do the chanting and the gummy-worm drop.",
+    "harder": "Potion lab: small cups, three juices, kids invent and name their own brew."
+   },
+   "safety": "Check the allergy list (milk in sherbet). One ladle, one server - no hands in the brew, no double-dipping cups.",
+   "tags": [
+    "holiday:halloween",
+    "theme:spooky"
+   ],
+   "inclusion": "Sherbet-free version brews alongside with juice + ginger ale only - same cauldron ritual."
+  },
+  {
+   "id": "halloween-countdown-calendar",
+   "name": "Halloween Countdown Calendar",
+   "tagline": "Thirteen doors, thirteen mini-activities: the class counts down to the 31st.",
+   "categories": [
+    "holidays",
+    "quiet-focus"
+   ],
+   "age_min": 5,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 35,
+   "time_min": 20,
+   "time_max": 30,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "large paper or poster board"
+    },
+    {
+     "item": "markers"
+    },
+    {
+     "item": "sticky notes"
+    },
+    {
+     "item": "tape"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Draw a 13-door grid on the poster board (or tape up 13 folded paper 'doors'). Number them 13 down to 1.",
+   "steps": [
+    "Brainstorm as a class: 13 tiny Halloween activities that fit in 10 minutes - a riddle, a drawing, a chant, a stretch.",
+    "Write one activity per sticky note and hide it behind each door.",
+    "Every day from Oct 19 to Oct 31, open the next door together.",
+    "Do the mini-activity on the spot - the calendar IS the plan.",
+    "Door 1 (Oct 31): the class votes on the grand finale activity."
+   ],
+   "variations": {
+    "easier": "Teacher pre-fills the doors; the class just opens and does.",
+    "harder": "Each table designs its own 13-day calendar for a different theme."
+   },
+   "safety": "Sticky notes only - no cutting doors for little kids; lift the flap.",
+   "tags": [
+    "season:fall",
+    "holiday:halloween"
+   ],
+   "copy_free": true,
+   "inclusion": "Every door's activity has a seated version; the class picks activities everyone can do."
+  },
+  {
+   "id": "monster-name-alliteration-circle",
+   "name": "Monster Name Alliteration",
+   "tagline": "'Marvelous Mummy Maya' - alliterative monster names around the circle.",
+   "categories": [
+    "icebreakers",
+    "holidays"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 35,
+   "time_min": 10,
+   "time_max": 15,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "setup": "None - just a circle and imaginations.",
+   "steps": [
+    "Go around the circle: each kid invents an alliterative monster name - 'Jolly Jack-o'-lantern Jamal,' 'Silly Spider Sofia.'",
+    "Say it with a monster move - a stomp, a flap, a wiggle.",
+    "The whole circle repeats each name back WITH the move.",
+    "Round two: string them into a monster roll-call chant, faster each time.",
+    "Finale: the class votes for the most marvelous monster name."
+   ],
+   "variations": {
+    "easier": "Kids can pick a monster name instead of using their own name.",
+    "harder": "Write the names on the board as they go - read the roll call tomorrow."
+   },
+   "safety": "Keep moves in your own space - no touching other monsters.",
+   "tags": [
+    "holiday:halloween"
+   ],
+   "copy_free": true,
+   "no_elimination": true,
+   "inclusion": "Passing is always fine - and anyone can borrow a monster name instead of their own."
+  },
+  {
+   "id": "costume-guess-who",
+   "name": "Costume Guess Who",
+   "tagline": "Twenty questions, one costume: can the class guess what you are?",
+   "categories": [
+    "icebreakers",
+    "holidays"
+   ],
+   "age_min": 6,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 35,
+   "time_min": 10,
+   "time_max": 20,
+   "location": [
+    "indoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "setup": "None. Kids with costumes wear them; kids without describe an imaginary one.",
+   "steps": [
+    "One volunteer stands up front - costume on, or imaginary costume described.",
+    "The class asks yes-or-no questions only: 'Are you an animal?' 'Do you fly?'",
+    "The volunteer answers truthfully - yes, no, or 'sort of.'",
+    "Twenty questions max: then everyone shouts their guess together.",
+    "New volunteer, new costume. Keep a tally of stumpers vs. solvers."
+   ],
+   "variations": {
+    "easier": "Ten questions max, and the teacher helps phrase the first few.",
+    "harder": "Mystery guest round: the teacher describes a staff member's costume."
+   },
+   "safety": "Imaginary costumes count fully - nobody needs a real costume to play.",
+   "tags": [
+    "holiday:halloween",
+    "theme:spooky"
+   ],
+   "copy_free": true,
+   "no_elimination": true,
+   "inclusion": "Kids without costumes describe an imaginary one - imagination counts the same as fabric."
+  },
+  {
+   "id": "halloween-this-or-that",
+   "name": "Halloween This-or-That",
+   "tagline": "Candy corn: love it or leave it? Stand on your side - then defend it.",
+   "categories": [
+    "icebreakers",
+    "pe-movement"
+   ],
+   "age_min": 5,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 40,
+   "time_min": 5,
+   "time_max": 10,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "setup": "None - just room to stand on two sides.",
+   "steps": [
+    "Call out a Halloween either-or: 'Candy corn: love it or leave it?' 'Scary movies or funny costumes?'",
+    "Kids move to the LOVE IT side or the LEAVE IT side - no middle.",
+    "Each side picks a spokesperson for a 10-second defense.",
+    "Switch sides if you got convinced - movers get a cheer.",
+    "Rapid round: five quick ones, no defenses, just move."
+   ],
+   "variations": {
+    "easier": "Kids point instead of moving - whole game from their seats.",
+    "harder": "Kids write the next five questions; the teacher just reads them."
+   },
+   "safety": "Walking feet between sides - no charging the other team.",
+   "tags": [
+    "holiday:halloween"
+   ],
+   "copy_free": true,
+   "no_elimination": true
+  },
+  {
+   "id": "monster-stomp-rhythms",
+   "name": "Monster Stomp Rhythms",
+   "tagline": "Stomp-clap patterns for every monster: learn it, layer it, perform it.",
+   "categories": [
+    "music-rhythm",
+    "pe-movement"
+   ],
+   "age_min": 5,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 35,
+   "time_min": 10,
+   "time_max": 20,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "setup": "None - bodies are the instruments.",
+   "steps": [
+    "Teach the zombie pattern: STOMP-stomp-clap, STOMP-stomp-clap.",
+    "Add the witch pattern: clap-clap-STOMP-stomp - half the group takes each.",
+    "Layer them: zombies and witches perform at the same time. Listen for the groove.",
+    "Monster solo round: one kid invents a 4-beat pattern, everyone copies.",
+    "Finale: the class monster orchestra - every pattern at once, big finish."
+   ],
+   "variations": {
+    "easier": "One pattern only, seated, hands on knees for the stomp.",
+    "harder": "Compose a full monster symphony: verse, chorus, and a spooky bridge."
+   },
+   "safety": "Stomp on the floor, not on feet. Keep the volume neighbor-friendly.",
+   "tags": [
+    "holiday:halloween",
+    "theme:spooky"
+   ],
+   "copy_free": true,
+   "no_elimination": true,
+   "why_it_works": "Rhythm plus movement in one: patterned stomping gives the wiggles a job, in the under-10-minute format brain-break research (IJRESS) ties to restored focus.",
+   "inclusion": "Every pattern has a seated version - stomps become knee pats."
+  },
+  {
+   "id": "trick-or-treat-chant-parade",
+   "name": "Trick-or-Treat Chant Parade",
+   "tagline": "A marching chant for the big night: rhythm, rhyme, and doorbell timing.",
+   "categories": [
+    "music-rhythm",
+    "outdoor"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 6,
+   "group_max": 40,
+   "time_min": 10,
+   "time_max": 20,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "simple rhythm instruments (shakers, sticks) - optional"
+    }
+   ],
+   "no_prep": true,
+   "setup": "None required - voices and feet carry it.",
+   "steps": [
+    "Teach the chant, call-and-response style: 'Trick or treat! (Trick or treat!) Smell my feet! (Smell my feet!)'",
+    "Add the march: step-clap-step-clap under the words.",
+    "Layer instruments if you have them: shakers on the beat, sticks on the off-beat.",
+    "Parade formation: march the hallway or playground chanting in time.",
+    "Grand finale: chant it at double speed, then freeze on the last word."
+   ],
+   "variations": {
+    "easier": "Chant seated in a circle - marching optional.",
+    "harder": "The class writes verse two: new rhymes for their own neighborhood."
+   },
+   "safety": "Marching stays in line - no breaking formation near stairs or doors.",
+   "tags": [
+    "holiday:halloween"
+   ],
+   "copy_free": true,
+   "no_elimination": true
+  },
+  {
+   "id": "haunted-house-soundtrack",
+   "name": "Haunted House Soundtrack",
+   "tagline": "Compose the soundscape for a haunted tour: creaks, whispers, and one big scare.",
+   "categories": [
+    "music-rhythm",
+    "team-community"
+   ],
+   "age_min": 7,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 25,
+   "time_max": 45,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "classroom instruments or found sounds"
+    },
+    {
+     "item": "paper for storyboarding"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Gather instruments and found-sound makers: rice in a bottle (rain), crumpled paper (fire), a ruler on a desk edge (boing).",
+   "steps": [
+    "Storyboard a 2-minute haunted house tour: the creaky gate, the dark hallway, the surprise room.",
+    "Assign sounds: each group scores one scene with instruments and voices.",
+    "Rehearse the order - scenes must flow without talking in between.",
+    "Perform it for another class: they walk the 'tour' (a taped path) while you play.",
+    "Audience rates each scene: spooky-fun or needs-more-creak? Revise once."
+   ],
+   "variations": {
+    "easier": "Score one scene instead of three; teacher narrates the tour.",
+    "harder": "Record the soundtrack and play it over the real haunted hallway build."
+   },
+   "safety": "Found sounds stay gentle - no sudden screams near sensitive ears. Agree on the scare level first.",
+   "tags": [
+    "holiday:halloween",
+    "theme:spooky"
+   ],
+   "inclusion": "Every role has a quiet version - whisperers and shakers matter as much as drummers."
+  },
+  {
+   "id": "haunted-hallway-build",
+   "name": "Haunted Hallway Build",
+   "tagline": "Teams transform one hallway into a silly-spooky walkthrough - designed by kids.",
+   "categories": [
+    "team-community",
+    "crafts"
+   ],
+   "age_min": 6,
+   "age_max": 14,
+   "group_min": 8,
+   "group_max": 40,
+   "time_min": 40,
+   "time_max": 60,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "black paper or tablecloths"
+    },
+    {
+     "item": "tape"
+    },
+    {
+     "item": "flashlights or string lights"
+    },
+    {
+     "item": "cardboard boxes"
+    },
+    {
+     "item": "craft supplies"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Get permission for the hallway first. Assign each team one 'scare station' along the route, with a clear entrance and exit.",
+   "steps": [
+    "Teams blueprint their station: silly scare, secret passage, marked exit - nothing actually scary.",
+    "Build it: black-paper walls, cardboard tunnels, flashlight spotlights.",
+    "Safety walk: every builder walks the whole route checking for trip hazards and dead ends.",
+    "Open the hallway: other classes tour in small groups with a guide.",
+    "Deconstruct together - everything sorted for reuse or recycling."
+   ],
+   "variations": {
+    "easier": "One station per team in the classroom instead of a full hallway.",
+    "harder": "Add a storyteller guide who narrates the tour with a script."
+   },
+   "safety": "Nothing blocks fire exits or doors - ever. Tape, never nails. An adult checks every station before tours open.",
+   "tags": [
+    "holiday:halloween",
+    "theme:spooky"
+   ],
+   "inclusion": "Every station has a lights-on version; tour guides ask each group's scare comfort level first."
+  },
+  {
+   "id": "costume-swap-shop",
+   "name": "Costume Swap Shop",
+   "tagline": "Outgrown costumes find new kids: the community swap, run like a real shop.",
+   "categories": [
+    "team-community",
+    "holidays"
+   ],
+   "age_min": 4,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 35,
+   "time_min": 30,
+   "time_max": 45,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "tables"
+    },
+    {
+     "item": "hangers or bins"
+    },
+    {
+     "item": "paper tags and markers"
+    },
+    {
+     "item": "mirror (optional)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "A week ahead: invite families to donate clean, outgrown costumes. Sort donations by size on tables.",
+   "steps": [
+    "Tag every costume with its size and a one-line description.",
+    "Set up shop zones: trying-on corner, mirror station, checkout table.",
+    "Shoppers 'buy' with kindness tokens - everyone gets the same number.",
+    "Fitting-room helpers give honest, kind opinions.",
+    "Leftovers get bagged for next year or donated onward - nothing wasted."
+   ],
+   "variations": {
+    "easier": "Classroom-only swap: bring one, take one, no tokens.",
+    "harder": "Add a repair station: simple fixes (seams, buttons) before costumes go out."
+   },
+   "safety": "All costumes washed before the swap. Private trying-on space for kids who want it.",
+   "tags": [
+    "holiday:halloween"
+   ],
+   "copy_free": true
+  },
+  {
+   "id": "kindness-pumpkins",
+   "name": "Kindness Pumpkins",
+   "tagline": "Paint kindness pumpkins for neighbors and staff - trick-or-treat in reverse.",
+   "categories": [
+    "team-community",
+    "crafts"
+   ],
+   "age_min": 4,
+   "age_max": 14,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 35,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "mini pumpkins (one per recipient)"
+    },
+    {
+     "item": "acrylic paint pens"
+    },
+    {
+     "item": "newspaper"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Cover tables with newspaper. Decide together who gets the pumpkins: neighbors, custodians, the front office.",
+   "steps": [
+    "Paint each pumpkin with a kind message or a cheerful face - no scary faces on these.",
+    "Add the giver's first name on the bottom.",
+    "Plan the delivery route: pairs, with an adult, during the day.",
+    "Deliver with the message: 'Thanks for being part of our neighborhood.'",
+    "Back in class: share one reaction story each."
+   ],
+   "variations": {
+    "easier": "Paint paper pumpkins instead - same messages, zero cost.",
+    "harder": "Attach a handwritten thank-you note to every pumpkin."
+   },
+   "safety": "Paint pens, not sharp carving tools - no knives at all. Wash hands after painting; pumpkins are gifts, not snacks.",
+   "tags": [
+    "season:fall",
+    "holiday:halloween"
+   ]
+  },
+  {
+   "id": "pumpkin-bowling",
+   "name": "Pumpkin Bowling",
+   "tagline": "Mini pumpkins vs. bottle pins: the indoor bowling alley builds itself.",
+   "categories": [
+    "rainy-day",
+    "pe-movement"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "small round pumpkins or gourds"
+    },
+    {
+     "item": "empty plastic bottles (10)"
+    },
+    {
+     "item": "water or sand to weight bottles"
+    },
+    {
+     "item": "tape for the lane"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Fill bottles one-third with water and cap them tight - these are the pins. Tape a lane on the floor, pins in a triangle at the end.",
+   "steps": [
+    "Set the pins: 10 in a triangle, just like real bowling.",
+    "Roll (never throw) your pumpkin down the lane - two rolls per turn.",
+    "Score it: one point per pin, two turns per frame, five frames.",
+    "Reset crew: knocked pins get stood back up by the next bowler.",
+    "Championship round: winners bowl left-handed. Or blindfolded. (Not really blindfolded.)"
+   ],
+   "variations": {
+    "easier": "Bowl sitting down, shorter lane, bottles unweighted.",
+    "harder": "Design trick lanes: a curve of tape, a ramp made of books."
+   },
+   "safety": "Roll, don't throw - pumpkins stay on the floor. Mop up bottle leaks fast so nobody slips.",
+   "tags": [
+    "holiday:halloween"
+   ],
+   "no_elimination": true
+  },
+  {
+   "id": "spiderweb-yarn-maze",
+   "name": "Spiderweb Yarn Maze",
+   "tagline": "Crawl the yarn maze without touching a strand: the quietest challenge indoors.",
+   "categories": [
+    "rainy-day",
+    "team-community"
+   ],
+   "age_min": 5,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 35,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "balls of yarn or string"
+    },
+    {
+     "item": "tape"
+    },
+    {
+     "item": "small prizes or tokens (optional)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Pick a hallway or a big room. Tape yarn ends to walls, chairs, and door frames - crisscross at different heights. Leave one clear path per kid.",
+   "steps": [
+    "Study the maze first: where's your route? Plan it before you move.",
+    "Crawl, duck, and step through - touching a strand means back to start.",
+    "Spotters watch and call 'strand!' - honest spotting keeps it fair.",
+    "Everyone who finishes gets a token - no racing, it's a challenge.",
+    "Rebuild round: the finishers design a harder maze for the next group."
+   ],
+   "variations": {
+    "easier": "High strands only - duck under, no crawling needed.",
+    "harder": "Timed runs for the brave: fastest clean run wins."
+   },
+   "safety": "Yarn stays below shoulder height and off necks - step over or duck under, never around. Clear path to the door stays open.",
+   "tags": [
+    "holiday:halloween",
+    "theme:spooky"
+   ],
+   "no_elimination": true
+  },
+  {
+   "id": "haunted-lantern-tour",
+   "name": "Haunted Lantern Tour",
+   "tagline": "Lights low, lanterns up: a guided tour of the room's 'haunted' corners.",
+   "categories": [
+    "rainy-day",
+    "quiet-focus"
+   ],
+   "age_min": 6,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "flashlights or paper lanterns"
+    },
+    {
+     "item": "sticky notes"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Before the tour, kids hide sticky-note 'haunts' around the room: a creaky corner, a mysterious stain, a humming vent.",
+   "steps": [
+    "Dim the lights - lanterns on. Warn the group first: lights going low.",
+    "The guide leads the tour, stopping at each sticky-note haunt.",
+    "At each stop, the hider tells the haunt's silly backstory - one minute max.",
+    "Tourists rate each haunt: spooky-fun or needs-more-story?",
+    "Lights up. Vote for the best backstory - the winner guides tomorrow."
+   ],
+   "variations": {
+    "easier": "Lights stay on; the 'tour' is a walk-and-tell instead.",
+    "harder": "Tour the whole school after hours (with permission): the ultimate edition."
+   },
+   "safety": "Warn before dimming - anyone who wants light keeps a buddy lantern. Walk, don't run, in low light; nothing blocking the path.",
+   "tags": [
+    "holiday:halloween",
+    "theme:spooky"
+   ],
+   "inclusion": "The lights-on version runs first for anyone who prefers it; passing on any stop is always fine."
+  },
+  {
+   "id": "pumpkin-patch-scavenger-hunt",
+   "name": "Pumpkin Patch Scavenger Hunt",
+   "tagline": "Something orange, something round like the moon, one real spider web: go.",
+   "categories": [
+    "outdoor",
+    "seasons"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 30,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "scavenger cards (one per pair)"
+    },
+    {
+     "item": "pencils"
+    },
+    {
+     "item": "bags for finds"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Write the hunt list on cards: something orange, something round like the moon, a real spider web (look, don't touch), a leaf bigger than your hand, something that crunches, the smallest pumpkin you can find.",
+   "steps": [
+    "Pairs get a card, a pencil, and a bag - and the boundaries.",
+    "Find each item: check it off, or collect it if it's loose and allowed.",
+    "The spider web is look-only - sketch it instead of taking it.",
+    "Back at base: pairs show their finds and tell the story of the hardest one.",
+    "Bonus round: who found the funniest-shaped leaf? Group vote."
+   ],
+   "variations": {
+    "easier": "Picture cards instead of word cards for the youngest hunters.",
+    "harder": "Make it a photo hunt: one photo per find, compiled into a class slideshow."
+   },
+   "safety": "Set clear boundaries before anyone moves. Look-don't-touch for webs, mushrooms, and anything unknown.",
+   "tags": [
+    "season:fall",
+    "holiday:halloween"
+   ]
+  },
+  {
+   "id": "leaf-pile-monster-dig",
+   "name": "Leaf Pile Monster Dig",
+   "tagline": "Bury treasure in the leaf pile, dig like a monster: the fall sensory classic.",
+   "categories": [
+    "outdoor",
+    "seasons"
+   ],
+   "age_min": 3,
+   "age_max": 10,
+   "group_min": 2,
+   "group_max": 25,
+   "time_min": 20,
+   "time_max": 35,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "a big leaf pile"
+    },
+    {
+     "item": "small treasures (painted rocks, plastic bugs)"
+    },
+    {
+     "item": "buckets"
+    },
+    {
+     "item": "gloves (optional)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Rake a big leaf pile (or visit the park's). Hide 20-30 small treasures inside while kids look away.",
+   "steps": [
+    "Monster hands on: dig, toss, and burrow through the leaves.",
+    "Found treasure goes in your bucket - count as you go.",
+    "No guarding: if you see someone else's treasure spot, digging there is fair game.",
+    "Re-hide round: kids bury the treasures for the next group.",
+    "Final jump: everyone leaps in together for the group photo."
+   ],
+   "variations": {
+    "easier": "Shallow pile, treasures half-buried and visible.",
+    "harder": "Treasure map round: draw a map of where you hid yours, trade maps."
+   },
+   "safety": "Check the pile for sticks and sharp bits before digging starts. Gloves for sensitive hands; no throwing leaves at faces.",
+   "tags": [
+    "season:fall",
+    "holiday:halloween"
+   ]
+  },
+  {
+   "id": "ghost-balloon-stomp",
+   "name": "Ghost Balloon Stomp",
+   "tagline": "Ghost faces on ankles: stomp others' ghosts while guarding your own.",
+   "categories": [
+    "outdoor",
+    "pe-movement"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 6,
+   "group_max": 30,
+   "time_min": 10,
+   "time_max": 20,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "balloons (2 per kid)"
+    },
+    {
+     "item": "string"
+    },
+    {
+     "item": "markers"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Draw ghost faces on inflated balloons. Tie one to each kid's ankle with a foot of string - two per kid for a second life.",
+   "steps": [
+    "Spread out - stomping needs space.",
+    "On GO: try to pop others' ankle ghosts by stomping them.",
+    "Guard your own: hop, dodge, hide behind friends.",
+    "Popped both? Grab a 'ghost buddy' role - you call out incoming stompers.",
+    "Last ghost floating wins the round. New balloons, new round."
+   ],
+   "variations": {
+    "easier": "One balloon each, and stomping is walking-speed only.",
+    "harder": "Team version: protect your team's ghosts, hunt the other team's."
+   },
+   "safety": "Pop means pieces: keep balloons away from mouths, and pick up EVERY popped piece right away - balloon pieces are a choking hazard.",
+   "tags": [
+    "holiday:halloween",
+    "theme:spooky"
+   ]
+  },
+  {
+   "id": "graveyard-number-dash",
+   "name": "Graveyard Number Dash",
+   "tagline": "Paper tombstones, called-out math: dash to the right answer.",
+   "categories": [
+    "outdoor",
+    "stem"
+   ],
+   "age_min": 6,
+   "age_max": 12,
+   "group_min": 6,
+   "group_max": 32,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "paper tombstones (numbered 1-20)"
+    },
+    {
+     "item": "tape or stakes"
+    },
+    {
+     "item": "chalk"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Number paper tombstones 1-20 and stake them around the field, numbers facing in. Mark a start line with chalk.",
+   "steps": [
+    "Everyone lines up at the start line - tombstones all around.",
+    "The caller shouts a math problem: '7 + 5!'",
+    "Dash to the tombstone with the answer and tap it - first tap wins the point.",
+    "Wrong tombstone? Back to the line, no point - but no elimination.",
+    "Caller rotates every 5 problems so everyone gets to call."
+   ],
+   "variations": {
+    "easier": "Tombstones 1-10 only, and walk-dash instead of run-dash.",
+    "harder": "Two-step problems: 'double 6, minus 2' - dash to 10."
+   },
+   "safety": "Dash in your own lane - no cutting across other runners. Tombstones staked flat so nobody trips.",
+   "tags": [
+    "holiday:halloween",
+    "theme:spooky"
+   ],
+   "no_elimination": true
+  },
+  {
+   "id": "harvest-moon-journal",
+   "name": "Harvest Moon Journal",
+   "tagline": "Watch the October moon change night by night: a real sky journal.",
+   "categories": [
+    "seasons",
+    "quiet-focus"
+   ],
+   "age_min": 7,
+   "age_max": 14,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 10,
+   "time_max": 15,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "paper"
+    },
+    {
+     "item": "pencils"
+    },
+    {
+     "item": "moon-phase chart (drawn on the board)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Draw the 8 moon phases on the board as reference. Each kid gets a journal page: one circle per night for two weeks.",
+   "steps": [
+    "Each night (or each class day), sketch the moon's shape in the next circle.",
+    "Note the date and one word about the sky: clear, cloudy, hiding.",
+    "After a week, line up your circles: can you see the pattern growing?",
+    "Compare with the board chart: which phase are we in today?",
+    "Harvest moon night: the class watches together and sketches the big one."
+   ],
+   "variations": {
+    "easier": "Track just 5 nights instead of 14.",
+    "harder": "Predict the next full moon's date from your journal - then check."
+   },
+   "safety": "Moon-watching happens with families at home; in class, sketch from memory or photos. Never stare at the sun looking for the moon.",
+   "tags": [
+    "season:fall",
+    "holiday:halloween"
+   ],
+   "copy_free": true
+  },
+  {
+   "id": "pumpkin-life-cycle-wheel",
+   "name": "Pumpkin Life Cycle Wheel",
+   "tagline": "Spin the paper-plate wheel: seed, sprout, vine, flower, pumpkin.",
+   "categories": [
+    "seasons",
+    "stem"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 35,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper plates (2 per kid)"
+    },
+    {
+     "item": "brass fasteners"
+    },
+    {
+     "item": "crayons or markers"
+    },
+    {
+     "item": "scissors"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Cut a wedge window out of the top plate. Kids will draw the 5 stages around the bottom plate.",
+   "steps": [
+    "Draw the life cycle around the bottom plate: seed, sprout, vine, flower, green pumpkin, orange pumpkin.",
+    "Label each stage in your own words.",
+    "Fasten the plates together in the center - spin to reveal each stage through the window.",
+    "Quiz a partner: spin to a random stage, name what comes next.",
+    "Hang the wheels up: the whole class life cycle, spinning."
+   ],
+   "variations": {
+    "easier": "Three stages instead of five: seed, vine, pumpkin.",
+    "harder": "Add the real timeline: how many days does each stage take?"
+   },
+   "safety": "Brass fasteners are pointy - teacher pokes the center holes.",
+   "tags": [
+    "season:fall",
+    "holiday:halloween"
+   ]
+  },
+  {
+   "id": "acorn-cap-witches",
+   "name": "Acorn Cap Witches",
+   "tagline": "Acorn caps, paint, and pipe cleaners: the tiniest witches in the Vault.",
+   "categories": [
+    "seasons",
+    "crafts"
+   ],
+   "age_min": 4,
+   "age_max": 10,
+   "group_min": 2,
+   "group_max": 25,
+   "time_min": 20,
+   "time_max": 30,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "acorn caps"
+    },
+    {
+     "item": "small wooden beads or air-dry clay"
+    },
+    {
+     "item": "paint pens"
+    },
+    {
+     "item": "black paper triangles"
+    },
+    {
+     "item": "glue"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Collect acorn caps ahead of time (or buy craft ones). Set out beads for heads and paper triangles for hats.",
+   "steps": [
+    "Glue a bead into an acorn cap - the cap becomes the witch's dress.",
+    "Paint a tiny face on the bead: eyes, smile, maybe a wart.",
+    "Glue on the black paper triangle hat - every witch needs a hat.",
+    "Add a pipe-cleaner broomstick if you're feeling fancy.",
+    "Line up the coven: a whole shelf of tiny witches, none taller than your thumb."
+   ],
+   "variations": {
+    "easier": "Skip the broomstick; hat and face is plenty.",
+    "harder": "Build the whole scene: a matchbox house for your witch to haunt."
+   },
+   "safety": "Acorn caps are small - keep them out of mouths for the youngest kids.",
+   "tags": [
+    "season:fall",
+    "holiday:halloween"
+   ]
   }
  ],
- "count": 415,
+ "count": 455,
  "updated": "2026-10-12"
 }

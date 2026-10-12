@@ -663,6 +663,62 @@
      "note": "The Vault's gratitude classic — every thankful thought becomes a leaf."
     }
    ]
+  },
+  {
+   "id": "halloween-week",
+   "title": "Halloween week",
+   "glyph": "🎃",
+   "when_to_use": "October 31 is coming and the class can feel it. Twelve picks that run as a countdown to Halloween - one a day, or a full party-week plan.",
+   "picks": [
+    {
+     "id": "halloween-countdown-calendar",
+     "note": "The spine of the week: thirteen doors, thirteen mini-activities, one opened daily until the 31st."
+    },
+    {
+     "id": "roll-a-monster-dice-draw",
+     "note": "Every monster comes out different - the dice-draw craft that starts every Halloween week right."
+    },
+    {
+     "id": "halloween-inference-riddles",
+     "note": "Zero-prep inference practice in a witch hat - cite your clue or it doesn't count."
+    },
+    {
+     "id": "glow-stick-temperature-lab",
+     "note": "The not-too-spooky science anchor: same glow sticks, three temperatures, real data."
+    },
+    {
+     "id": "witch-broomstick-relay",
+     "note": "Pool-noodle broomsticks, full-speed relay - the wiggles-burner of the pack."
+    },
+    {
+     "id": "pumpkin-bowling",
+     "note": "Mini pumpkins vs. bottle pins: the rainy-day insurance policy."
+    },
+    {
+     "id": "ghost-banana-pops",
+     "note": "Two-ingredient frozen ghosts - the treat activity that needs no oven."
+    },
+    {
+     "id": "costume-swap-shop",
+     "note": "Outgrown costumes find new kids - the community-minded centerpiece."
+    },
+    {
+     "id": "kindness-pumpkins",
+     "note": "Paint them kind, deliver them in pairs - trick-or-treating in reverse."
+    },
+    {
+     "id": "teal-pumpkin-project",
+     "note": "The Vault's allergy-aware must-do - teal pumpkin, non-food treat box, Halloween for every kid."
+    },
+    {
+     "id": "monster-mash-dance",
+     "note": "Freeze in your spookiest pose when the music stops - the party classic."
+    },
+    {
+     "id": "marigold-cempasuchil-flowers",
+     "note": "A respectful Dia de los Muertos craft about remembrance - learning, not dressing up."
+    }
+   ]
   }
  ]
 }
