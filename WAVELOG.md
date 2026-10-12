@@ -2,6 +2,24 @@
 
 Running record of build waves. Newest first.
 
+## Wave 7 — 2026-10-11 — Print + share (interactive tools wave)
+
+**What shipped:**
+- **Printable cards, polished:** every `activity/<id>.html` now prints with a print-only deep-link footer ("Full activity card — <URL>"), a "🔗 Copy card link" button (clipboard + fallback, `Copied ✓` status), and the existing "🖨️ Print this card" affordance. `.print-only` utility added; `break-inside: avoid` kept.
+- **"Print my week" card deck:** planner generates a print-only deck — one card per scheduled activity (day/slot, title, ages/group/time/prep/materials/steps facts, materials list, safety, deep-link URL), one per printed page (`break-before: page`). The compact on-screen grid is screen-only in print.
+- **"📋 Copy my week":** shareable text export — day/slot, name, facts, deep-link URL per activity, for pasting into email/newsletters (clipboard + textarea fallback).
+- **"📋 Copy this collection":** browse page copies the current filtered collection (filter description + name/facts/deep link per card). Single-tag views get a true deep link (`index.html?tag=<tag>`); richer mixes link `index.html` with the filter description.
+- **"📋 Copy party plan":** full text run sheet — stations with card links, timed rotation, setup checklist, closing.
+
+**Validation (wave 7):**
+- `scripts/build.py`: BUILD OK — 238 activities, 238 pages rendered, 11 categories, 0 dupes
+- `scripts/check_api.py`: ALL CHECKS PASSED (schema, counts, vocabulary, 3 workflows, link check 243 pages 0 broken, llms.txt links resolve)
+- `node --check` assets/app.js, planner.js, party.js, sub.js: pass
+- Print CSS reviewed by hand (no headless browser on this VM): `.print-only` hidden on screen / block in print, deck pagination, print URL footers; no animations in print styles
+- `data/activities.json` untouched — validator vocabulary untouched
+
+**Wave 6 push resolution:** wave 6 local commit `06daa8b` pushed via `gh-push.py` on retry (connection flapping: `RemoteDisconnected` on tree GET + blob POSTs across 3 attempts) — remote commit `72c8e163d1656bfdb4cdf2e4f42c9b1190af095f`, 53 files. Verified via GitHub API: remote tree contains all 10 `activity/*winter*.html` files.
+
 ## Wave 6 — 2026-10-11 — Winter/holiday seasonal pack (+25 → 238)
 
 **What shipped:**
@@ -187,6 +205,7 @@ index, planner, sub, and all activity pages; `sub.html` added to sitemap.xml and
 - `node --check assets/app.js assets/planner.js`: pass
 - Link check: 179 pages, 0 broken
 - api/v1/activities.json: 176, all ids unique
+
 
 ## Wave 2c — 2026-10-11 — Merged parallel chunk7b (+12 → 166)
 

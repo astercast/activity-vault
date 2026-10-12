@@ -80,9 +80,12 @@
     var note = document.getElementById('plan-note');
     out.innerHTML = '';
     note.textContent = '';
+    state.plan = [];
 
     if (!pool.length) {
       note.textContent = 'No activities match those constraints — try loosening them.';
+      document.getElementById('plan-actions').hidden = true;
+      buildPrintDeck();
       return;
     }
 
@@ -98,10 +101,12 @@
       var card = el('section', 'day-card');
       card.appendChild(el('h3', null, day));
       var dayCats = [];
+      var dayPlan = { day: day, slots: [] };
       for (var s = 0; s < opts.slots; s++) {
         var a = pick(pool, usedIds, weekCats.concat(dayCats), opts);
         var slot = el('div', 'slot');
         slot.appendChild(el('div', 'slot-time', 'Slot ' + (s + 1)));
+        var slotPlan = { slot: s + 1, name: null, id: null, a: null };
         if (a) {
           var nm = el('div', 'slot-name');
           var link = el('a', null, a.name);
@@ -110,6 +115,9 @@
           slot.appendChild(nm);
           slot.appendChild(el('p', 'slot-why', whyFits(a, opts)));
           if (usedIds.indexOf(a.id) === -1 || !opts.allowRepeats) usedIds.push(a.id);
+          slotPlan.name = a.name;
+          slotPlan.id = a.id;
+          slotPlan.a = a;
           a.categories.forEach(function (c) {
             if (dayCats.indexOf(c) === -1) dayCats.push(c);
             if (weekCats.indexOf(c) === -1) weekCats.push(c);
@@ -118,15 +126,103 @@
           slot.appendChild(el('div', 'slot-name', '— open slot —'));
           slot.appendChild(el('p', 'slot-why', 'Not enough unique activities matched. Loosen a filter.'));
         }
+        dayPlan.slots.push(slotPlan);
         card.appendChild(slot);
       }
+      state.plan.push(dayPlan);
       out.appendChild(card);
     });
+
+    buildPrintDeck();
 
     var actions = document.getElementById('plan-actions');
     actions.hidden = false;
     note.textContent = note.textContent ||
       ('Planned ' + totalSlots + ' slots from ' + pool.length + ' matching activities.');
+  }
+
+  function cardUrl(rel) {
+    // Deep link: absolute when served over http(s), relative path otherwise.
+    try { return new URL(rel, document.baseURI).href; }
+    catch (e) { return rel; }
+  }
+
+  function copyText(text, statusEl) {
+    function ok() {
+      statusEl.textContent = 'Copied ✓';
+      setTimeout(function () { statusEl.textContent = ''; }, 2500);
+    }
+    function fallback() {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.focus(); ta.select();
+      try { document.execCommand('copy'); ok(); }
+      catch (e) { statusEl.textContent = 'Copy failed — select the text manually.'; }
+      document.body.removeChild(ta);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(ok, fallback);
+    } else { fallback(); }
+  }
+
+  function copyWeek() {
+    var lines = ['📅 My week — Activity Vault', ''];
+    state.plan.forEach(function (d) {
+      lines.push(d.day);
+      d.slots.forEach(function (s) {
+        if (!s.a) { lines.push('  Slot ' + s.slot + ' — open slot'); return; }
+        var a = s.a;
+        lines.push('  Slot ' + s.slot + ' — ' + a.name);
+        lines.push('    Ages ' + a.age_min + '–' + a.age_max + ' · ' +
+          a.time_min + '–' + a.time_max + ' min · Group ' + a.group_min + '–' + a.group_max +
+          (a.no_prep ? ' · no prep' : ''));
+        lines.push('    ' + cardUrl('activity/' + a.id + '.html'));
+      });
+      lines.push('');
+    });
+    lines.push('Full cards: ' + cardUrl('index.html'));
+    lines.push('Paste this into your newsletter or email — every link opens the right activity card.');
+    copyText(lines.join('\n'), document.getElementById('copy-week-status'));
+  }
+
+  // Print deck: one full card per scheduled activity, one page each in print.
+  function buildPrintDeck() {
+    var host = document.getElementById('print-week-cards');
+    host.textContent = '';
+    state.plan.forEach(function (d) {
+      d.slots.forEach(function (s) {
+        if (!s.a) return;
+        var a = s.a;
+        var card = el('section', 'print-week-card');
+        card.setAttribute('aria-label', 'Print card: ' + a.name);
+        card.appendChild(el('h3', null, d.day + ' — Slot ' + s.slot));
+        card.appendChild(el('h4', null, a.name));
+        var dl = el('dl', 'fact-grid');
+        [['Ages', a.age_min + '–' + a.age_max],
+         ['Group', a.group_min + '–' + a.group_max + ' kids'],
+         ['Time', a.time_min + '–' + a.time_max + ' min'],
+         ['Prep', a.no_prep ? 'No prep needed' : 'Some prep needed'],
+         ['Materials', a.materials.length ? a.materials.length + ' item(s)' : 'None needed'],
+         ['Steps', a.steps.length + ' steps']].forEach(function (f) {
+          var wrap = el('div', null);
+          wrap.appendChild(el('dt', null, f[0]));
+          wrap.appendChild(el('dd', null, f[1]));
+          dl.appendChild(wrap);
+        });
+        card.appendChild(dl);
+        if (a.materials.length) {
+          card.appendChild(el('h4', null, 'Materials'));
+          var mu = el('ul', null);
+          a.materials.forEach(function (m) { mu.appendChild(el('li', null, m.item)); });
+          card.appendChild(mu);
+        }
+        if (a.safety) card.appendChild(el('p', null, '⚠️ ' + a.safety));
+        card.appendChild(el('p', 'print-url', 'Full card — ' + cardUrl('activity/' + a.id + '.html')));
+        host.appendChild(card);
+      });
+    });
   }
 
   var SEASON_LABELS = {
@@ -193,6 +289,7 @@
 
     document.getElementById('generate').addEventListener('click', generate);
     document.getElementById('print-plan').addEventListener('click', function () { window.print(); });
+    document.getElementById('copy-week').addEventListener('click', copyWeek);
     document.getElementById('regenerate').addEventListener('click', generate);
   }
 

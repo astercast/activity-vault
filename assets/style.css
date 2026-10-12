@@ -140,8 +140,9 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
 .btn-reset { background: transparent; border-color: var(--line); color: var(--ink-soft); width: 100%; margin-top: .5rem; }
 
 /* ---------- cards ---------- */
-.results-bar { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: .8rem; }
+.results-bar { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: .8rem; flex-wrap: wrap; }
 .results-bar p { margin: 0; color: var(--ink-soft); }
+.results-actions { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
 .card-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
 @media (min-width: 600px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1100px) { .browser .card-grid { grid-template-columns: repeat(2, 1fr); } }
@@ -206,7 +207,11 @@ input[type="number"] {
   width: 8rem; padding: .55rem .7rem; border: 2px solid var(--line); border-radius: 10px;
   font: inherit; background: #fff; color: var(--ink);
 }
-.print-actions { display: flex; gap: .7rem; flex-wrap: wrap; margin-top: 1.8rem; }
+.print-actions { display: flex; gap: .7rem; flex-wrap: wrap; margin-top: 1.8rem; align-items: center; }
+.copy-status { font-size: .9rem; color: var(--ink-soft); font-weight: 600; min-width: 8ch; }
+
+/* ---------- screen: print-only content stays hidden ---------- */
+.print-only { display: none !important; }
 
 /* ---------- planner ---------- */
 .planner-form { background: var(--card); border: 2px solid var(--line); border-radius: var(--radius); padding: 1.2rem; box-shadow: var(--shadow); margin: 1rem 0 2rem; }
@@ -240,6 +245,7 @@ input[type="number"] {
 /* ================= PRINT ================= */
 @media print {
   .no-print, .site-header nav, .print-actions, .site-footer, .skip-link { display: none !important; }
+  .print-only { display: block !important; }
   body { background: #fff; font-size: 11pt; }
   body::before { display: none; }
   .site-header { position: static; border-bottom: 2px solid #000; }
@@ -248,9 +254,21 @@ input[type="number"] {
   .print-card { border-top: 4px solid #000; }
   .day-card { break-inside: avoid; margin-bottom: 12pt; }
   a { color: #000; text-decoration: none; }
-  .week-plan { grid-template-columns: 1fr; }
+  /* week planner print = the card deck (compact on-screen grid stays screen-only) */
+  #week-plan { display: none !important; }
   h1 { font-size: 20pt; }
   .fact-grid { break-inside: avoid; }
+  /* print-only footer: where this sheet came from (deep link for the printed card) */
+  .print-url { font-size: 9pt; color: #333; border-top: 1px solid #999; padding-top: 6pt; margin-top: 14pt; word-break: break-all; }
+  /* card deck: each week activity on its own printed page */
+  .print-deck .print-week-card { border-top: 4px solid #000; padding-top: 10pt; }
+  .print-deck .print-week-card + .print-week-card { break-before: page; }
+  .print-week-card h3 { font-size: 18pt; margin: 0 0 4pt; }
+  .print-week-card h4 { font-size: 13pt; margin: 10pt 0 2pt; }
+  .print-week-card dl.fact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4pt; margin: 8pt 0; }
+  .print-week-card dl.fact-grid div { border: 1px solid #999; padding: 4pt 6pt; }
+  .print-week-card dt { font-size: 8pt; text-transform: uppercase; letter-spacing: .05em; }
+  .print-week-card dd { margin: 0; font-weight: 700; }
   @page { margin: 1.6cm; }
 }
 

@@ -45,7 +45,11 @@
     <section aria-label="Activities">
       <div class="results-bar">
         <p><strong id="result-count" role="status" aria-live="polite">Loading…</strong></p>
-        <a class="btn btn-small btn-ghost no-print" href="planner.html">📅 Plan my week</a>
+        <div class="results-actions no-print">
+          <button class="btn btn-small btn-ghost" id="copy-collection" type="button">📋 Copy collection</button>
+          <span class="copy-status" id="copy-collection-status" role="status" aria-live="polite"></span>
+          <a class="btn btn-small btn-ghost" href="planner.html">📅 Plan my week</a>
+        </div>
       </div>
       <div class="card-grid" id="cards"></div>
     </section>

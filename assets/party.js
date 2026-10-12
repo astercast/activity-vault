@@ -45,6 +45,7 @@
   var INTRO_MIN = 5, WRAP_MIN = 5;
 
   var activities = [];
+  var lastPlan = null; // {themeLabel, meta, picks:[{name,url}], rounds:[{time,title,rows:[string]}], setup:[string], closing}
 
   function $(id) { return document.getElementById(id); }
 
@@ -120,11 +121,24 @@
     var breakMin = themeDef.breakMin;
     var breakAfter = breakMin ? Math.ceil(stations / 2) : 0; // cozy warm-up break midway
 
-    $('party-meta').textContent =
+    var metaText =
       themeDef.label + ' theme · ' + opts.classSize + ' kids · ' + opts.minutes + ' minutes · ' +
       stations + ' stations (' + roundMin + ' min each) · ' + BUDGET_LABELS[opts.budget];
+    $('party-meta').textContent = metaText;
     document.getElementById('party-kicker').textContent = themeDef.planKicker;
     $('party-plan-title').textContent = themeDef.planTitle + ' — ' + opts.minutes + '-minute run sheet';
+
+    lastPlan = {
+      themeLabel: themeDef.label,
+      title: themeDef.planTitle + ' — ' + opts.minutes + '-minute run sheet',
+      meta: metaText,
+      picks: picks.map(function (a) {
+        return { name: a.name, url: cardUrl('activity/' + a.id + '.html'), safety: a.safety || null };
+      }),
+      rounds: [],
+      setup: [],
+      closing: ''
+    };
 
     // rotation timetable
     var rounds = $('party-rounds');
@@ -133,29 +147,36 @@
     for (var r = 0; r < stations; r++) {
       var li = el('li', 'plan-block');
       var head = el('div', 'plan-block-head');
-      head.appendChild(el('span', 'plan-time', fmtClock(t) + '–' + fmtClock(t + roundMin)));
+      var timeRange = fmtClock(t) + '–' + fmtClock(t + roundMin);
+      head.appendChild(el('span', 'plan-time', timeRange));
       head.appendChild(el('span', 'plan-title', 'Round ' + (r + 1)));
       li.appendChild(head);
       var body = el('div', 'plan-block-body');
       var ul = el('ul', 'rotation-list');
+      var rows = [];
       for (var g = 0; g < stations; g++) {
         var st = picks[(g + r) % stations];
+        rows.push(groups[g] + ' → ' + st.name);
         ul.appendChild(el('li', null, groups[g] + ' → ' + st.name));
       }
       body.appendChild(ul);
       li.appendChild(body);
       rounds.appendChild(li);
+      lastPlan.rounds.push({ time: timeRange, title: 'Round ' + (r + 1), rows: rows });
       t += roundMin;
       if (breakAfter && r + 1 === breakAfter) {
+        var bTime = fmtClock(t) + '–' + fmtClock(t + breakMin);
         var bli = el('li', 'plan-block');
         var bhead = el('div', 'plan-block-head');
-        bhead.appendChild(el('span', 'plan-time', fmtClock(t) + '–' + fmtClock(t + breakMin)));
+        bhead.appendChild(el('span', 'plan-time', bTime));
         bhead.appendChild(el('span', 'plan-title', '☕ Warm-up break'));
         bli.appendChild(bhead);
         var bbody = el('div', 'plan-block-body');
-        bbody.appendChild(el('p', null, 'Stretch, sip water (cocoa if your school allows it), and get cozy — then rotate to your next station.'));
+        var breakText = 'Stretch, sip water (cocoa if your school allows it), and get cozy — then rotate to your next station.';
+        bbody.appendChild(el('p', null, breakText));
         bli.appendChild(bbody);
         rounds.appendChild(bli);
+        lastPlan.rounds.push({ time: bTime, title: '☕ Warm-up break', rows: [breakText] });
         t += breakMin;
       }
     }
@@ -173,15 +194,19 @@
         var key = m.item.toLowerCase();
         if (seenItems[key]) return;
         seenItems[key] = true;
+        var label = m.item + ' (station ' + (i + 1) + ')';
+        lastPlan.setup.push(label);
         var li2 = el('li');
         var box = el('span', 'checkbox', '☐');
         box.setAttribute('aria-hidden', 'true');
         li2.appendChild(box);
-        li2.appendChild(document.createTextNode(' ' + m.item + '  (station ' + (i + 1) + ')'));
+        li2.appendChild(document.createTextNode(' ' + label));
         ul2.appendChild(li2);
         added++;
       });
-      if (!added) ul2.appendChild(el('li', null, 'Nothing to gather — no materials needed.'));
+      if (!added) {
+        ul2.appendChild(el('li', null, 'Nothing to gather — no materials needed.'));
+      }
       col.appendChild(ul2);
       setup.appendChild(col);
     });
@@ -219,15 +244,71 @@
     });
 
     var wrapMin = opts.minutes - INTRO_MIN - stations * roundMin - themeDef.breakMin + WRAP_MIN;
-    $('party-closing').textContent =
+    var closingText =
       themeDef.closingIntro + ' ' +
       fmtClock(INTRO_MIN + stations * roundMin + themeDef.breakMin) + ' — ' +
       themeDef.closingRegroup + ' (' + wrapMin + ' min). ' +
       'Tip: ring a bell 1 minute before each rotation so groups can finish up.';
+    $('party-closing').textContent = closingText;
+    lastPlan.closing = closingText;
 
     $('party-plan').hidden = false;
     $('party-actions').hidden = false;
     $('party-plan-title').focus({ preventScroll: false });
+  }
+
+  function cardUrl(rel) {
+    try { return new URL(rel, document.baseURI).href; }
+    catch (e) { return rel; }
+  }
+
+  function copyText(text, statusEl) {
+    function ok() {
+      statusEl.textContent = 'Copied ✓';
+      setTimeout(function () { statusEl.textContent = ''; }, 2500);
+    }
+    function fallback() {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.focus(); ta.select();
+      try { document.execCommand('copy'); ok(); }
+      catch (e) { statusEl.textContent = 'Copy failed — select the text manually.'; }
+      document.body.removeChild(ta);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(ok, fallback);
+    } else { fallback(); }
+  }
+
+  function copyParty() {
+    if (!lastPlan) return;
+    var p = lastPlan;
+    var lines = [p.title + ' (Activity Vault)', p.meta, ''];
+    lines.push('Stations:');
+    p.picks.forEach(function (s, i) {
+      lines.push('  Station ' + (i + 1) + ' — ' + s.name);
+      lines.push('  ' + s.url);
+    });
+    lines.push('');
+    lines.push('Rotation:');
+    p.rounds.forEach(function (r) {
+      lines.push('  ' + r.time + ' — ' + r.title + ': ' + r.rows.join(' · '));
+    });
+    lines.push('');
+    lines.push('Setup checklist:');
+    if (p.setup.length) {
+      p.setup.forEach(function (it) { lines.push('  ☐ ' + it); });
+    } else {
+      lines.push('  Nothing to gather — no materials needed.');
+    }
+    lines.push('');
+    lines.push('Closing:');
+    lines.push('  ' + p.closing);
+    lines.push('');
+    lines.push('Full cards at the links above — share this sheet with co-teachers and volunteers.');
+    copyText(lines.join('\n'), $('copy-party-status'));
   }
 
   function generate(offset) {
@@ -287,6 +368,7 @@
     });
     syncHero();
     $('print-party').addEventListener('click', function () { window.print(); });
+    $('copy-party').addEventListener('click', copyParty);
   }
 
   if (document.readyState === 'loading') {

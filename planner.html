@@ -85,8 +85,12 @@
 
   <div class="print-actions no-print" id="plan-actions" hidden>
     <button class="btn" id="print-plan" type="button">🖨️ Print week plan</button>
+    <button class="btn btn-ghost" id="copy-week" type="button">📋 Copy my week</button>
+    <span class="copy-status" id="copy-week-status" role="status" aria-live="polite"></span>
     <button class="btn btn-ghost" id="regenerate" type="button">🎲 Shuffle again</button>
   </div>
+
+  <section class="print-only print-deck" id="print-week-cards" aria-label="Week card deck (print)" aria-hidden="true"></section>
   <p class="no-print" style="margin-bottom:3rem;"><a href="index.html">← Back to browsing</a></p>
 </main>
 

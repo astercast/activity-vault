@@ -118,6 +118,7 @@
 
   function render() {
     var list = state.activities.filter(matches);
+    state.visible = list;
     grid.innerHTML = '';
     if (!list.length) {
       var empty = el('div', 'empty');
@@ -127,6 +128,82 @@
       list.forEach(function (a) { grid.appendChild(renderCard(a)); });
     }
     countEl.textContent = list.length + (list.length === 1 ? ' activity' : ' activities');
+  }
+
+  // ---------- share a collection ----------
+  function cardUrl(rel) {
+    try { return new URL(rel, document.baseURI).href; }
+    catch (e) { return rel; }
+  }
+
+  function describeFilters() {
+    var bits = [];
+    if (state.q) bits.push('search "' + state.q + '"');
+    if (state.age != null) bits.push('age ' + state.age);
+    if (state.maxTime != null) bits.push('≤ ' + state.maxTime + ' min');
+    if (state.group != null) bits.push('group of ' + state.group);
+    if (state.cats.size) bits.push('categories: ' + Array.from(state.cats).map(function (c) {
+      return (state.catMap[c] || {}).name || c;
+    }).join(', '));
+    if (state.tags.size) bits.push('season/occasion: ' + Array.from(state.tags).map(function (t) {
+      return TAG_LABELS[t] || t;
+    }).join(', '));
+    if (state.noPrepOnly) bits.push('no-prep only');
+    if (state.indoorOnly) bits.push('indoor only');
+    if (state.outdoorOnly) bits.push('outdoor only');
+    return bits;
+  }
+
+  // Deep link for the current view: a single-tag collection gets index.html?tag=;
+  // richer filter mixes point at the browse page plus a filter description.
+  function viewUrl() {
+    var bits = describeFilters();
+    if (state.tags.size === 1 && bits.length === 1 && bits[0].indexOf('season/occasion:') === 0) {
+      return cardUrl('index.html?tag=' + encodeURIComponent(Array.from(state.tags)[0]));
+    }
+    return cardUrl('index.html');
+  }
+
+  function copyText(text, statusEl) {
+    function ok() {
+      statusEl.textContent = 'Copied ✓';
+      setTimeout(function () { statusEl.textContent = ''; }, 2500);
+    }
+    function fallback() {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.focus(); ta.select();
+      try { document.execCommand('copy'); ok(); }
+      catch (e) { statusEl.textContent = 'Copy failed — select the text manually.'; }
+      document.body.removeChild(ta);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(ok, fallback);
+    } else { fallback(); }
+  }
+
+  function copyCollection() {
+    var list = state.visible || [];
+    var bits = describeFilters();
+    var title = bits.length
+      ? '🗂️ Activity Vault collection — ' + bits.join(' · ')
+      : '🗂️ Activity Vault collection — all activities';
+    var lines = [title, ''];
+    if (list.length) {
+      list.forEach(function (a) {
+        lines.push('• ' + a.name + ' — Ages ' + a.age_min + '–' + a.age_max + ', ' +
+          a.time_min + '–' + a.time_max + ' min');
+        lines.push('  ' + cardUrl('activity/' + a.id + '.html'));
+      });
+    } else {
+      lines.push('No activities match these filters right now.');
+    }
+    lines.push('');
+    lines.push('View it: ' + viewUrl());
+    lines.push('Paste this into your newsletter or email — every link opens the right activity card.');
+    copyText(lines.join('\n'), document.getElementById('copy-collection-status'));
   }
 
   function chipButton(label, pressed, onToggle, color) {
@@ -308,6 +385,8 @@
         }
       } catch (e) { /* malformed query string — ignore */ }
       render();
+      var copyBtn = document.getElementById('copy-collection');
+      if (copyBtn) copyBtn.addEventListener('click', copyCollection);
     }).catch(function () {
       grid.innerHTML = '<div class="empty"><span class="big" aria-hidden="true">⚠️</span><p>Could not load the activity library. Check your connection and reload.</p></div>';
     });

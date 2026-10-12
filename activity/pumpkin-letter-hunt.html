@@ -57,12 +57,34 @@
     <p class="source-line">Inspired by an idea from the teaching community — <a href="https://www.handsonaswegrow.com/fall-find-the-letter-pumpkin/" rel="noopener">source post</a> (adapted in our own words).</p>
     <div class="print-actions no-print">
       <button type="button" class="btn" onclick="window.print()">🖨️ Print this card</button>
+      <button type="button" class="btn btn-ghost" id="copy-card-link">🔗 Copy card link</button>
+      <span class="copy-status" id="copy-card-status" role="status" aria-live="polite"></span>
       <a class="btn btn-ghost" href="../planner.html">Add to my week →</a>
     </div>
+    <p class="print-only print-url">Full activity card — <span class="print-url-here"></span></p>
   </article>
 </main>
 <footer class="site-footer no-print">
   <div class="wrap"><p>Activity Vault — the all-in-one activity archive for teachers &amp; after-school programs.</p></div>
 </footer>
+<script>
+(function(){'use strict';
+function absUrl(){try{return new URL('.',document.baseURI).href;}catch(e){return location.href;}}
+var here=document.querySelector('.print-url-here');
+if(here){here.textContent=location.href;}
+function flash(msg){var s=document.getElementById('copy-card-status');s.textContent=msg;
+setTimeout(function(){s.textContent='';},2500);}
+function fallbackCopy(text){var ta=document.createElement('textarea');ta.value=text;
+ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.focus();ta.select();
+try{document.execCommand('copy');flash('Copied ✓');}catch(e){flash('Copy failed — copy the URL manually.');}
+document.body.removeChild(ta);}
+var btn=document.getElementById('copy-card-link');
+if(btn){btn.addEventListener('click',function(){
+var url=absUrl();
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(function(){flash('Copied ✓');},function(){fallbackCopy(url);});}
+else{fallbackCopy(url);}
+});}
+})();
+</script>
 </body>
 </html>
