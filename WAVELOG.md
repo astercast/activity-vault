@@ -24,6 +24,8 @@ Running record of build waves. Newest first.
 - `scripts/test-planner-core.js`: 39/39 pass (unchanged)
 - `node --check`: app.js, planner.js, party.js, spring.js, collections.js, ratings.js, sub.js, planner-core.js — clean
 
+**Wave 11 push resolution:** local commit `23ca4a4` pushed via `gh-push.py` (296 files, 296 blob uploads, exit 0, ~5 min with an internal retry) — remote commit `08f5ee66cee0186d806c50512627c06a77d41355`. Verified via GitHub API: commit exists, `main` HEAD points at it, recursive remote tree (349 files, not truncated) contains `spring.html`, `assets/spring.js`, `scripts/add_wave11.py`, `scripts/test-spring.js`, `api/v1/collections.json`, the 25 new `activity/*.html` pages, and updated `WAVELOG.md`/`AGENT.md`/`API.md`.
+
 ## Wave 10 — 2026-10-11 — Smart Weekly Planner 2.0 (flagship interactive tool)
 
 **What shipped:**
