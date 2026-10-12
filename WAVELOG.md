@@ -20,7 +20,7 @@ Running record of build waves. Newest first.
 - `node --check`: test-micro.js, test-kit.js, test-thanksgiving.js, kit-core.js — clean
 - Headless Chromium (puppeteer-core, wave-18 interception harness, `~/workspace/w19micro/kit-verify.js` — no virtual-time-budget per the 2026-10-12 AGENTS.md lesson): kit.html status reads "415 activities in the Vault" → generate → 9 slots dealt, **7 from the new micro pool (3 openers + 3 closers + 1 main)** → zip-zap-zop activity page renders with FILED stamp, Kit nav, calm toggle, 5–10 min meta → 390px mobile page with no horizontal scroll → **zero console errors/pageerrors** (only the documented environmental font-tunnel failures + favicon 404, filtered). Screenshots: `~/workspace/w19micro/shots/` (kit-micro-pool, activity-zip-zap-zop, activity-mobile).
 
-**Wave 19 push resolution:** (filled after push)
+**Wave 19 push resolution:** local `1d5a1ed` pushed via `gh-push.py` (212 files, 212 blob uploads, exit 0, ~7.5 min) → remote commit `725694e4f7f577aae9883ba4783adf699c867541`. Verified via GitHub API: commit exists, `main` HEAD points at it, recursive remote tree (526 files, not truncated) contains `activity/zip-zap-zop.html`, `activity/silent-count-twenty.html`, `scripts/test-micro.js`, `scripts/add_wave19.py`, `kit.html`, and updated `WAVELOG.md`/`README.md`/`API.md`. Remote base had moved while pushing (parallel wave activity); gh-push.py pushed onto the live base as designed.
 
 ## Wave 18 — 2026-10-11 — "The After-School Kit" 🧰 flagship tool wave
 
