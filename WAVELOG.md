@@ -22,7 +22,7 @@ Running record of build waves. Newest first.
 - Headless Chromium (puppeteer-core, request-interception harness — sandbox blocks localhost via LNA checks and has no internet, so Google Fonts fell back to system stacks in shots): index, collections, activity page, planner, mobile activity — desk identity renders, **zero console errors / zero pageerrors** (only pre-existing favicon 404 + font tunnel failures from the sandbox having no net). Calm toggle verified on/off + persistence.
 - Screenshots: `~/workspace/w17cdp/shots/` (index2, activity2, collections, planner, mobile-activity)
 
-**Wave 17 push resolution:** (filled after push)
+**Wave 17 push resolution:** local `3661a13`, remote `66dcbb665ebe9c29e1e37d8408d4b243e9ec2a05` (in `main`'s ancestry — verified via GitHub API commit + recursive tree: 460 files, regenerated activity pages present).
 
 ## Wave 16 — 2026-10-11 — Winter Holiday Build Lab pack (+26 → 355, MERGED)
 
