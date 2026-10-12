@@ -16,7 +16,7 @@ function ok(cond, label, extra) {
 
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const actIds = new Set(acts.map(a => a.id));
-ok(acts.length === 329, '329 activities total', String(acts.length));
+ok(acts.length === 355, '355 activities total', String(acts.length));
 ok(actIds.size === acts.length, 'all activity ids unique');
 
 // 1. Tag vocabulary: holiday:thanksgiving is NEW in wave 14 — confirm it is
@@ -248,7 +248,7 @@ const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'api/v1/index.json')
 const collEp = manifest.endpoints.find(e => e.path === 'api/v1/collections.json');
 ok(collEp && collEp.records === 12, 'manifest collections records=12');
 const actEp = manifest.endpoints.find(e => e.path === 'api/v1/activities.json');
-ok(actEp && actEp.records === 329, 'manifest activities records=329', String(actEp && actEp.records));
+ok(actEp && actEp.records === 355, 'manifest activities records=355', String(actEp && actEp.records));
 const sitemap = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
 ok(sitemap.includes('thanksgiving.html'), 'sitemap.xml has thanksgiving.html');
 const llms = fs.readFileSync(path.join(ROOT, 'llms.txt'), 'utf8');

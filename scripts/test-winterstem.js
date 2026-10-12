@@ -1,16 +1,3 @@
-# Wave 16 — staged test additions (MERGE)
-
-Save the block below as `scripts/test-winterstem.js` when the merge worker
-folds `MERGE-fragment-w16-pack.json` into `data/activities.json` and runs
-`scripts/build.py`. It reads the post-merge `api/v1/activities.json`, so it
-cannot run until after the merge. After saving, run
-`node scripts/test-winterstem.js` and `node --check scripts/test-winterstem.js`.
-
-Expected totals: 26 new activities → 352 total; no new collections this wave
-(merge worker may also refresh the spring/summer/halloween/thanksgiving count
-snapshots if those tests hardcode totals).
-
-```js
 // scripts/test-winterstem.js — wave 16 "Winter Holiday Build Lab" assertions
 const fs = require('fs');
 const api = JSON.parse(fs.readFileSync('api/v1/activities.json', 'utf8'));
@@ -31,7 +18,7 @@ const IDS = [
   'red-nose-green-nose','winter-hide-and-seek',
 ];
 
-ok(api.count === 352, `count 352, got ${api.count}`);
+ok(api.count === 355, `count 355, got ${api.count}`);
 ok(acts.length === new Set(acts.map(a => a.id)).size, 'ids unique');
 IDS.forEach(id => ok(byId.has(id), `wave16 id present: ${id}`));
 
@@ -75,4 +62,3 @@ ok(noprep.length >= 4, `no-prep wave16 >= 4, got ${noprep.length}`);
 
 console.log(`winterstem: ${pass} pass, ${fail} fail`);
 process.exit(fail ? 1 : 0);
-```

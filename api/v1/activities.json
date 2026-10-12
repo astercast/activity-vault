@@ -15107,8 +15107,1357 @@
    "source": "https://naomimeredith.com/tag/fall/",
    "copy_free": true,
    "inclusion": "Thicker skewers for easier grip; team roles (planner, builder, tester); test narrated aloud so everyone follows the results."
+  },
+  {
+   "age_max": 12,
+   "age_min": 6,
+   "categories": [
+    "stem",
+    "holidays",
+    "seasons"
+   ],
+   "group_max": 20,
+   "group_min": 1,
+   "id": "holiday-zipline-delivery",
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "string or yarn, 10+ feet"
+    },
+    {
+     "item": "paper cups"
+    },
+    {
+     "item": "paper clips"
+    },
+    {
+     "item": "pom-poms or cotton balls (the gifts)"
+    },
+    {
+     "item": "tape"
+    },
+    {
+     "item": "stopwatch or phone timer"
+    }
+   ],
+   "name": "Elf Zipline Delivery",
+   "no_prep": false,
+   "safety": "Keep the line below shoulder height; no loops of string around necks or fingers.",
+   "setup": "Pre-cut string lengths and poke a hole near the rim of each cup for the paper-clip hook.",
+   "steps": [
+    "Tie the string tight between two points, one end higher than the other.",
+    "Hook a paper cup to the line with a paper clip so it slides freely.",
+    "Load a pom-pom gift into the cup and release it from the high end.",
+    "Time the trip. Try a steeper line and a flatter line. Which delivers faster?",
+    "Challenge: deliver two gifts in one trip without losing either."
+   ],
+   "tagline": "String a zipline across the room and race to deliver the gifts fastest.",
+   "tags": [
+    "holiday:christmas",
+    "season:winter"
+   ],
+   "time_max": 45,
+   "time_min": 30,
+   "variations": {
+    "easier": "Use a short line between two chairs and deliver one gift at a time.",
+    "harder": "Add a marked drop zone and score points for landing the gift inside it."
+   }
+  },
+  {
+   "age_max": 12,
+   "age_min": 6,
+   "categories": [
+    "stem",
+    "holidays",
+    "seasons"
+   ],
+   "group_max": 20,
+   "group_min": 1,
+   "id": "sled-and-slope-run",
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "small cardboard trays or box lids"
+    },
+    {
+     "item": "drinking straws"
+    },
+    {
+     "item": "tape"
+    },
+    {
+     "item": "books or a board for the ramp"
+    },
+    {
+     "item": "cotton balls or small blocks (the gifts)"
+    }
+   ],
+   "name": "Sleigh and Slope Run",
+   "no_prep": false,
+   "safety": "Test sleds on the floor, not off tables; clear the landing zone of feet.",
+   "setup": "Stack books at one end of a table to make a sturdy ramp; tape the top so it can't slide.",
+   "steps": [
+    "Build a sled: tape straws under a cardboard tray as runners.",
+    "Load three cotton-ball gifts onto the sled.",
+    "Release the sled from the top of the ramp.",
+    "If gifts fall off, redesign: add sides, lower the load, or change the runners.",
+    "Final run: which team's sled carries all three gifts the farthest?"
+   ],
+   "tagline": "Build a mini sled that carries gifts down a ramp without spilling.",
+   "tags": [
+    "holiday:christmas",
+    "season:winter"
+   ],
+   "time_max": 45,
+   "time_min": 30,
+   "variations": {
+    "easier": "Run the sled empty first, then add gifts one at a time.",
+    "harder": "Steepen the ramp and time the runs; fastest clean run wins."
+   }
+  },
+  {
+   "age_max": 12,
+   "age_min": 5,
+   "categories": [
+    "stem",
+    "crafts",
+    "holidays"
+   ],
+   "group_max": 24,
+   "group_min": 1,
+   "id": "snow-globe-slow-fall",
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "small clear plastic jars with lids"
+    },
+    {
+     "item": "water"
+    },
+    {
+     "item": "glitter, foam beads, and paper-hole-punch dots (the snow)"
+    },
+    {
+     "item": "a spoonful of clear glue (optional, slows the fall)"
+    },
+    {
+     "item": "small waterproof figurines or bottle-brush trees"
+    },
+    {
+     "item": "waterproof tape"
+    }
+   ],
+   "name": "Snow Globe Slow-Fall Lab",
+   "no_prep": false,
+   "safety": "Plastic jars only for kids; adult tightens and tapes the lid shut.",
+   "setup": "Set out jars and snow ingredients in separate cups; hot-glue trees to lids ahead of time if kids are under 7.",
+   "steps": [
+    "Glue a tiny tree or figure to the inside of the jar lid and let it set.",
+    "Fill the jar nearly full with water and add a spoonful of clear glue.",
+    "Try one kind of snow at a time. Shake, then time how long the snow takes to settle.",
+    "Record each snow type's fall time on a chart.",
+    "Pick the slowest snow for the final globe, then seal the lid with tape."
+   ],
+   "tagline": "Build a real snow globe, then hunt for the slowest-falling snow.",
+   "tags": [
+    "holiday:christmas",
+    "season:winter"
+   ],
+   "time_max": 45,
+   "time_min": 30,
+   "variations": {
+    "easier": "Skip the timing; just build the globe with the snow you like best.",
+    "harder": "Graph all the fall times and write one sentence about why the slowest one won."
+   }
+  },
+  {
+   "age_max": 12,
+   "age_min": 6,
+   "categories": [
+    "stem",
+    "holidays",
+    "seasons"
+   ],
+   "group_max": 20,
+   "group_min": 1,
+   "id": "reindeer-shelter-storm",
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper cups"
+    },
+    {
+     "item": "craft sticks"
+    },
+    {
+     "item": "tape"
+    },
+    {
+     "item": "paper and cotton balls"
+    },
+    {
+     "item": "a small desk fan (the blizzard)"
+    },
+    {
+     "item": "a toy animal or pom-pom (the reindeer)"
+    }
+   ],
+   "name": "Reindeer Shelter Storm Test",
+   "no_prep": false,
+   "safety": "Fan stays on low; fingers and loose string stay away from the blades.",
+   "setup": "Mark a test line on the table two feet from the fan; sort building materials into bins.",
+   "steps": [
+    "Build a shelter big enough to fit your reindeer inside.",
+    "Set the shelter on the test line and place the reindeer inside.",
+    "Turn the fan on low for ten seconds: the blizzard is here.",
+    "Did the roof lift? Did the walls fall? Rebuild the weak spots.",
+    "Test again on a higher fan speed for the brave."
+   ],
+   "tagline": "Build a tiny barn that survives a ten-second blizzard from a fan.",
+   "tags": [
+    "season:winter"
+   ],
+   "time_max": 45,
+   "time_min": 30,
+   "variations": {
+    "easier": "Test with a hair dryer on cool from far away instead of a fan.",
+    "harder": "Add a rule: the shelter must have a door the reindeer can walk through."
+   }
+  },
+  {
+   "age_max": 12,
+   "age_min": 7,
+   "categories": [
+    "stem",
+    "holidays",
+    "seasons"
+   ],
+   "group_max": 20,
+   "group_min": 1,
+   "id": "stocking-holder-build",
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "cardboard"
+    },
+    {
+     "item": "tape and rubber bands"
+    },
+    {
+     "item": "binder clips or clothespins"
+    },
+    {
+     "item": "string"
+    },
+    {
+     "item": "a small gift bag with blocks inside (the weighted stocking)"
+    }
+   ],
+   "name": "Stocking Holder Build",
+   "no_prep": false,
+   "safety": "Test on sturdy low tables only; stand clear in case the holder tips during testing.",
+   "setup": "Fill each gift bag with the same number of blocks so every stocking weighs the same.",
+   "steps": [
+    "Design a holder that clamps or hooks onto the table edge.",
+    "Hang the weighted stocking from your holder.",
+    "Let go slowly. If the table tips or the holder slides, redesign.",
+    "Test three times in a row. It counts if it holds all three.",
+    "Decorate the winning holders and vote on the cleverest clamp."
+   ],
+   "tagline": "Engineer a hook that hangs a full stocking off a table edge without tipping.",
+   "tags": [
+    "holiday:christmas",
+    "season:winter"
+   ],
+   "time_max": 45,
+   "time_min": 30,
+   "variations": {
+    "easier": "Start with a clothespin clip design; improve it from there.",
+    "harder": "Add a weight rule: hold two stockings at once."
+   }
+  },
+  {
+   "age_max": 12,
+   "age_min": 6,
+   "categories": [
+    "stem",
+    "holidays",
+    "team-community"
+   ],
+   "group_max": 24,
+   "group_min": 2,
+   "id": "gift-conveyor-design",
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "cardboard tubes and half-tubes"
+    },
+    {
+     "item": "cardboard strips for rails"
+    },
+    {
+     "item": "tape"
+    },
+    {
+     "item": "string for a pull-belt"
+    },
+    {
+     "item": "small boxes (the presents)"
+    },
+    {
+     "item": "two tables or chairs (workshop and sled stations)"
+    }
+   ],
+   "name": "Gift Conveyor Design",
+   "no_prep": false,
+   "safety": "Keep the conveyor off the floor where feet walk; tape joints so tubes can't roll away.",
+   "setup": "Set the two stations about six feet apart; sort tubes and rails where teams can reach them.",
+   "steps": [
+    "Plan a path for the presents: rails, tubes, or a string pull-belt.",
+    "Build your conveyor between the two stations.",
+    "Launch a present from the workshop. No hands after it starts moving.",
+    "If a present gets stuck, find the jam and rebuild that section.",
+    "Run a full delivery of five presents. Fastest jam-free line wins."
+   ],
+   "tagline": "Move presents from the workshop to the sled with no hands after launch.",
+   "tags": [
+    "holiday:christmas",
+    "season:winter"
+   ],
+   "time_max": 60,
+   "time_min": 40,
+   "variations": {
+    "easier": "Shorten the run to three feet and use one straight tube.",
+    "harder": "Add a hill: the present must climb before it rolls down."
+   }
+  },
+  {
+   "age_max": 12,
+   "age_min": 5,
+   "categories": [
+    "stem",
+    "holidays",
+    "seasons"
+   ],
+   "group_max": 24,
+   "group_min": 1,
+   "id": "cookie-dissolve-race",
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "3 kinds of cookies (store-bought, sealed)"
+    },
+    {
+     "item": "clear cups"
+    },
+    {
+     "item": "milk or dairy-free milk"
+    },
+    {
+     "item": "timer"
+    },
+    {
+     "item": "paper for prediction charts"
+    }
+   ],
+   "name": "Cookie Dissolve Race",
+   "no_prep": false,
+   "safety": "Check for dairy, egg, wheat, and nut allergies first; use dairy-free milk and allergy-safe cookies where needed. Wash hands before tasting.",
+   "setup": "Pour milk into cups ahead of time; keep cookie packages sealed until the activity starts.",
+   "steps": [
+    "Look at the three cookies. Predict which will dissolve first and write it down.",
+    "Drop one cookie into each cup of milk at the same time.",
+    "Watch and wait. Note the order the cookies soften and fall apart.",
+    "Taste-test a fresh cookie of each kind after the race.",
+    "Compare results to predictions. Did the crunchiest cookie win or lose?"
+   ],
+   "tagline": "Drop three kinds of cookies in milk and time which one melts first.",
+   "tags": [
+    "holiday:christmas",
+    "season:winter"
+   ],
+   "time_max": 30,
+   "time_min": 20,
+   "variations": {
+    "easier": "Race just two cookie kinds and skip the chart.",
+    "harder": "Try warm milk vs cold milk and compare the times."
+   }
+  },
+  {
+   "age_max": 12,
+   "age_min": 6,
+   "categories": [
+    "stem",
+    "seasons",
+    "quiet-focus"
+   ],
+   "group_max": 24,
+   "group_min": 1,
+   "id": "instant-snow-polymers",
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "instant snow powder (sold as faux snow)"
+    },
+    {
+     "item": "water"
+    },
+    {
+     "item": "measuring spoons"
+    },
+    {
+     "item": "clear bowls"
+    },
+    {
+     "item": "magnifying glasses"
+    }
+   ],
+   "name": "Instant Snow Polymers",
+   "no_prep": false,
+   "safety": "Not edible: nobody tastes the powder or the snow. Adult pours the powder for kids under 8.",
+   "setup": "Pre-measure powder into small cups; set out water pitchers and bowls.",
+   "steps": [
+    "Look at the dry powder with a magnifying glass. Describe it.",
+    "Add water one spoonful at a time and stir.",
+    "Watch it puff up. Keep adding until it stops growing.",
+    "Scoop the snow with your hands. How does it feel compared to real snow?",
+    "Write one sentence about what you think the powder did with the water."
+   ],
+   "tagline": "Turn a spoonful of powder into a bowl of fluffy snow and figure out why.",
+   "tags": [
+    "season:winter"
+   ],
+   "time_max": 30,
+   "time_min": 20,
+   "variations": {
+    "easier": "Make one big shared bowl and explore it together.",
+    "harder": "Test two water amounts and compare which snow is fluffier."
+   }
+  },
+  {
+   "age_max": 10,
+   "age_min": 5,
+   "categories": [
+    "stem",
+    "seasons",
+    "quiet-focus"
+   ],
+   "group_max": 24,
+   "group_min": 1,
+   "id": "dancing-cranberries",
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "dried cranberries"
+    },
+    {
+     "item": "clear cups"
+    },
+    {
+     "item": "water"
+    },
+    {
+     "item": "baking soda"
+    },
+    {
+     "item": "vinegar"
+    },
+    {
+     "item": "spoons"
+    }
+   ],
+   "name": "Dancing Cranberries",
+   "no_prep": false,
+   "safety": "Vinegar fizz can splash: keep faces back from the cup and wipe spills right away.",
+   "setup": "Set out cups, a cranberry bowl, and measured spoons of baking soda.",
+   "steps": [
+    "Fill a cup halfway with water and stir in a spoonful of baking soda.",
+    "Drop in five dried cranberries. Watch: they sink.",
+    "Slowly pour in a splash of vinegar.",
+    "Watch the cranberries rise, dance, and sink again as bubbles grab them.",
+    "Try more or fewer cranberries. How many can dance at once?"
+   ],
+   "tagline": "Make dried cranberries bounce and bob in a fizzy cup.",
+   "tags": [
+    "season:winter"
+   ],
+   "time_max": 25,
+   "time_min": 15,
+   "variations": {
+    "easier": "Do it as a group demo with one big cup everyone can see.",
+    "harder": "Count how many trips one cranberry makes in a minute."
+   }
+  },
+  {
+   "age_max": 12,
+   "age_min": 7,
+   "categories": [
+    "stem",
+    "quiet-focus",
+    "holidays"
+   ],
+   "group_max": 24,
+   "group_min": 2,
+   "id": "paper-maze-swap",
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "graph paper"
+    },
+    {
+     "item": "pencils and erasers"
+    },
+    {
+     "item": "markers"
+    },
+    {
+     "item": "stickers (stars, trees) for the start and finish"
+    }
+   ],
+   "name": "Paper Maze Swap",
+   "no_prep": false,
+   "safety": "None beyond the usual pencil rules.",
+   "setup": "Hand out graph paper; keep extra sheets nearby for maze redesigns.",
+   "steps": [
+    "Draw a maze on graph paper with one clear start and one finish.",
+    "Hide a holiday prize inside: a star sticker at the finish.",
+    "Test-solve your own maze to prove it can be finished.",
+    "Swap mazes with a partner and solve theirs without lifting your pencil.",
+    "Rate it: too easy, just right, or impossible? Tell the designer."
+   ],
+   "tagline": "Draw a holiday maze, swap it, and race to solve someone else's.",
+   "tags": [
+    "holiday:christmas",
+    "season:winter"
+   ],
+   "time_max": 40,
+   "time_min": 25,
+   "variations": {
+    "easier": "Draw on plain paper with wide paths and no dead ends.",
+    "harder": "Add a rule: the solver must collect three hidden stars before the finish."
+   }
+  },
+  {
+   "age_max": 12,
+   "age_min": 7,
+   "categories": [
+    "stem",
+    "holidays",
+    "quiet-focus"
+   ],
+   "group_max": 24,
+   "group_min": 1,
+   "id": "gift-wrap-measure",
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "small boxes in different sizes"
+    },
+    {
+     "item": "wrapping paper or newspaper"
+    },
+    {
+     "item": "rulers"
+    },
+    {
+     "item": "scissors"
+    },
+    {
+     "item": "pencils and paper for estimates"
+    }
+   ],
+   "name": "Gift Wrap Measure-Up",
+   "no_prep": false,
+   "safety": "Scissors safety for younger kids; pre-cut starter pieces if needed.",
+   "setup": "Wrap nothing in advance; keep boxes and paper at a measuring station.",
+   "steps": [
+    "Pick a box. Guess how many paper squares it would take to cover it.",
+    "Wrap the box for real and count the paper you used.",
+    "Measure each side of the box with a ruler and write the numbers down.",
+    "Try a second box. This time measure first, then predict.",
+    "Was your second prediction closer? The measurer's edge is real."
+   ],
+   "tagline": "Estimate the paper a box needs, then measure and see who was closest.",
+   "tags": [
+    "holiday:christmas"
+   ],
+   "time_max": 40,
+   "time_min": 25,
+   "variations": {
+    "easier": "Wrap one box and just compare guess vs result.",
+    "harder": "Compute the box's surface area from your measurements and compare."
+   }
+  },
+  {
+   "age_max": 12,
+   "age_min": 6,
+   "categories": [
+    "stem",
+    "holidays",
+    "quiet-focus"
+   ],
+   "group_max": 24,
+   "group_min": 1,
+   "id": "reindeer-grid-coding",
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "printed 5x5 grids (one per kid)"
+    },
+    {
+     "item": "arrow cards (up, down, left, right)"
+    },
+    {
+     "item": "reindeer tokens (paper clips or small toys)"
+    },
+    {
+     "item": "star stickers (the barn)"
+    }
+   ],
+   "name": "Reindeer Grid Coding",
+   "no_prep": false,
+   "safety": "None beyond the usual paper-and-scissors rules.",
+   "setup": "Print grids ahead; cut arrow-card sets into envelopes, one set per kid.",
+   "steps": [
+    "Place your reindeer on the start square and a star on the barn square.",
+    "Lay out arrow cards to plan the whole route before moving anything.",
+    "Run the program: move the reindeer one square per card.",
+    "Bug! If you crash into a wall, go back and fix the cards.",
+    "Trade grids with a partner and run their route."
+   ],
+   "tagline": "Program a reindeer across a grid with arrow cards: no screens needed.",
+   "tags": [
+    "holiday:christmas",
+    "season:winter"
+   ],
+   "time_max": 40,
+   "time_min": 25,
+   "variations": {
+    "easier": "Use a 3x3 grid with the barn two squares away.",
+    "harder": "Add blocked squares the route must go around."
+   }
+  },
+  {
+   "age_max": 12,
+   "age_min": 6,
+   "categories": [
+    "stem",
+    "crafts",
+    "holidays"
+   ],
+   "group_max": 16,
+   "group_min": 1,
+   "id": "ornament-pendulum-paint",
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper cups"
+    },
+    {
+     "item": "string"
+    },
+    {
+     "item": "jingle bells or large beads"
+    },
+    {
+     "item": "washable paint, thinned with a little water"
+    },
+    {
+     "item": "big paper sheets or a tray"
+    },
+    {
+     "item": "smocks"
+    }
+   ],
+   "name": "Ornament Pendulum Paint",
+   "no_prep": false,
+   "safety": "Wear smocks; cover the table. Paint stays off faces and mouths; wash hands after.",
+   "setup": "Poke a small hole in the bottom of each cup; tie the bell inside and the string outside. Set up one station at a time to avoid collisions.",
+   "steps": [
+    "Hang the cup from a chair back or a held stick so it swings freely.",
+    "Tape big paper under the cup.",
+    "Pour a little thinned paint into the cup and pull it to the side.",
+    "Let go and watch it drip-paint spirals as it swings.",
+    "Change the pull length or add a second color and compare the patterns."
+   ],
+   "tagline": "Swing a jingle-bell pendulum and let it drip-paint a holiday swirl.",
+   "tags": [
+    "holiday:christmas",
+    "season:winter"
+   ],
+   "time_max": 45,
+   "time_min": 30,
+   "variations": {
+    "easier": "Swing one color over a small paper plate.",
+    "harder": "Time the swings and try to paint matching patterns twice."
+   }
+  },
+  {
+   "age_max": 10,
+   "age_min": 5,
+   "categories": [
+    "stem",
+    "seasons",
+    "quiet-focus"
+   ],
+   "group_max": 24,
+   "group_min": 1,
+   "id": "blizzard-in-a-bottle",
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "clear plastic bottles with tight lids"
+    },
+    {
+     "item": "water"
+    },
+    {
+     "item": "baby oil or cooking oil"
+    },
+    {
+     "item": "white and silver glitter"
+    },
+    {
+     "item": "a drop of white paint"
+    },
+    {
+     "item": "strong tape"
+    }
+   ],
+   "name": "Blizzard in a Bottle",
+   "no_prep": false,
+   "safety": "Adult tightens the lid, then tapes it shut. Oily bottles stay on the table, not on laps.",
+   "setup": "Pre-fill bottles two-thirds with water; keep oil and glitter in pourable cups.",
+   "steps": [
+    "Add a splash of oil and a pinch of glitter to your bottle.",
+    "Add one drop of white paint for cloudy storm water.",
+    "Cap it tight. Adult tapes the lid.",
+    "Shake hard: blizzard! Then set it down and watch the snow settle.",
+    "Tip it slowly side to side and watch the glitter swirl like wind."
+   ],
+   "tagline": "Shake up a winter storm in a bottle and watch the glitter settle like snow.",
+   "tags": [
+    "season:winter"
+   ],
+   "time_max": 25,
+   "time_min": 15,
+   "variations": {
+    "easier": "Use water and glitter only; skip the oil.",
+    "harder": "Time how long the storm takes to calm for three different glitter amounts."
+   }
+  },
+  {
+   "age_max": 12,
+   "age_min": 6,
+   "categories": [
+    "holidays",
+    "stem",
+    "team-community"
+   ],
+   "group_max": 24,
+   "group_min": 2,
+   "id": "dreidel-spin-math",
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "dreidels (or print-and-fold paper dreidels)"
+    },
+    {
+     "item": "tally sheets"
+    },
+    {
+     "item": "pencils"
+    },
+    {
+     "item": "counters or tokens"
+    }
+   ],
+   "name": "Dreidel Spin Math",
+   "no_prep": false,
+   "safety": "Small tokens are a choking hazard for kids under 4; keep them off the floor.",
+   "setup": "Print the four dreidel letters and their meanings on a chart: nun (nothing), gimel (all), hey (half), shin (put one in).",
+   "steps": [
+    "Learn the four sides: nun takes nothing, gimel takes all, hey takes half, shin puts one in.",
+    "Each player spins 10 times and tallies every result.",
+    "Add up your tallies. Which letter came up most?",
+    "Compare with the table: did everyone get similar results?",
+    "Play a real round with tokens in the pot, using the letter rules."
+   ],
+   "tagline": "Spin the dreidel, tally the letters, and find out which side wins.",
+   "tags": [
+    "holiday:hanukkah",
+    "season:winter"
+   ],
+   "time_max": 30,
+   "time_min": 20,
+   "variations": {
+    "easier": "Just spin and act out the letter: gimel means a big cheer.",
+    "harder": "Track 50 spins as a group and graph which letter won."
+   }
+  },
+  {
+   "age_max": 12,
+   "age_min": 7,
+   "categories": [
+    "holidays",
+    "quiet-focus",
+    "team-community"
+   ],
+   "group_max": 24,
+   "group_min": 2,
+   "id": "kwanzaa-principle-cards",
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "index cards"
+    },
+    {
+     "item": "markers"
+    },
+    {
+     "item": "a printed list of the seven principles (Nguzo Saba)"
+    }
+   ],
+   "name": "Kwanzaa Principle Cards",
+   "no_prep": false,
+   "safety": "None beyond the usual classroom rules.",
+   "setup": "Write the seven principles with one-line meanings on the board: Umoja (unity), Kujichagulia (self-determination), Ujima (collective work), Ujamaa (cooperative economics), Nia (purpose), Kuumba (creativity), Imani (faith).",
+   "steps": [
+    "Make two cards for each principle: one with the name, one with a kid action (for Umoja: 'include someone new at lunch').",
+    "Shuffle all 14 cards face down.",
+    "Flip two at a time. Keep the pair if the name matches its action.",
+    "Read each match out loud when you win it.",
+    "Finish by naming which principle your family or class already lives."
+   ],
+   "tagline": "Match the seven principles to everyday kid actions in a memory game.",
+   "tags": [
+    "holiday:kwanzaa",
+    "season:winter"
+   ],
+   "time_max": 40,
+   "time_min": 25,
+   "variations": {
+    "easier": "Play with the principle list visible on the board.",
+    "harder": "Invent your own eighth action card for a principle and defend the match."
+   }
+  },
+  {
+   "age_max": 12,
+   "age_min": 6,
+   "categories": [
+    "holidays",
+    "team-community",
+    "icebreakers"
+   ],
+   "group_max": 30,
+   "group_min": 8,
+   "id": "story-gift-pass",
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "one wrapped gift (or a wrapped box of treats to share)"
+    },
+    {
+     "item": "a printed left-right holiday story"
+    }
+   ],
+   "name": "Story Gift Pass",
+   "no_prep": true,
+   "safety": "Pass gently; no grabbing. If treats are inside, check allergies before sharing.",
+   "setup": "Wrap the gift; print or write a short story packed with the words left and right.",
+   "steps": [
+    "Sit in a circle. One person holds the wrapped gift.",
+    "The reader reads the story slowly.",
+    "Every time you hear 'left', pass the gift left. 'Right' passes right.",
+    "Keep listening; the gift keeps moving.",
+    "Whoever holds it when the story ends unwraps it (or shares the treats)."
+   ],
+   "tagline": "Pass the gift left and right as the story says, and see who unwraps it.",
+   "tags": [
+    "holiday:christmas",
+    "season:winter"
+   ],
+   "time_max": 30,
+   "time_min": 20,
+   "variations": {
+    "easier": "Use a ball instead of a gift and skip the unwrapping.",
+    "harder": "Write your own left-right story as a group first."
+   }
+  },
+  {
+   "age_max": 12,
+   "age_min": 5,
+   "categories": [
+    "seasons",
+    "stem",
+    "quiet-focus"
+   ],
+   "group_max": 24,
+   "group_min": 1,
+   "id": "winter-bird-watch-tally",
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "tally sheets"
+    },
+    {
+     "item": "pencils"
+    },
+    {
+     "item": "binoculars (optional)"
+    },
+    {
+     "item": "a bird feeder nearby helps a lot"
+    }
+   ],
+   "name": "Winter Bird Watch Tally",
+   "no_prep": true,
+   "safety": "Watch from inside or a safe spot; never approach or touch wild birds.",
+   "setup": "Set up near a window with a view of a tree or feeder; print simple tally sheets.",
+   "steps": [
+    "Sit quietly for ten minutes and watch.",
+    "Make a tally mark every time a bird lands.",
+    "Note the color and size of each visitor: big brown, tiny gray, red chest.",
+    "Compare sheets: did everyone see the same birds?",
+    "Repeat on another day and see if the numbers change."
+   ],
+   "tagline": "Spend ten quiet minutes counting the birds that visit in winter.",
+   "tags": [
+    "season:winter"
+   ],
+   "time_max": 30,
+   "time_min": 15,
+   "variations": {
+    "easier": "Just count total birds; skip colors and sizes.",
+    "harder": "Graph a week of counts and spot the busiest visiting time."
+   }
+  },
+  {
+   "age_max": 12,
+   "age_min": 6,
+   "categories": [
+    "crafts",
+    "seasons",
+    "quiet-focus"
+   ],
+   "group_max": 24,
+   "group_min": 1,
+   "id": "northern-lights-pastels",
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "black construction paper"
+    },
+    {
+     "item": "oil pastels (green, purple, blue, white)"
+    },
+    {
+     "item": "cotton balls or tissue for smudging"
+    },
+    {
+     "item": "white paint pens or chalk for stars"
+    }
+   ],
+   "name": "Northern Lights Pastels",
+   "no_prep": false,
+   "safety": "Oil pastels stain: wear smocks and wash hands after. Keep pastels away from mouths.",
+   "setup": "Cover tables with paper; set out pastel sets and smudging cotton.",
+   "steps": [
+    "Draw wavy ribbons of green and purple across the black paper.",
+    "Smudge the colors upward with a cotton ball to make them glow.",
+    "Add a dark mountain silhouette along the bottom.",
+    "Dot tiny white stars above the lights.",
+    "Hang the finished skies together as a winter gallery."
+   ],
+   "tagline": "Smudge oil pastels into glowing auroras on black paper.",
+   "tags": [
+    "season:winter"
+   ],
+   "time_max": 45,
+   "time_min": 30,
+   "variations": {
+    "easier": "Use one color ribbon plus stars.",
+    "harder": "Layer three colors and blend them into a smooth gradient."
+   }
+  },
+  {
+   "age_max": 12,
+   "age_min": 5,
+   "categories": [
+    "outdoor",
+    "seasons",
+    "crafts"
+   ],
+   "group_max": 20,
+   "group_min": 1,
+   "id": "snow-paint-spray",
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "spray bottles"
+    },
+    {
+     "item": "water"
+    },
+    {
+     "item": "food coloring"
+    },
+    {
+     "item": "fresh snow"
+    }
+   ],
+   "name": "Snow Paint Spray",
+   "no_prep": false,
+   "safety": "Food coloring stains clothes and gloves; dress for mess and cold. Spray at snow, never at faces.",
+   "setup": "Mix a few drops of food coloring into each spray bottle ahead of time.",
+   "steps": [
+    "Head outside to clean, fresh snow.",
+    "Spray big shapes first: circles, zigzags, your initials.",
+    "Layer colors to make new ones where they overlap.",
+    "Work together on one giant mural across the snowbank.",
+    "Step back and admire it before it melts."
+   ],
+   "tagline": "Spray colored water onto fresh snow and paint the whole yard.",
+   "tags": [
+    "season:winter"
+   ],
+   "time_max": 40,
+   "time_min": 20,
+   "variations": {
+    "easier": "Use one color and paint footprints.",
+    "harder": "Plan the mural on paper first, then spray it to scale."
+   }
+  },
+  {
+   "age_max": 12,
+   "age_min": 6,
+   "categories": [
+    "crafts",
+    "holidays",
+    "team-community"
+   ],
+   "group_max": 24,
+   "group_min": 1,
+   "id": "snowman-soup-gift-mix",
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "small mason jars or clear cups with lids"
+    },
+    {
+     "item": "hot cocoa mix (sealed packets)"
+    },
+    {
+     "item": "mini marshmallows (sealed bag)"
+    },
+    {
+     "item": "chocolate chips (sealed bag)"
+    },
+    {
+     "item": "ribbon and gift tags"
+    },
+    {
+     "item": "spoons for layering"
+    }
+   ],
+   "name": "Snowman Soup Gift Mix",
+   "no_prep": false,
+   "safety": "Use only sealed, store-bought ingredients; check dairy and nut allergies. Wash hands before handling food.",
+   "setup": "Open sealed bags into pouring bowls just before the activity; set out jars and tags.",
+   "steps": [
+    "Spoon cocoa mix into the jar: about half full.",
+    "Layer chocolate chips, then mini marshmallows on top.",
+    "Seal the jar and tie ribbon around the lid.",
+    "Write the recipe tag: mix with hot water or warm milk.",
+    "Give it to someone who could use a warm-up."
+   ],
+   "tagline": "Layer cocoa, marshmallows, and chocolate chips into a gift-ready jar.",
+   "tags": [
+    "holiday:christmas",
+    "season:winter"
+   ],
+   "time_max": 40,
+   "time_min": 25,
+   "variations": {
+    "easier": "Use one jar size and a printed tag to copy.",
+    "harder": "Design your own tag art and write a personal note."
+   }
+  },
+  {
+   "age_max": 12,
+   "age_min": 7,
+   "categories": [
+    "team-community",
+    "seasons",
+    "holidays"
+   ],
+   "group_max": 30,
+   "group_min": 4,
+   "id": "solstice-lantern-stroll",
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "paper and pencils for the route plan"
+    },
+    {
+     "item": "lanterns or jar candles (real walk) or drawings (planning only)"
+    },
+    {
+     "item": "a printed map of the block or school grounds"
+    }
+   ],
+   "name": "Solstice Lantern Stroll",
+   "no_prep": false,
+   "safety": "Real flames stay with adults only; kids carry battery candles. Walk in a group with an adult leader and wear reflective gear.",
+   "setup": "Print simple maps; confirm the walk route and adult helpers with the program lead first.",
+   "steps": [
+    "Learn what the winter solstice is: the longest night of the year.",
+    "Draw a safe walking loop on the map: start, middle stop, finish.",
+    "Assign jobs: route leader, lantern carriers, song starter, caboose.",
+    "Make or decorate the lanterns.",
+    "Walk the loop together as the sky goes dark."
+   ],
+   "tagline": "Plan a lantern walk for the longest night of the year.",
+   "tags": [
+    "season:winter"
+   ],
+   "time_max": 60,
+   "time_min": 30,
+   "variations": {
+    "easier": "Plan the walk and do a daytime practice loop instead.",
+    "harder": "Write the invitation and lead the whole event yourselves."
+   }
+  },
+  {
+   "age_max": 12,
+   "age_min": 5,
+   "categories": [
+    "team-community",
+    "holidays",
+    "pe-movement"
+   ],
+   "group_max": 30,
+   "group_min": 6,
+   "id": "holiday-cleanup-crew-game",
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "bins labeled recycle, trash, and keep"
+    },
+    {
+     "item": "timer"
+    },
+    {
+     "item": "team badges or colored stickers"
+    }
+   ],
+   "name": "Holiday Cleanup Crew Game",
+   "no_prep": true,
+   "safety": "Adults handle anything sharp or broken; kids sort paper and packaging only.",
+   "setup": "Label the bins and place them where everyone can reach them.",
+   "steps": [
+    "Split into crews: Wrappers, Recyclers, and Keepers.",
+    "Set the timer for ten minutes.",
+    "Sort everything into the right bin; one point per correct item.",
+    "Pause at five minutes: which crew is winning?",
+    "Final count. The winning crew picks the closing song."
+   ],
+   "tagline": "Turn the post-party mess into a timed team mission.",
+   "tags": [
+    "holiday:christmas",
+    "season:winter"
+   ],
+   "time_max": 25,
+   "time_min": 15,
+   "variations": {
+    "easier": "Skip the points; just beat the timer together.",
+    "harder": "Add a 'mystery item' round: sort tricky items like tape rolls and ribbons."
+   }
+  },
+  {
+   "age_max": 10,
+   "age_min": 5,
+   "categories": [
+    "pe-movement",
+    "seasons",
+    "icebreakers"
+   ],
+   "group_max": 30,
+   "group_min": 4,
+   "id": "snowflake-statue-balance",
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper snowflakes (pre-cut)"
+    },
+    {
+     "item": "music for freeze rounds"
+    }
+   ],
+   "name": "Snowflake Statue Balance",
+   "no_prep": true,
+   "safety": "Clear floor space; no balancing on heads while moving.",
+   "setup": "Cut or fold a stack of paper snowflakes; clear a play area.",
+   "steps": [
+    "Each player gets a paper snowflake.",
+    "The caller names a body part: elbow, knee, shoulder.",
+    "Balance the snowflake there while the music plays.",
+    "When the music stops: freeze like a statue.",
+    "Drop your snowflake and you're the next caller."
+   ],
+   "tagline": "Balance a paper snowflake on your elbow, knee, or nose: freeze!",
+   "tags": [
+    "season:winter"
+   ],
+   "time_max": 25,
+   "time_min": 15,
+   "variations": {
+    "easier": "Balance on your palm only.",
+    "harder": "Two snowflakes at once, on two different body parts."
+   }
+  },
+  {
+   "age_max": 10,
+   "age_min": 5,
+   "categories": [
+    "pe-movement",
+    "holidays",
+    "icebreakers"
+   ],
+   "group_max": 30,
+   "group_min": 6,
+   "id": "red-nose-green-nose",
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "a red and a green paper circle (the reindeer nose signals)"
+    },
+    {
+     "item": "cones or tape for the start and finish lines"
+    }
+   ],
+   "name": "Red Nose Green Nose",
+   "no_prep": true,
+   "safety": "Play on a clear, flat surface; no running into walls or furniture.",
+   "setup": "Mark a start line and a finish line about 30 feet apart.",
+   "steps": [
+    "One player is the reindeer, holding the red and green circles.",
+    "Runners line up at the start.",
+    "Green nose means go. Red nose means freeze.",
+    "Anyone caught moving goes back to the start.",
+    "First runner to tag the reindeer becomes the reindeer."
+   ],
+   "tagline": "A holiday red-light-green-light: freeze when the reindeer nose turns red.",
+   "tags": [
+    "holiday:christmas",
+    "season:winter"
+   ],
+   "time_max": 25,
+   "time_min": 15,
+   "variations": {
+    "easier": "Play walking speed only.",
+    "harder": "Add a yellow nose: hop on one foot."
+   }
+  },
+  {
+   "age_max": 10,
+   "age_min": 5,
+   "categories": [
+    "pe-movement",
+    "seasons",
+    "icebreakers"
+   ],
+   "group_max": 24,
+   "group_min": 5,
+   "id": "winter-hide-and-seek",
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "a jingle-bell hat or headband for the seeker"
+    },
+    {
+     "item": "a whistle or timer"
+    }
+   ],
+   "name": "Winter Hide and Seek",
+   "no_prep": true,
+   "safety": "Set hiding boundaries before the first round; no hiding in locked rooms, closets that latch, or outside the boundary.",
+   "setup": "Walk the play area together and agree on the boundary lines and home base.",
+   "steps": [
+    "One seeker puts on the jingle hat and counts to 30 at home base.",
+    "Everyone else hides inside the boundary.",
+    "The seeker searches. The jingle bell gives them away if they move.",
+    "First person found becomes the next seeker.",
+    "Play three rounds and crown the best hiding spot."
+   ],
+   "tagline": "Classic hide and seek with a snowy twist: the seeker wears the jingle hat.",
+   "tags": [
+    "season:winter"
+   ],
+   "time_max": 30,
+   "time_min": 20,
+   "variations": {
+    "easier": "The seeker counts to 60 for more hiding time.",
+    "harder": "Sardines style: everyone squeezes into one hiding spot."
+   }
   }
  ],
- "count": 329,
+ "count": 355,
  "updated": "2026-10-12"
 }
