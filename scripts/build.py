@@ -215,6 +215,7 @@ ACTIVITY_TEMPLATE = """<!DOCTYPE html>
     <nav aria-label="Primary">
       <a href="../index.html">Browse</a>
       <a href="../planner.html">Plan my week</a>
+      <a href="../kit.html">Kit 🧰</a>
       <a href="../sub.html">Sub Tub 🆘</a>
       <a href="../party.html">Party Planner 🎉</a>
       <a href="../fieldtrip.html">Field Trips 🚌</a>
@@ -912,6 +913,12 @@ def main():
               "  drag-and-drop reorder, per-slot swap, surprise gap-fill, prep-level caps, collection",
               "  seeding (?from=collection:<id>), named saved plans, .ics calendar export, shareable",
               "  ?plan= links, and a print-ready card deck.",
+              "- kit.html — The After-School Kit: the flagship low-materials week builder.",
+              "  Group size + age band + days/week + what you have on hand (16-staple pantry,",
+              "  low-materials, or no-prep mode) become a week of sessions from the real library,",
+              "  each day with a run-of-show timeline, a printable session plan sheet, per-slot",
+              "  swap, one aggregated material checklist (have vs. gather), copy-as-text, and",
+              "  shareable ?kit= links that restore the exact kit on any device.",
               "- collections.html — Curated collections: 12 teacher-ready bundles (rainy-day",
               "  rescue, first day, sub tub, winter party, spring burst, summer splash, haunted halls, grateful gathering…)",
               "  each with a curator's note per pick; printable and copy-able per collection.",
@@ -933,7 +940,7 @@ def main():
     open(os.path.join(SITE, 'llms-full.txt'), 'w').write('\n'.join(full) + '\n')
 
     # 4. sitemap.xml
-    urls = ["", "planner.html", "sub.html", "party.html", "fieldtrip.html", "collections.html", "api.html", "halloween.html", "thanksgiving.html", "spring.html", "summer.html"] + [f"activity/{a['id']}.html" for a in acts]
+    urls = ["", "planner.html", "kit.html", "sub.html", "party.html", "fieldtrip.html", "collections.html", "api.html", "halloween.html", "thanksgiving.html", "spring.html", "summer.html"] + [f"activity/{a['id']}.html" for a in acts]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:

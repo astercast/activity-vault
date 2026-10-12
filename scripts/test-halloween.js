@@ -142,10 +142,10 @@ ok(indexHtml.includes('id="season-promo-halloween"'), 'index.html has halloween 
 ok(indexHtml.includes('collections.html#haunted-halls'), 'promo links haunted-halls');
 ok(indexHtml.includes('halloween.html'), 'promo links halloween.html');
 
-// 10. Nav: all 9 shells link halloween.html; exactly one aria-current per shell,
+// 10. Nav: all 10 shells link halloween.html; exactly one aria-current per shell,
 //     pointing at that shell (wave-12 lesson: verify aria-current explicitly)
 const SHELLS = {
-  'index.html': 'index.html', 'planner.html': 'planner.html', 'sub.html': 'sub.html',
+  'index.html': 'index.html', 'planner.html': 'planner.html', 'kit.html': 'kit.html', 'sub.html': 'sub.html',
   'party.html': 'party.html', 'collections.html': 'collections.html', 'api.html': null,
   'spring.html': 'spring.html', 'summer.html': 'summer.html', 'halloween.html': 'halloween.html'
 };

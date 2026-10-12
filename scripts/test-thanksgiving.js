@@ -208,10 +208,10 @@ const siteSrc = fs.readFileSync(path.join(ROOT, 'assets/site.js'), 'utf8');
 ok(siteSrc.includes('activityvault.calm.v1'), 'site.js uses the shared calm storage key');
 ok(siteSrc.includes('prefetch'), 'site.js prefetches nav links on hover/focus');
 
-// 10. Nav: all 11 shells link thanksgiving.html; exactly one aria-current per shell,
+// 10. Nav: all 12 shells link thanksgiving.html; exactly one aria-current per shell,
 //     pointing at that shell (wave-12 lesson: verify aria-current explicitly)
 const SHELLS = {
-  'index.html': 'index.html', 'planner.html': 'planner.html', 'sub.html': 'sub.html',
+  'index.html': 'index.html', 'planner.html': 'planner.html', 'kit.html': 'kit.html', 'sub.html': 'sub.html',
   'party.html': 'party.html', 'fieldtrip.html': 'fieldtrip.html',
   'collections.html': 'collections.html', 'api.html': null,
   'spring.html': 'spring.html', 'summer.html': 'summer.html', 'halloween.html': 'halloween.html',

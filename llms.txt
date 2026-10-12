@@ -70,6 +70,12 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
   drag-and-drop reorder, per-slot swap, surprise gap-fill, prep-level caps, collection
   seeding (?from=collection:<id>), named saved plans, .ics calendar export, shareable
   ?plan= links, and a print-ready card deck.
+- kit.html — The After-School Kit: the flagship low-materials week builder.
+  Group size + age band + days/week + what you have on hand (16-staple pantry,
+  low-materials, or no-prep mode) become a week of sessions from the real library,
+  each day with a run-of-show timeline, a printable session plan sheet, per-slot
+  swap, one aggregated material checklist (have vs. gather), copy-as-text, and
+  shareable ?kit= links that restore the exact kit on any device.
 - collections.html — Curated collections: 12 teacher-ready bundles (rainy-day
   rescue, first day, sub tub, winter party, spring burst, summer splash, haunted halls, grateful gathering…)
   each with a curator's note per pick; printable and copy-able per collection.

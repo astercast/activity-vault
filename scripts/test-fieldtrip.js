@@ -94,8 +94,8 @@ ok(styleSrc.includes('.ft-table'), 'style.css styles the permission table');
 ok(/\.ft-check:not\(\[open\]\)/.test(styleSrc) || styleSrc.includes('@media print'),
   'print CSS keeps closed accordions printable');
 
-// 6. Nav: all 11 shells link fieldtrip.html with correct aria-current
-const SHELLS = ['index.html', 'planner.html', 'sub.html', 'party.html', 'fieldtrip.html',
+// 6. Nav: all 12 shells link fieldtrip.html with correct aria-current
+const SHELLS = ['index.html', 'planner.html', 'kit.html', 'sub.html', 'party.html', 'fieldtrip.html',
   'collections.html', 'api.html', 'spring.html', 'summer.html', 'halloween.html', 'thanksgiving.html'];
 for (const f of SHELLS) {
   const html = fs.readFileSync(path.join(ROOT, f), 'utf8');

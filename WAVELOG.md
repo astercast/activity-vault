@@ -2,6 +2,31 @@
 
 Running record of build waves. Newest first.
 
+## Wave 18 — 2026-10-11 — "The After-School Kit" 🧰 flagship tool wave
+
+**What shipped:** the flagship experience for running a low-materials after-school program — a guided kit builder that, from the real 355-activity catalog, assembles a week of sessions filtered for low-prep / low-materials / small-group, with a material checklist, print-friendly session plan sheets, and a run-of-show day view. Zero activity-data edits (content lane untouched); all logic on existing fields (`no_prep`, `materials`, `age_*`, `group_*`, `time_*`, `categories` + the balance-bucket mapping).
+
+- **Kit wizard** (`kit.html`): group size (2–60) + age band (5 bands) + days/week (1–5) + minutes/session (30/45/60/90) + session start time + prep strictness + a 16-staple pantry (paper, markers, crayons, pencils, scissors, tape, glue, plates, cups, yarn, balloons, chalk, dice, cards, timer, water — a phone timer and tap water count as on hand, the labels say so).
+- **Pantry matching** (`assets/kit-core.js`, pure UMD `window.VaultKit`, require-able in Node): word-boundary matching against real material strings ("cup" matches "paper cups", never "cupcakes"; "card" never matches "cardboard"). Three prep modes: 🧰 use-what-i-have (every material covered by the pantry or none needed), 📦 low-materials (no-prep or ≤3 items), ⚡ no-prep only.
+- **Session dealing**: pool = age overlap + group range + `time_min <= minutes` + mode filter; each day deals 🎬 opener (≤15 min, no-prep, movement/icebreaker preferred) → ⭐ main → 🌙 closer (≤20 min, calm/quiet-focus preferred) with a 4-rung fallback ladder (role-fresh → loosened role bound → pool-fresh → repeats flagged `reused:true`, so repeats only happen when the pool is exhausted); no repeats across days; deterministic seeded deal. A relaxation ladder widens pantry→low→hard-filters with plain-language warnings when filters are too tight, and impossible corners return an empty kit + "loosen your filters" instead of a fake plan.
+- **Run of show**: per-day clock-time blocks from the session start (opener ~15% / main ~70% / closer ~15%), each slot with a "why it fits" line (prep · time · ages · group · pantry coverage), materials, safety, and a 🔀 per-slot swap.
+- **Material checklist**: one aggregated list for the week — ✅ have on hand vs. 🛒 gather before the week, with the days each item is needed; copy-as-text.
+- **Session plan sheets**: each day prints on its own printed page (`@media print`); whole-kit print button; copy-kit-as-text.
+- **Save/share (URL-synced)**: every generate/swap `history.replaceState`s a `?kit=<base64url>` v1 payload (config + exact picks); opening the link restores the identical kit and wizard answers on any device; last kit also persists in `localStorage` (`activityvault.kit.v1`); 🔗 copy-share-link button.
+- **Identity intact**: Teacher's Desk system throughout — Fraunces/Caveat/Courier Prime/Archivo Black, folder-tab nav (new "Kit 🧰" tab on all 12 shells + generated pages via `build.py`), sticker-sheet pantry chips with pressed states, rubber-stamp "SESSION PLAN SHEET" kicker, index-card day sheets with washi tape, sticky-note warnings, `data-calm` kill switch, reduced-motion gates, mobile-first, ARIA live regions + labelled controls, persistent homepage promo banner ("The After-School Kit" flagship entry point).
+- **Docs**: `AGENT.md` (new After-School Kit planner paragraph), `README.md` (tool bullet), `API.md` (kit filtering recipe), `llms.txt` (regenerated — kit.html tool line), `sitemap.xml` (kit.html), all 355 activity pages re-rendered with the Kit nav link.
+
+**Validation (wave 18):**
+- `scripts/build.py`: BUILD OK — 355 activities, 355 pages, 0 dupes (activity pages re-rendered for the Kit nav link; sitemap + llms.txt regenerated)
+- `scripts/check_api.py`: ALL CHECKS PASSED — 367 pages, 0 broken links; llms.txt 32 links resolve
+- `scripts/test-kit.js` (new): 363 assertions pass — pantry vocabulary + word-boundary matching on real strings, materialFit, config clamping, all three prep modes on the real dataset (73-activity default pool), buildKit shape/roles/determinism/no-repeats/reused-flag consistency, tight-filter relaxation, impossible-filter graceful empty kit, run-of-show math + clock format, checklist have/gather split, encode/decode round-trip (byte-identical picks) + garbage rejection, kitText, kit.html structure + full kit.js DOM-id cross-check, nav on all 12 shells with exact aria-current, sitemap/llms/CSS/print assertions
+- All existing suites still pass: test-fieldtrip 183, test-planner-core, test-spring 481, test-summer 602, test-halloween 624, test-thanksgiving 763, test-winterstem 504 (nav SHELLS lists updated to 12 shells in fieldtrip/thanksgiving/halloween suites)
+- `node --check`: kit-core.js, kit.js, test-kit.js + spot-checked existing assets — clean
+- Headless Chromium (puppeteer-core, request-interception harness, `~/workspace/w18kit/kit-e2e.js` + `kit-e2e2.js`): wizard renders (16 pantry chips, 9 defaults, 355-activity status) → generate → 3 day cards / 9 slots / checklist / print+copy+share actions → URL synced to `?kit=` → swap changes a slot → fresh page on the share URL restores byte-identical picks + wizard answers + "Shared kit restored" announcement → print emulation shows wizard hidden + 3 plan sheets → mobile 390px generates with no horizontal scroll → calm toggle sets `data-calm` + `aria-pressed` + persists. **Zero console errors** (only the pre-existing site-wide favicon 404 and sandbox font-tunnel failures, both documented in wave 17 as environmental). Screenshots: `~/workspace/w18kit/shots/` (kit-desktop, kit-mobile, kit-mobile-wizard, kit-print).
+- Design note for future waves: the dataset has only 2 activities with `time_max ≤ 12` (9 with ≤ 15) — role slots for openers/closers use a fallback ladder rather than hard shortness gates; a future content wave could add genuine 5–10 minute micro-activities to strengthen the opener/closer pools.
+
+**Wave 18 push resolution:** (filled after push)
+
 ## Wave 17 — 2026-10-11 — "The Teacher's Desk" visual identity rework (wave 1)
 
 **What shipped:** full identity overhaul, content untouched (355 activities, 11 categories, planner/Sub Tub/field-trip/API/RSS all intact — CSS + shell chrome only, zero activity-data edits).
