@@ -13,7 +13,7 @@ This archive is built to be driven by agents, no browser needed. Everything is s
 
 | Endpoint | What it is | Schema |
 |---|---|---|
-| `api/v1/activities.json` | All 288 activity records with full details | `api/v1/schema/activities.schema.json` |
+| `api/v1/activities.json` | All 308 activity records with full details | `api/v1/schema/activities.schema.json` |
 | `api/v1/categories.json` | The 11 categories (`id`, `name`, `blurb`, `color`, `glyph`) | `api/v1/schema/categories.schema.json` |
 | `api/v1/filters.json` | Machine-readable filter config — the same matching logic the browser UI uses | `api/v1/schema/filters.schema.json` |
 | `api/v1/skills.json` | Registry of the 10 reusable skill recipes in `skills/` | (self-describing) |
@@ -26,8 +26,9 @@ Record-level schemas also exist: `api/v1/schema/activity.schema.json`, `api/v1/s
 
 ## Curated collections (wave 9)
 
-`api/v1/collections.json` — 10 teacher-ready bundles, each with `id`, `title`, `glyph`, `when_to_use` (the moment to reach for it), `picks[]` (`activity_id` + `curator_note` — the curator's one-line "why this one"), `age_span`/`time_span` (min/max across picks), and `page` (deep link, e.g. `collections.html#rainy-day-rescue`). The ten: `rainy-day-rescue`, `first-day-of-program`, `last-10-minutes`, `field-trip-bus-ride`, `sub-tub-essentials` (pairs with the Sub Tub kit, `sub.html`), `winter-party-night` (pairs with the Party Planner's ❄️ Winter theme, `party.html`), `no-prep-lifesavers`, `calm-down-corner`, `spring-burst` (the spring 2027 pack's greatest hits; deep link `planner.html?from=collection:spring-burst` seeds the week planner from it), `summer-splash` (the summer 2027 pack's greatest hits; deep link `planner.html?from=collection:summer-splash` seeds the week planner from it). Every `activity_id` resolves to a record in `activities.json` — asserted by `scripts/build.py` and re-checked by `scripts/check_api.py`. Browse surface: `collections.html` (printable per collection; "📋 Copy this collection" text export carries the curator notes; activities you've rated show your own rating badges on their picks — your ratings only, never aggregates).
+`api/v1/collections.json` — 11 teacher-ready bundles, each with `id`, `title`, `glyph`, `when_to_use` (the moment to reach for it), `picks[]` (`activity_id` + `curator_note` — the curator's one-line "why this one"), `age_span`/`time_span` (min/max across picks), and `page` (deep link, e.g. `collections.html#rainy-day-rescue`). The eleven: `rainy-day-rescue`, `first-day-of-program`, `last-10-minutes`, `field-trip-bus-ride`, `sub-tub-essentials` (pairs with the Sub Tub kit, `sub.html`), `winter-party-night` (pairs with the Party Planner's ❄️ Winter theme, `party.html`), `no-prep-lifesavers`, `calm-down-corner`, `spring-burst` (the spring 2027 pack's greatest hits; deep link `planner.html?from=collection:spring-burst` seeds the week planner from it), `summer-splash` (the summer 2027 pack's greatest hits; deep link `planner.html?from=collection:summer-splash` seeds the week planner from it), `haunted-halls` (the Halloween 2026 pack's greatest hits; deep link `planner.html?from=collection:haunted-halls` seeds the week planner from it). Every `activity_id` resolves to a record in `activities.json` — asserted by `scripts/build.py` and re-checked by `scripts/check_api.py`. Browse surface: `collections.html` (printable per collection; "📋 Copy this collection" text export carries the curator notes; activities you've rated show your own rating badges on their picks — your ratings only, never aggregates).
 **Spring hub** (`spring.html`, wave 11) — the spring 2027 pack's browse surface: 5 curated sections (spring crafts, outdoor games, spring science, rainy spring days, spring holidays with Easter/Earth Day groups), each pick rendered from the real records with your own rating badges; hero shortcuts to `planner.html?from=collection:spring-burst`, `collections.html#spring-burst`, and the Party Planner's 🌷 Spring theme. Section pick ids are asserted by `scripts/test-spring.js`.
+**Halloween hub** (`halloween.html`, wave 13) — the Halloween 2026 pack's browse surface: 5 curated sections (Halloween crafts, costume & party games, not-too-spooky science, harvest, beyond trick-or-treating with alternatives/allergy-aware/respectful groups), each pick rendered from the real records with your own rating badges plus a client-side spookiness filter (🍎 Not spooky / 👻 Spooky-fun / 🕷️ Mildly spooky); hero shortcuts to `planner.html?from=collection:haunted-halls`, `collections.html#haunted-halls`, and the Party Planner's 🎃 Halloween theme. Section pick ids are asserted by `scripts/test-halloween.js`.
 **Summer hub** (`summer.html`, wave 12) — the summer 2027 pack's browse surface: 5 curated sections (water play, outdoor & camp games, summer crafts, beat-the-heat indoor, summer holidays & camp with July 4th/camp-week groups), each pick rendered from the real records with your own rating badges; hero shortcuts to `planner.html?from=collection:summer-splash`, `collections.html#summer-splash`, and the Party Planner's ☀️ Summer theme. Section pick ids are asserted by `scripts/test-summer.js`.
 
 ## The activity record
@@ -98,7 +99,7 @@ Rules for agents and for the UI copy (standing):
 
 **Situation:** 8-year-olds, stuck indoors, ~30 minutes.
 
-1. `GET api/v1/activities.json` (one fetch; 288 records, ~330 KB).
+1. `GET api/v1/activities.json` (one fetch; 308 records, ~350 KB).
 2. Filter:
    - `'rainy-day'` in `categories`
    - `'indoor'` in `location`

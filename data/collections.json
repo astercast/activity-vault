@@ -551,6 +551,62 @@
      "note": "Trace one shadow all solstice day; the sun draws the graph."
     }
    ]
+  },
+  {
+   "id": "haunted-halls",
+   "title": "Haunted halls",
+   "glyph": "👻",
+   "when_to_use": "October is here and the program needs its Halloween spine: the Halloween 2026 pack's greatest hits plus the Vault's best older not-too-spooky picks — crafts, costume games, mild-thrill science, harvest anchors, trick-or-treat alternatives, and the allergy-aware must-dos.",
+   "picks": [
+    {
+     "id": "no-carve-pumpkin-decorating",
+     "note": "All the pumpkin fun, zero knives — the young-kid classic that starts every October."
+    },
+    {
+     "id": "ghost-garland-string",
+     "note": "Tissue ghosts on a string: the fastest room transformation in the Vault."
+    },
+    {
+     "id": "monster-mask-making",
+     "note": "Cardstock monsters with real 3D horns and fangs — costume-station ready."
+    },
+    {
+     "id": "costume-runway-walk",
+     "note": "Every costume gets its strut and its narrator moment."
+    },
+    {
+     "id": "monster-mash-dance",
+     "note": "Freeze when the music stops — in your spookiest pose."
+    },
+    {
+     "id": "mystery-feel-boxes",
+     "note": "Peeled grapes, cold spaghetti: mild thrills, lights on, zero scares."
+    },
+    {
+     "id": "pumpkin-volcano-fizz",
+     "note": "The jack-o'-lantern erupts — baking soda, vinegar, dish soap."
+    },
+    {
+     "id": "candy-chromatography",
+     "note": "Candy dyes split into rainbows on coffee filters — real separation science."
+    },
+    {
+     "id": "apple-tasting-party",
+     "note": "The harvest anchor: blind taste-test, vote, graph the results."
+    },
+    {
+     "id": "teal-pumpkin-project",
+     "note": "The allergy-aware must-do: teal pumpkin, non-food treat box, every kid included."
+    },
+    {
+     "id": "trunk-or-treat-planning",
+     "note": "The parking-lot alternative, planned by the kids themselves."
+    },
+    {
+     "id": "reverse-trick-or-treat",
+     "note": "Deliver treats instead of collecting them — the kindness flip."
+    }
+   ]
   }
  ]
 }

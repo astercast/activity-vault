@@ -207,6 +207,7 @@ ACTIVITY_TEMPLATE = """<!DOCTYPE html>
       <a href="../sub.html">Sub Tub 🆘</a>
       <a href="../party.html">Party Planner 🎃</a>
       <a href="../collections.html">Collections 📚</a>
+      <a href="../halloween.html">Halloween 🎃</a>
       <a href="../spring.html">Spring 🌷</a>
       <a href="../summer.html">Summer ☀️</a>
     </nav>
@@ -443,7 +444,7 @@ def main():
         sys.exit(1)
     actmap = {a['id']: a for a in acts}
     # Wave 9 explicit assert: every collection pick resolves to a real activity id.
-    assert len(colls) == 10, f"expected 10 collections, got {len(colls)}"
+    assert len(colls) == 11, f"expected 11 collections, got {len(colls)}"
     assert all(p['id'] in actmap for c in colls for p in c['picks']), \
         "collection pick does not resolve to a real activity id"
     # Wave 10 explicit assert: balance-buckets covers all 11 categories.
@@ -797,6 +798,10 @@ def main():
               "  Pick a theme, class size, minutes, stations, and budget — generates a timed",
               "  station-rotation plan from seasonal activities, plus a setup list and a",
               "  print-ready run sheet.",
+              "- halloween.html — Halloween hub: the Halloween 2026 pack's crafts, costume and",
+              "  party games, not-too-spooky science, harvest activities, and trick-or-treat",
+              "  alternatives, plus the Haunted Halls collection, a Halloween party-theme shortcut,",
+              "  and a spookiness-level filter.",
               "- spring.html — Spring hub: the spring 2027 pack's crafts, outdoor games,",
               "  spring science, rainy-day backups, and spring-holiday activities, plus the",
               "  Spring Burst collection and a spring party-theme shortcut.",
@@ -808,8 +813,8 @@ def main():
               "  drag-and-drop reorder, per-slot swap, surprise gap-fill, prep-level caps, collection",
               "  seeding (?from=collection:<id>), named saved plans, .ics calendar export, shareable",
               "  ?plan= links, and a print-ready card deck.",
-              "- collections.html — Curated collections: 10 teacher-ready bundles (rainy-day",
-              "  rescue, first day, sub tub, winter party, spring burst, summer splash…)",
+              "- collections.html — Curated collections: 11 teacher-ready bundles (rainy-day",
+              "  rescue, first day, sub tub, winter party, spring burst, summer splash, haunted halls…)",
               "  each with a curator's note per pick; printable and copy-able per collection.",
               "- api.html — API docs with a Try-the-API console (endpoint picker, fetch, pretty JSON).",
               "", "## Docs", "- API.md — full API reference", "- PIPELINE.md — how the library grows",
@@ -829,7 +834,7 @@ def main():
     open(os.path.join(SITE, 'llms-full.txt'), 'w').write('\n'.join(full) + '\n')
 
     # 4. sitemap.xml
-    urls = ["", "planner.html", "sub.html", "party.html", "collections.html", "api.html", "spring.html", "summer.html"] + [f"activity/{a['id']}.html" for a in acts]
+    urls = ["", "planner.html", "sub.html", "party.html", "collections.html", "api.html", "halloween.html", "spring.html", "summer.html"] + [f"activity/{a['id']}.html" for a in acts]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:

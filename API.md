@@ -21,10 +21,10 @@ Self-describing manifest of the whole API — agents should start here:
 {
   "meta": { "site": "Activity Vault", "version": "1.0.0",
             "generated": "2026-10-11T00:40:21Z",
-            "source_snapshot": "data/activities.json + data/categories.json — 288 activities, 11 categories" },
+            "source_snapshot": "data/activities.json + data/categories.json — 308 activities, 11 categories" },
   "endpoints": [ { "path": "api/v1/activities.json", "title": "...", "description": "...",
                    "schema": "api/v1/schema/activities.schema.json",
-                   "updated": "2026-10-11", "records": 288, "stability": "stable" } ],
+                   "updated": "2026-10-11", "records": 308, "stability": "stable" } ],
   "deprecation_notes": "No endpoints are deprecated as of 1.0.0."
 }
 ```
@@ -38,7 +38,7 @@ Full activity library.
 ```json
 {
   "activities": [ { "id": "...", "name": "...", ... } ],
-  "count": 288,
+  "count": 308,
   "updated": "2026-10-11"
 }
 ```
@@ -94,7 +94,7 @@ Machine-readable filter configuration — the same logic the browser UI uses:
 
 ### `GET api/v1/collections.json`
 
-Curated collections — 10 teacher-ready bundles (`rainy-day-rescue`, `first-day-of-program`, `last-10-minutes`, `field-trip-bus-ride`, `sub-tub-essentials`, `winter-party-night`, `no-prep-lifesavers`, `calm-down-corner`, `spring-burst`, `summer-splash`). Each record: `id`, `title`, `glyph`, `when_to_use`, `picks[]` of `{activity_id, curator_note}`, computed `age_span`/`time_span`, and `page` (deep link). Every `activity_id` is a real record in `activities.json`.
+Curated collections — 11 teacher-ready bundles (`rainy-day-rescue`, `first-day-of-program`, `last-10-minutes`, `field-trip-bus-ride`, `sub-tub-essentials`, `winter-party-night`, `no-prep-lifesavers`, `calm-down-corner`, `spring-burst`, `summer-splash`, `haunted-halls`). Each record: `id`, `title`, `glyph`, `when_to_use`, `picks[]` of `{activity_id, curator_note}`, computed `age_span`/`time_span`, and `page` (deep link). Every `activity_id` is a real record in `activities.json`.
 
 ```json
 { "collections": [ {"id": "rainy-day-rescue", "title": "Rainy-day rescue", "glyph": "🌧️",

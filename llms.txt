@@ -5,17 +5,17 @@ Hundreds of real, classic, public-domain activity concepts — filterable by age
 group size, materials, and category. Plan-my-week planner. Printable one-page cards.
 
 ## Categories
-- Seasons: 59 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
-- Holidays: 43 activities — Festive projects and games for the days the whole group looks forward to.
-- Crafts: 91 activities — Hands-on making: fold it, paint it, build it, take it home.
-- STEM: 68 activities — Experiments, engineering challenges, and satisfying science demos.
-- PE & Movement: 61 activities — Run, jump, dance — activities that burn off the wiggles.
-- Team & Community: 54 activities — Turn a group into a crew: cooperation, trust, and belonging.
+- Seasons: 66 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
+- Holidays: 57 activities — Festive projects and games for the days the whole group looks forward to.
+- Crafts: 97 activities — Hands-on making: fold it, paint it, build it, take it home.
+- STEM: 77 activities — Experiments, engineering challenges, and satisfying science demos.
+- PE & Movement: 65 activities — Run, jump, dance — activities that burn off the wiggles.
+- Team & Community: 62 activities — Turn a group into a crew: cooperation, trust, and belonging.
 - Icebreakers: 31 activities — First-day friendly: learn names, laugh, and loosen up fast.
-- Outdoor: 67 activities — Fresh-air activities for fields, playgrounds, and nature walks.
+- Outdoor: 68 activities — Fresh-air activities for fields, playgrounds, and nature walks.
 - Rainy Day: 35 activities — Stuck inside? These keep a roomful of kids happy without a gym.
-- Quiet & Focus: 60 activities — Wind-down worthy: calm, creative, individual or small-group.
-- Music & Rhythm: 10 activities — Drums, shakers, rhythm games, and songs — make some noise.
+- Quiet & Focus: 66 activities — Wind-down worthy: calm, creative, individual or small-group.
+- Music & Rhythm: 11 activities — Drums, shakers, rhythm games, and songs — make some noise.
 
 ## API — start at api/v1/index.json (self-describing manifest)
 - api/v1/index.json — api manifest
@@ -29,7 +29,7 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
 ## Skills
 - skills/activity-finder.md — Find the right activity fast using age, time, group size, and materials-on-hand filters.
 - skills/balanced-week-builder.md — Build an auto-balanced week of activities with an energy balance meter, prep caps, and no repeats — the Smart Weekly Planner 2.0 recipe.
-- skills/halloween-party-planner.md — Turn party constraints into a timed station-rotation plan from seasonal activities. Covers the Halloween and winter party presets.
+- skills/halloween-party-planner.md — Turn party constraints into a timed station-rotation plan from seasonal activities. Covers the Halloween, winter, spring, and summer party presets.
 - skills/icebreaker-chooser.md — Pick first-day and new-group icebreakers matched to group size and shyness level.
 - skills/no-prep-rescue.md — Grab-and-go activities that need zero prep and zero (or near-zero) materials.
 - skills/outdoor-play-picker.md — Pick the right outdoor activity for the space, weather, and energy level you have.
@@ -47,6 +47,10 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
   Pick a theme, class size, minutes, stations, and budget — generates a timed
   station-rotation plan from seasonal activities, plus a setup list and a
   print-ready run sheet.
+- halloween.html — Halloween hub: the Halloween 2026 pack's crafts, costume and
+  party games, not-too-spooky science, harvest activities, and trick-or-treat
+  alternatives, plus the Haunted Halls collection, a Halloween party-theme shortcut,
+  and a spookiness-level filter.
 - spring.html — Spring hub: the spring 2027 pack's crafts, outdoor games,
   spring science, rainy-day backups, and spring-holiday activities, plus the
   Spring Burst collection and a spring party-theme shortcut.
@@ -58,8 +62,8 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
   drag-and-drop reorder, per-slot swap, surprise gap-fill, prep-level caps, collection
   seeding (?from=collection:<id>), named saved plans, .ics calendar export, shareable
   ?plan= links, and a print-ready card deck.
-- collections.html — Curated collections: 10 teacher-ready bundles (rainy-day
-  rescue, first day, sub tub, winter party, spring burst, summer splash…)
+- collections.html — Curated collections: 11 teacher-ready bundles (rainy-day
+  rescue, first day, sub tub, winter party, spring burst, summer splash, haunted halls…)
   each with a curator's note per pick; printable and copy-able per collection.
 - api.html — API docs with a Try-the-API console (endpoint picker, fetch, pretty JSON).
 

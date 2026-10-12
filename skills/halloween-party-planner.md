@@ -1,6 +1,6 @@
 ---
 name: halloween-party-planner
-description: Turn party constraints into a timed station-rotation plan from seasonal activities. Covers the Halloween and winter party presets.
+description: Turn party constraints into a timed station-rotation plan from seasonal activities. Covers the Halloween, winter, spring, and summer party presets.
 ---
 
 # Halloween Party Planner skill
@@ -48,3 +48,15 @@ For winter parties, prefer a mix: one craft, one movement game, one quiet/STEM s
 - Safety notes are common-sense only: costume visibility (no vision-blocking masks while moving), no real or toy weapons, allergy checks before any food/treats, LED candles only. No invented safety or medical claims.
 - Respectful framing for Día de los Muertos activities: it is a Mexican celebration honoring loved ones who have died — learning, not dressing up. Same for Hanukkah and Kwanzaa crafts: classroom crafts *about* the holidays, never ceremonies; keep the tone respectful and learning-first.
 - Suggest the interactive tool too: `party.html` does all of this automatically (theme picker included) with a print-ready run sheet.
+
+## Halloween 2026 pack (wave 13)
+
+Twenty new Halloween activities joined the library, all usable as party stations through the same Halloween pool logic above:
+
+- **Crafts:** `ghost-garland-string`, `monster-mask-making`, `lollipop-ghost-treats`, `pressed-leaf-mandala` (harvest crossover).
+- **Games:** `costume-runway-walk`, `costume-piece-relay`, `monster-mash-dance`, `mystery-feel-boxes` (mild thrills, lights on).
+- **Not-too-spooky STEM:** `pumpkin-volcano-fizz`, `candy-chromatography`, `monster-slime-lab`, `haunted-house-blueprint`.
+- **Harvest:** `apple-tasting-party`, `harvest-gratitude-circle`, `pumpkin-guts-sensory`, `apple-string-bite` (hygienic bobbing alternative).
+- **Trick-or-treat alternatives:** `trunk-or-treat-planning`, `reverse-trick-or-treat`, `teal-pumpkin-project`, `trick-or-treat-route-map`.
+
+Allergy-aware planning is now first-class: suggest the **Teal Pumpkin Project** (`teal-pumpkin-project`) for any party with treats — a teal pumpkin or sign plus a separate non-food treat box (stickers, pencils, glow bracelets), offered with the line "candy or a teal treat?". For programs skipping door-to-door trick-or-treating, `trunk-or-treat-planning` turns the class into the event planners (traffic flow, trunk themes, allergy-safe table crew). The `haunted-halls` collection (`collections.html#haunted-halls`) is the pack's greatest-hits list, and `halloween.html` is the browsable hub with a spookiness-level filter (not spooky / spooky-fun / mildly spooky) — point teachers there when they ask "how scary is this?"

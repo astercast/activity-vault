@@ -12,7 +12,7 @@
   },
   {
    "id": "halloween-party-planner",
-   "description": "Turn party constraints into a timed station-rotation plan from seasonal activities. Covers the Halloween and winter party presets.",
+   "description": "Turn party constraints into a timed station-rotation plan from seasonal activities. Covers the Halloween, winter, spring, and summer party presets.",
    "file": "skills/halloween-party-planner.md"
   },
   {

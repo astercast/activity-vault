@@ -461,13 +461,15 @@
       if (statActs) statActs.textContent = state.activities.length;
       if (statCats) statCats.textContent = state.categories.length;
       if (statPrep) statPrep.textContent = state.activities.filter(function (a) { return a.no_prep; }).length;
-      // Seasonal homepage promos: spring (Mar–May), summer (Jun–Aug) — client-side, month-gated.
+      // Seasonal homepage promos: spring (Mar–May), summer (Jun–Aug), halloween (Oct) — client-side, month-gated.
       var promo = document.getElementById('season-promo');
       var summerPromo = document.getElementById('season-promo-summer');
+      var halloweenPromo = document.getElementById('season-promo-halloween');
       if (promo) {
         var pm = new Date().getMonth();
         promo.hidden = !(pm === 2 || pm === 3 || pm === 4);
         if (summerPromo) summerPromo.hidden = !(pm === 5 || pm === 6 || pm === 7);
+        if (halloweenPromo) halloweenPromo.hidden = !(pm === 9);
       }
       buildFilters();
       // ?view=top-rated deep link (My top 10 — ratings live in the visitor's browser)

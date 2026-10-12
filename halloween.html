@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Halloween in the Vault — crafts, costume games, not-too-spooky science — Activity Vault</title>
+<meta name="description" content="The Halloween 2026 pack: 20 new Halloween activities for teachers and after-school programs — crafts, costume and party games, not-too-spooky science, harvest activities, and trick-or-treat alternatives — plus the Haunted Halls collection and the Halloween party theme.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#halloween-main">Skip to Halloween activities</a>
+<header class="site-header no-print">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Activity Vault home">
+      <span class="brand-mark" aria-hidden="true">🗂️</span>
+      <span class="brand-text">Activity <strong>Vault</strong></span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="index.html">Browse</a>
+      <a href="planner.html">Plan my week</a>
+      <a href="sub.html">Sub Tub 🆘</a>
+      <a href="party.html">Party Planner 🎉</a>
+      <a href="collections.html">Collections 📚</a>
+      <a href="halloween.html" aria-current="page">Halloween 🎃</a>
+      <a href="spring.html">Spring 🌷</a>
+      <a href="summer.html">Summer ☀️</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="halloween-main">
+  <section class="hero" aria-labelledby="hero-title">
+    <span class="kicker no-print">🎃 Halloween 2026 pack</span>
+    <h1 id="hero-title">Halloween in the Vault.</h1>
+    <p class="lede no-print">Twenty new Halloween activities — no-carve crafts, costume-parade games, not-too-spooky science, harvest anchors, and trick-or-treat alternatives (including the allergy-aware Teal Pumpkin Project) — plus the Vault's best older Halloween picks, freshly tagged. Everything below is real and runnable: classic concepts described in our own words. Nothing here is actually scary.</p>
+    <div class="hero-actions no-print">
+      <a class="btn" href="planner.html?from=collection:haunted-halls">🗓️ Plan a Halloween week</a>
+      <a class="btn btn-ghost" href="collections.html#haunted-halls">📚 Haunted Halls collection</a>
+      <a class="btn btn-ghost" href="party.html">🎉 Halloween party theme</a>
+    </div>
+  </section>
+
+  <div class="spook-filter no-print" role="group" aria-labelledby="spook-filter-label">
+    <span class="flabel" id="spook-filter-label">Spookiness level</span>
+    <div class="chip-row">
+      <button class="chip" type="button" data-spook="all" aria-pressed="true">🎃 Show all</button>
+      <button class="chip" type="button" data-spook="none" aria-pressed="false">🍎 Not spooky</button>
+      <button class="chip" type="button" data-spook="fun" aria-pressed="false">👻 Spooky-fun</button>
+      <button class="chip" type="button" data-spook="mild" aria-pressed="false">🕷️ Mildly spooky</button>
+    </div>
+    <p class="spook-note">🍎 Not spooky = pure harvest and kindness fun. 👻 Spooky-fun = silly ghosts and monsters, zero scares. 🕷️ Mildly spooky = gentle thrills with the lights on — nothing that would frighten a kindergartner.</p>
+  </div>
+
+  <p id="halloween-status" role="status" aria-live="polite">Loading Halloween activities…</p>
+
+  <div id="halloween-sections"></div>
+</main>
+
+<footer class="site-footer no-print">
+  <div class="wrap">
+    <p><strong>Activity Vault</strong> — the all-in-one activity archive for teachers &amp; after-school programs. All activities are classic, public-domain concepts described in our own words.</p>
+    <p><a href="api/v1/activities.json">API</a> · <a href="api.html">API docs &amp; console</a> · <a href="llms.txt">llms.txt</a> · <a href="AGENT.md">Agent guide</a></p>
+  </div>
+</footer>
+
+<script src="assets/ratings.js" defer></script>
+<script src="assets/halloween.js" defer></script>
+</body>
+</html>
