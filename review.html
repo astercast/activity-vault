@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scout review queue — Activity Vault</title>
+<meta name="description" content="The Scout's human-in-the-loop review queue: activity ideas the RSS watch found, waiting for a human to adapt them into original words.">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@500;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap">
+<script src="assets/site.js" defer></script>
+<script src="assets/js/api-client.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#queue">Skip to the review queue</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Activity Vault home">
+      <span class="brand-mark" aria-hidden="true">🗂️</span>
+      <span class="brand-text">Activity <strong>Vault</strong></span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="index.html">Browse</a>
+      <a href="planner.html">Plan my week</a>
+      <a href="kit.html">Kit 🧰</a>
+      <a href="sub.html">Sub Tub 🆘</a>
+      <a href="party.html">Party Planner 🎉</a>
+      <a href="fieldtrip.html">Field Trips 🚌</a>
+      <a href="collections.html">Collections 📚</a>
+      <a href="halloween.html">Halloween 🎃</a>
+      <a href="thanksgiving.html">Thanksgiving 🦃</a>
+      <a href="spring.html">Spring 🌷</a>
+      <a href="summer.html">Summer ☀️</a>
+    </nav>
+    <button class="btn btn-ghost btn-small no-print" id="site-calm-toggle" type="button"
+            aria-pressed="false" aria-label="Calm mode: turn off page animations and motion">
+      <span aria-hidden="true">🍃</span> Calm: <span class="calm-state">off</span>
+    </button>
+  </div>
+</header>
+
+<main class="wrap docs-page">
+  <div class="review-head">
+    <div>
+      <h1 id="queue">Scout review queue</h1>
+      <p class="lede">Ideas the Scout's RSS watch flagged — each waits for a human to adapt it
+      into original words before it can enter the Vault (PIPELINE.md).</p>
+    </div>
+    <span class="api-badge" id="queue-badge" data-api-state="waking"
+          role="status" aria-live="polite" tabindex="0">waking server…</span>
+  </div>
+  <p class="qmeta" id="queue-counts">0 pending · 23 decided (last 90 days) · snapshot 2026-10-12T06:55:35Z</p>
+  <div id="queue-list"><div class="queue-empty">The queue is clear — nothing awaiting review. 🌿</div></div>
+
+  <section aria-labelledby="h-decided">
+    <div class="review-head">
+      <h2 id="h-decided">Decided (last 90 days)</h2>
+      <span class="api-badge" id="decided-badge" data-api-state="waking"
+            role="status" aria-live="polite" tabindex="0">waking server…</span>
+    </div>
+    <div id="decided-list"><div class="table-wrap"><table class="decided-table"><thead><tr><th scope="col">Decided</th><th scope="col">Candidate</th><th scope="col">Decision</th><th scope="col">Adapted as</th><th scope="col">Note</th></tr></thead><tbody><tr><td>2026-10-11</td><td>Coping Strategies for Students Posters (Free Printables)</td><td><span class="dec-approve">approved</span></td><td><a href="activity/coping-strategy-cards.html">coping-strategy-cards</a></td><td>Adapt into original words per PIPELINE.md. Link as source if adapted.</td></tr><tr><td>2026-10-11</td><td>Free Printable Anti-Bullying Posters for Your Classroom</td><td><span class="dec-approve">approved</span></td><td><a href="activity/kindness-poster-campaign.html">kindness-poster-campaign</a></td><td>Adapt into original words per PIPELINE.md. Link as source if adapted.</td></tr><tr><td>2026-10-11</td><td>111 Cool Winter Jokes To Break the Ice</td><td><span class="dec-approve">approved</span></td><td><a href="activity/winter-joke-slam.html">winter-joke-slam</a></td><td>Adapt into original words per PIPELINE.md. Link as source if adapted.</td></tr><tr><td>2026-10-11</td><td>15 Thanksgiving Bulletin Boards Teachers Will Love (Plus Free Printables)</td><td><span class="dec-approve">approved</span></td><td><a href="activity/gratitude-door-decor.html">gratitude-door-decor</a></td><td>Adapt into original words per PIPELINE.md. Link as source if adapted.</td></tr><tr><td>2026-10-11</td><td>130+ Best Argumentative Essay Topics for Students (Plus Free Worksheets)</td><td><span class="dec-approve">approved</span></td><td><a href="activity/take-a-stand-debate.html">take-a-stand-debate</a></td><td>Adapt into original words per PIPELINE.md. Link as source if adapted.</td></tr><tr><td>2026-10-11</td><td>The Best Thanksgiving Poems for Kids of All Ages</td><td><span class="dec-approve">approved</span></td><td><a href="activity/poetry-share-circle.html">poetry-share-circle</a></td><td>Adapt into original words per PIPELINE.md. Link as source if adapted.</td></tr><tr><td>2026-10-11</td><td>Samsung Solve for Tomorrow Is Back, and 500 Schools Will Win!</td><td><span class="dec-reject">rejected</span></td><td>—</td><td>Adapt into original words per PIPELINE.md. Link as source if adapted.</td></tr><tr><td>2026-10-11</td><td>77 Best Short Stories To Teach in Middle School</td><td><span class="dec-reject">rejected</span></td><td>—</td><td>Adapt into original words per PIPELINE.md. Link as source if adapted.</td></tr><tr><td>2026-10-11</td><td>Fun Fall Find the Letter on the Pumpkin Activity for Preschoolers</td><td><span class="dec-approve">approved</span></td><td><a href="activity/pumpkin-letter-hunt.html">pumpkin-letter-hunt</a></td><td>Adapt into original words per PIPELINE.md. Link as source if adapted.</td></tr><tr><td>2026-10-11</td><td>Improve Kids Fine Motor Skills with 30 Materials &amp; Activities</td><td><span class="dec-reject">rejected</span></td><td>—</td><td>Adapt into original words per PIPELINE.md. Link as source if adapted.</td></tr><tr><td>2026-10-11</td><td>28 No Carve Pumpkin Decorating Ideas for Kids</td><td><span class="dec-reject">rejected</span></td><td>—</td><td>Adapt into original words per PIPELINE.md. Link as source if adapted.</td></tr><tr><td>2026-10-11</td><td>Nature Walk Scavenger Hunt: Leaf Counting</td><td><span class="dec-reject">rejected</span></td><td>—</td><td>Adapt into original words per PIPELINE.md. Link as source if adapted.</td></tr><tr><td>2026-10-11</td><td>Make a Spider Web to Learn Letter S</td><td><span class="dec-reject">rejected</span></td><td>—</td><td>Adapt into original words per PIPELINE.md. Link as source if adapted.</td></tr><tr><td>2026-10-11</td><td>Homemade Christmas Ornaments for Kids to Make</td><td><span class="dec-approve">approved</span></td><td><a href="activity/homemade-christmas-ornaments.html">homemade-christmas-ornaments</a></td><td>Adapt into original words per PIPELINE.md. Link as source if adapted.</td></tr><tr><td>2026-10-11</td><td>Learning Activity with Dominoes</td><td><span class="dec-reject">rejected</span></td><td>—</td><td>Adapt into original words per PIPELINE.md. Link as source if adapted.</td></tr><tr><td>2026-10-11</td><td>Decoder Wheel Printable: Make Your Own Secret Code Wheels</td><td><span class="dec-approve">approved</span></td><td><a href="activity/secret-code-decoder-wheels.html">secret-code-decoder-wheels</a></td><td>Adapt into original words per PIPELINE.md. Link as source if adapted.</td></tr><tr><td>2026-10-11</td><td>The Scream Art Project for Kids + Free Printable</td><td><span class="dec-approve">approved</span></td><td><a href="activity/expressionism-scream-art.html">expressionism-scream-art</a></td><td>Adapt into original words per PIPELINE.md. Link as source if adapted.</td></tr><tr><td>2026-10-11</td><td>Maryland State Geography for Kids: Printable Learning Pack</td><td><span class="dec-reject">rejected</span></td><td>—</td><td>Adapt into original words per PIPELINE.md. Link as source if adapted.</td></tr><tr><td>2026-10-11</td><td>Dinosaur Pattern Block Mats: Hands-On Math Activity</td><td><span class="dec-approve">approved</span></td><td><a href="activity/dinosaur-pattern-blocks.html">dinosaur-pattern-blocks</a></td><td>Adapt into original words per PIPELINE.md. Link as source if adapted.</td></tr><tr><td>2026-10-11</td><td>Famous Art Coloring Pages: 15 Masterpieces for Kids</td><td><span class="dec-approve">approved</span></td><td><a href="activity/masterpiece-coloring-gallery.html">masterpiece-coloring-gallery</a></td><td>Adapt into original words per PIPELINE.md. Link as source if adapted.</td></tr><tr><td>2026-10-11</td><td>Fall Bucket List: 24 Fun Fall Activities for Families</td><td><span class="dec-reject">rejected</span></td><td>—</td><td>Adapt into original words per PIPELINE.md. Link as source if adapted.</td></tr><tr><td>2026-10-11</td><td>Washington Irving’s Legend of Sleepy Hollow Activities:  Literary Mystery</td><td><span class="dec-reject">rejected</span></td><td>—</td><td>Adapt into original words per PIPELINE.md. Link as source if adapted.</td></tr><tr><td>2026-10-11</td><td>Free Printable World Map + 7 Continents Activity for Kids</td><td><span class="dec-approve">approved</span></td><td><a href="activity/continents-map-puzzle.html">continents-map-puzzle</a></td><td>Adapt into original words per PIPELINE.md. Link as source if adapted.</td></tr></tbody></table></div></div>
+  </section>
+
+  <section aria-labelledby="h-admin" class="no-print">
+    <h2 id="h-admin">Approve / reject</h2>
+    <div class="review-admin-note">
+      <p><strong>Read-only here.</strong> Approve and reject are server-side operations:
+      they need the <code>CRON_SECRET</code> bearer token, which never goes in a browser
+      page or a URL. To decide, use the secret from the vault operator's shell:</p>
+      <p><code>curl -X POST "$SITE/api/review-decide" \<br>
+      -H "Authorization: Bearer $CRON_SECRET" -H "Content-Type: application/json" \<br>
+      -d '{"id":"&lt;candidate id&gt;","decision":"approve","note":"&lt;optional&gt;"}'</code></p>
+      <p>Approvals record <code>approved_via:'scout'</code> on the decision; the human's wave
+      adds the real activity in original words — nothing auto-publishes.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>Activity Vault</strong> — the all-in-one activity archive for teachers &amp; after-school programs. All activities are classic, public-domain concepts described in our own words.</p>
+    <p><a href="api/v1/activities.json">API</a> · <a href="api.html">API docs &amp; console</a> · <a href="review.html">Scout review queue</a> · <a href="llms.txt">llms.txt</a> · <a href="AGENT.md">Agent guide</a></p>
+  </div>
+</footer>
+<script>
+(function () {
+  'use strict';
+  // DOM-built rendering (textContent throughout — no HTML string escaping issues,
+  // and no anchor-markup fragments in the source for the link checker to trip on).
+  function el(tag, cls, txt) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (txt !== undefined && txt !== null) e.textContent = txt;
+    return e;
+  }
+  function fmtDay(iso) {
+    try { return new Date(iso).toISOString().slice(0, 10); }
+    catch (e) { return iso || '\u2014'; }
+  }
+  function card(c) {
+    var li = el('li', 'queue-card');
+    li.appendChild(el('h3', null, c.title || 'untitled'));
+    var meta = el('p', 'qmeta');
+    meta.appendChild(el('code', null, c.id || ''));
+    var bits = [];
+    if (c.feed) bits.push(c.feed);
+    if (c.published) bits.push('published ' + c.published);
+    if (c.detected_at) bits.push('detected ' + fmtDay(c.detected_at));
+    if (bits.length) meta.appendChild(document.createTextNode(' \u00b7 ' + bits.join(' \u00b7 ')));
+    li.appendChild(meta);
+    if (c.summary) li.appendChild(el('p', 'qsummary', c.summary));
+    if (c.note) li.appendChild(el('p', 'qnote', c.note));
+    var tg = el('div', null);
+    (c.suggested_tags || []).forEach(function (t) { tg.appendChild(el('span', 'tag-pill', t)); });
+    li.appendChild(tg);
+    if (c.source_url) {
+      var p = el('p', 'qactions');
+      var a = el('a', null, 'source post \u2197');
+      a.setAttribute('href', c.source_url);
+      a.setAttribute('rel', 'noopener');
+      p.appendChild(a);
+      li.appendChild(p);
+    }
+    return li;
+  }
+  function decidedRow(d) {
+    var tr = document.createElement('tr');
+    tr.appendChild(el('td', null, fmtDay(d.decided_at)));
+    tr.appendChild(el('td', null, d.title || ''));
+    var decCell = document.createElement('td');
+    decCell.appendChild(el('span', d.decision === 'approve' ? 'dec-approve' : 'dec-reject',
+      d.decision === 'approve' ? 'approved' : 'rejected'));
+    tr.appendChild(decCell);
+    var actCell = document.createElement('td');
+    if (d.activity_id) {
+      var a = el('a', null, d.activity_id);
+      a.setAttribute('href', 'activity/' + d.activity_id + '.html');
+      actCell.appendChild(a);
+    } else { actCell.textContent = '\u2014'; }
+    tr.appendChild(actCell);
+    tr.appendChild(el('td', null, d.note || ''));
+    return tr;
+  }
+  function countsLine(data) {
+    var c = data.counts || {};
+    return (c.pending || 0) + ' pending \u00b7 ' + (c.decided_90d || 0) + ' decided (last 90 days)';
+  }
+  function renderPending(list, container) {
+    container.textContent = '';
+    if (!list.length) {
+      container.appendChild(el('div', 'queue-empty',
+        'The queue is clear \u2014 nothing awaiting review. \U0001f33f'));
+      return;
+    }
+    var ul = el('ul', 'queue-list');
+    list.forEach(function (c) { ul.appendChild(card(c)); });
+    container.appendChild(ul);
+  }
+  function renderDecided(rows, container) {
+    container.textContent = '';
+    if (!rows.length) {
+      container.appendChild(el('p', 'qmeta', 'No decisions in the last 90 days.'));
+      return;
+    }
+    var wrap = el('div', 'table-wrap');
+    var table = el('table', 'decided-table');
+    var thead = document.createElement('thead');
+    var hr = document.createElement('tr');
+    ['Decided', 'Candidate', 'Decision', 'Adapted as', 'Note'].forEach(function (h) {
+      var th = document.createElement('th');
+      th.setAttribute('scope', 'col');
+      th.textContent = h;
+      hr.appendChild(th);
+    });
+    thead.appendChild(hr);
+    table.appendChild(thead);
+    var tbody = document.createElement('tbody');
+    rows.forEach(function (d) { tbody.appendChild(decidedRow(d)); });
+    table.appendChild(tbody);
+    wrap.appendChild(table);
+    container.appendChild(wrap);
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    if (!window.ApiClient) return; // api-client.js failed to load — pre-rendered content stays
+    var qBadge = document.getElementById('queue-badge');
+    var qList = document.getElementById('queue-list');
+    var qCounts = document.getElementById('queue-counts');
+    window.ApiClient.fetchWithFallback('/api/review-queue', 'api/v1/review-queue.json', { badgeEl: qBadge })
+      .then(function (r) {
+        if (!r.data) return;
+        renderPending(r.data.candidates || [], qList);
+        if (qCounts) qCounts.textContent = countsLine(r.data);
+      });
+    var dBadge = document.getElementById('decided-badge');
+    var dBody = document.getElementById('decided-list');
+    window.ApiClient.fetchWithFallback('/api/review-queue?status=decided', 'api/v1/decided.json', { badgeEl: dBadge })
+      .then(function (r) {
+        if (!r.data) return;
+        renderDecided(r.data.decisions || r.data.candidates || [], dBody);
+      });
+  });
+})();
+</script>
+</body>
+</html>

@@ -446,6 +446,281 @@ def related_activities(a, acts, n=3):
             picks.append(x)
     return picks[:n]
 
+# ---------------------------------------------------------------------------
+# Wave B — Scout review queue page (human-in-the-loop READ surface).
+# Pre-rendered from the same normalized data that publishes api/v1/review-queue.json
+# (spec §3.1: the page ships with static data baked in; fetchWithFallback swaps in
+# live data on load). Approve/reject stays server-only: POST /api/review-decide is
+# CRON_SECRET-gated and is NEVER called from the browser (secret never in the page).
+# ---------------------------------------------------------------------------
+
+REVIEW_CLIENT_JS = """(function () {
+  'use strict';
+  // DOM-built rendering (textContent throughout — no HTML string escaping issues,
+  // and no anchor-markup fragments in the source for the link checker to trip on).
+  function el(tag, cls, txt) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (txt !== undefined && txt !== null) e.textContent = txt;
+    return e;
+  }
+  function fmtDay(iso) {
+    try { return new Date(iso).toISOString().slice(0, 10); }
+    catch (e) { return iso || '\\u2014'; }
+  }
+  function card(c) {
+    var li = el('li', 'queue-card');
+    li.appendChild(el('h3', null, c.title || 'untitled'));
+    var meta = el('p', 'qmeta');
+    meta.appendChild(el('code', null, c.id || ''));
+    var bits = [];
+    if (c.feed) bits.push(c.feed);
+    if (c.published) bits.push('published ' + c.published);
+    if (c.detected_at) bits.push('detected ' + fmtDay(c.detected_at));
+    if (bits.length) meta.appendChild(document.createTextNode(' \\u00b7 ' + bits.join(' \\u00b7 ')));
+    li.appendChild(meta);
+    if (c.summary) li.appendChild(el('p', 'qsummary', c.summary));
+    if (c.note) li.appendChild(el('p', 'qnote', c.note));
+    var tg = el('div', null);
+    (c.suggested_tags || []).forEach(function (t) { tg.appendChild(el('span', 'tag-pill', t)); });
+    li.appendChild(tg);
+    if (c.source_url) {
+      var p = el('p', 'qactions');
+      var a = el('a', null, 'source post \\u2197');
+      a.setAttribute('href', c.source_url);
+      a.setAttribute('rel', 'noopener');
+      p.appendChild(a);
+      li.appendChild(p);
+    }
+    return li;
+  }
+  function decidedRow(d) {
+    var tr = document.createElement('tr');
+    tr.appendChild(el('td', null, fmtDay(d.decided_at)));
+    tr.appendChild(el('td', null, d.title || ''));
+    var decCell = document.createElement('td');
+    decCell.appendChild(el('span', d.decision === 'approve' ? 'dec-approve' : 'dec-reject',
+      d.decision === 'approve' ? 'approved' : 'rejected'));
+    tr.appendChild(decCell);
+    var actCell = document.createElement('td');
+    if (d.activity_id) {
+      var a = el('a', null, d.activity_id);
+      a.setAttribute('href', 'activity/' + d.activity_id + '.html');
+      actCell.appendChild(a);
+    } else { actCell.textContent = '\\u2014'; }
+    tr.appendChild(actCell);
+    tr.appendChild(el('td', null, d.note || ''));
+    return tr;
+  }
+  function countsLine(data) {
+    var c = data.counts || {};
+    return (c.pending || 0) + ' pending \\u00b7 ' + (c.decided_90d || 0) + ' decided (last 90 days)';
+  }
+  function renderPending(list, container) {
+    container.textContent = '';
+    if (!list.length) {
+      container.appendChild(el('div', 'queue-empty',
+        'The queue is clear \\u2014 nothing awaiting review. \\U0001f33f'));
+      return;
+    }
+    var ul = el('ul', 'queue-list');
+    list.forEach(function (c) { ul.appendChild(card(c)); });
+    container.appendChild(ul);
+  }
+  function renderDecided(rows, container) {
+    container.textContent = '';
+    if (!rows.length) {
+      container.appendChild(el('p', 'qmeta', 'No decisions in the last 90 days.'));
+      return;
+    }
+    var wrap = el('div', 'table-wrap');
+    var table = el('table', 'decided-table');
+    var thead = document.createElement('thead');
+    var hr = document.createElement('tr');
+    ['Decided', 'Candidate', 'Decision', 'Adapted as', 'Note'].forEach(function (h) {
+      var th = document.createElement('th');
+      th.setAttribute('scope', 'col');
+      th.textContent = h;
+      hr.appendChild(th);
+    });
+    thead.appendChild(hr);
+    table.appendChild(thead);
+    var tbody = document.createElement('tbody');
+    rows.forEach(function (d) { tbody.appendChild(decidedRow(d)); });
+    table.appendChild(tbody);
+    wrap.appendChild(table);
+    container.appendChild(wrap);
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    if (!window.ApiClient) return; // api-client.js failed to load — pre-rendered content stays
+    var qBadge = document.getElementById('queue-badge');
+    var qList = document.getElementById('queue-list');
+    var qCounts = document.getElementById('queue-counts');
+    window.ApiClient.fetchWithFallback('/api/review-queue', 'api/v1/review-queue.json', { badgeEl: qBadge })
+      .then(function (r) {
+        if (!r.data) return;
+        renderPending(r.data.candidates || [], qList);
+        if (qCounts) qCounts.textContent = countsLine(r.data);
+      });
+    var dBadge = document.getElementById('decided-badge');
+    var dBody = document.getElementById('decided-list');
+    window.ApiClient.fetchWithFallback('/api/review-queue?status=decided', 'api/v1/decided.json', { badgeEl: dBadge })
+      .then(function (r) {
+        if (!r.data) return;
+        renderDecided(r.data.decisions || r.data.candidates || [], dBody);
+      });
+  });
+})();"""
+
+REVIEW_TEMPLATE = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scout review queue — Activity Vault</title>
+<meta name="description" content="The Scout's human-in-the-loop review queue: activity ideas the RSS watch found, waiting for a human to adapt them into original words.">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@500;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap">
+<script src="assets/site.js" defer></script>
+<script src="assets/js/api-client.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#queue">Skip to the review queue</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Activity Vault home">
+      <span class="brand-mark" aria-hidden="true">🗂️</span>
+      <span class="brand-text">Activity <strong>Vault</strong></span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="index.html">Browse</a>
+      <a href="planner.html">Plan my week</a>
+      <a href="kit.html">Kit 🧰</a>
+      <a href="sub.html">Sub Tub 🆘</a>
+      <a href="party.html">Party Planner 🎉</a>
+      <a href="fieldtrip.html">Field Trips 🚌</a>
+      <a href="collections.html">Collections 📚</a>
+      <a href="halloween.html">Halloween 🎃</a>
+      <a href="thanksgiving.html">Thanksgiving 🦃</a>
+      <a href="spring.html">Spring 🌷</a>
+      <a href="summer.html">Summer ☀️</a>
+    </nav>
+    <button class="btn btn-ghost btn-small no-print" id="site-calm-toggle" type="button"
+            aria-pressed="false" aria-label="Calm mode: turn off page animations and motion">
+      <span aria-hidden="true">🍃</span> Calm: <span class="calm-state">off</span>
+    </button>
+  </div>
+</header>
+
+<main class="wrap docs-page">
+  <div class="review-head">
+    <div>
+      <h1 id="queue">Scout review queue</h1>
+      <p class="lede">Ideas the Scout's RSS watch flagged — each waits for a human to adapt it
+      into original words before it can enter the Vault (PIPELINE.md).</p>
+    </div>
+    <span class="api-badge" id="queue-badge" data-api-state="waking"
+          role="status" aria-live="polite" tabindex="0">waking server…</span>
+  </div>
+  <p class="qmeta" id="queue-counts">{pre_counts} · snapshot {gen_at}</p>
+  <div id="queue-list">{pre_pending}</div>
+
+  <section aria-labelledby="h-decided">
+    <div class="review-head">
+      <h2 id="h-decided">Decided (last 90 days)</h2>
+      <span class="api-badge" id="decided-badge" data-api-state="waking"
+            role="status" aria-live="polite" tabindex="0">waking server…</span>
+    </div>
+    <div id="decided-list">{pre_decided}</div>
+  </section>
+
+  <section aria-labelledby="h-admin" class="no-print">
+    <h2 id="h-admin">Approve / reject</h2>
+    <div class="review-admin-note">
+      <p><strong>Read-only here.</strong> Approve and reject are server-side operations:
+      they need the <code>CRON_SECRET</code> bearer token, which never goes in a browser
+      page or a URL. To decide, use the secret from the vault operator's shell:</p>
+      <p><code>curl -X POST "$SITE/api/review-decide" \\<br>
+      -H "Authorization: Bearer $CRON_SECRET" -H "Content-Type: application/json" \\<br>
+      -d '{{"id":"&lt;candidate id&gt;","decision":"approve","note":"&lt;optional&gt;"}}'</code></p>
+      <p>Approvals record <code>approved_via:'scout'</code> on the decision; the human's wave
+      adds the real activity in original words — nothing auto-publishes.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>Activity Vault</strong> — the all-in-one activity archive for teachers &amp; after-school programs. All activities are classic, public-domain concepts described in our own words.</p>
+    <p><a href="api/v1/activities.json">API</a> · <a href="api.html">API docs &amp; console</a> · <a href="review.html">Scout review queue</a> · <a href="llms.txt">llms.txt</a> · <a href="AGENT.md">Agent guide</a></p>
+  </div>
+</footer>
+<script>
+{client_js}
+</script>
+</body>
+</html>
+"""
+
+
+def _review_card(c):
+    meta = f'<code>{esc(c["id"])}</code>'
+    if c.get('feed'):
+        meta += f' · {esc(c["feed"])}'
+    if c.get('published'):
+        meta += f' · published {esc(c["published"])}'
+    if c.get('detected_at'):
+        meta += f' · detected {esc(c["detected_at"][:10])}'
+    note = f'<p class="qnote">{esc(c["note"])}</p>' if c.get('note') else ''
+    src = (f'<p class="qactions"><a href="{esc(c["source_url"])}" rel="noopener">source post ↗</a></p>'
+           if c.get('source_url') else '')
+    tags = ''.join(f'<span class="tag-pill">{esc(t)}</span>' for t in (c.get('suggested_tags') or []))
+    return (f'<li class="queue-card"><h3>{esc(c["title"])}</h3>'
+            f'<p class="qmeta">{meta}</p>'
+            f'<p class="qsummary">{esc(c.get("summary") or "")}</p>'
+            f'{note}<div>{tags}</div>{src}</li>')
+
+
+def _review_decided_rows(decisions):
+    rows = []
+    for d in decisions:
+        dec = ('<span class="dec-approve">approved</span>' if d.get('decision') == 'approve'
+               else '<span class="dec-reject">rejected</span>')
+        act = (f'<a href="activity/{esc(d["activity_id"])}.html">{esc(d["activity_id"])}</a>'
+               if d.get('activity_id') else '—')
+        day = esc((d.get('decided_at') or '')[:10])
+        rows.append(
+            f'<tr><td>{day}</td><td>{esc(d.get("title") or "")}</td><td>{dec}</td>'
+            f'<td>{act}</td><td>{esc(d.get("note") or "")}</td></tr>')
+    return rows
+
+
+def render_review(open_candidates, decisions, gen_at):
+    """Render review.html: pre-rendered queue + decided log + live-swap JS."""
+    pending = [c for c in open_candidates if c.get('status') == 'pending']
+    counts = (f'{len(pending)} pending · {len(decisions)} decided (last 90 days)')
+    if pending:
+        pre_pending = '<ul class="queue-list">' + ''.join(_review_card(c) for c in pending) + '</ul>'
+    else:
+        pre_pending = ('<div class="queue-empty">The queue is clear — nothing awaiting review. 🌿</div>')
+    if decisions:
+        rows = _review_decided_rows(decisions)
+        pre_decided = ('<div class="table-wrap"><table class="decided-table">'
+                       '<thead><tr><th scope="col">Decided</th><th scope="col">Candidate</th>'
+                       '<th scope="col">Decision</th><th scope="col">Adapted as</th>'
+                       '<th scope="col">Note</th></tr></thead>'
+                       f'<tbody>{"".join(rows)}</tbody></table></div>')
+    else:
+        pre_decided = '<p class="qmeta">No decisions in the last 90 days.</p>'
+    return REVIEW_TEMPLATE.format(
+        pre_counts=esc(counts), gen_at=esc(gen_at),
+        pre_pending=pre_pending, pre_decided=pre_decided,
+        client_js=REVIEW_CLIENT_JS)
+
+
 def render_activity(a, catmap, acts):
     chips = ''.join(
         f'<span class="chip" style="--cat:{catmap[c]["color"]}">{catmap[c]["glyph"]} {esc(catmap[c]["name"])}</span>'
@@ -768,6 +1043,14 @@ def main():
             "retention_days": {"type": "integer", "minimum": 1},
         },
     }, open(os.path.join(schemadir, 'decided.schema.json'), 'w'), indent=1)
+
+    # 2f. Scout review queue page (Vercel wave B): review.html pre-rendered from the
+    # same normalized data as api/v1/review-queue.json + api/v1/decided.json, with
+    # the api-client.js fallback wiring (live /api/review-queue first, static JSON
+    # fallback). A cron redeploy re-runs this build, so the pre-render stays fresh.
+    _review_html = render_review(_open, _decisions, _gen_at)
+    open(os.path.join(SITE, 'review.html'), 'w').write(_review_html)
+
     endpoints = [
         {"path": "api/v1/index.json",
          "title": "API manifest",
@@ -1110,6 +1393,9 @@ def main():
               "  rescue, first day, sub tub, winter party, spring burst, summer splash, haunted halls, grateful gathering…)",
               "  each with a curator's note per pick; printable and copy-able per collection.",
               "- api.html — API docs with a Try-the-API console (endpoint picker, fetch, pretty JSON).",
+              "- review.html — Scout review queue: pending activity ideas plus the 90-day",
+              "  decision log. Tries the live /api/review-queue first, falls back to the",
+              "  static api/v1 JSON with an honest cached badge when the server is down.",
               "", "## Docs", "- API.md — full API reference", "- PIPELINE.md — how the library grows",
               "- AGENT.md — how an agent uses this archive: endpoints, example requests,",
               "  end-to-end workflows (filtering, party planning, week planning)"]
@@ -1127,7 +1413,7 @@ def main():
     open(os.path.join(SITE, 'llms-full.txt'), 'w').write('\n'.join(full) + '\n')
 
     # 4. sitemap.xml
-    urls = ["", "planner.html", "kit.html", "sub.html", "party.html", "fieldtrip.html", "collections.html", "api.html", "halloween.html", "thanksgiving.html", "spring.html", "summer.html"] + [f"activity/{a['id']}.html" for a in acts]
+    urls = ["", "planner.html", "kit.html", "sub.html", "party.html", "fieldtrip.html", "collections.html", "api.html", "review.html", "halloween.html", "thanksgiving.html", "spring.html", "summer.html"] + [f"activity/{a['id']}.html" for a in acts]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:

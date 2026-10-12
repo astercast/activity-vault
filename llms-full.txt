@@ -82,6 +82,9 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
   rescue, first day, sub tub, winter party, spring burst, summer splash, haunted halls, grateful gathering…)
   each with a curator's note per pick; printable and copy-able per collection.
 - api.html — API docs with a Try-the-API console (endpoint picker, fetch, pretty JSON).
+- review.html — Scout review queue: pending activity ideas plus the 90-day
+  decision log. Tries the live /api/review-queue first, falls back to the
+  static api/v1 JSON with an honest cached badge when the server is down.
 
 ## Docs
 - API.md — full API reference

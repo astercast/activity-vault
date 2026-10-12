@@ -2,6 +2,12 @@
 
 Base path: `api/v1/`. All responses are static JSON files. No auth, no rate limits — it's a file.
 
+A live serverless layer (`/api/*`, Vercel) sits alongside: `GET /api/health`,
+`GET /api/review-queue`, `POST /api/review-decide` (operator-only, `CRON_SECRET`),
+`GET /api/cron/scout` — see "Live server functions" below and `GO_LIVE.md`. The
+frontend tries those first and falls back to these static files with an honest
+"cached" badge whenever the server is unreachable.
+
 ## Shared API conventions (all sites)
 - Base: `api/v1/` relative to the site root. Works on any static host; no auth, no keys, no rate limits.
 - Manifest: `api/v1/index.json` lists every endpoint with its schema URL, `updated` timestamp, and notes. Start here.
@@ -140,6 +146,78 @@ JSON Schema (draft-07) for each endpoint's full payload (envelope + records). On
 ### `pipeline/review-queue.json` (internal)
 
 The RSS-pipeline working queue: accepted / rejected / deferred activity candidates with decisions and source links. Listed in the manifest with `stability: "internal"` — not a stable public API; shape and statuses change as the pipeline runs.
+
+## Live server functions (`/api/*`, Vercel — live-ready, NOT deployed)
+
+Unversioned functions behind the same-origin API. Every response uses the
+`ok`/`data`/`meta` envelope (schema: `api/v1/schema/envelope.json`); every GET
+is edge-cached 10 minutes (`s-maxage=600, stale-while-revalidate=86400`).
+When a function is unreachable, the frontend falls back to the static
+`api/v1/*.json` twin with an honest "cached · updated HH:MM" badge
+(fallback contract: `assets/js/api-client.js`). See `GO_LIVE.md`.
+
+### `GET /api/health`
+
+§1.4 health. `status`: `ok` unless a check fails, then `degraded` (never 5xx).
+`data` carries per-instance `uptime_s`, the function roster, `data_freshness`
+for `review-queue.json` / `decided.json` / `activities.json` (24h SLA), and
+`checks` booleans (static fallback present, `CRON_SECRET` configured,
+`GITHUB_REPO_TOKEN` configured — booleans only, never secret values).
+
+### `GET /api/review-queue` — the Scout's review queue (human-in-the-loop, READ side)
+
+`?status=pending|all|decided` (default `pending`). Serves the candidates the RSS
+scan flagged, awaiting a human to adapt them into original words (PIPELINE.md).
+Reads the build-published `api/v1/review-queue.json` + `api/v1/decided.json`.
+Static fallback: `api/v1/review-queue.json`. Human-readable surface:
+`review.html` (pre-rendered from the static data, live-swapped on load).
+
+```json
+{ "ok": true,
+  "data": { "candidates": [ { "id": "a11221491bc63a7c", "title": "...", "summary": "...",
+              "source_url": "https://…", "feed": "WeAreTeachers", "published": "Fri, 09 Oct 2026 …",
+              "detected_at": "2026-10-12T06:25:13Z", "suggested_tags": ["holiday:easter"],
+              "status": "pending", "note": "Adapt into original words per PIPELINE.md. Link as source if adapted." } ],
+            "counts": { "pending": 0, "open": 0, "decided_90d": 23, "returned": 0 },
+            "generated_at": "2026-10-12T06:25:13Z" },
+  "meta": { "service": "vault-scout", "version": "1.0.0", "generated_at": "…", "source": "live",
+            "degraded": false, "request_id": "req_9f2c41" } }
+```
+
+### `POST /api/review-decide` — approve / reject (operator-only, server-side)
+
+`{"id": "<candidate id>", "decision": "approve"|"reject", "note?": "…"}`.
+**Requires the `CRON_SECRET` bearer token** (`Authorization: Bearer …`); 401
+without it, and the endpoint is never called from the browser — the secret
+never lives in a page or URL. Use it from the operator's shell:
+
+```
+curl -X POST "$SITE/api/review-decide" \
+  -H "Authorization: Bearer $CRON_SECRET" -H "Content-Type: application/json" \
+  -d '{"id":"<candidate id>","decision":"approve","note":"<optional>"}'
+```
+
+Approve records `approved_via:'scout'` on the decision entry and moves the item
+queue → `decided.json` (90d retention); it does **not** mint an activity record
+(documented deviation from the original §7.6 text: PIPELINE.md requires a human
+to adapt each idea into original words — fabricating steps/materials server-side
+would be fake data). The human's wave adds the real activity via `scripts/build.py`.
+400 `BAD_INPUT` on bad bodies (`details.fields` names problems), 404 on unknown
+id, 400 on already-decided. Without a GitHub token configured it validates then
+returns 500 `REFRESH_FAILED` (read-only mode) instead of committing.
+
+### `GET /api/cron/scout` — daily RSS scan
+
+Cron-only (`CRON_SECRET` bearer; Vercel auto-sends it). Daily `0 11 * * *` UTC.
+Bounded parallel feed fetch (4000ms each), the KEEP/DROP filter ported from
+`pipeline/scan.py`, airtight 4-layer dedupe (seen-uids → queue ids → URL match
+vs archive+queue → title near-dupe vs the full archive), `writeJsonIfChanged`
+commits to `pipeline/seen.json` + `pipeline/review-queue.json` +
+`pipeline/decided.json` on change. Responds
+`{checked, changed, committed, new_candidates[]}` with per-feed
+`meta.upstream` results. 60s duplicate-delivery cooldown.
+Requires `GITHUB_REPO_TOKEN` to persist; without it the job computes honestly
+and returns `degraded:true` (read-only mode) until the token is set.
 
 ## Filtering recipes
 

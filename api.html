@@ -75,6 +75,23 @@
     <p>Record-level schemas: <a href="api/v1/schema/activity.schema.json">activity.schema.json</a>, <a href="api/v1/schema/category.schema.json">category.schema.json</a>. Full written reference: <a href="API.md">API.md</a> · agent guide: <a href="AGENT.md">AGENT.md</a>.</p>
   </section>
 
+  <section aria-labelledby="h-live">
+    <h2 id="h-live">Live server functions (<code>/api/*</code>, Vercel — live-ready, not deployed)</h2>
+    <p>The Scout's serverless layer (service <code>vault-scout</code>): unversioned functions, every response in the shared <code>ok</code>/<code>data</code>/<code>meta</code> envelope (<a href="api/v1/schema/envelope.json">envelope.json</a>). The frontend tries the function first and falls back to the static <code>api/v1/*.json</code> twin with an honest "cached · updated HH:MM" badge when the server is unreachable.</p>
+    <div class="table-wrap">
+    <table class="api-table">
+      <thead><tr><th scope="col">Endpoint</th><th scope="col">What it is</th><th scope="col">Fallback</th></tr></thead>
+      <tbody>
+        <tr><td><code>GET /api/health</code></td><td>Health: <code>status</code> ok/degraded (never 5xx), function roster, data freshness (24h SLA), boolean checks (never secret values).</td><td>—</td></tr>
+        <tr><td><code>GET /api/review-queue</code></td><td>The Scout's review queue: <code>?status=pending|all|decided</code> (default pending) — candidates awaiting a human, plus the 90-day decision log. Human-readable surface: <a href="review.html">review.html</a>.</td><td><code>api/v1/review-queue.json</code></td></tr>
+        <tr><td><code>POST /api/review-decide</code></td><td>Approve/reject a candidate — <strong>operator only</strong>: needs the <code>CRON_SECRET</code> bearer token and is never called from the browser. Approve records <code>approved_via:'scout'</code>; it does not mint an activity (the human's wave does that in original words).</td><td>— (no static fallback)</td></tr>
+        <tr><td><code>GET /api/cron/scout</code></td><td>Daily cron (<code>0 11 * * *</code> UTC): RSS scan → dedupe → review queue. <code>CRON_SECRET</code>-gated, idempotent.</td><td>—</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Full function reference (envelope shape, error codes, cron design): <a href="API.md">API.md</a> · deployment runbook: <a href="GO_LIVE.md">GO_LIVE.md</a>.</p>
+  </section>
+
   <section aria-labelledby="h-console">
     <h2 id="h-console">Try the API</h2>
     <p>Pick an endpoint, fetch it, and see the JSON — everything runs in your browser, nothing leaves the page.</p>
