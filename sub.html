@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sub Tub — emergency substitute plans — Activity Vault</title>
+<meta name="description" content="The substitute-teacher rescue kit: pick your grade band, minutes to fill, and materials on hand — get a print-ready emergency plan with a sub note template.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#sub-plan">Skip to emergency plan</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Activity Vault home">
+      <span class="brand-mark" aria-hidden="true">🗂️</span>
+      <span class="brand-text">Activity <strong>Vault</strong></span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="index.html">Browse</a>
+      <a href="planner.html">Plan my week</a>
+      <a href="sub.html" aria-current="page">Sub Tub 🆘</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" aria-labelledby="hero-title">
+    <span class="kicker no-print">🆘 Sub Tub</span>
+    <h1 id="hero-title">The substitute-teacher<br>rescue kit.</h1>
+    <p class="lede no-print">No plans left? No problem. Tell the Tub your grade band, how many minutes to fill, and what you actually have on hand — it builds a sequenced, print-ready emergency plan plus a "Dear sub" note. Screenshot it, print it, survive the day.</p>
+  </section>
+
+  <form class="planner-form no-print" id="sub-form" onsubmit="return false;" aria-label="Sub Tub emergency plan options">
+    <fieldset>
+      <legend>Grade band</legend>
+      <div class="chip-row" role="radiogroup" aria-label="Grade band">
+        <label class="chip"><input type="radio" name="band" value="prek-k" checked> PreK–K</label>
+        <label class="chip"><input type="radio" name="band" value="g1-2"> Grades 1–2</label>
+        <label class="chip"><input type="radio" name="band" value="g3-5"> Grades 3–5</label>
+        <label class="chip"><input type="radio" name="band" value="g6-8"> Grades 6–8</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Time to fill</legend>
+      <div class="filter-group">
+        <label class="flabel" for="sub-minutes">Minutes</label>
+        <select id="sub-minutes">
+          <option value="15">15 min</option>
+          <option value="30" selected>30 min</option>
+          <option value="45">45 min</option>
+          <option value="60">60 min</option>
+          <option value="90">90 min</option>
+        </select>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Materials on hand</legend>
+      <div class="chip-row" role="radiogroup" aria-label="Materials on hand">
+        <label class="chip"><input type="radio" name="mats" value="nothing" checked> Nothing at all</label>
+        <label class="chip"><input type="radio" name="mats" value="paper"> Paper &amp; pencils</label>
+        <label class="chip"><input type="radio" name="mats" value="art"> Basic art supplies</label>
+        <label class="chip"><input type="radio" name="mats" value="any"> Full classroom</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Location</legend>
+      <div class="chip-row" role="radiogroup" aria-label="Location">
+        <label class="chip"><input type="radio" name="loc" value="indoor" checked> Indoors only</label>
+        <label class="chip"><input type="radio" name="loc" value="either"> Outdoors OK</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Sub note details <span class="opt">(optional)</span></legend>
+      <div class="filter-group">
+        <label class="flabel" for="sub-teacher">Your name</label>
+        <input type="text" id="sub-teacher" autocomplete="name" placeholder="e.g., Ms. Rivera">
+      </div>
+      <div class="filter-group">
+        <label class="flabel" for="sub-class">Class / grade</label>
+        <input type="text" id="sub-class" placeholder="e.g., 3rd grade, Room 12">
+      </div>
+    </fieldset>
+    <button class="btn" id="sub-generate" type="button">🆘 Build my emergency plan</button>
+  </form>
+
+  <p id="sub-status" role="status" aria-live="polite" class="no-print"></p>
+
+  <article id="sub-plan" aria-labelledby="plan-title" hidden>
+    <div class="plan-sheet">
+      <header class="plan-head">
+        <p class="kicker">🆘 Sub Tub emergency plan</p>
+        <h2 id="plan-title" tabindex="-1">Emergency plan</h2>
+        <p class="plan-meta" id="plan-meta"></p>
+      </header>
+      <ol class="plan-blocks" id="plan-blocks"></ol>
+      <section class="sub-note" aria-labelledby="note-title">
+        <h3 id="note-title">✉️ Dear sub — note template</h3>
+        <p class="no-print note-hint">Edit below, then copy or print. Fill in the bracketed bits before you hand it over.</p>
+        <textarea id="sub-note-text" rows="18" aria-label="Substitute note template, editable"></textarea>
+        <div class="print-actions no-print">
+          <button class="btn btn-small" id="copy-note" type="button">📋 Copy note</button>
+          <span id="copy-status" role="status" aria-live="polite"></span>
+        </div>
+      </section>
+    </div>
+  </article>
+
+  <div class="print-actions no-print" id="sub-actions" hidden>
+    <button class="btn" id="print-sub" type="button">🖨️ Print emergency plan</button>
+    <button class="btn btn-ghost" id="sub-reshuffle" type="button">🎲 Shuffle again</button>
+  </div>
+  <p class="no-print" style="margin-bottom:3rem;"><a href="index.html">← Back to browsing</a></p>
+</main>
+
+<footer class="site-footer no-print">
+  <div class="wrap"><p><strong>Activity Vault</strong> — the all-in-one activity archive for teachers &amp; after-school programs.</p></div>
+</footer>
+
+<script src="assets/sub.js" defer></script>
+</body>
+</html>

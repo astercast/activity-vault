@@ -7,14 +7,14 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
 ## Categories
 - Seasons: 22 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
 - Holidays: 25 activities — Festive projects and games for the days the whole group looks forward to.
-- Crafts: 48 activities — Hands-on making: fold it, paint it, build it, take it home.
+- Crafts: 53 activities — Hands-on making: fold it, paint it, build it, take it home.
 - STEM: 37 activities — Experiments, engineering challenges, and satisfying science demos.
-- PE & Movement: 36 activities — Run, jump, dance — activities that burn off the wiggles.
+- PE & Movement: 38 activities — Run, jump, dance — activities that burn off the wiggles.
 - Team & Community: 35 activities — Turn a group into a crew: cooperation, trust, and belonging.
-- Icebreakers: 23 activities — First-day friendly: learn names, laugh, and loosen up fast.
-- Outdoor: 32 activities — Fresh-air activities for fields, playgrounds, and nature walks.
-- Rainy Day: 24 activities — Stuck inside? These keep a roomful of kids happy without a gym.
-- Quiet & Focus: 39 activities — Wind-down worthy: calm, creative, individual or small-group.
+- Icebreakers: 26 activities — First-day friendly: learn names, laugh, and loosen up fast.
+- Outdoor: 34 activities — Fresh-air activities for fields, playgrounds, and nature walks.
+- Rainy Day: 28 activities — Stuck inside? These keep a roomful of kids happy without a gym.
+- Quiet & Focus: 43 activities — Wind-down worthy: calm, creative, individual or small-group.
 - Music & Rhythm: 7 activities — Drums, shakers, rhythm games, and songs — make some noise.
 
 ## API
@@ -30,6 +30,12 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
 - skills/stem-demo-picker.md
 - skills/icebreaker-chooser.md
 - skills/quiet-focus-picker.md
+- skills/sub-tub-rescue.md
+
+## Tools
+- sub.html — Sub Tub: the substitute-teacher rescue kit.
+  Pick grade band, minutes to fill, materials on hand, location —
+  generates a sequenced print-ready emergency plan plus a 'Dear sub' note template.
 
 ## Docs
 - API.md — full API reference
@@ -222,6 +228,11 @@ Cups become percussion: tap-clap-stomp patterns that layer into a full rhythmic 
 Categories: Music & Rhythm, PE & Movement | Ages 6-12 | Group 4-25 | 20-20 min | Prep needed | indoor
 Page: activity/cup-rhythms.html
 
+### Cup Song Circle
+One cup, one rhythm, a whole circle in sync.
+Categories: PE & Movement, Rainy Day | Ages 8-12 | Group 4-30 | 20-40 min | No prep | indoor
+Page: activity/cup-song-circle.html
+
 ### Cup Stack Team Relay
 Sprint, stack a cup pyramid, sprint back — teams race through build-and-collapse relay legs.
 Categories: Team & Community, PE & Movement | Ages 6-12 | Group 8-30 | 20-20 min | Prep needed | indoor
@@ -241,6 +252,11 @@ Page: activity/shaker-craft.html
 Stack liquids into a rainbow that refuses to mix.
 Categories: STEM | Ages 7-12 | Group 2-25 | 20-40 min | Prep needed | indoor
 Page: activity/density-rainbow-jars.html
+
+### Desert Island Picks
+Three things for a desert island — defend your picks.
+Categories: Icebreakers, Quiet & Focus | Ages 8-12 | Group 4-30 | 15-30 min | No prep | indoor
+Page: activity/desert-island-picks.html
 
 ### Design-Your-Own Obstacle Course
 Teams build the course, then everyone races through all of them.
@@ -296,6 +312,11 @@ Page: activity/bingo-mingle.html
 Classic capture-the-flag with freeze-and-rescue rules — strategy, sprinting, and glorious last-second steals.
 Categories: PE & Movement, Outdoor, Team & Community | Ages 7-12 | Group 8-30 | 30-30 min | Prep needed | outdoor
 Page: activity/flag-tag.html
+
+### Fortune Teller Folding
+The classic playground origami — fold it, fill it, tell fortunes.
+Categories: Crafts, Icebreakers | Ages 7-12 | Group 2-30 | 20-40 min | No prep | indoor
+Page: activity/fortune-teller-folding.html
 
 ### Freeze Dance
 Dance while the music plays, freeze like a statue when it stops.
@@ -371,6 +392,11 @@ Page: activity/holiday-card-workshop.html
 Pass a hula hoop down a hand-holding line without letting go.
 Categories: Team & Community, PE & Movement | Ages 6-12 | Group 8-30 | 10-25 min | No prep | indoor/outdoor
 Page: activity/hula-hoop-pass.html
+
+### Human Bingo
+Find a different classmate for every square.
+Categories: Icebreakers | Ages 7-12 | Group 6-40 | 20-35 min | Prep needed | indoor
+Page: activity/human-bingo.html
 
 ### Human Knot
 Grab random hands across the circle, then untangle without letting go.
@@ -532,6 +558,11 @@ A checklist, a bag, and twenty minutes of sharp-eyed hunting.
 Categories: Outdoor, Seasons | Ages 6-12 | Group 2-30 | 20-40 min | No prep | outdoor
 Page: activity/nature-scavenger-hunt.html
 
+### Nature Weaving Looms
+A stick loom and a nature walk — weaving with what the ground gives you.
+Categories: Outdoor, Crafts | Ages 6-12 | Group 2-25 | 30-60 min | No prep | outdoor
+Page: activity/nature-weaving-looms.html
+
 ### New Year Time Capsule
 Seal this year's predictions and open them next year.
 Categories: Holidays, Quiet & Focus | Ages 7-12 | Group 2-30 | 20-40 min | No prep | indoor
@@ -602,6 +633,11 @@ Cut, paint, and decorate paper plates into wearable animal and character masks �
 Categories: Crafts | Ages 4-10 | Group 1-20 | 35-35 min | Prep needed | indoor
 Page: activity/paper-plate-masks.html
 
+### Paper Plate Skating
+Two paper plates, one slippery floor — instant indoor skating.
+Categories: PE & Movement, Rainy Day | Ages 4-10 | Group 2-30 | 15-30 min | No prep | indoor
+Page: activity/paper-plate-skating.html
+
 ### Paper Snowflakes
 Fold, snip, unfold — no two alike, just like the real thing.
 Categories: Seasons, Crafts | Ages 6-12 | Group 2-40 | 15-40 min | No prep | indoor
@@ -662,6 +698,11 @@ Say your name with a signature move on the beat — the circle echoes it back. N
 Categories: Music & Rhythm, Icebreakers | Ages 5-12 | Group 4-25 | 15-15 min | No prep | indoor
 Page: activity/rhythm-name-game.html
 
+### Rock Cairn Balance
+Stack rocks until gravity wins — then stack them again.
+Categories: Outdoor, Quiet & Focus | Ages 5-12 | Group 2-25 | 15-30 min | No prep | outdoor
+Page: activity/rock-cairn-balance.html
+
 ### Rock Painting
 Smooth stones become ladybugs, monsters, and messages — then hide them around the neighborhood.
 Categories: Crafts, Outdoor | Ages 5-12 | Group 2-30 | 25-60 min | Prep needed | outdoor/indoor
@@ -686,6 +727,11 @@ Page: activity/seed-starting-cups.html
 A stick, some chalk, and the sun — the oldest clock there is.
 Categories: Seasons, STEM, Outdoor | Ages 7-12 | Group 2-30 | 25-45 min | No prep | outdoor
 Page: activity/shadow-clock-sundial.html
+
+### Shadow Puppet Theatre
+Cardboard, a flashlight, and a sheet — a theatre in the dark.
+Categories: Crafts, Rainy Day, Quiet & Focus | Ages 5-12 | Group 2-25 | 30-60 min | Prep needed | indoor
+Page: activity/shadow-puppet-theatre.html
 
 ### Shadow Tag
 Tag isn't bodies — it's shadows. Step on someone's shadow to make them 'it.' Zero contact, all strategy.
@@ -726,6 +772,11 @@ Page: activity/sink-or-float-lab.html
 Mix the classic polymer slime, then run real experiments: what does water do? Cornstarch? Record the results.
 Categories: STEM | Ages 6-12 | Group 1-20 | 30-30 min | Prep needed | indoor
 Page: activity/slime-lab.html
+
+### Sock Puppet Studio
+A sock, some buttons, and a brand-new personality.
+Categories: Crafts, Rainy Day | Ages 5-10 | Group 2-25 | 25-50 min | Prep needed | indoor
+Page: activity/sock-puppet-studio.html
 
 ### Sock Puppet Workshop
 Turn stray socks into a cast of characters, then put on a full puppet show behind a table stage.
@@ -786,6 +837,11 @@ Page: activity/storytelling-circle.html
 Roll picture dice for a character, a setting, and a problem — then invent and tell a story connecting all three.
 Categories: Rainy Day, Quiet & Focus | Ages 6-12 | Group 2-20 | 25-25 min | Prep needed | indoor
 Page: activity/storytelling-dice.html
+
+### String Figure Games
+A loop of string, ten fingers, endless figures.
+Categories: Quiet & Focus, Crafts | Ages 7-12 | Group 2-25 | 20-40 min | Prep needed | indoor
+Page: activity/string-figure-games.html
 
 ### Sun Print Art
 The sun does the painting — you just pick the shapes.

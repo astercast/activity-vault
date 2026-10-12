@@ -2,6 +2,42 @@
 
 Running record of build waves. Newest first.
 
+## Wave 2d — 2026-10-11 — Final chunk7c merge (+10 → 176) + Sub Tub tool
+
+Merged the last of the parallel `data/chunk7c.json` batch: 10/12 new (0 dupes).
+`birthday-lineup` + `balloon-tennis` skipped — near-identical activities already exist
+from the Wave 2 batch (same classic concepts); kept the existing pages, no near-duplicate
+clutter. Total: **176 activities**.
+
+New tool — **Sub Tub** (`sub.html` + `assets/sub.js`): the substitute-teacher rescue kit.
+Inputs: grade band (PreK–K / 1–2 / 3–5 / 6–8), minutes to fill (15–90), materials on hand
+(nothing / paper & pencils / basic art supplies / full classroom), location (indoors / outdoors OK).
+Generates a sequenced print-ready emergency plan (opener → mains → calm closer, exact-minute
+fill with a filler block for gaps) plus an editable "Dear sub" note template with copy button.
+Screenshot-friendly one-pager via `@media print`.
+
+Also: 7th skill `skills/sub-tub-rescue.md`; nav links (Browse / Plan my week / Sub Tub) on
+index, planner, sub, and all activity pages; `sub.html` added to sitemap.xml and llms.txt
+(new Tools section); README counts → 176.
+
+## Wave 3 — 2026-10-11 — Sub Tub feature + chunk7c merge (166 → 176)
+
+**What shipped:**
+- **Sub Tub 🆘** — substitute-teacher rescue kit: `sub.html` emergency plan generator
+  (grade band, minutes to fill, materials on hand, location → sequenced print-ready plan
+  + "Dear sub" note template), new `skills/sub-tub-rescue.md`, nav links, sitemap entry
+- Merged `data/chunk7c.json` (10 new, 2 id-collisions with wave-2 content skipped in favor
+  of existing entries): human-bingo, desert-island-picks, paper-plate-skating,
+  cup-song-circle, shadow-puppet-theatre, sock-puppet-studio, fortune-teller-folding,
+  nature-weaving-looms, rock-cairn-balance, string-figure-games
+- Total: **176 activities**, 11 categories
+
+**Validation (wave 3):**
+- `scripts/build.py`: BUILD OK — 176 activities, 176 pages, schema/ids/categories/ranges
+- `node --check assets/app.js assets/planner.js`: pass
+- Link check: 179 pages, 0 broken
+- api/v1/activities.json: 176, all ids unique
+
 ## Wave 2c — 2026-10-11 — Merged parallel chunk7b (+12 → 166)
 
 Merged the sibling's `data/chunk7b.json` (12 activities, same schema, 0 dupes).

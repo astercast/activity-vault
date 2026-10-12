@@ -75,6 +75,7 @@ ACTIVITY_TEMPLATE = """<!DOCTYPE html>
     <nav aria-label="Primary">
       <a href="../index.html">Browse</a>
       <a href="../planner.html">Plan my week</a>
+      <a href="../sub.html">Sub Tub 🆘</a>
     </nav>
   </div>
 </header>
@@ -245,6 +246,10 @@ def main():
               "", "## Skills", "- skills/activity-finder.md", "- skills/week-planner.md",
               "- skills/rainy-day-rescue.md", "- skills/stem-demo-picker.md",
               "- skills/icebreaker-chooser.md", "- skills/quiet-focus-picker.md",
+              "- skills/sub-tub-rescue.md",
+              "", "## Tools", "- sub.html — Sub Tub: the substitute-teacher rescue kit.",
+              "  Pick grade band, minutes to fill, materials on hand, location —",
+              "  generates a sequenced print-ready emergency plan plus a 'Dear sub' note template.",
               "", "## Docs", "- API.md — full API reference", "- PIPELINE.md — how the library grows"]
     open(os.path.join(SITE, 'llms.txt'), 'w').write('\n'.join(lines) + '\n')
 
@@ -260,7 +265,7 @@ def main():
     open(os.path.join(SITE, 'llms-full.txt'), 'w').write('\n'.join(full) + '\n')
 
     # 4. sitemap.xml
-    urls = ["", "planner.html"] + [f"activity/{a['id']}.html" for a in acts]
+    urls = ["", "planner.html", "sub.html"] + [f"activity/{a['id']}.html" for a in acts]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:
