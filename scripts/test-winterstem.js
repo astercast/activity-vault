@@ -1,6 +1,6 @@
 // scripts/test-winterstem.js — wave 16 "Winter Holiday Build Lab" assertions
 const fs = require('fs');
-const api = JSON.parse(fs.readFileSync('api/v1/activities.json', 'utf8'));
+const api = JSON.parse(fs.readFileSync('data/v1/activities.json', 'utf8'));
 const acts = api.activities;
 const byId = new Map(acts.map(a => [a.id, a]));
 let pass = 0, fail = 0;
@@ -18,7 +18,7 @@ const IDS = [
   'red-nose-green-nose','winter-hide-and-seek',
 ];
 
-ok(api.count === 455, `count 455, got ${api.count}`);
+ok(api.count === 497, `count 497, got ${api.count}`);
 ok(acts.length === new Set(acts.map(a => a.id)).size, 'ids unique');
 IDS.forEach(id => ok(byId.has(id), `wave16 id present: ${id}`));
 

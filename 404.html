@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Card not found — Activity Vault</title>
+<meta name="description" content="This index card isn't in the catalog. Head back to the Activity Vault's browse page or the teacher's desk.">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@500;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap">
+<script src="assets/site.js" defer></script>
+<style>
+  .lost-card {
+    max-width: 26rem; margin: 4rem auto; padding: 2rem 2rem 1.6rem;
+    background: var(--card); border: 2px solid var(--line); border-radius: 6px;
+    box-shadow: var(--shadow-lift); transform: rotate(-1.6deg);
+    font-family: var(--font-hand); position: relative;
+  }
+  .lost-card::before {
+    content: ""; position: absolute; top: -9px; left: 50%; margin-left: -9px;
+    width: 18px; height: 18px; border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #e88, var(--accent) 65%, #7e2a26);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .35);
+  }
+  .lost-card .file-stamp {
+    font-family: var(--font-stamp); font-size: .75rem; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--accent);
+    border: 3px double var(--accent); border-radius: 5px;
+    display: inline-block; padding: .25rem .7rem; transform: rotate(-3deg);
+    margin-bottom: 1rem;
+  }
+  .lost-card h1 { font-family: var(--font-hand); font-size: 2rem; margin: 0 0 .6rem; }
+  .lost-card p { font-size: 1.25rem; line-height: 1.4; margin: 0 0 1rem; }
+  .lost-card .card-actions { display: flex; gap: .6rem; flex-wrap: wrap; font-family: var(--font-type); }
+  .lost-card .card-actions a { font-size: .95rem; }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header no-print">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Activity Vault home">
+      <span class="brand-mark" aria-hidden="true">🗂️</span>
+      <span class="brand-text">Activity <strong>Vault</strong></span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="index.html">Browse</a>
+      <a href="desk.html">The Desk 🗄️</a>
+      <a href="planner.html">Plan my week</a>
+      <a href="kit.html">Kit 🧰</a>
+      <a href="collections.html">Collections 📚</a>
+    </nav>
+    <nav aria-label="More tools and seasons" class="nav-secondary">
+      <a href="sub.html">Sub Tub 🆘</a>
+      <a href="party.html">Party Planner 🎉</a>
+      <a href="fieldtrip.html">Field Trips 🚌</a>
+      <span class="nav-div" aria-hidden="true">·</span>
+      <a href="halloween.html">Halloween 🎃</a>
+      <a href="thanksgiving.html">Thanksgiving 🦃</a>
+      <a href="winter.html">Winter ❄️</a>
+      <a href="spring.html">Spring 🌷</a>
+      <a href="summer.html">Summer ☀️</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="main">
+  <div class="lost-card">
+    <span class="file-stamp" aria-hidden="true">Not in catalog</span>
+    <h1>This card got misfiled.</h1>
+    <p>Somewhere between the drawer and the desk, this page wandered off. It happens to the best filing systems.</p>
+    <div class="card-actions no-print">
+      <a class="btn" href="index.html">← Back to the catalog</a>
+      <a class="btn btn-ghost" href="desk.html">Check the desk 🗄️</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer no-print">
+  <div class="wrap">
+    <p><strong>Activity Vault</strong> — the all-in-one activity archive for teachers &amp; after-school programs.</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -10,7 +10,7 @@ butter, food drives, thank-you cards, gratitude circles) described in
 our own words.
 
 Tag vocabulary: holiday:thanksgiving is NEW in this wave (added to the
-validator in scripts/build.py, assets/app.js, api/v1/filters.json, the
+validator in scripts/build.py, assets/app.js, data/v1/filters.json, the
 schema enum, and the docs). season:fall already existed.
 
 Retro-tags (tags only — descriptions untouched): gratitude-tree,

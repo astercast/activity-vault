@@ -16,7 +16,7 @@ function ok(cond, label, extra) {
 
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const actIds = new Set(acts.map(a => a.id));
-ok(acts.length === 455, '455 activities total', String(acts.length));
+ok(acts.length === 497, '497 activities total', String(acts.length));
 ok(actIds.size === acts.length, 'all activity ids unique');
 
 // 1. Tag vocabulary: holiday:thanksgiving is NEW in wave 14 — confirm it is
@@ -32,11 +32,11 @@ ok(appSrc.includes("'holiday:thanksgiving': '🦃 Thanksgiving'"), 'app.js TAG_L
 ok(/TAG_ORDER = \[[^\]]*'holiday:thanksgiving'/.test(appSrc), 'app.js TAG_ORDER has thanksgiving');
 const plannerSrc = fs.readFileSync(path.join(ROOT, 'assets/planner.js'), 'utf8');
 ok(plannerSrc.includes("'holiday:thanksgiving': '🦃 Thanksgiving'"), 'planner.js SEASON_LABELS has thanksgiving');
-const schema = JSON.parse(fs.readFileSync(path.join(ROOT, 'api/v1/schema/activity.schema.json'), 'utf8'));
+const schema = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/schema/activity.schema.json'), 'utf8'));
 ok(JSON.stringify(schema).includes('holiday:thanksgiving'), 'activity schema enum has holiday:thanksgiving');
-const tagOpts = JSON.parse(fs.readFileSync(path.join(ROOT, 'api/v1/filters.json'), 'utf8')).filters.tags.options;
+const tagOpts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/filters.json'), 'utf8')).filters.tags.options;
 ok(tagOpts.includes('holiday:thanksgiving'), 'filters.json has holiday:thanksgiving');
-const tagLabels = JSON.parse(fs.readFileSync(path.join(ROOT, 'api/v1/filters.json'), 'utf8')).filters.tags.labels;
+const tagLabels = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/filters.json'), 'utf8')).filters.tags.labels;
 ok(tagLabels['holiday:thanksgiving'] === '🦃 Thanksgiving', 'filters.json label for thanksgiving');
 
 // 2. The 21 wave-14 ids are all present (18 core + 3 research STEM from the
@@ -102,8 +102,8 @@ ok(JSON.stringify((byId['harvest-gratitude-circle'].tags || []).slice().sort()) 
 
 // 4. Collections: 12 total, grateful-gathering valid
 const colls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/collections.json'), 'utf8')).collections;
-ok(colls.length === 13, '13 collections', String(colls.length));
-ok(new Set(colls.map(c => c.id)).size === 13, 'collection ids unique');
+ok(colls.length === 14, '14 collections', String(colls.length));
+ok(new Set(colls.map(c => c.id)).size === 14, 'collection ids unique');
 const gg = colls.find(c => c.id === 'grateful-gathering');
 ok(!!gg, 'grateful-gathering exists');
 ok(gg.glyph === '🦃', 'grateful-gathering glyph');
@@ -175,9 +175,9 @@ RESEARCH3.forEach(id => {
   ok((byId[id].source || '').startsWith('https://'), 'research activity has source URL: ' + id);
   ok(byId[id].copy_free === true, 'research activity is copy-free: ' + id);
 });
-ok(acts.filter(a => a.copy_free).length === 128, '128 copy_free notes (53 + 60 wave-19 micros + 15 wave-20)', String(acts.filter(a => a.copy_free).length));
-ok(acts.filter(a => a.no_elimination).length === 27, '27 no_elimination notes (14 + 13 wave-20)');
-ok(acts.filter(a => a.inclusion).length === 39, '39 inclusion notes (21 + 18 wave-20)');
+ok(acts.filter(a => a.copy_free).length === 153, '153 copy_free notes (128 + 25 wave-22)', String(acts.filter(a => a.copy_free).length));
+ok(acts.filter(a => a.no_elimination).length === 37, '37 no_elimination notes (27 + 10 wave-22)');
+ok(acts.filter(a => a.inclusion).length === 42, '42 inclusion notes (39 + 3 wave-22)');
 // research fields appear on built pages
 const cfPage = fs.readFileSync(path.join(ROOT, 'activity/turkey-code-feathers.html'), 'utf8');
 ok(cfPage.includes('Copy-free'), 'copy-free badge renders on activity page');
@@ -238,17 +238,17 @@ const samplePage = fs.readFileSync(path.join(ROOT, 'activity/thankful-turkey-han
 ok(samplePage.includes('../thanksgiving.html'), 'generated activity page nav links thanksgiving.html');
 
 // 11. Generated API: filters.json + collections + manifest + schema + sitemap + llms
-const apiColls = JSON.parse(fs.readFileSync(path.join(ROOT, 'api/v1/collections.json'), 'utf8'));
-ok(apiColls.count === 13 && apiColls.collections.length === 13, 'api collections.json count 13');
+const apiColls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/collections.json'), 'utf8'));
+ok(apiColls.count === 14 && apiColls.collections.length === 14, 'api collections.json count 14');
 ok(apiColls.collections.some(c => c.id === 'grateful-gathering'), 'api has grateful-gathering');
 const coll = apiColls.collections.find(c => c.id === 'grateful-gathering');
 ok(coll.page === 'collections.html#grateful-gathering', 'grateful-gathering deep link');
 ok(coll.age_span.length === 2 && coll.time_span.length === 2, 'grateful-gathering spans computed');
-const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'api/v1/index.json'), 'utf8'));
-const collEp = manifest.endpoints.find(e => e.path === 'api/v1/collections.json');
-ok(collEp && collEp.records === 13, 'manifest collections records=13');
-const actEp = manifest.endpoints.find(e => e.path === 'api/v1/activities.json');
-ok(actEp && actEp.records === 455, 'manifest activities records=455', String(actEp && actEp.records));
+const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/index.json'), 'utf8'));
+const collEp = manifest.endpoints.find(e => e.path === 'data/v1/collections.json');
+ok(collEp && collEp.records === 14, 'manifest collections records=14');
+const actEp = manifest.endpoints.find(e => e.path === 'data/v1/activities.json');
+ok(actEp && actEp.records === 497, 'manifest activities records=497', String(actEp && actEp.records));
 const sitemap = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
 ok(sitemap.includes('thanksgiving.html'), 'sitemap.xml has thanksgiving.html');
 const llms = fs.readFileSync(path.join(ROOT, 'llms.txt'), 'utf8');

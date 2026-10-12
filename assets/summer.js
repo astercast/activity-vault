@@ -1,5 +1,5 @@
 /* Activity Vault — summer hub page (wave 12).
-   Renders the curated summer sections from api/v1/activities.json using
+   Renders the curated summer sections from data/v1/activities.json using
    explicit, build-validated id lists (scripts/test-summer.js asserts every id
    resolves). Picks show the visitor's own rating badges (localStorage only —
    never invented), matching the collections page pattern. */
@@ -179,7 +179,7 @@
 
   function init() {
     if (!sectionsHost) return;
-    fetch('api/v1/activities.json').then(function (r) { return r.json(); }).then(function (d) {
+    fetch('data/v1/activities.json').then(function (r) { return r.json(); }).then(function (d) {
       var acts = d.activities || d;
       var actmap = {};
       acts.forEach(function (a) { actmap[a.id] = a; });

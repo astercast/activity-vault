@@ -1,6 +1,6 @@
 /* Activity Vault — curated collections page (wave 9).
-   Renders the 9 hand-picked collections from api/v1/collections.json, resolves
-   picks against api/v1/activities.json, shows the visitor's own rating badges
+   Renders the 9 hand-picked collections from data/v1/collections.json, resolves
+   picks against data/v1/activities.json, shows the visitor's own rating badges
    (localStorage only — never invented), printable per collection, with a
    "copy this collection" text export per collection (wave-7 pattern). */
 (function () {
@@ -224,8 +224,8 @@
   function init() {
     if (!grid || !sectionsHost) return;
     Promise.all([
-      fetch('api/v1/collections.json').then(function (r) { return r.json(); }),
-      fetch('api/v1/activities.json').then(function (r) { return r.json(); })
+      fetch('data/v1/collections.json').then(function (r) { return r.json(); }),
+      fetch('data/v1/activities.json').then(function (r) { return r.json(); })
     ]).then(function (res) {
       var collections = res[0].collections || [];
       var actmap = {};

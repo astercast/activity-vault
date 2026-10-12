@@ -6,7 +6,7 @@
  *
  * Each run (≤10s):
  *  1. load pipeline/feeds.json (bundled), the queue + seen set (GitHub when the
- *     token exists, bundled copies otherwise), and api/v1/activities.json (bundled)
+ *     token exists, bundled copies otherwise), and data/v1/activities.json (bundled)
  *  2. fetch feeds in parallel (fetchx, 4000ms each, Promise.allSettled —
  *     partial success is the normal case), parse RSS 2.0 / Atom
  *  3. relevance filter (KEEP/DROP, ported verbatim from pipeline/scan.py) +
@@ -16,7 +16,7 @@
  *     move decided items to decided.json (90d retention), prune
  *  5. writeJsonIfChanged back to pipeline/seen.json, pipeline/review-queue.json,
  *     pipeline/decided.json — then the triggered redeploy runs scripts/build.py,
- *     which publishes api/v1/review-queue.json + api/v1/decided.json.
+ *     which publishes data/v1/review-queue.json + data/v1/decided.json.
  *
  * PENDING TOKEN (2026-10-11): GITHUB_REPO_TOKEN is still awaiting the user's
  * decision. Without it the job degrades to read-only: it computes real
@@ -178,7 +178,7 @@ function jaccard(a, b) {
 
 async function loadInputs() {
   const feeds = require('../../pipeline/feeds.json');
-  const activities = require('../v1/activities.json');
+  const activities = require('../../data/v1/activities.json');
   let queue, seen, decided, writable;
   if (github.tokenConfigured()) {
     const [q, s, d] = await Promise.all([

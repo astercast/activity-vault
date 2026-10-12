@@ -18,7 +18,7 @@ New group, first day, or new kids joining: "half my group doesn't know each othe
 
 ## Procedure
 
-1. Filter `api/v1/activities.json` for `categories` containing `icebreakers`, then by group size fit.
+1. Filter `data/v1/activities.json` for `categories` containing `icebreakers`, then by group size fit.
 2. For shy groups, start **low-exposure**: `name-chain` or `would-you-rather-circle` (everyone participates, nobody is singled out). Save `two-truths-and-a-lie` for round two.
 3. For bold groups, go straight to **high-energy**: `human-knot`, `duck-duck-goose`, `simon-says`.
 4. Sequence: names first (10 min), then laughter (10–15 min), then teamwork (15+ min). Never open with a game that puts one kid on stage alone.
@@ -29,7 +29,7 @@ New group, first day, or new kids joining: "half my group doesn't know each othe
 
 ## API references
 
-- `api/v1/activities.json`
+- `data/v1/activities.json`
 
 ## Pitfalls
 

@@ -25,12 +25,16 @@
       <a href="desk.html">The Desk 🗄️</a>
       <a href="planner.html">Plan my week</a>
       <a href="kit.html">Kit 🧰</a>
+      <a href="collections.html">Collections 📚</a>
+    </nav>
+    <nav aria-label="More tools and seasons" class="nav-secondary">
       <a href="sub.html">Sub Tub 🆘</a>
       <a href="party.html">Party Planner 🎉</a>
       <a href="fieldtrip.html">Field Trips 🚌</a>
-      <a href="collections.html">Collections 📚</a>
+      <span class="nav-div" aria-hidden="true">·</span>
       <a href="halloween.html">Halloween 🎃</a>
       <a href="thanksgiving.html">Thanksgiving 🦃</a>
+      <a href="winter.html">Winter ❄️</a>
       <a href="spring.html">Spring 🌷</a>
       <a href="summer.html">Summer ☀️</a>
     </nav>
@@ -51,7 +55,7 @@
     <span class="api-badge" id="queue-badge" data-api-state="waking"
           role="status" aria-live="polite" tabindex="0">waking server…</span>
   </div>
-  <p class="qmeta" id="queue-counts">0 pending · 23 decided (last 90 days) · snapshot 2026-10-12T08:30:24Z</p>
+  <p class="qmeta" id="queue-counts">0 pending · 23 decided (last 90 days) · snapshot 2026-10-12T09:22:30Z</p>
   <div id="queue-list"><div class="queue-empty">The queue is clear — nothing awaiting review. 🌿</div></div>
 
   <section aria-labelledby="h-decided">
@@ -81,7 +85,7 @@
 <footer class="site-footer">
   <div class="wrap">
     <p><strong>Activity Vault</strong> — the all-in-one activity archive for teachers &amp; after-school programs. All activities are classic, public-domain concepts described in our own words.</p>
-    <p><a href="api/v1/activities.json">API</a> · <a href="api.html">API docs &amp; console</a> · <a href="review.html">Scout review queue</a> · <a href="llms.txt">llms.txt</a> · <a href="AGENT.md">Agent guide</a></p>
+    <p><a href="data/v1/activities.json">API</a> · <a href="api.html">API docs &amp; console</a> · <a href="review.html">Scout review queue</a> · <a href="llms.txt">llms.txt</a> · <a href="AGENT.md">Agent guide</a></p>
   </div>
 </footer>
 <script>
@@ -188,7 +192,7 @@
     var qBadge = document.getElementById('queue-badge');
     var qList = document.getElementById('queue-list');
     var qCounts = document.getElementById('queue-counts');
-    window.ApiClient.fetchWithFallback('/api/review-queue', 'api/v1/review-queue.json', { badgeEl: qBadge })
+    window.ApiClient.fetchWithFallback('/api/review-queue', 'data/v1/review-queue.json', { badgeEl: qBadge })
       .then(function (r) {
         if (!r.data) return;
         renderPending(r.data.candidates || [], qList);
@@ -196,7 +200,7 @@
       });
     var dBadge = document.getElementById('decided-badge');
     var dBody = document.getElementById('decided-list');
-    window.ApiClient.fetchWithFallback('/api/review-queue?status=decided', 'api/v1/decided.json', { badgeEl: dBadge })
+    window.ApiClient.fetchWithFallback('/api/review-queue?status=decided', 'data/v1/decided.json', { badgeEl: dBadge })
       .then(function (r) {
         if (!r.data) return;
         renderDecided(r.data.decisions || r.data.candidates || [], dBody);

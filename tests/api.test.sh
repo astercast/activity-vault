@@ -59,7 +59,7 @@ assert d['counts']['pending']==len([c for c in d['candidates'] if c['status']=='
 assert all(set(['id','title','summary','source_url','detected_at','suggested_tags','status']) <= set(c) for c in d['candidates'])\""
 chk "review-queue cache s-maxage=600" bash -c "curl -sD - -o /dev/null '$BASE/api/review-queue' | grep -qi 's-maxage=600'"
 
-echo "== 3. envelope schema vs api/v1/schema/envelope.json =="
+echo "== 3. envelope schema vs data/v1/schema/envelope.json =="
 chk "schema health" bash -c "curl -sf '$BASE/api/health' | python3 '$ROOT/tests/check_envelope.py'"
 chk "schema review-queue" bash -c "curl -sf '$BASE/api/review-queue' | python3 '$ROOT/tests/check_envelope.py'"
 
@@ -87,11 +87,11 @@ chk "decide unknown id 404 NOT_FOUND" bash -c "curl -s -o /dev/null -w '%{http_c
 chk "decide unknown id envelope" bash -c "curl -s -X POST -H 'Content-Type: application/json' -H 'Authorization: Bearer $SECRET' -d '{\"id\":\"does-not-exist-12345\",\"decision\":\"approve\"}' '$BASE/api/review-decide' | python3 -c '$PY_ENVELOPE'"
 
 echo "== 7. static fallback present =="
-chk "static review-queue.json" bash -c "curl -sf '$BASE/api/v1/review-queue.json' | python3 -c \"
+chk "static review-queue.json" bash -c "curl -sf '$BASE/data/v1/review-queue.json' | python3 -c \"
 import json,sys; d=json.load(sys.stdin); assert 'candidates' in d and 'generated_at' in d\""
-chk "static decided.json" bash -c "curl -sf '$BASE/api/v1/decided.json' | python3 -c \"
+chk "static decided.json" bash -c "curl -sf '$BASE/data/v1/decided.json' | python3 -c \"
 import json,sys; d=json.load(sys.stdin); assert 'decisions' in d and d['retention_days']==90\""
-chk "static envelope schema file" curl -sf "$BASE/api/v1/schema/envelope.json"
+chk "static envelope schema file" curl -sf "$BASE/data/v1/schema/envelope.json"
 
 echo "== 8. vercel.json lint =="
 chk "cron daily-or-slower" python3 -c "

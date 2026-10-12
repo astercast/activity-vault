@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """tests/check_envelope.py — validate a function response against
-api/v1/schema/envelope.json (§1.10). No third-party deps (stdlib only):
+data/v1/schema/envelope.json (§1.10). No third-party deps (stdlib only):
 implements just enough of draft 2020-12 for this schema.
 
 Usage: curl -sf $BASE/api/health | python3 tests/check_envelope.py
@@ -12,7 +12,7 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SCHEMA = json.load(open(os.path.join(ROOT, "api", "v1", "schema", "envelope.json")))
+SCHEMA = json.load(open(os.path.join(ROOT, "data", "v1", "schema", "envelope.json")))
 
 ERRORS = []
 

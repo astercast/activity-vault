@@ -836,8 +836,73 @@
     45
    ],
    "page": "collections.html#halloween-week"
+  },
+  {
+   "id": "winter-lights",
+   "title": "Winter Lights",
+   "glyph": "❄️",
+   "when_to_use": "December is coming and the room needs a plan: Christmas crafts that teach, Hanukkah and Kwanzaa activities treated with real respect, New Year countdowns with actual math, and winter-break science that works whether or not it snows.",
+   "picks": [
+    {
+     "activity_id": "ornament-geometry-stars",
+     "curator_note": "Five-point geometry you can hang — the rare craft that's secretly a math lesson."
+    },
+    {
+     "activity_id": "christmas-light-circuit-cards",
+     "curator_note": "A greeting card with a working light bulb. The debugging IS the lesson."
+    },
+    {
+     "activity_id": "dreidel-spin-physics",
+     "curator_note": "Whose top spins longest? Friction and surface, tested properly."
+    },
+    {
+     "activity_id": "hanukkah-story-circle",
+     "curator_note": "The story behind the holiday, told round-robin — respectful, real, never a costume."
+    },
+    {
+     "activity_id": "kente-pattern-strips",
+     "curator_note": "Bold blocks with meanings attached — meaning first, decoration second."
+    },
+    {
+     "activity_id": "seven-principles-talk-tokens",
+     "curator_note": "The Nguzo Saba as a discussion game. The winning principle becomes the week's motto."
+    },
+    {
+     "activity_id": "countdown-clock-craft",
+     "curator_note": "Build the countdown, then run it — a paper clock that sweeps a real 60 seconds."
+    },
+    {
+     "activity_id": "ball-drop-physics",
+     "curator_note": "Time the drop to land at zero. Miss it? That's called iteration."
+    },
+    {
+     "activity_id": "new-year-noise-parade",
+     "curator_note": "Shakers, a 2027 sign, one glorious hallway lap. The new year deserves an entrance."
+    },
+    {
+     "activity_id": "snowflake-symmetry-lab",
+     "curator_note": "No cutting, just looking — six-fold symmetry in real snowflake photos."
+    },
+    {
+     "activity_id": "ice-melt-rescue-race",
+     "curator_note": "Frozen toys, warm hands, salt strategy. The rescue parade at the end is mandatory."
+    },
+    {
+     "activity_id": "winter-bird-feeder",
+     "curator_note": "Pinecones and peanut butter, then a week of watching who shows up."
+    }
+   ],
+   "age_span": [
+    4,
+    12
+   ],
+   "time_span": [
+    15,
+    60
+   ],
+   "page": "collections.html#winter-lights"
   }
  ],
- "count": 13,
+ "count": 14,
  "updated": "2026-10-12"
 }

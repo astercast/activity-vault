@@ -5,7 +5,7 @@
 **This repo is NEVER deployed.** The one-time Vercel deploy uses a CLI deploy
 from the full-system release snapshot repo `astercast/activity-vault-live`:
 static frontend + the 4 Scout serverless functions + `vercel.json`
-(functions + cron config) + `lib/` helpers + `api/v1/` static fallbacks —
+(functions + cron config) + `lib/` helpers + `data/v1/` static fallbacks —
 the whole system, end to end. No Vercel GitHub integration, ever; build
 machine **Standard, never Turbo**. Future work is GitHub-only, in this
 working repo. Track rule: `-live` pushes happen only on an explicit
@@ -34,7 +34,7 @@ One Vercel project from this repo (`outputDirectory: "."`):
   - `api/cron/scout.js` → `GET /api/cron/scout`
 - **Shared helpers** — `lib/envelope.js`, `lib/fetchx.js`, `lib/ratelimit.js`,
   `lib/cronauth.js`, `lib/github.js` (never routes; not public paths).
-- **Static fallbacks** — `api/v1/review-queue.json` + `api/v1/decided.json`
+- **Static fallbacks** — `data/v1/review-queue.json` + `data/v1/decided.json`
   (published by `scripts/build.py`; they are both the fallback AND the store).
 - **1 daily cron** — `/api/cron/scout` at `0 11 * * *` UTC (RSS scan →
   review queue).
@@ -68,7 +68,7 @@ Spec: `~/workspace/server-program/ARCHITECTURE.md` §7.6 ("The Scout").
    - `GITHUB_REPO_TOKEN` = the fine-grained PAT (pending decision; read-only
      mode until set)
    - `GITHUB_REPO` = `owner/activity-vault` (the repo the cron commits to)
-   - `REPO_STATIC_PREFIX` = `` (empty — static JSON lives at `api/v1/` from
+   - `REPO_STATIC_PREFIX` = `` (empty — static JSON lives at `data/v1/` from
      the repo root)
 4. **Build machine: Standard.** Project → Settings → Build & Deployment →
    Build Machine → **Standard. Never Turbo** — September 2026 Turbo CPU
@@ -104,7 +104,7 @@ Spec: `~/workspace/server-program/ARCHITECTURE.md` §7.6 ("The Scout").
 | `CRON_SECRET` | yes | Vercel → Project → Settings → Environment Variables (Production) | 32+ hex chars; authorizes cron + `POST /api/review-decide`. Rotate in dashboard; no code changes needed. |
 | `GITHUB_REPO_TOKEN` | no (read-only mode until set) | same | Fine-grained PAT, contents:write on this repo only. Pending the user's call (spec §14.1). |
 | `GITHUB_REPO` | no (cron only) | same | `owner/activity-vault`; the repo cron commits land in. |
-| `REPO_STATIC_PREFIX` | no (cron only) | same | Empty for this repo (`api/v1/` at root). |
+| `REPO_STATIC_PREFIX` | no (cron only) | same | Empty for this repo (`data/v1/` at root). |
 
 No other env vars. No secrets in code, `vercel.json`, comments, or test
 fixtures — ever.
@@ -164,7 +164,7 @@ fixtures — ever.
 - Add in Vercel dashboard → Domains; the `/api/*` paths move with the domain
   automatically.
 - If a domain is assigned later, update absolute URLs in `llms.txt`/sitemap
-  and the envelope schema's `$id` (`api/v1/schema/envelope.json`) — flag as
+  and the envelope schema's `$id` (`data/v1/schema/envelope.json`) — flag as
   a wave task at that time.
 
 ## 10. Rollback

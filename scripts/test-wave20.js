@@ -33,7 +33,7 @@ const W20 = [
 ];
 
 // 1. ids present and unique; total count
-ok(acts.length === 455, '455 activities total', String(acts.length));
+ok(acts.length === 497, '497 activities total', String(acts.length));
 ok(new Set(acts.map(a => a.id)).size === acts.length, 'all ids unique');
 W20.forEach(id => ok(!!byId[id], 'wave-20 id present: ' + id));
 
@@ -64,7 +64,7 @@ ok(W20.filter(id => tagKey(id) === HF).length === 9, '9 fall+halloween', String(
 ok(W20.filter(id => tagKey(id) === HSF).length === 1, '1 fall+halloween+spooky', String(W20.filter(id => tagKey(id) === HSF).length));
 ok(W20.filter(id => (byId[id].tags || []).includes('holiday:dia-de-muertos')).length === 1,
   '1 dia-de-muertos (marigold, respectful framing)');
-const vocab = new Set(JSON.parse(fs.readFileSync(path.join(ROOT, 'api/v1/filters.json'), 'utf8')).filters.tags.options);
+const vocab = new Set(JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/filters.json'), 'utf8')).filters.tags.options);
 W20.forEach(id => (byId[id].tags || []).forEach(t => ok(vocab.has(t), 'tag in vocabulary: ' + t + ' (' + id + ')')));
 
 // 4. record shape on all 40
@@ -123,7 +123,7 @@ W20.forEach(id => ok(fs.existsSync(path.join(ROOT, 'activity', id + '.html')), '
 
 // 9. halloween-week collection: 13 collections, 12 picks, notes, resolves
 const cols = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/collections.json'), 'utf8')).collections;
-ok(cols.length === 13, '13 collections', String(cols.length));
+ok(cols.length === 14, '14 collections', String(cols.length));
 const hw = cols.filter(c => c.id === 'halloween-week')[0];
 ok(!!hw, 'halloween-week collection exists');
 ok(hw.picks.length === 12, 'halloween-week 12 picks', String(hw.picks.length));
@@ -167,11 +167,11 @@ ok(plSrc.includes('?from=collection:'), 'planner seasonal seed uses ?from=collec
 ok(plSrc.includes('function collTitle'), 'planner has collTitle helper');
 
 // 15. api manifest + sitemap + llms reflect the new totals
-const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'api/v1/index.json'), 'utf8'));
-const actEp = manifest.endpoints.filter(e => e.path === 'api/v1/activities.json')[0];
-ok(actEp && actEp.records === 455, 'manifest activities records=455', String(actEp && actEp.records));
-const apiColls = JSON.parse(fs.readFileSync(path.join(ROOT, 'api/v1/collections.json'), 'utf8'));
-ok(apiColls.count === 13 && apiColls.collections.length === 13, 'api collections count 13');
+const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/index.json'), 'utf8'));
+const actEp = manifest.endpoints.filter(e => e.path === 'data/v1/activities.json')[0];
+ok(actEp && actEp.records === 497, 'manifest activities records=497', String(actEp && actEp.records));
+const apiColls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/collections.json'), 'utf8'));
+ok(apiColls.count === 14 && apiColls.collections.length === 14, 'api collections count 14');
 const sm = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
 ok(sm.includes('activity/roll-a-monster-dice-draw.html'), 'sitemap has a wave-20 page');
 ok(sm.includes('collections.html'), 'sitemap has collections');

@@ -3,11 +3,11 @@
 // materials empty or pantry-staple only. Proves the Kit tool's opener/closer
 // slot pools are strengthened end-to-end via the real VaultKit candidate fns.
 const fs = require('fs');
-const api = JSON.parse(fs.readFileSync('api/v1/activities.json', 'utf8'));
+const api = JSON.parse(fs.readFileSync('data/v1/activities.json', 'utf8'));
 const acts = api.activities;
 const byId = new Map(acts.map(a => [a.id, a]));
 const K = require('../assets/kit-core.js');
-const buckets = JSON.parse(fs.readFileSync('api/v1/balance-buckets.json', 'utf8'));
+const buckets = JSON.parse(fs.readFileSync('data/v1/balance-buckets.json', 'utf8'));
 const bucketByCat = {};
 buckets.mapping.forEach(m => { bucketByCat[m.category] = m.bucket; });
 // full 16-staple pantry WORDS (not ids) — what itemCovered actually matches against.
@@ -41,8 +41,8 @@ const IDS = [
   'celebration-circle','gift-wrap-speed','thank-you-sprint',
 ];
 
-ok(api.count === 455, `count 455, got ${api.count}`);
-ok(acts.length === 455, `acts.length 455, got ${acts.length}`);
+ok(api.count === 497, `count 497, got ${api.count}`);
+ok(acts.length === 497, `acts.length 497, got ${acts.length}`);
 ok(acts.length === new Set(acts.map(a => a.id)).size, 'ids unique');
 ok(IDS.length === 60, `60 wave19 ids, got ${IDS.length}`);
 ok(new Set(IDS).size === 60, 'wave19 ids unique inside pack');

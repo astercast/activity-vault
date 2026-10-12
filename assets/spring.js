@@ -1,5 +1,5 @@
 /* Activity Vault — spring hub page (wave 11).
-   Renders the curated spring sections from api/v1/activities.json using
+   Renders the curated spring sections from data/v1/activities.json using
    explicit, build-validated id lists (scripts/test-spring.js asserts every id
    resolves). Picks show the visitor's own rating badges (localStorage only —
    never invented), matching the collections page pattern. */
@@ -183,7 +183,7 @@
 
   function init() {
     if (!sectionsHost) return;
-    fetch('api/v1/activities.json').then(function (r) { return r.json(); }).then(function (d) {
+    fetch('data/v1/activities.json').then(function (r) { return r.json(); }).then(function (d) {
       var acts = d.activities || d;
       var actmap = {};
       acts.forEach(function (a) { actmap[a.id] = a; });

@@ -18,7 +18,7 @@ No plans were left, the sub is already in the building, and someone needs a fill
 
 ## Procedure
 
-1. Open `sub.html` in the Vault (or do it by hand): filter `api/v1/activities.json` by grade band (activity age range overlaps the band), materials tier, and location.
+1. Open `sub.html` in the Vault (or do it by hand): filter `data/v1/activities.json` by grade band (activity age range overlaps the band), materials tier, and location.
 2. Sequence the plan: **opener** (short, high-energy or an icebreaker), **mains** (the longest blocks), **closer** (always something calm — a `quiet-focus` or `rainy-day` activity).
 3. Fill the exact minutes. If a gap under ~10 minutes remains, add buffer to the last block; if 10+ remain, append a generic closer: read-aloud + free draw (paper tier) or share circle & cleanup (nothing tier).
 4. Generate the "Dear sub" note: teacher name, class, date, schedule quirks, pickup/dismissal, behavior plan, reliable helpers, where supplies live, early-finisher backup. The sub should be able to run it cold.
@@ -37,7 +37,7 @@ No plans were left, the sub is already in the building, and someone needs a fill
 
 ## API references
 
-- `api/v1/activities.json`
+- `data/v1/activities.json`
 - `sub.html` (interactive builder)
 
 ## Pitfalls

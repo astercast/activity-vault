@@ -719,6 +719,62 @@
      "note": "A respectful Dia de los Muertos craft about remembrance - learning, not dressing up."
     }
    ]
+  },
+  {
+   "id": "winter-lights",
+   "title": "Winter Lights",
+   "glyph": "❄️",
+   "when_to_use": "December is coming and the room needs a plan: Christmas crafts that teach, Hanukkah and Kwanzaa activities treated with real respect, New Year countdowns with actual math, and winter-break science that works whether or not it snows.",
+   "picks": [
+    {
+     "id": "ornament-geometry-stars",
+     "note": "Five-point geometry you can hang — the rare craft that's secretly a math lesson."
+    },
+    {
+     "id": "christmas-light-circuit-cards",
+     "note": "A greeting card with a working light bulb. The debugging IS the lesson."
+    },
+    {
+     "id": "dreidel-spin-physics",
+     "note": "Whose top spins longest? Friction and surface, tested properly."
+    },
+    {
+     "id": "hanukkah-story-circle",
+     "note": "The story behind the holiday, told round-robin — respectful, real, never a costume."
+    },
+    {
+     "id": "kente-pattern-strips",
+     "note": "Bold blocks with meanings attached — meaning first, decoration second."
+    },
+    {
+     "id": "seven-principles-talk-tokens",
+     "note": "The Nguzo Saba as a discussion game. The winning principle becomes the week's motto."
+    },
+    {
+     "id": "countdown-clock-craft",
+     "note": "Build the countdown, then run it — a paper clock that sweeps a real 60 seconds."
+    },
+    {
+     "id": "ball-drop-physics",
+     "note": "Time the drop to land at zero. Miss it? That's called iteration."
+    },
+    {
+     "id": "new-year-noise-parade",
+     "note": "Shakers, a 2027 sign, one glorious hallway lap. The new year deserves an entrance."
+    },
+    {
+     "id": "snowflake-symmetry-lab",
+     "note": "No cutting, just looking — six-fold symmetry in real snowflake photos."
+    },
+    {
+     "id": "ice-melt-rescue-race",
+     "note": "Frozen toys, warm hands, salt strategy. The rescue parade at the end is mandatory."
+    },
+    {
+     "id": "winter-bird-feeder",
+     "note": "Pinecones and peanut butter, then a week of watching who shows up."
+    }
+   ]
   }
  ]
 }

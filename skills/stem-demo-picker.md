@@ -18,7 +18,7 @@ A teacher wants science with a wow factor: "I need a 30-minute STEM activity for
 
 ## Procedure
 
-1. Filter `api/v1/activities.json` for `categories` containing `stem`, then by age overlap and `time_min`.
+1. Filter `data/v1/activities.json` for `categories` containing `stem`, then by age overlap and `time_min`.
 2. Match mess tolerance to the activity: `density-rainbow-jars` and `marshmallow-constellations` are low-mess; `baking-soda-volcano` and `paper-mache-bowls` are glorious — warn accordingly.
 3. Prefer activities with an **iterate** loop (paper airplanes, egg drop, card towers): the redo is where the learning lives.
 4. Give the teacher the one-sentence explanation from the activity's steps so they can answer "why did that happen?" on the spot.
@@ -29,7 +29,7 @@ A teacher wants science with a wow factor: "I need a 30-minute STEM activity for
 
 ## API references
 
-- `api/v1/activities.json`
+- `data/v1/activities.json`
 
 ## Pitfalls
 

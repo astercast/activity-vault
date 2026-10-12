@@ -18,7 +18,7 @@ The supply closet is empty, the bell rings in five minutes, and the plan just fe
 
 ## Procedure
 
-1. Filter `api/v1/activities.json` for `no_prep == true`. These need zero advance setup.
+1. Filter `data/v1/activities.json` for `no_prep == true`. These need zero advance setup.
 2. If materials matter too, keep only activities where `materials` is empty (`[]`) — genuinely nothing needed.
 3. Narrow by age overlap (`age_min <= kid_age <= age_max`), group overlap, and `time_min <= minutes`.
 4. If the pool is thin, relax to "materials on hand": keep activities whose every `materials[].item` mentions paper, pencil, pen, crayon, marker, glue, or scissors — the classroom-basics test.
@@ -30,8 +30,8 @@ The supply closet is empty, the bell rings in five minutes, and the plan just fe
 
 ## API references
 
-- `api/v1/activities.json`
-- `api/v1/filters.json` (`no_prep_only`, `indoor_only`)
+- `data/v1/activities.json`
+- `data/v1/filters.json` (`no_prep_only`, `indoor_only`)
 
 ## Pitfalls
 

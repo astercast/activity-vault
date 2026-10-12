@@ -40,10 +40,10 @@ module.exports = async (req, res) => {
   // review-queue.json / decided.json carry generated_at (stamped by scripts/build.py).
   // activities.json carries date-only `updated`; the build's index.json meta.generated
   // is the honest regeneration timestamp for the archive files.
-  const queue = loadJson('./v1/review-queue.json');
-  const decided = loadJson('./v1/decided.json');
-  const index = loadJson('./v1/index.json');
-  const activities = loadJson('./v1/activities.json');
+  const queue = loadJson('../data/v1/review-queue.json');
+  const decided = loadJson('../data/v1/decided.json');
+  const index = loadJson('../data/v1/index.json');
+  const activities = loadJson('../data/v1/activities.json');
 
   const SLA = 86400; // §7.6: 24h freshness SLA
   const dataFreshness = {

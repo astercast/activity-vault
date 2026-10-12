@@ -229,8 +229,8 @@
   function loadData() {
     if (cache.activities) return Promise.resolve(cache);
     return Promise.all([
-      fetch('api/v1/activities.json').then(function (r) { return r.json(); }),
-      fetch('api/v1/collections.json').then(function (r) { return r.json(); })
+      fetch('data/v1/activities.json').then(function (r) { return r.json(); }),
+      fetch('data/v1/collections.json').then(function (r) { return r.json(); })
     ]).then(function (res) {
       cache.activities = res[0].activities || res[0];
       cache.collections = res[1].collections || res[1];

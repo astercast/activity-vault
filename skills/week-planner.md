@@ -19,7 +19,7 @@ A teacher wants Monday–Friday planned in one go: "give me two activities a day
 
 ## Procedure
 
-1. Pull the matching pool from `api/v1/activities.json` using the constraints (same filter logic as `activity-finder`).
+1. Pull the matching pool from `data/v1/activities.json` using the constraints (same filter logic as `activity-finder`).
 2. Check the pool is big enough: `pool_size >= days × slots` when repeats are off. If not, say so up front and offer to allow repeats or loosen a constraint.
 3. Deal activities round-robin across days, spreading categories — never put two high-energy PE activities back-to-back; alternate energy levels (move → make → calm → play).
 4. For each pick, write one line on *why it fits* (time, prep, category).
@@ -31,8 +31,8 @@ Mon–Fri, 2 slots/day, ≤30 min, no-prep, indoor → 10 picks from the 45-acti
 
 ## API references
 
-- `api/v1/activities.json`
-- `api/v1/categories.json`
+- `data/v1/activities.json`
+- `data/v1/categories.json`
 
 ## Pitfalls
 

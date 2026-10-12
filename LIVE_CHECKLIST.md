@@ -15,11 +15,12 @@ What is wired into the live release repo `astercast/activity-vault-live`
 
 - 455 activities → 455 `activity/*.html` pages; 13 top-level pages
 - `assets/` (pre-built JS/CSS), `skills/` markdowns
-- `api/v1/` static JSON + schemas (fallback store)
+- `data/v1/` static JSON + schemas (fallback store)
 - `api/health.js`, `api/review-queue.js`, `api/review-decide.js`,
   `api/cron/scout.js` (4/12 functions, no `runtime` key — Vercel auto-detects Node, zero npm deps)
 - Vercel functions entries need ≥1 valid property — use {"maxDuration": 10} per explicit function path; never set runtime for Node (omit it); never broad globs (2026-10-12: both nodejs22.x and nodejs20.x fail build validation; empty {} also fails; runtime is only for community runtimes like vercel-php@0.5.2)
 - No static .js data files under api/ ever — Vercel deploys every .js there as a function (functions map is not an allowlist); basename collisions (x.js + x.json) fail the build (2026-10-12). Audit 2026-10-12: clean — only the 4 real functions are .js; all static data is .json.
+- Vercel never serves static files under api/ — all static data lives in data/v1/; only real function handlers under api/ (2026-10-12)
 - `lib/` helpers (envelope, fetchx, ratelimit, cronauth, github)
 - `vercel.json`: no buildCommand, `outputDirectory: "."`, functions +
   crons config, security headers, Standard build machine
@@ -29,7 +30,7 @@ What is wired into the live release repo `astercast/activity-vault-live`
 | path | method | status |
 |---|---|---|
 | `/api/health` | GET | syntax-checked; returns `status:"ok"` + roster |
-| `/api/review-queue` | GET | falls back to `api/v1/review-queue.json` |
+| `/api/review-queue` | GET | falls back to `data/v1/review-queue.json` |
 | `/api/review-decide` | POST | operator-only, `CRON_SECRET` bearer |
 | `/api/cron/scout` | GET | daily RSS scan → review queue |
 
@@ -50,7 +51,7 @@ What is wired into the live release repo `astercast/activity-vault-live`
   validator passed
 - `scripts/check_api.py` ALL CHECKS PASSED (0 broken links, 468 pages)
 - Spot-check via local server: `index.html` 200, `planner.html` 200,
-  `api/v1/index.json` 200 (455 activities), activity page 200
+  `data/v1/index.json` 200 (455 activities), activity page 200
 - All 4 functions + 5 lib helpers pass `node --check`
 - `vercel.json` valid JSON; no `maxDuration` overrides (Hobby 10s default)
 - GitHub remote push **BLOCKED** 2026-10-11: secondary rate limit

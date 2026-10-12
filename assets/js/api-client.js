@@ -12,7 +12,7 @@
   }
 
   // opts: { timeoutMs, staticPath, badgeEl }
-  // livePath like "/api/trends"; staticPath like "/api/v1/trends.flat.json"
+  // livePath like "/api/review-queue"; staticPath like "/data/v1/review-queue.json"
   // resolves { data, source: "live"|"static", generatedAt, degraded, note }
   // never rejects — worst case returns { data: null, source: "none" }
   function fetchWithFallback(livePath, staticPath, opts) {

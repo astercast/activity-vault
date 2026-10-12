@@ -1,6 +1,6 @@
 # Activity Vault API
 
-Base path: `api/v1/`. All responses are static JSON files. No auth, no rate limits — it's a file.
+Base path: `data/v1/`. All responses are static JSON files. No auth, no rate limits — it's a file.
 
 A live serverless layer (`/api/*`, Vercel) sits alongside: `GET /api/health`,
 `GET /api/review-queue`, `POST /api/review-decide` (operator-only, `CRON_SECRET`),
@@ -9,8 +9,8 @@ frontend tries those first and falls back to these static files with an honest
 "cached" badge whenever the server is unreachable.
 
 ## Shared API conventions (all sites)
-- Base: `api/v1/` relative to the site root. Works on any static host; no auth, no keys, no rate limits.
-- Manifest: `api/v1/index.json` lists every endpoint with its schema URL, `updated` timestamp, and notes. Start here.
+- Base: `data/v1/` relative to the site root. Works on any static host; no auth, no keys, no rate limits.
+- Manifest: `data/v1/index.json` lists every endpoint with its schema URL, `updated` timestamp, and notes. Start here.
 - Timestamps: ISO-8601 UTC (`2026-10-11T00:00:00Z`). Date-only fields are `YYYY-MM-DD`.
 - Versions: `meta.version` semver on the manifest; breaking changes get a new `v2/` path, never a silent shape change.
 - Errors: static files can't return error bodies. A missing endpoint means a wrong path — re-read `index.json`. Empty results are `[]`, never `null`. Every record carries its provenance (`source`, `observed`/`updated`).
@@ -19,7 +19,7 @@ frontend tries those first and falls back to these static files with an honest
 
 ## Endpoints
 
-### `GET api/v1/index.json`
+### `GET data/v1/index.json`
 
 Self-describing manifest of the whole API — agents should start here:
 
@@ -28,16 +28,16 @@ Self-describing manifest of the whole API — agents should start here:
   "meta": { "site": "Activity Vault", "version": "1.0.0",
             "generated": "2026-10-11T00:40:21Z",
             "source_snapshot": "data/activities.json + data/categories.json — 455 activities, 11 categories" },
-  "endpoints": [ { "path": "api/v1/activities.json", "title": "...", "description": "...",
-                   "schema": "api/v1/schema/activities.schema.json",
+  "endpoints": [ { "path": "data/v1/activities.json", "title": "...", "description": "...",
+                   "schema": "data/v1/schema/activities.schema.json",
                    "updated": "2026-10-11", "records": 455, "stability": "stable" } ],
   "deprecation_notes": "No endpoints are deprecated as of 1.0.0."
 }
 ```
 
-Each endpoint entry carries `title`, `description`, `schema` (JSON Schema URL or null), `updated` (date-only), optional `records` count, `stability` (`stable` or `internal`), and optional `notes`. Schema: `api/v1/schema/index.schema.json`.
+Each endpoint entry carries `title`, `description`, `schema` (JSON Schema URL or null), `updated` (date-only), optional `records` count, `stability` (`stable` or `internal`), and optional `notes`. Schema: `data/v1/schema/index.schema.json`.
 
-### `GET api/v1/activities.json`
+### `GET data/v1/activities.json`
 
 Full activity library.
 
@@ -70,7 +70,7 @@ Full activity library.
 | `tags` | string[] (optional) | Season/occasion tags: `season:fall`, `season:winter`, `season:spring`, `holiday:halloween`, `holiday:thanksgiving`, `holiday:dia-de-muertos`, `holiday:christmas`, `holiday:hanukkah`, `holiday:kwanzaa`, `holiday:new-year`, `holiday:easter`, `holiday:earth-day`, `holiday:july-4th`, `theme:spooky` |
 | `source` | string\|null (optional) | Inspiration source URL (RSS pipeline adaptations link the original post) |
 
-### `GET api/v1/categories.json`
+### `GET data/v1/categories.json`
 
 The 11 categories: `id`, `name`, `blurb`, `color` (hex), `glyph`.
 
@@ -78,7 +78,7 @@ The 11 categories: `id`, `name`, `blurb`, `color` (hex), `glyph`.
 { "categories": [ {"id": "stem", "name": "STEM", "blurb": "...", "color": "#0d8a96", "glyph": "🔬"} ], "count": 10, "updated": "..." }
 ```
 
-### `GET api/v1/filters.json`
+### `GET data/v1/filters.json`
 
 Machine-readable filter configuration — the same logic the browser UI uses:
 
@@ -98,7 +98,7 @@ Machine-readable filter configuration — the same logic the browser UI uses:
 }
 ```
 
-### `GET api/v1/collections.json`
+### `GET data/v1/collections.json`
 
 Curated collections — 12 teacher-ready bundles (`rainy-day-rescue`, `first-day-of-program`, `last-10-minutes`, `field-trip-bus-ride`, `sub-tub-essentials`, `winter-party-night`, `no-prep-lifesavers`, `calm-down-corner`, `spring-burst`, `summer-splash`, `haunted-halls`, `grateful-gathering`). Each record: `id`, `title`, `glyph`, `when_to_use`, `picks[]` of `{activity_id, curator_note}`, computed `age_span`/`time_span`, and `page` (deep link). Every `activity_id` is a real record in `activities.json`.
 
@@ -110,7 +110,7 @@ Curated collections — 12 teacher-ready bundles (`rainy-day-rescue`, `first-day
   "count": 8, "updated": "…" }
 ```
 
-### `GET api/v1/balance-buckets.json`
+### `GET data/v1/balance-buckets.json`
 
 Energy balance buckets for the Smart Weekly Planner 2.0's balance meter. `buckets[]`: the 5 fixed buckets (`movement` ⚡, `calm` 🧘, `creative` 🎨, `outdoor` 🌳, `mixed` 🔀) with `id`, `label`, `glyph`, `description`. `mapping[]`: one record per category — `category`, `category_name`, `bucket`, `bucket_label`, `bucket_glyph`. An activity's bucket comes from its **primary (first) category**. Reproduce the meter exactly: count primary-bucket slots per day, flag a day when any non-`mixed` bucket holds more than half the filled slots.
 
@@ -122,15 +122,15 @@ Energy balance buckets for the Smart Weekly Planner 2.0's balance meter. `bucket
   "count": 11, "updated": "…" }
 ```
 
-### `GET api/v1/schema/balance-bucket.schema.json` / `balance-buckets.schema.json`
+### `GET data/v1/schema/balance-bucket.schema.json` / `balance-buckets.schema.json`
 
 JSON Schema (draft-07) for the balance-bucket record and the endpoint envelope, following the same two-file convention as the collection schemas. Generated by `scripts/build.py`, which also asserts all 11 categories map to exactly one bucket.
 
-### `GET api/v1/schema/activity.schema.json` / `category.schema.json` / `collection.schema.json`
+### `GET data/v1/schema/activity.schema.json` / `category.schema.json` / `collection.schema.json`
 
 JSON Schema (draft-07) for the four record types (`activity`, `category`, `collection`, `balance-bucket`). `scripts/build.py` validates every record against these rules before generating anything.
 
-### `GET api/v1/skills.json`
+### `GET data/v1/skills.json`
 
 Registry of the reusable skill recipes in `skills/`: `id`, `description`, `file`. Regenerated by `scripts/build.py` from skill frontmatter.
 
@@ -139,7 +139,7 @@ Registry of the reusable skill recipes in `skills/`: `id`, `description`, `file`
   "count": 10, "updated": "..." }
 ```
 
-### `GET api/v1/schema/activities.schema.json` / `categories.schema.json` / `filters.schema.json` / `index.schema.json` / `collections.schema.json` / `balance-buckets.schema.json`
+### `GET data/v1/schema/activities.schema.json` / `categories.schema.json` / `filters.schema.json` / `index.schema.json` / `collections.schema.json` / `balance-buckets.schema.json`
 
 JSON Schema (draft-07) for each endpoint's full payload (envelope + records). One schema per endpoint, all validating — see `scripts/check_api.py`.
 
@@ -150,10 +150,10 @@ The RSS-pipeline working queue: accepted / rejected / deferred activity candidat
 ## Live server functions (`/api/*`, Vercel — live-ready, NOT deployed)
 
 Unversioned functions behind the same-origin API. Every response uses the
-`ok`/`data`/`meta` envelope (schema: `api/v1/schema/envelope.json`); every GET
+`ok`/`data`/`meta` envelope (schema: `data/v1/schema/envelope.json`); every GET
 is edge-cached 10 minutes (`s-maxage=600, stale-while-revalidate=86400`).
 When a function is unreachable, the frontend falls back to the static
-`api/v1/*.json` twin with an honest "cached · updated HH:MM" badge
+`data/v1/*.json` twin with an honest "cached · updated HH:MM" badge
 (fallback contract: `assets/js/api-client.js`). See `GO_LIVE.md`.
 
 ### `GET /api/health`
@@ -168,8 +168,8 @@ for `review-queue.json` / `decided.json` / `activities.json` (24h SLA), and
 
 `?status=pending|all|decided` (default `pending`). Serves the candidates the RSS
 scan flagged, awaiting a human to adapt them into original words (PIPELINE.md).
-Reads the build-published `api/v1/review-queue.json` + `api/v1/decided.json`.
-Static fallback: `api/v1/review-queue.json`. Human-readable surface:
+Reads the build-published `data/v1/review-queue.json` + `data/v1/decided.json`.
+Static fallback: `data/v1/review-queue.json`. Human-readable surface:
 `review.html` (pre-rendered from the static data, live-swapped on load).
 
 ```json
@@ -231,7 +231,7 @@ activities where time_min <= 20
 
 **Rainy-day plan:** `categories` contains `rainy-day`, then sort by energy: PE first, crafts middle, quiet-focus last.
 
-**Week plan (no repeats, balanced):** filter to pool, then deal round-robin across days × slots (1–4 weeks, shared no-repeat set across weeks unless repeats allowed), scoring candidates by bucket scarcity (day ×3 + week) and unused categories — never two prep-heavy activities past the weekly cap. Balance meter: bucket = primary category's bucket (`api/v1/balance-buckets.json`); warn when a non-`mixed` bucket holds > 50% of a day's filled slots. 3.0 extras: ⚡ brain-break idea per day (movement, ≤10 min), 🌦️ weather backup per outdoor-only slot (indoor, one-tap swap), 🛒 aggregated supply list, 🆘 substitute kit (no-prep, zero-material, plain-language steps). See `skills/balanced-week-builder.md`. Planner deep links: `planner.html?from=collection:<id>` (seed from a curated collection) and `planner.html?plan=<base64url>` (open a shared plan — v2 `weeks[]` payload, v1 still imports; see AGENT.md Workflow 4).
+**Week plan (no repeats, balanced):** filter to pool, then deal round-robin across days × slots (1–4 weeks, shared no-repeat set across weeks unless repeats allowed), scoring candidates by bucket scarcity (day ×3 + week) and unused categories — never two prep-heavy activities past the weekly cap. Balance meter: bucket = primary category's bucket (`data/v1/balance-buckets.json`); warn when a non-`mixed` bucket holds > 50% of a day's filled slots. 3.0 extras: ⚡ brain-break idea per day (movement, ≤10 min), 🌦️ weather backup per outdoor-only slot (indoor, one-tap swap), 🛒 aggregated supply list, 🆘 substitute kit (no-prep, zero-material, plain-language steps). See `skills/balanced-week-builder.md`. Planner deep links: `planner.html?from=collection:<id>` (seed from a curated collection) and `planner.html?plan=<base64url>` (open a shared plan — v2 `weeks[]` payload, v1 still imports; see AGENT.md Workflow 4).
 
 **Kit plan (low-materials week):** filter to the pool (age overlap, group range includes groupSize, `time_min <= minutes`, prep-mode filter: `pantry` = every material string word-boundary-matches a pantry staple, `low` = no_prep or ≤3 materials, `noprep` = no_prep only), then deal each day opener (≤15 min, no-prep, movement/icebreaker preferred) → main → closer (≤20 min, calm/quiet-focus preferred) with a fallback ladder (role-fresh → loosened role bound → pool-fresh → flagged repeats), no repeats across days, seeded for reproducibility. Run-of-show: opener ~15% / main ~70% / closer ~15% of session minutes from the start time. One aggregated material checklist, ✅ have vs. 🛒 gather. Shareable as `kit.html?kit=<base64url>` (v1 payload: config + exact picks).
 
@@ -240,7 +240,7 @@ activities where time_min <= 20
 - `llms.txt` — short brief: what the Vault is, categories, API + skill index.
 - `llms-full.txt` — full activity catalog with one-line summaries and page links.
 
-Both are regenerated by `scripts/build.py`. The API and Skills sections are built from `api/v1/index.json`'s endpoint list and `skills/` frontmatter, so they can't go stale.
+Both are regenerated by `scripts/build.py`. The API and Skills sections are built from `data/v1/index.json`'s endpoint list and `skills/` frontmatter, so they can't go stale.
 
 ## Agent guide
 

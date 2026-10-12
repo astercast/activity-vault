@@ -40,7 +40,7 @@ data/categories.json      ← 11 categories (color, glyph, blurb)
 scripts/build.py          ← validator + static generator
 assets/                   ← style.css, app.js (browser), planner.js, sub.js, party.js, halloween.js, thanksgiving.js
 activity/<id>.html        ← generated detail pages (print-ready)
-api/v1/                   ← activities.json, categories.json, filters.json, schema/
+data/v1/                   ← activities.json, categories.json, filters.json, schema/
 skills/                   ← 11 agent skills (activity-finder, balanced-week-builder, halloween-party-planner, icebreaker-chooser, no-prep-rescue, outdoor-play-picker, quiet-focus-picker, rainy-day-rescue, stem-demo-picker, sub-tub-rescue, week-planner)
 index.html / planner.html / sub.html / party.html ← hand-maintained app shells
 llms.txt / llms-full.txt  ← generated agent briefs

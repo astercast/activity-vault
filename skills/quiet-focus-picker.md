@@ -18,7 +18,7 @@ The group needs to come down: after lunch, after PE, end of day, or a dedicated 
 
 ## Procedure
 
-1. Filter `api/v1/activities.json` for `categories` containing `quiet-focus`.
+1. Filter `data/v1/activities.json` for `categories` containing `quiet-focus`.
 2. If the group is still loud, start with a **bridge** activity that has structure but no frenzy: `story-dice`, `exquisite-corpse-draw` — then move to truly calm (`mandala-drawing`, `calm-breathing-shapes`).
 3. If already mellow, go straight to deep-calm: `mandala-drawing`, `comic-strip-creations`, `listening-walk`.
 4. Keep the lights low and the voice low — the activity is half the calm; the atmosphere is the other half.
@@ -29,7 +29,7 @@ The group needs to come down: after lunch, after PE, end of day, or a dedicated 
 
 ## API references
 
-- `api/v1/activities.json`
+- `data/v1/activities.json`
 
 ## Pitfalls
 

@@ -111,7 +111,7 @@ const sitemap = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
 ok(sitemap.includes('fieldtrip.html'), 'sitemap.xml has fieldtrip.html');
 const llms = fs.readFileSync(path.join(ROOT, 'llms.txt'), 'utf8');
 ok(llms.includes('fieldtrip.html'), 'llms.txt mentions fieldtrip.html');
-const apiColls = JSON.parse(fs.readFileSync(path.join(ROOT, 'api/v1/collections.json'), 'utf8'));
+const apiColls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/collections.json'), 'utf8'));
 ok(apiColls.collections.some(x => x.id === 'field-trip-bus-ride'), 'api has field-trip-bus-ride');
 
 console.log('field trip planner: ' + passed + ' assertions passed');

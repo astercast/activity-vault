@@ -15,7 +15,7 @@ function ok(cond, label, extra) {
 
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const actIds = new Set(acts.map(a => a.id));
-ok(acts.length === 455, '455 activities total', String(acts.length));
+ok(acts.length === 497, '497 activities total', String(acts.length));
 ok(actIds.size === acts.length, 'all activity ids unique');
 
 // 1. New tags in the validator vocabulary (single source of truth: build.py)
@@ -63,8 +63,8 @@ for (const [id, tags] of [['spring-seed-cups', ['season:spring']],
 
 // 4. Collections: 9 total, spring-burst valid, sub-tub-essentials spring pick
 const colls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/collections.json'), 'utf8')).collections;
-ok(colls.length === 13, '13 collections', String(colls.length));
-ok(new Set(colls.map(c => c.id)).size === 13, 'collection ids unique');
+ok(colls.length === 14, '14 collections', String(colls.length));
+ok(new Set(colls.map(c => c.id)).size === 14, 'collection ids unique');
 const burst = colls.find(c => c.id === 'spring-burst');
 ok(!!burst, 'spring-burst exists');
 ok(burst.picks.length >= 8 && burst.picks.length <= 12, 'spring-burst 8-12 picks', String(burst.picks.length));
@@ -124,16 +124,16 @@ const indexHtml = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
 ok(indexHtml.includes('id="season-promo"'), 'index.html has season promo section');
 
 // 10. Generated API: filters.json carries the new tags; collections endpoint count
-const tagOpts = JSON.parse(fs.readFileSync(path.join(ROOT, 'api/v1/filters.json'), 'utf8')).filters.tags.options;
+const tagOpts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/filters.json'), 'utf8')).filters.tags.options;
 for (const t of ['season:spring', 'holiday:easter', 'holiday:earth-day'])
   ok(tagOpts.includes(t), 'filters.json has ' + t);
-const apiColls = JSON.parse(fs.readFileSync(path.join(ROOT, 'api/v1/collections.json'), 'utf8'));
-ok(apiColls.count === 13 && apiColls.collections.length === 13, 'api collections.json count 13');
+const apiColls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/collections.json'), 'utf8'));
+ok(apiColls.count === 14 && apiColls.collections.length === 14, 'api collections.json count 14');
 ok(apiColls.collections.some(c => c.id === 'spring-burst'), 'api has spring-burst');
-const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'api/v1/index.json'), 'utf8'));
-const collEp = manifest.endpoints.find(e => e.path === 'api/v1/collections.json');
-ok(collEp && collEp.records === 13, 'manifest collections records=13');
-const actEp = manifest.endpoints.find(e => e.path === 'api/v1/activities.json');
-ok(actEp && actEp.records === 455, 'manifest activities records=455', String(actEp && actEp.records));
+const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/index.json'), 'utf8'));
+const collEp = manifest.endpoints.find(e => e.path === 'data/v1/collections.json');
+ok(collEp && collEp.records === 14, 'manifest collections records=14');
+const actEp = manifest.endpoints.find(e => e.path === 'data/v1/activities.json');
+ok(actEp && actEp.records === 497, 'manifest activities records=497', String(actEp && actEp.records));
 
 console.log('spring pack: ' + passed + ' assertions passed');

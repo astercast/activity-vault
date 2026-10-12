@@ -20,8 +20,8 @@ A teacher wants a full week planned in one go **and** wants the energy balanced 
 
 ## Procedure
 
-1. Pull the pool from `api/v1/activities.json` with the filter semantics from `AGENT.md`: age overlap, `time_min <= minutes`, category ANY-match, `no_prep` / indoor gates.
-2. Pull `api/v1/balance-buckets.json`. An activity's **energy bucket** is the bucket of its **primary (first) category**: `movement` ⚡, `calm` 🧘, `creative` 🎨, `outdoor` 🌳, `mixed` 🔀 (all-rounder).
+1. Pull the pool from `data/v1/activities.json` with the filter semantics from `AGENT.md`: age overlap, `time_min <= minutes`, category ANY-match, `no_prep` / indoor gates.
+2. Pull `data/v1/balance-buckets.json`. An activity's **energy bucket** is the bucket of its **primary (first) category**: `movement` ⚡, `calm` 🧘, `creative` 🎨, `outdoor` 🌳, `mixed` 🔀 (all-rounder).
 3. If seeded, place collection picks first (in order), skipping any that fail the filters.
 4. Deal round-robin across days × slots. Score each candidate: `day_bucket_count × 3 + week_bucket_count + 2 × (each category already used this week)`. Shuffle ties; take the lowest score. Skip used ids unless repeats are allowed; skip prep-heavy picks once the weekly cap is hit (relax the cap only if repeats are allowed and nothing else fits).
 5. For each day, count buckets across filled slots. **Warn** when a non-`mixed` bucket holds more than half the day's slots:
@@ -47,9 +47,9 @@ Camp, grades 3–5, Mon–Wed, 3 slots/day, ≤45 min, prep cap 2 → 9 slots fr
 
 ## API references
 
-- `api/v1/activities.json`
-- `api/v1/balance-buckets.json` (buckets + category→bucket mapping)
-- `api/v1/collections.json` (seeding: `planner.html?from=collection:<id>`)
+- `data/v1/activities.json`
+- `data/v1/balance-buckets.json` (buckets + category→bucket mapping)
+- `data/v1/collections.json` (seeding: `planner.html?from=collection:<id>`)
 - Shareable plans: `planner.html?plan=<base64url>` (see `AGENT.md` Workflow 4 for the payload shape)
 
 ## Pitfalls

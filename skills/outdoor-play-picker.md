@@ -20,7 +20,7 @@ The group gets the field, playground, or a patch of nature: "we have 40 minutes 
 
 ## Procedure
 
-1. Filter `api/v1/activities.json` for `categories` containing `outdoor` and `'outdoor'` in `location`.
+1. Filter `data/v1/activities.json` for `categories` containing `outdoor` and `'outdoor'` in `location`.
 2. Split by energy: for wiggly groups prefer `pe-movement` crossovers (chase and tag games, relay formats); for calmer blocks prefer `seasons` / `stem` crossovers (nature walks, scavenger hunts, leaf and rock science).
 3. Narrow by age overlap, group overlap, and `time_min <= minutes`.
 4. Match the space: check `setup` for what the activity actually needs (cones and open field vs. a tree to sit under). Blacktop-only groups should avoid anything whose steps mention grass, mud, or digging.
@@ -32,8 +32,8 @@ The group gets the field, playground, or a patch of nature: "we have 40 minutes 
 
 ## API references
 
-- `api/v1/activities.json`
-- `api/v1/categories.json`
+- `data/v1/activities.json`
+- `data/v1/categories.json`
 
 ## Pitfalls
 

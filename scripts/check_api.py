@@ -11,7 +11,9 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from build import TAG_IDS  # noqa: E402 — single source of truth for the tag vocabulary
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-API = os.path.join(ROOT, 'api', 'v1')
+# 2026-10-12: static data lives in data/v1/ (Vercel never serves static files
+# from under api/ — only real function handlers live there).
+API = os.path.join(ROOT, 'data', 'v1')
 failures = []
 
 def check(name, cond, detail=""):
@@ -71,7 +73,7 @@ check("tags use fixed vocabulary",
 coll_payload = json.load(open(os.path.join(API, 'collections.json')))
 colls = coll_payload['collections']
 act_ids = {a['id'] for a in acts}
-check("collections: 13 collections", len(colls) == 13, f"{len(colls)} found")
+check("collections: 14 collections", len(colls) == 14, f"{len(colls)} found")
 check("collections: unique ids", len({c['id'] for c in colls}) == len(colls))
 check("collections: 8-12 picks each",
       all(8 <= len(c['picks']) <= 12 for c in colls))
@@ -197,7 +199,7 @@ for f in html_files:
 check("link check: 0 broken", not broken, str(broken[:5]) if broken else f"{len(html_files)} pages")
 
 llms = open(os.path.join(ROOT, 'llms.txt')).read()
-path_re = re.compile(r'^- (api/|skills/|pipeline/|[a-zA-Z0-9_.-]+\.(html|md|txt))')
+path_re = re.compile(r'^- (api/|data/|skills/|pipeline/|[a-zA-Z0-9_.-]+\.(html|md|txt))')
 llms_links = [l.split('—')[0].strip()[2:].strip()
               for l in llms.splitlines() if path_re.match(l)]
 missing = [l for l in llms_links

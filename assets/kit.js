@@ -300,8 +300,8 @@
     buildPantry();
 
     Promise.all([
-      fetch('api/v1/activities.json').then(function (r) { return r.json(); }),
-      fetch('api/v1/balance-buckets.json').then(function (r) { return r.json(); })
+      fetch('data/v1/activities.json').then(function (r) { return r.json(); }),
+      fetch('data/v1/balance-buckets.json').then(function (r) { return r.json(); })
     ]).then(function (res) {
       acts = res[0].activities;
       byId = {};

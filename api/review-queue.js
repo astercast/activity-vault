@@ -2,9 +2,9 @@
  * ?status= pending|all|decided (default pending)
  * Serves the human-in-the-loop review queue: candidates the RSS scan found,
  * awaiting a human to adapt them into original words (PIPELINE.md).
- * Reads the build-published api/v1/review-queue.json + api/v1/decided.json
+ * Reads the build-published data/v1/review-queue.json + data/v1/decided.json
  * (bundled with the deployment — the same bytes the static fallback serves).
- * Fallback: /api/v1/review-queue.json.
+ * Fallback: /data/v1/review-queue.json.
  */
 'use strict';
 
@@ -54,12 +54,12 @@ module.exports = async (req, res) => {
       { fields: { status: 'must be one of pending|all|decided' } });
   }
 
-  const queue = loadJson('./v1/review-queue.json');
-  const decided = loadJson('./v1/decided.json');
+  const queue = loadJson('../data/v1/review-queue.json');
+  const decided = loadJson('../data/v1/decided.json');
 
   if (!queue || !decided) {
     return err(res, SERVICE, VERSION, 502, 'UPSTREAM_UNAVAILABLE',
-      'The review queue data files are missing from this deployment; the static fallback /api/v1/review-queue.json may still be served by the CDN.');
+      'The review queue data files are missing from this deployment; the static fallback /data/v1/review-queue.json may still be served by the CDN.');
   }
 
   const open = queue.candidates || [];

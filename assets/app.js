@@ -196,7 +196,7 @@
           '<p><strong>No ratings yet.</strong></p>' +
           '<p>Open any activity card and give it 1–5 stars — your top 10 will appear here.</p>';
       } else {
-        empty.innerHTML = '<span class="big" aria-hidden="true">🗂️</span><p><strong>No activities match.</strong></p><p>Try loosening a filter or two.</p>';
+        empty.innerHTML = '<span class="big" aria-hidden="true">🗂️</span><p><strong>The drawer came up empty.</strong></p><p>Nothing in the vault matches that exact combination — loosen a filter or two and dig again. The good stuff is in here somewhere.</p>';
       }
       grid.appendChild(empty);
     } else {
@@ -487,18 +487,37 @@
       if (statActs) statActs.textContent = state.activities.length;
       if (statCats) statCats.textContent = state.categories.length;
       if (statPrep) statPrep.textContent = state.activities.filter(function (a) { return a.no_prep; }).length;
+      // The curator's note: a sticky note with opinions. Clicking cycles through
+      // them — the human-made easter egg (makeover wave 22).
+      var noteBtn = document.getElementById('curator-note');
+      var noteText = document.getElementById('curator-note-text');
+      if (noteBtn && noteText) {
+        var notes = [
+          'everything\u2019s filed & ready — grab a card ↓',
+          'if you only try one thing this week: make it the noise parade. trust me.',
+          'psst — the sub tub has saved more mondays than coffee.',
+          'hot take: the best STEM demos use trash. fight me. (kitchen trash. calm down.)'
+        ];
+        var ni = 0;
+        noteBtn.addEventListener('click', function () {
+          ni = (ni + 1) % notes.length;
+          noteText.textContent = notes[ni];
+        });
+      }
       // Seasonal homepage promos: spring (Mar–May), summer (Jun–Aug), halloween (Oct),
-      // thanksgiving (Nov) — client-side, month-gated.
+      // thanksgiving (Nov), winter (Dec–Jan) — client-side, month-gated.
       var promo = document.getElementById('season-promo');
       var summerPromo = document.getElementById('season-promo-summer');
       var halloweenPromo = document.getElementById('season-promo-halloween');
       var thanksgivingPromo = document.getElementById('season-promo-thanksgiving');
+      var winterPromo = document.getElementById('season-promo-winter');
       if (promo) {
         var pm = new Date().getMonth();
         promo.hidden = !(pm === 2 || pm === 3 || pm === 4);
         if (summerPromo) summerPromo.hidden = !(pm === 5 || pm === 6 || pm === 7);
         if (halloweenPromo) halloweenPromo.hidden = !(pm === 9);
         if (thanksgivingPromo) thanksgivingPromo.hidden = !(pm === 10);
+        if (winterPromo) winterPromo.hidden = !(pm === 11 || pm === 0);
       }
       buildFilters();
       // ?view=top-rated deep link (My top 10 — ratings live in the visitor's browser)

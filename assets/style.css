@@ -804,6 +804,29 @@ h2 { font-weight: 700; letter-spacing: -.015em; }
   position: relative;
   top: 3px;
 }
+/* secondary nav: quiet index-divider row under the folder tabs — tools + seasons
+   recede until invited (makeover wave 22: ruthless hierarchy, progressive disclosure) */
+.site-header .nav-secondary {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .1rem .35rem;
+  margin-top: .35rem; padding-left: .2rem;
+}
+.site-header .nav-secondary a {
+  font-family: var(--font-type); font-size: .72rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .06em;
+  color: var(--ink-soft); text-decoration: none;
+  border: 0; border-radius: 0; background: none; box-shadow: none;
+  padding: .25rem .45rem; margin: 0;
+}
+.site-header .nav-secondary a:hover {
+  color: var(--accent); background: none; border: 0;
+  text-decoration: underline; text-underline-offset: 3px;
+}
+.site-header .nav-secondary a[aria-current="page"] {
+  color: var(--accent); background: none; border: 0; box-shadow: none;
+  margin: 0; padding: .25rem .45rem; top: 0; position: static;
+  text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 2px;
+}
+.site-header .nav-secondary .nav-div { color: var(--line); padding: 0 .2rem; }
 
 /* ---------- hero: stamp kicker, desk note ---------- */
 .hero { position: relative; }
@@ -856,6 +879,20 @@ h2 { font-weight: 700; letter-spacing: -.015em; }
   .hero { padding-right: 17rem; }
   .desk-note { position: absolute; right: .5rem; top: 2.4rem; margin: 0; }
 }
+/* the curator's note is a button: clicking cycles through notes (easter egg).
+   Unstyled button — the sticky note IS the affordance. */
+#curator-note {
+  all: unset; cursor: pointer; display: block; width: 100%;
+  font: inherit; color: inherit; text-align: inherit;
+}
+#curator-note:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+#curator-note:hover #curator-note-text { text-decoration: underline; text-underline-offset: 3px; }
+/* makeover: the hero gets room to breathe — whitespace is a feature */
+.hero { padding: 3rem 0 2rem; }
+.hero .lede { margin-top: 1rem; }
+.hero .stats { margin-top: 1.6rem; }
+.hero .stat b { font-size: 1.9rem; }
+.hero .stat span { font-size: .82rem; color: var(--ink-soft); }
 
 /* ---------- index cards: the browse grid ---------- */
 .act-card {

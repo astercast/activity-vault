@@ -2,6 +2,37 @@
 
 Running record of build waves. Newest first.
 
+## Wave 22 — 2026-10-12 — "Winter Holidays + Completeness Audit + Extreme Makeover" ❄️
+
+**What shipped (three parts, in the user's order):**
+
+**Part 1 — Winter holidays fix (FIRST, per the user's "like what thats weird"):** the archive had Halloween + Thanksgiving tabs but no winter section. Now: **30 new winter activities** (Christmas 8, Hanukkah 5, Kwanzaa 5, New Year 6, winter break 6 — all original words per PIPELINE.md, tagline ≤160, 3+ steps, easier/harder, age bands, practical safety notes, no medical claims; Hanukkah/Kwanzaa use respectful learning framing with inclusion notes naming the real traditions), **`winter.html` hub** (5 sections mirroring the halloween/thanksgiving hub pattern, rendered by new `assets/winter.js` from `data/v1/activities.json`, 36 curated picks incl. 6 older winter activities), **"Winter ❄️" nav tab on all 15 shells + generated pages + build.py templates**, **14th collection "Winter Lights"** ❄️ (12 picks with curator notes), **December/January seasonal promo** on the homepage (month-gated in `assets/app.js`), planner Nov→thanksgiving/hanukkah/kwanzaa + Dec→christmas/new-year/hanukkah/kwanzaa (already wired), winter party theme link. Near-duplicate screen vs the 455-activity library renamed 6 candidates (e.g. `kwanzaa-principle-cards`→`seven-principles-talk-tokens`, `new-year-time-capsule`→`resolution-seed-packets`).
+
+**Part 2 — Completeness audit (new standing rule):** programmatic audit found music-rhythm thinnest category (17), rainy-day thin (17), age 3 nearly uncovered (4 activities), Hanukkah/Kwanzaa/New Year at 2–3 each. Filled with **12 gap-fill activities** (4 music-rhythm, 4 rainy-day, 4 age-3) — all at the archive quality bar. Library: **455 → 497 activities**, 14 collections. Remaining thin spots noted for later waves: ages 13–14 (53 each), holiday:july-4th (2), holiday:earth-day (3), holiday:easter (4), holiday:dia-de-muertos (3).
+
+**Part 3 — Extreme makeover (first-visit hierarchy):** the user's verdict was "a lot at once." BEFORE screenshot taken (`winter.html` hub also shot).
+- **Two-tier nav** (all 15 shells + build.py's 3 templates + generated pages): 13 equal folder tabs → 5 primary folder tabs (Browse, The Desk, Plan my week, Kit, Collections) + a quiet secondary row (Sub Tub, Party Planner, Field Trips · Halloween, Thanksgiving, Winter, Spring, Summer) styled as index dividers — ruthless hierarchy, progressive disclosure, teacher's-desk grammar kept.
+- **Hero**: one primary action ("Find an activity ↓" → #browse) + secondary ("Plan my week"), more whitespace, tighter lede ("No filler, no fluff"), stats receded.
+- **Curator's note easter egg**: the sticky note is now a button cycling 4 hand-written notes with genuine opinions ("psst — the sub tub has saved more mondays than coffee." / "hot take: the best STEM demos use trash. fight me.").
+- **404 page** (new): a misfiled index card — "This card got misfiled. Somewhere between the drawer and the desk, this page wandered off."
+- **Empty state**: "The drawer came up empty… The good stuff is in here somewhere."
+- **Human-made rule**: AI-ism scan across the site — zero hits (delve/unlock/game-changer/elevate/fast-paced-world/beginner-or-pro). No purple gradients, no 3-column feature grids, no commented-out code.
+- Fixed a stale hardcoded count: planner lede "326 real activities" → 497.
+- AFTER screenshots: homepage (desktop + mobile), planner, 404, winter hub.
+
+**Also in this wave (Vercel data/v1 migration — blocking production, user's order):** Vercel never serves static files under `api/` — moved ALL static data `api/v1/` → top-level `data/v1/` (`git mv`, history preserved); only the 4 real function handlers remain under `api/`. Rewrote every `api/v1/` → `data/v1/` reference in build.py, api/health.js, api/review-queue.js, api/cron/scout.js, all frontend JS/HTML, tests, and docs. Two migration bugs caught by tests: `scripts/check_api.py` hardcoded `api/v1` (fixed), `tests/check_envelope.py` hardcoded schema path (fixed); `build.py`'s llms.txt API filter still checked `startswith('api/')` (fixed → `data/`). `LIVE_CHECKLIST.md` carries the canonical rule.
+
+**Validation (wave 22):**
+- `scripts/build.py`: BUILD OK — **497 activities, 497 pages, 11 categories, 14 collections**, 0 dupes (validator exits 1 on duplicates)
+- `scripts/check_api.py`: ALL CHECKS PASSED — **513 pages, 0 broken links**, llms.txt 36 links resolve
+- New `scripts/test-winter.js`: **1171 assertions pass** (30 winter ids + 12 gap fills, tag vocabulary, quality bar, no medical claims, allergy notes, respectful-framing inclusion notes, winter-lights collection, winter.js 36 curated ids resolve, hub structure, nav aria-current on all shells, planner month maps, party winter theme, Dec/Jan promo gating, API manifest/sitemap/llms)
+- All 12 JS suites pass: desk 254, halloween 800, thanksgiving 899, spring 617, summer 738, winterstem 504, micro 1713, kit 573, fieldtrip 183, planner-core, wave20 1080
+- `tests/api.test.sh`: **33/33 pass** (local harness, functions read from `data/v1/`)
+- Headless Chromium: winter hub renders 5 sections (36 picks, status line confirms), homepage AFTER shows two-tier nav + hero CTAs, mobile 390px clean, 404 renders the misfiled card, planner shows new nav. Zero console errors on hub/homepage/404.
+- Known harness artifact (not a site bug): scroll-driven `animation-timeline: view()` pick reveals stay at opacity 0 in headless screenshots without scrolling (wave-21 lesson); reduced-motion users get full content.
+
+**Honest assessment:** the nav hierarchy change is the load-bearing fix — the BEFORE/AFTER shows a genuinely calmer first impression. The curator-note easter egg and 404 are real delight moments. Portfolio-proud? Closer than before; the browse section below the hero is untouched by design (it's the tool, not the wall).
+
 ## Wave 21 — 2026-10-12 — "The Desk" 🗄️ wow-moment wave 1: the archive as a physical teacher's desk
 
 **What shipped:** the archive as a PHYSICAL TEACHER'S DESK — 11 wooden category drawers that really open, index cards, rubber stamps, pencil marginalia; the planner week laid out on a leather blotter. Teacher's-desk identity (wave 17) kept and built on, not redone.

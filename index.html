@@ -25,12 +25,16 @@
       <a href="desk.html">The Desk 🗄️</a>
       <a href="planner.html">Plan my week</a>
       <a href="kit.html">Kit 🧰</a>
+      <a href="collections.html">Collections 📚</a>
+    </nav>
+    <nav aria-label="More tools and seasons" class="nav-secondary">
       <a href="sub.html">Sub Tub 🆘</a>
       <a href="party.html">Party Planner 🎉</a>
       <a href="fieldtrip.html">Field Trips 🚌</a>
-      <a href="collections.html">Collections 📚</a>
+      <span class="nav-div" aria-hidden="true">·</span>
       <a href="halloween.html">Halloween 🎃</a>
       <a href="thanksgiving.html">Thanksgiving 🦃</a>
+      <a href="winter.html">Winter ❄️</a>
       <a href="spring.html">Spring 🌷</a>
       <a href="summer.html">Summer ☀️</a>
     </nav>
@@ -45,8 +49,16 @@
   <section class="hero" aria-labelledby="hero-title">
     <span class="kicker">For teachers &amp; after-school programs</span>
     <h1 id="hero-title">Every great activity,<br>in <span class="squiggle">one vault.</span></h1>
-    <p class="lede">The archive you wish existed: real, classic activities — games, crafts, STEM demos, wind-downs — filterable by age, time, group size, and what you actually have on hand. Pick a plan, print the cards, run the week.</p>
-    <aside class="desk-note no-print" aria-label="A note from the teacher's desk">everything's filed &amp; ready —<br>grab a card ↓</aside>
+    <p class="lede">Real, classic activities — games, crafts, STEM demos, wind-downs — filed by age, time, group size, and what you actually have on hand. No filler, no fluff: pick a plan, print the cards, run the week.</p>
+    <div class="hero-actions no-print">
+      <a class="btn" href="#browse">Find an activity ↓</a>
+      <a class="btn btn-ghost" href="planner.html">Plan my week</a>
+    </div>
+    <aside class="desk-note no-print" aria-label="A note from the curator">
+      <button type="button" id="curator-note" aria-live="polite" title="Another note from the curator">
+        <span id="curator-note-text">everything's filed &amp; ready — grab a card ↓</span>
+      </button>
+    </aside>
     <div class="stats" aria-label="Library stats">
       <div class="stat"><b id="stat-activities">–</b><span>activities</span></div>
       <div class="stat"><b id="stat-categories">–</b><span>categories</span></div>
@@ -70,11 +82,15 @@
     <p>🦃 <strong>Thanksgiving in the Vault</strong> — 21 new Thanksgiving activities, the <a href="collections.html#grateful-gathering">Grateful Gathering collection</a>, and a <a href="party.html">Thanksgiving party theme</a>. <a href="thanksgiving.html">Open the Thanksgiving hub →</a></p>
   </section>
 
+  <section class="season-promo no-print" id="season-promo-winter" hidden aria-label="Seasonal highlight">
+    <p>❄️ <strong>Winter Holidays in the Vault</strong> — 30 new winter activities: Christmas crafts that teach, Hanukkah and Kwanzaa done right, New Year countdowns with real math, and winter-break science. Plus the <a href="collections.html#winter-lights">Winter Lights collection</a> and a <a href="party.html">winter party theme</a>. <a href="winter.html">Open the winter hub →</a></p>
+  </section>
+
   <section class="season-promo no-print" aria-label="Flagship tool">
     <p>🧰 <strong>The After-School Kit</strong> — the flagship low-materials week builder: group size, age band, days/week, and what you actually have on hand become a week of sessions with a run-of-show, plan sheets, and one material checklist. <a href="kit.html">Build your kit →</a></p>
   </section>
 
-  <div class="browser">
+  <div class="browser" id="browse">
     <aside aria-label="Filters">
       <form class="filters" id="filters" onsubmit="return false;">
         <h2>Find an activity</h2>
@@ -97,7 +113,7 @@
 <footer class="site-footer">
   <div class="wrap">
     <p><strong>Activity Vault</strong> — the all-in-one activity archive for teachers &amp; after-school programs. All activities are classic, public-domain concepts described in our own words.</p>
-    <p><a href="api/v1/activities.json">API</a> · <a href="api.html">API docs &amp; console</a> · <a href="llms.txt">llms.txt</a> · <a href="AGENT.md">Agent guide</a></p>
+    <p><a href="data/v1/activities.json">API</a> · <a href="api.html">API docs &amp; console</a> · <a href="llms.txt">llms.txt</a> · <a href="AGENT.md">Agent guide</a></p>
   </div>
 </footer>
 

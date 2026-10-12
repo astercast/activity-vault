@@ -4,7 +4,7 @@
  * The spec's local run is `npx vercel dev`, but this environment's vercel CLI
  * has no `dev` subcommand, so this harness executes the REAL function files
  * over real HTTP instead: /api/<name> -> require('<repo>/api/<name>.js'),
- * /api/v1/* -> static files from disk. Routing matches Vercel's mapping
+ * /data/v1/* -> static files from disk. Routing matches Vercel's mapping
  * (api/health.js -> GET /api/health, api/cron/scout.js -> GET /api/cron/scout).
  *
  * Usage:  CRON_SECRET=test-secret PORT=3000 node tests/serve-local.js
@@ -63,9 +63,9 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
-  if (url.pathname.startsWith('/api/v1/')) {
+  if (url.pathname.startsWith('/data/v1/')) {
     const file = path.join(ROOT, decodeURIComponent(url.pathname));
-    if (!file.startsWith(path.join(ROOT, 'api', 'v1') + path.sep) && file !== path.join(ROOT, 'api', 'v1')) {
+    if (!file.startsWith(path.join(ROOT, 'data', 'v1') + path.sep) && file !== path.join(ROOT, 'data', 'v1')) {
       res.writeHead(403); res.end('forbidden'); return;
     }
     fs.readFile(file, (e, data) => {

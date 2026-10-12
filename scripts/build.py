@@ -2,7 +2,7 @@
 """Activity Vault build script.
 
 Source of truth: data/activities.json + data/categories.json
-Generates: activity/*.html, api/v1/*.json, api/v1/schema/*.schema.json,
+Generates: activity/*.html, data/v1/*.json, data/v1/schema/*.schema.json,
            llms.txt, llms-full.txt, sitemap.xml
 Validates: schema, ids, categories, required fields, render check for every activity.
 """
@@ -217,12 +217,16 @@ ACTIVITY_TEMPLATE = """<!DOCTYPE html>
       <a href="../desk.html">The Desk 🗄️</a>
       <a href="../planner.html">Plan my week</a>
       <a href="../kit.html">Kit 🧰</a>
+      <a href="../collections.html">Collections 📚</a>
+    </nav>
+    <nav aria-label="More tools and seasons" class="nav-secondary">
       <a href="../sub.html">Sub Tub 🆘</a>
       <a href="../party.html">Party Planner 🎉</a>
       <a href="../fieldtrip.html">Field Trips 🚌</a>
-      <a href="../collections.html">Collections 📚</a>
+      <span class="nav-div" aria-hidden="true">·</span>
       <a href="../halloween.html">Halloween 🎃</a>
       <a href="../thanksgiving.html">Thanksgiving 🦃</a>
+      <a href="../winter.html">Winter ❄️</a>
       <a href="../spring.html">Spring 🌷</a>
       <a href="../summer.html">Summer ☀️</a>
     </nav>
@@ -449,7 +453,7 @@ def related_activities(a, acts, n=3):
 
 # ---------------------------------------------------------------------------
 # Wave B — Scout review queue page (human-in-the-loop READ surface).
-# Pre-rendered from the same normalized data that publishes api/v1/review-queue.json
+# Pre-rendered from the same normalized data that publishes data/v1/review-queue.json
 # (spec §3.1: the page ships with static data baked in; fetchWithFallback swaps in
 # live data on load). Approve/reject stays server-only: POST /api/review-decide is
 # CRON_SECRET-gated and is NEVER called from the browser (secret never in the page).
@@ -558,7 +562,7 @@ REVIEW_CLIENT_JS = """(function () {
     var qBadge = document.getElementById('queue-badge');
     var qList = document.getElementById('queue-list');
     var qCounts = document.getElementById('queue-counts');
-    window.ApiClient.fetchWithFallback('/api/review-queue', 'api/v1/review-queue.json', { badgeEl: qBadge })
+    window.ApiClient.fetchWithFallback('/api/review-queue', 'data/v1/review-queue.json', { badgeEl: qBadge })
       .then(function (r) {
         if (!r.data) return;
         renderPending(r.data.candidates || [], qList);
@@ -566,7 +570,7 @@ REVIEW_CLIENT_JS = """(function () {
       });
     var dBadge = document.getElementById('decided-badge');
     var dBody = document.getElementById('decided-list');
-    window.ApiClient.fetchWithFallback('/api/review-queue?status=decided', 'api/v1/decided.json', { badgeEl: dBadge })
+    window.ApiClient.fetchWithFallback('/api/review-queue?status=decided', 'data/v1/decided.json', { badgeEl: dBadge })
       .then(function (r) {
         if (!r.data) return;
         renderDecided(r.data.decisions || r.data.candidates || [], dBody);
@@ -601,12 +605,16 @@ REVIEW_TEMPLATE = """<!DOCTYPE html>
       <a href="desk.html">The Desk 🗄️</a>
       <a href="planner.html">Plan my week</a>
       <a href="kit.html">Kit 🧰</a>
+      <a href="collections.html">Collections 📚</a>
+    </nav>
+    <nav aria-label="More tools and seasons" class="nav-secondary">
       <a href="sub.html">Sub Tub 🆘</a>
       <a href="party.html">Party Planner 🎉</a>
       <a href="fieldtrip.html">Field Trips 🚌</a>
-      <a href="collections.html">Collections 📚</a>
+      <span class="nav-div" aria-hidden="true">·</span>
       <a href="halloween.html">Halloween 🎃</a>
       <a href="thanksgiving.html">Thanksgiving 🦃</a>
+      <a href="winter.html">Winter ❄️</a>
       <a href="spring.html">Spring 🌷</a>
       <a href="summer.html">Summer ☀️</a>
     </nav>
@@ -657,7 +665,7 @@ REVIEW_TEMPLATE = """<!DOCTYPE html>
 <footer class="site-footer">
   <div class="wrap">
     <p><strong>Activity Vault</strong> — the all-in-one activity archive for teachers &amp; after-school programs. All activities are classic, public-domain concepts described in our own words.</p>
-    <p><a href="api/v1/activities.json">API</a> · <a href="api.html">API docs &amp; console</a> · <a href="review.html">Scout review queue</a> · <a href="llms.txt">llms.txt</a> · <a href="AGENT.md">Agent guide</a></p>
+    <p><a href="data/v1/activities.json">API</a> · <a href="api.html">API docs &amp; console</a> · <a href="review.html">Scout review queue</a> · <a href="llms.txt">llms.txt</a> · <a href="AGENT.md">Agent guide</a></p>
   </div>
 </footer>
 <script>
@@ -897,12 +905,16 @@ DESK_TEMPLATE = """<!DOCTYPE html>
       <a href="desk.html" aria-current="page">The Desk 🗄️</a>
       <a href="planner.html">Plan my week</a>
       <a href="kit.html">Kit 🧰</a>
+      <a href="collections.html">Collections 📚</a>
+    </nav>
+    <nav aria-label="More tools and seasons" class="nav-secondary">
       <a href="sub.html">Sub Tub 🆘</a>
       <a href="party.html">Party Planner 🎉</a>
       <a href="fieldtrip.html">Field Trips 🚌</a>
-      <a href="collections.html">Collections 📚</a>
+      <span class="nav-div" aria-hidden="true">·</span>
       <a href="halloween.html">Halloween 🎃</a>
       <a href="thanksgiving.html">Thanksgiving 🦃</a>
+      <a href="winter.html">Winter ❄️</a>
       <a href="spring.html">Spring 🌷</a>
       <a href="summer.html">Summer ☀️</a>
     </nav>
@@ -973,7 +985,7 @@ def main():
         sys.exit(1)
     actmap = {a['id']: a for a in acts}
     # Wave 9 explicit assert: every collection pick resolves to a real activity id.
-    assert len(colls) == 13, f"expected 13 collections, got {len(colls)}"
+    assert len(colls) == 14, f"expected 14 collections, got {len(colls)}"
     assert all(p['id'] in actmap for c in colls for p in c['picks']), \
         "collection pick does not resolve to a real activity id"
     # Wave 10 explicit assert: balance-buckets covers all 11 categories.
@@ -1000,7 +1012,10 @@ def main():
         f.write(desk_page)
 
     # 2. API
-    api = os.path.join(SITE, 'api', 'v1')
+    # 2026-10-12: static data lives in data/v1/ — Vercel never serves static
+    # files from under api/ (every frontend fetch of api/v1/*.json 404s in
+    # production). Only real serverless function handlers stay under api/.
+    api = os.path.join(SITE, 'data', 'v1')
     schemadir = os.path.join(api, 'schema')
     os.makedirs(schemadir, exist_ok=True)
     json.dump({'activities': acts, 'count': len(acts), 'updated': today},
@@ -1048,8 +1063,8 @@ def main():
                "count": len(bucket_records), "updated": today},
               open(os.path.join(api, 'balance-buckets.json'), 'w'), indent=1, ensure_ascii=False)
     # 2e. Scout review queue + decisions (Vercel wave A): publish the pipeline's
-    # review-queue.json at api/v1/review-queue.json (OPEN candidates only — the
-    # §5.1 retention shape) and the 90-day decision log at api/v1/decided.json.
+    # review-queue.json at data/v1/review-queue.json (OPEN candidates only — the
+    # §5.1 retention shape) and the 90-day decision log at data/v1/decided.json.
     # The cron job and review-decide endpoint own pipeline/*.json (source of
     # truth); this is the read projection the functions and the static fallback
     # serve. A cron commit triggers a redeploy, which re-runs this build, so the
@@ -1146,7 +1161,7 @@ def main():
         'meta': {
             'source': 'pipeline/review-queue.json (open candidates only)',
             'note': 'detected_at for pre-scout items mirrors published (best available). ' +
-                    'Decided items live in api/v1/decided.json (90-day retention).',
+                    'Decided items live in data/v1/decided.json (90-day retention).',
         },
     }, open(os.path.join(api, 'review-queue.json'), 'w'), indent=1, ensure_ascii=False)
     json.dump({
@@ -1223,68 +1238,68 @@ def main():
     }, open(os.path.join(schemadir, 'decided.schema.json'), 'w'), indent=1)
 
     # 2f. Scout review queue page (Vercel wave B): review.html pre-rendered from the
-    # same normalized data as api/v1/review-queue.json + api/v1/decided.json, with
+    # same normalized data as data/v1/review-queue.json + data/v1/decided.json, with
     # the api-client.js fallback wiring (live /api/review-queue first, static JSON
     # fallback). A cron redeploy re-runs this build, so the pre-render stays fresh.
     _review_html = render_review(_open, _decisions, _gen_at)
     open(os.path.join(SITE, 'review.html'), 'w').write(_review_html)
 
     endpoints = [
-        {"path": "api/v1/index.json",
+        {"path": "data/v1/index.json",
          "title": "API manifest",
          "description": "Self-describing manifest of every API endpoint: title, description, schema URL, "
                         "updated timestamp, record counts, stability, and deprecation notes. Start here.",
-         "schema": "api/v1/schema/index.schema.json",
+         "schema": "data/v1/schema/index.schema.json",
          "updated": today, "stability": "stable"},
-        {"path": "api/v1/activities.json",
+        {"path": "data/v1/activities.json",
          "title": "Full activity library",
          "description": "Every activity record: filters (age, time, group, location, materials, no_prep), "
                         "setup, steps, variations, safety, optional season/occasion tags, optional source URL.",
-         "schema": "api/v1/schema/activities.schema.json",
+         "schema": "data/v1/schema/activities.schema.json",
          "updated": today, "records": len(acts), "stability": "stable"},
-        {"path": "api/v1/categories.json",
+        {"path": "data/v1/categories.json",
          "title": "Category definitions",
          "description": "The 11 categories: id, name, blurb, color, glyph.",
-         "schema": "api/v1/schema/categories.schema.json",
+         "schema": "data/v1/schema/categories.schema.json",
          "updated": today, "records": len(cats), "stability": "stable"},
-        {"path": "api/v1/filters.json",
+        {"path": "data/v1/filters.json",
          "title": "Filter configuration",
          "description": "Machine-readable filter configuration — the same matching logic the browser UI uses "
                         "(range, select, multiselect, boolean, text search across name/tagline/materials/steps).",
-         "schema": "api/v1/schema/filters.schema.json",
+         "schema": "data/v1/schema/filters.schema.json",
          "updated": today, "stability": "stable"},
-        {"path": "api/v1/skills.json",
+        {"path": "data/v1/skills.json",
          "title": "Skills registry",
          "description": "Registry of the reusable skill recipes in skills/: id, description, and file path.",
          "schema": None,
          "updated": today, "records": len(skills), "stability": "stable"},
-        {"path": "api/v1/collections.json",
+        {"path": "data/v1/collections.json",
          "title": "Curated collections",
          "description": "Teacher-ready activity bundles for specific moments (rainy days, first "
                         "days, last 10 minutes, bus rides, sub coverage, winter parties, no-prep "
                         "gaps, calm-down needs). Each collection lists activity ids with a "
                         "curator's one-line note on why each was picked, plus age/time spans.",
-         "schema": "api/v1/schema/collections.schema.json",
+         "schema": "data/v1/schema/collections.schema.json",
          "updated": today, "records": len(coll_records), "stability": "stable"},
-        {"path": "api/v1/balance-buckets.json",
+        {"path": "data/v1/balance-buckets.json",
          "title": "Energy balance buckets",
          "description": "The 5 energy buckets (movement, calm, creative, outdoor, all-rounder) "
                       "and the category-to-bucket mapping the Smart Weekly Planner's balance "
                       "meter uses. An activity's bucket comes from its primary category.",
-         "schema": "api/v1/schema/balance-buckets.schema.json",
+         "schema": "data/v1/schema/balance-buckets.schema.json",
          "updated": today, "records": len(bucket_records), "stability": "stable"},
-        {"path": "api/v1/review-queue.json",
+        {"path": "data/v1/review-queue.json",
          "title": "Scout review queue (open candidates)",
          "description": "Human-in-the-loop review queue for the Scout RSS watch: pending activity "
                         "candidates with source links, suggested season/occasion tags, and detection "
                         "timestamps. Served live by GET /api/review-queue; static fallback for it.",
-         "schema": "api/v1/schema/review-queue.schema.json",
+         "schema": "data/v1/schema/review-queue.schema.json",
          "stability": "stable"},
-        {"path": "api/v1/decided.json",
+        {"path": "data/v1/decided.json",
          "title": "Scout decisions (90-day log)",
          "description": "Human approve/reject decisions on Scout candidates, newest first, 90-day "
                         "retention. Approvals carry approved_via:'scout'.",
-         "schema": "api/v1/schema/decided.schema.json",
+         "schema": "data/v1/schema/decided.schema.json",
          "stability": "stable"},
         {"path": "pipeline/review-queue.json",
          "title": "RSS review queue",
@@ -1523,9 +1538,9 @@ def main():
     for c in cats:
         n = sum(1 for a in acts if c['id'] in a['categories'])
         lines.append(f"- {c['name']}: {n} activities — {c['blurb']}")
-    lines += ["", "## API — start at api/v1/index.json (self-describing manifest)"]
+    lines += ["", "## API — start at data/v1/index.json (self-describing manifest)"]
     for ep in endpoints:
-        if ep['path'].startswith('api/'):
+        if ep['path'].startswith('data/'):
             lines.append(f"- {ep['path']} — {ep['title'].lower()}")
     lines += ["", "## Skills"]
     for s in skills:
@@ -1561,6 +1576,9 @@ def main():
               "  crafts, harvest games, Thanksgiving STEM, gratitude and friendsgiving activities,",
               "  and giving-back projects, plus the Grateful Gathering collection and a",
               "  Thanksgiving party-theme shortcut.",
+              "- winter.html — Winter Holidays hub: the Winter 2026 pack's Christmas crafts and",
+              "  games, Hanukkah and Kwanzaa activities, New Year countdowns, and winter-break",
+              "  science, plus the Winter Lights collection and a winter party-theme shortcut.",
               "- planner.html — Smart Weekly Planner 3.0: program presets (after-school / camp /",
               "  classroom), age bands, auto-built no-repeat weeks with a per-day energy balance meter,",
               "  drag-and-drop reorder, per-slot swap, surprise gap-fill, prep-level caps, collection",
@@ -1572,13 +1590,13 @@ def main():
               "  each day with a run-of-show timeline, a printable session plan sheet, per-slot",
               "  swap, one aggregated material checklist (have vs. gather), copy-as-text, and",
               "  shareable ?kit= links that restore the exact kit on any device.",
-              "- collections.html — Curated collections: 13 teacher-ready bundles (rainy-day",
-              "  rescue, first day, sub tub, winter party, spring burst, summer splash, haunted halls, grateful gathering…)",
+              "- collections.html — Curated collections: 14 teacher-ready bundles (rainy-day",
+              "  rescue, first day, sub tub, winter party, spring burst, summer splash, haunted halls, grateful gathering, winter lights…)",
               "  each with a curator's note per pick; printable and copy-able per collection.",
               "- api.html — API docs with a Try-the-API console (endpoint picker, fetch, pretty JSON).",
               "- review.html — Scout review queue: pending activity ideas plus the 90-day",
               "  decision log. Tries the live /api/review-queue first, falls back to the",
-              "  static api/v1 JSON with an honest cached badge when the server is down.",
+              "  static data/v1 JSON with an honest cached badge when the server is down.",
               "", "## Docs", "- API.md — full API reference", "- PIPELINE.md — how the library grows",
               "- AGENT.md — how an agent uses this archive: endpoints, example requests,",
               "  end-to-end workflows (filtering, party planning, week planning)"]
@@ -1596,7 +1614,7 @@ def main():
     open(os.path.join(SITE, 'llms-full.txt'), 'w').write('\n'.join(full) + '\n')
 
     # 4. sitemap.xml
-    urls = ["", "desk.html", "planner.html", "kit.html", "sub.html", "party.html", "fieldtrip.html", "collections.html", "api.html", "review.html", "halloween.html", "thanksgiving.html", "spring.html", "summer.html"] + [f"activity/{a['id']}.html" for a in acts]
+    urls = ["", "desk.html", "planner.html", "kit.html", "sub.html", "party.html", "fieldtrip.html", "collections.html", "api.html", "review.html", "halloween.html", "thanksgiving.html", "winter.html", "spring.html", "summer.html"] + [f"activity/{a['id']}.html" for a in acts]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:
