@@ -1,0 +1,13 @@
+{
+ "candidates": [],
+ "counts": {
+  "pending": 0,
+  "open": 0,
+  "decided_90d": 23
+ },
+ "generated_at": "2026-10-12T06:25:13Z",
+ "meta": {
+  "source": "pipeline/review-queue.json (open candidates only)",
+  "note": "detected_at for pre-scout items mirrors published (best available). Decided items live in api/v1/decided.json (90-day retention)."
+ }
+}

@@ -25,6 +25,8 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
 - api/v1/skills.json — skills registry
 - api/v1/collections.json — curated collections
 - api/v1/balance-buckets.json — energy balance buckets
+- api/v1/review-queue.json — scout review queue (open candidates)
+- api/v1/decided.json — scout decisions (90-day log)
 
 ## Skills
 - skills/activity-finder.md — Find the right activity fast using age, time, group size, and materials-on-hand filters.

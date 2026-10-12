@@ -1,0 +1,126 @@
+{
+ "$schema": "http://json-schema.org/draft-07/schema#",
+ "title": "ReviewQueueResponse",
+ "type": "object",
+ "required": [
+  "candidates",
+  "counts",
+  "generated_at"
+ ],
+ "properties": {
+  "candidates": {
+   "type": "array",
+   "items": {
+    "$ref": "#/definitions/candidate"
+   }
+  },
+  "counts": {
+   "type": "object",
+   "required": [
+    "pending",
+    "open",
+    "decided_90d"
+   ],
+   "properties": {
+    "pending": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "open": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "decided_90d": {
+     "type": "integer",
+     "minimum": 0
+    }
+   }
+  },
+  "generated_at": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+  },
+  "meta": {
+   "type": "object"
+  }
+ },
+ "definitions": {
+  "candidate": {
+   "type": "object",
+   "required": [
+    "id",
+    "title",
+    "summary",
+    "source_url",
+    "feed",
+    "published",
+    "detected_at",
+    "suggested_tags",
+    "status",
+    "note"
+   ],
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "title": {
+     "type": "string"
+    },
+    "summary": {
+     "type": "string"
+    },
+    "source_url": {
+     "type": "string"
+    },
+    "feed": {
+     "type": "string"
+    },
+    "published": {
+     "type": "string"
+    },
+    "detected_at": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "suggested_tags": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "status": {
+     "type": "string",
+     "enum": [
+      "pending",
+      "accepted",
+      "rejected",
+      "deferred"
+     ]
+    },
+    "note": {
+     "type": "string"
+    },
+    "decision": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "reviewed": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "activity_id": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   }
+  }
+ }
+}

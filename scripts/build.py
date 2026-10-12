@@ -594,6 +594,180 @@ def main():
     json.dump({"buckets": buckets['buckets'], "mapping": bucket_records,
                "count": len(bucket_records), "updated": today},
               open(os.path.join(api, 'balance-buckets.json'), 'w'), indent=1, ensure_ascii=False)
+    # 2e. Scout review queue + decisions (Vercel wave A): publish the pipeline's
+    # review-queue.json at api/v1/review-queue.json (OPEN candidates only — the
+    # §5.1 retention shape) and the 90-day decision log at api/v1/decided.json.
+    # The cron job and review-decide endpoint own pipeline/*.json (source of
+    # truth); this is the read projection the functions and the static fallback
+    # serve. A cron commit triggers a redeploy, which re-runs this build, so the
+    # fallback updates atomically with the store (§4.6).
+    from datetime import timedelta as _td
+    from email.utils import parsedate_to_datetime as _p2d
+    _rq_raw = json.load(open(os.path.join(ROOT, 'pipeline', 'review-queue.json')))
+    _decided_path = os.path.join(ROOT, 'pipeline', 'decided.json')
+    _decided_raw = json.load(open(_decided_path)) if os.path.exists(_decided_path) else []
+    _gen_at = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+
+    def _parse_dt(s):
+        # Robust parse: ISO-8601 (with Z) first, then RFC-2822 feed dates.
+        if not s:
+            return None
+        try:
+            return datetime.fromisoformat(s.replace('Z', '+00:00')).astimezone(timezone.utc)
+        except Exception:
+            pass
+        try:
+            return _p2d(s).astimezone(timezone.utc)
+        except Exception:
+            return None
+
+    def _iso_or_none(s):
+        dt = _parse_dt(s)
+        return dt.strftime('%Y-%m-%dT%H:%M:%SZ') if dt else None
+
+    def _rq_published(raw):
+        # Normalize to the API candidate shape (§7.6). detected_at is stamped by
+        # the scout cron on new candidates; for legacy items it honestly mirrors
+        # `published` (best available, documented in the file's meta note).
+        out = []
+        for c in raw:
+            out.append({
+                'id': c['id'],
+                'title': c['title'],
+                'summary': c.get('summary') or '',
+                'source_url': c.get('source_url') or c.get('link') or '',
+                'feed': c.get('feed') or '',
+                'published': c.get('published') or '',
+                'detected_at': c.get('detected_at') or _iso_or_none(c.get('published')),
+                'suggested_tags': c.get('suggested_tags') or [],
+                'status': c.get('status') or 'pending',
+                'note': c.get('note') or '',
+                'decision': c.get('decision'),
+                'reviewed': c.get('reviewed'),
+                'activity_id': c.get('activity_id'),
+            })
+        return out
+
+    def _decision_record(d):
+        rev = d.get('reviewed')
+        decided_at = d.get('decided_at') or (_iso_or_none(rev + ' 00:00:00 +0000') if rev else None)
+        return {
+            'id': d['id'],
+            'title': d.get('title'),
+            'source_url': d.get('source_url') or d.get('link'),
+            'feed': d.get('feed'),
+            'decision': d.get('decision'),
+            'decided_at': decided_at,
+            'decided_by': d.get('decided_by') or 'human',
+            'note': d.get('note'),
+            'activity_id': d.get('activity_id'),
+            'approved_via': d.get('approved_via') or ('scout' if d.get('decision') == 'approve' else None),
+            'reviewed': rev,
+        }
+
+    _rq_pub = _rq_published(_rq_raw)
+    _open = [c for c in _rq_pub if c['status'] == 'pending']
+    if _decided_raw:
+        _decisions = [_decision_record(d) for d in _decided_raw]
+    else:
+        # Pre-cron: derive the decision log from already-decided queue items.
+        _decisions = []
+        for _c in _rq_pub:
+            if _c['status'] not in ('accepted', 'rejected'):
+                continue
+            _d = dict(_c)
+            _d['decision'] = 'approve' if _c['status'] == 'accepted' else 'reject'
+            _decisions.append(_decision_record(_d))
+    _cutoff = datetime.now(timezone.utc) - _td(days=90)
+    _kept = []
+    for _d in _decisions:
+        _dt = _parse_dt(_d.get('decided_at') or _d.get('reviewed'))
+        if _dt is None or _dt >= _cutoff:
+            _kept.append(_d)  # undated: keep, can't prove age
+    _decisions = _kept
+    _decisions.sort(key=lambda d: d.get('decided_at') or '', reverse=True)
+    json.dump({
+        'candidates': _open,
+        'counts': {'pending': len(_open), 'open': len(_open), 'decided_90d': len(_decisions)},
+        'generated_at': _gen_at,
+        'meta': {
+            'source': 'pipeline/review-queue.json (open candidates only)',
+            'note': 'detected_at for pre-scout items mirrors published (best available). ' +
+                    'Decided items live in api/v1/decided.json (90-day retention).',
+        },
+    }, open(os.path.join(api, 'review-queue.json'), 'w'), indent=1, ensure_ascii=False)
+    json.dump({
+        'decisions': _decisions,
+        'count': len(_decisions),
+        'generated_at': _gen_at,
+        'retention_days': 90,
+    }, open(os.path.join(api, 'decided.json'), 'w'), indent=1, ensure_ascii=False)
+    json.dump({
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "title": "ReviewQueueResponse", "type": "object",
+        "required": ["candidates", "counts", "generated_at"],
+        "properties": {
+            "candidates": {"type": "array", "items": {"$ref": "#/definitions/candidate"}},
+            "counts": {"type": "object",
+                       "required": ["pending", "open", "decided_90d"],
+                       "properties": {"pending": {"type": "integer", "minimum": 0},
+                                      "open": {"type": "integer", "minimum": 0},
+                                      "decided_90d": {"type": "integer", "minimum": 0}}},
+            "generated_at": {"type": "string",
+                             "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"},
+            "meta": {"type": "object"},
+        },
+        "definitions": {
+            "candidate": {
+                "type": "object",
+                "required": ["id", "title", "summary", "source_url", "feed", "published",
+                             "detected_at", "suggested_tags", "status", "note"],
+                "properties": {
+                    "id": {"type": "string"},
+                    "title": {"type": "string"},
+                    "summary": {"type": "string"},
+                    "source_url": {"type": "string"},
+                    "feed": {"type": "string"},
+                    "published": {"type": "string"},
+                    "detected_at": {"type": ["string", "null"]},
+                    "suggested_tags": {"type": "array", "items": {"type": "string"}},
+                    "status": {"type": "string",
+                               "enum": ["pending", "accepted", "rejected", "deferred"]},
+                    "note": {"type": "string"},
+                    "decision": {"type": ["string", "null"]},
+                    "reviewed": {"type": ["string", "null"]},
+                    "activity_id": {"type": ["string", "null"]},
+                },
+            },
+        },
+    }, open(os.path.join(schemadir, 'review-queue.schema.json'), 'w'), indent=1)
+    json.dump({
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "title": "ScoutDecisionsResponse", "type": "object",
+        "required": ["decisions", "count", "generated_at", "retention_days"],
+        "properties": {
+            "decisions": {"type": "array", "items": {
+                "type": "object",
+                "required": ["id", "decision", "decided_at"],
+                "properties": {
+                    "id": {"type": "string"},
+                    "title": {"type": ["string", "null"]},
+                    "source_url": {"type": ["string", "null"]},
+                    "feed": {"type": ["string", "null"]},
+                    "decision": {"type": "string", "enum": ["approve", "reject"]},
+                    "decided_at": {"type": ["string", "null"]},
+                    "decided_by": {"type": ["string", "null"]},
+                    "note": {"type": ["string", "null"]},
+                    "activity_id": {"type": ["string", "null"]},
+                    "approved_via": {"type": ["string", "null"]},
+                    "reviewed": {"type": ["string", "null"]},
+                }}},
+            "count": {"type": "integer", "minimum": 0},
+            "generated_at": {"type": "string",
+                             "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"},
+            "retention_days": {"type": "integer", "minimum": 1},
+        },
+    }, open(os.path.join(schemadir, 'decided.schema.json'), 'w'), indent=1)
     endpoints = [
         {"path": "api/v1/index.json",
          "title": "API manifest",
@@ -638,6 +812,19 @@ def main():
                       "meter uses. An activity's bucket comes from its primary category.",
          "schema": "api/v1/schema/balance-buckets.schema.json",
          "updated": today, "records": len(bucket_records), "stability": "stable"},
+        {"path": "api/v1/review-queue.json",
+         "title": "Scout review queue (open candidates)",
+         "description": "Human-in-the-loop review queue for the Scout RSS watch: pending activity "
+                        "candidates with source links, suggested season/occasion tags, and detection "
+                        "timestamps. Served live by GET /api/review-queue; static fallback for it.",
+         "schema": "api/v1/schema/review-queue.schema.json",
+         "stability": "stable"},
+        {"path": "api/v1/decided.json",
+         "title": "Scout decisions (90-day log)",
+         "description": "Human approve/reject decisions on Scout candidates, newest first, 90-day "
+                        "retention. Approvals carry approved_via:'scout'.",
+         "schema": "api/v1/schema/decided.schema.json",
+         "stability": "stable"},
         {"path": "pipeline/review-queue.json",
          "title": "RSS review queue",
          "description": "RSS-pipeline working queue: accepted / rejected / deferred activity candidates "
