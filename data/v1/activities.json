@@ -24284,8 +24284,693 @@
    },
    "safety": "Scarves stay in hands — never around necks, never tied. Clear floor, walking feet when the music is quiet.",
    "no_elimination": true
+  },
+  {
+   "id": "mlk-freedom-quilt-squares",
+   "name": "Freedom Quilt Squares",
+   "tagline": "One paper square each — a word, a drawing, a fairer world — taped together into one class quilt for MLK Day.",
+   "categories": [
+    "crafts",
+    "team-community"
+   ],
+   "age_min": 6,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 25,
+   "time_max": 40,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "square paper (one per kid, all the same size)"
+    },
+    {
+     "item": "crayons or markers"
+    },
+    {
+     "item": "tape or glue"
+    },
+    {
+     "item": "one large backing sheet of paper"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Cut the squares to one size ahead of time and tape the backing sheet to the wall or lay it on a table. Write six starter words on the board — fairness, courage, kindness, freedom, peace, respect — words Dr. King used and lived.",
+   "steps": [
+    "Start with the man, briefly: in January we mark Dr. Martin Luther King Jr.'s birthday. He believed ordinary people working together could make the country fairer. A quilt is that idea you can touch — small pieces, one warm thing.",
+    "Each kid picks one starter word (or a word of their own in the same spirit) and draws what that word looks like in real life: sharing the swings is fairness, standing up for a new kid is courage.",
+    "Add a border pattern around the square's edge — checks, zigzags, dots — so every square reads as sewn, not just placed.",
+    "Assemble the grid on the backing sheet together, taping edge to edge. Gaps and crooked squares get fixed as a group; that is quilting too.",
+    "Stand back for the reveal. Each kid points to their square and says the word plus one line about their drawing. The quilt stays up through January."
+   ],
+   "variations": {
+    "easier": "Give the word and a partly-started drawing; the kid finishes and colors it.",
+    "harder": "Add a line from King's speeches or writings under the square, copied carefully and credited to him."
+   },
+   "safety": null,
+   "tags": [
+    "season:winter",
+    "holiday:mlk-day"
+   ],
+   "copy_free": true,
+   "no_elimination": true,
+   "inclusion": "The quilt is a building metaphor, not a claim about history — keep the history in King's real words and deeds, which the intro names. Every square joins the quilt; there is no voting and no best square."
+  },
+  {
+   "id": "civil-rights-timeline-walk",
+   "name": "Civil Rights Timeline Walk",
+   "tagline": "Six true events, six stations around the room — walk the movement in order, then rebuild the story from memory.",
+   "categories": [
+    "holidays",
+    "team-community"
+   ],
+   "age_min": 8,
+   "age_max": 14,
+   "group_min": 6,
+   "group_max": 32,
+   "time_min": 30,
+   "time_max": 45,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "six teacher-made event cards"
+    },
+    {
+     "item": "tape"
+    },
+    {
+     "item": "paper timeline strips (one per pair)"
+    },
+    {
+     "item": "pencils"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Write the six cards yourself, one event each, big and plain: 1955 — the Montgomery bus boycott, Rosa Parks arrested, Dr. King leads the boycott; 1963 — marches in Birmingham, children marching for fairness; August 1963 — the March on Washington and 'I Have a Dream'; 1964 — King wins the Nobel Peace Prize, the Civil Rights Act passes; 1965 — Selma, the Voting Rights Act; 1968 — King is killed in Memphis while supporting striking workers. Hang them around the room out of order.",
+   "steps": [
+    "Walk in pairs, cards in any order. At each station, read it together and write the year and one line about what happened on your strip notes.",
+    "Finish the circuit, then sit: shuffle your notes and lay out a timeline strip in the order you think the events happened, from memory and reasoning.",
+    "Reveal the real order card by card. Pairs fix their strips — being wrong and fixing it is the learning, not a failure.",
+    "Mark the gaps out loud: what do the jumps between cards leave out? (Plenty — six cards are a doorway, not the whole story.)",
+    "Close with one question around the room: which event surprised you most, and why? Keep answers to one sentence each so everyone fits."
+   ],
+   "variations": {
+    "easier": "Walk with an adult or strong reader; the strip needs only years in order, the lines are optional.",
+    "harder": "Add a seventh card the pair researches themselves — another person from the movement, with their name spelled right and one sourced fact."
+   },
+   "safety": null,
+   "tags": [
+    "season:winter",
+    "holiday:mlk-day"
+   ],
+   "copy_free": true,
+   "inclusion": "Use real names, dates, and people — Rosa Parks, the Birmingham children, the Selma marchers. King did not act alone and the cards should not pretend he did. Keep the 1968 card plain and brief; questions about it get honest, short answers."
+  },
+  {
+   "id": "mlk-day-service-sprint",
+   "name": "MLK Day Service Sprint",
+   "tagline": "The holiday is a day on, not a day off — pick one real job this building needs and finish it in one session.",
+   "categories": [
+    "team-community",
+    "holidays"
+   ],
+   "age_min": 7,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 30,
+   "time_max": 50,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "work gloves (for litter jobs)"
+    },
+    {
+     "item": "trash bags"
+    },
+    {
+     "item": "card-making supplies (paper, markers)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Scout three jobs in advance that are real, visible, and finishable inside the session: straightening the library shelves, a playground litter sweep, thank-you cards for the custodians and kitchen staff. Ask the custodian what would actually help before you promise anything.",
+   "steps": [
+    "Say why this holiday, plainly: since 1994, Martin Luther King Jr. Day has also been a national day of service. King's own line is the brief: 'Everybody can be great, because everybody can serve.'",
+    "Put the three jobs on the board. The group picks one by show of hands; ties go to the job the building's staff asked for.",
+    "Split into crews with one captain each, hand out gloves and bags or card supplies, and set the boundary and the finish line out loud.",
+    "Do the work — most of the session is this step. Adults work alongside, same gloves, same bags.",
+    "Inspect the finished job together, then close in a circle: whose day got a little easier because of this hour? That answer is the whole point of the holiday."
+   ],
+   "variations": {
+    "easier": "Take the seated job — sorting, card-making, shelf-facing — it is full service, not the soft option.",
+    "harder": "Plan the next one: crews draft a one-page proposal for a bigger service job, with the staff member's name on it whose work it supports."
+   },
+   "safety": "Gloves on for litter, and anything sharp or suspicious is adult-only — point at it, never pick it up. Crews stay inside the agreed boundary where one adult can see them.",
+   "tags": [
+    "season:winter",
+    "holiday:mlk-day"
+   ],
+   "copy_free": true,
+   "no_elimination": true,
+   "inclusion": "Service means work the building actually needs, chosen with the people who do that work every day. Ask first; never perform helping at someone. Every crew's job counts the same when the circle closes."
+  },
+  {
+   "id": "dream-speech-choral-reading",
+   "name": "Echoes of a Dream: Choral Reading",
+   "tagline": "King's cadence, your voices — echo-read the famous lines together until the room sounds like one speaker.",
+   "categories": [
+    "music-rhythm",
+    "holidays"
+   ],
+   "age_min": 8,
+   "age_max": 14,
+   "group_min": 6,
+   "group_max": 35,
+   "time_min": 20,
+   "time_max": 30,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "a board or chart paper with 4-6 short lines from the speech"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Write four to six short lines from 'I Have a Dream' on the board — keep them short ('I have a dream today', 'Let freedom ring') so young readers can hold a whole line at once. If you have a recording of King delivering it, queue thirty seconds of it.",
+   "steps": [
+    "Listen first, if you can: thirty seconds of King's own voice. Notice how he repeats a line and lets the crowd answer. That call-and-response is the engine of this activity.",
+    "Echo round: you read a line the way he builds it — starting low, ending strong — and the whole group echoes it back, same rhythm, same emphasis.",
+    "Layer the dynamics: the first line quiet, each next line a notch louder and surer. Choral reading is volume with control, not shouting.",
+    "Split the lines between sections of the room, then run the whole piece: sections trade lines and everyone lands the final line together.",
+    "Perform it once, standing, start to finish. Then sit and talk for one minute: why does saying the same words together feel different from reading them alone?"
+   ],
+   "variations": {
+    "easier": "Two lines only, echoed right after the adult, with the group carrying anyone who loses the words.",
+    "harder": "A small group arranges its own one-minute choral version, ending with one original line of their own in the same spirit — clearly announced as theirs, not King's."
+   },
+   "safety": null,
+   "tags": [
+    "season:winter",
+    "holiday:mlk-day"
+   ],
+   "no_elimination": true,
+   "inclusion": "Use short excerpts of the real speech, credited to King, and his real voice when you can get it. The point is hearing his actual language and rhythm — nobody performs an accent or an impression of him."
+  },
+  {
+   "id": "three-sisters-garden-plan",
+   "name": "Three Sisters Garden Plan",
+   "tagline": "Corn holds the beans, beans feed the soil, squash shades the ground — plan the companion garden Indigenous farmers designed.",
+   "categories": [
+    "stem",
+    "seasons"
+   ],
+   "age_min": 7,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 28,
+   "time_min": 30,
+   "time_max": 45,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "large paper (one sheet per group)"
+    },
+    {
+     "item": "rulers"
+    },
+    {
+     "item": "pencils and markers"
+    },
+    {
+     "item": "pictures or packets of corn, bean, and squash seed"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Draw one demo mound on the board: a low hill with corn in the middle. If your program can plant for real, cups and soil turn the harder variation into a spring start — the plan is the activity either way.",
+   "steps": [
+    "Tell the origin plainly: the Three Sisters is a planting system worked out over centuries by Indigenous peoples of North America, including the Haudenosaunee. It is engineering, not folklore.",
+    "Give each sister her job: corn grows tall and becomes the bean's pole; beans pull nitrogen from the air into the soil and feed the others; squash spreads low, shades out weeds, and keeps the soil moist.",
+    "Groups draw a top-down bed plan: mounds in a row, corn at each mound's center, beans circled around the corn, squash at the edges where it can sprawl.",
+    "Label every plant on the plan with an arrow naming its job. A plan where a sister has no job is a plan that fails in July — fix it now, on paper, where fixing is cheap.",
+    "Share plans around the room. Check each one the same way: could a real gardener plant from this drawing without asking you a question?"
+   ],
+   "variations": {
+    "easier": "Plan one mound only, with the three jobs given as picture cards to place.",
+    "harder": "Scale it: work out how many mounds fit a real bed your program has, seeds per mound, and a planting order across two weeks (corn first — it has to be up before the beans climb)."
+   },
+   "safety": "Seeds and soil are for planting, not eating — wash hands after handling either. Check seed packets first for any treatment warnings.",
+   "tags": [
+    "season:fall",
+    "holiday:indigenous-peoples-day"
+   ],
+   "copy_free": true,
+   "inclusion": "This is real agricultural science developed by Indigenous farmers over centuries — teach it as engineering with named peoples, not as a cute legend. If you plant, say whose knowledge made the plan before the first seed goes in."
+  },
+  {
+   "id": "indigenous-authors-read-aloud",
+   "name": "Indigenous Authors Read-Aloud",
+   "tagline": "Picture books written by Indigenous authors, read aloud properly — then one page of response from every listener.",
+   "categories": [
+    "quiet-focus",
+    "team-community"
+   ],
+   "age_min": 5,
+   "age_max": 10,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 25,
+   "time_max": 35,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "one or two picture books by Indigenous authors (from the library)"
+    },
+    {
+     "item": "paper (one sheet per kid)"
+    },
+    {
+     "item": "crayons or markers"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Borrow ahead, and check the cover before you commit: the author should be Indigenous and their nation named. Solid picks: 'Fry Bread' by Kevin Noble Maillard (Seminole Nation), 'We Are Water Protectors' by Carole Lindstrom (Turtle Mountain Ojibwe), illustrated by Michaela Goade (Tlingit), and Goade's 'Berry Song'.",
+   "steps": [
+    "Show the cover and read the author's name and nation aloud before page one. Who tells the story is part of the lesson, and it takes ten seconds.",
+    "Read the book slowly, showing every picture. These books were built to be looked at — rushing the art is skipping half the text.",
+    "Read one favorite page a second time — let the group vote on which page. Hearing a loved passage twice is a real reading habit, not a delay.",
+    "Response page: each kid draws the moment that stayed with them and writes one sentence under it — what happened, or a question they still have.",
+    "Share in pairs, then put the books where kids can reach them all week. A read-aloud that ends in re-reading did its job."
+   ],
+   "variations": {
+    "easier": "One short book, drawing only — the sentence can be dictated to an adult or partner.",
+    "harder": "Add one sourced fact about the author's nation (where it is, its own name for itself) to the response page, from the book's back pages or the publisher's page."
+   },
+   "safety": null,
+   "tags": [
+    "season:fall",
+    "holiday:indigenous-peoples-day"
+   ],
+   "inclusion": "The rule is authorship: stories about Indigenous people written by Indigenous authors, with their nations named — not legends retold from outside. Present-day settings sit alongside traditional ones in these books, because Indigenous life is not only in the past tense."
+  },
+  {
+   "id": "tribal-nations-map-study",
+   "name": "Tribal Nations Map Study",
+   "tagline": "Whose land is the school on? Find the tribal nations of your region on a real map and learn their names right.",
+   "categories": [
+    "team-community",
+    "stem"
+   ],
+   "age_min": 9,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 32,
+   "time_min": 30,
+   "time_max": 45,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "a tribal-nations map of your state or region (printed or projected)"
+    },
+    {
+     "item": "index cards or cardstock (one per pair)"
+    },
+    {
+     "item": "markers"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Get the map from a source made with tribal input — your state tribal-relations office, a tribal nation's own site, or a university Indigenous-studies program all publish them. Find the nations nearest your school yourself before the session, so you can pronounce every name on the map.",
+   "steps": [
+    "Start with the honest question: this town sits on land Indigenous peoples have lived on for thousands of years. Which nations call this region home — and are still here?",
+    "Find your school's area on the map together. Read the nearest nations' names aloud, carefully, twice. Getting a name right is a form of respect you can practice.",
+    "Each pair claims one nation and builds its card: the name the nation uses for itself, where its government sits today, and one fact taken from the nation's own website or book.",
+    "Post the cards around the map in roughly the right places. The wall should now show neighbors, not a history exhibit.",
+    "Close by naming what changed: these are present-day governments and communities with websites, schools, and courts — not peoples who vanished."
+   ],
+   "variations": {
+    "easier": "Work from the map only: name, location, and one fact read aloud from the card you are given.",
+    "harder": "Add a second card per nation: one question the pair still has, and where they would go to find the answer from the nation's own sources."
+   },
+   "safety": null,
+   "tags": [
+    "season:fall",
+    "holiday:indigenous-peoples-day"
+   ],
+   "inclusion": "Use maps and facts produced by tribal nations themselves wherever you can, and the names nations use for themselves. This is a study activity, not a ceremony — nobody performs an acknowledgment script unless your school has its own, developed with tribal partners."
+  },
+  {
+   "id": "seasonal-rounds-phenology-wheel",
+   "name": "Seasonal Rounds Phenology Wheel",
+   "tagline": "Seasons by what the land is doing, not the calendar — build a wheel of local plant and animal signs and start watching.",
+   "categories": [
+    "outdoor",
+    "seasons"
+   ],
+   "age_min": 7,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 28,
+   "time_min": 30,
+   "time_max": 40,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "paper plates or large paper circles (one per kid or pair)"
+    },
+    {
+     "item": "pencils and markers"
+    },
+    {
+     "item": "clipboards for the walk"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Draw one demo wheel on the board: a circle in four quarters, one per season, empty. Think through three signs you know are real for your town in each season before the kids start — your local knowledge is the fact-check.",
+   "steps": [
+    "Explain the idea honestly: many Indigenous communities organized the year as seasonal rounds — planting, gathering, and moving by what the land was doing, like the first frog calls or the berries ripening, rather than by calendar dates.",
+    "Brainstorm local signs the group already knows, season by season: first dandelions, leaves turning, the week the geese go over. Everything suggested goes up; doubtful ones get a question mark, not a deletion.",
+    "Take a short observation walk with clipboards. Find two signs of the current season actually happening and sketch them — the wheel records your place, not a textbook's.",
+    "Build the wheels: three signs per season, drawn and labeled, with the two observed signs marked as 'seen by us' with today's date.",
+    "Hang the wheels where the group passes daily. The job from here is one check a week: which sign on the wheel is the land doing now?"
+   ],
+   "variations": {
+    "easier": "Four seasons, two signs each, drawings only — labels dictated or copied from the board.",
+    "harder": "Add a month ring around the outside and compare all year: when the calendar and the land disagree about a season's start, which one was right?"
+   },
+   "safety": "Set the walk boundary out loud before anyone moves. Observe plants without picking them — the wheel records the land, it does not collect it.",
+   "tags": [
+    "season:fall",
+    "holiday:indigenous-peoples-day"
+   ],
+   "inclusion": "Name the source of the method honestly: seasonal rounds are how many Indigenous nations organized the year, tuned to their own places. Our wheel uses the method for our place — it does not borrow any nation's ceremonies, moon names, or stories."
+  },
+  {
+   "id": "clay-diya-pinch-pots",
+   "name": "Clay Diya Pinch Pots",
+   "tagline": "Pinch a real clay bowl, paint it bright, set an LED flame inside — a diya made the slow way.",
+   "categories": [
+    "crafts",
+    "holidays"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 28,
+   "time_min": 30,
+   "time_max": 45,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "air-dry clay (one ball per kid)"
+    },
+    {
+     "item": "a small cup of water per table"
+    },
+    {
+     "item": "paint and brushes"
+    },
+    {
+     "item": "battery tealights (one per pot)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Cover the tables and portion the clay into balls a small fist can close around. Plan for two sessions if you can — pinch pots today, paint when they have dried overnight; a single session still works if painting is dropped to the variation.",
+   "steps": [
+    "Start with the real object, as with the paper version: a diya is a small clay oil lamp, and rows of them light homes, steps, and windowsills through Diwali, the festival of lights. Today the lamps are clay for real — only the flame is battery-powered.",
+    "Pinch the pot: thumb into the center of the ball, then pinch and turn, pinch and turn, until a shallow bowl with walls about as thick as your thumb.",
+    "Smooth the rim with a wet fingertip and flatten the base so it sits steady. A diya that wobbles gets fixed now, not after it dries.",
+    "Press a pattern around the rim with a fingertip or pencil end — dots and diamonds are traditional shapes and forgiving ones.",
+    "When the pots are dry, paint them in warm colors and let them dry again. Set a battery tealight in each, line the whole row along a shelf, and take the room lights low for one minute."
+   ],
+   "variations": {
+    "easier": "Start from a teacher-pinched bowl; the kid's jobs are smoothing, pattern, and paint.",
+    "harder": "Make a matched pair with a planned pattern that continues across both pots, or pinch the smallest bowl that still holds a tealight."
+   },
+   "safety": "Battery tealights only — never a real flame; air-dry clay is not fireproof and these pots were not made for oil or fire. Wash hands after clay and paint.",
+   "tags": [
+    "season:fall",
+    "holiday:diwali"
+   ],
+   "inclusion": "A diya is a working lamp in a living festival, not a generic candle holder — kids make the real form and learn why rows of them appear at Diwali. Patterns on the pots, yes; pictures of deities as decoration, no."
+  },
+  {
+   "id": "mehndi-paper-patterns",
+   "name": "Mehndi Paper Patterns",
+   "tagline": "Fine lines, paisleys, and patience — practice the pattern language of mehndi on paper hands. No skin, no staining.",
+   "categories": [
+    "crafts",
+    "quiet-focus"
+   ],
+   "age_min": 6,
+   "age_max": 14,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 25,
+   "time_max": 40,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper (one sheet per kid)"
+    },
+    {
+     "item": "fine markers or pencils"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Each kid traces their own hand on the paper — their own hand shape is the template. Draw the building blocks on the board: dots, teardrops (the paisley shape), vines, a checker band, and one round mandala for the palm.",
+   "steps": [
+    "Say what mehndi is, straight: artists draw patterns with henna paste on skin for celebrations — Diwali among them, and weddings — and the stain fades over a week or two. Ours is paper practice of the patterns only.",
+    "Trace the hand, then place one round motif in the center of the palm. Everything else grows out of that center.",
+    "Work outward: each finger gets a vine, a dot trail, or a banded pattern. Repetition is the style — the same small shape, done carefully, twenty times.",
+    "Fill the gaps with dots. In mehndi, empty space gets dotted, not left — it is the easiest rule and it makes every page look finished.",
+    "Lay all the paper hands flat in one long row for a gallery look. Flat, they read as what they are: pattern practice, done with care."
+   ],
+   "variations": {
+    "easier": "Pencil first, three big motifs only — palm circle, one finger vine, dots.",
+    "harder": "Design a matched pair, both hands, with the palm motifs mirroring each other — then teach your border pattern to a neighbor."
+   },
+   "safety": "Markers are for paper only today — nobody draws on skin, their own or anyone else's.",
+   "tags": [
+    "season:fall",
+    "holiday:diwali"
+   ],
+   "copy_free": true,
+   "inclusion": "Mehndi is skilled body art with real artists behind it — paper practice honors the patterns without pretending to the ceremony or the skill. Paisleys, vines, and dots, yes; copying religious symbols as decoration, no."
+  },
+  {
+   "id": "ramayana-story-sequence",
+   "name": "The Story of the Lights: Ramayana Sequencing",
+   "tagline": "A prince exiled, a long road home, and lamps lit to guide him — hear the Diwali story and put its pictures in order.",
+   "categories": [
+    "holidays",
+    "quiet-focus"
+   ],
+   "age_min": 6,
+   "age_max": 11,
+   "group_min": 4,
+   "group_max": 28,
+   "time_min": 25,
+   "time_max": 35,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "teacher-made picture cards (6-8 scenes)"
+    },
+    {
+     "item": "paper (one sheet per kid)"
+    },
+    {
+     "item": "crayons or markers"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Find a good published children's retelling of the Ramayana at the library if you can. Make the cards yourself, one beat per card: Prince Rama and Sita; the exile to the forest; Ravana carries Sita away; Hanuman and the allies search; the battle, and good wins; the long journey home; the people of Ayodhya light rows of diyas to guide them; the celebration.",
+   "steps": [
+    "Tell the story once, slowly, holding each card up at its beat, then laying it face down. Eight beats, no rushing — this is one of the oldest stories in the world and it can hold a room.",
+    "Pairs get the full shuffled set face up. Put the story back in order, arguing from what you remember — the argument is the comprehension check.",
+    "Retell it to your partner using the cards as your script, one sentence per card. Partners may correct the order, kindly, by pointing at the card.",
+    "Check the sequence as a class against the telling. Then say the ending out loud together: the people lit lamps to guide Rama home — that is why rows of diyas line doorways and windowsills at Diwali.",
+    "Close by drawing your favorite scene on the back of one card. The set goes in an envelope for the next class to sequence cold."
+   ],
+   "variations": {
+    "easier": "Five cards only, and the adult retells while kids hold each card up as its beat arrives.",
+    "harder": "Write a one-sentence caption per card in your own words and bind the set into a class book, with the storyteller credited on the cover page."
+   },
+   "safety": null,
+   "tags": [
+    "season:fall",
+    "holiday:diwali"
+   ],
+   "inclusion": "The Ramayana is a sacred Hindu epic, thousands of years old — tell a published retelling straight, name it as Hindu, and never act it out in costume or turn its figures into cartoons. Different families and regions mark Diwali with different stories; if a kid offers theirs, that is a contribution, not a correction."
+  },
+  {
+   "id": "limerick-writing-circle",
+   "name": "Limerick Writing Circle",
+   "tagline": "Five lines, two rhymes, one ridiculous ending — write limericks, the verse form named for a city in Ireland.",
+   "categories": [
+    "quiet-focus",
+    "holidays"
+   ],
+   "age_min": 8,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 25,
+   "time_max": 35,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "paper (one sheet per kid)"
+    },
+    {
+     "item": "pencils"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Write this example on the board before they arrive — it scans, it rhymes, and it is clean: 'There once was a goalie named Bright, / who practiced by day and by night. / When the ball came in fast, / he dove — and at last / he saved it, then hugged it tight.'",
+   "steps": [
+    "Name the form's home first: limericks take their name from Limerick, a city in Ireland, which is why they belong to St. Patrick's week. The shape: five lines, lines 1, 2, and 5 long and rhyming, lines 3 and 4 short and rhyming — AABBA.",
+    "Clap the board example's rhythm together until the group can feel where the short lines land. The clap is the meter; counting syllables comes second.",
+    "Build one as a class: pick a character and a place, find three rhymes for the place first, then write backwards from the last line — the punchline is easier to hit when you aim at it.",
+    "Draft your own. Stuck rhymes go to the rhyme bank on the board, which anyone may borrow from and add to.",
+    "Reading circle to finish: read it in your own voice, straight-faced as you can manage. The group's job is to laugh with the poem and groan kindly at the puns."
+   ],
+   "variations": {
+    "easier": "Write as a pair, or finish a started limerick — the first two lines are on the board, you supply the short lines and the ending.",
+    "harder": "Write a linked pair: the second limerick's character is a bystander from the first one's last line."
+   },
+   "safety": "Limericks tease situations and invented characters — never a classmate's name, body, family, or accent. A poem that needs a real target gets rewritten, not read.",
+   "tags": [
+    "season:spring",
+    "holiday:st-patricks-day"
+   ],
+   "copy_free": true,
+   "inclusion": "Name the form's home honestly — Limerick, Ireland — and read the poems in your own voice. The tradition is the verse form and the wit; mocking Irish accents is not part of it and never has been."
+  },
+  {
+   "id": "walking-rainbow-lab",
+   "name": "Walking Rainbow Lab",
+   "tagline": "Six cups, three colors, paper-towel bridges — the water climbs on its own and mixes a rainbow between the cups.",
+   "categories": [
+    "stem"
+   ],
+   "age_min": 5,
+   "age_max": 11,
+   "group_min": 2,
+   "group_max": 28,
+   "time_min": 20,
+   "time_max": 35,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "six clear cups or jars"
+    },
+    {
+     "item": "water"
+    },
+    {
+     "item": "food coloring (red, yellow, blue)"
+    },
+    {
+     "item": "paper towels"
+    },
+    {
+     "item": "a tray to work on"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Set the six cups in a row on the tray. Fill cups 1, 3, and 5 about two-thirds with water and color them red, yellow, and blue; leave 2, 4, and 6 empty. Fold the paper towels into strips — these are the bridges, and St. Patrick's week deserves a rainbow you built yourself.",
+   "steps": [
+    "Predict first, out loud: will the empty cups stay empty? Most groups say yes. Write the prediction down — being wrong on paper is data.",
+    "Lay a towel bridge from each full cup down into the empty cup beside it, ends well into the water. Five bridges, every cup connected.",
+    "Watch for five minutes: the towels darken as water climbs them. Name what is happening — paper is full of tiny tubes, and water pulls itself up them. That climb is capillary action.",
+    "Leave it and check back at fifteen minutes, then near the end of the session. The levels even out, and the empty cups now hold orange, green, and purple — colors nobody poured.",
+    "Draw the before and after in two boxes and label them. Compare with the prediction. The rainbow arrived by walking, one towel at a time."
+   ],
+   "variations": {
+    "easier": "Three cups only — color, empty, color — with one bridge each way into the middle.",
+    "harder": "Race the bridges: paper towel against tissue against a strip of cloth. Same heights, same colors, chart which material walks water fastest."
+   },
+   "safety": "Food coloring stains skin and clothes for a day — sleeves up, cups stay on the tray, and colored water is never for drinking.",
+   "tags": [
+    "season:spring",
+    "holiday:st-patricks-day"
+   ],
+   "copy_free": true
+  },
+  {
+   "id": "irish-reel-steps",
+   "name": "Irish Reel Steps",
+   "tagline": "Point, hop, travel — learn the first steps of an Irish reel and dance an eight-bar phrase as one group.",
+   "categories": [
+    "music-rhythm",
+    "pe-movement"
+   ],
+   "age_min": 6,
+   "age_max": 12,
+   "group_min": 6,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 30,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "a way to play music (any reel at a steady, moderate tempo)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Clear the floor completely and pick a reel track at a tempo a beginner's feet can keep. Teach the stance first: feet turned out a little, arms resting at your sides — in Irish dance the upper body stays quiet and the feet do the talking.",
+   "steps": [
+    "Set the scene in one breath: the reel is Ireland's dance music, played fast and bright at gatherings for centuries. Today we learn its real first steps, slowly, in our own shoes.",
+    "Step one, in place: point the right foot forward, hop, point the left, hop — four counts each side, to the music, until nobody has to look down.",
+    "Step two, travel: step, close, step, hop sideways along an imaginary line, then back the other way. Four bars out, four bars home.",
+    "Join hands in one big circle and run the whole eight-bar phrase together — points in place, travel around the circle. The circle forgives mistakes; keep moving and rejoin on the next bar.",
+    "Cool down at half tempo, then sit: whose feet are tired? That tired is hundreds of years of dancers agreeing with you."
+   ],
+   "variations": {
+    "easier": "In-place steps only, holding the circle's hands the whole time — balance and timing both come from the group.",
+    "harder": "Add a promenade step in pairs, or let a confident group arrange its own eight bars from the steps it knows and teach them to the rest."
+   },
+   "safety": "Shoes that stay on, a clear floor, and a body's width between dancers — hopping traffic jams are the only real risk here. Anyone may mark the steps seated, feet tapping, and it counts in full.",
+   "tags": [
+    "season:spring",
+    "holiday:st-patricks-day"
+   ],
+   "copy_free": true,
+   "no_elimination": true,
+   "inclusion": "Teach it as Ireland's real dance tradition — the actual steps and music, learned properly, in your own clothes. No costumes, no put-on accents, and no leprechaun jokes standing in for the culture."
   }
  ],
- "count": 536,
+ "count": 550,
  "updated": "2026-10-12"
 }

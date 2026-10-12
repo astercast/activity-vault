@@ -17,7 +17,7 @@ function ok(cond, label, extra) {
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const byId = {};
 acts.forEach(a => { byId[a.id] = a; });
-ok(acts.length === 536, '536 activities total', String(acts.length));
+ok(acts.length === 550, '550 activities total', String(acts.length));
 ok(new Set(acts.map(a => a.id)).size === acts.length, 'all ids unique');
 
 const SCOUT = ['dream-for-our-community', 'floating-ink-ghost', 'binary-code-keychain',
@@ -65,12 +65,12 @@ ok(new Set(acc.map(q => q.activity_id)).size === 8, 'accepted activity ids disti
 
 // 4. New tag vocabulary present and used.
 const tagCount = t => acts.filter(a => (a.tags || []).includes(t)).length;
-ok(tagCount('holiday:mlk-day') === 1, 'mlk-day 0 -> 1', String(tagCount('holiday:mlk-day')));
-ok(tagCount('holiday:indigenous-peoples-day') === 1, 'indigenous-peoples-day 0 -> 1');
+ok(tagCount('holiday:mlk-day') === 5, 'mlk-day 0 -> 1 (wave-24) -> 5 (wave-25 deepening)', String(tagCount('holiday:mlk-day')));
+ok(tagCount('holiday:indigenous-peoples-day') === 5, 'indigenous-peoples-day 0 -> 1 (wave-24) -> 5 (wave-25 deepening)');
 ok(tagCount('holiday:valentines-day') === 4, 'valentines-day 0 -> 4 (3 retagged + 1 new)');
 ok(tagCount('holiday:lunar-new-year') === 3, 'lunar-new-year 0 -> 3 (2 retagged + 1 new)');
-ok(tagCount('holiday:st-patricks-day') === 2, 'st-patricks-day 0 -> 2');
-ok(tagCount('holiday:diwali') === 2, 'diwali 0 -> 2');
+ok(tagCount('holiday:st-patricks-day') === 5, 'st-patricks-day 0 -> 2 (wave-24) -> 5 (wave-25 deepening)');
+ok(tagCount('holiday:diwali') === 5, 'diwali 0 -> 2 (wave-24) -> 5 (wave-25 deepening)');
 ['valentine-card-exchange', 'valentine-compliment-cards', 'valentine-heart-hunt'].forEach(id =>
   ok((byId[id].tags || []).includes('holiday:valentines-day'), id + ': retagged valentines'));
 ['dragon-parade', 'paper-lantern-festival'].forEach(id =>

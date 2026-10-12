@@ -16,7 +16,7 @@ function ok(cond, label, extra) {
 
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const actIds = new Set(acts.map(a => a.id));
-ok(acts.length === 536, '536 activities total', String(acts.length));
+ok(acts.length === 550, '550 activities total', String(acts.length));
 ok(actIds.size === acts.length, 'all activity ids unique');
 
 // 1. Tag vocabulary: holiday:thanksgiving is NEW in wave 14 — confirm it is
@@ -175,9 +175,9 @@ RESEARCH3.forEach(id => {
   ok((byId[id].source || '').startsWith('https://'), 'research activity has source URL: ' + id);
   ok(byId[id].copy_free === true, 'research activity is copy-free: ' + id);
 });
-ok(acts.filter(a => a.copy_free).length === 165, '165 copy_free notes (162 + 3 wave-24)', String(acts.filter(a => a.copy_free).length));
-ok(acts.filter(a => a.no_elimination).length === 43, '43 no_elimination notes (41 + 2 wave-24)');
-ok(acts.filter(a => a.inclusion).length === 51, '51 inclusion notes (46 + 5 wave-24)');
+ok(acts.filter(a => a.copy_free).length === 173, '173 copy_free notes (165 + 8 wave-25)', String(acts.filter(a => a.copy_free).length));
+ok(acts.filter(a => a.no_elimination).length === 47, '47 no_elimination notes (43 + 4 wave-25)');
+ok(acts.filter(a => a.inclusion).length === 64, '64 inclusion notes (51 + 13 wave-25)');
 // research fields appear on built pages
 const cfPage = fs.readFileSync(path.join(ROOT, 'activity/turkey-code-feathers.html'), 'utf8');
 ok(cfPage.includes('Copy-free'), 'copy-free badge renders on activity page');
@@ -248,7 +248,7 @@ const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/index.json'
 const collEp = manifest.endpoints.find(e => e.path === 'data/v1/collections.json');
 ok(collEp && collEp.records === 15, 'manifest collections records=15');
 const actEp = manifest.endpoints.find(e => e.path === 'data/v1/activities.json');
-ok(actEp && actEp.records === 536, 'manifest activities records=536', String(actEp && actEp.records));
+ok(actEp && actEp.records === 550, 'manifest activities records=550', String(actEp && actEp.records));
 const sitemap = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
 ok(sitemap.includes('thanksgiving.html'), 'sitemap.xml has thanksgiving.html');
 const llms = fs.readFileSync(path.join(ROOT, 'llms.txt'), 'utf8');
