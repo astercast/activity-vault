@@ -426,14 +426,45 @@ def render_activity(a, catmap):
                   f'(adapted in our own words).</p>')
     prep = '✅ No prep needed' if a['no_prep'] else 'Some prep needed'
     loc = ' & '.join('Indoors' if l=='indoor' else 'Outdoors' for l in a['location'])
+    why_block = ''
+    if a.get('why_it_works'):
+        why_block = ('<section aria-labelledby="h-why">'
+                     f'<h2 id="h-why">🔬 Why it works</h2><p>{esc(a["why_it_works"])}</p></section>')
+    inclusion_block = ''
+    if a.get('inclusion'):
+        inclusion_block = ('<section aria-labelledby="h-inclusion">'
+                           f'<h2 id="h-inclusion">🤝 Inclusion notes</h2><p>{esc(a["inclusion"])}</p></section>')
+    related = related_activities(a, acts)
+    related_block = ''
+    if related:
+        items = ''.join(
+            f'<li class="pick"><div class="pick-row">'
+            f'<a class="pick-name" href="{r["id"]}.html">{esc(r["name"])}</a></div>'
+            f'<p class="pick-facts">Ages {r["age_min"]}–{r["age_max"]} · '
+            f'{r["time_min"]}–{r["time_max"]} min</p>'
+            f'<p class="pick-note">{esc(r["tagline"])}</p></li>'
+            for r in related)
+        primary_name = esc(catmap[a['categories'][0]]['name']) if a['categories'] else 'activities'
+        related_block = (
+            '<section class="collection-section no-print" aria-labelledby="h-related">'
+            '<div class="collection-head">'
+            '<span class="collection-glyph-lg" aria-hidden="true">🔗</span>'
+            f'<h2 class="collection-h2" id="h-related">Related {primary_name.lower()}</h2></div>'
+            f'<ol class="pick-list">{items}</ol></section>')
+    crumb_cat = a['categories'][0] if a['categories'] else ''
+    crumb_cat_name = esc(catmap[crumb_cat]['name']) if crumb_cat else 'All'
     return ACTIVITY_TEMPLATE.format(
         name=esc(a['name']), tagline=esc(a['tagline']),
-        chips=chips + tagchips, age_min=a['age_min'], age_max=a['age_max'],
+        chips=chips + tagchips, badges=badges,
+        crumb_cat=crumb_cat, crumb_cat_name=crumb_cat_name,
+        age_min=a['age_min'], age_max=a['age_max'],
         group_min=a['group_min'], group_max=a['group_max'],
         time_min=a['time_min'], time_max=a['time_max'],
         location=loc, prep=prep, setup=esc(a['setup']),
         materials=mats, steps=steps,
         easier=esc(a['variations']['easier']), harder=esc(a['variations']['harder']),
+        why_block=why_block, inclusion_block=inclusion_block,
+        related_block=related_block,
         safety_block=safety, source_block=source)
 
 def main():
@@ -461,7 +492,7 @@ def main():
     os.makedirs(actdir, exist_ok=True)
     rendered = 0
     for a in acts:
-        page = render_activity(a, catmap)
+        page = render_activity(a, catmap, acts)
         assert esc(a['name']) in page and len(page) > 500, f"render check failed: {a['id']}"
         with open(os.path.join(actdir, a['id'] + '.html'), 'w') as f:
             f.write(page)
