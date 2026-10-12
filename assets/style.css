@@ -1515,3 +1515,298 @@ html[data-calm="true"] ::view-transition-new(*) { animation: none !important; }
 .review-admin-note code { font-size: .82rem; }
 
 /* ================= END WAVE B ================= */
+
+/* ================= WAVE 21 — "The Desk" ================= */
+/* The archive as a physical teacher's desk: 11 wooden category drawers
+   with brass label holders + cup pulls, pencil-count marginalia, trays of
+   index cards; the planner week laid out on a leather blotter.
+   Token-based and re-skin-friendly (swap --wood/--brass/--blotter and the
+   whole desk re-skins). Motion runs on the --dur-* and --ease-* tokens,
+   transform/opacity only. The calm kill-switch and prefers-reduced-motion
+   rules below still let the full content through with zero motion. */
+:root {
+  --wood: #8a5a33;
+  --wood-deep: #5f3c1e;
+  --wood-light: #a9713f;
+  --wood-ink: #f3e6c8;
+  --tray-dark: #3a2312;
+  --brass: #c9a227;
+  --brass-deep: #8a6d1a;
+  --blotter: #31473c;
+  --blotter-deep: #22332b;
+  --blotter-gold: #c9a227;
+}
+
+/* screen-reader-only text (drawer pull labels) */
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* ---------- the desk body ---------- */
+.desk-section { margin: 2.5rem 0 3rem; }
+.desk {
+  background:
+    linear-gradient(180deg, var(--wood-light), var(--wood) 55%, var(--wood-deep));
+  border: 2px solid rgba(43, 26, 10, .65);
+  border-radius: 18px;
+  box-shadow: var(--shadow-lift), inset 0 2px 0 rgba(255, 240, 210, .25);
+  padding: 1.25rem 1.25rem 1.5rem;
+  position: relative;
+}
+.desk::before {
+  content: ""; position: absolute; inset: 0; border-radius: 16px;
+  background-image: var(--grain); background-size: 160px 160px;
+  opacity: .5; pointer-events: none;
+}
+.desk-nameplate { text-align: center; margin: 0 0 .4rem; position: relative; }
+.desk-nameplate span {
+  display: inline-block;
+  font-family: var(--font-stamp); text-transform: uppercase; letter-spacing: .22em;
+  font-size: .95rem; color: #3d2c12;
+  background: linear-gradient(180deg, #e8c95c, var(--brass) 55%, #a5841f);
+  border: 2px solid var(--brass-deep); border-radius: 8px;
+  padding: .5rem 1.4rem .4rem 1.6rem;
+  text-shadow: 0 1px 0 rgba(255, 244, 210, .6);
+  box-shadow: 0 2px 6px rgba(30, 18, 6, .5), inset 0 1px 0 rgba(255,255,255,.5);
+  transform: rotate(-1deg);
+}
+.desk-toolbar {
+  display: flex; gap: .6rem; justify-content: center; flex-wrap: wrap;
+  margin: .6rem 0 1.1rem; position: relative;
+}
+.pedestals {
+  display: grid; gap: 1.25rem; align-items: start;
+  grid-template-columns: 1fr minmax(230px, 290px) 1fr;
+  position: relative;
+}
+.pedestal { display: grid; gap: .9rem; align-content: start; }
+
+/* ---------- drawer fronts: the brass pulls ---------- */
+.drawer-pull {
+  display: block; width: 100%;
+  border: 2px solid rgba(43, 26, 10, .55); border-radius: 10px;
+  background:
+    linear-gradient(180deg, rgba(255, 240, 210, .14), transparent 40%),
+    linear-gradient(180deg, var(--wood-light), var(--wood) 60%, var(--wood-deep));
+  padding: .8rem 1rem .9rem;
+  cursor: pointer; color: var(--wood-ink); text-align: left;
+  font: inherit;
+  box-shadow: inset 0 1px 0 rgba(255, 240, 210, .3), inset 0 -3px 6px rgba(30, 18, 6, .35),
+    0 3px 8px rgba(30, 18, 6, .4);
+  transition: transform var(--dur-base) var(--ease-standard), box-shadow var(--dur-base) var(--ease-standard);
+  position: relative;
+}
+.drawer-pull:hover { box-shadow: inset 0 1px 0 rgba(255, 240, 210, .3), inset 0 -3px 6px rgba(30, 18, 6, .35),
+    0 6px 14px rgba(30, 18, 6, .5); }
+.drawer.open .drawer-pull { transform: translateY(4px); }
+.drawer-num {
+  font-family: var(--font-type); font-size: .72rem; font-weight: 700;
+  letter-spacing: .18em; color: rgba(243, 230, 200, .75);
+}
+/* card-catalog label holder: brass frame, paper label, inked stamp text */
+.drawer-label { display: block; margin: .45rem 0 .55rem; }
+.drawer-stamp {
+  display: inline-block;
+  font-family: var(--font-stamp); font-size: .82rem; letter-spacing: .1em; text-transform: uppercase;
+  color: color-mix(in srgb, var(--cat, var(--accent)) 72%, #241a10);
+  background: #f7ecd4;
+  border: 3px ridge var(--brass);
+  border-radius: 4px;
+  padding: .34rem .7rem .26rem;
+  transform: rotate(-1.6deg);
+  -webkit-mask-image: var(--grunge); mask-image: var(--grunge);
+  box-shadow: 0 1px 3px rgba(30, 18, 6, .45);
+}
+/* the brass cup pull */
+.drawer-handle { display: block; text-align: center; margin: .1rem 0 .5rem; }
+.pull-bar {
+  display: inline-block; width: 104px; height: 24px; border-radius: 13px;
+  background: linear-gradient(180deg, #f0d67c, var(--brass) 45%, #96741c);
+  border: 2px solid var(--brass-deep);
+  box-shadow: inset 0 2px 3px rgba(255, 250, 225, .7), inset 0 -3px 5px rgba(90, 68, 14, .55),
+    0 2px 4px rgba(30, 18, 6, .5);
+  transition: transform var(--dur-fast) var(--ease-standard);
+}
+.drawer.open .pull-bar { transform: translateY(2px); }
+/* pencil marginalia: real build-computed counts, handwritten */
+.pencil-note {
+  display: block;
+  font-family: var(--font-hand); font-size: 1.1rem;
+  color: rgba(243, 230, 200, .92);
+  transform: rotate(-1deg);
+  text-shadow: 0 1px 1px rgba(30, 18, 6, .4);
+}
+
+/* ---------- drawer trays: the cards inside ---------- */
+.drawer-tray {
+  margin-top: .45rem;
+  background: var(--tray-dark);
+  border: 2px solid rgba(30, 18, 6, .7); border-radius: 0 0 10px 10px;
+  box-shadow: inset 0 6px 14px rgba(0, 0, 0, .55);
+  padding: 1rem 1rem 1.1rem;
+}
+/* progressive enhancement: trays render open without JS; desk.js adds
+   .desk-ready, which collapses them until a pull is used. Print always
+   shows every tray (full content on paper). */
+html.desk-ready .drawer-tray { display: none; }
+html.desk-ready .drawer.open .drawer-tray { display: block; }
+.tray-head {
+  display: flex; align-items: center; justify-content: space-between; gap: .8rem;
+  margin: 0 0 .8rem;
+}
+.tray-label {
+  font-family: var(--font-type); font-size: .74rem; font-weight: 700;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--wood-ink);
+}
+/* the PULLED stamp slams in on open (research rule 187: the sync cue) */
+.pulled-stamp {
+  font-family: var(--font-stamp); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--accent);
+  background: #f7ecd4;
+  border: 3px double var(--accent); border-radius: 5px;
+  padding: .28rem .65rem .2rem;
+  transform: rotate(-8deg);
+  -webkit-mask-image: var(--grunge); mask-image: var(--grunge);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+}
+html.desk-ready .drawer.open .pulled-stamp {
+  animation: stamp-slam 260ms var(--ease-decelerate) both;
+}
+@keyframes stamp-slam {
+  0% { opacity: 0; transform: scale(1.9) rotate(-16deg); }
+  60% { opacity: 1; transform: scale(.94) rotate(-7deg); }
+  100% { opacity: 1; transform: scale(1) rotate(-8deg); }
+}
+.tray-cards {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: .8rem;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+}
+.desk-card {
+  background:
+    repeating-linear-gradient(180deg, transparent 0 25px, var(--rule-blue) 25px 26px),
+    var(--card);
+  border: 1px solid var(--line); border-radius: 4px;
+  box-shadow: var(--shadow-lift);
+  padding: .85rem .95rem .9rem;
+}
+.desk-card:nth-child(odd) { transform: rotate(-.7deg); }
+.desk-card:nth-child(even) { transform: rotate(.6deg); }
+/* cards cascade into the tray on open: transform/opacity only */
+html.desk-ready .drawer.open .desk-card {
+  animation: desk-card-in var(--dur-base) var(--ease-decelerate) both;
+  animation-delay: calc(var(--i, 0) * 45ms);
+}
+@keyframes desk-card-in {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.desk-card-name {
+  font-family: var(--font-display); font-weight: 700; font-size: 1.02rem; line-height: 1.3;
+}
+.desk-card-tag { font-family: var(--font-hand); font-size: 1.02rem; color: var(--ink-soft); margin: .3rem 0; }
+.desk-card-meta { font-family: var(--font-type); font-size: .72rem; color: var(--ink-soft); margin: 0; }
+.tray-foot { color: var(--wood-ink); font-size: .9rem; margin: .9rem 0 0; }
+.tray-foot a { color: #f0d67c; }
+
+/* ---------- the kneehole blotter: the week lives here ---------- */
+.kneehole { min-width: 0; }
+.blotter-card {
+  background: linear-gradient(160deg, var(--blotter), var(--blotter-deep));
+  border: 2px solid var(--blotter-gold);
+  outline: 1px solid var(--blotter-gold); outline-offset: 5px;
+  border-radius: 12px;
+  padding: 1.3rem 1.25rem;
+  color: #f0e8d2;
+  box-shadow: var(--shadow-lift), inset 0 0 40px rgba(0, 0, 0, .35);
+  position: relative;
+  transform: rotate(.5deg);
+}
+.blotter-stamp {
+  font-family: var(--font-stamp); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--blotter-gold);
+  border: 3px double var(--blotter-gold); border-radius: 5px;
+  display: inline-block; padding: .3rem .7rem .22rem;
+  transform: rotate(-2deg);
+  -webkit-mask-image: var(--grunge); mask-image: var(--grunge);
+  margin: 0 0 .7rem;
+}
+.blotter-card h2 { color: #f7f0da; margin: 0 0 .5rem; font-size: 1.4rem; }
+.blotter-card p { font-size: .95rem; }
+.blotter-card .btn { margin-top: .4rem; }
+.blotter-alt { font-size: .85rem; margin-top: .8rem; }
+.blotter-alt a { color: #f0d67c; }
+
+/* ---------- the planner week, laid out on the blotter ---------- */
+/* week sections become the desk blotter; day cards are pinned index cards */
+.week-section {
+  background: linear-gradient(160deg, var(--blotter), var(--blotter-deep));
+  border: 2px solid var(--blotter-gold);
+  outline: 1px solid var(--blotter-gold); outline-offset: 5px;
+  border-radius: 14px;
+  padding: 1.4rem 1.25rem 1.25rem;
+  margin-bottom: 2.6rem;
+  box-shadow: var(--shadow-lift), inset 0 0 50px rgba(0, 0, 0, .35);
+}
+.week-head .week-head-anchor {
+  font-family: var(--font-stamp); text-transform: uppercase; letter-spacing: .1em;
+  color: #f5eeda;
+  border: 3px double var(--blotter-gold); border-radius: 6px;
+  padding: .3rem .8rem .22rem;
+  transform: rotate(-1.4deg);
+  display: inline-block;
+  -webkit-mask-image: var(--grunge); mask-image: var(--grunge);
+}
+.week-head-sub { color: rgba(245, 238, 218, .8) !important; }
+.week-section .day-card {
+  position: relative;
+  padding-top: 1.6rem;
+  margin-bottom: 1.1rem;
+}
+/* washi tape pinning each day card to the blotter */
+.week-section .day-card::before {
+  content: ""; position: absolute; top: -11px; left: 50%;
+  width: 110px; height: 26px;
+  background: color-mix(in srgb, var(--blotter-gold) 55%, #fdfdf8);
+  opacity: .92;
+  transform: translateX(-50%) rotate(-3deg);
+  clip-path: polygon(1.5% 6%, 98% 0%, 100% 88%, 97% 100%, 2% 94%, 0% 12%);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+}
+.week-section .day-card:nth-of-type(even)::before { transform: translateX(-50%) rotate(2.6deg); }
+.week-section .week-balance { box-shadow: var(--shadow); }
+
+/* ---------- desk: mobile ---------- */
+@media (max-width: 900px) {
+  .pedestals { grid-template-columns: 1fr; }
+  .kneehole { order: 2; }
+  .blotter-card { transform: none; }
+  .tray-cards { grid-template-columns: 1fr; }
+}
+
+/* ---------- desk: reduced motion + calm ---------- */
+/* The global calm / prefers-reduced-motion rules already kill transitions
+   and animations. These make the intent explicit for the desk pieces:
+   drawers still open (display toggle, not motion), stamps and cards appear
+   instantly with the tray — full content, zero motion. */
+@media (prefers-reduced-motion: reduce) {
+  html.desk-ready .drawer.open .pulled-stamp,
+  html.desk-ready .drawer.open .desk-card { animation: none; }
+}
+html[data-calm="true"] .drawer-pull { transition: none; }
+
+/* ---------- desk: print ---------- */
+/* On paper the desk is fully opened: every tray visible, no animation. */
+@media print {
+  html.desk-ready .drawer-tray { display: block !important; }
+  html.desk-ready .drawer.open .pulled-stamp,
+  html.desk-ready .drawer.open .desk-card,
+  .pulled-stamp, .desk-card { animation: none !important; }
+  .desk { box-shadow: none; }
+  .drawer-pull { box-shadow: none; }
+  .drawer-pull { break-inside: avoid; }
+  .desk-card { break-inside: avoid; }
+}
+
+/* ================= END WAVE 21 ================= */

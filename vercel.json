@@ -9,8 +9,17 @@
     }
   ],
   "functions": {
-    "api/**/*.js": {
-      "runtime": "nodejs22.x"
+    "api/health.js": {
+      "maxDuration": 10
+    },
+    "api/review-queue.js": {
+      "maxDuration": 10
+    },
+    "api/review-decide.js": {
+      "maxDuration": 10
+    },
+    "api/cron/scout.js": {
+      "maxDuration": 10
     }
   },
   "headers": [

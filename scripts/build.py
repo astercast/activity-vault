@@ -214,6 +214,7 @@ ACTIVITY_TEMPLATE = """<!DOCTYPE html>
     </a>
     <nav aria-label="Primary">
       <a href="../index.html">Browse</a>
+      <a href="../desk.html">The Desk 🗄️</a>
       <a href="../planner.html">Plan my week</a>
       <a href="../kit.html">Kit 🧰</a>
       <a href="../sub.html">Sub Tub 🆘</a>
@@ -597,6 +598,7 @@ REVIEW_TEMPLATE = """<!DOCTYPE html>
     </a>
     <nav aria-label="Primary">
       <a href="index.html">Browse</a>
+      <a href="desk.html">The Desk 🗄️</a>
       <a href="planner.html">Plan my week</a>
       <a href="kit.html">Kit 🧰</a>
       <a href="sub.html">Sub Tub 🆘</a>
@@ -790,6 +792,176 @@ def render_activity(a, catmap, acts):
         related_block=related_block,
         safety_block=safety, source_block=source)
 
+# ---------------------------------------------------------------------------
+# Wave 21 — "The Desk": the archive as a physical teacher's desk.
+# desk.html renders 11 wooden drawers (one per category), each with a brass
+# label holder, a hand-written pencil note carrying REAL build-computed
+# counts (research rule 191: grease-pencil marginalia), and a tray holding
+# the 6 cards "on top of the pile" — curator-picked first, then no-prep,
+# then alphabetical (stable, honest). The tray footer deep-links to the
+# working filter page (index.html?cats=<id>, the wave-14 deep-link
+# mechanism), so every drawer is a real doorway, not a diorama.
+# No-JS: trays render open (full content). desk.js collapses them and
+# wires the brass pulls (aria-expanded); calm mode + prefers-reduced-motion
+# kill the card cascade/stamp animations via the global rules, content stays.
+# ---------------------------------------------------------------------------
+def render_desk(acts, cats, colls):
+    actmap = {a['id']: a for a in acts}
+    picked_ids = {p['id'] for c in colls for p in c['picks']}
+    by_cat = {}
+    for a in acts:
+        by_cat.setdefault(a['categories'][0], []).append(a)
+
+    def drawer_picks(cat_id):
+        cands = by_cat.get(cat_id, [])
+        cands = sorted(cands, key=lambda a: (
+            0 if a['id'] in picked_ids else 1,
+            0 if a['no_prep'] else 1,
+            a['id']))
+        return cands[:6]
+
+    drawers = []
+    for i, c in enumerate(cats):
+        cid = c['id']
+        cands = by_cat.get(cid, [])
+        assert cands, f"desk: category has no activities: {cid}"
+        total = len(cands)
+        noprep = sum(1 for a in cands if a['no_prep'])
+        picks = drawer_picks(cid)
+        assert len(picks) == 6 or total < 6, f"desk: short tray: {cid}"
+        assert all(p['id'] in actmap for p in picks), f"desk: pick not in actmap: {cid}"
+        cards = []
+        for j, a in enumerate(picks):
+            meta = (f"Ages {a['age_min']}\u2013{a['age_max']} \u00b7 "
+                    f"{a['time_min']}\u2013{a['time_max']} min \u00b7 "
+                    f"{a['group_min']}\u2013{a['group_max']} kids")
+            cards.append(
+                f'<li class="desk-card" style="--i:{j}">'
+                f'<a class="desk-card-name" href="activity/{a["id"]}.html">{esc(a["name"])}</a>'
+                f'<p class="desk-card-tag">{esc(a["tagline"])}</p>'
+                f'<p class="desk-card-meta">{meta}</p></li>')
+        rest = total - len(picks)
+        foot = (f'\u2026and {rest} more cards in this drawer \u2014 '
+                f'<a href="index.html?cats={cid}">Open the full drawer \u2192</a>') if rest > 0 else ''
+        num = f"DRAWER {i + 1:02d}"
+        drawers.append(
+            f'<div class="drawer" data-drawer="{cid}">'
+            f'<button class="drawer-pull" id="pull-{cid}" aria-expanded="false" aria-controls="tray-{cid}">'
+            f'<span class="drawer-num" aria-hidden="true">{num}</span>'
+            f'<span class="drawer-label"><span class="drawer-stamp" style="--cat:{c["color"]}">'
+            f'<span aria-hidden="true">{c["glyph"]}</span> {esc(c["name"])}</span></span>'
+            f'<span class="drawer-handle" aria-hidden="true"><span class="pull-bar"></span></span>'
+            f'<span class="pencil-note">{total} cards \u00b7 {noprep} no-prep</span>'
+            f'<span class="visually-hidden">Open the {esc(c["name"])} drawer</span>'
+            f'</button>'
+            f'<div class="drawer-tray" id="tray-{cid}" role="region" aria-labelledby="pull-{cid}">'
+            f'<p class="tray-head"><span class="tray-label">On top of the pile</span> '
+            f'<span class="pulled-stamp" aria-hidden="true">Pulled \u2713</span></p>'
+            f'<ul class="tray-cards">{"".join(cards)}</ul>'
+            f'<p class="tray-foot">{foot}</p>'
+            f'</div></div>')
+
+    left = '\n'.join(drawers[:6])
+    right = '\n'.join(drawers[6:])
+    stats = (len(acts), len(cats), len(colls))
+    return DESK_TEMPLATE.format(
+        n_acts=stats[0], n_cats=stats[1], n_colls=stats[2],
+        left_drawers=left, right_drawers=right)
+
+
+DESK_TEMPLATE = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Teacher's Desk — Activity Vault</title>
+<meta name="description" content="The whole activity archive filed like a teacher's desk: 11 wooden drawers, one per category. Pull a drawer, grab an index card, plan your week.">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@500;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap">
+<script src="assets/site.js" defer></script>
+<script src="assets/desk.js" defer></script>
+
+</head>
+<body>
+<a class="skip-link" href="#desk">Skip to the desk</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Activity Vault home">
+      <span class="brand-mark" aria-hidden="true">🗂️</span>
+      <span class="brand-text">Activity <strong>Vault</strong></span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="index.html">Browse</a>
+      <a href="desk.html" aria-current="page">The Desk 🗄️</a>
+      <a href="planner.html">Plan my week</a>
+      <a href="kit.html">Kit 🧰</a>
+      <a href="sub.html">Sub Tub 🆘</a>
+      <a href="party.html">Party Planner 🎉</a>
+      <a href="fieldtrip.html">Field Trips 🚌</a>
+      <a href="collections.html">Collections 📚</a>
+      <a href="halloween.html">Halloween 🎃</a>
+      <a href="thanksgiving.html">Thanksgiving 🦃</a>
+      <a href="spring.html">Spring 🌷</a>
+      <a href="summer.html">Summer ☀️</a>
+    </nav>
+    <button class="btn btn-ghost btn-small no-print" id="site-calm-toggle" type="button"
+            aria-pressed="false" aria-label="Calm mode: turn off page animations and motion">
+      <span aria-hidden="true">🍃</span> Calm: <span class="calm-state">off</span>
+    </button>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" aria-labelledby="hero-title">
+    <span class="kicker">The teacher's desk</span>
+    <h1 id="hero-title">Pull a drawer.<br>Grab a <span class="squiggle">card.</span></h1>
+    <p class="lede">The whole Vault, filed the old way — {n_acts} real activities in {n_cats} wooden drawers, one per category. Every drawer opens: the six cards on top of the pile, plus a pencil note with the honest counts. Nothing here is decoration — every card is a real activity page.</p>
+    <aside class="desk-note no-print" aria-label="A note from the teacher's desk">every drawer opens —<br>try the brass pulls ↓</aside>
+    <div class="stats" aria-label="Library stats">
+      <div class="stat"><b>{n_acts}</b><span>activities</span></div>
+      <div class="stat"><b>{n_cats}</b><span>drawers</span></div>
+      <div class="stat"><b>{n_colls}</b><span>collections</span></div>
+    </div>
+  </section>
+
+  <section class="desk-section" id="desk" aria-label="The teacher's desk: eleven category drawers">
+    <div class="desk">
+      <p class="desk-nameplate" aria-hidden="true"><span>Activity Vault</span></p>
+      <div class="desk-toolbar no-print" role="group" aria-label="Drawer controls">
+        <button class="btn btn-small" id="drawers-open-all" type="button">🗄️ Open all drawers</button>
+        <button class="btn btn-small btn-ghost" id="drawers-close-all" type="button">Close all</button>
+      </div>
+      <div class="pedestals">
+        <div class="pedestal" aria-label="Left drawers">
+{left_drawers}
+        </div>
+        <div class="kneehole">
+          <section class="blotter-card" aria-labelledby="blotter-h">
+            <p class="blotter-stamp" aria-hidden="true">The blotter</p>
+            <h2 id="blotter-h">Your week, laid out here.</h2>
+            <p>The Smart Weekly Planner deals no-repeat weeks from the same {n_acts} cards in these drawers — balanced days, brain breaks, supply lists.</p>
+            <p><a class="btn" href="planner.html">📅 Open the planner</a></p>
+            <p class="blotter-alt">or browse the <a href="collections.html">{n_colls} curated collections</a></p>
+          </section>
+        </div>
+        <div class="pedestal" aria-label="Right drawers">
+{right_drawers}
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer no-print">
+  <div class="wrap"><p><strong>Activity Vault</strong> — the all-in-one activity archive for teachers &amp; after-school programs.</p></div>
+</footer>
+</body>
+</html>
+"""
+
+
 def main():
     acts, cats, colls, buckets = load()
     errs = validate(acts, cats)
@@ -820,6 +992,12 @@ def main():
         with open(os.path.join(actdir, a['id'] + '.html'), 'w') as f:
             f.write(page)
         rendered += 1
+
+    # 1b. The Desk (wave 21): the archive as a physical teacher's desk.
+    desk_page = render_desk(acts, cats, colls)
+    assert 'DRAWER 01' in desk_page and 'DRAWER 11' in desk_page, "desk render check failed"
+    with open(os.path.join(SITE, 'desk.html'), 'w') as f:
+        f.write(desk_page)
 
     # 2. API
     api = os.path.join(SITE, 'api', 'v1')
@@ -1353,6 +1531,11 @@ def main():
     for s in skills:
         lines.append(f"- {s['file']} — {s['description']}")
     lines += ["", "## Tools",
+              "- desk.html — The Teacher's Desk: the whole archive as 11 wooden category drawers.",
+              "  Every drawer opens (real working drawers, keyboard + reduced-motion friendly) onto",
+              "  six index cards on top of the pile — curator picks first, then no-prep — plus a",
+              "  pencil note with honest per-drawer counts; each drawer deep-links to the matching",
+              "  filtered browse view (index.html?cats=<id>). The kneehole blotter links the planner.",
               "- sub.html — Sub Tub: the substitute-teacher rescue kit.",
               "  Pick grade band, minutes to fill, materials on hand, location —",
               "  generates a sequenced print-ready emergency plan plus a 'Dear sub' note template.",
@@ -1378,7 +1561,7 @@ def main():
               "  crafts, harvest games, Thanksgiving STEM, gratitude and friendsgiving activities,",
               "  and giving-back projects, plus the Grateful Gathering collection and a",
               "  Thanksgiving party-theme shortcut.",
-              "- planner.html — Smart Weekly Planner 2.0: program presets (after-school / camp /",
+              "- planner.html — Smart Weekly Planner 3.0: program presets (after-school / camp /",
               "  classroom), age bands, auto-built no-repeat weeks with a per-day energy balance meter,",
               "  drag-and-drop reorder, per-slot swap, surprise gap-fill, prep-level caps, collection",
               "  seeding (?from=collection:<id>), named saved plans, .ics calendar export, shareable",
@@ -1389,7 +1572,7 @@ def main():
               "  each day with a run-of-show timeline, a printable session plan sheet, per-slot",
               "  swap, one aggregated material checklist (have vs. gather), copy-as-text, and",
               "  shareable ?kit= links that restore the exact kit on any device.",
-              "- collections.html — Curated collections: 12 teacher-ready bundles (rainy-day",
+              "- collections.html — Curated collections: 13 teacher-ready bundles (rainy-day",
               "  rescue, first day, sub tub, winter party, spring burst, summer splash, haunted halls, grateful gathering…)",
               "  each with a curator's note per pick; printable and copy-able per collection.",
               "- api.html — API docs with a Try-the-API console (endpoint picker, fetch, pretty JSON).",
@@ -1413,7 +1596,7 @@ def main():
     open(os.path.join(SITE, 'llms-full.txt'), 'w').write('\n'.join(full) + '\n')
 
     # 4. sitemap.xml
-    urls = ["", "planner.html", "kit.html", "sub.html", "party.html", "fieldtrip.html", "collections.html", "api.html", "review.html", "halloween.html", "thanksgiving.html", "spring.html", "summer.html"] + [f"activity/{a['id']}.html" for a in acts]
+    urls = ["", "desk.html", "planner.html", "kit.html", "sub.html", "party.html", "fieldtrip.html", "collections.html", "api.html", "review.html", "halloween.html", "thanksgiving.html", "spring.html", "summer.html"] + [f"activity/{a['id']}.html" for a in acts]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:

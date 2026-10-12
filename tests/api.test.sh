@@ -103,9 +103,12 @@ assert c['path']=='/api/cron/scout', c
 f=c['schedule'].split()
 assert f[0]!='*' and '*/' not in f[0] and '*/' not in f[1], c
 assert c['schedule']=='0 11 * * *', c"
-chk "functions runtime nodejs22.x" python3 -c "
+chk "functions: 4 explicit paths, maxDuration 10, no runtime key (vercel rule, 2026-10-12)" python3 -c "
 import json; v=json.load(open('$ROOT/vercel.json'))
-assert v['functions']['api/**/*.js']['runtime']=='nodejs22.x'
+fns=v['functions']
+assert sorted(fns.keys())==['api/cron/scout.js','api/health.js','api/review-decide.js','api/review-queue.js'], fns.keys()
+assert all('runtime' not in f for f in fns.values()), 'runtime key must be omitted for Node'
+assert all(f.get('maxDuration')==10 for f in fns.values()), 'each function needs >=1 valid property'
 assert v['outputDirectory']=='.'
 assert v['buildCommand']=='python3 scripts/build.py'
 assert v['installCommand']==\"echo 'no dependencies'\""

@@ -26,7 +26,7 @@ One Vercel project from this repo (`outputDirectory: "."`):
 
 - **Static frontend** — the 455-activity Teacher's Desk site (`index.html`,
   `activity/*.html`, `assets/*`, plus the build-generated `review.html`).
-- **4 serverless functions** (zero npm dependencies, `nodejs22.x`, ≤6-function
+- **4 serverless functions** (zero npm dependencies, no `runtime` key — Vercel auto-detects Node; never pin a Node runtime, ≤6-function
   budget, ≤12 limit):
   - `api/health.js` → `GET /api/health`
   - `api/review-queue.js` → `GET /api/review-queue`
@@ -116,7 +116,7 @@ fixtures — ever.
 | Bandwidth | 100 GB/mo | static + small JSON; personal-use sites ≈ MBs |
 | Build minutes | 6,000/mo | seconds per deploy; daily cron redeploys ≈ negligible |
 | Function invocations | 100k/mo | edge cache absorbs reads (§1.6); ~1 cron + trickle |
-| Function duration | 10s default (Hobby) | all functions designed ≤10s; no `maxDuration` overrides |
+| Function duration | 10s (Hobby) | all functions designed ≤10s; each carries `"maxDuration": 10` explicitly (Vercel requires ≥1 valid property per functions entry; never set `runtime` for Node) |
 | Cron jobs | daily minimum cadence, UTC, ±60min window, prod only | 1 job, `0 11 * * *` UTC |
 | Overage billing | **none — usage pauses instead of charging** | design stays far under limits; a pause is a visible signal, not a bill |
 

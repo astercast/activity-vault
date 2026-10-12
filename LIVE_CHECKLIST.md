@@ -17,7 +17,9 @@ What is wired into the live release repo `astercast/activity-vault-live`
 - `assets/` (pre-built JS/CSS), `skills/` markdowns
 - `api/v1/` static JSON + schemas (fallback store)
 - `api/health.js`, `api/review-queue.js`, `api/review-decide.js`,
-  `api/cron/scout.js` (4/12 functions, `nodejs22.x`, zero npm deps)
+  `api/cron/scout.js` (4/12 functions, no `runtime` key — Vercel auto-detects Node, zero npm deps)
+- Vercel functions entries need ≥1 valid property — use {"maxDuration": 10} per explicit function path; never set runtime for Node (omit it); never broad globs (2026-10-12: both nodejs22.x and nodejs20.x fail build validation; empty {} also fails; runtime is only for community runtimes like vercel-php@0.5.2)
+- No static .js data files under api/ ever — Vercel deploys every .js there as a function (functions map is not an allowlist); basename collisions (x.js + x.json) fail the build (2026-10-12). Audit 2026-10-12: clean — only the 4 real functions are .js; all static data is .json.
 - `lib/` helpers (envelope, fetchx, ratelimit, cronauth, github)
 - `vercel.json`: no buildCommand, `outputDirectory: "."`, functions +
   crons config, security headers, Standard build machine
