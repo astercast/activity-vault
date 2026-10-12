@@ -114,6 +114,14 @@
           nm.appendChild(link);
           slot.appendChild(nm);
           slot.appendChild(el('p', 'slot-why', whyFits(a, opts)));
+          // The visitor's own rating, if they gave one (never an aggregate).
+          var R = window.VaultRatings;
+          var mine = R ? R.getRating(a.id) : null;
+          if (mine) {
+            var rline = '⭐ You rated this ' + mine.stars + '★';
+            if (mine.note) rline += ' — ' + mine.note;
+            slot.appendChild(el('p', 'slot-rating', rline));
+          }
           if (usedIds.indexOf(a.id) === -1 || !opts.allowRepeats) usedIds.push(a.id);
           slotPlan.name = a.name;
           slotPlan.id = a.id;
@@ -178,6 +186,18 @@
         lines.push('    Ages ' + a.age_min + '–' + a.age_max + ' · ' +
           a.time_min + '–' + a.time_max + ' min · Group ' + a.group_min + '–' + a.group_max +
           (a.no_prep ? ' · no prep' : ''));
+        // The visitor's own rating + reflections (localStorage) — exportable notes.
+        var RR = window.VaultRatings;
+        var mine2 = RR ? RR.getRating(a.id) : null;
+        if (mine2) {
+          lines.push('    Your rating: ' + mine2.stars + '/5 stars' +
+            (mine2.note ? ' — ' + mine2.note : ''));
+          if (mine2.reflections) {
+            if (mine2.reflections.change) lines.push('    Reflection — change next time: ' + mine2.reflections.change);
+            if (mine2.reflections.age_band) lines.push('    Reflection — age band that shone: ' + mine2.reflections.age_band);
+            if (mine2.reflections.again) lines.push('    Reflection — run it again? ' + mine2.reflections.again);
+          }
+        }
         lines.push('    ' + cardUrl('activity/' + a.id + '.html'));
       });
       lines.push('');

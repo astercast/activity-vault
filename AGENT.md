@@ -50,6 +50,42 @@ The three tools (`sub.html`, `party.html`, `planner.html`) are thin clients over
 
 ---
 
+## Personal ratings (client-side only — wave 8)
+
+Ratings are **never sent anywhere**: there is no API endpoint for them, no account, no server. They live in the visitor's browser under:
+
+```
+localStorage["activityvault.ratings.v1"]
+```
+
+Shape — a JSON object keyed by activity `id`:
+
+```json
+{
+  "<activity-id>": {
+    "stars": 4,
+    "note": "one-line note (≤140 chars, may be empty)",
+    "reflections": {
+      "change": "what they would change next time (≤280 chars)",
+      "age_band": "which age band shone (≤280 chars)",
+      "again": "would they run it again? (≤280 chars)"
+    },
+    "ratedAt": "2026-10-11T18:30:00.000Z"
+  }
+}
+```
+
+Shared helper: `assets/ratings.js` exposes `window.VaultRatings` (`getRating`, `setRating`, `clearRating`, `topRated(limit)`, `countRated`, `starsText`, `KEY`, `REFLECTIONS`). Loaded on `index.html`, `planner.html`, `party.html`, and every `activity/<id>.html` page.
+
+Rules for agents and for the UI copy (standing):
+- **Only the user's own ratings, never aggregates.** Activity Vault has no community ratings; never invent an average, a "most loved" ranking from other users, or a star total from the server. Copy must say "your ratings", "stored only in this browser".
+- Browse: "⭐ Sort by my rating" toggle (rated first, best stars first; unrated activities sit at the bottom marked "Not rated yet") and "⭐ My top 10" (rated-only top 10, deep link `index.html?view=top-rated`).
+- Week planner: scheduled activities show "⭐ You rated this 4★" (plus the note); "📋 Copy my week" exports the rating, note, and reflections per rated activity.
+- Party planner: picks top-rated party stations first (unrated sink below every rated pick); the status line and run sheet say so honestly ("Your top-rated stations went in first — ratings live only in your browser").
+- Do not add an endpoint for ratings — the library stays client-side by design. If an agent workflow needs ratings, read `localStorage` in a browser context; the JSON files carry no rating data.
+
+---
+
 ## Workflow 1 — Find a rainy-day activity for 8-year-olds
 
 **Situation:** 8-year-olds, stuck indoors, ~30 minutes.

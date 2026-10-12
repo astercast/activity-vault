@@ -15,8 +15,23 @@
     tags: new Set(),    // selected season/occasion tags (activity matches if it has ANY)
     noPrepOnly: false,
     indoorOnly: false,
-    outdoorOnly: false
+    outdoorOnly: false,
+    sortByRating: false, // sort by the visitor's OWN ratings (localStorage)
+    topTen: false        // "My top 10": rated-only, top 10 by own stars
   };
+
+  function myRating(a) {
+    var R = window.VaultRatings;
+    return R ? R.getRating(a.id) : null;
+  }
+
+  function applyRatingView(sort, top) {
+    state.sortByRating = !!sort;
+    state.topTen = !!top;
+    if (sortChipBtn) sortChipBtn.setAttribute('aria-pressed', state.sortByRating ? 'true' : 'false');
+    if (topTenBtn) topTenBtn.setAttribute('aria-pressed', state.topTen ? 'true' : 'false');
+    render();
+  }
 
   var TAG_LABELS = {
     'season:fall': '🎃 Fall',
@@ -33,7 +48,7 @@
                    'holiday:christmas', 'holiday:hanukkah', 'holiday:kwanzaa', 'holiday:new-year',
                    'theme:spooky'];
 
-  var grid, countEl, searchInput;
+  var grid, countEl, searchInput, sortChipBtn, topTenBtn;
 
   function el(tag, cls, text) {
     var e = document.createElement(tag);
@@ -106,6 +121,14 @@
     meta.appendChild(loc);
     card.appendChild(meta);
 
+    // The visitor's OWN rating — never an aggregate; there are no community ratings.
+    var mine = myRating(a);
+    if (mine) {
+      card.appendChild(el('span', 'rate-badge', '⭐ ' + mine.stars + '★ — your rating'));
+    } else if (state.sortByRating || state.topTen) {
+      card.appendChild(el('span', 'rate-badge unrated', 'Not rated yet'));
+    }
+
     return card;
   }
 
@@ -118,11 +141,41 @@
 
   function render() {
     var list = state.activities.filter(matches);
+    var ratingMode = state.sortByRating || state.topTen;
+    if (state.topTen) {
+      // "My top 10": only activities the visitor rated, best stars first.
+      list = list.filter(function (a) { return myRating(a); });
+      list.sort(function (x, y) {
+        return (myRating(y).stars - myRating(x).stars) ||
+               (x.name < y.name ? -1 : (x.name > y.name ? 1 : 0));
+      });
+      list = list.slice(0, 10);
+    } else if (state.sortByRating) {
+      // Rated first (best stars first), unrated last — clearly marked.
+      list.sort(function (x, y) {
+        var rx = myRating(x), ry = myRating(y);
+        return ((ry ? ry.stars : -1) - (rx ? rx.stars : -1)) ||
+               (x.name < y.name ? -1 : (x.name > y.name ? 1 : 0));
+      });
+    }
     state.visible = list;
     grid.innerHTML = '';
+    if (ratingMode) {
+      var note = el('div', 'top-rated-note');
+      note.innerHTML = '<strong>⭐ ' + (state.topTen ? 'Your top 10' : 'Sorted by your ratings') +
+        '.</strong> These are <em>your</em> ratings, stored only in this browser. ' +
+        'Activity Vault has no community ratings, so nothing here is an average or a "top" voted by others.';
+      grid.appendChild(note);
+    }
     if (!list.length) {
       var empty = el('div', 'empty');
-      empty.innerHTML = '<span class="big" aria-hidden="true">🗂️</span><p><strong>No activities match.</strong></p><p>Try loosening a filter or two.</p>';
+      if (state.topTen) {
+        empty.innerHTML = '<span class="big" aria-hidden="true">⭐</span>' +
+          '<p><strong>No ratings yet.</strong></p>' +
+          '<p>Open any activity card and give it 1–5 stars — your top 10 will appear here.</p>';
+      } else {
+        empty.innerHTML = '<span class="big" aria-hidden="true">🗂️</span><p><strong>No activities match.</strong></p><p>Try loosening a filter or two.</p>';
+      }
       grid.appendChild(empty);
     } else {
       list.forEach(function (a) { grid.appendChild(renderCard(a)); });
@@ -138,6 +191,8 @@
 
   function describeFilters() {
     var bits = [];
+    if (state.topTen) bits.push('⭐ your top 10 rated');
+    else if (state.sortByRating) bits.push('sorted by your ratings');
     if (state.q) bits.push('search "' + state.q + '"');
     if (state.age != null) bits.push('age ' + state.age);
     if (state.maxTime != null) bits.push('≤ ' + state.maxTime + ' min');
@@ -158,6 +213,10 @@
   // richer filter mixes point at the browse page plus a filter description.
   function viewUrl() {
     var bits = describeFilters();
+    if (state.topTen) {
+      // True deep link for "My top 10" (ratings live in the visitor's browser).
+      return cardUrl('index.html?view=top-rated');
+    }
     if (state.tags.size === 1 && bits.length === 1 && bits[0].indexOf('season/occasion:') === 0) {
       return cardUrl('index.html?tag=' + encodeURIComponent(Array.from(state.tags)[0]));
     }
@@ -343,6 +402,27 @@
     }
     host.appendChild(og);
 
+    // your ratings (localStorage only — never aggregated, never shared)
+    var rtg = el('div', 'filter-group');
+    rtg.appendChild(el('span', 'flabel', 'Your ratings'));
+    var rtHint = el('p', 'rate-privacy',
+      'Stars you gave on activity cards, stored only in this browser. No community ratings exist.');
+    rtg.appendChild(rtHint);
+    sortChipBtn = chipButton('⭐ Sort by my rating', false, function (on) {
+      state.sortByRating = on;
+      if (!on) applyRatingView(false, false);
+    });
+    rtg.appendChild(sortChipBtn);
+    topTenBtn = el('button', 'chip', '⭐ My top 10');
+    topTenBtn.type = 'button';
+    topTenBtn.setAttribute('aria-pressed', 'false');
+    topTenBtn.addEventListener('click', function () {
+      var next = topTenBtn.getAttribute('aria-pressed') !== 'true';
+      applyRatingView(next, next);
+    });
+    rtg.appendChild(topTenBtn);
+    host.appendChild(rtg);
+
     // reset
     var reset = el('button', 'btn btn-ghost btn-reset', 'Reset all filters');
     reset.type = 'button';
@@ -350,6 +430,7 @@
       state.q = ''; state.age = null; state.maxTime = null; state.group = null;
       state.cats.clear(); state.tags.clear();
       state.noPrepOnly = false; state.indoorOnly = false; state.outdoorOnly = false;
+      state.sortByRating = false; state.topTen = false;
       searchInput.value = ''; tsel.value = ''; gsel.value = '';
       host.querySelectorAll('[aria-pressed]').forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
       render();
@@ -375,7 +456,7 @@
       if (statCats) statCats.textContent = state.categories.length;
       if (statPrep) statPrep.textContent = state.activities.filter(function (a) { return a.no_prep; }).length;
       buildFilters();
-      // ?tag= deep links (used by the week planner's seasonal suggestions)
+      // ?view=top-rated deep link (My top 10 — ratings live in the visitor's browser)
       try {
         var qtag = new URLSearchParams(window.location.search).get('tag');
         if (qtag && TAG_ORDER.indexOf(qtag) !== -1) {
@@ -383,6 +464,8 @@
           var tbtn = document.querySelector('[data-tag="' + qtag + '"]');
           if (tbtn) tbtn.setAttribute('aria-pressed', 'true');
         }
+        var qview = new URLSearchParams(window.location.search).get('view');
+        if (qview === 'top-rated') applyRatingView(true, true);
       } catch (e) { /* malformed query string — ignore */ }
       render();
       var copyBtn = document.getElementById('copy-collection');

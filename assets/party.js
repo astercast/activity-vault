@@ -89,8 +89,14 @@
   }
 
   function pickStations(pool, n, offset) {
+    // The visitor's own ratings come first (localStorage) — never an aggregate.
+    // Unrated activities sink below every rated one; within a rating the
+    // original order (no-prep, longest, id) is kept.
+    var R = window.VaultRatings;
     var order = pool.slice().sort(function (x, y) {
-      return ((y.no_prep ? 1 : 0) - (x.no_prep ? 1 : 0)) ||
+      var rx = R && R.getRating(x.id), ry = R && R.getRating(y.id);
+      return ((ry ? ry.stars : 0) - (rx ? rx.stars : 0)) ||
+             ((y.no_prep ? 1 : 0) - (x.no_prep ? 1 : 0)) ||
              (y.time_max - x.time_max) ||
              (x.id < y.id ? -1 : 1);
     });
@@ -133,7 +139,10 @@
       title: themeDef.planTitle + ' — ' + opts.minutes + '-minute run sheet',
       meta: metaText,
       picks: picks.map(function (a) {
-        return { name: a.name, url: cardUrl('activity/' + a.id + '.html'), safety: a.safety || null };
+        var PR = window.VaultRatings;
+        var pm = PR ? PR.getRating(a.id) : null;
+        return { name: a.name, url: cardUrl('activity/' + a.id + '.html'), safety: a.safety || null,
+                 stars: pm ? pm.stars : null };
       }),
       rounds: [],
       setup: [],
@@ -239,6 +248,9 @@
       more.appendChild(fl);
       if (a.safety) more.appendChild(document.createTextNode(' — ⚠️ ' + a.safety));
       body3.appendChild(more);
+      var RP = window.VaultRatings;
+      var mine = RP ? RP.getRating(a.id) : null;
+      if (mine) body3.appendChild(el('span', 'rate-badge', '⭐ ' + mine.stars + '★ — your rating (picked first)'));
       li3.appendChild(body3);
       list.appendChild(li3);
     });
@@ -288,7 +300,8 @@
     var lines = [p.title + ' (Activity Vault)', p.meta, ''];
     lines.push('Stations:');
     p.picks.forEach(function (s, i) {
-      lines.push('  Station ' + (i + 1) + ' — ' + s.name);
+      lines.push('  Station ' + (i + 1) + ' — ' + s.name +
+        (s.stars ? ' (your rating: ' + s.stars + '/5 stars)' : ''));
       lines.push('  ' + s.url);
     });
     lines.push('');
@@ -341,8 +354,11 @@
     }
     var picks = pickStations(pool, stations, offset);
     renderPlan(picks, { classSize: classSize, minutes: minutes, budget: budget, roundMin: roundMin, themeDef: themeDef });
+    var R = window.VaultRatings;
+    var anyRated = R && picks.some(function (a) { return R.getRating(a.id); });
     status.textContent = themeDef.label + ' party plan built: ' + stations + ' stations, ' + roundMin +
-      ' minutes each, groups of ~' + perGroup + '.';
+      ' minutes each, groups of ~' + perGroup + '.' +
+      (anyRated ? ' Your top-rated stations went in first (ratings live only in your browser).' : '');
   }
 
   function init() {

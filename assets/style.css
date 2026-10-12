@@ -237,6 +237,69 @@ input[type="number"] {
 .empty { text-align: center; padding: 3rem 1rem; color: var(--ink-soft); }
 .empty .big { font-size: 3rem; display: block; margin-bottom: .5rem; }
 
+/* ---------- rating widget (wave 8) ---------- */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.rate-box {
+  margin-top: 2rem; padding: 1.25rem; background: var(--card);
+  border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);
+}
+.rate-box h2 { margin-top: 0; }
+.rate-privacy { color: var(--ink-soft); font-size: .92rem; max-width: 60ch; }
+.star-field { border: 0; padding: 0; margin: 1rem 0; }
+.star-field legend { font-weight: 700; padding: 0; margin-bottom: .35rem; }
+.stars { display: flex; gap: .35rem; }
+.star { position: relative; display: inline-block; }
+.star input {
+  position: absolute; opacity: 0; width: 100%; height: 100%;
+  margin: 0; cursor: pointer;
+}
+.star-glyph {
+  display: inline-block; font-size: 2rem; line-height: 1; padding: .2rem;
+  color: #c9bfae; border-radius: 6px;
+}
+/* Cumulative fill up to the chosen star, painted by JS (data-fill="n").
+   Native radio semantics are untouched: arrow keys move, Enter/Space selects. */
+.star input:checked + .star-glyph,
+.stars[data-fill="1"] .star:nth-child(-n+1) .star-glyph,
+.stars[data-fill="2"] .star:nth-child(-n+2) .star-glyph,
+.stars[data-fill="3"] .star:nth-child(-n+3) .star-glyph,
+.stars[data-fill="4"] .star:nth-child(-n+4) .star-glyph,
+.stars[data-fill="5"] .star:nth-child(-n+5) .star-glyph {
+  color: #e8a100; text-shadow: 0 0 1px #a05c00;
+}
+.star input:hover + .star-glyph { color: #e8a100; }
+.star input:focus-visible + .star-glyph {
+  outline: 3px solid var(--accent); outline-offset: 2px;
+}
+.rate-note-row { margin: .75rem 0; }
+.rate-note-row label { display: block; font-weight: 700; margin-bottom: .3rem; }
+.rate-note-row input, .reflect-row input {
+  width: 100%; max-width: 38rem; padding: .55rem .7rem; font-size: 1rem;
+  border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink);
+}
+.rate-btns { margin: .75rem 0 0; }
+#rate-reflect { margin-top: 1.25rem; border-top: 1px dashed var(--line); padding-top: 1rem; }
+#rate-reflect h3 { margin-top: 0; }
+.reflect-row { margin: .6rem 0; }
+.reflect-row label { display: block; font-weight: 600; margin-bottom: .25rem; }
+.reflect-row .hint { font-weight: 400; color: var(--ink-soft); }
+
+/* ---------- rating badges (browse / planner / party) ---------- */
+.rate-badge {
+  display: inline-block; font-size: .82rem; font-weight: 700; color: #7a5200;
+  background: #fdf3d8; border: 1px solid #ecd9a0; border-radius: 999px;
+  padding: .15rem .6rem; margin: .4rem .25rem 0 0; white-space: nowrap;
+}
+.rate-badge.unrated { color: var(--ink-soft); background: var(--paper-deep); border-color: var(--line); }
+.slot-rating { color: #7a5200; font-weight: 700; margin: .2rem 0 0; }
+.top-rated-note {
+  background: #fdf3d8; border: 1px solid #ecd9a0; border-radius: 10px;
+  padding: .7rem 1rem; margin: 0 0 1rem; font-size: .92rem;
+}
+
 /* ---------- reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; }

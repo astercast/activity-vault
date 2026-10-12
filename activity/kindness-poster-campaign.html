@@ -55,6 +55,48 @@
     </section>
     
     <p class="source-line">Inspired by an idea from the teaching community — <a href="https://www.weareteachers.com/anti-bullying-posters-decor/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=anti-bullying-posters-decor" rel="noopener">source post</a> (adapted in our own words).</p>
+    <section class="rate-box no-print" aria-labelledby="h-rate">
+      <h2 id="h-rate">⭐ Tried this? Rate it</h2>
+      <p class="rate-privacy">Your ratings live in <strong>this browser only</strong> — nobody else can see them. There are no community ratings here; every star on this card is yours.</p>
+      <form id="rate-form">
+        <fieldset class="star-field">
+          <legend>Your rating (1 to 5 stars)</legend>
+          <div class="stars">
+            <label class="star"><input type="radio" name="av-rate" value="1" aria-label="1 star"><span class="star-glyph" aria-hidden="true">★</span></label>
+            <label class="star"><input type="radio" name="av-rate" value="2" aria-label="2 stars"><span class="star-glyph" aria-hidden="true">★</span></label>
+            <label class="star"><input type="radio" name="av-rate" value="3" aria-label="3 stars"><span class="star-glyph" aria-hidden="true">★</span></label>
+            <label class="star"><input type="radio" name="av-rate" value="4" aria-label="4 stars"><span class="star-glyph" aria-hidden="true">★</span></label>
+            <label class="star"><input type="radio" name="av-rate" value="5" aria-label="5 stars"><span class="star-glyph" aria-hidden="true">★</span></label>
+          </div>
+        </fieldset>
+        <div class="rate-note-row">
+          <label for="rate-note">One-line note (optional)</label>
+          <input type="text" id="rate-note" maxlength="140" placeholder="e.g. Huge hit with the 4th graders">
+        </div>
+        <p class="rate-btns">
+          <button class="btn btn-small" id="rate-save" type="submit">Save rating</button>
+          <button class="btn btn-small btn-ghost" id="rate-clear" type="button" hidden>Clear my rating</button>
+        </p>
+        <p class="copy-status" id="rate-status" role="status" aria-live="polite"></p>
+      </form>
+      <div id="rate-reflect" hidden>
+        <h3>✏️ Quick reflection</h3>
+        <p class="rate-privacy">Optional — saved with your rating, and exported with "📋 Copy my week".</p>
+        <div class="reflect-row">
+          <label for="reflect-change">What would you change next time?</label>
+          <input type="text" id="reflect-change" maxlength="280">
+        </div>
+        <div class="reflect-row">
+          <label for="reflect-age_band">Which age band shone the most?</label>
+          <input type="text" id="reflect-age_band" maxlength="280">
+        </div>
+        <div class="reflect-row">
+          <label for="reflect-again">Would you run it again? <span class="hint">(yes / with tweaks / no)</span></label>
+          <input type="text" id="reflect-again" maxlength="280">
+        </div>
+        <p class="copy-status" id="reflect-status" role="status" aria-live="polite"></p>
+      </div>
+    </section>
     <div class="print-actions no-print">
       <button type="button" class="btn" onclick="window.print()">🖨️ Print this card</button>
       <button type="button" class="btn btn-ghost" id="copy-card-link">🔗 Copy card link</button>
@@ -84,6 +126,82 @@ var url=absUrl();
 if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(function(){flash('Copied ✓');},function(){fallbackCopy(url);});}
 else{fallbackCopy(url);}
 });}
+})();
+</script>
+<script src="../assets/ratings.js"></script>
+<script>
+(function(){'use strict';
+/* Personal rating widget — stars + note + reflection, localStorage only. */
+var R=window.VaultRatings;
+var ACT_ID=(location.pathname.split('/').pop()||'').replace(new RegExp('[.]html$','i'),'');
+if(!R||!/^[a-z0-9-]+$/.test(ACT_ID)){return;}
+var form=document.getElementById('rate-form');
+if(!form){return;}
+var statusEl=document.getElementById('rate-status');
+var reflectBox=document.getElementById('rate-reflect');
+var reflectStatus=document.getElementById('reflect-status');
+var clearBtn=document.getElementById('rate-clear');
+function flash(msg){statusEl.textContent=msg;setTimeout(function(){if(statusEl.textContent===msg){statusEl.textContent='';}},4000);}
+function val(id){var e=document.getElementById(id);return e?e.value.trim():'';}
+function paint(entry){
+  var radios=form.querySelectorAll('input[name="av-rate"]');
+  Array.prototype.forEach.call(radios,function(r){
+    r.checked=!!entry&&parseInt(r.value,10)===entry.stars;
+  });
+  form.querySelector('.stars').setAttribute('data-fill',entry?entry.stars:0);
+  document.getElementById('rate-note').value=entry?entry.note:'';
+  R.REFLECTIONS.forEach(function(q){
+    var inp=document.getElementById('reflect-'+q.id);
+    if(inp){inp.value=entry&&entry.reflections?entry.reflections[q.id]||'':'';}
+  });
+  reflectBox.hidden=!entry;
+  clearBtn.hidden=!entry;
+}
+function currentEntry(){
+  var checked=form.querySelector('input[name="av-rate"]:checked');
+  var prev=R.getRating(ACT_ID);
+  var stars=checked?parseInt(checked.value,10):(prev?prev.stars:null);
+  return{
+    stars:stars,
+    note:document.getElementById('rate-note').value.trim(),
+    reflections:{change:val('reflect-change'),age_band:val('reflect-age_band'),again:val('reflect-again')}
+  };
+}
+function persist(entry,msg){
+  if(!entry.stars){return;}
+  if(R.setRating(ACT_ID,entry)){paint(R.getRating(ACT_ID));flash(msg);}
+  else{flash('Could not save — is private browsing blocking storage?');}
+}
+form.addEventListener('submit',function(ev){
+  ev.preventDefault();
+  var e=currentEntry();
+  if(!e.stars){flash('Pick 1–5 stars first.');return;}
+  persist(e,'Saved — you rated this '+e.stars+' of 5 stars. Your ratings stay in this browser.');
+});
+Array.prototype.forEach.call(form.querySelectorAll('input[name="av-rate"]'),function(r){
+  /* Native radio group: arrow keys move, Enter/Space selects — no custom key handling. */
+  r.addEventListener('change',function(){
+    var e=currentEntry();
+    persist(e,'Saved — '+e.stars+' of 5 stars. Ratings stay in this browser.');
+  });
+});
+document.getElementById('rate-note').addEventListener('change',function(){
+  var e=currentEntry();
+  if(!e.stars&&!R.getRating(ACT_ID)){flash('Pick 1–5 stars first — the note saves with your rating.');return;}
+  persist(e,'Note saved with your '+e.stars+'-star rating.');
+});
+var rt=null;
+reflectBox.addEventListener('input',function(){
+  clearTimeout(rt);
+  rt=setTimeout(function(){
+    var prev=R.getRating(ACT_ID);
+    if(!prev){return;}
+    var e=currentEntry();
+    if(R.setRating(ACT_ID,e)){reflectStatus.textContent='Reflection saved.';setTimeout(function(){reflectStatus.textContent='';},2500);}
+  },600);
+});
+clearBtn.addEventListener('click',function(){R.clearRating(ACT_ID);paint(null);flash('Rating cleared.');});
+paint(R.getRating(ACT_ID));
 })();
 </script>
 </body>
