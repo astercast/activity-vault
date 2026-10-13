@@ -339,7 +339,18 @@ module.exports = async (req, res) => {
 
   let commits = [];
   let committed = false;
-  if (writable) {
+  /* Wave-35 free-tier audit: deadline guard. The GitHub write phase
+     chains reads + PUTs with 8s per-call timeouts; on a slow GitHub
+     day its worst case could pass the function's 10s ceiling and
+     the platform would kill the run mid-commit, leaving the three
+     pipeline files half-updated. If the fetch+filter phases have
+     already burned most of the budget, skip the writes entirely
+     and say so honestly — tomorrow's run re-derives everything
+     from the feeds, so a skipped commit loses nothing. */
+  const WRITE_DEADLINE_MS = 7000;
+  const elapsedMs = Date.now() - Date.parse(runStart);
+  const writeSkipped = writable && elapsedMs > WRITE_DEADLINE_MS;
+  if (writable && !writeSkipped) {
     const msg = 'scout: daily scan ' + runStart.slice(0, 10) + ' (+' + newCandidates.length + ' candidates)';
     const results = await Promise.all([
       github.writeJsonIfChanged('pipeline/seen.json', seen, msg),
@@ -350,8 +361,13 @@ module.exports = async (req, res) => {
     committed = results.some((r) => r.committed);
   }
 
-  const degraded = feedsOk < feeds.length || !writable;
+  const degraded = feedsOk < feeds.length || !writable || writeSkipped;
   const notes = [];
+  if (writeSkipped) {
+    notes.push('Commit skipped on purpose: the fetch and filter phases took ' + elapsedMs +
+      'ms, past the safe write deadline inside the 10s function ceiling — committing now could be ' +
+      'killed mid-write. Nothing was lost: tomorrow\u2019s run re-derives the same candidates.');
+  }
   if (feedsOk < feeds.length) {
     const failed = upstream.filter((u) => !u.ok).map((u) => u.source).join(', ');
     notes.push('Feed fetch failed for: ' + failed + ' — candidates below come only from the feeds that answered.');
