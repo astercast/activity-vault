@@ -20,7 +20,7 @@ function ok(cond, label, extra) {
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const byId = {};
 acts.forEach(a => { byId[a.id] = a; });
-ok(acts.length === 625, '625 activities total', String(acts.length));
+ok(acts.length === 637, '637 activities total', String(acts.length));
 ok(new Set(acts.map(a => a.id)).size === acts.length, 'all ids unique');
 
 const MLK = ['mlk-freedom-quilt-squares', 'civil-rights-timeline-walk',
@@ -37,7 +37,7 @@ NEW.forEach(id => ok(byId[id], 'wave-25 id present: ' + id));
 const tagCount = t => acts.filter(a => (a.tags || []).includes(t)).length;
 ok(tagCount('holiday:mlk-day') === 5, 'mlk-day 1 -> 5', String(tagCount('holiday:mlk-day')));
 ok(tagCount('holiday:indigenous-peoples-day') === 5, 'indigenous-peoples-day 1 -> 5');
-ok(tagCount('holiday:diwali') === 5, 'diwali 2 -> 5');
+ok(tagCount('holiday:diwali') === 6, 'diwali 2 -> 5; wave 32 -> 6');
 ok(tagCount('holiday:st-patricks-day') === 5, 'st-patricks-day 2 -> 5');
 MLK.forEach(id => ok(byId[id].tags.includes('holiday:mlk-day'), id + ': mlk tag'));
 IND.forEach(id => ok(byId[id].tags.includes('holiday:indigenous-peoples-day'), id + ': indigenous tag'));
@@ -87,9 +87,9 @@ NEW.forEach(id => {
 });
 
 // 4. Enrichment deltas from this wave.
-ok(acts.filter(a => a.copy_free).length === 245, 'copy_free 165 -> 173 in wave 25; wave 26 -> 184; wave 27 -> 197; wave 28 -> 209; wave 29 -> 221; wave 30 -> 233; wave 31 -> 245');
-ok(acts.filter(a => a.no_elimination).length === 81, 'no_elimination 43 -> 47 in wave 25; wave 26 -> 51; wave 27 -> 57; wave 28 -> 63; wave 29 -> 70; wave 30 -> 75; wave 31 -> 81');
-ok(acts.filter(a => a.inclusion).length === 107, 'inclusion 51 -> 64 in wave 25; wave 26 -> 69; wave 27 -> 75; wave 28 -> 81; wave 29 -> 87; wave 30 -> 95; wave 31 -> 107');
+ok(acts.filter(a => a.copy_free).length === 257, 'copy_free 165 -> 173 in wave 25; wave 26 -> 184; wave 27 -> 197; wave 28 -> 209; wave 29 -> 221; wave 30 -> 233; wave 31 -> 245; wave 32 -> 257');
+ok(acts.filter(a => a.no_elimination).length === 87, 'no_elimination 43 -> 47 in wave 25; wave 26 -> 51; wave 27 -> 57; wave 28 -> 63; wave 29 -> 70; wave 30 -> 75; wave 31 -> 81; wave 32 -> 87');
+ok(acts.filter(a => a.inclusion).length === 119, 'inclusion 51 -> 64 in wave 25; wave 26 -> 69; wave 27 -> 75; wave 28 -> 81; wave 29 -> 87; wave 30 -> 95; wave 31 -> 107; wave 32 -> 119');
 [13, 14].forEach(age => {
   const n = acts.filter(a => a.age_min <= age && a.age_max >= age).length;
   ok(n === 76, 'age ' + age + ' coverage 70 -> 76', String(n));

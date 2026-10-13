@@ -22,7 +22,7 @@ function ok(cond, label, extra) {
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const byId = {};
 acts.forEach(a => { byId[a.id] = a; });
-ok(acts.length === 625, '625 activities total', String(acts.length));
+ok(acts.length === 637, '637 activities total', String(acts.length));
 ok(new Set(acts.map(a => a.id)).size === acts.length, 'all ids unique');
 
 const AGE3 = ['tape-path-balance-walk', 'pom-pom-drop-tubes', 'sponge-squeeze-station',
@@ -37,9 +37,9 @@ NEW.forEach(id => ok(byId[id], 'wave-26 id present: ' + id));
 
 // 1. The age-3 cliff: coverage 12 -> 22, all of it designed-band.
 const covers = age => acts.filter(a => a.age_min <= age && a.age_max >= age).length;
-ok(covers(3) === 82, 'age 3 coverage 12 -> 22 in wave 26; wave 27 -> 34; wave 28 -> 46; wave 29 -> 58; wave 30 -> 70; wave 31 -> 82', String(covers(3)));
-ok(acts.filter(a => a.age_min === 3).length === 82, '70 activities start at age 3 (58 + 12 wave-30); wave 31 -> 82');
-ok(acts.filter(a => a.age_max <= 6).length === 75, 'early-years-only (age_max<=6) 5 -> 15 in wave 26; wave 27 -> 27; wave 28 -> 39; wave 29 -> 51; wave 30 -> 63; wave 31 -> 75');
+ok(covers(3) === 94, 'age 3 coverage 12 -> 22 in wave 26; wave 27 -> 34; wave 28 -> 46; wave 29 -> 58; wave 30 -> 70; wave 31 -> 82; wave 32 -> 94', String(covers(3)));
+ok(acts.filter(a => a.age_min === 3).length === 94, '94 activities start at age 3 (58 + 12 wave-30); wave 31 -> 82; wave 32 -> 94');
+ok(acts.filter(a => a.age_max <= 6).length === 87, 'early-years-only (age_max<=6) 5 -> 15 in wave 26; wave 27 -> 27; wave 28 -> 39; wave 29 -> 51; wave 30 -> 63; wave 31 -> 75; wave 32 -> 87');
 AGE3.forEach(id => {
   ok(byId[id].age_min === 3, id + ': designed for 3 (age_min 3)');
   ok(byId[id].age_max <= 6, id + ': early-years band (age_max <= 6)');
@@ -99,16 +99,16 @@ ok(/replaces scissors/.test(byId['torn-paper-collage'].safety || ''), 'collage: 
 ok(/wave/.test(byId['hello-ball-greetings'].inclusion || ''), 'hello ball: nonverbal greeting counts');
 
 // 5. Category + enrichment deltas from this wave.
-ok(acts.filter(a => a.categories[0] === 'music-rhythm').length === 32, 'music-rhythm primary 26 -> 27 in wave 26; wave 27 -> 28; wave 28 -> 29; wave 29 -> 30; wave 30 -> 31; wave 31 -> 32');
-ok(acts.filter(a => a.categories.includes('rainy-day')).length === 62, 'rainy-day any-category 50 -> 53 in wave 26; wave 27 -> 55; wave 28 -> 57; wave 29 -> 58; wave 30 -> 60; wave 31 -> 62');
-ok(acts.filter(a => a.copy_free).length === 245, 'copy_free 173 -> 184 in wave 26; wave 27 -> 197; wave 28 -> 209; wave 29 -> 221; wave 30 -> 233; wave 31 -> 245');
-ok(acts.filter(a => a.no_elimination).length === 81, 'no_elimination 47 -> 51 in wave 26; wave 27 -> 57; wave 28 -> 63; wave 29 -> 70; wave 30 -> 75; wave 31 -> 81');
-ok(acts.filter(a => a.inclusion).length === 107, 'inclusion 64 -> 69 in wave 26; wave 27 -> 75; wave 28 -> 81; wave 29 -> 87; wave 30 -> 95; wave 31 -> 107');
+ok(acts.filter(a => a.categories[0] === 'music-rhythm').length === 33, 'music-rhythm primary 26 -> 27 in wave 26; wave 27 -> 28; wave 28 -> 29; wave 29 -> 30; wave 30 -> 31; wave 31 -> 32; wave 32 -> 33');
+ok(acts.filter(a => a.categories.includes('rainy-day')).length === 64, 'rainy-day any-category 50 -> 53 in wave 26; wave 27 -> 55; wave 28 -> 57; wave 29 -> 58; wave 30 -> 60; wave 31 -> 62; wave 32 -> 64');
+ok(acts.filter(a => a.copy_free).length === 257, 'copy_free 173 -> 184 in wave 26; wave 27 -> 197; wave 28 -> 209; wave 29 -> 221; wave 30 -> 233; wave 31 -> 245; wave 32 -> 257');
+ok(acts.filter(a => a.no_elimination).length === 87, 'no_elimination 47 -> 51 in wave 26; wave 27 -> 57; wave 28 -> 63; wave 29 -> 70; wave 30 -> 75; wave 31 -> 81; wave 32 -> 87');
+ok(acts.filter(a => a.inclusion).length === 119, 'inclusion 64 -> 69 in wave 26; wave 27 -> 75; wave 28 -> 81; wave 29 -> 87; wave 30 -> 95; wave 31 -> 107; wave 32 -> 119');
 [13, 14].forEach(age => ok(covers(age) === 76, 'age ' + age + ' coverage unchanged at 76', String(covers(age))));
 
 // 6. The 16th collection: Little Hands, First Years.
 const colls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/collections.json'), 'utf8')).collections;
-ok(colls.length === 21, '21 collections', String(colls.length));
+ok(colls.length === 22, '22 collections', String(colls.length));
 const lh = colls.find(c => c.id === 'little-hands-first-years');
 ok(!!lh, 'little-hands-first-years collection present');
 ok(lh.picks.length === 12, 'collection has 12 picks');

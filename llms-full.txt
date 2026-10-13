@@ -5,17 +5,17 @@ Hundreds of real, classic, public-domain activity concepts — filterable by age
 group size, materials, and category. Plan-my-week planner. Printable one-page cards.
 
 ## Categories
-- Seasons: 109 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
-- Holidays: 119 activities — Festive projects and games for the days the whole group looks forward to.
-- Crafts: 156 activities — Hands-on making: fold it, paint it, build it, take it home.
-- STEM: 150 activities — Experiments, engineering challenges, and satisfying science demos.
-- PE & Movement: 114 activities — Run, jump, dance — activities that burn off the wiggles.
-- Team & Community: 142 activities — Turn a group into a crew: cooperation, trust, and belonging.
-- Icebreakers: 66 activities — First-day friendly: learn names, laugh, and loosen up fast.
-- Outdoor: 106 activities — Fresh-air activities for fields, playgrounds, and nature walks.
-- Rainy Day: 62 activities — Stuck inside? These keep a roomful of kids happy without a gym.
-- Quiet & Focus: 130 activities — Wind-down worthy: calm, creative, individual or small-group.
-- Music & Rhythm: 38 activities — Drums, shakers, rhythm games, and songs — make some noise.
+- Seasons: 110 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
+- Holidays: 120 activities — Festive projects and games for the days the whole group looks forward to.
+- Crafts: 157 activities — Hands-on making: fold it, paint it, build it, take it home.
+- STEM: 151 activities — Experiments, engineering challenges, and satisfying science demos.
+- PE & Movement: 115 activities — Run, jump, dance — activities that burn off the wiggles.
+- Team & Community: 143 activities — Turn a group into a crew: cooperation, trust, and belonging.
+- Icebreakers: 67 activities — First-day friendly: learn names, laugh, and loosen up fast.
+- Outdoor: 107 activities — Fresh-air activities for fields, playgrounds, and nature walks.
+- Rainy Day: 64 activities — Stuck inside? These keep a roomful of kids happy without a gym.
+- Quiet & Focus: 131 activities — Wind-down worthy: calm, creative, individual or small-group.
+- Music & Rhythm: 39 activities — Drums, shakers, rhythm games, and songs — make some noise.
 
 ## API — start at data/v1/index.json (self-describing manifest)
 - data/v1/index.json — api manifest
@@ -86,7 +86,7 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
   each day with a run-of-show timeline, a printable session plan sheet, per-slot
   swap, one aggregated material checklist (have vs. gather), copy-as-text, and
   shareable ?kit= links that restore the exact kit on any device.
-- collections.html — Curated collections: 21 teacher-ready bundles (rainy-day
+- collections.html — Curated collections: 22 teacher-ready bundles (rainy-day
   rescue, first day, sub tub, winter party, spring burst, summer splash, haunted halls, grateful gathering, winter lights…)
   each with a curator's note per pick; printable and copy-able per collection.
 - api.html — API docs with a Try-the-API console (endpoint picker, fetch, pretty JSON).
@@ -131,6 +131,11 @@ Page: activity/acorn-cap-witches.html
 Twenty-five sealed envelopes, each hiding one small kindness to do that day.
 Categories: Quiet & Focus, Team & Community | Ages 5-12 | Group 2-30 | 20-30 min | Prep needed | indoor
 Page: activity/advent-kindness-envelopes.html
+
+### After-Rain Worm Count
+After rain, the worms come up onto the path: the group counts them where they lie, steps carefully round them, and touches not one.
+Categories: Outdoor | Ages 3-3 | Group 2-12 | 10-20 min | No prep | outdoor
+Page: activity/after-rain-worm-count.html
 
 ### All Aboard Raft
 The whole team on the tarp. Then fold it in half.
@@ -257,6 +262,11 @@ Three 60-second movement bursts against the timer.
 Categories: PE & Movement | Ages 5-14 | Group 2-60 | 5-8 min | No prep | indoor/outdoor
 Page: activity/beat-the-bell-burst.html
 
+### Big Ball Kick to the Wall
+One big light ball, one kicker at a time, one wall: walk up, plant your feet, swing your leg — and the wall stops it and sends the next turn back.
+Categories: PE & Movement | Ages 3-3 | Group 3-12 | 10-15 min | Prep needed | indoor/outdoor
+Page: activity/big-ball-kick-to-wall.html
+
 ### Big Brush Painting
 Huge paper, huge brushes, huge arm movements — painting at full body scale.
 Categories: Crafts | Ages 3-5 | Group 1-12 | 10-20 min | Prep needed | indoor/outdoor
@@ -297,6 +307,21 @@ One big empty pot, one long spoon passed hand to hand: everyone adds one pretend
 Categories: Rainy Day | Ages 3-3 | Group 4-14 | 10-20 min | No prep | indoor
 Page: activity/big-pot-stir-together.html
 
+### Big Shadow Grow and Shrink
+One big cardboard shape, one lamp, one wall: move the shape nearer the light and its shadow grows — the group directs, the shadow obeys.
+Categories: STEM | Ages 3-3 | Group 3-12 | 10-15 min | Prep needed | indoor
+Page: activity/big-shadow-grow-shrink.html
+
+### Big Sponge Stamp Mural
+Chunky sponge shapes dipped in paint and pressed straight down on one long shared sheet: print, lift, look — a mural built one honest print at a time.
+Categories: Crafts | Ages 3-3 | Group 4-14 | 15-20 min | Prep needed | indoor/outdoor
+Page: activity/big-sponge-stamp-mural.html
+
+### Big Tape Roads Car Town
+Painter's tape roads laid straight across the floor, and big chunky cars to drive them: the town is built first, then driven, stop by stop.
+Categories: Rainy Day | Ages 3-3 | Group 3-12 | 15-20 min | Prep needed | indoor
+Page: activity/big-tape-roads-car-town.html
+
 ### Big Tongs Ice Move
 Big serving tongs, big ice cubes, one tray to another: grip one, carry it, drop it in, count it. Cold hands, careful work.
 Categories: STEM | Ages 3-6 | Group 2-10 | 15-25 min | Prep needed | indoor/outdoor
@@ -306,6 +331,11 @@ Page: activity/big-tongs-ice-move.html
 One big tree, arms around it or palms flat on the bark, and a whole quiet minute of listening to what a tree's place sounds like.
 Categories: Outdoor | Ages 3-3 | Group 2-12 | 10-15 min | No prep | outdoor
 Page: activity/big-tree-hug-listen.html
+
+### Big Zip Up-and-Down Board
+One chunky zip on a sturdy board: grip the big pull, slide it up slow, slide it down slow — a coat's hardest job, practised where no coat is waiting.
+Categories: Quiet & Focus | Ages 3-3 | Group 1-6 | 10-20 min | Prep needed | indoor
+Page: activity/big-zip-up-down-board.html
 
 ### Big-Feeling Scream Art
 Borrow the wavy style of a famous painting to draw your own big feeling.
@@ -942,6 +972,11 @@ Paper boats race across a tub — powered by nothing but fanned air.
 Categories: STEM, Rainy Day, Seasons | Ages 5-12 | Group 2-30 | 25-45 min | Prep needed | indoor
 Page: activity/fan-boat-races.html
 
+### Feel the Beat: Heart Tap
+March in place until your heart goes fast, hand flat on your chest to feel it — then tap that beat on your knees, and tap it again slower after the rest.
+Categories: Music & Rhythm | Ages 3-3 | Group 4-14 | 10-15 min | No prep | indoor
+Page: activity/feel-the-beat-heart-tap.html
+
 ### Feel the Hum
 Hand on throat, hum high, hum low — feel the buzz change.
 Categories: STEM, Music & Rhythm | Ages 4-12 | Group 2-60 | 5-8 min | No prep | indoor
@@ -1006,6 +1041,11 @@ Page: activity/flower-part-dissect.html
 Tag with foam pool noodles — everyone is armed, nobody gets hurt.
 Categories: Outdoor, PE & Movement, Seasons | Ages 5-12 | Group 6-30 | 15-25 min | Prep needed | outdoor
 Page: activity/foam-noodle-tag.html
+
+### Fog Window Finger Drawing
+The grown-up mists the window until it fogs, and one finger draws a sun, a face, a wobbly house — then the fog fades and takes every mark with it.
+Categories: Rainy Day | Ages 3-3 | Group 2-10 | 10-15 min | No prep | indoor
+Page: activity/fog-window-finger-drawing.html
 
 ### Fold-and-Open Symmetry Hearts
 Fold, draw half a heart on the fold, cut, open — the fold did the matching. Symmetry you can hold up to the light.
@@ -2032,6 +2072,11 @@ Fold a paper diya, add a battery tealight, and line the windowsill with light �
 Categories: Crafts, Holidays | Ages 5-12 | Group 2-30 | 20-35 min | Prep needed | indoor
 Page: activity/paper-diya-lanterns.html
 
+### Paper Diya Welcome Row
+Big paper diya lamps carried in two hands and set along a floor path, each one lit as it lands — a welcome written in light, one lamp at a time.
+Categories: Holidays | Ages 3-3 | Group 4-16 | 10-20 min | Prep needed | indoor
+Page: activity/paper-diya-welcome-row.html
+
 ### Paper Gingerbread Houses
 Design and decorate paper gingerbread houses with zero baking — all the decorating joy, none of the crumbs.
 Categories: Holidays, Crafts | Ages 5-12 | Group 1-25 | 45-45 min | Prep needed | indoor
@@ -2377,6 +2422,11 @@ Smooth stones become ladybugs, monsters, and messages — then hide them around 
 Categories: Crafts, Outdoor | Ages 5-12 | Group 2-30 | 25-60 min | Prep needed | outdoor/indoor
 Page: activity/rock-painting.html
 
+### Roll It Bigger Snowball
+One small snowball, rolled along the snow by many mittens: it picks up snow as it goes and grows — everybody can feel it getting heavier.
+Categories: Seasons | Ages 3-3 | Group 2-12 | 10-20 min | No prep | outdoor
+Page: activity/roll-it-bigger-snowball.html
+
 ### Roll-a-Monster Dice Draw
 Roll the dice, draw the parts: every monster comes out gloriously different.
 Categories: Crafts, Rainy Day | Ages 5-12 | Group 2-30 | 15-25 min | Prep needed | indoor
@@ -2506,6 +2556,11 @@ Page: activity/shamrock-shapes-hunt.html
 Sixty seconds of rapid-fire shout-outs — teacher scribes them all.
 Categories: Team & Community | Ages 5-14 | Group 4-60 | 5-8 min | No prep | indoor
 Page: activity/shout-out-sixty.html
+
+### Show Me Three Fingers
+Everybody in this room is three — so everybody learns the hard, proud trick of holding up three fingers, and the whole circle copies yours.
+Categories: Icebreakers | Ages 3-3 | Group 4-18 | 10-15 min | No prep | indoor
+Page: activity/show-me-three-fingers.html
 
 ### Show Me Your Move
 One kid shows one move — a stomp, a wiggle, a face — and the whole circle does it back. That is the entire game.
@@ -2686,6 +2741,11 @@ Page: activity/sponge-bucket-relay.html
 Soaked sponges fly at chalk targets — points for the bullseye, splash for style.
 Categories: Outdoor, PE & Movement, Seasons | Ages 5-12 | Group 4-30 | 15-30 min | Prep needed | outdoor
 Page: activity/sponge-launch-bullseye.html
+
+### Sponge Pass: Fill the Pot
+One soaked sponge passed hand to hand down the whole line, and a squeeze over the pot at the end: the line's job is measured in what arrives still wet.
+Categories: Team & Community | Ages 3-3 | Group 5-14 | 10-20 min | Prep needed | indoor/outdoor
+Page: activity/sponge-pass-fill-the-pot.html
 
 ### Sponge Squeeze Station
 Two tubs, one sponge, and a fill line to reach — moving water one squeeze at a time is the whole job, and it's enough.

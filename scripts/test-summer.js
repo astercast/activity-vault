@@ -15,7 +15,7 @@ function ok(cond, label, extra) {
 
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const actIds = new Set(acts.map(a => a.id));
-ok(acts.length === 625, '625 activities total', String(acts.length));
+ok(acts.length === 637, '637 activities total', String(acts.length));
 ok(actIds.size === acts.length, 'all activity ids unique');
 
 // 1. New tags in the validator vocabulary (single source of truth: build.py)
@@ -63,8 +63,8 @@ for (const id of ['ice-cube-painting', 'water-relay', 'chalk-art', 'water-cycle-
 
 // 4. Collections: 10 total, summer-splash valid
 const colls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/collections.json'), 'utf8')).collections;
-ok(colls.length === 21, '21 collections', String(colls.length));
-ok(new Set(colls.map(c => c.id)).size === 21, 'collection ids unique');
+ok(colls.length === 22, '22 collections', String(colls.length));
+ok(new Set(colls.map(c => c.id)).size === 22, 'collection ids unique');
 const splash = colls.find(c => c.id === 'summer-splash');
 ok(!!splash, 'summer-splash exists');
 ok(splash.picks.length >= 8 && splash.picks.length <= 12, 'summer-splash 8-12 picks', String(splash.picks.length));
@@ -127,13 +127,13 @@ const tagOpts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/filters.json
 for (const t of ['season:summer', 'holiday:july-4th'])
   ok(tagOpts.includes(t), 'filters.json has ' + t);
 const apiColls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/collections.json'), 'utf8'));
-ok(apiColls.count === 21 && apiColls.collections.length === 21, 'api collections.json count 21');
+ok(apiColls.count === 22 && apiColls.collections.length === 22, 'api collections.json count 22');
 ok(apiColls.collections.some(c => c.id === 'summer-splash'), 'api has summer-splash');
 const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/index.json'), 'utf8'));
 const collEp = manifest.endpoints.find(e => e.path === 'data/v1/collections.json');
-ok(collEp && collEp.records === 21, 'manifest collections records=21');
+ok(collEp && collEp.records === 22, 'manifest collections records=22');
 const actEp = manifest.endpoints.find(e => e.path === 'data/v1/activities.json');
-ok(actEp && actEp.records === 625, 'manifest activities records=625', String(actEp && actEp.records));
+ok(actEp && actEp.records === 637, 'manifest activities records=637', String(actEp && actEp.records));
 // schema tag enum carries the new tags
 const schema = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/schema/activity.schema.json'), 'utf8'));
 const enumSrc = JSON.stringify(schema);
