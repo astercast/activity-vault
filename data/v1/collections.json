@@ -1226,8 +1226,73 @@
     25
    ],
    "page": "collections.html#little-hands-fourth-shelf"
+  },
+  {
+   "id": "little-hands-just-three",
+   "title": "Little Hands, Just Three",
+   "glyph": "🎈",
+   "when_to_use": "The different shelf for the youngest kids in the building: twelve activities banded for three-year-olds ONLY — one shake of one tambourine, a raindrop followed down the glass, lids that fit their pots, a teddy carried to bed without waking him. The four shelves beside this one serve three-to-six; these twelve belong to the threes alone. Grab it for a young-threes room, a first month of program, or any group whose oldest kid just turned three.",
+   "picks": [
+    {
+     "activity_id": "felt-tree-one-by-one",
+     "curator_note": "One piece, one palm-press, one count. The tree fills at exactly the speed a three-year-old decorates, and taking it down counts backwards."
+    },
+    {
+     "activity_id": "sun-patch-shade-patch",
+     "curator_note": "Warm on this hand, cool on that one, a minute apart. The comparison IS the science, and it only works at a stand-still pace."
+    },
+    {
+     "activity_id": "rain-call-to-the-rug",
+     "curator_note": "Umbrella up means get dry — walked, never run. The weather-worker with the shaker holds the most powerful job in the room."
+    },
+    {
+     "activity_id": "window-raindrop-follow",
+     "curator_note": "Your drop merging into a bigger one is not losing it — it is what rain does, reported like news. Needs a real rainy day; refuse to fake it."
+    },
+    {
+     "activity_id": "big-magnet-wand-sticks",
+     "curator_note": "'It sticks! It doesn't.' Those two sentences are the data, and the trays are the graph. Encased wands only — the record says why."
+    },
+    {
+     "activity_id": "blanket-carry-teddy-to-bed",
+     "curator_note": "Four corners, one passenger, walking feet. The hush-crew's whisper-report at the bed — 'He's asleep' — is the teamwork certificate."
+    },
+    {
+     "activity_id": "name-echo-two-claps",
+     "curator_note": "Five minutes, no materials, a room that knows itself. A whispered name gets the same echo and the same two claps as a shouted one."
+    },
+    {
+     "activity_id": "dandelion-clock-blow-walk",
+     "curator_note": "Count the puffs, read the pretend time. Seven o'clock belongs to the blower, and the seeds trying to grow is the true part."
+    },
+    {
+     "activity_id": "one-shake-pass-around",
+     "curator_note": "The music is the waiting as much as the shake. One instrument, whole circle, and a tambourine put to sleep properly at the end."
+    },
+    {
+     "activity_id": "sticky-window-big-shapes",
+     "curator_note": "It sticks and it un-sticks, so nothing can be put in the wrong place. Leave it up all day — moving the picture IS the craft."
+    },
+    {
+     "activity_id": "grass-hill-roll-down",
+     "curator_note": "The hug is the seatbelt and the flag-caller runs the hill. Check the slope with your own body before any kid rolls it."
+    },
+    {
+     "activity_id": "big-lid-match-basket",
+     "curator_note": "A wobble is information, not failure — and finding the trick lid that fits nothing is the result the whole table celebrates."
+    }
+   ],
+   "age_span": [
+    3,
+    3
+   ],
+   "time_span": [
+    5,
+    20
+   ],
+   "page": "collections.html#little-hands-just-three"
   }
  ],
- "count": 19,
+ "count": 20,
  "updated": "2026-10-13"
 }

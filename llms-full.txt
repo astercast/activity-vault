@@ -5,17 +5,17 @@ Hundreds of real, classic, public-domain activity concepts — filterable by age
 group size, materials, and category. Plan-my-week planner. Printable one-page cards.
 
 ## Categories
-- Seasons: 106 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
-- Holidays: 117 activities — Festive projects and games for the days the whole group looks forward to.
-- Crafts: 154 activities — Hands-on making: fold it, paint it, build it, take it home.
-- STEM: 148 activities — Experiments, engineering challenges, and satisfying science demos.
-- PE & Movement: 111 activities — Run, jump, dance — activities that burn off the wiggles.
-- Team & Community: 140 activities — Turn a group into a crew: cooperation, trust, and belonging.
-- Icebreakers: 64 activities — First-day friendly: learn names, laugh, and loosen up fast.
-- Outdoor: 102 activities — Fresh-air activities for fields, playgrounds, and nature walks.
-- Rainy Day: 58 activities — Stuck inside? These keep a roomful of kids happy without a gym.
-- Quiet & Focus: 127 activities — Wind-down worthy: calm, creative, individual or small-group.
-- Music & Rhythm: 35 activities — Drums, shakers, rhythm games, and songs — make some noise.
+- Seasons: 108 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
+- Holidays: 118 activities — Festive projects and games for the days the whole group looks forward to.
+- Crafts: 155 activities — Hands-on making: fold it, paint it, build it, take it home.
+- STEM: 149 activities — Experiments, engineering challenges, and satisfying science demos.
+- PE & Movement: 113 activities — Run, jump, dance — activities that burn off the wiggles.
+- Team & Community: 141 activities — Turn a group into a crew: cooperation, trust, and belonging.
+- Icebreakers: 65 activities — First-day friendly: learn names, laugh, and loosen up fast.
+- Outdoor: 105 activities — Fresh-air activities for fields, playgrounds, and nature walks.
+- Rainy Day: 60 activities — Stuck inside? These keep a roomful of kids happy without a gym.
+- Quiet & Focus: 129 activities — Wind-down worthy: calm, creative, individual or small-group.
+- Music & Rhythm: 36 activities — Drums, shakers, rhythm games, and songs — make some noise.
 
 ## API — start at data/v1/index.json (self-describing manifest)
 - data/v1/index.json — api manifest
@@ -86,7 +86,7 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
   each day with a run-of-show timeline, a printable session plan sheet, per-slot
   swap, one aggregated material checklist (have vs. gather), copy-as-text, and
   shareable ?kit= links that restore the exact kit on any device.
-- collections.html — Curated collections: 19 teacher-ready bundles (rainy-day
+- collections.html — Curated collections: 20 teacher-ready bundles (rainy-day
   rescue, first day, sub tub, winter party, spring burst, summer splash, haunted halls, grateful gathering, winter lights…)
   each with a curator's note per pick; printable and copy-able per collection.
 - api.html — API docs with a Try-the-API console (endpoint picker, fetch, pretty JSON).
@@ -272,6 +272,16 @@ The old Easter egg roll, sized for three: one big egg, one gentle grass slope, r
 Categories: Holidays, Outdoor | Ages 3-6 | Group 2-16 | 15-25 min | Prep needed | outdoor
 Page: activity/big-egg-roll-slope.html
 
+### Big Lid Match Basket
+A basket of big lids and the pots they belong to: try a lid, feel if it fits, twist or press — a covered pot is a finished job.
+Categories: Quiet & Focus | Ages 3-3 | Group 2-8 | 10-20 min | Prep needed | indoor
+Page: activity/big-lid-match-basket.html
+
+### Big Magnet Wand: It Sticks
+One big magnet wand and a tray of big things: touch each one and find out — it sticks, or it doesn't. Your hand is the lab.
+Categories: STEM | Ages 3-3 | Group 2-10 | 10-20 min | Prep needed | indoor
+Page: activity/big-magnet-wand-sticks.html
+
 ### Big Tongs Ice Move
 Big serving tongs, big ice cubes, one tray to another: grip one, carry it, drop it in, count it. Cold hands, careful work.
 Categories: STEM | Ages 3-6 | Group 2-10 | 15-25 min | Prep needed | indoor/outdoor
@@ -301,6 +311,11 @@ Page: activity/birthday-lineup.html
 Everyone holds the edge of one blanket, one soft ball rolls in the middle, and the whole group's job is the same: keep it on, keep it low.
 Categories: Team & Community | Ages 3-5 | Group 6-16 | 10-20 min | No prep | indoor/outdoor
 Page: activity/blanket-ball-bounce-together.html
+
+### Blanket Carry: Teddy to Bed
+Two carriers, one small blanket held low, and a big teddy who is very nearly asleep: walk him to his bed without waking him.
+Categories: Team & Community | Ages 3-3 | Group 4-12 | 10-20 min | Prep needed | indoor
+Page: activity/blanket-carry-teddy-to-bed.html
 
 ### Blanket Fort Book Nook
 An adult-built blanket fort, a small pile of picture books, and room inside for three readers at a time.
@@ -742,6 +757,11 @@ Make dried cranberries bounce and bob in a fizzy cup.
 Categories: STEM, Seasons, Quiet & Focus | Ages 5-10 | Group 1-24 | 15-25 min | Prep needed | indoor
 Page: activity/dancing-cranberries.html
 
+### Dandelion Clock Blow Walk
+A slow walk to find a ripe dandelion clock: hold it low, blow, and count your puffs while the seeds float away like tiny parachutes.
+Categories: Outdoor, Seasons | Ages 3-3 | Group 2-12 | 10-20 min | No prep | outdoor
+Page: activity/dandelion-clock-blow-walk.html
+
 ### Decorate-a-Witch-Hat
 Plain black hats in, runway-ready witch hats out - the costume station classic.
 Categories: Crafts, Holidays | Ages 4-12 | Group 2-30 | 20-35 min | Prep needed | indoor
@@ -911,6 +931,11 @@ Page: activity/sound-vibration-hum.html
 Draw the feeling on the pumpkin, name it out loud — a feelings check-in disguised as a fall craft.
 Categories: Crafts, Quiet & Focus | Ages 3-8 | Group 2-25 | 15-25 min | Prep needed | indoor
 Page: activity/feelings-pumpkin-faces.html
+
+### Felt Tree, One by One
+A big felt tree low on the wall and big soft pieces to press onto it, one kid, one piece, one at a time — a first tree to decorate.
+Categories: Holidays | Ages 3-3 | Group 4-16 | 10-20 min | Prep needed | indoor
+Page: activity/felt-tree-one-by-one.html
 
 ### Find a Friend Wearing
 The grown-up holds up one big colour card. Somewhere in the circle, somebody is wearing that colour — go and stand with them, and wave.
@@ -1111,6 +1136,11 @@ Page: activity/glow-stick-ring-toss.html
 Same glow sticks, three cups of water - temperature changes the light.
 Categories: STEM, Rainy Day | Ages 7-14 | Group 2-30 | 15-25 min | Prep needed | indoor
 Page: activity/glow-stick-temperature-lab.html
+
+### Grass Hill Roll Down
+A gentle grass slope, arms hugged tight, and the oldest ride there is: lie down sideways at the top and roll, all the way to the bottom.
+Categories: PE & Movement, Outdoor | Ages 3-3 | Group 2-12 | 10-20 min | Prep needed | outdoor
+Page: activity/grass-hill-roll-down.html
 
 ### Gratitude All Year
 A gratitude practice for everyone — no holiday required.
@@ -1782,6 +1812,11 @@ Duck-duck-goose where you tap heads saying names — say the group's name and th
 Categories: Icebreakers, PE & Movement | Ages 5-10 | Group 8-25 | 20-20 min | No prep | indoor/outdoor
 Page: activity/name-chase.html
 
+### Name Echo, Two Claps
+Say your name. The whole circle says it right back, just like you said it — then two claps, together, like a small drum answering.
+Categories: Icebreakers | Ages 3-3 | Group 6-20 | 5-10 min | No prep | indoor/outdoor
+Page: activity/name-echo-two-claps.html
+
 ### Name Memory Chain
 Repeat every name-and-favorite before adding your own — the chain grows until the whole circle is laughing.
 Categories: Icebreakers | Ages 5-12 | Group 5-30 | 15-15 min | No prep | indoor
@@ -1856,6 +1891,11 @@ Page: activity/northern-lights-pastels.html
 Build a small class ofrenda and share happy memories of people we miss.
 Categories: Team & Community, Holidays | Ages 7-12 | Group 4-30 | 30-45 min | Prep needed | indoor
 Page: activity/ofrenda-memory-circle.html
+
+### One Shake, Pass It Around
+One tambourine for the whole circle. When it reaches you: one shake — a real one — then pass it on. The music is taking turns.
+Categories: Music & Rhythm | Ages 3-3 | Group 4-16 | 10-15 min | No prep | indoor/outdoor
+Page: activity/one-shake-pass-around.html
 
 ### One-Word Story Chain
 Build a story one sentence per person around the circle — plot twists mandatory, logic optional.
@@ -2181,6 +2221,11 @@ Page: activity/pumpkin-seed-sprout-baggies.html
 A jack-o'-lantern that erupts: baking soda, vinegar, and dish soap, straight out of the grin.
 Categories: STEM, Seasons, Holidays | Ages 5-12 | Group 2-30 | 20-30 min | Prep needed | indoor/outdoor
 Page: activity/pumpkin-volcano-fizz.html
+
+### Rain Call: To the Rug
+The grown-up raises an umbrella and shakes the rain sound — rain! Everyone walks to the rug and crouches down dry until the sun comes back.
+Categories: Rainy Day, PE & Movement | Ages 3-3 | Group 6-16 | 10-20 min | Prep needed | indoor
+Page: activity/rain-call-to-the-rug.html
 
 ### Rain Gauge Challenge
 Build a rain gauge, predict the week, check the sky's score.
@@ -2637,6 +2682,11 @@ Five minutes, found sticks, three shapes — go.
 Categories: Outdoor, STEM | Ages 5-12 | Group 4-30 | 5-10 min | No prep | outdoor
 Page: activity/stick-shape-sprint.html
 
+### Sticky Window Big Shapes
+Clear sticky film on a low window, sticky side out, and big shapes to press on with a whole palm — a picture you can move all day.
+Categories: Crafts | Ages 3-3 | Group 2-14 | 10-20 min | Prep needed | indoor
+Page: activity/sticky-window-big-shapes.html
+
 ### Stocking Holder Build
 Engineer a hook that hangs a full stocking off a table edge without tipping.
 Categories: STEM, Holidays, Seasons | Ages 7-12 | Group 1-20 | 30-45 min | Prep needed | indoor
@@ -2686,6 +2736,11 @@ Page: activity/suet-cage-winter-feeder.html
 Bright icing, bold patterns — decorate calaveras de azucar the traditional way.
 Categories: Crafts | Ages 7-12 | Group 2-24 | 30-50 min | Prep needed | indoor
 Page: activity/sugar-skull-decorating.html
+
+### Sun Patch, Shade Patch
+A sunny patch and a shady patch side by side, and one job: stand in each one and feel the difference on your own hands.
+Categories: Seasons, Outdoor | Ages 3-3 | Group 2-14 | 10-15 min | No prep | outdoor
+Page: activity/sun-patch-shade-patch.html
 
 ### Sun Print Art
 The sun does the painting — you just pick the shapes.
@@ -2991,6 +3046,11 @@ Page: activity/wide-plank-bridge-crossing.html
 Ribbons tied along a fence by a grown-up, and one job: watch them, point when a gust comes, and say which way the wind is pushing.
 Categories: Seasons, Outdoor | Ages 3-6 | Group 2-16 | 10-20 min | Prep needed | outdoor
 Page: activity/wind-ribbon-watch.html
+
+### Window Raindrop Follow
+Real rain on a real window: pick one drop at the top, put your finger beside it on the glass, and follow it all the way down.
+Categories: Rainy Day, Quiet & Focus | Ages 3-3 | Group 2-12 | 10-15 min | Prep needed | indoor
+Page: activity/window-raindrop-follow.html
 
 ### Window Weather Sketch
 Five minutes, one window, the whole sky.
