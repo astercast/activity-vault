@@ -1161,8 +1161,73 @@
     25
    ],
    "page": "collections.html#little-hands-third-shelf"
+  },
+  {
+   "id": "little-hands-fourth-shelf",
+   "title": "Little Hands, Fourth Shelf",
+   "glyph": "🪁",
+   "when_to_use": "The fourth shelf for the youngest kids in the building: twelve more activities designed for three-year-olds first — a lantern carried with two hands, eight lights counted as they go on, paper puddles you are supposed to step in, and the carrying, pouring, rocking and delivering jobs a three-year-old day actually runs on. Grab it when the first three shelves have been through the rotation and the little-kid group is still yours next month.",
+   "picks": [
+    {
+     "activity_id": "lantern-carry-parade",
+     "curator_note": "Two hands on the handle, walking feet, lantern stays up. The row of lights on the rug at the end was carried there by them."
+    },
+    {
+     "activity_id": "eight-lights-line-up",
+     "curator_note": "Place one, switch it on, count from one together. Recounting every time is not slow — it is the practice."
+    },
+    {
+     "activity_id": "wind-ribbon-watch",
+     "curator_note": "Pointing is the participation. The kid who calls 'still!' has to convince the whole group — then a gust ruins it, correctly."
+    },
+    {
+     "activity_id": "boot-print-snow-trail",
+     "curator_note": "Walk out, turn around: a line of prints where there was nothing. The snow keeps the record; nothing gets written down."
+    },
+    {
+     "activity_id": "paper-puddle-stepping",
+     "curator_note": "Step IN every puddle, both feet, every time. Standing in a puddle you are allowed to stand in is the whole game."
+    },
+    {
+     "activity_id": "big-tongs-ice-move",
+     "curator_note": "One cube at a time, tongs only. The last cubes are the slipperiest, and by then the group knows why — melting."
+    },
+    {
+     "activity_id": "pan-balance-heavy-light",
+     "curator_note": "'The stone went down. The stone is heavier.' That sentence, said together, is a science report at three."
+    },
+    {
+     "activity_id": "toy-wagon-pull-together",
+     "curator_note": "The wagon only goes when both pullers are holding on. Count the cargo in, count it out — they must match."
+    },
+    {
+     "activity_id": "teddy-says-my-name",
+     "curator_note": "The toy does the talking, so shy voices get a brave front. A whisper relayed by the adult counts in full."
+    },
+    {
+     "activity_id": "find-a-friend-wearing",
+     "curator_note": "Find a friend wearing the colour and stand WITH them — nobody is out, and the finding job is the bigger one."
+    },
+    {
+     "activity_id": "watering-can-plant-round",
+     "curator_note": "Half full, two hands, water on the soil. The soil-checker reports 'wet now' — a real job, really done."
+    },
+    {
+     "activity_id": "lullaby-rock-and-sway",
+     "curator_note": "The humming makes the rocking smaller, and nobody had to be told. End on stillness, held for a count of five."
+    }
+   ],
+   "age_span": [
+    3,
+    6
+   ],
+   "time_span": [
+    10,
+    25
+   ],
+   "page": "collections.html#little-hands-fourth-shelf"
   }
  ],
- "count": 18,
+ "count": 19,
  "updated": "2026-10-13"
 }

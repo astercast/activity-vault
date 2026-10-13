@@ -999,6 +999,62 @@
      "note": "Land like a cat and hold for the count of three. Stepping across counts — the skill is stopping on purpose."
     }
    ]
+  },
+  {
+   "id": "little-hands-fourth-shelf",
+   "title": "Little Hands, Fourth Shelf",
+   "glyph": "🪁",
+   "when_to_use": "The fourth shelf for the youngest kids in the building: twelve more activities designed for three-year-olds first — a lantern carried with two hands, eight lights counted as they go on, paper puddles you are supposed to step in, and the carrying, pouring, rocking and delivering jobs a three-year-old day actually runs on. Grab it when the first three shelves have been through the rotation and the little-kid group is still yours next month.",
+   "picks": [
+    {
+     "id": "lantern-carry-parade",
+     "note": "Two hands on the handle, walking feet, lantern stays up. The row of lights on the rug at the end was carried there by them."
+    },
+    {
+     "id": "eight-lights-line-up",
+     "note": "Place one, switch it on, count from one together. Recounting every time is not slow — it is the practice."
+    },
+    {
+     "id": "wind-ribbon-watch",
+     "note": "Pointing is the participation. The kid who calls 'still!' has to convince the whole group — then a gust ruins it, correctly."
+    },
+    {
+     "id": "boot-print-snow-trail",
+     "note": "Walk out, turn around: a line of prints where there was nothing. The snow keeps the record; nothing gets written down."
+    },
+    {
+     "id": "paper-puddle-stepping",
+     "note": "Step IN every puddle, both feet, every time. Standing in a puddle you are allowed to stand in is the whole game."
+    },
+    {
+     "id": "big-tongs-ice-move",
+     "note": "One cube at a time, tongs only. The last cubes are the slipperiest, and by then the group knows why — melting."
+    },
+    {
+     "id": "pan-balance-heavy-light",
+     "note": "'The stone went down. The stone is heavier.' That sentence, said together, is a science report at three."
+    },
+    {
+     "id": "toy-wagon-pull-together",
+     "note": "The wagon only goes when both pullers are holding on. Count the cargo in, count it out — they must match."
+    },
+    {
+     "id": "teddy-says-my-name",
+     "note": "The toy does the talking, so shy voices get a brave front. A whisper relayed by the adult counts in full."
+    },
+    {
+     "id": "find-a-friend-wearing",
+     "note": "Find a friend wearing the colour and stand WITH them — nobody is out, and the finding job is the bigger one."
+    },
+    {
+     "id": "watering-can-plant-round",
+     "note": "Half full, two hands, water on the soil. The soil-checker reports 'wet now' — a real job, really done."
+    },
+    {
+     "id": "lullaby-rock-and-sway",
+     "note": "The humming makes the rocking smaller, and nobody had to be told. End on stillness, held for a count of five."
+    }
+   ]
   }
  ]
 }
