@@ -224,7 +224,10 @@ ACTIVITY_TEMPLATE = """<!DOCTYPE html>
       <a href="../index.html">Browse</a>
       <a href="../desk.html">The Desk 🗄️</a>
       <a href="../planner.html">Plan my week</a>
+      <a href="../day.html">Day Planner 🗓️</a>
       <a href="../kit.html">Kit 🧰</a>
+      <a href="../kitbag.html">Kit Bag 🎒</a>
+      <a href="../partypack.html">Party Pack 🎉</a>
       <a href="../collections.html">Collections 📚</a>
     </nav>
     <nav aria-label="More tools and seasons" class="nav-secondary">
@@ -612,7 +615,10 @@ REVIEW_TEMPLATE = """<!DOCTYPE html>
       <a href="index.html">Browse</a>
       <a href="desk.html">The Desk 🗄️</a>
       <a href="planner.html">Plan my week</a>
+      <a href="day.html">Day Planner 🗓️</a>
       <a href="kit.html">Kit 🧰</a>
+      <a href="kitbag.html">Kit Bag 🎒</a>
+      <a href="partypack.html">Party Pack 🎉</a>
       <a href="collections.html">Collections 📚</a>
     </nav>
     <nav aria-label="More tools and seasons" class="nav-secondary">
@@ -974,7 +980,10 @@ DESK_TEMPLATE = """<!DOCTYPE html>
       <a href="index.html">Browse</a>
       <a href="desk.html" aria-current="page">The Desk 🗄️</a>
       <a href="planner.html">Plan my week</a>
+      <a href="day.html">Day Planner 🗓️</a>
       <a href="kit.html">Kit 🧰</a>
+      <a href="kitbag.html">Kit Bag 🎒</a>
+      <a href="partypack.html">Party Pack 🎉</a>
       <a href="collections.html">Collections 📚</a>
     </nav>
     <nav aria-label="More tools and seasons" class="nav-secondary">
