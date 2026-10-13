@@ -17,7 +17,7 @@ function ok(cond, label, extra) {
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const byId = {};
 acts.forEach(a => { byId[a.id] = a; });
-ok(acts.length === 685, '685 activities total', String(acts.length));
+ok(acts.length === 697, '685 activities total', String(acts.length));
 ok(new Set(acts.map(a => a.id)).size === acts.length, 'all ids unique');
 
 const SCOUT = ['dream-for-our-community', 'floating-ink-ghost', 'binary-code-keychain',
@@ -96,7 +96,7 @@ ok(/peanut/.test((queue.find(q => q.title.includes('Snickers')) || {}).decision 
 
 // 6. The new collection: 12 picks, calendar order anchors, all resolve.
 const colls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/collections.json'), 'utf8')).collections;
-ok(colls.length === 26, '26 collections', String(colls.length));
+ok(colls.length === 27, '26 collections', String(colls.length));
 const cal = colls.find(c => c.id === 'the-whole-calendar');
 ok(cal, 'the-whole-calendar collection exists');
 ok(cal.picks.length === 12, 'whole-calendar has 12 picks', String(cal.picks.length));

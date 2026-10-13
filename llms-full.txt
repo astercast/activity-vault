@@ -5,17 +5,17 @@ Hundreds of real, classic, public-domain activity concepts — filterable by age
 group size, materials, and category. Plan-my-week planner. Printable one-page cards.
 
 ## Categories
-- Seasons: 114 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
-- Holidays: 124 activities — Festive projects and games for the days the whole group looks forward to.
-- Crafts: 161 activities — Hands-on making: fold it, paint it, build it, take it home.
-- STEM: 155 activities — Experiments, engineering challenges, and satisfying science demos.
-- PE & Movement: 119 activities — Run, jump, dance — activities that burn off the wiggles.
-- Team & Community: 147 activities — Turn a group into a crew: cooperation, trust, and belonging.
-- Icebreakers: 71 activities — First-day friendly: learn names, laugh, and loosen up fast.
-- Outdoor: 111 activities — Fresh-air activities for fields, playgrounds, and nature walks.
-- Rainy Day: 71 activities — Stuck inside? These keep a roomful of kids happy without a gym.
-- Quiet & Focus: 135 activities — Wind-down worthy: calm, creative, individual or small-group.
-- Music & Rhythm: 44 activities — Drums, shakers, rhythm games, and songs — make some noise.
+- Seasons: 115 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
+- Holidays: 125 activities — Festive projects and games for the days the whole group looks forward to.
+- Crafts: 162 activities — Hands-on making: fold it, paint it, build it, take it home.
+- STEM: 156 activities — Experiments, engineering challenges, and satisfying science demos.
+- PE & Movement: 120 activities — Run, jump, dance — activities that burn off the wiggles.
+- Team & Community: 148 activities — Turn a group into a crew: cooperation, trust, and belonging.
+- Icebreakers: 72 activities — First-day friendly: learn names, laugh, and loosen up fast.
+- Outdoor: 112 activities — Fresh-air activities for fields, playgrounds, and nature walks.
+- Rainy Day: 72 activities — Stuck inside? These keep a roomful of kids happy without a gym.
+- Quiet & Focus: 136 activities — Wind-down worthy: calm, creative, individual or small-group.
+- Music & Rhythm: 46 activities — Drums, shakers, rhythm games, and songs — make some noise.
 
 ## API — start at data/v1/index.json (self-describing manifest)
 - data/v1/index.json — api manifest
@@ -101,7 +101,7 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
   when an occasion holds fewer real activities than the arc has
   parts, the page says so in numbers and offers the nearest real
   options — it never pads a plan. Printable party sheet + copy-as-text.
-- collections.html — Curated collections: 25 teacher-ready bundles (rainy-day
+- collections.html — Curated collections: 27 teacher-ready bundles (rainy-day
   rescue, first day, sub tub, winter party, spring burst, summer splash, haunted halls, grateful gathering, winter lights…)
   each with a curator's note per pick; printable and copy-able per collection.
 - api.html — API docs with a Try-the-API console (endpoint picker, fetch, pretty JSON).
@@ -287,10 +287,20 @@ One big light ball, one kicker at a time, one wall: walk up, plant your feet, sw
 Categories: PE & Movement | Ages 3-3 | Group 3-12 | 10-15 min | Prep needed | indoor/outdoor
 Page: activity/big-ball-kick-to-wall.html
 
+### Big Beach Ball, Keep It Floating
+The whole circle sits down, hands up: one big soft beach ball is tapped gently into the air, and the circle's one job is to not let it come home to the floor.
+Categories: PE & Movement | Ages 3-3 | Group 4-16 | 10-15 min | Prep needed | indoor/outdoor
+Page: activity/big-beach-ball-keep-it-floating.html
+
 ### Big Beanbag Balance Walk
 A big soft beanbag balanced on your head, a short line to walk, and the slowest feet in the room: if it falls, you pick it up, put it back, and walk on.
 Categories: PE & Movement | Ages 3-3 | Group 3-12 | 10-15 min | Prep needed | indoor/outdoor
 Page: activity/big-beanbag-balance-walk.html
+
+### Big Belly Buddy Breathing Watch
+Lie down, set one small soft buddy on your belly, and watch it ride: up when the breath comes in, down when the breath goes out. That is the whole watch.
+Categories: Quiet & Focus | Ages 3-3 | Group 2-10 | 10-15 min | No prep | indoor
+Page: activity/big-belly-buddy-breathing-watch.html
 
 ### Big Brush Painting
 Huge paper, huge brushes, huge arm movements — painting at full body scale.
@@ -312,10 +322,20 @@ Palm-sized buttons, one wide slot in a box lid: hold flat, hover, let go — and
 Categories: Quiet & Focus | Ages 3-3 | Group 1-6 | 10-20 min | Prep needed | indoor
 Page: activity/big-button-slot-drop-box.html
 
+### Big Cardboard Brick Wall Build
+Bricks as big as pillows, light as boxes: build a wall as high as your chin, report on it honestly — and when it falls, that is data too.
+Categories: STEM | Ages 3-3 | Group 2-10 | 15-20 min | Prep needed | indoor
+Page: activity/big-cardboard-brick-wall-build.html
+
 ### Big Chime Note, When Pointed
 One big chime bar each, struck once and only when the pointer lands on you: eight separate notes, waited for, become a scale the room plays together.
 Categories: Music & Rhythm | Ages 3-3 | Group 4-10 | 10-15 min | Prep needed | indoor/outdoor
 Page: activity/big-chime-note-when-pointed.html
+
+### Big Cloud Lying, Picture Names
+One big blanket on the grass, the whole group on its back, eyes up: every cloud is being something today, and the group's job is to say what.
+Categories: Outdoor | Ages 3-3 | Group 3-12 | 10-15 min | No prep | outdoor
+Page: activity/big-cloud-lying-picture-names.html
 
 ### Big Cotton Cloud Blanket Drift
 Big soft white puffs drift on a blanket the whole crew holds low, waved slow as weather: keep the clouds moving, never bouncing, never rushed.
@@ -336,6 +356,16 @@ Page: activity/big-dot-sticker-pictures.html
 One short dream sentence, said by the grown-up and echoed whole by the circle: on Dr. King's day, everybody's dream gets said out loud.
 Categories: Holidays | Ages 3-3 | Group 4-16 | 10-15 min | Prep needed | indoor
 Page: activity/big-dream-echo-circle.html
+
+### Big Earth Day First Garden Promise
+One real plant, one small cup of water per child, poured slowly — and a smooth promise stone set beside it: today we look after something that grows.
+Categories: Holidays | Ages 3-3 | Group 3-14 | 10-15 min | No prep | indoor/outdoor
+Page: activity/big-earth-day-first-garden-promise.html
+
+### Big Echo Drum, One Hit Back
+One big drum voice at a time: the adult hits the drum ONCE, and the whole circle hits once back — an echo with hands, and the listening in between.
+Categories: Music & Rhythm | Ages 3-3 | Group 4-16 | 10-15 min | Prep needed | indoor
+Page: activity/big-echo-drum-one-hit-back.html
 
 ### Big Egg Roll on the Slope
 The old Easter egg roll, sized for three: one big egg, one gentle grass slope, roll it down, walk down, roll it again.
@@ -407,6 +437,21 @@ One object in each hand, arms out like a scale: which hand sinks? The body's own
 Categories: STEM | Ages 3-3 | Group 2-8 | 10-15 min | Prep needed | indoor/outdoor
 Page: activity/big-heavy-light-hand-balance.html
 
+### Big Hide the Bear, Seek Together
+One big soft bear hides somewhere in the room — not too well. The whole group seeks together, and the finding belongs to everybody.
+Categories: Rainy Day | Ages 3-3 | Group 3-14 | 10-20 min | No prep | indoor
+Page: activity/big-hide-the-bear-seek-together.html
+
+### Big Humming Lullaby, Bear Sleep
+One very sleepy bear, one soft tune with no words: the whole circle hums it together, rocking gently, until the bear is — officially, ceremonially — asleep.
+Categories: Music & Rhythm | Ages 3-3 | Group 4-16 | 10-15 min | Prep needed | indoor
+Page: activity/big-humming-lullaby-bear-sleep.html
+
+### Big Laundry Line, Helping Hands
+The room's pretend washing needs doing: pairs of carriers take one big cloth at a time to the low line and peg it up together until the whole wash waves.
+Categories: Team & Community | Ages 3-3 | Group 4-14 | 10-20 min | Prep needed | indoor
+Page: activity/big-laundry-line-helping-hands.html
+
 ### Big Leaf Light Window Hold
 One big spring leaf, chosen by its holder and lifted to the light: the sun shines clean through it, and its veins stand up like a tiny map.
 Categories: Seasons | Ages 3-3 | Group 2-10 | 10-15 min | No prep | outdoor
@@ -431,6 +476,11 @@ Page: activity/big-log-roll-down-the-mat.html
 One big magnet wand and a tray of big things: touch each one and find out — it sticks, or it doesn't. Your hand is the lab.
 Categories: STEM | Ages 3-3 | Group 2-10 | 10-20 min | Prep needed | indoor
 Page: activity/big-magnet-wand-sticks.html
+
+### Big Mirror Face, Copy My Face
+Two partners sit face to face. One makes a face — any face at all. The other copies it, like a mirror that is also a friend.
+Categories: Icebreakers | Ages 3-3 | Group 4-14 | 10-15 min | No prep | indoor
+Page: activity/big-mirror-face-copy-my-face.html
 
 ### Big Name Bell, Ring for You
 One good bell with a clear voice. The bell keeper rings it for ONE name at a time — and the named child answers, in any way at all, when their name is rung.
@@ -517,6 +567,11 @@ Chunky sponge shapes dipped in paint and pressed straight down on one long share
 Categories: Crafts | Ages 3-3 | Group 4-14 | 15-20 min | Prep needed | indoor/outdoor
 Page: activity/big-sponge-stamp-mural.html
 
+### Big Sprinkler Rainbow Edge Walk
+A garden sprinkler on a sunny morning: stand at the edge of its mist, watch for the rainbow it sometimes keeps, and take one slow walk through the edge.
+Categories: Seasons | Ages 3-3 | Group 3-12 | 10-20 min | Prep needed | outdoor
+Page: activity/big-sprinkler-rainbow-edge-walk.html
+
 ### Big Story Stone, First People
 One smooth stone passed hand to hand in the story circle: today the grown-up tells, plainly and truly, whose land this classroom stands on.
 Categories: Holidays | Ages 3-3 | Group 4-14 | 10-15 min | No prep | indoor
@@ -561,6 +616,11 @@ Page: activity/big-warm-hand-lend-a-hand.html
 Two big smooth stones, one sun-warmed and one shade-cool, held one in each hand: which hand is holding summer? Palms report, words follow.
 Categories: Seasons | Ages 3-3 | Group 2-10 | 10-15 min | No prep | outdoor
 Page: activity/big-warm-stone-hold-tell.html
+
+### Big Water Painting, Fence Picture
+Big brushes, buckets of plain water, the fence for a canvas: paint any picture — it shines dark, dries, disappears, and the fence is ready again.
+Categories: Crafts | Ages 3-3 | Group 2-10 | 10-20 min | Prep needed | outdoor/indoor
+Page: activity/big-water-painting-fence-picture.html
 
 ### Big Wooden Bead Stringing
 Big wooden beads and one stiff lace with a taped end: find a bead, aim the lace at its hole, push it home — a string that grows one bead at a time.

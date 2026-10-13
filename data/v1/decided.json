@@ -1,6 +1,32 @@
 {
  "decisions": [
   {
+   "id": "dcda517cbd255473",
+   "title": "Boo! 15 Friendly Ghost Crafts for Kids to Make",
+   "source_url": "https://handsonaswegrow.com/ghost-crafts-kids/",
+   "feed": "Hands On As We Grow",
+   "decision": "reject",
+   "decided_at": "2026-10-13T00:00:00Z",
+   "decided_by": "human",
+   "note": "Adapt into original words per PIPELINE.md. Link as source if adapted.",
+   "activity_id": null,
+   "approved_via": null,
+   "reviewed": "2026-10-13"
+  },
+  {
+   "id": "28ce48ac401a1149",
+   "title": "Massachusetts State Geography for Kids: Printable Learning Pack",
+   "source_url": "https://teachbesideme.com/massachusetts-state-geography-for-kids-printable-learning-pack/",
+   "feed": "Teach Beside Me",
+   "decision": "reject",
+   "decided_at": "2026-10-13T00:00:00Z",
+   "decided_by": "human",
+   "note": "Adapt into original words per PIPELINE.md. Link as source if adapted.",
+   "activity_id": null,
+   "approved_via": null,
+   "reviewed": "2026-10-13"
+  },
+  {
    "id": "c80d5b7585391422",
    "title": "180+ Thanksgiving Words for Writing, Vocab, and More (Free  Printable)",
    "source_url": "https://www.weareteachers.com/thanksgiving-words/?utm_source=rss&utm_medium=rss&utm_campaign=thanksgiving-words",
@@ -781,7 +807,7 @@
    "reviewed": "2026-10-11"
   }
  ],
- "count": 60,
- "generated_at": "2026-10-13T12:36:44Z",
+ "count": 62,
+ "generated_at": "2026-10-13T14:58:38Z",
  "retention_days": 90
 }

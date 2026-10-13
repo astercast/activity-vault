@@ -1220,7 +1220,7 @@ def main():
         sys.exit(1)
     actmap = {a['id']: a for a in acts}
     # Wave 9 explicit assert: every collection pick resolves to a real activity id.
-    assert len(colls) == 26, f"expected 26 collections, got {len(colls)}"
+    assert len(colls) == 27, f"expected 27 collections, got {len(colls)}"
     assert all(p['id'] in actmap for c in colls for p in c['picks']), \
         "collection pick does not resolve to a real activity id"
     # Wave 10 explicit assert: balance-buckets covers all 11 categories.
@@ -1844,7 +1844,7 @@ def main():
               "  when an occasion holds fewer real activities than the arc has",
               "  parts, the page says so in numbers and offers the nearest real",
               "  options — it never pads a plan. Printable party sheet + copy-as-text.",
-              "- collections.html — Curated collections: 25 teacher-ready bundles (rainy-day",
+              f"- collections.html — Curated collections: {len(colls)} teacher-ready bundles (rainy-day",
               "  rescue, first day, sub tub, winter party, spring burst, summer splash, haunted halls, grateful gathering, winter lights…)",
               "  each with a curator's note per pick; printable and copy-able per collection.",
               "- api.html — API docs with a Try-the-API console (endpoint picker, fetch, pretty JSON).",
