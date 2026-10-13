@@ -1486,8 +1486,73 @@
     20
    ],
    "page": "collections.html#little-hands-just-three-once-more"
+  },
+  {
+   "id": "little-hands-just-three-fifth-time",
+   "title": "Little Hands, Just Three, a Fifth Time",
+   "glyph": "🧤",
+   "when_to_use": "The fifth shelf banded for three-year-olds ONLY — a ribbon-wand parade walked for the country's birthday, ants counted as they cross on a road the watchers never touch, one chime note each, struck only when the pointer lands. Five waves of this kind have now cut the threes' gap by more than half without one record a three-year-old is merely tolerated by. Reach for it in a young-threes room, a first month of program, or any group whose oldest kid just turned three.",
+   "picks": [
+    {
+     "activity_id": "big-ribbon-wand-parade-walk",
+     "curator_note": "Walking feet, wands in the air: the parade's own fireworks are ribbons, waved fast for ten seconds at the finish line."
+    },
+    {
+     "activity_id": "one-tree-autumn-color-count",
+     "curator_note": "A colour counts when two counters agree they can see it. The tree will have changed its answer by next week."
+    },
+    {
+     "activity_id": "umbrella-drip-count-listen",
+     "curator_note": "The grown-up makes the rain; the counters count it by ear, eyes closed — ears only, checked against honest fingers."
+    },
+    {
+     "activity_id": "big-cotton-cloud-blanket-drift",
+     "curator_note": "Clouds drift, they do not bounce: small waves only, and the still-air moment is the crew's to make together."
+    },
+    {
+     "activity_id": "big-float-sink-basin-sort",
+     "curator_note": "The basin is the only referee this laboratory recognises. The surprise object fools everybody, kindly."
+    },
+    {
+     "activity_id": "big-picnic-blanket-set-together",
+     "curator_note": "A pretend picnic, said out loud — no food on the blanket, so every child in the room is equally at the table."
+    },
+    {
+     "activity_id": "big-feelings-card-show-and-say",
+     "curator_note": "Every feeling is a right answer. The circle copies the drawer's face kindly, at the drawer's own size."
+    },
+    {
+     "activity_id": "big-ant-trail-count-watch",
+     "curator_note": "Feet behind the line, hands behind the line: the road belongs to the ants, and it is still going at bedtime."
+    },
+    {
+     "activity_id": "big-chime-note-when-pointed",
+     "curator_note": "Your note is still coming — mallets rest until the pointer lands. Waiting with a promise inside it."
+    },
+    {
+     "activity_id": "big-handprint-leaf-tree",
+     "curator_note": "One leaf each, smudges and all: leaves in nature are every shape there is. That leaf grew THAT way. It stays."
+    },
+    {
+     "activity_id": "big-feather-blow-float",
+     "curator_note": "Hands stay home; only breath works up there. A puff that moves the feather one inch is a complete rescue."
+    },
+    {
+     "activity_id": "big-button-slot-drop-box",
+     "curator_note": "Flat buttons only: turn it flatter, and the box takes it. The shake at the end is the sound of all of them together."
+    }
+   ],
+   "age_span": [
+    3,
+    3
+   ],
+   "time_span": [
+    10,
+    20
+   ],
+   "page": "collections.html#little-hands-just-three-fifth-time"
   }
  ],
- "count": 23,
+ "count": 24,
  "updated": "2026-10-13"
 }

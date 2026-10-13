@@ -27,7 +27,7 @@ function ok(cond, label, extra) {
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const byId = {};
 acts.forEach(a => { byId[a.id] = a; });
-ok(acts.length === 649, '649 activities total', String(acts.length));
+ok(acts.length === 661, '661 activities total', String(acts.length));
 ok(new Set(acts.map(a => a.id)).size === acts.length, 'all ids unique');
 
 const NEW = ['soft-ball-new-year-drop', 'big-egg-roll-slope',
@@ -42,10 +42,10 @@ NEW.forEach(id => ok(byId[id], 'wave-28 id present: ' + id));
 // 1. The age-3 gap, continued honestly: coverage 34 -> 46 against
 //    136 -> 148 at age 4 — narrower, still the thinnest age, not closed.
 const covers = age => acts.filter(a => a.age_min <= age && a.age_max >= age).length;
-ok(covers(3) === 106, 'age 3 coverage 34 -> 46 in wave 28; wave 29 -> 58; wave 30 -> 70; wave 31 -> 82; wave 32 -> 94; wave 33 -> 106', String(covers(3)));
+ok(covers(3) === 118, 'age 3 coverage 34 -> 46 in wave 28; wave 29 -> 58; wave 30 -> 70; wave 31 -> 82; wave 32 -> 94; wave 33 -> 106', String(covers(3)));
 ok(covers(4) === 160, 'age 4 coverage 136 -> 148 in wave 28; wave 29 -> 160', String(covers(4)));
-ok(acts.filter(a => a.age_min === 3).length === 106, '94 activities start at age 3 (58 + 12 wave-30 + 12 wave-31 + 12 wave-32)');
-ok(acts.filter(a => a.age_max <= 6).length === 99, 'early-years-only (age_max<=6) 27 -> 39; wave 29 -> 51; wave 30 -> 63; wave 31 -> 75; wave 32 -> 87; wave 33 -> 99');
+ok(acts.filter(a => a.age_min === 3).length === 118, '94 activities start at age 3 (58 + 12 wave-30 + 12 wave-31 + 12 wave-32)');
+ok(acts.filter(a => a.age_max <= 6).length === 111, 'early-years-only (age_max<=6) 27 -> 39; wave 29 -> 51; wave 30 -> 63; wave 31 -> 75; wave 32 -> 87; wave 33 -> 99; wave 34 -> 111');
 [13, 14].forEach(age => ok(covers(age) === 76, 'age ' + age + ' coverage unchanged at 76', String(covers(age))));
 NEW.forEach(id => {
   ok(byId[id].age_min === 3, id + ': designed for 3 (age_min 3)');
@@ -56,14 +56,14 @@ NEW.forEach(id => {
 // 2. The holes inside age-3 coverage: first holiday primaries at age 3,
 //    and every primary category now carries >= 2 age-3 records.
 const age3primary = cat => acts.filter(a => a.categories[0] === cat && a.age_min <= 3 && a.age_max >= 3).length;
-ok(age3primary('holidays') === 8, 'age-3 holidays primary: 0 -> 2 in wave 28 (the last zero); wave 29 -> 4; wave 30 -> 5; wave 31 -> 6; wave 32 -> 8', String(age3primary('holidays')));
-ok(age3primary('seasons') === 9, 'age-3 seasons primary: 1 -> 3 in wave 28; wave 29 -> 5; wave 30 -> 6; wave 31 -> 7; wave 32 -> 9', String(age3primary('seasons')));
-ok(age3primary('rainy-day') === 12, 'age-3 rainy-day primary: 1 -> 3 in wave 28; wave 29 -> 4; wave 30 -> 6; wave 31 -> 8; wave 32 -> 12', String(age3primary('rainy-day')));
-ok(age3primary('stem') === 9, 'age-3 stem primary: 2 -> 3 in wave 28; wave 29 -> 5; wave 30 -> 6; wave 31 -> 7; wave 32 -> 9', String(age3primary('stem')));
-ok(age3primary('team-community') === 8, 'age-3 team-community primary: 2 -> 3 in wave 28; wave 29 -> 4; wave 30 -> 5; wave 31 -> 6; wave 32 -> 8', String(age3primary('team-community')));
-ok(age3primary('icebreakers') === 9, 'age-3 icebreakers primary: 2 -> 3 in wave 28; wave 29 -> 5; wave 30 -> 6; wave 31 -> 7; wave 32 -> 9', String(age3primary('icebreakers')));
-ok(age3primary('outdoor') === 9, 'age-3 outdoor primary: 3 -> 4 in wave 28; wave 29 -> 5; wave 30 -> 6; wave 31 -> 7; wave 32 -> 9', String(age3primary('outdoor')));
-ok(age3primary('music-rhythm') === 9, 'age-3 music-rhythm primary: 3 -> 4 in wave 28; wave 29 -> 5; wave 30 -> 6; wave 31 -> 7; wave 32 -> 9', String(age3primary('music-rhythm')));
+ok(age3primary('holidays') === 9, 'age-3 holidays primary: 0 -> 2 in wave 28 (the last zero); wave 29 -> 4; wave 30 -> 5; wave 31 -> 6; wave 32 -> 8', String(age3primary('holidays')));
+ok(age3primary('seasons') === 10, 'age-3 seasons primary: 1 -> 3 in wave 28; wave 29 -> 5; wave 30 -> 6; wave 31 -> 7; wave 32 -> 9', String(age3primary('seasons')));
+ok(age3primary('rainy-day') === 14, 'age-3 rainy-day primary: 1 -> 3 in wave 28; wave 29 -> 4; wave 30 -> 6; wave 31 -> 8; wave 32 -> 12', String(age3primary('rainy-day')));
+ok(age3primary('stem') === 10, 'age-3 stem primary: 2 -> 3 in wave 28; wave 29 -> 5; wave 30 -> 6; wave 31 -> 7; wave 32 -> 9', String(age3primary('stem')));
+ok(age3primary('team-community') === 9, 'age-3 team-community primary: 2 -> 3 in wave 28; wave 29 -> 4; wave 30 -> 5; wave 31 -> 6; wave 32 -> 8', String(age3primary('team-community')));
+ok(age3primary('icebreakers') === 10, 'age-3 icebreakers primary: 2 -> 3 in wave 28; wave 29 -> 5; wave 30 -> 6; wave 31 -> 7; wave 32 -> 9', String(age3primary('icebreakers')));
+ok(age3primary('outdoor') === 10, 'age-3 outdoor primary: 3 -> 4 in wave 28; wave 29 -> 5; wave 30 -> 6; wave 31 -> 7; wave 32 -> 9', String(age3primary('outdoor')));
+ok(age3primary('music-rhythm') === 10, 'age-3 music-rhythm primary: 3 -> 4 in wave 28; wave 29 -> 5; wave 30 -> 6; wave 31 -> 7; wave 32 -> 9', String(age3primary('music-rhythm')));
 ['seasons', 'holidays', 'crafts', 'stem', 'pe-movement', 'team-community',
  'icebreakers', 'outdoor', 'rainy-day', 'quiet-focus', 'music-rhythm'].forEach(cat => {
   ok(age3primary(cat) >= 2, 'every category has >= 2 age-3 primaries: ' + cat, String(age3primary(cat)));
@@ -114,25 +114,25 @@ ok(/moving pad is a fall/.test(byId['two-foot-landing-pads'].safety || ''), 'lan
 
 // 5. Category + enrichment deltas from this wave.
 const prim = cat => acts.filter(a => a.categories[0] === cat).length;
-ok(prim('holidays') === 48, 'holidays primary 40 -> 42 in wave 28; wave 29 -> 44; wave 30 -> 45; wave 31 -> 46; wave 32 -> 48');
-ok(prim('seasons') === 36, 'seasons primary 28 -> 30 in wave 28; wave 29 -> 32; wave 30 -> 33; wave 31 -> 34; wave 32 -> 36');
-ok(prim('rainy-day') === 33, 'rainy-day primary 22 -> 24 in wave 28; wave 29 -> 25; wave 30 -> 27; wave 31 -> 29; wave 32 -> 33');
-ok(prim('stem') === 115, 'stem primary 108 -> 109 in wave 28; wave 29 -> 111; wave 30 -> 112; wave 31 -> 113; wave 32 -> 115');
-ok(prim('team-community') === 72, 'team-community primary 66 -> 67 in wave 28; wave 29 -> 68; wave 30 -> 69; wave 31 -> 70; wave 32 -> 72');
-ok(prim('icebreakers') === 42, 'icebreakers primary 35 -> 36 in wave 28; wave 29 -> 38; wave 30 -> 39; wave 31 -> 40; wave 32 -> 42');
-ok(prim('outdoor') === 52, 'outdoor primary 46 -> 47 in wave 28; wave 29 -> 48; wave 30 -> 49; wave 31 -> 50; wave 32 -> 52');
-ok(prim('music-rhythm') === 34, 'music-rhythm primary 28 -> 29 in wave 28; wave 29 -> 30; wave 30 -> 31; wave 31 -> 32; wave 32 -> 34');
-ok(prim('pe-movement') === 65, 'pe-movement primary 60 -> 61; wave 30 -> 62; wave 31 -> 63; wave 32 -> 65');
-ok(acts.filter(a => a.copy_free).length === 269, 'copy_free 197 -> 209; wave 29 -> 221; wave 30 -> 233; wave 31 -> 245; wave 32 -> 257; wave 33 -> 269');
-ok(acts.filter(a => a.no_elimination).length === 93, 'no_elimination 57 -> 63; wave 29 -> 70; wave 30 -> 75; wave 31 -> 81; wave 32 -> 87; wave 33 -> 93');
-ok(acts.filter(a => a.inclusion).length === 131, 'inclusion 75 -> 81; wave 29 -> 87; wave 30 -> 95; wave 31 -> 107; wave 32 -> 119; wave 33 -> 131');
+ok(prim('holidays') === 49, 'holidays primary 40 -> 42 in wave 28; wave 29 -> 44; wave 30 -> 45; wave 31 -> 46; wave 32 -> 48');
+ok(prim('seasons') === 37, 'seasons primary 28 -> 30 in wave 28; wave 29 -> 32; wave 30 -> 33; wave 31 -> 34; wave 32 -> 36');
+ok(prim('rainy-day') === 35, 'rainy-day primary 22 -> 24 in wave 28; wave 29 -> 25; wave 30 -> 27; wave 31 -> 29; wave 32 -> 33');
+ok(prim('stem') === 116, 'stem primary 108 -> 109 in wave 28; wave 29 -> 111; wave 30 -> 112; wave 31 -> 113; wave 32 -> 115');
+ok(prim('team-community') === 73, 'team-community primary 66 -> 67 in wave 28; wave 29 -> 68; wave 30 -> 69; wave 31 -> 70; wave 32 -> 72');
+ok(prim('icebreakers') === 43, 'icebreakers primary 35 -> 36 in wave 28; wave 29 -> 38; wave 30 -> 39; wave 31 -> 40; wave 32 -> 42');
+ok(prim('outdoor') === 53, 'outdoor primary 46 -> 47 in wave 28; wave 29 -> 48; wave 30 -> 49; wave 31 -> 50; wave 32 -> 52');
+ok(prim('music-rhythm') === 35, 'music-rhythm primary 28 -> 29 in wave 28; wave 29 -> 30; wave 30 -> 31; wave 31 -> 32; wave 32 -> 34');
+ok(prim('pe-movement') === 66, 'pe-movement primary 60 -> 61; wave 30 -> 62; wave 31 -> 63; wave 32 -> 65');
+ok(acts.filter(a => a.copy_free).length === 281, 'copy_free 197 -> 209; wave 29 -> 221; wave 30 -> 233; wave 31 -> 245; wave 32 -> 257; wave 33 -> 269');
+ok(acts.filter(a => a.no_elimination).length === 99, 'no_elimination 57 -> 63; wave 29 -> 70; wave 30 -> 75; wave 31 -> 81; wave 32 -> 87; wave 33 -> 93');
+ok(acts.filter(a => a.inclusion).length === 143, 'inclusion 75 -> 81; wave 29 -> 87; wave 30 -> 95; wave 31 -> 107; wave 32 -> 119; wave 33 -> 131');
 const tagCount = t => acts.filter(a => (a.tags || []).includes(t)).length;
 ok(tagCount('holiday:easter') === 8, 'easter tag 7 -> 8', String(tagCount('holiday:easter')));
 ok(tagCount('holiday:new-year') === 10, 'new-year tag 9 -> 10', String(tagCount('holiday:new-year')));
 
 // 6. The 18th collection: Little Hands, Third Shelf — earlier shelves intact.
 const colls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/collections.json'), 'utf8')).collections;
-ok(colls.length === 23, '23 collections', String(colls.length));
+ok(colls.length === 24, '24 collections', String(colls.length));
 const ts = colls.find(c => c.id === 'little-hands-third-shelf');
 ok(!!ts, 'little-hands-third-shelf collection present');
 ok(ts.picks.length === 12, 'third-shelf collection has 12 picks');
