@@ -469,6 +469,19 @@
    "reviewed": "2026-10-12"
   },
   {
+   "id": "a0d0a7a320378ef3",
+   "title": "Morse Code Games for Kids: 6 Fun Secret Signal Challenges",
+   "source_url": "https://teachbesideme.com/morse-code-games-for-kids/",
+   "feed": "Teach Beside Me",
+   "decision": "approve",
+   "decided_at": "2026-10-12T00:00:00Z",
+   "decided_by": "human",
+   "note": "Adapt into original words per PIPELINE.md. Link as source if adapted.",
+   "activity_id": "morse-code-signal-post",
+   "approved_via": "scout",
+   "reviewed": "2026-10-12"
+  },
+  {
    "id": "a11221491bc63a7c",
    "title": "Coping Strategies for Students Posters (Free Printables)",
    "source_url": "https://www.weareteachers.com/coping-strategies-for-students-posters-free-printables/?utm_source=rss&utm_medium=rss&utm_campaign=coping-strategies-for-students-posters-free-printables",
@@ -768,7 +781,7 @@
    "reviewed": "2026-10-11"
   }
  ],
- "count": 59,
- "generated_at": "2026-10-12T23:34:01Z",
+ "count": 60,
+ "generated_at": "2026-10-13T00:27:06Z",
  "retention_days": 90
 }

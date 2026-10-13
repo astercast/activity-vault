@@ -41,8 +41,8 @@ const IDS = [
   'celebration-circle','gift-wrap-speed','thank-you-sprint',
 ];
 
-ok(api.count === 564, `count 564, got ${api.count}`);
-ok(acts.length === 564, `acts.length 564, got ${acts.length}`);
+ok(api.count === 577, `count 577, got ${api.count}`);
+ok(acts.length === 577, `acts.length 577, got ${acts.length}`);
 ok(acts.length === new Set(acts.map(a => a.id)).size, 'ids unique');
 ok(IDS.length === 60, `60 wave19 ids, got ${IDS.length}`);
 ok(new Set(IDS).size === 60, 'wave19 ids unique inside pack');

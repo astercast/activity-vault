@@ -22,7 +22,7 @@ function ok(cond, label, extra) {
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const byId = {};
 acts.forEach(a => { byId[a.id] = a; });
-ok(acts.length === 564, '564 activities total', String(acts.length));
+ok(acts.length === 577, '577 activities total', String(acts.length));
 ok(new Set(acts.map(a => a.id)).size === acts.length, 'all ids unique');
 
 const AGE3 = ['tape-path-balance-walk', 'pom-pom-drop-tubes', 'sponge-squeeze-station',
@@ -37,9 +37,9 @@ NEW.forEach(id => ok(byId[id], 'wave-26 id present: ' + id));
 
 // 1. The age-3 cliff: coverage 12 -> 22, all of it designed-band.
 const covers = age => acts.filter(a => a.age_min <= age && a.age_max >= age).length;
-ok(covers(3) === 22, 'age 3 coverage 12 -> 22', String(covers(3)));
-ok(acts.filter(a => a.age_min === 3).length === 22, '22 activities start at age 3');
-ok(acts.filter(a => a.age_max <= 6).length === 15, 'early-years-only (age_max<=6) 5 -> 15');
+ok(covers(3) === 34, 'age 3 coverage 12 -> 22 in wave 26; wave 27 -> 34', String(covers(3)));
+ok(acts.filter(a => a.age_min === 3).length === 34, '34 activities start at age 3 (22 + 12 wave-27)');
+ok(acts.filter(a => a.age_max <= 6).length === 27, 'early-years-only (age_max<=6) 5 -> 15 in wave 26; wave 27 -> 27');
 AGE3.forEach(id => {
   ok(byId[id].age_min === 3, id + ': designed for 3 (age_min 3)');
   ok(byId[id].age_max <= 6, id + ': early-years band (age_max <= 6)');
@@ -99,16 +99,16 @@ ok(/replaces scissors/.test(byId['torn-paper-collage'].safety || ''), 'collage: 
 ok(/wave/.test(byId['hello-ball-greetings'].inclusion || ''), 'hello ball: nonverbal greeting counts');
 
 // 5. Category + enrichment deltas from this wave.
-ok(acts.filter(a => a.categories[0] === 'music-rhythm').length === 27, 'music-rhythm primary 26 -> 27');
-ok(acts.filter(a => a.categories.includes('rainy-day')).length === 53, 'rainy-day any-category 50 -> 53');
-ok(acts.filter(a => a.copy_free).length === 184, 'copy_free 173 -> 184');
-ok(acts.filter(a => a.no_elimination).length === 51, 'no_elimination 47 -> 51');
-ok(acts.filter(a => a.inclusion).length === 69, 'inclusion 64 -> 69');
+ok(acts.filter(a => a.categories[0] === 'music-rhythm').length === 28, 'music-rhythm primary 26 -> 27 in wave 26; wave 27 -> 28');
+ok(acts.filter(a => a.categories.includes('rainy-day')).length === 55, 'rainy-day any-category 50 -> 53 in wave 26; wave 27 -> 55');
+ok(acts.filter(a => a.copy_free).length === 197, 'copy_free 173 -> 184 in wave 26; wave 27 -> 197');
+ok(acts.filter(a => a.no_elimination).length === 57, 'no_elimination 47 -> 51 in wave 26; wave 27 -> 57');
+ok(acts.filter(a => a.inclusion).length === 74, 'inclusion 64 -> 69 in wave 26; wave 27 -> 74');
 [13, 14].forEach(age => ok(covers(age) === 76, 'age ' + age + ' coverage unchanged at 76', String(covers(age))));
 
 // 6. The 16th collection: Little Hands, First Years.
 const colls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/collections.json'), 'utf8')).collections;
-ok(colls.length === 16, '16 collections', String(colls.length));
+ok(colls.length === 17, '17 collections', String(colls.length));
 const lh = colls.find(c => c.id === 'little-hands-first-years');
 ok(!!lh, 'little-hands-first-years collection present');
 ok(lh.picks.length === 12, 'collection has 12 picks');
@@ -122,9 +122,9 @@ AGE3.forEach(id => ok(lh.picks.some(p => p.id === id), 'collection anchors the n
 // 7. Scout pipeline health: live scan ran 2026-10-12, 0 new landed,
 //    queue fully decided, every acceptance real.
 const queue = JSON.parse(fs.readFileSync(path.join(ROOT, 'pipeline/review-queue.json'), 'utf8'));
-ok(queue.length === 59, 'queue still 59 entries (scan added 0)', String(queue.length));
+ok(queue.length === 60, 'queue 59 -> 60 in wave 27 (scan queued 1, accepted on review)', String(queue.length));
 ok(queue.filter(q => q.status === 'pending').length === 0, '0 pending — nothing waiting on a human');
-ok(queue.filter(q => q.status === 'accepted').length === 21, '21 accepted all-time');
+ok(queue.filter(q => q.status === 'accepted').length === 22, '22 accepted all-time (21 + wave-27 Morse accept)');
 ok(queue.filter(q => q.status === 'rejected').length === 38, '38 rejected all-time');
 queue.forEach(q => ok(q.decision && q.decision.length >= 20, 'decision reason recorded: ' + (q.title || q.id).slice(0, 40)));
 queue.filter(q => q.status === 'accepted').forEach(q =>

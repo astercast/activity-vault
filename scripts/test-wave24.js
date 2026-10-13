@@ -17,7 +17,7 @@ function ok(cond, label, extra) {
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const byId = {};
 acts.forEach(a => { byId[a.id] = a; });
-ok(acts.length === 564, '564 activities total', String(acts.length));
+ok(acts.length === 577, '577 activities total', String(acts.length));
 ok(new Set(acts.map(a => a.id)).size === acts.length, 'all ids unique');
 
 const SCOUT = ['dream-for-our-community', 'floating-ink-ghost', 'binary-code-keychain',
@@ -52,7 +52,9 @@ SCOUT.forEach(id => {
 
 // 3. Queue fully decided by this wave's batch: 36 reviewed 2026-10-12,
 //    8 accepted with activity_id, 28 rejected, every decision has a reason.
-const batch = queue.filter(q => q.reviewed === '2026-10-12');
+// Wave-27 note: the Morse accept was also reviewed 2026-10-12 (a later
+// same-day cycle) — it is excluded here so this stays the wave-24 batch.
+const batch = queue.filter(q => q.reviewed === '2026-10-12' && q.id !== 'a0d0a7a320378ef3');
 ok(batch.length === 36, '36 candidates reviewed in wave 24', String(batch.length));
 ok(queue.filter(q => q.status === 'pending').length === 0, '0 pending left');
 const acc = batch.filter(q => q.status === 'accepted');
@@ -94,7 +96,7 @@ ok(/peanut/.test((queue.find(q => q.title.includes('Snickers')) || {}).decision 
 
 // 6. The new collection: 12 picks, calendar order anchors, all resolve.
 const colls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/collections.json'), 'utf8')).collections;
-ok(colls.length === 16, '16 collections', String(colls.length));
+ok(colls.length === 17, '17 collections', String(colls.length));
 const cal = colls.find(c => c.id === 'the-whole-calendar');
 ok(cal, 'the-whole-calendar collection exists');
 ok(cal.picks.length === 12, 'whole-calendar has 12 picks', String(cal.picks.length));

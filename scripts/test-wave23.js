@@ -15,7 +15,7 @@ function ok(cond, label, extra) {
 
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const actIds = new Set(acts.map(a => a.id));
-ok(acts.length === 564, '564 activities total', String(acts.length));
+ok(acts.length === 577, '577 activities total', String(acts.length));
 ok(actIds.size === acts.length, 'all activity ids unique');
 
 const TEEN = ['lightning-debates', 'escape-room-build', 'mini-podcast-studio',

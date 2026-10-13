@@ -20,7 +20,7 @@ function ok(cond, label, extra) {
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const byId = {};
 acts.forEach(a => { byId[a.id] = a; });
-ok(acts.length === 564, '564 activities total', String(acts.length));
+ok(acts.length === 577, '577 activities total', String(acts.length));
 ok(new Set(acts.map(a => a.id)).size === acts.length, 'all ids unique');
 
 const MLK = ['mlk-freedom-quilt-squares', 'civil-rights-timeline-walk',
@@ -87,9 +87,9 @@ NEW.forEach(id => {
 });
 
 // 4. Enrichment deltas from this wave.
-ok(acts.filter(a => a.copy_free).length === 184, 'copy_free 165 -> 173 in wave 25; wave 26 -> 184');
-ok(acts.filter(a => a.no_elimination).length === 51, 'no_elimination 43 -> 47 in wave 25; wave 26 -> 51');
-ok(acts.filter(a => a.inclusion).length === 69, 'inclusion 51 -> 64 in wave 25; wave 26 -> 69');
+ok(acts.filter(a => a.copy_free).length === 197, 'copy_free 165 -> 173 in wave 25; wave 26 -> 184; wave 27 -> 197');
+ok(acts.filter(a => a.no_elimination).length === 57, 'no_elimination 43 -> 47 in wave 25; wave 26 -> 51; wave 27 -> 57');
+ok(acts.filter(a => a.inclusion).length === 74, 'inclusion 51 -> 64 in wave 25; wave 26 -> 69; wave 27 -> 74');
 [13, 14].forEach(age => {
   const n = acts.filter(a => a.age_min <= age && a.age_max >= age).length;
   ok(n === 76, 'age ' + age + ' coverage 70 -> 76', String(n));
@@ -98,9 +98,9 @@ ok(acts.filter(a => a.inclusion).length === 69, 'inclusion 51 -> 64 in wave 25; 
 // 5. Scout cycle: the queue after the live 2026-10-12 scan — fully
 //    decided, nothing pending, nothing manufactured.
 const queue = JSON.parse(fs.readFileSync(path.join(ROOT, 'pipeline/review-queue.json'), 'utf8'));
-ok(queue.length === 59, 'queue still 59 entries (scan added 0)', String(queue.length));
+ok(queue.length === 60, 'queue 59 -> 60 in wave 27 (scan queued 1, accepted on review)', String(queue.length));
 ok(queue.filter(q => q.status === 'pending').length === 0, '0 pending after the fresh scan');
-ok(queue.filter(q => q.status === 'accepted').length === 21, '21 accepted all-time');
+ok(queue.filter(q => q.status === 'accepted').length === 22, '22 accepted all-time (21 + wave-27 Morse accept)');
 ok(queue.filter(q => q.status === 'rejected').length === 38, '38 rejected all-time');
 queue.forEach(q => ok(q.decision && q.decision.length >= 20, 'decision reason recorded: ' + (q.title || q.id).slice(0, 40)));
 const feeds = JSON.parse(fs.readFileSync(path.join(ROOT, 'pipeline/feeds.json'), 'utf8'));

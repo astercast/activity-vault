@@ -1031,8 +1031,73 @@
     25
    ],
    "page": "collections.html#little-hands-first-years"
+  },
+  {
+   "id": "little-hands-next-steps",
+   "title": "Little Hands, Next Steps",
+   "glyph": "🧦",
+   "when_to_use": "The second shelf for the youngest kids in the building: twelve more activities designed for three-year-olds first — the first-ever STEM, team, and rainy-day records written for that room, plus the copying games and quiet stations a three-year-old day actually runs on. Grab it when First Years has been through the rotation and the little-kid group is still yours next week.",
+   "picks": [
+    {
+     "activity_id": "cardboard-ramp-roll-lab",
+     "curator_note": "Let go, don't push — a fair test, run at knee height, with a block that refuses to roll and teaches the most."
+    },
+    {
+     "activity_id": "hand-lens-look-closer",
+     "curator_note": "One leaf, one lens, one full minute of looking. The palm-print practice round is the discovery that hooks them."
+    },
+    {
+     "activity_id": "pass-it-down-delivery-line",
+     "curator_note": "Every hand touches every delivery. Seated lines count in full — ready hands are the only rule."
+    },
+    {
+     "activity_id": "ring-around-the-rosie-circle",
+     "curator_note": "Walked, never run, with a sit-down ending. The slowest final round gets the biggest laugh in the building."
+    },
+    {
+     "activity_id": "pillow-islands",
+     "curator_note": "Feet on islands, floor is the sea. Flat cushions only — a wobbling island is a different game."
+    },
+    {
+     "activity_id": "show-me-your-move",
+     "curator_note": "One kid, one move, the whole circle copies it back. Copying is the compliment — name it out loud."
+    },
+    {
+     "activity_id": "knee-drum-copycat",
+     "curator_note": "Patterns of one, two, three taps, grown one tap at a time. Needs nothing but knees."
+    },
+    {
+     "activity_id": "texture-touch-basket-walk",
+     "curator_note": "Rough, smooth, soft — a hunt run by hand, where a kid who sees differently is the natural leader."
+    },
+    {
+     "activity_id": "big-dot-sticker-pictures",
+     "curator_note": "Peel, carry, pat flat. Loosen the sheets first or you will spend the session peeling for twenty kids."
+    },
+    {
+     "activity_id": "pool-noodle-rope-threading",
+     "curator_note": "Big soft rings on a tied-down rope — threading practice with nothing small enough to worry about."
+    },
+    {
+     "activity_id": "jump-the-river-ropes",
+     "curator_note": "The river widens one hand-width at a time, and stepping in it is never failing — it is practising."
+    },
+    {
+     "activity_id": "blanket-fort-book-nook",
+     "curator_note": "Adult-built, door always open, three readers at a time. Fort volume is the soft voice a small roof asks for."
+    }
+   ],
+   "age_span": [
+    3,
+    6
+   ],
+   "time_span": [
+    10,
+    25
+   ],
+   "page": "collections.html#little-hands-next-steps"
   }
  ],
- "count": 16,
- "updated": "2026-10-12"
+ "count": 17,
+ "updated": "2026-10-13"
 }

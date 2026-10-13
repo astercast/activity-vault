@@ -25612,8 +25612,575 @@
     "holiday:valentines-day"
    ],
    "copy_free": true
+  },
+  {
+   "id": "cardboard-ramp-roll-lab",
+   "name": "Cardboard Ramp Roll Lab",
+   "tagline": "One low ramp, three rollers, and the only rule a fair test needs at three: let go — don't push.",
+   "categories": [
+    "stem"
+   ],
+   "age_min": 3,
+   "age_max": 5,
+   "group_min": 2,
+   "group_max": 12,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "a stiff piece of cardboard or a wide board (about a metre long)"
+    },
+    {
+     "item": "two or three books to prop one end"
+    },
+    {
+     "item": "a soft ball"
+    },
+    {
+     "item": "a chunky toy car"
+    },
+    {
+     "item": "a wooden block"
+    },
+    {
+     "item": "painter's tape (for distance lines)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Prop one end of the cardboard on two books — knee height on a three-year-old, no higher. Stick three tape lines on the floor out from the ramp's foot: near, middle, far. Roll everything yourself once first; a ramp that throws the ball sideways gets its books adjusted before any kid touches it.",
+   "steps": [
+    "Start with the ball. One kid kneels at the top, sets the ball on the ramp, and lets go — hands off the moment it moves. 'Let go, don't push' is the whole rule, and it is what makes the roll honest.",
+    "Everyone calls where it stopped against the tape lines: near, middle, or past far. Move a pebble or a sticky note to mark the ball's best roll.",
+    "Now the car. Same ramp, same let-go rule. Cars usually beat balls, and the group will have opinions about why — wheels is the answer most of them land on, in their own words.",
+    "Now the block. It slides, thumps, or stops halfway, and that small failure teaches more than the two successes: not everything rolls, and shape is the reason.",
+    "Last round is dealer's choice: each kid picks their favourite roller for one final go, and the group calls the landing line together before it stops rolling."
+   ],
+   "variations": {
+    "easier": "One book instead of two (a gentler ramp) and only the ball — one roller, one rule, done.",
+    "harder": "Raise the ramp by one book and predict first: point at the tape line you think it will reach, then roll and check."
+   },
+   "safety": "Ramp stays low — propped on books, never on chairs or shelves. Waiting kids sit behind the top of the ramp, never at the bottom where the rollers land, and the soft ball is the only ball: hard balls and ramps do not mix at this age.",
+   "copy_free": true
+  },
+  {
+   "id": "hand-lens-look-closer",
+   "name": "Hand Lens Look-Closer",
+   "tagline": "A big magnifying lens turns one leaf, one shell, one scrap of bark into a whole expedition — no collecting, just looking.",
+   "categories": [
+    "stem",
+    "outdoor"
+   ],
+   "age_min": 3,
+   "age_max": 6,
+   "group_min": 2,
+   "group_max": 16,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "outdoor",
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "chunky hand lenses / magnifying glasses (one per kid if you have them, one per pair if not)"
+    },
+    {
+     "item": "a tray of look-at things: leaves, shells, bark, pinecones, a feather, fabric scraps"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Set the tray out and test every lens yourself — a scratched or cloudy lens is just a frustration with a handle. Outdoors, pick a small patch of ground with plenty in it (the edge of a garden bed beats the middle of a field) and walk it first for anything sharp or unpleasant.",
+   "steps": [
+    "Hand out the lenses and show the one move that matters: lens close to the thing, then move the lens — not your head — slowly away until it goes big and clear. Every kid practises on their own hand first; the lines on a palm are the first discovery.",
+    "Tray round: each kid picks one thing and looks properly — a full minute on one leaf is not slow, it is the activity. Veins, edges, the tiny hairs nobody sees with plain eyes.",
+    "Swap-and-tell: trade objects with a neighbour and say one thing the lens showed you that your eyes alone missed. One thing is the whole report at three.",
+    "Take the lenses outside to the chosen patch. Leaves still on the plant, bark still on the tree, bugs looked at and left exactly where they were found.",
+    "Finish back at the tray: hold up the plain leaf and the lensed leaf side by side in words — 'What did the lens know that we didn't?' Collect the answers; they are better than any worksheet."
+   ],
+   "variations": {
+    "easier": "One shared lens and the tray only — the adult holds each object, kids take turns looking.",
+    "harder": "Draw what the lens showed: one leaf, drawn big, with the veins the lens found. Drawing from the lens, not from memory."
+   },
+   "safety": "Lenses are for looking, never for aiming at the sun — say it once, plainly, before they go out: never point a lens at the sun or look through it at the sun. Living things get looked at where they live and left there; hands wash when the group comes back in.",
+   "copy_free": true,
+   "inclusion": "A kid with low vision is this activity's natural expert-by-feel: pair the lens with touch — the same leaf's edge, bark's roughness — and let them report what fingers find that lenses can't. Every find can be told, pointed at, or held up; nobody has to describe in sentences to have found something."
+  },
+  {
+   "id": "pass-it-down-delivery-line",
+   "name": "Pass-It-Down Delivery Line",
+   "tagline": "A line of hands moves soft picnic things, one at a time, into the basket — every hand touches every delivery.",
+   "categories": [
+    "team-community"
+   ],
+   "age_min": 3,
+   "age_max": 5,
+   "group_min": 4,
+   "group_max": 20,
+   "time_min": 10,
+   "time_max": 20,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "a basket or box"
+    },
+    {
+     "item": "soft things to deliver: plush fruit, beanbags, rolled socks, a soft toy loaf (8-12 items)"
+    }
+   ],
+   "no_prep": true,
+   "setup": "Stand the basket at one end of the room and the pile of soft things at the other. The line stands (or sits) between them, close enough that a small arm can hand to the next small arm without a stretch — move the kids, not the standard: if a handoff needs a lunge, the gap is too wide.",
+   "steps": [
+    "Show the one rule with the first item, walking it down the line yourself hand to hand: 'Hands only, no throwing — the next hands have to be ready.' Ready hands are held out, palms up.",
+    "Start the deliveries one at a time. The caller (you, at first) names the item as it sets off — 'The apple is travelling!' — and the line watches it travel.",
+    "When the basket end receives an item, it goes in the basket with a small ceremony: held up, named, dropped in. The line applauds its own delivery.",
+    "Speed comes by itself and needs no help. When the line is smooth, send two items at once, a few hands apart, so every kid is both receiving and passing.",
+    "Finish by tipping the basket out together and counting the deliveries back onto the pile — every item made the trip, and every kid can be asked which one their hands carried best."
+   ],
+   "variations": {
+    "easier": "A shorter line (four kids), a bigger basket opening, and the adult as the permanent middle hand.",
+    "harder": "Add the quiet round: the whole line delivers in silence, listening to the small sounds soft things make — then a backwards round, basket to pile."
+   },
+   "safety": "Soft things only — if it would hurt dropped on a bare foot, it does not travel. Nothing goes over heads; a dropped item is picked up by the nearest hands, never dived for.",
+   "copy_free": true,
+   "no_elimination": true,
+   "inclusion": "The line works seated, standing, or mixed — chairs in the line are part of the line, not a special arrangement. A kid who passes with one hand, with two, or by sliding the item along a tray table is passing, full stop; the rule is hands ready, and ready looks different on different bodies."
+  },
+  {
+   "id": "ring-around-the-rosie-circle",
+   "name": "Ring Around the Rosie Circle",
+   "tagline": "The very old singing circle game: hold hands, walk the ring, sing the short song, and all sit down together on the last line.",
+   "categories": [
+    "team-community",
+    "music-rhythm"
+   ],
+   "age_min": 3,
+   "age_max": 5,
+   "group_min": 6,
+   "group_max": 24,
+   "time_min": 10,
+   "time_max": 15,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "no materials — just a clear patch of floor or grass"
+    }
+   ],
+   "no_prep": true,
+   "setup": "Clear a circle big enough for the whole group to stand in holding hands with elbows bent — if arms are pulled straight and tight, the circle is too big or the group needs two rings. Practise the ending once before the song: on 'all fall down' everyone sits, nobody drops.",
+   "steps": [
+    "Join hands and walk the circle slowly while you sing the short song — 'Ring around the rosie, a pocket full of posies, ashes, ashes, we all fall down.' Slow walking is the correct speed; the game falls apart fast and works at a stroll.",
+    "On 'fall down' everyone sits where they stand, still holding hands if they can. The sitting-together is the joke and the point — give it a beat, then stand back up holding on.",
+    "Second round, the group picks the direction: circles that only ever go one way are a missed trick. Walk it the other way and sing it again.",
+    "Change one thing per round, never more: a tiptoe round, a round with a very quiet song, a round where the song gets slower and slower until the sit-down takes forever.",
+    "Finish with the slowest round the group can manage — a song stretched so long that the fall, when it finally comes, gets the biggest laugh of the session."
+   ],
+   "variations": {
+    "easier": "A smaller circle, a hand on an adult's arm instead of a neighbour's hand, and a chair placed at the circle for any kid whose sitting down is easier with one.",
+    "harder": "Add a second verse the group invents — one new action line ('we all jump up!') sung to the same tune, agreed before the round starts."
+   },
+   "safety": "The fall is a sit, never a drop or a pull: hands let go rather than drag a neighbour down, and the pace stays at a walk — a running ring of three-year-olds holding hands is a pile-up waiting for its moment. Check the ground for anything hard before the first round.",
+   "copy_free": true,
+   "no_elimination": true,
+   "inclusion": "The circle seats as happily as it stands: a kid in a chair or a wheelchair is a full part of the ring, hands held on both sides, and on 'fall down' the whole circle sits to their level — the game adapts to its players, the way it has for a very long time. The words vary from place to place and family to family; sing the version your room knows and say so — that variation is the game's real history."
+  },
+  {
+   "id": "pillow-islands",
+   "name": "Pillow Islands",
+   "tagline": "Flat cushions become islands in a pretend sea — step from island to island, and the floor is the water.",
+   "categories": [
+    "rainy-day",
+    "pe-movement"
+   ],
+   "age_min": 3,
+   "age_max": 5,
+   "group_min": 2,
+   "group_max": 14,
+   "time_min": 10,
+   "time_max": 20,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "flat cushions, pillows, or foam mats (5-8, the flatter the better)"
+    },
+    {
+     "item": "a soft toy (the island visitor)"
+    }
+   ],
+   "no_prep": true,
+   "setup": "Lay the islands a short step apart — one small stride for a three-year-old leg, tested with your own shortest step, not your longest. Flat cushions only: a fat squashy pillow wobbles, and wobbling is a different, harder game. Push each island firmly and make sure it does not skate on the floor; on hard floors, foam mats or cushions with grippy bottoms are the right call.",
+   "steps": [
+    "Walk the route yourself first, slowly, naming it: 'Island… island… island.' Then state the one rule: 'Feet on islands. The floor is the sea.'",
+    "One kid crosses at a time, any speed they like. Everyone else is the shore crew, watching from the carpet edge — watching crossings is where the route gets memorised.",
+    "When the whole group has crossed, carry the soft toy across: the visitor travels in two hands, which means no hands free for balance, which is the quiet hard version wearing a friendly face.",
+    "Move one island — just one, a little further or off to the side — and cross the new route. Same sea, new map.",
+    "Finish by gathering the islands into one big island pile-up: everyone who wants to stands or sits on the joined islands together for the group portrait moment, then islands get stacked away by the shore crew."
+   ],
+   "variations": {
+    "easier": "Three islands, close enough to step without stretching, with an adult hand crossing alongside.",
+    "harder": "A wider gap on one hop (a step becomes a small jump), or a beanbag carried on the head for the visitor round."
+   },
+   "safety": "Flat, non-skid islands only, spaced for stepping — never for leaping — and one kid on the route at a time. If an island slides when you test it, it does not go down; a moving island is a fall, not a game.",
+   "copy_free": true,
+   "no_elimination": true
+  },
+  {
+   "id": "show-me-your-move",
+   "name": "Show Me Your Move",
+   "tagline": "One kid shows one move — a stomp, a wiggle, a face — and the whole circle does it back. That is the entire game.",
+   "categories": [
+    "icebreakers",
+    "pe-movement"
+   ],
+   "age_min": 3,
+   "age_max": 6,
+   "group_min": 4,
+   "group_max": 24,
+   "time_min": 10,
+   "time_max": 15,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "no materials"
+    }
+   ],
+   "no_prep": true,
+   "setup": "Stand or sit the group in a circle where everyone can see everyone. You are in the circle and you go first — the adult's move sets the size of move that counts, so make yours small and silly rather than athletic.",
+   "steps": [
+    "Show your move once, plainly: two stomps, or a big slow nod, or your best fish face. Say only: 'This is my move. Show me your move' — and the whole circle does it back to you.",
+    "Go around the circle one kid at a time. Each kid shows one move; the circle copies it exactly once, all together. Copying is the compliment — say that out loud early, because at three, being copied can read as being laughed at until an adult names it as the good part.",
+    "A kid who cannot think of a move gets the menu, offered quietly: stomp, clap, wiggle, freeze face. Or they can pass the turn and take the next one — the circle comes back around, and second turns are often braver.",
+    "When a move is a hit, the circle will ask for it again — allow exactly one encore per kid, so the game keeps moving and every mover gets the same-sized moment.",
+    "Finish with a mash-up: you call back three favourite moves in a row and the circle does the sequence — the group's own dance, built out of their own moves, none of yours."
+   ],
+   "variations": {
+    "easier": "Adult and one neighbour model every move together, and the menu stays visible: four picture-less choices, named the same way each round.",
+    "harder": "Two moves in a row from the same kid, copied as a pair — the first real sequence work, and the bridge to copying patterns."
+   },
+   "safety": "Moves stay in your own space — no touching moves, no running moves, nothing that ends on the floor. A move that needs the whole room gets admired and shrunk together, not banned.",
+   "copy_free": true,
+   "no_elimination": true,
+   "inclusion": "A move is anything a body can offer: a blink pattern, a sound, a head tilt, a hand wave, a face. A kid who moves differently moves differently — the circle copies the move as it was given, exactly, which is the rule for everyone and the reason the game belongs to the whole room."
+  },
+  {
+   "id": "knee-drum-copycat",
+   "name": "Knee Drum Copycat",
+   "tagline": "Tap a tiny pattern on your knees — one, two, or three taps — and the circle taps it straight back.",
+   "categories": [
+    "music-rhythm"
+   ],
+   "age_min": 3,
+   "age_max": 5,
+   "group_min": 2,
+   "group_max": 20,
+   "time_min": 10,
+   "time_max": 15,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "no materials — knees are the drums"
+    }
+   ],
+   "no_prep": true,
+   "setup": "Sit the group on the floor or on chairs, knees reachable, hands free. Sit where every kid can see your hands. That is the whole setup; the game lives or dies on patterns staying short.",
+   "steps": [
+    "Tap once on your knees and hold your hands up, palms out — 'your turn.' The circle taps once back. That single tap, answered by twenty small drummers, is a bigger moment than it sounds.",
+    "Build by ones only: two taps, answered; three taps, answered. Never jump from one to three — the pattern grows one tap at a time, and the group should feel it grow.",
+    "Add one shape, not more taps: tap-tap-PAUSE-tap. The pause is a sound too — hold your hands up through it so the circle sees the silence.",
+    "Hand the drum over: a kid leads a pattern of up to three taps and the circle answers. Leaders will invent pauses before you teach them; let them.",
+    "Close with the quietest pattern the room can do — fingertips on knees, three taps, answered at the same whisper volume. Ending quiet is a skill, and this is how it gets practised."
+   ],
+   "variations": {
+    "easier": "One tap only, echoed several times, with the adult tapping along with the circle so nobody drums alone.",
+    "harder": "Four taps, or a pattern split between knees and one clap — knees for low sounds, clap for the high one."
+   },
+   "safety": "Hands on your own knees only. A pattern that turns into slapping gets slowed down, not scolded — speed is what turns tapping into hitting, and the leader sets the speed.",
+   "copy_free": true,
+   "no_elimination": true
+  },
+  {
+   "id": "texture-touch-basket-walk",
+   "name": "Texture Touch Basket Walk",
+   "tagline": "A short walk with empty baskets and one job for small hands: find something rough, something smooth, something soft.",
+   "categories": [
+    "outdoor",
+    "seasons"
+   ],
+   "age_min": 3,
+   "age_max": 6,
+   "group_min": 2,
+   "group_max": 20,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "a small basket, bucket, or bag per kid (or one per pair)"
+    },
+    {
+     "item": "your own three starter finds: a rough stone, a smooth stone, a soft leaf or petal"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Walk the route alone first with your hands, not just your eyes: you need to know the rough bark, the smooth stone, and the soft leaf are actually out there, and that nothing on the route is sharp, spiky at face height, or best left alone. Set the turnaround point where the group can be kept in sight of one adult the whole way.",
+   "steps": [
+    "Start at base with your three finds. Pass them around slowly, hand to hand, and name them with the group: rough, smooth, soft. Three words is the whole vocabulary of the walk.",
+    "Set off slowly. The first call is rough: kids hunt with their hands — bark, stones, a fence post — and a find only counts when it has been touched and agreed. Finds that can be carried go in the basket; finds that are part of the place (bark on a tree) get touched, named, and left.",
+    "Second call: smooth. Stones and worn wood are the usual winners, and the hunt slows down, which is exactly right — smooth things hide better than rough ones.",
+    "Third call: soft, the hardest of the three. Leaves, petals already fallen, grass, moss where it grows. Nothing gets picked off a living plant for softness; fallen things only, and if soft is not out there today, the group says so and the basket tells the truth.",
+    "Back at base, empty the baskets into three piles — rough, smooth, soft — and run a hand over each pile once more. The piles are the report: the walk, sorted by touch."
+   ],
+   "variations": {
+    "easier": "Two textures only (rough and smooth), finds made right around base, and a shared group basket.",
+    "harder": "Add a fourth word — hard/soft is a different question from rough/smooth, and cold is the winter version nobody expects."
+   },
+   "safety": "Touch with hands, never with faces or mouths, and the adult names the no-touch list before setting off: anything sharp, anything spiky, anything that belongs to an animal. Hands get washed when the group comes back in.",
+   "copy_free": true,
+   "inclusion": "This is the rare hunt where eyes are the backup tool: a kid who sees differently leads this one by hand, literally — their rough/smooth/soft calls get checked by everyone else's fingers, and the checking is the game. Finds can be carried back or just touched and reported; the basket is not the score."
+  },
+  {
+   "id": "big-dot-sticker-pictures",
+   "name": "Big Dot Sticker Pictures",
+   "tagline": "Peel a big dot sticker, place it where you want it — the pincer practice that comes before scissors, pens, and everything else.",
+   "categories": [
+    "crafts"
+   ],
+   "age_min": 3,
+   "age_max": 5,
+   "group_min": 2,
+   "group_max": 24,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "large dot stickers (2cm across or bigger, a few sheets per kid)"
+    },
+    {
+     "item": "sturdy paper or card (one sheet per kid)"
+    },
+    {
+     "item": "crayons (for drawing around the dots, optional)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Bend each sticker sheet back slightly along the rows before handing it out — a sheet that has been loosened peels kindly, and a sheet that hasn't is ten minutes of an adult peeling dots while twenty kids wait. Put out two or three colours only; the whole rainbow turns the session into choosing, not sticking.",
+   "steps": [
+    "Show the peel once, slowly, with your fingertips at the edge of one big dot: pinch, lift, carry it over, press it down flat and pat it. Then do the hard part out loud: 'It stuck to my finger. That happens. Peel it off the finger, stick it on the paper.'",
+    "Everyone peels and sticks freely for the first minutes. Dots anywhere — in rows, in piles, in one glorious corner stack. There is no picture to copy and no wrong place for a dot.",
+    "When sheets are warming up, offer the first gentle shape: 'Can your dots walk across the page?' A line of dots travelling edge to edge is the first sticker picture most kids make, and it is enough.",
+    "Offer crayons for anyone who wants them: draw around the dots, join dots together, give a dot a face. The sticker starts the picture; the kid finishes the sentence.",
+    "Close with the flat-pat round: everyone pats every one of their dots down one last time — a dot half-peeled at pickup time is a picture that loses pieces in the backpack — then names go on the back, as dictated, in adult handwriting."
+   ],
+   "variations": {
+    "easier": "The adult pre-peels the first row and leaves the dots hanging half-off the sheet edge, ready to pinch; smaller sheet of paper, fewer dots.",
+    "harder": "Stick to a plan: an outline shape to fill with dots (a big circle, a first initial), or a dot pattern — red, blue, red, blue — read off a finished example."
+   },
+   "safety": "Big dots only at this age, and stickers live on paper, skin, and clothes by agreement — never over eyes, never in mouths, and a dot found heading for a mouth gets swapped for a crayon job, quietly. Sheets and stray dots get collected at the end; a loose sticker on the floor is a slipping spot.",
+   "copy_free": true
+  },
+  {
+   "id": "pool-noodle-rope-threading",
+   "name": "Pool Noodle Rope Threading",
+   "tagline": "Big soft rings of pool noodle, one thick rope — thread them on, slide them down, pull them off, start again.",
+   "categories": [
+    "quiet-focus"
+   ],
+   "age_min": 3,
+   "age_max": 5,
+   "group_min": 1,
+   "group_max": 8,
+   "time_min": 10,
+   "time_max": 20,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "pool noodles cut into rings about 5cm thick (10-14 rings, adult-cut ahead of time)"
+    },
+    {
+     "item": "a thick soft rope or a length of webbing strap (about a metre per station)"
+    },
+    {
+     "item": "a tray or basket for the rings"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Cut the noodle rings ahead of time, adult-only, with a serrated knife, and check every ring's hole is clean through. Tie one end of the rope to a chair leg or table leg at toddler height and knot a finished ring onto the other end as a stopper — that stopper is what keeps the whole string from sliding off and undoing a small kid's work.",
+   "steps": [
+    "Show the thread once, slowly, with the biggest ring: rope tip through the hole, pull until the ring slides down and bumps the stopper. Then take it off again — on and off are both the game, and showing the off first means nobody is afraid of a mistake.",
+    "Kids thread at their own pace. Some will fill the rope end to end; some will put three rings on and take them off for twenty minutes. Both are doing the station correctly.",
+    "When a rope is full, carry it — two hands, adult walking alongside — to show one person, then slide every ring off into the basket and count them back out loud. The count is the reset, not a test.",
+    "Add one quiet challenge at a time: thread only the blue rings, or make the rope wear a pattern — big ring, little ring — by choosing from two sizes.",
+    "Close the station properly: rings counted into the basket, rope untied and coiled by the adult with a helper holding the end, tray back on the shelf ready for the next small hands."
+   ],
+   "variations": {
+    "easier": "Fewer, fatter rings and a shorter, stiffer strap (webbing threads more kindly than floppy rope); the adult holds the far end up so the hole stays findable.",
+    "harder": "A two-colour pattern read off a finished example rope, or threading against a gentle sand-timer for kids who ask for the race version."
+   },
+   "safety": "Rings are big and soft on purpose — nothing here is small enough to be a choking worry, and the rope is only ever out at the station, with an adult in the room: a loose rope and a climbing three-year-old never share a space. Cut edges get checked once for crumbly bits before the station opens.",
+   "copy_free": true
+  },
+  {
+   "id": "jump-the-river-ropes",
+   "name": "Jump the River Ropes",
+   "tagline": "Two ropes on the ground make a river. Stand at the bank, jump with two feet, land on the other side.",
+   "categories": [
+    "pe-movement"
+   ],
+   "age_min": 3,
+   "age_max": 5,
+   "group_min": 2,
+   "group_max": 16,
+   "time_min": 10,
+   "time_max": 20,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "two ropes, tape lines, or long scarves (the riverbanks)"
+    },
+    {
+     "item": "a mat or grass for the landing side if the floor is hard"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Lay the two ropes parallel, about a foot apart — a three-year-old's honest two-foot jump, tested against the smallest jumper you know, not the biggest. Anchor the ends so the ropes lie still; a riverbank that slides when stepped on ends the game early. Put the landing on carpet, mats, or grass.",
+   "steps": [
+    "Stand at the bank yourself and show the whole jump slowly: feet together, knees bend, swing arms, jump, land on two feet and freeze like a statue for one count. Landing still is part of the jump — say so, and show the wobble too.",
+    "One jumper at a time. Everyone else stands on the far bank as the welcoming side — the cheer when a jumper lands is half the equipment of this game.",
+    "A jumper who steps in the river has not failed anything: the current got them, they climb out, and they jump again from the bank. Rivers at three are for practising on.",
+    "When the whole group has crossed twice, move the far rope out by one hand-width. One hand-width is the correct amount of harder, and the group should watch you measure it.",
+    "Last crossings are dealer's choice: jump it, or take the stepping-stone version — one big step across — and the group finishes by rolling the river up together."
+   ],
+   "variations": {
+    "easier": "Narrow the river to a hand-width, or drop the jump entirely: a big step across a tape line is the same game at an earlier page.",
+    "harder": "Widen the river another hand-width, or cross it backwards — turn around on the bank, jump, and land facing where you came from."
+   },
+   "safety": "Ropes lie flat and still, the landing is soft, and only one kid jumps at a time with the landing clear before the next jump starts. Bare feet or grippy shoes — socks on hard floors turn landings into slides.",
+   "copy_free": true,
+   "no_elimination": true
+  },
+  {
+   "id": "blanket-fort-book-nook",
+   "name": "Blanket Fort Book Nook",
+   "tagline": "An adult-built blanket fort, a small pile of picture books, and room inside for three readers at a time.",
+   "categories": [
+    "quiet-focus",
+    "rainy-day"
+   ],
+   "age_min": 3,
+   "age_max": 5,
+   "group_min": 2,
+   "group_max": 6,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "two or three large blankets or sheets"
+    },
+    {
+     "item": "chairs or a low table to drape them over"
+    },
+    {
+     "item": "cushions for the floor inside"
+    },
+    {
+     "item": "a small pile of sturdy picture books"
+    },
+    {
+     "item": "clothespins or clamps (adult-handled)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "The adult builds the fort, start to finish, before any kid goes in: blankets draped over chairs or a low table, edges clamped, one wide opening that stays open. Test it the way it will be tested — lean on nothing, but tug every edge once; a fort that sags during building gets rebuilt now, not during reading. Line the floor inside with cushions and put the book pile just inside the opening.",
+   "steps": [
+    "Show the fort from outside first and name what it is: a reading nook, a quiet place, three readers at a time. Walk the opening rule: 'In through the door, out through the door — the walls are blankets, and blankets are not doors.'",
+    "First readers go in with the adult sitting at the opening — inside the fort's world, able to see every reader, close enough to hand over books. Pick the first book together and read it at fort volume: the soft voice a small roof asks for.",
+    "Between books, readers may swap with the waiting pair at the door — the door swap is part of the ritual, done slowly, book handed over with the swap. Nobody queues long: three short reads inside beat one long sit.",
+    "Leave a looking-book round in every visit: one book with no reading at all, just pages turned and pictures pointed at, fort-quiet. Pointing at a picture and naming it is reading at three, and the fort is where it gets taken seriously.",
+    "Close the nook properly: books carried out two at a time and stacked, cushions shaken and piled, then the group helps the adult fold the blankets — the fort comes down together, which is the last small job of the session."
+   ],
+   "variations": {
+    "easier": "A bigger opening, an adult reader inside for the whole round, and only two readers at a time.",
+    "harder": "A torch-free 'night reading' round: blankets doubled for dimness (opening still wide and uncovered), and readers retell the book they just heard to the next pair at the door."
+   },
+   "safety": "Adults build and clamp; kids never do, and nothing heavy ever goes on top of the blankets. The opening stays wide and uncovered the whole session, an adult can see inside at all times, and the fort is never a hiding place — if a reader cannot be seen, the fort gets rebuilt smaller.",
+   "copy_free": true
+  },
+  {
+   "id": "morse-code-signal-post",
+   "name": "Morse Code Signal Post",
+   "tagline": "Dots and dashes sent by flashlight and table-tap — learn SOS, signal your initials, and run a message post across the room.",
+   "categories": [
+    "stem",
+    "quiet-focus"
+   ],
+   "age_min": 7,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 24,
+   "time_min": 25,
+   "time_max": 40,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "flashlights (one per pair)"
+    },
+    {
+     "item": "paper and pencils (for logging signals)"
+    },
+    {
+     "item": "a board or big paper for the Morse chart"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Write the Morse alphabet on the board yourself before the session — A is dot-dash, and the whole alphabet fits in two columns; no printing needed and no handouts to lose. Dimming the room helps the flashlight rounds if your space allows it, but the game works in daylight against a plain wall. Test every flashlight; a dying battery sends a dying signal.",
+   "steps": [
+    "Start with the one message the whole world knows: SOS. S is three dots, O is three dashes — tap it on the table together until the room can send it without looking: dot-dot-dot, dash-dash-dash, dot-dot-dot. It has been the distress call for over a century because it is unmistakable.",
+    "Learn the code's one rule: a dot is short, a dash lasts three times as long, and the pause between letters is what keeps a message from becoming soup. Send your first name's first letter across the table by finger-taps, partner logging each mark on paper and decoding it against the board chart.",
+    "Initials round: each kid writes their two initials as dots and dashes, practises them until smooth, then pairs up across the room. Sender flashes initials at the wall above their partner's head — never at a face — receiver logs and decodes, then they swap.",
+    "Sound post: same game, no lights. A knuckle tap is a dot; a flat-palm thump is a dash — two sounds different enough to tell apart with your eyes closed. Receivers log by ear only and check against the chart after.",
+    "Message relay: split into lines of three or four stations. The first station gets a three-letter word from the word bank (CAT, SUN, MAP, EGG, TOP), sends it by taps station to station, and the last station writes what arrived. Compare the word that landed with the word that left — where it garbled is the real telegraph problem, and the fix is always the same: slower, with honest pauses.",
+    "Close in the dimmed room if you have one: the whole group sends SOS by flashlight together on your count, three times, then lights up. A room that can signal together can be quiet together — the stillness after the last round is the proof."
+   ],
+   "variations": {
+    "easier": "Initials only, chart open in front of both partners, and sender and receiver side by side instead of across the room.",
+    "harder": "Send full words from the bank with no chart for the common letters (E, T, A, O, N, S), or receive the sound round with eyes closed the whole way."
+   },
+   "safety": "Flashlights point at walls, ceilings, or paper — never at eyes, and that rule is stated before the first light comes out. Tapping stays on tables, not on each other.",
+   "copy_free": true,
+   "inclusion": "The signal post is a full job for a kid who would rather not speak in front of the room: a sender by light or by tap talks all session without saying a word, and their messages land exactly like everyone else's. Logging can be marks on paper, tallies, or dots and dashes drawn big — the code does not care how it is written down.",
+   "source": "https://teachbesideme.com/morse-code-games-for-kids/"
   }
  ],
- "count": 564,
- "updated": "2026-10-12"
+ "count": 577,
+ "updated": "2026-10-13"
 }
