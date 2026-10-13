@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Day Planner — Compose One Whole Day — Activity Vault</title>
+<meta name="description" content="Compose one whole day from the real Activity Vault catalog: arrival, morning meeting, centers, outdoor, closing — each slot filled by age and time from 649 real activities, with a printable day sheet and a pre-composed Just Three starter day for three-year-olds.">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@500;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap">
+<script src="assets/site.js" defer></script>
+
+</head>
+<body>
+<a class="skip-link" href="#dp-slots">Skip to day slots</a>
+<header class="site-header no-print">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Activity Vault home">
+      <span class="brand-mark" aria-hidden="true">🗂️</span>
+      <span class="brand-text">Activity <strong>Vault</strong></span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="index.html">Browse</a>
+      <a href="desk.html">The Desk 🗄️</a>
+      <a href="planner.html">Plan my week</a>
+      <a href="day.html" aria-current="page">Day Planner 🗓️</a>
+      <a href="kit.html">Kit 🧰</a>
+      <a href="collections.html">Collections 📚</a>
+    </nav>
+    <nav aria-label="More tools and seasons" class="nav-secondary">
+      <a href="sub.html">Sub Tub 🆘</a>
+      <a href="party.html">Party Planner 🎉</a>
+      <a href="fieldtrip.html">Field Trips 🚌</a>
+      <span class="nav-div" aria-hidden="true">·</span>
+      <a href="halloween.html">Halloween 🎃</a>
+      <a href="thanksgiving.html">Thanksgiving 🦃</a>
+      <a href="winter.html">Winter ❄️</a>
+      <a href="spring.html">Spring 🌷</a>
+      <a href="summer.html">Summer ☀️</a>
+    </nav>
+    <button class="btn btn-ghost btn-small no-print" id="site-calm-toggle" type="button"
+            aria-pressed="false" aria-label="Calm mode: turn off page animations and motion">
+      <span aria-hidden="true">🍃</span> Calm: <span class="calm-state">off</span>
+    </button>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero dp-hero" aria-labelledby="hero-title">
+    <span class="kicker no-print">🗓️ Day Planner — the flagship</span>
+    <h1 id="hero-title">One day, composed.</h1>
+    <p class="lede no-print">Five slots make a program day — arrival, morning meeting, centers, outdoor, closing. Pick your room's age and the Day Planner fills each slot from the real catalog: every suggestion is a real activity whose age band covers your kids and whose minutes fit the slot. Swap any slot, or start from the <strong>Just Three starter day</strong> — a whole day pre-composed from records written for three-year-olds alone. Then print the day sheet and pin it where the day can see it.</p>
+  </section>
+
+  <form class="dp-controls no-print" id="dp-form" onsubmit="return false;" aria-label="Day planner options">
+    <div class="filter-group">
+      <label class="flabel" for="dp-date">Date</label>
+      <input type="date" id="dp-date">
+    </div>
+    <div class="filter-group">
+      <label class="flabel" for="dp-age">Room age</label>
+      <select id="dp-age">
+        <option value="3" selected>3 years old</option>
+        <option value="4">4 years old</option>
+        <option value="5">5 years old</option>
+        <option value="6">6 years old</option>
+        <option value="7">7 years old</option>
+        <option value="8">8 years old</option>
+        <option value="9">9 years old</option>
+        <option value="10">10 years old</option>
+      </select>
+      <p class="field-hint">Filters use each activity's real age band — a record only appears if it honestly covers this age.</p>
+    </div>
+    <div class="dp-actions">
+      <button class="btn" id="dp-compose" type="button">✨ Compose my day</button>
+      <button class="btn btn-ghost" id="dp-starter" type="button">🧸 Just Three starter day</button>
+    </div>
+    <p class="dp-status" id="dp-status" role="status" aria-live="polite"></p>
+  </form>
+
+  <div class="dp-slots no-print" id="dp-slots" tabindex="-1" aria-label="Day slots"></div>
+
+  <p class="dp-summary no-print" id="dp-summary" role="status" aria-live="polite"></p>
+
+  <div class="dp-sheet-actions no-print">
+    <button class="btn" id="dp-print" type="button">🖨️ Print day sheet</button>
+    <button class="btn btn-ghost" id="dp-copy" type="button">📋 Copy day as text</button>
+    <span class="copy-status" id="dp-copy-status" role="status" aria-live="polite"></span>
+    <a class="btn btn-ghost" href="planner.html">📅 Plan a whole week instead</a>
+  </div>
+
+  <section class="day-sheet" id="day-sheet" aria-label="Printable day sheet">
+    <header class="day-sheet-head">
+      <p class="day-sheet-kicker">Activity Vault · Day Sheet</p>
+      <h2 class="day-sheet-title" id="sheet-title">My day</h2>
+      <p class="day-sheet-meta" id="sheet-meta"></p>
+    </header>
+    <div class="day-sheet-rows" id="sheet-rows"></div>
+    <footer class="day-sheet-foot">
+      <p>Every activity is a real catalog card — open it from the Vault for full steps, materials, and safety notes.</p>
+    </footer>
+  </section>
+
+  <p class="no-print" style="margin: 2rem 0 3rem;"><a href="planner.html">← Back to the week planner</a></p>
+</main>
+
+<footer class="site-footer no-print">
+  <div class="wrap"><p><strong>Activity Vault</strong> — the all-in-one activity archive for teachers &amp; after-school programs.</p></div>
+</footer>
+
+<script src="assets/planner-core.js" defer></script>
+<script src="assets/dayplanner-core.js" defer></script>
+<script src="assets/dayplanner.js" defer></script>
+</body>
+</html>

@@ -73,7 +73,7 @@ check("tags use fixed vocabulary",
 coll_payload = json.load(open(os.path.join(API, 'collections.json')))
 colls = coll_payload['collections']
 act_ids = {a['id'] for a in acts}
-check("collections: 22 collections", len(colls) == 22, f"{len(colls)} found")
+check("collections: 23 collections", len(colls) == 23, f"{len(colls)} found")
 check("collections: unique ids", len({c['id'] for c in colls}) == len(colls))
 check("collections: 8-12 picks each",
       all(8 <= len(c['picks']) <= 12 for c in colls))

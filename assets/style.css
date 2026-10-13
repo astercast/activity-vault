@@ -1855,3 +1855,46 @@ html[data-calm="true"] .drawer-pull { transition: none; }
 }
 
 /* ================= END WAVE 21 ================= */
+
+/* ---------- Day Planner (wave 33 flagship) ---------- */
+.dp-controls { background: var(--card); border: 2px solid var(--line); border-radius: var(--radius); padding: 1.2rem; box-shadow: var(--shadow); margin: 1rem 0 1.4rem; display: flex; flex-wrap: wrap; gap: 1.2rem; align-items: flex-end; }
+.dp-controls input[type="date"], .dp-controls select, .dp-select { font: inherit; padding: .5rem .6rem; border: 2px solid var(--line); border-radius: 10px; background: var(--paper); color: var(--ink); max-width: 100%; }
+.dp-actions { display: flex; gap: .6rem; flex-wrap: wrap; }
+.dp-status { flex-basis: 100%; margin: 0; color: var(--ink-soft); font-weight: 600; }
+.dp-slots { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin: 0 0 1rem; }
+.dp-card { background: var(--card); border: 2px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1rem 1.1rem; }
+.dp-card-head { display: flex; gap: .7rem; align-items: flex-start; margin-bottom: .5rem; }
+.dp-card-head h3 { margin: 0; font-family: var(--font-display); font-size: 1.08rem; }
+.dp-glyph { font-size: 1.7rem; line-height: 1; }
+.dp-hint { margin: .15rem 0 0; color: var(--ink-soft); font-size: .9rem; }
+.dp-tagline { margin: .4rem 0; }
+.dp-facts { color: var(--ink-soft); font-size: .9rem; margin: .3rem 0 .6rem; }
+.dp-empty { color: var(--ink-soft); font-style: italic; margin: .4rem 0 .6rem; }
+.dp-pickrow { display: flex; gap: .5rem; align-items: center; }
+.dp-pickrow .dp-select { flex: 1; min-width: 0; }
+.dp-summary { font-weight: 700; margin: .6rem 0 1rem; }
+.dp-sheet-actions { display: flex; gap: .6rem; flex-wrap: wrap; align-items: center; margin: 0 0 1.4rem; }
+/* The day sheet: a sheet of desk paper — ruled lines, red margin. */
+.day-sheet { background: #fffef9; border: 1px solid var(--line); border-radius: 6px; box-shadow: 0 10px 34px rgba(42,36,28,.16); padding: 2rem 2.2rem 1.6rem 3.2rem; margin: 0 0 2rem; position: relative;
+  background-image: linear-gradient(var(--rule-blue) 1px, transparent 1px), linear-gradient(90deg, transparent 0, transparent 2.2rem, rgba(212,105,94,.45) 2.2rem, rgba(212,105,94,.45) calc(2.2rem + 2px), transparent calc(2.2rem + 2px));
+  background-size: 100% 2rem, 100% 100%; }
+.day-sheet-kicker { margin: 0; letter-spacing: .14em; text-transform: uppercase; font-size: .72rem; color: var(--ink-soft); font-weight: 700; }
+.day-sheet-title { margin: .2rem 0 .1rem; font-family: Caveat, cursive; font-size: 2.6rem; line-height: 1.05; color: var(--ink); }
+.day-sheet-meta { margin: 0 0 1rem; color: var(--ink-soft); font-weight: 600; }
+.day-sheet-row { display: grid; grid-template-columns: 9.5rem 1fr; gap: 1rem; padding: .75rem 0; border-bottom: 1px dashed var(--line); }
+.day-sheet-row:last-child { border-bottom: 0; }
+.day-sheet-when { font-weight: 800; font-family: var(--font-display); font-size: .95rem; }
+.day-sheet-name { margin: 0; font-weight: 800; font-size: 1.12rem; }
+.day-sheet-sub { margin: .15rem 0; }
+.day-sheet-facts, .day-sheet-mats { margin: .15rem 0; color: var(--ink-soft); font-size: .9rem; }
+.day-sheet-open .day-sheet-name { color: var(--ink-soft); font-style: italic; font-weight: 600; }
+.day-sheet-foot { margin-top: 1rem; color: var(--ink-soft); font-size: .88rem; }
+@media (max-width: 560px) {
+  .day-sheet { padding: 1.4rem 1.1rem 1.2rem 1.6rem; }
+  .day-sheet-row { grid-template-columns: 1fr; gap: .25rem; }
+  .day-sheet-title { font-size: 2.1rem; }
+}
+@media print {
+  .day-sheet { box-shadow: none; border: 1px solid #999; break-inside: avoid; }
+  .day-sheet a { color: #000; text-decoration: none; }
+}

@@ -1421,8 +1421,73 @@
     20
    ],
    "page": "collections.html#little-hands-just-three-again"
+  },
+  {
+   "id": "little-hands-just-three-once-more",
+   "title": "Little Hands, Just Three, Once More",
+   "glyph": "🧸",
+   "when_to_use": "The fourth shelf banded for three-year-olds ONLY — a pretend pot of gold collected coin by clinking coin, fireflies counted by their blinks and never caught, a beanbag that falls and gets picked up by its own walker. Four waves of this kind have now cut the threes' gap by nearly half without one record a three-year-old is merely tolerated by. Reach for it in a young-threes room, a first month of program, or any group whose oldest kid just turned three.",
+   "picks": [
+    {
+     "activity_id": "big-gold-coin-pot-carry",
+     "curator_note": "The pot sounds fuller as the coins land — a job half done you can HEAR. The story stays a story, said out loud."
+    },
+    {
+     "activity_id": "first-firefly-blink-count",
+     "curator_note": "Catch nothing, jar nothing: the count is kept in chorus through long quiet watches, and the quiet is the activity."
+    },
+    {
+     "activity_id": "big-pillow-mountain-climb",
+     "curator_note": "Up one side, a sit at the top, down the other — the summit sit gets its full moment, beheld by the whole line."
+    },
+    {
+     "activity_id": "blanket-sled-slow-pull",
+     "curator_note": "The sled departs on the rider's word — 'Ready!' — and the pulling adjusts to every rider's review, out loud."
+    },
+    {
+     "activity_id": "big-smell-jar-sniff-and-say",
+     "curator_note": "Found by Maya's nose: a name, a description, or an honest 'I don't know' — every report is a complete turn."
+    },
+    {
+     "activity_id": "big-felt-quilt-wall-build",
+     "curator_note": "No grid, no outline: where does MY piece belong is the real quilter's job, and crooked squares stay placed."
+    },
+    {
+     "activity_id": "big-hat-pass-and-say",
+     "curator_note": "The song chooses the wearer. Two sentences in a ridiculous hat is exactly how much courage an introduction takes."
+    },
+    {
+     "activity_id": "big-texture-feet-path-walk",
+     "curator_note": "Tickly-cool, smooth, soft-moving, warm-squishy — four feelings reported in foot words, wince and giggle included."
+    },
+    {
+     "activity_id": "big-pot-lid-cymbal-band",
+     "curator_note": "Stopping together is the hardest thing a band can do. The silence is practised first, before any lids come out."
+    },
+    {
+     "activity_id": "big-finger-paint-sky-sheet",
+     "curator_note": "Sky first, clouds after — the white arrives as an event. A sleeve is not a brush; the sky takes every style."
+    },
+    {
+     "activity_id": "big-beanbag-balance-walk",
+     "curator_note": "It fell, you fixed it, you are walking — from THAT spot, never from the start. Falls are part of walking."
+    },
+    {
+     "activity_id": "big-peg-clip-card-row",
+     "curator_note": "The peg was hungry: more card in the mouth. A row built by the right hands, then unbuilt — the second skill."
+    }
+   ],
+   "age_span": [
+    3,
+    3
+   ],
+   "time_span": [
+    10,
+    20
+   ],
+   "page": "collections.html#little-hands-just-three-once-more"
   }
  ],
- "count": 22,
+ "count": 23,
  "updated": "2026-10-13"
 }
