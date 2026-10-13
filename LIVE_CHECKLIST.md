@@ -11,9 +11,9 @@ What is wired into the live release repo `astercast/activity-vault-live`
 - Track rule: push `-live` only on an explicit user "push"/"ship it".
   Verify the remote URL before every push.
 
-## Working-repo state (2026-10-13, wave 41)
+## Working-repo state (2026-10-13, wave 42)
 
-- Working repo (this repo, never deployed): **731 activities, 30
+- Working repo (this repo, never deployed): **739 activities, 31
   collections**, 4 Scout functions (unchanged this wave — still
   inside the free-tier budget: 4 of the ≤12 function cap, every
   entry `{"maxDuration": 10}`, no `runtime` key; the Scout's
@@ -26,9 +26,13 @@ What is wired into the live release repo `astercast/activity-vault-live`
   band's primary-category floor 3 → 6); wave 41 raised that floor
   again (8 more records banded 13–14 only, one for each of the
   band's eight thinnest categories; age-13/14 coverage 96 → 104
-  each, the band's primary-category floor 6 → 7). Rotation 13 added
+  each, the band's primary-category floor 6 → 7); wave 42
+  raised that floor again (8 more records banded 13–14 only, one
+  for each of the band's eight thinnest categories; age-13/14
+  coverage 104 → 112 each, the band's primary-category floor
+  7 → 8). Rotation 13 added
   the placement layer: generator-owned OG/Twitter/theme-color/
-  favicon/canonical/JSON-LD head meta on all 750 pages, robots.txt
+  favicon/canonical/JSON-LD head meta on all 758 pages, robots.txt
   (allow-all + Sitemap pointer at the live domain), absolute
   sitemap locs, and 4 Commons photos wired with attribution (see
   WAVELOG wave 36). The live snapshot below is still the

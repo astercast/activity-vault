@@ -5,17 +5,17 @@ Hundreds of real, classic, public-domain activity concepts — filterable by age
 group size, materials, and category. Plan-my-week planner. Printable one-page cards.
 
 ## Categories
-- Seasons: 122 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
+- Seasons: 123 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
 - Holidays: 128 activities — Festive projects and games for the days the whole group looks forward to.
-- Crafts: 164 activities — Hands-on making: fold it, paint it, build it, take it home.
-- STEM: 158 activities — Experiments, engineering challenges, and satisfying science demos.
-- PE & Movement: 124 activities — Run, jump, dance — activities that burn off the wiggles.
+- Crafts: 165 activities — Hands-on making: fold it, paint it, build it, take it home.
+- STEM: 159 activities — Experiments, engineering challenges, and satisfying science demos.
+- PE & Movement: 125 activities — Run, jump, dance — activities that burn off the wiggles.
 - Team & Community: 150 activities — Turn a group into a crew: cooperation, trust, and belonging.
-- Icebreakers: 75 activities — First-day friendly: learn names, laugh, and loosen up fast.
-- Outdoor: 118 activities — Fresh-air activities for fields, playgrounds, and nature walks.
-- Rainy Day: 74 activities — Stuck inside? These keep a roomful of kids happy without a gym.
+- Icebreakers: 76 activities — First-day friendly: learn names, laugh, and loosen up fast.
+- Outdoor: 119 activities — Fresh-air activities for fields, playgrounds, and nature walks.
+- Rainy Day: 75 activities — Stuck inside? These keep a roomful of kids happy without a gym.
 - Quiet & Focus: 137 activities — Wind-down worthy: calm, creative, individual or small-group.
-- Music & Rhythm: 48 activities — Drums, shakers, rhythm games, and songs — make some noise.
+- Music & Rhythm: 49 activities — Drums, shakers, rhythm games, and songs — make some noise.
 
 ## API — start at data/v1/index.json (self-describing manifest)
 - data/v1/index.json — api manifest
@@ -101,7 +101,7 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
   when an occasion holds fewer real activities than the arc has
   parts, the page says so in numbers and offers the nearest real
   options — it never pads a plan. Printable party sheet + copy-as-text.
-- collections.html — Curated collections: 30 teacher-ready bundles (rainy-day
+- collections.html — Curated collections: 31 teacher-ready bundles (rainy-day
   rescue, first day, sub tub, winter party, spring burst, summer splash, haunted halls, grateful gathering, winter lights…)
   each with a curator's note per pick; printable and copy-able per collection.
 - api.html — API docs with a Try-the-API console (endpoint picker, fetch, pretty JSON).
@@ -1231,6 +1231,11 @@ Page: activity/drip-drip-drop.html
 The tap-and-chase circle game every kid already half-knows.
 Categories: PE & Movement, Icebreakers | Ages 5-10 | Group 8-25 | 10-20 min | No prep | indoor/outdoor
 Page: activity/duck-duck-goose.html
+
+### Dusk Bat Exit Count
+Teens count bats leaving a known roost at dusk from one set watch point: sectors, silence, tallies by the minute, and no bat ever approached or handled.
+Categories: Outdoor | Ages 13-14 | Group 4-14 | 45-60 min | Prep needed | outdoor
+Page: activity/dusk-bat-exit-count.html
 
 ### Earth Day Trash Audit
 Sort one day of classroom trash, weigh the truth, and set one reduction goal.
@@ -2387,6 +2392,11 @@ One autumn tree, counted colour by colour with pointing fingers: how many colour
 Categories: Seasons | Ages 3-3 | Group 3-12 | 10-15 min | No prep | outdoor
 Page: activity/one-tree-autumn-color-count.html
 
+### One-Room Documentary Crew
+On a rainy day, a teen crew films a short documentary about one real room: consent first, interviews on the record, and a cut planned before it is shot.
+Categories: Rainy Day | Ages 13-14 | Group 6-18 | 50-60 min | Prep needed | indoor
+Page: activity/one-room-documentary-crew.html
+
 ### One-Sheet Zine Workshop
 Eight pages from a single folded sheet: teens plan, sequence, letter and trade a finished zine — a whole publication with no editor but its maker.
 Categories: Crafts | Ages 13-14 | Group 2-24 | 40-55 min | Prep needed | indoor
@@ -2422,6 +2432,11 @@ Swing a jingle-bell pendulum and let it drip-paint a holiday swirl.
 Categories: STEM, Crafts, Holidays | Ages 6-12 | Group 1-16 | 30-45 min | Prep needed | indoor
 Page: activity/ornament-pendulum-paint.html
 
+### Overwintering Garlic Planting Crew
+Teens plant garlic in autumn for a summer harvest: cloves set pointed-up under mulch, the winter logged honestly, spring emergence counted shoot by shoot.
+Categories: Seasons | Ages 13-14 | Group 4-16 | 40-55 min | Prep needed | outdoor
+Page: activity/overwintering-garlic-planting-crew.html
+
 ### Paint the Big Box House
 A cardboard box big enough to stand inside, washable paint and brushes as big as your hand: the group paints its house, outside and in, then lives in it.
 Categories: Crafts | Ages 3-3 | Group 4-14 | 15-20 min | Prep needed | indoor/outdoor
@@ -2431,6 +2446,11 @@ Page: activity/paint-the-big-box-house.html
 Smooth rocks from the yard become ladybugs — then hide them for others to find.
 Categories: Crafts, Outdoor | Ages 5-12 | Group 2-30 | 20-40 min | Prep needed | indoor/outdoor
 Page: activity/painted-rock-ladybugs.html
+
+### Pamphlet-Stitch Bookbinding Studio
+Teens bind a real blank book by hand: folded signatures, a stitched spine, covers cut true — a book is a machine you can make at one table.
+Categories: Crafts | Ages 13-14 | Group 4-20 | 50-60 min | Prep needed | indoor
+Page: activity/pamphlet-stitch-bookbinding-studio.html
 
 ### Pan Balance Heavy Light
 A two-pan balance and big things to test: one thing per side, watch which side goes down — that side is carrying the heavier one.
@@ -3127,10 +3147,20 @@ Count five down to one on your fingers, and the grown-up drops one big soft ball
 Categories: Holidays | Ages 3-5 | Group 4-20 | 10-15 min | No prep | indoor
 Page: activity/soft-ball-new-year-drop.html
 
+### Solar Oven Temperature Trials
+Teens build box solar ovens and trial them like scientists: one variable at a time, temperatures logged by the minute, the sun as the only power source.
+Categories: STEM | Ages 13-14 | Group 2-16 | 45-60 min | Prep needed | outdoor
+Page: activity/solar-oven-temperature-trials.html
+
 ### Solstice Lantern Stroll
 Plan a lantern walk for the longest night of the year.
 Categories: Team & Community, Seasons, Holidays | Ages 7-12 | Group 4-30 | 30-60 min | Prep needed | indoor/outdoor
 Page: activity/solstice-lantern-stroll.html
+
+### Song Arranging Studio, First Session
+Teens take one permitted song apart — melody, chords, structure — and rebuild it in a new arrangement the whole room rehearses and logs.
+Categories: Music & Rhythm | Ages 13-14 | Group 6-24 | 50-60 min | Prep needed | indoor
+Page: activity/song-arranging-studio-first-session.html
 
 ### Sound Effects Story
 Groups become living sound effects — thunder, rain, wind — performing a story read aloud by the leader.
@@ -3146,6 +3176,11 @@ Page: activity/sound-match-shakers.html
 The tallest free-standing tower wins — built from dry spaghetti and marshmallows.
 Categories: STEM, Team & Community | Ages 7-12 | Group 4-30 | 25-45 min | Prep needed | indoor
 Page: activity/spaghetti-tower.html
+
+### Spectrum Line Introductions
+New teens answer screened, low-stakes statements with their feet first — stand somewhere on the line, then talk to the person furthest from your spot.
+Categories: Icebreakers | Ages 13-14 | Group 8-30 | 30-45 min | Prep needed | indoor/outdoor
+Page: activity/spectrum-line-introductions.html
 
 ### Speed Cup Stacking
 Race to build and collapse cup pyramids — solo speed runs, team relays, and a freestyle tallest-tower finale.
@@ -3351,6 +3386,11 @@ Page: activity/tape-maze-challenge.html
 Painter's tape on the floor becomes a balance path — straight, zigzag, and curvy lines walked one slow step at a time.
 Categories: PE & Movement, Rainy Day | Ages 3-5 | Group 2-20 | 10-20 min | Prep needed | indoor
 Page: activity/tape-path-balance-walk.html
+
+### Tchoukball First Session
+A no-contact team game where shots rebound off a frame and points are scored by where the ball lands: catching, not colliding, wins the ground.
+Categories: PE & Movement | Ages 13-14 | Group 8-24 | 40-55 min | Prep needed | indoor/outdoor
+Page: activity/tchoukball-first-session.html
 
 ### Teach-Back to the Youngers
 Teens prepare and deliver a real ten-minute session for younger children: rehearsed, supervised, and marked only by the youngers' attention.

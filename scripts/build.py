@@ -1220,7 +1220,7 @@ def main():
         sys.exit(1)
     actmap = {a['id']: a for a in acts}
     # Wave 9 explicit assert: every collection pick resolves to a real activity id.
-    assert len(colls) == 30, f"expected 30 collections, got {len(colls)}"
+    assert len(colls) == 31, f"expected 31 collections, got {len(colls)}"
     assert all(p['id'] in actmap for c in colls for p in c['picks']), \
         "collection pick does not resolve to a real activity id"
     # Wave 10 explicit assert: balance-buckets covers all 11 categories.

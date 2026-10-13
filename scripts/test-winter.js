@@ -16,7 +16,7 @@ function ok(cond, label, extra) {
 
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const actIds = new Set(acts.map(a => a.id));
-ok(acts.length === 731, '685 activities total', String(acts.length));
+ok(acts.length === 739, '685 activities total', String(acts.length));
 ok(actIds.size === acts.length, 'all activity ids unique');
 
 // 1. Tag vocabulary: the four winter holiday tags are in the validator,
@@ -93,8 +93,8 @@ ok((byId['seven-principles-talk-tokens'].inclusion || '').toLowerCase().includes
 
 // 3. Collections: 14 total, winter-lights valid with 12 picks + curator notes
 const colls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/collections.json'), 'utf8')).collections;
-ok(colls.length === 30, '26 collections', String(colls.length));
-ok(new Set(colls.map(c => c.id)).size === 30, 'collection ids unique');
+ok(colls.length === 31, '26 collections', String(colls.length));
+ok(new Set(colls.map(c => c.id)).size === 31, 'collection ids unique');
 const wl = colls.find(c => c.id === 'winter-lights');
 ok(!!wl, 'winter-lights exists');
 ok(wl.glyph === '❄️', 'winter-lights glyph');
@@ -168,13 +168,13 @@ ok(indexHtml.includes('winter.html'), 'promo links winter.html');
 
 // 9. Generated API: collections + manifest + sitemap + llms mention winter
 const apiColls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/collections.json'), 'utf8'));
-ok(apiColls.count === 30 && apiColls.collections.length === 30, 'api collections.json count 26');
+ok(apiColls.count === 31 && apiColls.collections.length === 31, 'api collections.json count 26');
 ok(apiColls.collections.some(c => c.id === 'winter-lights'), 'api has winter-lights');
 const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/index.json'), 'utf8'));
 const collEp = manifest.endpoints.find(e => e.path === 'data/v1/collections.json');
-ok(collEp && collEp.records === 30, 'manifest collections records=26');
+ok(collEp && collEp.records === 31, 'manifest collections records=26');
 const actEp = manifest.endpoints.find(e => e.path === 'data/v1/activities.json');
-ok(actEp && actEp.records === 731, 'manifest activities records=685', String(actEp && actEp.records));
+ok(actEp && actEp.records === 739, 'manifest activities records=685', String(actEp && actEp.records));
 const sitemap = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
 ok(sitemap.includes('winter.html'), 'sitemap.xml has winter.html');
 const llms = fs.readFileSync(path.join(ROOT, 'llms.txt'), 'utf8');

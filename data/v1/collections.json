@@ -1909,8 +1909,57 @@
     60
    ],
    "page": "collections.html#just-teens-third-time"
+  },
+  {
+   "id": "just-teens-fourth-time",
+   "title": "Just Teens, a Fourth Time",
+   "glyph": "🌕",
+   "when_to_use": "The fourth shelf banded for thirteen- and fourteen-year-olds ONLY — the floor-to-eight shelf: garlic planted in autumn for a summer harvest, bats counted out of a roost at dusk, a no-contact game won by the catch, a song taken apart and rearranged, a documentary filmed with consent before camera, introductions answered with feet first, a blank book bound by hand, and sunlight trialled one variable at a time. Reach for it when the teen room needs the band's eight thinnest categories — seasons, outdoor, movement, music, rainy-day, icebreakers, crafts and STEM — written for the room itself, not borrowed from younger shelves.",
+   "picks": [
+    {
+     "activity_id": "overwintering-garlic-planting-crew",
+     "curator_note": "You plant for a harvest you will hand to summer — cloves pointed up at a measured depth, the winter logged honestly, spring emergence counted shoot by shoot."
+    },
+    {
+     "activity_id": "dusk-bat-exit-count",
+     "curator_note": "Count what leaves; never chase what returns — sectors, silence and tallies by the minute from one set watch point, and no bat ever approached."
+    },
+    {
+     "activity_id": "tchoukball-first-session",
+     "curator_note": "The catch is the defence — shots rebound off a frame, the forbidden zone stays empty, and landings are judged once, settled and chalked."
+    },
+    {
+     "activity_id": "song-arranging-studio-first-session",
+     "curator_note": "An arrangement is an argument about what the song is — one change at a time, predictions written before they are heard, verdicts in the same ink."
+    },
+    {
+     "activity_id": "one-room-documentary-crew",
+     "curator_note": "Consent comes before camera, every time — a true film about one real room, its subjects seeing the cut before any other audience."
+    },
+    {
+     "activity_id": "spectrum-line-introductions",
+     "curator_note": "Your feet answer first; then you get to explain — a room sorts itself along a line, then talks across the whole distance of its disagreement."
+    },
+    {
+     "activity_id": "pamphlet-stitch-bookbinding-studio",
+     "curator_note": "A book is a machine you can make by hand — grain with the spine, holes measured before they are punched, a stitch inspected by a friend."
+    },
+    {
+     "activity_id": "solar-oven-temperature-trials",
+     "curator_note": "Sunlight is slow; the log is how you know it is working — a shared control, one variable at a time, and a void trial declared without flinching."
+    }
+   ],
+   "age_span": [
+    13,
+    14
+   ],
+   "time_span": [
+    30,
+    60
+   ],
+   "page": "collections.html#just-teens-fourth-time"
   }
  ],
- "count": 30,
+ "count": 31,
  "updated": "2026-10-13"
 }
