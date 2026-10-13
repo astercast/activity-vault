@@ -20,7 +20,7 @@ function ok(cond, label, extra) {
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const byId = {};
 acts.forEach(a => { byId[a.id] = a; });
-ok(acts.length === 613, '613 activities total', String(acts.length));
+ok(acts.length === 625, '625 activities total', String(acts.length));
 ok(new Set(acts.map(a => a.id)).size === acts.length, 'all ids unique');
 
 const MLK = ['mlk-freedom-quilt-squares', 'civil-rights-timeline-walk',
@@ -45,7 +45,7 @@ DIW.forEach(id => ok(byId[id].tags.includes('holiday:diwali'), id + ': diwali ta
 STP.forEach(id => ok(byId[id].tags.includes('holiday:st-patricks-day'), id + ': st-patricks tag'));
 // The next thin spots, recorded honestly (not fixed this wave):
 ok(tagCount('holiday:lunar-new-year') === 6, 'lunar-new-year was 3 after wave 25; wave 26 -> 5; wave 29 -> 6');
-ok(tagCount('holiday:valentines-day') === 6, 'valentines-day was 4 after wave 25; wave 26 -> 6');
+ok(tagCount('holiday:valentines-day') === 7, 'valentines-day was 4 after wave 25; wave 26 -> 6; wave 31 -> 7');
 
 // 2. Quality bar on every new record.
 const MEDICAL = ['therapy', 'therapeutic', 'diagnos', 'treat anxiety', 'cure'];
@@ -87,9 +87,9 @@ NEW.forEach(id => {
 });
 
 // 4. Enrichment deltas from this wave.
-ok(acts.filter(a => a.copy_free).length === 233, 'copy_free 165 -> 173 in wave 25; wave 26 -> 184; wave 27 -> 197; wave 28 -> 209; wave 29 -> 221; wave 30 -> 233');
-ok(acts.filter(a => a.no_elimination).length === 75, 'no_elimination 43 -> 47 in wave 25; wave 26 -> 51; wave 27 -> 57; wave 28 -> 63; wave 29 -> 70; wave 30 -> 75');
-ok(acts.filter(a => a.inclusion).length === 95, 'inclusion 51 -> 64 in wave 25; wave 26 -> 69; wave 27 -> 75; wave 28 -> 81; wave 29 -> 87; wave 30 -> 95');
+ok(acts.filter(a => a.copy_free).length === 245, 'copy_free 165 -> 173 in wave 25; wave 26 -> 184; wave 27 -> 197; wave 28 -> 209; wave 29 -> 221; wave 30 -> 233; wave 31 -> 245');
+ok(acts.filter(a => a.no_elimination).length === 81, 'no_elimination 43 -> 47 in wave 25; wave 26 -> 51; wave 27 -> 57; wave 28 -> 63; wave 29 -> 70; wave 30 -> 75; wave 31 -> 81');
+ok(acts.filter(a => a.inclusion).length === 107, 'inclusion 51 -> 64 in wave 25; wave 26 -> 69; wave 27 -> 75; wave 28 -> 81; wave 29 -> 87; wave 30 -> 95; wave 31 -> 107');
 [13, 14].forEach(age => {
   const n = acts.filter(a => a.age_min <= age && a.age_max >= age).length;
   ok(n === 76, 'age ' + age + ' coverage 70 -> 76', String(n));

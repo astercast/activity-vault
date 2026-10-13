@@ -1291,8 +1291,73 @@
     20
    ],
    "page": "collections.html#little-hands-just-three"
+  },
+  {
+   "id": "little-hands-just-three-more",
+   "title": "Little Hands, Just Three More",
+   "glyph": "🧦",
+   "when_to_use": "The second shelf banded for three-year-olds ONLY — a bud counted with one fingertip, a heart carried in two hands, a banner that only arrives if every hand walks together, a house painted by its own tenants. The first Just Three shelf proved the band works; these twelve keep narrowing the one honest gap left in the archive, the distance between the threes and everybody else. Reach for it in a young-threes room, a first month of program, or any group whose oldest kid just turned three.",
+   "picks": [
+    {
+     "activity_id": "big-heart-hand-delivery",
+     "curator_note": "One heart, two hands, one named friend — and the adult's list quietly guarantees every kid both gives one and gets one."
+    },
+    {
+     "activity_id": "one-branch-bud-count",
+     "curator_note": "One finger, one bud, one number. The touch is how a three-year-old keeps count, and the promised revisit makes it data."
+    },
+    {
+     "activity_id": "big-pot-stir-together",
+     "curator_note": "Nothing real goes in and nobody tastes it — dinosaur soup is legitimate in this kitchen, and five counted circles is a finished stir."
+    },
+    {
+     "activity_id": "rain-drums-on-pots",
+     "curator_note": "Fingertips for drizzle, palms for the five-second downpour. The silence after the storm is the sound worth sitting in."
+    },
+    {
+     "activity_id": "big-funnel-sand-pour",
+     "curator_note": "The bottle fills from the bottom up and the top fills last — said out loud, over a tray that makes missing safe."
+    },
+    {
+     "activity_id": "long-banner-carry-together",
+     "curator_note": "A hand every few steps or it folds. The halfway stop, holding it level together, is harder than the walking — they can feel it."
+    },
+    {
+     "activity_id": "how-i-got-here-moves",
+     "curator_note": "Every way of arriving gets copied by the whole room, at the teller's size. Wheels are a first-class movement here."
+    },
+    {
+     "activity_id": "big-tree-hug-listen",
+     "curator_note": "A real minute of held quiet outdoors. The tree will be making those sounds all day; they stopped long enough to hear them."
+    },
+    {
+     "activity_id": "sing-it-back-echo-lines",
+     "curator_note": "One line out, the same line back, whole. A small singer echoed by the entire room is a first solo with the room as instrument."
+    },
+    {
+     "activity_id": "paint-the-big-box-house",
+     "curator_note": "Paint goes on the house, brushes stay at the house — then the craft dries and becomes the room's new building for days."
+    },
+    {
+     "activity_id": "giant-steps-baby-steps",
+     "curator_note": "Nobody is ever out and nobody is sent back — said as a promise on the start line, and the whole line lands at the gate together."
+    },
+    {
+     "activity_id": "sock-pair-match-basket",
+     "curator_note": "A near-match held up to the light is the favourite discovery. Every finished pair gets rolled into a ball — real laundry, done."
+    }
+   ],
+   "age_span": [
+    3,
+    3
+   ],
+   "time_span": [
+    10,
+    20
+   ],
+   "page": "collections.html#little-hands-just-three-more"
   }
  ],
- "count": 20,
+ "count": 21,
  "updated": "2026-10-13"
 }
