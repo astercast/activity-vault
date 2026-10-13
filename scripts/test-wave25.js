@@ -20,7 +20,7 @@ function ok(cond, label, extra) {
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const byId = {};
 acts.forEach(a => { byId[a.id] = a; });
-ok(acts.length === 715, '685 activities total', String(acts.length));
+ok(acts.length === 723, '685 activities total', String(acts.length));
 ok(new Set(acts.map(a => a.id)).size === acts.length, 'all ids unique');
 
 const MLK = ['mlk-freedom-quilt-squares', 'civil-rights-timeline-walk',
@@ -87,12 +87,12 @@ NEW.forEach(id => {
 });
 
 // 4. Enrichment deltas from this wave.
-ok(acts.filter(a => a.copy_free).length === 335, 'copy_free 165 -> 173 in wave 25; wave 26 -> 184; wave 27 -> 197; wave 28 -> 209; wave 29 -> 221; wave 30 -> 233; wave 31 -> 245; wave 32 -> 257; wave 33 -> 269');
-ok(acts.filter(a => a.no_elimination).length === 137, 'no_elimination 43 -> 47 in wave 25; wave 26 -> 51; wave 27 -> 57; wave 28 -> 63; wave 29 -> 70; wave 30 -> 75; wave 31 -> 81; wave 32 -> 87; wave 33 -> 93');
-ok(acts.filter(a => a.inclusion).length === 197, 'inclusion 51 -> 64 in wave 25; wave 26 -> 69; wave 27 -> 75; wave 28 -> 81; wave 29 -> 87; wave 30 -> 95; wave 31 -> 107; wave 32 -> 119; wave 33 -> 131');
+ok(acts.filter(a => a.copy_free).length === 343, 'copy_free 165 -> 173 in wave 25; wave 26 -> 184; wave 27 -> 197; wave 28 -> 209; wave 29 -> 221; wave 30 -> 233; wave 31 -> 245; wave 32 -> 257; wave 33 -> 269');
+ok(acts.filter(a => a.no_elimination).length === 145, 'no_elimination 43 -> 47 in wave 25; wave 26 -> 51; wave 27 -> 57; wave 28 -> 63; wave 29 -> 70; wave 30 -> 75; wave 31 -> 81; wave 32 -> 87; wave 33 -> 93');
+ok(acts.filter(a => a.inclusion).length === 205, 'inclusion 51 -> 64 in wave 25; wave 26 -> 69; wave 27 -> 75; wave 28 -> 81; wave 29 -> 87; wave 30 -> 95; wave 31 -> 107; wave 32 -> 119; wave 33 -> 131');
 [13, 14].forEach(age => {
   const n = acts.filter(a => a.age_min <= age && a.age_max >= age).length;
-  ok(n === 88, 'age ' + age + ' coverage 70 -> 76 -> 88 (wave-39)', String(n));
+  ok(n === 96, 'age ' + age + ' coverage 70 -> 76 -> 88 (wave-39)', String(n));
 });
 
 // 5. Scout cycle: the queue after the live 2026-10-12 scan — fully

@@ -5,14 +5,14 @@ Hundreds of real, classic, public-domain activity concepts — filterable by age
 group size, materials, and category. Plan-my-week planner. Printable one-page cards.
 
 ## Categories
-- Seasons: 118 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
+- Seasons: 121 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
 - Holidays: 127 activities — Festive projects and games for the days the whole group looks forward to.
 - Crafts: 163 activities — Hands-on making: fold it, paint it, build it, take it home.
 - STEM: 158 activities — Experiments, engineering challenges, and satisfying science demos.
-- PE & Movement: 121 activities — Run, jump, dance — activities that burn off the wiggles.
+- PE & Movement: 123 activities — Run, jump, dance — activities that burn off the wiggles.
 - Team & Community: 150 activities — Turn a group into a crew: cooperation, trust, and belonging.
 - Icebreakers: 74 activities — First-day friendly: learn names, laugh, and loosen up fast.
-- Outdoor: 114 activities — Fresh-air activities for fields, playgrounds, and nature walks.
+- Outdoor: 117 activities — Fresh-air activities for fields, playgrounds, and nature walks.
 - Rainy Day: 73 activities — Stuck inside? These keep a roomful of kids happy without a gym.
 - Quiet & Focus: 137 activities — Wind-down worthy: calm, creative, individual or small-group.
 - Music & Rhythm: 47 activities — Drums, shakers, rhythm games, and songs — make some noise.
@@ -101,7 +101,7 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
   when an occasion holds fewer real activities than the arc has
   parts, the page says so in numbers and offers the nearest real
   options — it never pads a plan. Printable party sheet + copy-as-text.
-- collections.html — Curated collections: 28 teacher-ready bundles (rainy-day
+- collections.html — Curated collections: 29 teacher-ready bundles (rainy-day
   rescue, first day, sub tub, winter party, spring burst, summer splash, haunted halls, grateful gathering, winter lights…)
   each with a curator's note per pick; printable and copy-able per collection.
 - api.html — API docs with a Try-the-API console (endpoint picker, fetch, pretty JSON).
@@ -927,6 +927,11 @@ Name one strength YOU bring to this team.
 Categories: Team & Community | Ages 8-14 | Group 6-30 | 5-10 min | No prep | indoor
 Page: activity/circle-of-strength.html
 
+### Circuit Course, Designed and Coached
+Teens design a circuit of stations, test every station on themselves, then coach it for their peers — design is the workout before the workout.
+Categories: PE & Movement | Ages 13-14 | Group 8-30 | 40-60 min | Prep needed | indoor/outdoor
+Page: activity/circuit-course-design-and-coach.html
+
 ### Civil Rights Timeline Walk
 Six true events, six stations around the room — walk the movement in order, then rebuild the story from memory.
 Categories: Holidays, Team & Community | Ages 8-14 | Group 6-32 | 30-45 min | Prep needed | indoor
@@ -1021,6 +1026,11 @@ Page: activity/compliment-chain.html
 Sit in a circle and give every single person specific, genuine compliments — the simplest community builder there is.
 Categories: Team & Community, Icebreakers | Ages 5-12 | Group 5-30 | 15-15 min | No prep | indoor/outdoor
 Page: activity/compliment-circle.html
+
+### Compost Heap Temperature Ledger
+A working compost heap run by teens: built in layers, turned on a rota, and read weekly by thermometer — the heat is the evidence it is alive.
+Categories: Seasons | Ages 13-14 | Group 4-16 | 45-60 min | Prep needed | outdoor
+Page: activity/compost-heap-temperature-ledger.html
 
 ### Continents Map Puzzle
 Cut out the seven continents and fit them onto a blank world map.
@@ -1356,6 +1366,11 @@ Page: activity/finger-count-breath.html
 Out at dusk on a summer evening: fireflies blink over the grass and the group counts the blinks together — catching nothing, just counting light.
 Categories: Seasons | Ages 3-3 | Group 3-14 | 15-20 min | No prep | outdoor
 Page: activity/first-firefly-blink-count.html
+
+### First Frost Forecast Desk
+Teens run a frost forecast for real gardeners: evening readings, a signed prediction, and a morning check that grades it honestly.
+Categories: Seasons | Ages 13-14 | Group 3-12 | 25-40 min | Prep needed | indoor/outdoor
+Page: activity/first-frost-forecast-desk.html
 
 ### First Puddle Walk
 Boots on, and a slow walk through the shallow puddles after rain — first round walking only, and the splash is saved for last.
@@ -2302,6 +2317,11 @@ Stack them up, knock them down, nest them away — the complete tower lifecycle.
 Categories: Quiet & Focus | Ages 3-5 | Group 1-10 | 10-20 min | Prep needed | indoor
 Page: activity/nesting-cup-towers.html
 
+### New Game Playtest League
+Teams invent a movement game, write its rules, watch strangers break them, revise, and republish — the league rewards the clearest game, not the loudest.
+Categories: PE & Movement | Ages 13-14 | Group 6-30 | 45-60 min | Prep needed | indoor/outdoor
+Page: activity/new-game-playtest-league.html
+
 ### New Year Noise Parade
 Shakers, drums, and one glorious lap — the new year deserves an entrance.
 Categories: Music & Rhythm, PE & Movement | Ages 4-10 | Group 6-30 | 15-25 min | Prep needed | indoor/outdoor
@@ -3172,6 +3192,11 @@ Spell your name with your legs — one squat per letter.
 Categories: PE & Movement | Ages 6-12 | Group 4-40 | 5-8 min | No prep | indoor
 Page: activity/squat-spell.html
 
+### Star Party Hosts
+Teens host a stargazing evening for families: red-light discipline, a rehearsed sky tour, and the old stories told as stories under the things themselves.
+Categories: Outdoor | Ages 13-14 | Group 4-16 | 50-60 min | Prep needed | outdoor
+Page: activity/star-party-hosts.html
+
 ### Star-Spangled Shoebox Parade
 Decorate shoebox floats in red, white, and blue — then parade the whole route.
 Categories: Crafts, Holidays, Seasons | Ages 4-12 | Group 2-30 | 30-50 min | Prep needed | indoor/outdoor
@@ -3227,6 +3252,11 @@ Roll picture dice for a character, a setting, and a problem — then invent and 
 Categories: Rainy Day, Quiet & Focus | Ages 6-12 | Group 2-20 | 25-25 min | Prep needed | indoor
 Page: activity/storytelling-dice.html
 
+### Stream Watch Testing Round
+Teens test a real stream — its temperature, its clarity, and the small creatures whose presence grades water — and file the round's evidence.
+Categories: Outdoor | Ages 13-14 | Group 4-14 | 40-55 min | Prep needed | outdoor
+Page: activity/stream-watch-testing-round.html
+
 ### String Figure Games
 A loop of string, ten fingers, endless figures.
 Categories: Quiet & Focus, Crafts | Ages 7-12 | Group 2-25 | 20-40 min | Prep needed | indoor
@@ -3241,6 +3271,11 @@ Page: activity/suet-cage-winter-feeder.html
 Bright icing, bold patterns — decorate calaveras de azucar the traditional way.
 Categories: Crafts | Ages 7-12 | Group 2-24 | 30-50 min | Prep needed | indoor
 Page: activity/sugar-skull-decorating.html
+
+### Summer Glut Preserving Day
+A glut becomes jars: teens wash, chop, pack and label under one tested recipe followed exactly, while the adult runs the processing — summer, kept.
+Categories: Seasons | Ages 13-14 | Group 4-14 | 50-60 min | Prep needed | indoor
+Page: activity/summer-glut-preserving-day.html
 
 ### Sun Patch, Shade Patch
 A sunny patch and a shady patch side by side, and one job: stand in each one and feel the difference on your own hands.
@@ -3416,6 +3451,11 @@ Page: activity/track-prints-detective.html
 One kid directs the room's traffic — jog, freeze, or turn.
 Categories: PE & Movement, Icebreakers | Ages 5-12 | Group 6-40 | 5-10 min | No prep | indoor/outdoor
 Page: activity/traffic-cop.html
+
+### Trail Crew, First Pass
+Teens maintain a real path under permission: drainage cleared, waymarks renewed, and every stretch of work logged in the crew book.
+Categories: Outdoor | Ages 13-14 | Group 4-18 | 45-60 min | Prep needed | outdoor
+Page: activity/trail-crew-first-pass.html
 
 ### Tribal Nations Map Study
 Whose land is the school on? Find the tribal nations of your region on a real map and learn their names right.

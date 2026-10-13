@@ -30,7 +30,7 @@ function ok(cond, label, extra) {
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const byId = {};
 acts.forEach(a => { byId[a.id] = a; });
-ok(acts.length === 715, '685 activities total', String(acts.length));
+ok(acts.length === 723, '685 activities total', String(acts.length));
 ok(new Set(acts.map(a => a.id)).size === acts.length, 'all ids unique');
 
 const NEW = ['big-heart-hand-delivery', 'one-branch-bud-count',
@@ -52,7 +52,7 @@ ok(covers(4) - covers(3) === 0, 'headline gap 90 -> 78, narrowed again; wave 32 
 ok(acts.filter(a => a.age_min === 3).length === 160, '94 activities start at age 3 (82 after wave 31; wave 32 -> 94)');
 ok(acts.filter(a => a.age_max === 3).length === 102, '36 activities banded 3-only (12 wave-30 + 12 wave-31 + 12 wave-32 + 12 wave-33)');
 ok(acts.filter(a => a.age_max <= 6).length === 153, 'early-years-only (age_max<=6) 63 -> 75; wave 32 -> 87; wave 33 -> 99; wave 34 -> 111');
-[13, 14].forEach(age => ok(covers(age) === 88, 'age ' + age + ' coverage 76 -> 88 (wave-39)', String(covers(age))));
+[13, 14].forEach(age => ok(covers(age) === 96, 'age ' + age + ' coverage 76 -> 88 (wave-39)', String(covers(age))));
 ok(covers(3) > covers(13), 'age 3 (94) passes ages 13/14 (76) — no longer the thinnest single age');
 NEW.forEach(id => {
   ok(byId[id].age_min === 3 && byId[id].age_max === 3, id + ': banded 3-only (age_min 3, age_max 3)');
@@ -135,19 +135,19 @@ ok(/Those two fooled us for a second/.test(JSON.stringify(byId['sock-pair-match-
 // 5. Category + enrichment deltas from this wave.
 const prim = cat => acts.filter(a => a.categories[0] === cat).length;
 ok(prim('holidays') === 54, 'holidays primary 45 -> 46; wave 32 -> 48');
-ok(prim('seasons') === 43, 'seasons primary 33 -> 34; wave 32 -> 36');
+ok(prim('seasons') === 46, 'seasons primary 33 -> 34; wave 32 -> 36');
 ok(prim('rainy-day') === 40, 'rainy-day primary 27 -> 29; wave 32 -> 33');
 ok(prim('stem') === 121, 'stem primary 112 -> 113; wave 32 -> 115');
 ok(prim('team-community') === 78, 'team-community primary 69 -> 70; wave 32 -> 72');
 ok(prim('icebreakers') === 48, 'icebreakers primary 39 -> 40; wave 32 -> 42');
-ok(prim('outdoor') === 58, 'outdoor primary 49 -> 50; wave 32 -> 52');
+ok(prim('outdoor') === 61, 'outdoor primary 49 -> 50; wave 32 -> 52');
 ok(prim('music-rhythm') === 41, 'music-rhythm primary 31 -> 32; wave 32 -> 34');
 ok(prim('crafts') === 99, 'crafts primary 91 -> 92; wave 32 -> 94');
-ok(prim('pe-movement') === 70, 'pe-movement primary 62 -> 63; wave 32 -> 65');
+ok(prim('pe-movement') === 72, 'pe-movement primary 62 -> 63; wave 32 -> 65');
 ok(prim('quiet-focus') === 63, 'quiet-focus primary 55 -> 56; wave 32 -> 58');
-ok(acts.filter(a => a.copy_free).length === 335, 'copy_free 233 -> 245; wave 32 -> 257; wave 33 -> 269');
-ok(acts.filter(a => a.no_elimination).length === 137, 'no_elimination 75 -> 81; wave 32 -> 87; wave 33 -> 93');
-ok(acts.filter(a => a.inclusion).length === 197, 'inclusion 95 -> 107; wave 32 -> 119; wave 33 -> 131');
+ok(acts.filter(a => a.copy_free).length === 343, 'copy_free 233 -> 245; wave 32 -> 257; wave 33 -> 269');
+ok(acts.filter(a => a.no_elimination).length === 145, 'no_elimination 75 -> 81; wave 32 -> 87; wave 33 -> 93');
+ok(acts.filter(a => a.inclusion).length === 205, 'inclusion 95 -> 107; wave 32 -> 119; wave 33 -> 131');
 const tagCount = t => acts.filter(a => (a.tags || []).includes(t)).length;
 ok(tagCount('holiday:valentines-day') === 7, 'valentines-day tag 6 -> 7', String(tagCount('holiday:valentines-day')));
 ok(tagCount('season:spring') === 42, 'spring tag 38 -> 39; wave 32 -> 40; wave 36 -> 41', String(tagCount('season:spring')));
@@ -156,7 +156,7 @@ ok(tagCount('season:winter') === 117, 'winter tag unchanged at 115 in wave 31; w
 
 // 6. The 21st collection: Little Hands, Just Three More — earlier shelves intact.
 const colls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/collections.json'), 'utf8')).collections;
-ok(colls.length === 28, '26 collections', String(colls.length));
+ok(colls.length === 29, '26 collections', String(colls.length));
 const jt = colls.find(c => c.id === 'little-hands-just-three-more');
 ok(!!jt, 'little-hands-just-three-more collection present');
 ok(jt.picks.length === 12, 'just-three-more collection has 12 picks');

@@ -24,7 +24,7 @@ function ok(cond, label, extra) {
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const byId = {};
 acts.forEach(a => { byId[a.id] = a; });
-ok(acts.length === 715, '685 activities total', String(acts.length));
+ok(acts.length === 723, '685 activities total', String(acts.length));
 ok(new Set(acts.map(a => a.id)).size === acts.length, 'all ids unique');
 
 const NEW = ['cardboard-ramp-roll-lab', 'hand-lens-look-closer',
@@ -42,7 +42,7 @@ ok(covers(3) === 160, 'age 3 coverage 22 -> 34 in wave 27; wave 28 -> 46; wave 2
 ok(covers(4) === 160, 'age 4 coverage 124 -> 136 in wave 27; wave 28 -> 148; wave 29 -> 160', String(covers(4)));
 ok(acts.filter(a => a.age_min === 3).length === 160, '94 activities start at age 3 (58 + 12 wave-30 + 12 wave-31 + 12 wave-32)');
 ok(acts.filter(a => a.age_max <= 6).length === 153, 'early-years-only (age_max<=6) 15 -> 27 in wave 27; wave 28 -> 39; wave 29 -> 51; wave 30 -> 63; wave 31 -> 75; wave 32 -> 87; wave 33 -> 99; wave 34 -> 111');
-[13, 14].forEach(age => ok(covers(age) === 88, 'age ' + age + ' coverage 76 -> 88 (wave-39)', String(covers(age))));
+[13, 14].forEach(age => ok(covers(age) === 96, 'age ' + age + ' coverage 76 -> 88 (wave-39)', String(covers(age))));
 NEW.forEach(id => {
   ok(byId[id].age_min === 3, id + ': designed for 3 (age_min 3)');
   ok(byId[id].age_max <= 6, id + ': early-years band (age_max <= 6)');
@@ -117,15 +117,15 @@ ok(prim('music-rhythm') === 41, 'music-rhythm primary 27 -> 28 in wave 27; wave 
 ok(prim('icebreakers') === 48, 'icebreakers primary 34 -> 35 in wave 27; wave 28 -> 36; wave 29 -> 38; wave 30 -> 39; wave 31 -> 40; wave 32 -> 42');
 ok(prim('crafts') === 99, 'crafts primary 89 -> 90; wave 30 -> 91; wave 31 -> 92; wave 32 -> 94');
 ok(prim('quiet-focus') === 63, 'quiet-focus primary 52 -> 54; wave 30 -> 55; wave 31 -> 56; wave 32 -> 58');
-ok(prim('outdoor') === 58, 'outdoor primary 45 -> 46 in wave 27; wave 28 -> 47; wave 29 -> 48; wave 30 -> 49; wave 31 -> 50; wave 32 -> 52');
-ok(prim('pe-movement') === 70, 'pe-movement primary 59 -> 60 in wave 27; wave 28 -> 61; wave 30 -> 62; wave 31 -> 63; wave 32 -> 65');
-ok(acts.filter(a => a.copy_free).length === 335, 'copy_free 184 -> 197 by wave 27; wave 28 -> 209; wave 29 -> 221; wave 30 -> 233; wave 31 -> 245; wave 32 -> 257; wave 33 -> 269');
-ok(acts.filter(a => a.no_elimination).length === 137, 'no_elimination 51 -> 57 in wave 27; wave 28 -> 63; wave 29 -> 70; wave 30 -> 75; wave 31 -> 81; wave 32 -> 87; wave 33 -> 93');
-ok(acts.filter(a => a.inclusion).length === 197, 'inclusion 69 -> 75 by wave 27; wave 28 -> 81; wave 29 -> 87; wave 30 -> 95; wave 31 -> 107; wave 32 -> 119; wave 33 -> 131');
+ok(prim('outdoor') === 61, 'outdoor primary 45 -> 46 in wave 27; wave 28 -> 47; wave 29 -> 48; wave 30 -> 49; wave 31 -> 50; wave 32 -> 52');
+ok(prim('pe-movement') === 72, 'pe-movement primary 59 -> 60 in wave 27; wave 28 -> 61; wave 30 -> 62; wave 31 -> 63; wave 32 -> 65');
+ok(acts.filter(a => a.copy_free).length === 343, 'copy_free 184 -> 197 by wave 27; wave 28 -> 209; wave 29 -> 221; wave 30 -> 233; wave 31 -> 245; wave 32 -> 257; wave 33 -> 269');
+ok(acts.filter(a => a.no_elimination).length === 145, 'no_elimination 51 -> 57 in wave 27; wave 28 -> 63; wave 29 -> 70; wave 30 -> 75; wave 31 -> 81; wave 32 -> 87; wave 33 -> 93');
+ok(acts.filter(a => a.inclusion).length === 205, 'inclusion 69 -> 75 by wave 27; wave 28 -> 81; wave 29 -> 87; wave 30 -> 95; wave 31 -> 107; wave 32 -> 119; wave 33 -> 131');
 
 // 6. The 17th collection: Little Hands, Next Steps — and First Years intact.
 const colls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/collections.json'), 'utf8')).collections;
-ok(colls.length === 28, '26 collections', String(colls.length));
+ok(colls.length === 29, '26 collections', String(colls.length));
 const nx = colls.find(c => c.id === 'little-hands-next-steps');
 ok(!!nx, 'little-hands-next-steps collection present');
 ok(nx.picks.length === 12, 'next-steps collection has 12 picks');

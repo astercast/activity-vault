@@ -1811,8 +1811,57 @@
     60
    ],
    "page": "collections.html#just-teens-first-time"
+  },
+  {
+   "id": "just-teens-second-time",
+   "title": "Just Teens, a Second Time",
+   "glyph": "🌌",
+   "when_to_use": "The second shelf banded for thirteen- and fourteen-year-olds ONLY — the floor shelf: a compost heap read by thermometer, a frost forecast graded by its mornings, summer kept in jars, a path maintained under permission, a sky hosted for families, a stream graded by its own citizens, a circuit designed by its coaches, and games invented to survive strangers. Reach for it when the teen room needs work with real responsibility in the band's three thinnest categories — seasons, outdoor, and movement — written for the room itself, not borrowed from younger shelves.",
+   "picks": [
+    {
+     "activity_id": "compost-heap-temperature-ledger",
+     "curator_note": "The heap is alive, and the ledger is how you know — layers, a turning rota, and a core temperature taken weekly in the same ink, up or down."
+    },
+    {
+     "activity_id": "first-frost-forecast-desk",
+     "curator_note": "A forecast is a promise you check in the morning — a signed call at the board each evening, graded right, wrong, or lucky at dawn."
+    },
+    {
+     "activity_id": "summer-glut-preserving-day",
+     "curator_note": "A jar sealed properly is summer kept — one tested recipe followed exactly, prep by teens, processing by the adult, every batch vouched for in the day book."
+    },
+    {
+     "activity_id": "trail-crew-first-pass",
+     "curator_note": "Leave the path better than the weather left it — drainage, waymarks and an honest crew book, under a permission whose edges are respected exactly."
+    },
+    {
+     "activity_id": "star-party-hosts",
+     "curator_note": "Darkness is the venue; the hosts protect it — red light only, a rehearsed tour of tonight's real sky, and a meteor tally never improved in the retelling."
+    },
+    {
+     "activity_id": "stream-watch-testing-round",
+     "curator_note": "The stream grades itself; the watch just reads the marks — temperature, clarity, and citizens counted at the same points, then returned unharmed."
+    },
+    {
+     "activity_id": "circuit-course-design-and-coach",
+     "curator_note": "A station earns its place by being doable well when tired — proposed, tested on the designers, cut or kept by evidence, then coached."
+    },
+    {
+     "activity_id": "new-game-playtest-league",
+     "curator_note": "A rule that only works when everyone is being nice is not a rule yet — strangers break it, the log records it, the card is rewritten."
+    }
+   ],
+   "age_span": [
+    13,
+    14
+   ],
+   "time_span": [
+    25,
+    60
+   ],
+   "page": "collections.html#just-teens-second-time"
   }
  ],
- "count": 28,
+ "count": 29,
  "updated": "2026-10-13"
 }

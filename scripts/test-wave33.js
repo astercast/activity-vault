@@ -30,7 +30,7 @@ function ok(cond, label, extra) {
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const byId = {};
 acts.forEach(a => { byId[a.id] = a; });
-ok(acts.length === 715, '685 activities total', String(acts.length));
+ok(acts.length === 723, '685 activities total', String(acts.length));
 ok(new Set(acts.map(a => a.id)).size === acts.length, 'all ids unique');
 
 const NEW = ['big-gold-coin-pot-carry', 'first-firefly-blink-count',
@@ -50,7 +50,7 @@ ok(covers(4) - covers(3) === 0, 'headline gap 66 -> 54, narrowed a fourth time',
 ok(acts.filter(a => a.age_min === 3).length === 160, '106 activities start at age 3');
 ok(acts.filter(a => a.age_max === 3).length === 102, '48 activities banded 3-only (12 each, waves 30-34)');
 ok(acts.filter(a => a.age_max <= 6).length === 153, 'early-years-only (age_max<=6) 87 -> 99');
-[13, 14].forEach(age => ok(covers(age) === 88, 'age ' + age + ' coverage 76 -> 88 (wave-39)', String(covers(age))));
+[13, 14].forEach(age => ok(covers(age) === 96, 'age ' + age + ' coverage 76 -> 88 (wave-39)', String(covers(age))));
 ok(covers(3) > covers(13), 'age 3 (106) stays ahead of ages 13/14 (76)');
 NEW.forEach(id => {
   ok(byId[id].age_min === 3 && byId[id].age_max === 3, id + ': banded 3-only (age_min 3, age_max 3)');
@@ -135,28 +135,28 @@ ok(/Pegs pinch/.test(byId['big-peg-clip-card-row'].safety || ''), 'peg clip: peg
 // 5. Category + enrichment deltas from this wave.
 const prim = cat => acts.filter(a => a.categories[0] === cat).length;
 ok(prim('holidays') === 54, 'holidays primary 47 -> 48');
-ok(prim('seasons') === 43, 'seasons primary 35 -> 36');
+ok(prim('seasons') === 46, 'seasons primary 35 -> 36');
 ok(prim('rainy-day') === 40, 'rainy-day primary 31 -> 33');
 ok(prim('stem') === 121, 'stem primary 114 -> 115');
 ok(prim('team-community') === 78, 'team-community primary 71 -> 72');
 ok(prim('icebreakers') === 48, 'icebreakers primary 41 -> 42');
-ok(prim('outdoor') === 58, 'outdoor primary 51 -> 52');
+ok(prim('outdoor') === 61, 'outdoor primary 51 -> 52');
 ok(prim('music-rhythm') === 41, 'music-rhythm primary 33 -> 34');
 ok(prim('crafts') === 99, 'crafts primary 93 -> 94');
-ok(prim('pe-movement') === 70, 'pe-movement primary 64 -> 65');
+ok(prim('pe-movement') === 72, 'pe-movement primary 64 -> 65');
 ok(prim('quiet-focus') === 63, 'quiet-focus primary 57 -> 58');
-ok(acts.filter(a => a.copy_free).length === 335, 'copy_free 257 -> 269');
-ok(acts.filter(a => a.no_elimination).length === 137, 'no_elimination 87 -> 93');
-ok(acts.filter(a => a.inclusion).length === 197, 'inclusion 119 -> 131');
+ok(acts.filter(a => a.copy_free).length === 343, 'copy_free 257 -> 269');
+ok(acts.filter(a => a.no_elimination).length === 145, 'no_elimination 87 -> 93');
+ok(acts.filter(a => a.inclusion).length === 205, 'inclusion 119 -> 131');
 const tagCount = t => acts.filter(a => (a.tags || []).includes(t)).length;
 ok(tagCount('holiday:st-patricks-day') === 6, 'st-patricks tag 5 -> 6 (off the holiday floor)', String(tagCount('holiday:st-patricks-day')));
-ok(tagCount('season:summer') === 33, 'summer tag 29 -> 30 (wave 33); wave 35 -> 31 (thinnest season rises)', String(tagCount('season:summer')));
+ok(tagCount('season:summer') === 35, 'summer tag 29 -> 30 (wave 33); wave 35 -> 31 (thinnest season rises)', String(tagCount('season:summer')));
 ok(tagCount('holiday:diwali') === 6, 'diwali tag unchanged at 6', String(tagCount('holiday:diwali')));
 ok(tagCount('season:winter') === 117, 'winter tag unchanged at 116', String(tagCount('season:winter')));
 
 // 6. The 23rd collection: Little Hands, Just Three, Once More — earlier shelves intact.
 const colls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/collections.json'), 'utf8')).collections;
-ok(colls.length === 28, '26 collections', String(colls.length));
+ok(colls.length === 29, '26 collections', String(colls.length));
 const jt = colls.find(c => c.id === 'little-hands-just-three-once-more');
 ok(!!jt, 'little-hands-just-three-once-more collection present');
 ok(jt.picks.length === 12, 'just-three-once-more collection has 12 picks');

@@ -1559,6 +1559,46 @@
      "note": "Teaching is the final exam nobody grades: a promise made to real children, kept or not kept in their hands."
     }
    ]
+  },
+  {
+   "id": "just-teens-second-time",
+   "title": "Just Teens, a Second Time",
+   "glyph": "🌌",
+   "when_to_use": "The second shelf banded for thirteen- and fourteen-year-olds ONLY — the floor shelf: a compost heap read by thermometer, a frost forecast graded by its mornings, summer kept in jars, a path maintained under permission, a sky hosted for families, a stream graded by its own citizens, a circuit designed by its coaches, and games invented to survive strangers. Reach for it when the teen room needs work with real responsibility in the band's three thinnest categories — seasons, outdoor, and movement — written for the room itself, not borrowed from younger shelves.",
+   "picks": [
+    {
+     "id": "compost-heap-temperature-ledger",
+     "note": "The heap is alive, and the ledger is how you know — layers, a turning rota, and a core temperature taken weekly in the same ink, up or down."
+    },
+    {
+     "id": "first-frost-forecast-desk",
+     "note": "A forecast is a promise you check in the morning — a signed call at the board each evening, graded right, wrong, or lucky at dawn."
+    },
+    {
+     "id": "summer-glut-preserving-day",
+     "note": "A jar sealed properly is summer kept — one tested recipe followed exactly, prep by teens, processing by the adult, every batch vouched for in the day book."
+    },
+    {
+     "id": "trail-crew-first-pass",
+     "note": "Leave the path better than the weather left it — drainage, waymarks and an honest crew book, under a permission whose edges are respected exactly."
+    },
+    {
+     "id": "star-party-hosts",
+     "note": "Darkness is the venue; the hosts protect it — red light only, a rehearsed tour of tonight's real sky, and a meteor tally never improved in the retelling."
+    },
+    {
+     "id": "stream-watch-testing-round",
+     "note": "The stream grades itself; the watch just reads the marks — temperature, clarity, and citizens counted at the same points, then returned unharmed."
+    },
+    {
+     "id": "circuit-course-design-and-coach",
+     "note": "A station earns its place by being doable well when tired — proposed, tested on the designers, cut or kept by evidence, then coached."
+    },
+    {
+     "id": "new-game-playtest-league",
+     "note": "A rule that only works when everyone is being nice is not a rule yet — strangers break it, the log records it, the card is rewritten."
+    }
+   ]
   }
  ]
 }
