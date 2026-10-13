@@ -50,6 +50,152 @@ TAG_LABELS = {
     "theme:spooky": "🕸️ Spooky (not scary)",
 }
 
+# ---------------------------------------------------------------------------
+# Rotation 13 placement pass (Foundry placement packet, 2026-10-13):
+# the generator owns the <head> meta block on EVERY page — OG/Twitter
+# cards (og:image absolutized against the live domain), theme-color,
+# favicon links, a self-referential absolute canonical, and honest
+# JSON-LD built only from the page's own title/description and, for
+# activity pages, the activity record itself. Root pages are static
+# files, so the block is (re)injected into every .html on disk at the
+# end of main(), between PLACEMENT markers, idempotently — hand edits
+# outside the markers are never touched, and the next rebuild keeps
+# the placement instead of reverting it. VP-0002's nav is untouched.
+# ---------------------------------------------------------------------------
+SITE_URL = "https://activity-vault-live.vercel.app"
+OG_IMAGE = SITE_URL + "/assets/og-card.png"
+THEME_COLOR = "#fffdf7"  # --paper, verbatim from assets/style.css
+
+# Commons photos wired onto activity pages (Foundry batch 1): the
+# attribution line travels with the photo, on the page, per the
+# manifest. Per-page need calls are recorded in WAVELOG wave 36.
+ACTIVITY_PHOTOS = {
+    "board-game-prototype": {
+        "file": "board-game.webp",
+        "alt": "The party game Just One spread out on a table — box, rulebook, cards and pieces",
+        "caption": "A finished game, out on a real table: box, rules, cards, pieces. Yours will look different — that is the point of a prototype.",
+        "credit": "Photo: Harrison Keely, CC BY 4.0, via Wikimedia Commons",
+    },
+    "origami-corner-bookmark": {
+        "file": "origami-cranes.webp",
+        "alt": "Strands of folded paper cranes hanging in long rows",
+        "caption": "Where folding can go: strands of paper cranes, every one of them starting from the same first folds as your corner bookmark.",
+        "credit": "Photo: shankar s., CC BY 2.0, via Wikimedia Commons",
+    },
+    "ice-cube-painting": {
+        "file": "watercolor-set.webp",
+        "alt": "An abstract watercolor painting in blues and greens",
+        "caption": "Watercolor doing what it does when it melts and moves — the look these frozen paint cubes are chasing.",
+        "credit": "Photo: Fons Heijnsbroek, CC0, via Wikimedia Commons",
+    },
+    "story-building-blocks": {
+        "file": "wooden-blocks.webp",
+        "alt": "Hands sorting colourful wooden blocks on a tray",
+        "caption": "Wooden blocks, mid-sort: the raw material of a story that has not decided its ending yet.",
+        "credit": "Photo: Shixart1985, CC BY 2.0, via Wikimedia Commons",
+    },
+}
+
+_PLACEMENT_RE = re.compile(r"\n<!-- PLACEMENT:BEGIN -->.*?<!-- PLACEMENT:END -->", re.S)
+_TITLE_RE = re.compile(r"<title>(.*?)</title>", re.S)
+_DESC_RE = re.compile(r'<meta name="description" content="(.*?)"', re.S)
+
+
+def _canonical_for(rel):
+    if rel == "index.html":
+        return SITE_URL + "/"
+    return SITE_URL + "/" + rel.replace(os.sep, "/")
+
+
+def _jsonld_for(rel, title, desc, acts_by_id, n_colls):
+    """Honest JSON-LD: real page/activity/collection data only."""
+    url = _canonical_for(rel)
+    if rel.startswith("activity" + os.sep):
+        a = acts_by_id.get(os.path.basename(rel)[:-5])
+        if a:
+            return {
+                "@context": "https://schema.org", "@type": "HowTo",
+                "name": a["name"], "description": a["tagline"], "url": url,
+                "supply": [m["item"] for m in a["materials"]],
+                "step": [{"@type": "HowToStep", "text": s} for s in a["steps"]],
+            }
+    if rel == "index.html":
+        return {"@context": "https://schema.org", "@type": "WebSite",
+                "name": "Activity Vault", "url": url, "description": desc}
+    if rel == "collections.html":
+        return {"@context": "https://schema.org", "@type": "CollectionPage",
+                "name": title, "description": desc, "url": url,
+                "mainEntity": {"@type": "ItemList", "numberOfItems": n_colls}}
+    return {"@context": "https://schema.org", "@type": "WebPage",
+            "name": title, "description": desc, "url": url}
+
+
+def _placement_block(rel, title, desc, acts_by_id, n_colls):
+    url = _canonical_for(rel)
+    # Icon hrefs are depth-relative (root pages "", activity pages "../")
+    # so the repo's own link checker resolves them; canonical/OG stay
+    # absolute. (The proposal's root-absolute form is equivalent on the
+    # root-served live site but fails check_api.py's link walk.)
+    icon_prefix = "../" if rel.startswith("activity" + os.sep) else ""
+    ld = json.dumps(_jsonld_for(rel, title, desc, acts_by_id, n_colls),
+                    ensure_ascii=False).replace("</", "<\\/")
+    lines = [
+        "<!-- PLACEMENT:BEGIN -->",
+        f'<meta name="theme-color" content="{THEME_COLOR}">',
+        f'<link rel="icon" href="{icon_prefix}favicon.ico" sizes="48x48">',
+        f'<link rel="icon" href="{icon_prefix}favicon.svg" type="image/svg+xml">',
+        f'<link rel="apple-touch-icon" href="{icon_prefix}apple-touch-icon.png">',
+        f'<link rel="canonical" href="{esc(url)}">',
+        '<meta property="og:type" content="website">',
+        '<meta property="og:site_name" content="Activity Vault">',
+        f'<meta property="og:title" content="{esc(title)}">',
+        f'<meta property="og:description" content="{esc(desc)}">',
+        f'<meta property="og:url" content="{esc(url)}">',
+        f'<meta property="og:image" content="{OG_IMAGE}">',
+        '<meta property="og:image:width" content="1200">',
+        '<meta property="og:image:height" content="630">',
+        '<meta name="twitter:card" content="summary_large_image">',
+        f'<meta name="twitter:title" content="{esc(title)}">',
+        f'<meta name="twitter:description" content="{esc(desc)}">',
+        f'<meta name="twitter:image" content="{OG_IMAGE}">',
+        f'<script type="application/ld+json">{ld}</script>',
+        "<!-- PLACEMENT:END -->",
+    ]
+    return "\n" + "\n".join(lines)
+
+
+def inject_site_meta(acts, colls):
+    """(Re)inject the placement block into every .html page on disk.
+    Returns (pages_seen, pages_updated)."""
+    acts_by_id = {a["id"]: a for a in acts}
+    pages = []
+    for name in sorted(os.listdir(SITE)):
+        if name.endswith(".html"):
+            pages.append(name)
+    actdir = os.path.join(SITE, "activity")
+    for name in sorted(os.listdir(actdir)):
+        if name.endswith(".html"):
+            pages.append(os.path.join("activity", name))
+    updated = 0
+    for rel in pages:
+        path = os.path.join(SITE, rel)
+        with open(path) as f:
+            page = f.read()
+        page = _PLACEMENT_RE.sub("", page)
+        mt = _TITLE_RE.search(page)
+        md = _DESC_RE.search(page)
+        assert mt and md, f"placement: title/description missing on {rel}"
+        title = html.unescape(mt.group(1)).strip()
+        desc = html.unescape(md.group(1)).strip()
+        block = _placement_block(rel, title, desc, acts_by_id, len(colls))
+        assert "</head>" in page, f"placement: no </head> on {rel}"
+        page = page.replace("</head>", block + "\n</head>", 1)
+        with open(path, "w") as f:
+            f.write(page)
+        updated += 1
+    return len(pages), updated
+
+
 def load():
     acts = json.load(open(os.path.join(DATA, 'activities.json')))
     cats = json.load(open(os.path.join(DATA, 'categories.json')))
@@ -262,6 +408,7 @@ ACTIVITY_TEMPLATE = """<!DOCTYPE html>
       <div><dt>Where</dt><dd>{location}</dd></div>
       <div><dt>Prep</dt><dd>{prep}</dd></div>
     </dl>
+    {photo_block}
     <section aria-labelledby="h-setup">
       <h2 id="h-setup">Setup</h2>
       <p>{setup}</p>
@@ -800,7 +947,16 @@ def render_activity(a, catmap, acts):
             f'<ol class="pick-list">{items}</ol></section>')
     crumb_cat = a['categories'][0] if a['categories'] else ''
     crumb_cat_name = esc(catmap[crumb_cat]['name']) if crumb_cat else 'All'
+    photo_block = ''
+    _ph = ACTIVITY_PHOTOS.get(a['id'])
+    if _ph:
+        photo_block = (
+            f'<figure class="activity-photo no-print">'
+            f'<img src="../assets/photos/{_ph["file"]}" alt="{esc(_ph["alt"])}" loading="lazy">'
+            f'<figcaption>{esc(_ph["caption"])} '
+            f'<span class="photo-credit">{esc(_ph["credit"])}</span></figcaption></figure>')
     return ACTIVITY_TEMPLATE.format(
+        photo_block=photo_block,
         name=esc(a['name']), tagline=esc(a['tagline']),
         chips=chips + tagchips, badges=badges,
         crumb_cat=crumb_cat, crumb_cat_name=crumb_cat_name,
@@ -1064,7 +1220,7 @@ def main():
         sys.exit(1)
     actmap = {a['id']: a for a in acts}
     # Wave 9 explicit assert: every collection pick resolves to a real activity id.
-    assert len(colls) == 25, f"expected 25 collections, got {len(colls)}"
+    assert len(colls) == 26, f"expected 26 collections, got {len(colls)}"
     assert all(p['id'] in actmap for c in colls for p in c['picks']), \
         "collection pick does not resolve to a real activity id"
     # Wave 10 explicit assert: balance-buckets covers all 11 categories.
@@ -1716,9 +1872,19 @@ def main():
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:
-        sm.append(f'  <url><loc>/{u}</loc><lastmod>{today}</lastmod></url>')
+        loc = SITE_URL + "/" if u == "" else f"{SITE_URL}/{u}"
+        sm.append(f'  <url><loc>{loc}</loc><lastmod>{today}</lastmod></url>')
     sm.append('</urlset>')
     open(os.path.join(SITE, 'sitemap.xml'), 'w').write('\n'.join(sm) + '\n')
+
+    # 5. robots.txt (rotation 13 placement): allow-all + Sitemap pointer
+    # at the live domain (this repo publishes sitemap.xml).
+    open(os.path.join(SITE, 'robots.txt'), 'w').write(
+        "User-agent: *\nAllow: /\n\nSitemap: " + SITE_URL + "/sitemap.xml\n")
+
+    # 6. Placement pass: generator-owned <head> meta on every page.
+    n_pages, n_updated = inject_site_meta(acts, colls)
+    print(f"placement: meta block on {n_updated}/{n_pages} pages.")
 
     print(f"BUILD OK — {len(acts)} activities, {rendered} pages rendered, "
           f"{len(cats)} categories, {len(coll_records)} collections, "

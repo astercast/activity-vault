@@ -15,7 +15,7 @@ function ok(cond, label, extra) {
 
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const actIds = new Set(acts.map(a => a.id));
-ok(acts.length === 673, '673 activities total', String(acts.length));
+ok(acts.length === 685, '685 activities total', String(acts.length));
 ok(actIds.size === acts.length, 'all activity ids unique');
 
 // 1. New tags in the validator vocabulary (single source of truth: build.py)
@@ -63,8 +63,8 @@ for (const [id, tags] of [['spring-seed-cups', ['season:spring']],
 
 // 4. Collections: 9 total, spring-burst valid, sub-tub-essentials spring pick
 const colls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/collections.json'), 'utf8')).collections;
-ok(colls.length === 25, '25 collections', String(colls.length));
-ok(new Set(colls.map(c => c.id)).size === 25, 'collection ids unique');
+ok(colls.length === 26, '26 collections', String(colls.length));
+ok(new Set(colls.map(c => c.id)).size === 26, 'collection ids unique');
 const burst = colls.find(c => c.id === 'spring-burst');
 ok(!!burst, 'spring-burst exists');
 ok(burst.picks.length >= 8 && burst.picks.length <= 12, 'spring-burst 8-12 picks', String(burst.picks.length));
@@ -128,12 +128,12 @@ const tagOpts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/filters.json
 for (const t of ['season:spring', 'holiday:easter', 'holiday:earth-day'])
   ok(tagOpts.includes(t), 'filters.json has ' + t);
 const apiColls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/collections.json'), 'utf8'));
-ok(apiColls.count === 25 && apiColls.collections.length === 25, 'api collections.json count 25');
+ok(apiColls.count === 26 && apiColls.collections.length === 26, 'api collections.json count 26');
 ok(apiColls.collections.some(c => c.id === 'spring-burst'), 'api has spring-burst');
 const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/index.json'), 'utf8'));
 const collEp = manifest.endpoints.find(e => e.path === 'data/v1/collections.json');
-ok(collEp && collEp.records === 25, 'manifest collections records=25');
+ok(collEp && collEp.records === 26, 'manifest collections records=26');
 const actEp = manifest.endpoints.find(e => e.path === 'data/v1/activities.json');
-ok(actEp && actEp.records === 673, 'manifest activities records=673', String(actEp && actEp.records));
+ok(actEp && actEp.records === 685, 'manifest activities records=685', String(actEp && actEp.records));
 
 console.log('spring pack: ' + passed + ' assertions passed');

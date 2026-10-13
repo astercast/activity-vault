@@ -1,5 +1,5 @@
 /* Activity Vault — curated collections page (wave 9).
-   Renders the 9 hand-picked collections from data/v1/collections.json, resolves
+   Renders the curated collections from data/v1/collections.json, resolves
    picks against data/v1/activities.json, shows the visitor's own rating badges
    (localStorage only — never invented), printable per collection, with a
    "copy this collection" text export per collection (wave-7 pattern). */
@@ -16,6 +16,18 @@
     'sub-tub-essentials': { label: '🆘 Pairs with the Sub Tub kit', href: 'sub.html' },
     'winter-party-night': { label: '❄️ Pairs with the Party Planner winter theme', href: 'party.html' }
   };
+
+  /* Spelled-out count for the hero (VP-0008): 0–99, Title-case first word. */
+  function numberWord(n) {
+    var ones = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven',
+      'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen',
+      'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'];
+    var tens = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty',
+      'Seventy', 'Eighty', 'Ninety'];
+    if (n < 20) return ones[n];
+    var t = tens[Math.floor(n / 10)], r = n % 10;
+    return r ? t + '-' + ones[r].toLowerCase() : t;
+  }
 
   function el(tag, cls, text) {
     var e = document.createElement(tag);
@@ -237,6 +249,10 @@
       applyRoute(collections);
       window.addEventListener('hashchange', function () { applyRoute(collections); });
       statusEl.textContent = collections.length + ' curated collections loaded.';
+      /* VP-0008: the hero numeral derives from the same loaded data as
+         the grid and the status line — it can never drift stale again. */
+      var heroCount = document.getElementById('coll-hero-count');
+      if (heroCount) heroCount.textContent = numberWord(collections.length);
     }).catch(function () {
       statusEl.textContent = 'Could not load the collections. Check your connection and reload.';
     });

@@ -30455,8 +30455,538 @@
    "safety": "Beads are big, smooth, single-piece, and audited one by one before every session — at three, the store's rule has no exceptions argued: anything small, cracked, splintered, sharp at the hole's rim, or losing its colour is out permanently. Stringing happens seated with the bowl still on the table: beads roll, and a rolled bead is retrieved by the adult at a walk, because beads on a floor under small feet are marbles' treacherous cousins. Laces are thick, soft-ended by tape, and never worn round a neck by the child themselves — finished strings worn over the head are tied by the adult with a breakaway loose knot, worn supervised, and are the session's, coming off before any running, climbing, or leaving the room.",
    "copy_free": true,
    "inclusion": "The threading works at every station: the lace can be held in a full fist, pushed with a palm-rock, or worked with the bead held in a table clamp the adult has placed, so the stringer's hands do only the aiming and pushing that are theirs today. A stringer can direct a whole string — choosing every bead by colour from the store, calling each push — 'that one... hole up... PUSH' — while a partner's hands follow the direction exactly; the finished string, its pattern, and its length are the director's work, and it is worn by its director. Pattern-reading at the end, calling a finished string's colours bead by bead for the room, is the jeweller's official voice and belongs to whoever holds it."
+  },
+  {
+   "id": "big-story-stone-first-people",
+   "name": "Big Story Stone, First People",
+   "tagline": "One smooth stone passed hand to hand in the story circle: today the grown-up tells, plainly and truly, whose land this classroom stands on.",
+   "categories": [
+    "holidays"
+   ],
+   "age_min": 3,
+   "age_max": 3,
+   "group_min": 4,
+   "group_max": 14,
+   "time_min": 10,
+   "time_max": 15,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "one big smooth story stone, adult-chosen (palm-sized or bigger, washed, no sharp edges, no cracks — the circle's talking piece, held by whoever is telling or listening hardest)"
+    },
+    {
+     "item": "no other materials — the story is carried in words"
+    }
+   ],
+   "no_prep": true,
+   "setup": "Choose and wash the stone ahead, and — this is the real preparation — learn whose land your classroom actually stands on before the circle sits down: the name of the Indigenous people of your place, said correctly, and two or three true, plain things about them that a three-year-old can hold (they lived here first; many are still here, our neighbours now; they cared for this land a very long time). If you do not know, find out from your library or your district's own land statement before this record runs — the record refuses to be run on a guess, because a story told wrong at three gets remembered wrong at thirty. Practise saying the people's name aloud until it is ordinary in your mouth.",
+   "steps": [
+    "Gather the circle, hold the stone in both hands, and say the plain framing in full: 'This land had people on it before there were towns, before there were schools, before there was us. The first people here were the [name, said plainly and correctly]. They are still here — they are our neighbours. Today is a day for saying their name properly and hearing one true story about them.' State the one rule: 'The stone is held in two hands, in a lap. When the stone is with you, you may hold it quietly or add one true-sized thing. The stone is never thrown, tapped, or passed over anybody's head.'",
+    "First telling together, yours: with the stone in your lap, tell the short true story you prepared — three or four sentences, no more: who the people are, one thing they made or did on this land ('they fished this river'), one thing that is still true now ('their children go to school in our town'). Keep it at story size, not lesson size: names, a river, a neighbour. When your telling is done, say the closing line of every turn, which the circle will learn to say with you: 'That is a true story, and it is still true.'",
+    "Stone round: the stone travels hand to hand round the circle in order, low, two hands to two hands. Each holder may add ONE small true thing — something from the story retold in their own words, something true about this place ('the river is near our park'), or simply the people's name said carefully, which counts in full and is honoured at full size: a name said right by a three-year-old is this record's whole curriculum arriving. A holder who only wants to hold the stone and pass it on has also taken a complete turn.",
+    "Listening stretch, offered once the stone has travelled: the adult wonders aloud, gently, 'The first people knew this land before anybody built on it. What do YOU know about our place that somebody new wouldn't?' — and the circle offers its own land knowledge at three-year-old scale: where the puddles gather, which tree drops the best sticks, where the sun sits at snack time. The point is made without being announced: knowing a place by living in it is a real kind of knowing, and it is the kind the first people had most of all.",
+    "Finish with the stone retired to its place — a shelf or cloth where it lives between tellings, carried there low in two hands by the last holder — and the tell-back said over the empty circle: 'We said the [name] people's name properly. We heard a true story about the first people of this place, and every part of it is still true. The stone will remember it for next time.'"
+   ],
+   "variations": {
+    "easier": "A name-and-one-thing version: the framing, your telling, and the stone travelling once with only names and quiet holds — the whole ceremony inside ten minutes.",
+    "harder": "A place-walk coda (dry day only): after the circle, the group walks to one real place the story named — the river's fence, the old tree — and the stone, carried by the adult, 'visits' it; the circle says the closing line there, outdoors, once."
+   },
+   "safety": "The stone is palm-sized or bigger, smooth, washed, and checked before every session; anything cracked or sharp-edged leaves the set permanently. It travels low, lap to lap, in two hands, and is never tossed or handed over another child's head — the adult's hands shadow the pass for the youngest holders. The content rule is the record's other safety: only true, plain things are told — no invented ceremonies, no costumes, no 'playing' at being the people being honoured, ever; this record teaches about real neighbours with respect, and the adult corrects a drift toward pretend instantly and kindly.",
+   "tags": [
+    "holiday:indigenous-peoples-day"
+   ],
+   "copy_free": true,
+   "no_elimination": true,
+   "inclusion": "Holding the stone asks nothing of a voice: a holder can add their true thing in words, in a sign, in one word plus a point out the window toward the place itself, or by tapping the stone twice to ask the circle to say the people's name together for them — every form closes with the same line, said by all. The stone can travel on a lap tray between neighbours for any holder whose hands are busy elsewhere; the turn, the timing, and the honour are identical. The closing-line caller — the voice that leads 'That is a true story, and it is still true' — is the circle's official honour and rotates by list."
+  },
+  {
+   "id": "big-leaf-light-window-hold",
+   "name": "Big Leaf Light Window Hold",
+   "tagline": "One big spring leaf, chosen by its holder and lifted to the light: the sun shines clean through it, and its veins stand up like a tiny map.",
+   "categories": [
+    "seasons"
+   ],
+   "age_min": 3,
+   "age_max": 3,
+   "group_min": 2,
+   "group_max": 10,
+   "time_min": 10,
+   "time_max": 15,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "big spring leaves, adult-gathered (the largest soft green leaves of the season — sycamore, big maple, hosta-sized garden leaves; gathered fresh, rinsed, checked: no thorns, no brittle edges, nothing from a sprayed bed)"
+    },
+    {
+     "item": "a sunny spot the adult has chosen in advance (the light window — somewhere the group can stand with the sun in front of them and shade behind)"
+    },
+    {
+     "item": "a small basket the leaves retire to (the leaf library)"
+    }
+   ],
+   "no_prep": true,
+   "setup": "Gather the leaves the same morning if you can, and hold every one up to the light yourself before the session: you are checking that each leaf TRANSMITS — a fresh spring leaf glows green-gold with its veins drawn dark, and that glow is the entire activity, so a leaf too thick, too dry, or too chewed to glow is retired to the basket before it can disappoint a holder. Practise the hold yourself: leaf by its stem, high, sun behind it, eyes up from BELOW the leaf, never at the sun itself — the record's one visual law, learned on your own eyes first.",
+   "steps": [
+    "Walk the group to the light window and say the plain framing: 'Spring makes new leaves, and new leaves are thin enough for light to get in. Hold one up — carefully, by its stem — and the sun will draw you a picture inside it: all its little lines, lit up. We look at the LEAF. We never look at the sun.' State the one rule: 'Leaves are held by the stem, two fingers, gently. A leaf is a made thing, not a toy: no tearing, no crumpling, no waving it apart.' Demonstrate the whole hold yourself first — stem pinched, leaf high, a real pause while you look — and report in the session's official shape: 'My leaf is GLOWING. I can see its lines.'",
+    "Choosing moment, the activity's first curriculum: the basket passes, and each holder chooses ONE leaf — by size, by shape, by the greenest green — and holds it unraised for a breath while the group admires the choosing ('That one is as big as your face'). Choosing one leaf from many, and standing by the choice for the whole session, is a complete skill at three and the record gives it its full minute.",
+    "Raising round: holders raise their leaves one at a time, in known order, sun behind the leaf, and each raised leaf gets its report in the official shape, helped by the adult's prompts only where wanted: 'Glowing — I see a thick line down the middle' / 'I see lines like a tree' / 'Mine has a hole and the light comes through it TOO.' A leaf that will not glow (a cloud, a wrong angle) is troubleshooted kindly, in the open — 'The sun hid. We wait, or we move one step' — because waiting for light is a spring skill and the record says so out loud.",
+    "Vein-tracing stretch, for holders whose looking lasts: with the leaf still raised, trace its biggest vein in the AIR with one finger of the free hand — down the middle line, out along one branch — while the group watches a line they can all see being followed on a glowing map. The adult names what tracing is: 'Your finger is following the leaf's roads. The roads carry the leaf's water. That is why the leaf draws them so strongly.'",
+    "Finish with the leaves retired whole to the leaf library — carried flat, one at a time, stem first — and the tell-back read off the basket: 'Seven leaves, seven glows, and every one had its roads drawn by the sun. The leaves go back under their tree now. New leaves will be along — spring is not finished.' Leaves are left under the tree they came from or composted, whole, never torn up as a finale."
+   ],
+   "variations": {
+    "easier": "A two-leaf version: two big leaves, two holders, two glows — the whole arc of choose, raise, report inside ten minutes.",
+    "harder": "A shade-pair version (bright days): one leaf raised in full sun and the same leaf raised in shade, back to back — the group's first controlled comparison: 'Same leaf. The sun was doing the drawing.'"
+   },
+   "safety": "Eyes look at the leaf, never at the sun: that law is stated first, demonstrated by the adult's own raised leaf (which shades the holder's eyes by design, held high and slightly forward), and repeated kindly every time a face tips too far up — a holder who keeps sun-hunting is given the shade side of the window and the group's biggest leaf, and the session moves on. Leaves are gathered only from plants the adult knows by name, from unsprayed ground, and are rinsed before the session; nothing gathered goes in a mouth, and hands are washed when the group comes back in. Holders stand still while their leaf is raised — walking with eyes up is how this record's one fall would happen, so feet plant before leaves rise.",
+   "tags": [
+    "season:spring"
+   ],
+   "copy_free": true,
+   "inclusion": "The hold adapts to its holder: a leaf can be raised on a stick the adult has taped it to, held at exactly the holder's best height, or raised BY a partner at the holder's direction — 'higher... there... GLOWING' — with the report, the choosing, and the vein-tracing all remaining the director's own work. Reports arrive as the official sentence, a pointed-at vein, a sign, or a sound the group agrees means 'I see its lines'; every report joins the day's telling in the same shape. The leaf-library keeper — carrying the basket and retiring each leaf flat and whole — is the expedition's official hands and belongs to whoever holds it."
+  },
+  {
+   "id": "big-tissue-snow-gentle-fall",
+   "name": "Big Tissue Snow, Gentle Fall",
+   "tagline": "One white tissue at a time, dropped from high hands over the rug: it does not fall, it FLOATS — and the whole room practises being gentle enough to watch.",
+   "categories": [
+    "rainy-day"
+   ],
+   "age_min": 3,
+   "age_max": 3,
+   "group_min": 3,
+   "group_max": 12,
+   "time_min": 10,
+   "time_max": 15,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "plain white tissues, a modest stack (one per drop; tissues are the snow — big, light, slow, and spent kindly: a dropped tissue retires after its flights get ragged)"
+    },
+    {
+     "item": "a clear rug or mat the snow falls over (the snowfield — checked by the adult for anything a bare foot or a settling tissue should not meet)"
+    },
+    {
+     "item": "a low bowl or box the flown snow retires to (the snowbank)"
+    }
+   ],
+   "no_prep": true,
+   "setup": "Prepare the snowfield, not the snow: tissues need no making, so the adult's preparation is the room — the rug clear, a still patch of air found away from heaters and fans (a draught is this record's weather, and not always kind weather), and the stack of tissues counted and set high in a box, because the dropper will reach UP for each new snowfall and reaching up is part of the ceremony. Test one drop yourself, alone if need be: the tissue must open, hesitate, and float — if it dives, the tissue is too crumpled from its box folds, and smoothing it flat once, gently, restores its fall. A rainy-day record lives on the adult having flown one snowfall before asking the room to watch twenty.",
+   "steps": [
+    "Gather the group round the snowfield, seated, and say the plain framing: 'Outside, the rain is doing the weather. In here, we are having snow — our kind: one tissue, dropped from up high, and it does not fall like a stone. It floats. It takes its time. Our job is to watch it the whole way down without helping it, catching it, or blowing it home.' State the laws whole: 'One snowfall at a time. Hands stay in laps while snow is in the air. The dropper drops from standing, the watchers watch from sitting — snow is met where it lands, by the dropper, afterwards.'",
+    "First snowfall together, yours: stand at the snowfield's edge, tissue held high between two fingertips, and narrate the drop's one technique honestly — 'Flat... high... let go, don't throw' — and release. Then model the watching: eyes following it down, the room's quiet arriving on its own, and the report in the session's official shape when it settles: 'It turned twice. It landed on its corner. It took a LONG time.' That last sentence, said with wonder, is the record's thesis: slowness, noticed, is the entertainment.",
+    "Dropping round: droppers take turns in known order — stand, one tissue from the high box, the hold, the release — while the seated circle watches each fall the whole way down and the reports collect: turning, drifting sideways, the tissue that lands draped over its own fold like a tiny tent. A fall that dives (a balled tissue, a hurried release) is re-flown once, kindly, after a smoothing: 'That snow was in a hurry. Snow is allowed a second sky.' Nobody's drop is ranked; the reports describe the SNOW, never grade the dropper.",
+    "Still-air stretch, the activity's deep half: once the falls are familiar, the group practises the snow's price — complete stillness, hands in laps, breath quiet, while one tissue makes the longest journey the room can give it. Any wiggle's draught is watched honestly when it happens ('Somebody's sleeve made weather — see it lean?') — not as a fault but as physics the room can see: moving air moves snow. The stillness is the game, and at three it holds for exactly as long as it holds, and that is long enough.",
+    "Finish with a last snowfall dropped by two droppers together — two tissues, one release — watched down in the group's best quiet yet, then the snow gathered kindly: each flown tissue lifted flat in two hands and laid in the snowbank, the count said aloud to its true number, and the tell-back said over the bank: 'Nineteen snowfalls, and not one of them was hurried. Outside it is raining on everybody. In here, it snowed gently, one at a time, and we watched every flake land.'"
+   ],
+   "variations": {
+    "easier": "A five-fall version: five tissues, five droppers, the whole ceremony — hold, release, watch, report — inside ten minutes.",
+    "harder": "A landing-spot version: a big paper star laid on the snowfield — the group watches each fall's drift against one honest question, 'near the star, or far?' — describing, never scoring."
+   },
+   "safety": "Tissues are this record's whole material and they are treated with the plain respect big light things deserve: one tissue in the air at a time, dropped from a standing position at the snowfield's edge — nobody climbs anything to drop from higher, ever, and the want for height is answered with the high box and the adult's own raised hand for the smallest droppers. Watchers stay seated while snow is in the air so that no watcher crosses under a drop or reaches into another's fall; retrievals happen after landing, at walking pace, one person moving. Tissues that have floored are retired to the bank after a few flights rather than flown ragged, and any tissue that reaches a mouth is retired on the spot, without comment or lecture.",
+   "copy_free": true,
+   "no_elimination": true,
+   "inclusion": "Dropping works from any station: a dropper can release from standing, from a chair at the snowfield's edge with the tissue held as high as their arm and the adult's steadying hand nearby, or by directing the adult's holding hands — 'flat... high... LET GO' — while the moment of release, and the choosing of the tissue, stay the director's. Reports arrive as the official sentences, a hand floating slowly down in imitation (the circle's favourite report of all), a sign, or a pointed landing spot; every report joins the day's count identically. The snowbank keeper — laying each flown tissue flat and whole into the bank, keeping the count aloud — is the session's official hands and belongs to whoever holds it."
+  },
+  {
+   "id": "big-float-or-sink-first-dip",
+   "name": "Big Float or Sink, First Dip",
+   "tagline": "A tub of water and a shelf of big things: each one is held over the water, dipped once, and reported in the session's only two words — FLOAT or SINK.",
+   "categories": [
+    "stem"
+   ],
+   "age_min": 3,
+   "age_max": 3,
+   "group_min": 2,
+   "group_max": 8,
+   "time_min": 10,
+   "time_max": 20,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "a wide shallow tub of water, filled to hand-depth (the dipping sea — big enough that a big object enters without splashing the rim)"
+    },
+    {
+     "item": "big test objects, adult-built and adult-tested (things honestly bigger than a palm whose answer is certain: a wooden block, a smooth stone, a big sponge, a cork the size of a small fist, an empty sealed tub with its lid taped, a big leaf — every one dipped by the adult in advance, because this record never schedules a surprise the adult hasn't met)"
+    },
+    {
+     "item": "a towel under the tub and a second towel for hands (the shore)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Test every object yourself, alone with the tub, before the session: dip each one and watch what it TRULY does — the sponge that floats for ten seconds and then drowns slowly is this record's treasure and must be scheduled on purpose, not met by accident, and any object whose answer the adult cannot state plainly (half-sunk drifters, things that trap air and flip) leaves the shelf until it behaves or is understood. Set the tub on its towel on a surface a wet sleeve cannot ruin, at a height where small arms reach the water's middle without leaning their whole weight on the rim: a tipped tub is the session's one real accident, and it is prevented here, in the setup, entirely.",
+   "steps": [
+    "Bring the group to the tub and say the plain framing: 'Water holds some things up and lets other things go down. That is the whole science, and your hands are going to find out which is which — one thing at a time, dipped once, and reported out loud.' State the laws whole: 'Objects go in SLOWLY, held, and let go only when I say 'let it be'. One dipper at a time. The water stays in the tub — hands come out and dry on the shore towel before the next thing is touched.' Demonstrate the full ceremony on the wooden block yourself: hold it over the water, a breath, lower it in, let it be, watch, and the report in the session's official shape — one word, big and plain: 'FLOAT.'",
+    "Dipping round: dippers take turns in known order, one object each, with the same ceremony — choose from the shelf, hold it over the sea where everyone can see it, the group's one permitted guess said all together BEFORE the dip (guessing is the dip's drumroll and belongs to everyone), then in, let it be, watch together for a full slow count of three, and the dipper's one-word report: FLOAT or SINK. The adult confirms in the same word, same size: 'SINK. The stone went straight down. The water did not hold it.' Reports are about the object, always; a guess that missed is never named again.",
+    "Sponge moment, scheduled and savoured: mid-round, the adult brings out the sponge with ceremony — 'This one does something none of the others did. Watch it for longer than you think.' — and the group watches it float... and drink... and settle lower, and lower, until it lies on the bottom having changed its answer in front of them. The record's line is ready and true: 'It floated, AND it sank — first one, then the other. Water science has surprises in it even at our size, and watching long enough is how you catch them.' The report for the sponge, officially, is BOTH words, in order — the session's one two-word report, and it is a promotion, not a problem.",
+    "Second-dip stretch, for objects the group argues about kindly: an object may be dipped a second time by a different dipper — same ceremony, same watching — because reading a thing twice is what careful people do, and an answer that comes back the same is an answer the room can build on. The adult keeps the tally on fingers, plainly, as it grows: 'Three floats. Two sinks. One both.' — the session's results kept in the open, in numbers a three-year-old can hold.",
+    "Finish with the sea emptied properly: objects lifted out one at a time by their dippers, shaken once over the tub, and set on the shore towel in their two honest rows — the floats and the sinks, the sponge in its own place of honour between them — while the tell-back is read off the rows like results: 'The water held the block, the cork, and the little tub. It let the stone go down. And the sponge did both, because we watched long enough. That is the whole report, and every word of it is true.' Hands are dried, the tub is carried by the adult, and the shelf is left dry for next time."
+   ],
+   "variations": {
+    "easier": "A four-object version: block, stone, cork, sponge — three plain answers and the surprise, inside ten minutes for the newest scientists.",
+    "harder": "A leaf-boat version: the big leaf dipped last and ridden by ONE dry leaf-rider (a paper dot) — the group's first cargo test, reported in the same two words when the leaf makes its decision."
+   },
+   "safety": "The tub is shallow, wide, and settled on its towel before any child reaches it: dippers stand (or sit) beside it with both feet planted, objects are lowered, never dropped or thrown in — a dropped stone in hand-depth water is a splash, a crack risk to the tub, and the end of the watching mood in one move. Every object is palm-sized or bigger, smooth, sealed, and audited before the session; anything that sheds, leaks, cracks, or could invite a mouth leaves the shelf permanently. Water stays in the tub: hands dry on the shore towel between turns, spills are mopped the moment they land by the adult, and wet sleeves are rolled before dipping, not after. No head, face, or hair goes over the water at any time — looking is done from beside, at the dipper's own height.",
+   "copy_free": true,
+   "inclusion": "The dipping works at every station: the tub sits at whatever height puts its middle within the dipper's comfortable reach, an object can be lowered on the adult's steadying hand UNDER the dipper's own — 'your hands decide, mine just carry' — and a dipper can direct a whole dip by voice: 'the cork... hold it... LET IT BE... FLOAT.' The report is the session's most open channel by design: one word, spoken, signed, pointed on the adult's two big FLOAT/SINK cards, or stamped out by a happy foot — every form enters the tally identically. The tally-keeper job — holding up the count on fingers for the room after each dip — is the laboratory's official memory and belongs to whoever holds it."
+  },
+  {
+   "id": "big-warm-hand-lend-a-hand",
+   "name": "Big Warm Hand, Lend a Hand",
+   "tagline": "Two hands meet palm to palm — one warm from rubbing, one cool from waiting — and the pair stays together until both hands agree: WARM NOW.",
+   "categories": [
+    "team-community"
+   ],
+   "age_min": 3,
+   "age_max": 3,
+   "group_min": 4,
+   "group_max": 14,
+   "time_min": 10,
+   "time_max": 15,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "no materials at all — the group's own hands, warm and cool, are the equipment"
+    }
+   ],
+   "no_prep": true,
+   "setup": "There is nothing to fetch and everything to rehearse: the pairing. Decide the pairs before the circle sits — steady with wiggly, patient with quick — because this record's whole event happens inside a pair of children, and the adult's one real preparation is knowing whose hands are meeting whose. Warm your own hands the honest way, by rubbing them briskly together, and test the lesson on your own palms: thirty seconds of rubbing makes a warmth a partner can FEEL through a palm, and the lending only works if the warmth is real. If your hands will not warm (a cold room, a cold morning), the record waits for a warmer hour and says why — palms cannot lend what they do not have.",
+   "steps": [
+    "Sit the pairs knee to knee and say the plain framing: 'Hands can be warm or hands can be cool, and warm can be SHARED. One of you will rub your hands fast, like this, until they are properly warm. Then the warm hands and the waiting hands meet — palm to palm, gently — and stay together until BOTH of you say the warm has travelled: WARM NOW.' State the laws whole: 'Hands meet only when both people are ready — a hand offered can be waited for, and waiting is a complete answer for as long as it lasts. Palms meet flat and still: no squeezing, no patting, no tickling. Either person can say 'done' and the hands part kindly, at once, whatever the temperature.'",
+    "First lending together, yours: take a partner from the circle (a confident volunteer), rub your hands briskly where everyone can see and hear it — the rubbing is the ceremony's drumroll — then offer both palms up, wait to be met, and hold the meeting at full ceremony: eyes on the hands, a real pause, and the lenders' report in the session's official shape, one voice at a time: 'Mine were warm. Yours were cool. — Now?' 'WARM NOW.' Name what just happened at full size: 'I had warm hands. I did not keep them. Now we BOTH have warm hands, and I still have mine. Warmth is the thing you can give away and keep.'",
+    "Lending round: pairs take the ceremony in their own order round the circle — rubbing (the room's sound swells and settles like weather), the offer, the wait, the meeting, the held pause while the warm travels, and the agreement said together: WARM NOW. The adult circulates as the room's witness, kneeling by pairs, taking reports in the official shape, and protecting the wait above all: a pair where one hand is still deciding gets the adult's public respect, not the adult's hurry — 'This pair is still arriving. Arriving is allowed.'",
+    "Swap round, the record's second half: partners change jobs — the hand that waited now rubs and lends, the hand that lent now waits and receives — and the circle does the whole ceremony again with the dignity of a thing being done properly the second time: quicker rubbing, surer offers, longer holds. Receiving gracefully is named as its own skill while it happens: 'Waiting with your palms open and letting the warm come to YOU — that is a thing people practise their whole lives. You are doing it at three.'",
+    "Finish with one whole-circle lending: everyone rubs, everyone offers both palms to the neighbours on BOTH sides at once — a ring of lent warmth, held for one long breath — and the agreement travels round the ring voice by voice until it comes home: WARM NOW, said by the whole room, once, together. Hands rest in laps, and the tell-back is said plainly: 'Every pair lent, every pair received, and nobody's hands are colder than they started. That is what this room's hands are for.'"
+   ],
+   "variations": {
+    "easier": "A one-pair version: a single pair, both directions, the full ceremony inside ten minutes for the smallest crews or the newest pairs.",
+    "harder": "A cold-morning version (after outdoor play, hands honestly cool): the lending matters more and takes longer, and pairs may re-rub and lend twice — the record's natural hour, seized when it comes."
+   },
+   "safety": "Hands meet by invitation only, and that law is the session's safety system as well as its meaning: a hand offered is an offer, not a summons, and either partner ends any meeting instantly with 'done' — no reason, no discussion, hands part kindly at once. Palms meet flat and still, at lap height, seated: no grabbing, squeezing, wrist-holding, or hand games with another child's fingers, and rubbing is done on one's OWN hands only, always. Any child may take their whole turn as a watcher-witness and give the pair's report instead, at full honour; hands that stay in a lap for the entire session have attended completely. Hands are washed before the session as an ordinary part of arrival, and any hand with a cut, a rash, or a plaster sits this one out as an official witness — the room's rule, stated once, kindly, as how lending rooms work.",
+   "copy_free": true,
+   "no_elimination": true,
+   "inclusion": "The meeting happens at whatever distance a pair's arms and chairs agree on: palms can meet across a shared lap tray, hand to forearm for a partner who offers that instead, or back-of-hand to palm — the shape flexes, the lending does not. A lender can lend by direction — coaching a partner's rubbing from beside them ('faster... feel it?... offer them') — and a receiver can receive the same way, calling the agreement for the pair. The ring at the end includes every seat by design: a hand rested on the shared tray between two neighbours joins the ring in full. The witness-reporter's job — giving a pair's official report to the room — is one of the session's two honours and rotates by list."
+  },
+  {
+   "id": "big-find-the-matching-sock-pair",
+   "name": "Big Find the Matching Sock Pair",
+   "tagline": "One big sock is held up for the whole circle: somewhere in the small soft pile is its ONE partner. Whoever finds it holds up a pair — and pairs get cheered.",
+   "categories": [
+    "icebreakers"
+   ],
+   "age_min": 3,
+   "age_max": 3,
+   "group_min": 4,
+   "group_max": 14,
+   "time_min": 10,
+   "time_max": 15,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "big socks in bold pairs, adult-gathered (the largest, clearest pairs the laundry of life provides — stripes vs spots vs one plain red pair; freshly washed, soft, and audited: no holes a toe could argue with, no loose threads)"
+    },
+    {
+     "item": "a low basket the pile lives in (the sock basket)"
+    },
+    {
+     "item": "a small rug square the found pairs are laid on (the pair rug — pairs are displayed, never just dropped back)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Build the pile like a puzzle you have already solved: choose FIVE pairs whose patterns no tired eye could confuse — a wide stripe, a bold spot, a plain red, a checkerboard, one pair with a sun on it — wash them, match them yourself once to be certain every sock in the basket truly has its partner in the room, and then mix the pile with ceremony where nobody is watching. A pile containing an orphan is this record's one dishonesty, and it is prevented here, alone, by counting pairs in and pairs out. Socks are the session's whole material, so the adult's preparation is entirely this: ten socks, five truths, no surprises.",
+   "steps": [
+    "Tip the pile out where the circle can see it and say the plain framing: 'Every sock in this pile has ONE partner — another sock that matches it exactly. I will hold one up, high, where everyone can see it. The finder goes into the pile, kindly, and finds the other one. When the two are held up together and they MATCH, we have a pair, and pairs get cheered in this room.' State the laws whole: 'One finder in the pile at a time. Socks are looked at and laid down gently — no throwing the pile about, no keeping a sock that is not the match. A wrong sock goes back softly and the finding goes on.'",
+    "First finding together: hold up the plain red sock — the honest first match, findable by colour alone — and let a first finder work the pile at full ceremony: into the socks, one at a time lifted and compared against yours, the near-misses narrated with respect ('Stripes — a good sock, not OUR sock — back it goes'), until the red partner rises. Held up together, matched seam to seam by the adult for the room's inspection, the cheer arrives at full size: 'A PAIR.' Lay it on the pair rug like a trophy. It is one.",
+    "Finding round: new socks are held up in rising trickiness — the stripe (direction matters: the finder learns to turn a sock and check), the spots (count-ish: big spots vs the pile's memory of them), the sun sock (a picture matched by a three-year-old is a portrait recognised) — and each finder works at their own pace with the circle as the finding's witness, calling helps only when the finder asks with a look or a word: helps are offered as sightings ('I spy spots near your knee'), never as grabs. Every found pair joins the rug, and the rug fills like a scoreboard nobody is losing on.",
+    "Double-up stretch, offered to the steadiest finders: TWO socks held up at once — one in each of the adult's hands — and the finder must complete BOTH pairs before the round ends, keeping the first found partner safe in their own lap while hunting the second. Holding one found thing carefully while hunting another is two-handed patience of a high order, and the record names it while it happens: 'One pair in the lap, one in the pile. That is doing two things kindly at once.'",
+    "Finish with the pair rug read back like a gallery: five pairs laid in their rows, the adult naming each by its finding — 'The red pair, found first. The stripe pair, turned and checked. The sun pair, recognised across the whole pile' — then the pairs are rolled together by their finders (a pair rolls into a ball, the laundry's own knot) and returned to the basket in a count said aloud to its true number: five pairs, ten socks, nobody's partner left behind."
+   ],
+   "variations": {
+    "easier": "A three-pair version: three bold pairs, three finders, the whole ceremony of hold-up, hunt, match, cheer inside ten minutes.",
+    "harder": "A own-sock version (a room that knows its routines): the pile is the group's OWN spare socks from the cubby shelf — finding the partner of a sock whose owner you know adds a name to every cheer: 'A pair — and they're SAM's.'"
+   },
+   "safety": "Socks are soft, washed, and audited before every session; anything with a hole, a loose thread long enough to wind round a finger, or a smell that says it missed the wash leaves the pile permanently. One finder in the pile at a time, seated or kneeling beside it: the pile lives on the floor, finders work from its edge, and nobody dives, lies, or puts a sock over a face or head — a sock stays a sock in this record, in hands only, and the adult's eye keeps that ordinary. Found pairs are laid on the rug, not worn: nobody's feet go into the pile's socks during the session, and hands that have worked the pile are washed when the circle rises, as laundry hands are.",
+   "copy_free": true,
+   "no_elimination": true,
+   "inclusion": "Finding works from any seat at the pile's edge: the pile can be spread thinner and wider for a finder who searches by sweep rather than by lift, a finder can hold candidate socks against the held-up one on a lap tray at their own height, and a finder can direct the hunt by description — 'the spotty one... no, the BIG spots... THAT one' — while a partner's hands lift what is described, with the match declared by the director alone. Helps-as-sightings exist at every height: the spotter's job — watching the pile from the circle and calling honest sightings to a working finder — is the round's second honour and rotates by list. Every cheer is the whole circle's; the finder is named in it, whatever their route through the pile was."
+  },
+  {
+   "id": "big-paper-fan-wind-maker",
+   "name": "Big Paper Fan Wind Maker",
+   "tagline": "One big stiff paper fan per wind maker: flap it slow, flap it fast, and feel the wind you made arrive on your own face — weather, by hand.",
+   "categories": [
+    "outdoor"
+   ],
+   "age_min": 3,
+   "age_max": 3,
+   "group_min": 3,
+   "group_max": 12,
+   "time_min": 10,
+   "time_max": 15,
+   "location": [
+    "outdoor",
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "big paper fans, adult-made (one per maker: a sheet of stiff card folded accordion-style and taped firmly at the grip, or a paper plate on a wide craft stick — blunt, light, and strong enough that a dropped fan is a noise, never a hazard)"
+    },
+    {
+     "item": "one very light streamer or scarf on a stick, adult-held (the wind teller — it shows the wind the makers cannot see)"
+    },
+    {
+     "item": "a shady standing spot the adult has chosen (the weather station)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Make the fans yourself and flap-test every one: the fan must move real air at a three-year-old's flap — stiff enough to push weather, light enough to push it fifty times. A fan that folds, flops, or sheds its grip in your hands will do it in theirs, mid-ceremony, so tape grips twice and retire any fan whose folds soften. Practise the two speeds the session names until your hands know them without thinking: SLOW WEATHER (one flap, a pause, the air arriving like a sigh) and FAST WEATHER (flaps in a run, the streamer standing out). This record is taught by a body that has felt both, or it is not taught at all.",
+   "steps": [
+    "Gather the makers at the weather station and say the plain framing: 'Wind is moving air. Usually the sky makes it. Today YOU make it. A fan, flapped, pushes the air, and the air travels and lands on a face — that landing is the wind arriving.' Hold the wind teller where all can see it. State the laws whole: 'Fans flap at the air in front of you, never at anybody's face point-blank, and never touching anybody. A fan is held in two hands when it is not flapping. When I call STILL AIR, every fan rests — the wind stops when the makers say so.'",
+    "First wind together, yours: flap SLOW WEATHER at the wind teller and let the group watch the streamer lift, lean, and settle — the invisible made visible in the session's first minute. Then turn your fan on your own face, eyes closed, and report in the session's official shape: 'Slow weather. It arrived gently. It took a moment to get here.' That delay — push, travel, arrive — is the record's whole science, and it is felt on the adult's face before it is asked of anyone's.",
+    "Making round: makers take their flaps in known order — first slow weather at the teller, reported by the group ('The streamer leaned a LITTLE'); then a run of fast weather, reported at full size ('It STOOD OUT — that was FAST WEATHER') — then, the round's real treasure, wind made for a partner: pairs stand an arm-and-a-half apart, one flaps slow weather, the other receives with eyes open or closed by their own choice, and reports the arrival in the official shape: 'It came. It was gentle. It took a moment.' Makers swap; receivers become weather. Nobody flaps at a partner who has not agreed to be rained on by air.",
+    "Still-air stretch, the session's deep half: the whole group flaps together — slow, then fast, the streamer dancing — and on the adult's call, STILL AIR: every fan rests at once, and the group stands in the sudden quiet of weather they have stopped, feeling the last of their own wind arrive and finish. Hold the stillness a full breath. Say the line the record keeps for exactly here: 'We made weather, and then we STOPPED it. The sky cannot do that. You can.'",
+    "Finish with the fans retired in order: each maker closes their fan (folds together, grip down) and lays it in the weather box, counted aloud to its true number, while the tell-back is said over the box: 'Slow weather leaned the streamer. Fast weather stood it straight out. And the still air at the end was ours too. The wind went home in a box, and it will come out whenever this group says so.'"
+   ],
+   "variations": {
+    "easier": "A three-maker version: three fans, the teller, and both speeds — the whole science inside ten minutes on a still morning.",
+    "harder": "A hot-day version: the making round is run entirely in partner pairs at receiving distance — wind made as a gift on a day when a gift of moving air is genuinely worth having, each maker serving two partners before receiving."
+   },
+   "safety": "Fans are blunt, light, and checked before every session; a fan whose folds tear or whose grip tape lifts is retired on the spot, because a flapping thing coming apart invites grabbing hands at face height. Flapping happens at arm's length from every face — a maker's own or a partner's: partners stand an arm-and-a-half apart, the receiver's agreement is asked and waited for each time, and a receiver may end their weather instantly with a raised hand, honoured without a word of persuasion. Fans are never swung overhead, thrown, or run with; makers walk to their stations with fans held closed in two hands. On a genuinely windy day the record changes its claim honestly — the sky is already making weather — and the session becomes a comparison ('ours vs the sky's') rather than a contest with it.",
+   "copy_free": true,
+   "inclusion": "Wind-making works from any station: a fan can be worked one-handed at whatever arc a maker's arm prefers, clamped open on a tray edge and pushed in strokes, or directed — 'slow... slower... NOW fast' — with a partner's hands following the call while the speeds, the timing, and the still-air call stay the director's. Receiving is equal citizenship: a receiver who reports by a raised thumb, a sign, or the agreed sound for 'it arrived' has reported in full. The wind teller is held by the session's official witness, who calls the streamer's verdicts for the room — 'leaned a little... STOOD OUT' — and that voice belongs to whoever holds it, from any seat at the station."
+  },
+  {
+   "id": "big-name-bell-ring-for-you",
+   "name": "Big Name Bell, Ring for You",
+   "tagline": "One good bell with a clear voice. The bell keeper rings it for ONE name at a time — and the named child answers, in any way at all, when their name is rung.",
+   "categories": [
+    "music-rhythm"
+   ],
+   "age_min": 3,
+   "age_max": 3,
+   "group_min": 4,
+   "group_max": 16,
+   "time_min": 10,
+   "time_max": 15,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "one good bell, adult-chosen (a hand bell or a clear desk bell with a voice that carries kindly across a room — tested by the adult: bright, not shrill; a bell that hurts ears is retired before it starts)"
+    },
+    {
+     "item": "a small cushion the bell rests on between rings (the bell's home — bells are set down, never handed over ringing)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Choose the bell the way you would choose a voice for the room: ring every candidate yourself, at full arm's length, and keep only one whose sound a three-year-old's ears can live inside for fifteen minutes — clear, round, and done quickly. Practise the keeper's craft alone: one ring, clean; the bell stilled with a flat hand the moment its message is sent; the bell rested on its cushion between names like an instrument, not a toy. And learn the group's names as the keeper must say them — every name in the room, said the way its owner says it — because this record's whole dignity is a name rung correctly, and a mispronounced name rung beautifully is still wrong.",
+   "steps": [
+    "Gather the circle, rest the bell on its cushion in the middle where everyone can see it, and say the plain framing: 'This bell has a job. It rings for ONE person at a time. When it rings for your name, you answer — any way you like: a word, a wave, a stand-up, a sound. Answering means: I heard my name, and I am here.' State the laws whole: 'The keeper rings once per name — one clear ring, then the bell is stilled and rested. We listen FOR the name; nobody calls out another child's name for them. A name not answered is rung once more, later, kindly — never louder.'",
+    "First ring together, for you: the adult keeps the bell first. Ring once — clean, unhurried — and call your own name with it: 'That ring was for ME.' Answer yourself at full ceremony: stand, and say the session's official answer, which every child may borrow for the whole session: 'That's me. I'm here.' Sit. Name what happened plainly: 'One ring. One name. One answer. That is the whole game, and now it is your turn to be rung for.'",
+    "Ringing round: the bell travels the circle in known order — ring, name, and the space for the answer held open as long as the answer takes: a stand and a sentence, a wave from a seat, a chosen sound, a point at one's own chest that says it entirely. Every answer is received by the keeper in the same shape: 'Heard. Thank you.' A name whose owner is shy today is rung for with the same honour and held the same space; if no answer comes, the keeper moves on warmly and rings that name again near the end, once, and whatever comes then — including a smaller answer — closes the name's account in full.",
+    "Keeper's turn, the round the circle waits for: a child becomes the bell keeper — the bell carried on its cushion by the adult to the new keeper's seat, the ringing done from there, name by name, with the adult beside them as the name-holder, supplying the next name quietly and applauding the rings publicly. Ringing clearly, saying a friend's name correctly and kindly, and holding the space for their answer without filling it — that is musicianship, announcing, and manners in one job, and the record treats the keeper's round with that whole respect.",
+    "Finish with the bell rung once for the whole room — 'This ring is for EVERYBODY' — and every child answering at once in their own way, a cheerful census of the present: then the bell is rested on its cushion by the keeper, the cushion carried by the adult to the bell's shelf, and the tell-back said over the resting bell: 'Every name in this room was rung today, and every name was heard. The bell is sleeping now. It knows all your names for next time.'"
+   ],
+   "variations": {
+    "easier": "A half-circle version: six names, the adult keeping throughout — ring, answer, heard — inside ten minutes for the newest circles.",
+    "harder": "A two-bell version (late in the year, practised circles only): the keeper and a second keeper ring alternate names from two cushions — the room learns to listen for WHICH bell carried their name, and says so."
+   },
+   "safety": "The bell is chosen for kindness of sound and it is the adult's ear that certifies it: one ring at a time, never rung beside an ear, never shaken in a run, and stilled with a flat hand the moment its message is sent — a bell treated as a noise-maker ends the session's listening in a minute and is rested early, kindly, with the reason said plainly. The bell rests on its cushion between rings and travels only on the cushion, carried by the adult; keepers ring from their seats. A child who covers their ears at any ring has voted on the volume, and the keeper's rings soften for the whole room from that moment — listening records protect listeners first, and the record says so out loud when it happens.",
+   "copy_free": true,
+   "no_elimination": true,
+   "inclusion": "Answering has no required shape, and the record defends that in its laws, not its margins: an answer can be a word, a wave, a stand, a sound, a sign, a look held for one breath, or a chosen object raised — each is received with the same 'Heard. Thank you.' A child can also answer THROUGH the keeper: having their name rung and pointing at the adult to say 'That's me, I'm here' on their behalf counts entire, the name heard, the child present. The keeper's job works from any seat — the bell arrives on its cushion wherever the keeper sits, names are supplied in words, signs, or a tapped name-card — and the keeper's ring can be struck by directing the adult's holding hand: 'ready... RING.'"
+  },
+  {
+   "id": "big-shoe-stomp-marching-band",
+   "name": "Big Shoe Stomp Marching Band",
+   "tagline": "Shoes are the drums and the spot is the stage: the band marches on the spot, shakers in hand, and stops dead when the conductor's hand goes up.",
+   "categories": [
+    "music-rhythm"
+   ],
+   "age_min": 3,
+   "age_max": 3,
+   "group_min": 4,
+   "group_max": 18,
+   "time_min": 10,
+   "time_max": 20,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "simple shakers, one per musician (adult-audited: sealed tight, a kind sound at full shake, nothing that can open, spill, or be interesting to a mouth)"
+    },
+    {
+     "item": "the conductor's raised hand (no baton needed — the hand IS the baton, and every musician can see it)"
+    },
+    {
+     "item": "a clear standing floor, marked if the room needs it (the stage — one spot per musician, elbow room honest on both sides)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Audit the shakers one by one — shake each hard over a table, listening for any change that says its seal is thinking of leaving — and test the stage with your own feet: the floor must take a stomp without slipping, echoing painfully, or apologising to the room below; if the floor complains, the band takes its stage to the rug, the mat, or outside, and the record says which and why. Practise conducting yourself until your hand is readable at ten feet: UP means stopping, and at three a stopping signal is only real if it is rehearsed — the band learns the hand in the first minute by playing at stopping, before any marching is asked of it.",
+   "steps": [
+    "Bring the band to its spots, shakers in hands, and say the plain framing: 'A marching band usually marches somewhere. Ours marches HERE — feet marching on the spot, shakers keeping time, everybody playing together. And a band has one law above all others: when the conductor's hand goes UP, the music STOPS — feet, shakers, voices, all of it, like a statue with the sound turned off.' State the laws whole: 'Stomps land flat and under your own spot — feet march, they do not travel. Shakers shake at waist height, never swung. The stop belongs to everybody the instant the hand rises.'",
+    "First stop together, the record's foundation: free stomp-and-shake, everybody, gloriously ragged — five full seconds of it — then raise your hand and hold it until the last shaker dies: name the stop at full size: 'Band. You STOPPED. All of you, together, on one hand. Grown-up bands practise that for years.' Practise twice more, shorter runs, cleaner stops, before a single march step is added: the stop is the band's first instrument, and it is tuned before the music starts.",
+    "Marching round: with the stop proven, the march begins — feet lifting and landing on the spot in the adult's called time ('LEFT, right, LEFT, right', chanted as the beat itself), shakers shaking on the landing, the band staying gloriously in place while sounding exactly like travel. The conductor varies the weather of it in the open: 'Softer — the band is marching past a sleeping house... LOUDER — the band is marching into the square!' Each change is a whole-band act of listening, and each stop, when the hand rises mid-march, is received like the trick it is: silence, feet mid-air and all, held for one breath before the melt into grins.",
+    "Solo spots, the round every musician waits for: the band stills its feet but keeps a whisper of shaker going, and one musician at a time takes a four-count solo on the spot — stomp pattern, shaker figure, any rhythm that is truly theirs — while the band holds the floor under them and the conductor counts them in and out like a headline act: 'On the drums of her shoes — MAYA.' Four counts is a headline at three, and the record bills it as one, in the programme it says out loud.",
+    "Finish with the band's best march yet — full stomp, full shaker, one loudness change, one hush — and a final stop held a breath longer than any before it, feet frozen, shakers silent, the conductor's hand high: then hands down, shakers rested into their basket one musician at a time, counted aloud to their true number, and the tell-back said over the quiet stage: 'The band marched nowhere and arrived everywhere. It stopped as one band, nine times, on one raised hand. That is what bands spend years learning, and this one learned it before snack.'"
+   ],
+   "variations": {
+    "easier": "A feet-only version: no shakers, the shoes alone, stops and march only — the whole curriculum inside ten minutes for the newest bands.",
+    "harder": "A parade-finish version (a willing corridor, a patient doorway): the last march TRAVELS — slowly, in a line, conductor walking backwards at its head — out of the room and back, the band's one journey, taken at walking pace with stops at every door."
+   },
+   "safety": "Stomps land flat, on the spot, under the stomper: marching feet never travel during the rounds, shoes stay on feet for the whole session (a loose shoe is re-fastened by the adult before the band resumes), and spots are spaced an honest elbow's width apart so no shaker's arc meets a neighbour. Shakers are sealed, audited before every session, shaken at waist height, and rested the moment one sounds different — a changed shaker is retired mid-session without ceremony, because its contents on a floor full of marching feet is the session's one real hazard. The stop is also a safety instrument: any stumble, collision, or rising wildness is answered with the raised hand, and the band's practised stillness is the adult's fastest tool in the room — which is why it is tuned first, every time, before the music.",
+   "copy_free": true,
+   "no_elimination": true,
+   "inclusion": "The band is built of whoever is there: a musician's spot can be a chair with feet marching against a footrest or the floor from sitting, a shaker can be worked in a fist, on a tray in strokes, or by directing a partner's shake — 'on MY count: shake, shake, STOP' — and every version counts as playing, because the band's music is measured in togetherness, not height. The conductor's job rotates by list and works from any spot: the raised hand can be a raised card, a lifted shaker, or a called 'STOP' for a conductor whose hands are busy — the band stops for the signal, whatever form carries it. Solo spots belong to every musician by the same list, at whatever instrument their hands have chosen."
+  },
+  {
+   "id": "big-tear-and-stick-paper-mosaic",
+   "name": "Big Tear and Stick Paper Mosaic",
+   "tagline": "No scissors, no copying: big soft paper torn by hand into palm-sized pieces, stuck inside one huge shared sun until the whole outline glows.",
+   "categories": [
+    "crafts"
+   ],
+   "age_min": 3,
+   "age_max": 3,
+   "group_min": 2,
+   "group_max": 10,
+   "time_min": 15,
+   "time_max": 20,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "soft coloured paper in big sheets (tissue and crepe tear kindly for small hands; construction paper for confident tearers — the adult tears one of each in advance and keeps only what tears without a fight)"
+    },
+    {
+     "item": "one huge shared outline on a big sheet or taped-together pages (a sun, a fish, a house — drawn by the adult in one bold line, big enough that ten children's pieces cannot crowd it)"
+    },
+    {
+     "item": "glue sticks, one per maker within reach (sticks, not pots: at three, the glue must be as forgiving as the tearing)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Draw the outline first and draw it BIG: a sun whose face alone takes a whole spread of pages, because a small outline fills in four minutes and teaches rushing, while a huge one gives twenty pieces somewhere true to go. Test-tear every paper yourself at the table: the session's whole craft is a sound and a feeling — the slow rip of fibres giving — and a paper that refuses to tear, or shreds to confetti, will teach frustration in the tearer's own hands. Pre-tear nothing: the tearing is not preparation for the work, it IS the work, and the setup's only job is paper honest enough to be torn by the hands that are coming.",
+   "steps": [
+    "Spread the big outline where everyone can reach a piece of it and say the plain framing: 'We are going to fill this whole sun with colour. Not with scissors — scissors are for another year. With our HANDS. We tear the paper — listen —' (tear one piece, slowly, where every eye can watch the rip travel) '— and a torn edge is the CORRECT edge. Nobody's tear is wrong. Then the glue stick paints the back, and the piece goes inside the lines, anywhere it fits.' State the laws whole: 'Pieces are palm-sized or bigger. Glue goes on the PIECE, not the picture. A piece that lands outside the line is moved kindly, once, by its own maker — or it stays, and the sun has a ray that escaped, which suns are allowed.'",
+    "First tearing together: every maker takes one sheet and the room tears in chorus — the first rip demonstrated by the adult at full ceremony, thumbs close together, the paper giving slowly — and the sound of ten slow tears is this record's opening music. Torn pieces land in a growing pile per maker; a tear that runs away into a sliver is received like all the others ('That one tore THIN. Thin pieces fill thin places.') because the record's constitution is that hands at three tear as they tear, and the mosaic has a place for every shape hands honestly make.",
+    "Sticking round: makers take their pieces to the sun in their own order — glue painted on the back by the piece's own maker (the adult holds pieces steady for the painting, never paints for them), carried in two hands like something breakable, and laid inside the outline with the press that finishes every piece: flat palm, one breath, 'Stay.' Gaps are the round's honest news and are named as geography, not failure: 'The sun's chin is still empty. Whose piece is chin-shaped?' — and the room learns to read a shared picture the way editors read a page: by what it still needs.",
+    "Edge stretch, offered when the middle is filling well: the outline's border itself becomes the work — a rim of one chosen colour, piece by piece, torn longer and thinner on purpose now, laid along the line by makers who have discovered that tearing has a steering wheel after all: thumbs close, rip slow, and the paper more or less obeys. A rim that wanders off the line and back is a hand-drawn quality in a torn medium, and the record says so: 'The line is a suggestion the sun made. The rim is the answer your hands gave.'",
+    "Finish with the sun lifted — carefully, by the adult and the two steadiest carriers, one edge each — and held up or laid against the wall where the whole room can stand back from it: the tell-back is read off the picture itself: 'Every colour in that sun was torn by somebody's hands and stuck by the same hands. No scissors touched it. No piece is wrong. That is a picture this room made the slow way, and the slow way shows.' The sun stays up for the day, at the room's eye height, where its makers pass it."
+   ],
+   "variations": {
+    "easier": "A one-colour version: a whole outline, one paper colour, five makers — tearing and sticking in their purest form inside fifteen minutes.",
+    "harder": "A two-picture version (a confident room): the sun AND its moon, worked side by side — makers choose their picture per piece, and the pair is hung as one sky."
+   },
+   "safety": "Paper is the whole material and it is chosen kindly: soft papers that tear without a fight, because a tearing session that needs adult strength teaches the wrong lesson in the first minute — any sheet a maker strains at is swapped for a softer one, without comment, by the adult who stocked the table. Glue sticks only — capped between uses, used on pieces and never on skin, faces, or hair; a glue stick that travels toward a mouth is traded for a fresh piece to tear, kindly, without a lecture. Makers stay seated or standing at the shared sheet, which lies flat and still: nobody tears over anybody else's work, and torn pieces too small to be palm-sized are gathered by the adult into the scrap bowl before they can wander — at three, small paper bits are floor litter and mouth questions in the same minute.",
+   "copy_free": true,
+   "inclusion": "Tearing asks for two hands and gives back honestly to every version of them: paper can be torn against a table edge, held by the adult or a clamp while the maker pulls, or chosen pre-scored along lines the maker picks — the piece, its size, and its place in the sun remain the maker's decisions entirely. A maker can direct a whole corner of the sun by colour and placement — 'the red... torn LONG... there, by the chin' — while a partner's hands tear and stick to direction; the corner is the director's work and is named as theirs in the tell-back. The carrier job — holding the finished sun's edge for its first lifting — is the picture's official honour and rotates by list."
+  },
+  {
+   "id": "big-ribbon-wand-river-dance",
+   "name": "Big Ribbon Wand River Dance",
+   "tagline": "One ribbon wand per dancer, one slow piece of music: the ribbon draws a river in the air — wide bends, slow falls — and rests when the music rests.",
+   "categories": [
+    "quiet-focus"
+   ],
+   "age_min": 3,
+   "age_max": 3,
+   "group_min": 2,
+   "group_max": 10,
+   "time_min": 10,
+   "time_max": 20,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "ribbon wands, adult-made (one per dancer: a wide soft ribbon, arm's length and no longer, firmly fixed to a short smooth wand — checked before every session: the fixing must hold against a real tug, and the wand must be blunt at both ends)"
+    },
+    {
+     "item": "one slow piece of music the adult has chosen and heard all the way through (the river's weather — instrumental, unhurried, with a true ending; no surprises in it)"
+    },
+    {
+     "item": "a clear floor with room to turn (the riverbank — one dancer's turning circle must not meet another's ribbon)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Make and tug-test the wands before anything else: the ribbon's fixing takes the whole session's forces, and a ribbon that escapes its wand mid-dance becomes a thing to chase, which is the opposite of this record. Choose the music by listening to ALL of it, alone — the dance inherits the music's every swell and stop, so a piece with a sudden loud minute in it will write that minute across the room. Learn the music's map: where it slows, where it breathes, where it truly ends, because your voice will narrate none of it during the dance — your preparation is the confidence to let the music conduct, and that confidence is only built the night before.",
+   "steps": [
+    "Give out the wands, one dancer at a time, handles first, and say the plain framing: 'This ribbon is a river that only flows when you move it. When the music starts, your ribbon draws the river in the air — wide, slow bends, like water going round stones. There are no steps to learn and no shape to copy. Your river is yours. When the music rests, the river rests.' State the laws whole: 'Ribbons move through the AIR only — never touching anybody, never wrapped round anything or anyone. Wands are held in one hand, by the handle. A dropped wand is a resting river: it is picked up when the dancer is ready, not dived for.'",
+    "First river together, yours and theirs at once: start the music and dance YOUR river at full ceremony — arm high and slow, the ribbon drawing one enormous bend, a dip, a long settling fall — while the dancers watch for the first four counts before their own rivers join, so the room's first image of the activity is its true pace. Then rivers rise round the room one by one, each at its dancer's own tempo inside the music's weather, and the adult's whole narration for the rest of the piece is a single line, said once, quietly: 'Look at all the rivers this room is holding.'",
+    "Bend-and-fall stretch, the dance's vocabulary arriving inside the music: when the music slows — and the adult, who knows its map, lets the dancers discover this rather than announcing it — the rivers naturally widen and settle; when it gathers, the ribbons travel further on each bend. A dancer whose river tangles is unhurried by anyone: the ribbon is shaken out at knee height, the river resumes, and the record's line, ready and true, covers the moment without fuss: 'Rivers go round stones. That was a stone.' Variation between rivers is the dance's beauty and is named as such: 'No two rivers in this room are alike. That is how you can tell they are real.'",
+    "Still-water moment, near the music's end: the adult, who knows the ending is coming, lets the last phrase slow the room's rivers down to drifts, then to resting ribbons trailed on the floor as the final note settles — the dancers standing inside their own still water for one full breath of silence after the music stops. That silence is the record's last movement and is protected like one: nobody applauds it away, nobody fills it; the adult simply says, after the breath, 'The rivers are resting. So are we.'",
+    "Finish with the wands retired properly, because rivers get put away: ribbons are smoothed flat by their dancers, wound loosely round the wand (the river coiled for next time), and laid in the river box in a count said aloud to its true number. The tell-back is said over the box: 'Six rivers flowed in this room, every one different, and not one of them touched anybody. The music conducted, the ribbons drew, and the still water at the end was the best part — and everybody in here felt it arrive.'"
+   ],
+   "variations": {
+    "easier": "A one-song version: one wand each, the music's first half only, rivers drawn and rested inside ten minutes for the newest dancers.",
+    "harder": "A seated-rivers version (a tired afternoon, a small space): the dance done entirely from chairs, rivers drawn at lap height and above — the same music, the same stillness, half the altitude."
+   },
+   "safety": "Ribbons live in the air and touch nobody: dancers are spaced a full ribbon's length apart before the music starts — the adult walks the spacing with a wand held out, because a ribbon's reach is exactly one wand plus one arm and the floor plan must respect it. Wands are short, blunt, and tug-tested before every session; a ribbon whose fixing loosens is retired mid-dance, kindly and at once, its dancer offered the spare wand or the rest of the piece as the room's official watcher. Ribbons are never wound round a neck, wrist, or any body part — the adult's eye treats winding as the session's one real hazard and unwraps the idea the moment it appears, with the reason said plainly. The floor is checked clear before the music: a dancer watching a ribbon is not watching their feet.",
+   "copy_free": true,
+   "inclusion": "A river is drawn at whatever height its dancer's arm prefers: from a seat, from standing, with the wand held in a fist or worked in slow pushes along a tray's edge — the ribbon does not know the difference and neither does the music. A dancer can conduct a whole river by direction — 'wide bend... dip it... let it FALL' — with a partner's arm following the calls, while the river's shape, pace, and resting place stay the director's composition entirely. The river-box keeper — smoothing, coiling, and counting the wands home — is the dance's official last job and belongs to whoever holds it."
+  },
+  {
+   "id": "big-cushion-bridge-crossing",
+   "name": "Big Cushion Bridge Crossing",
+   "tagline": "A line of big floor cushions is the bridge over the pretend river rug: cross it one slow step at a time, with a hand offered — arriving is the whole course.",
+   "categories": [
+    "pe-movement"
+   ],
+   "age_min": 3,
+   "age_max": 3,
+   "group_min": 2,
+   "group_max": 8,
+   "time_min": 15,
+   "time_max": 20,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "big floor cushions, firm ones (four to six, the flattest and steadiest the room owns — a cushion that slides or tips under the adult's own full weight test never joins the bridge)"
+    },
+    {
+     "item": "a long rug or mat under the whole line (the river — it makes the crossing matter and makes any step-off a soft landing by design)"
+    },
+    {
+     "item": "two small flags or cones (the bridge's two banks — start bank and far bank, marking the crossing's whole geography)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Build the bridge and cross it yourself, at your full weight, before any crosser is invited: every cushion is stepped on dead-centre and at its edges, because a cushion steady in the middle and treacherous at the rim will meet a three-year-old's foot exactly at that rim. Butt the cushions edge to edge with no gaps a small foot can find, on the rug, which itself must lie flat and unruffled on the floor — the river is pretend, but it is also, honestly, the safety mat, and it only works lying flat. Set the two banks, walk the approach at toddler height in your mind, and know this: the bridge the adult has crossed ten times bored is the bridge a child crosses once bravely.",
+   "steps": [
+    "Lay the last cushion, set the flags, and say the plain framing: 'This is a bridge. Under it is the river —' (a sweep of the hand along the rug) '— and bridges are for crossing, one slow step at a time, cushion by cushion. I will walk beside you on the riverbank, and my hand is here if you want it. Wanting it and not wanting it are both bridge-crossing, done properly.' State the laws whole: 'One crosser on the bridge at a time. Feet go in the MIDDLE of each cushion. The bridge is walked, never run, never jumped. Stepping off onto the rug is always allowed — the river is kind, and trying again is a crosser's right.'",
+    "First crossing together, yours: cross the whole bridge yourself at ceremony pace — middle of each cushion, arms a little out, a real pause on the wobbliest one ('This cushion breathes a bit. Feet in the middle. On we go.') — and arrive at the far bank with the crossing's official celebration, which is small and true: both feet planted, the flag touched, and the report in the session's official shape: 'I crossed. Four cushions. I am on the far bank.' The group now knows the crossing's whole shape, its pace, and its prize, because they watched someone they trust need all of it.",
+    "Crossing round: crossers take the bridge one at a time, in known order, at entirely their own pace — the adult walks the riverbank beside them at knee height, hand offered open at the crosser's side, taken or not taken as the crossing decides. A crosser who freezes mid-bridge gets the record's standing line, which is also its whole method: 'You are ON the bridge. Standing on a bridge is already crossing it. The next cushion is there when your feet say so.' A crosser who steps off is met on the rug like a swimmer who chose the bank: 'You read the bridge and chose the riverbank. Crossers may. The bridge will still be there.' — and a second attempt, then or later, is offered once and never pressed.",
+    "Load stretch, for crossers whose feet grow certain: the crossing made with CARGO — one big soft toy carried in both arms to be delivered to the far bank, where it is set down with the small ceremony freight deserves. Carrying changes a crossing entirely (the arms are busy; the balance must come from the feet alone), and the record bills it honestly: 'A crossing with cargo is a working crossing. Ferrymen train for this.' Lighter crossers carry smaller freight — one beanbag, one book for the far bank's library — because the stretch is the carrying, not the weight.",
+    "Finish with the bridge crossed one last time by the day's most eager repeater, then dismantled by its crossers: cushions carried, one at a time and in two arms, back to their home corner by the children who crossed them, the flags last, the rug rolled by many hands. The tell-back is said over the empty floor where the river was: 'The bridge stood on four cushions and every crosser who wanted the far bank reached it — by cushion, by hand, or by their own brave feet. The river is rolled up now. It will be back when the room needs to get somewhere.'"
+   ],
+   "variations": {
+    "easier": "A two-cushion version: a short bridge, an adult on each bank, the whole arc — step, pause, arrive — inside fifteen minutes for the newest crossers.",
+    "harder": "A bridge-and-back version: the confident crosser's round trip — across, touch the flag, and home again over the same cushions, the return leg counted as a second crossing at full honour."
+   },
+   "safety": "The bridge is only as honest as its cushions: every cushion passes the adult's full-weight centre-and-edge test before the session, cushions sit butted on a flat rug over a hard floor (never on another mat that can skate), and a cushion that shifts under a crossing foot is re-seated by the adult before the next crosser, without exception or hurry. One crosser on the bridge at a time, always; the adult walks beside every crossing at a distance that can become a catch, and the offered hand is open and still — never gripping, pulling, or steering a crosser by it. Stepping off is designed for, not failed at: the rug makes every step-off a soft arrival, and no crosser is ever lifted back onto the bridge mid-crossing — feet leave the bridge only onto the rug, by the crosser's own step. Running and jumping on the bridge end a crossing kindly and at once, and the bridge waits for walking feet.",
+   "copy_free": true,
+   "inclusion": "The crossing is measured in arrivals, not in feet: a crosser can cross seated on the bridge's widest cushion, shuffled cushion to cushion at floor level with the adult moving the bridge under them; can cross by directing a partner's crossing step for step — 'middle of that one... pause... NEXT' — and be counted arrived when their directions land; or can hold the far-bank post, touching each arriving crosser's flag-hand and giving the official report — 'You crossed. You are on the far bank' — which is the bridge's official voice and belongs to whoever holds the bank. The offered hand can be a forearm, a sleeve, or the adult walking close enough to be a wall of reassurance; help's shape is the crosser's choice, stated once and kept."
   }
  ],
- "count": 673,
+ "count": 685,
  "updated": "2026-10-13"
 }

@@ -17,7 +17,7 @@ function ok(cond, label, extra) {
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const byId = {};
 acts.forEach(a => { byId[a.id] = a; });
-ok(acts.length === 673, '673 activities total', String(acts.length));
+ok(acts.length === 685, '685 activities total', String(acts.length));
 ok(new Set(acts.map(a => a.id)).size === acts.length, 'all ids unique');
 
 const SCOUT = ['dream-for-our-community', 'floating-ink-ghost', 'binary-code-keychain',
@@ -68,7 +68,7 @@ ok(new Set(acc.map(q => q.activity_id)).size === 8, 'accepted activity ids disti
 // 4. New tag vocabulary present and used.
 const tagCount = t => acts.filter(a => (a.tags || []).includes(t)).length;
 ok(tagCount('holiday:mlk-day') === 6, 'mlk-day 0 -> 1 (wave-24) -> 5 (wave-25 deepening)', String(tagCount('holiday:mlk-day')));
-ok(tagCount('holiday:indigenous-peoples-day') === 5, 'indigenous-peoples-day 0 -> 1 (wave-24) -> 5 (wave-25 deepening)');
+ok(tagCount('holiday:indigenous-peoples-day') === 6, 'indigenous-peoples-day 0 -> 1 (wave-24) -> 5 (wave-25 deepening) -> 6 (wave-36)');
 ok(tagCount('holiday:valentines-day') === 7, 'valentines-day 0 -> 4 in wave 24; wave 26 -> 6; wave 31 -> 7');
 ok(tagCount('holiday:lunar-new-year') === 6, 'lunar-new-year 0 -> 3 in wave 24; wave 26 -> 5; wave 29 -> 6');
 ok(tagCount('holiday:st-patricks-day') === 6, 'st-patricks-day 0 -> 2 (wave-24) -> 5 (wave-25 deepening); wave 33 -> 6');
@@ -96,7 +96,7 @@ ok(/peanut/.test((queue.find(q => q.title.includes('Snickers')) || {}).decision 
 
 // 6. The new collection: 12 picks, calendar order anchors, all resolve.
 const colls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/collections.json'), 'utf8')).collections;
-ok(colls.length === 25, '25 collections', String(colls.length));
+ok(colls.length === 26, '26 collections', String(colls.length));
 const cal = colls.find(c => c.id === 'the-whole-calendar');
 ok(cal, 'the-whole-calendar collection exists');
 ok(cal.picks.length === 12, 'whole-calendar has 12 picks', String(cal.picks.length));

@@ -5,17 +5,17 @@ Hundreds of real, classic, public-domain activity concepts — filterable by age
 group size, materials, and category. Plan-my-week planner. Printable one-page cards.
 
 ## Categories
-- Seasons: 113 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
-- Holidays: 123 activities — Festive projects and games for the days the whole group looks forward to.
-- Crafts: 160 activities — Hands-on making: fold it, paint it, build it, take it home.
-- STEM: 154 activities — Experiments, engineering challenges, and satisfying science demos.
-- PE & Movement: 118 activities — Run, jump, dance — activities that burn off the wiggles.
-- Team & Community: 146 activities — Turn a group into a crew: cooperation, trust, and belonging.
-- Icebreakers: 70 activities — First-day friendly: learn names, laugh, and loosen up fast.
-- Outdoor: 110 activities — Fresh-air activities for fields, playgrounds, and nature walks.
-- Rainy Day: 70 activities — Stuck inside? These keep a roomful of kids happy without a gym.
-- Quiet & Focus: 134 activities — Wind-down worthy: calm, creative, individual or small-group.
-- Music & Rhythm: 42 activities — Drums, shakers, rhythm games, and songs — make some noise.
+- Seasons: 114 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
+- Holidays: 124 activities — Festive projects and games for the days the whole group looks forward to.
+- Crafts: 161 activities — Hands-on making: fold it, paint it, build it, take it home.
+- STEM: 155 activities — Experiments, engineering challenges, and satisfying science demos.
+- PE & Movement: 119 activities — Run, jump, dance — activities that burn off the wiggles.
+- Team & Community: 147 activities — Turn a group into a crew: cooperation, trust, and belonging.
+- Icebreakers: 71 activities — First-day friendly: learn names, laugh, and loosen up fast.
+- Outdoor: 111 activities — Fresh-air activities for fields, playgrounds, and nature walks.
+- Rainy Day: 71 activities — Stuck inside? These keep a roomful of kids happy without a gym.
+- Quiet & Focus: 135 activities — Wind-down worthy: calm, creative, individual or small-group.
+- Music & Rhythm: 44 activities — Drums, shakers, rhythm games, and songs — make some noise.
 
 ## API — start at data/v1/index.json (self-describing manifest)
 - data/v1/index.json — api manifest
@@ -322,6 +322,11 @@ Big soft white puffs drift on a blanket the whole crew holds low, waved slow as 
 Categories: Rainy Day | Ages 3-3 | Group 4-12 | 10-20 min | Prep needed | indoor
 Page: activity/big-cotton-cloud-blanket-drift.html
 
+### Big Cushion Bridge Crossing
+A line of big floor cushions is the bridge over the pretend river rug: cross it one slow step at a time, with a hand offered — arriving is the whole course.
+Categories: PE & Movement | Ages 3-3 | Group 2-8 | 15-20 min | Prep needed | indoor
+Page: activity/big-cushion-bridge-crossing.html
+
 ### Big Dot Sticker Pictures
 Peel a big dot sticker, place it where you want it — the pincer practice that comes before scissors, pens, and everything else.
 Categories: Crafts | Ages 3-5 | Group 2-24 | 15-25 min | Prep needed | indoor
@@ -352,10 +357,20 @@ Hand-sized felt squares carried one at a time to a big wall board and pressed ed
 Categories: Team & Community | Ages 3-3 | Group 4-14 | 15-20 min | Prep needed | indoor
 Page: activity/big-felt-quilt-wall-build.html
 
+### Big Find the Matching Sock Pair
+One big sock is held up for the whole circle: somewhere in the small soft pile is its ONE partner. Whoever finds it holds up a pair — and pairs get cheered.
+Categories: Icebreakers | Ages 3-3 | Group 4-14 | 10-15 min | Prep needed | indoor
+Page: activity/big-find-the-matching-sock-pair.html
+
 ### Big Finger Paint Sky Sheet
 One very long sheet, two blues, and nothing but fingers: the whole group paints one shared sky, then dabs the clouds in white with their fingertips.
 Categories: Crafts | Ages 3-3 | Group 4-14 | 15-20 min | Prep needed | indoor/outdoor
 Page: activity/big-finger-paint-sky-sheet.html
+
+### Big Float or Sink, First Dip
+A tub of water and a shelf of big things: each one is held over the water, dipped once, and reported in the session's only two words — FLOAT or SINK.
+Categories: STEM | Ages 3-3 | Group 2-8 | 10-20 min | Prep needed | indoor/outdoor
+Page: activity/big-float-or-sink-first-dip.html
 
 ### Big Float–Sink Basin Sort
 One big basin, one big object at a time: held over the water, let go — and the basin itself reports, floats or sinks, for the group to sort by.
@@ -392,6 +407,11 @@ One object in each hand, arms out like a scale: which hand sinks? The body's own
 Categories: STEM | Ages 3-3 | Group 2-8 | 10-15 min | Prep needed | indoor/outdoor
 Page: activity/big-heavy-light-hand-balance.html
 
+### Big Leaf Light Window Hold
+One big spring leaf, chosen by its holder and lifted to the light: the sun shines clean through it, and its veins stand up like a tiny map.
+Categories: Seasons | Ages 3-3 | Group 2-10 | 10-15 min | No prep | outdoor
+Page: activity/big-leaf-light-window-hold.html
+
 ### Big Leg Tunnel Ball Roll
 The group stands in two facing lines, legs wide: a tunnel made of people. One big ball rolls its whole length — in one end, out the other, to cheers.
 Categories: Rainy Day | Ages 3-3 | Group 6-16 | 10-20 min | Prep needed | indoor
@@ -412,10 +432,20 @@ One big magnet wand and a tray of big things: touch each one and find out — it
 Categories: STEM | Ages 3-3 | Group 2-10 | 10-20 min | Prep needed | indoor
 Page: activity/big-magnet-wand-sticks.html
 
+### Big Name Bell, Ring for You
+One good bell with a clear voice. The bell keeper rings it for ONE name at a time — and the named child answers, in any way at all, when their name is rung.
+Categories: Music & Rhythm | Ages 3-3 | Group 4-16 | 10-15 min | Prep needed | indoor
+Page: activity/big-name-bell-ring-for-you.html
+
 ### Big One Statue, Many Bodies
 The whole group builds ONE statue together — an arm here, a crouch there — then everybody freezes at once and the statue stands, breathing quietly.
 Categories: Team & Community | Ages 3-3 | Group 4-16 | 10-20 min | Prep needed | indoor/outdoor
 Page: activity/big-one-statue-many-bodies.html
+
+### Big Paper Fan Wind Maker
+One big stiff paper fan per wind maker: flap it slow, flap it fast, and feel the wind you made arrive on your own face — weather, by hand.
+Categories: Outdoor | Ages 3-3 | Group 3-12 | 10-15 min | Prep needed | outdoor/indoor
+Page: activity/big-paper-fan-wind-maker.html
 
 ### Big Pass the Smile Circle
 One smile, passed neighbour to neighbour round the whole circle: turn, smile at the next face, and watch your smile travel all the way home.
@@ -462,10 +492,20 @@ A big ribbon wand in each hand and a slow walking loop: the whole parade waves r
 Categories: Holidays | Ages 3-3 | Group 5-18 | 10-20 min | Prep needed | indoor/outdoor
 Page: activity/big-ribbon-wand-parade-walk.html
 
+### Big Ribbon Wand River Dance
+One ribbon wand per dancer, one slow piece of music: the ribbon draws a river in the air — wide bends, slow falls — and rests when the music rests.
+Categories: Quiet & Focus | Ages 3-3 | Group 2-10 | 10-20 min | Prep needed | indoor
+Page: activity/big-ribbon-wand-river-dance.html
+
 ### Big Shadow Grow and Shrink
 One big cardboard shape, one lamp, one wall: move the shape nearer the light and its shadow grows — the group directs, the shadow obeys.
 Categories: STEM | Ages 3-3 | Group 3-12 | 10-15 min | Prep needed | indoor
 Page: activity/big-shadow-grow-shrink.html
+
+### Big Shoe Stomp Marching Band
+Shoes are the drums and the spot is the stage: the band marches on the spot, shakers in hand, and stops dead when the conductor's hand goes up.
+Categories: Music & Rhythm | Ages 3-3 | Group 4-18 | 10-20 min | Prep needed | indoor
+Page: activity/big-shoe-stomp-marching-band.html
 
 ### Big Smell Jar: Sniff and Say
 Big jars with one honest smell each — orange peel, cinnamon, fresh mint: lid off, one sniff, and say what your nose found. Nothing to guess, nothing to win.
@@ -477,15 +517,30 @@ Chunky sponge shapes dipped in paint and pressed straight down on one long share
 Categories: Crafts | Ages 3-3 | Group 4-14 | 15-20 min | Prep needed | indoor/outdoor
 Page: activity/big-sponge-stamp-mural.html
 
+### Big Story Stone, First People
+One smooth stone passed hand to hand in the story circle: today the grown-up tells, plainly and truly, whose land this classroom stands on.
+Categories: Holidays | Ages 3-3 | Group 4-14 | 10-15 min | No prep | indoor
+Page: activity/big-story-stone-first-people.html
+
 ### Big Tape Roads Car Town
 Painter's tape roads laid straight across the floor, and big chunky cars to drive them: the town is built first, then driven, stop by stop.
 Categories: Rainy Day | Ages 3-3 | Group 3-12 | 15-20 min | Prep needed | indoor
 Page: activity/big-tape-roads-car-town.html
 
+### Big Tear and Stick Paper Mosaic
+No scissors, no copying: big soft paper torn by hand into palm-sized pieces, stuck inside one huge shared sun until the whole outline glows.
+Categories: Crafts | Ages 3-3 | Group 2-10 | 15-20 min | Prep needed | indoor
+Page: activity/big-tear-and-stick-paper-mosaic.html
+
 ### Big Texture Feet Path Walk
 A short path of big panels — grass, a smooth mat, sand in a tray, a soft towel: walked slowly, one panel at a time, and every panel reported in foot words.
 Categories: Outdoor | Ages 3-3 | Group 2-10 | 10-20 min | No prep | outdoor
 Page: activity/big-texture-feet-path-walk.html
+
+### Big Tissue Snow, Gentle Fall
+One white tissue at a time, dropped from high hands over the rug: it does not fall, it FLOATS — and the whole room practises being gentle enough to watch.
+Categories: Rainy Day | Ages 3-3 | Group 3-12 | 10-15 min | No prep | indoor
+Page: activity/big-tissue-snow-gentle-fall.html
 
 ### Big Tongs Ice Move
 Big serving tongs, big ice cubes, one tray to another: grip one, carry it, drop it in, count it. Cold hands, careful work.
@@ -496,6 +551,11 @@ Page: activity/big-tongs-ice-move.html
 One big tree, arms around it or palms flat on the bark, and a whole quiet minute of listening to what a tree's place sounds like.
 Categories: Outdoor | Ages 3-3 | Group 2-12 | 10-15 min | No prep | outdoor
 Page: activity/big-tree-hug-listen.html
+
+### Big Warm Hand, Lend a Hand
+Two hands meet palm to palm — one warm from rubbing, one cool from waiting — and the pair stays together until both hands agree: WARM NOW.
+Categories: Team & Community | Ages 3-3 | Group 4-14 | 10-15 min | No prep | indoor
+Page: activity/big-warm-hand-lend-a-hand.html
 
 ### Big Warm Stone Hold and Tell
 Two big smooth stones, one sun-warmed and one shade-cool, held one in each hand: which hand is holding summer? Palms report, words follow.

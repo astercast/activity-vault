@@ -17,7 +17,7 @@ const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'),
 const cats = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/categories.json'), 'utf8'));
 const colls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/collections.json'), 'utf8')).collections;
 const actIds = new Set(acts.map(a => a.id));
-ok(acts.length === 673, '673 activities total', String(acts.length));
+ok(acts.length === 685, '685 activities total', String(acts.length));
 ok(actIds.size === acts.length, 'all activity ids unique (validator re-run)');
 ok(cats.length === 11, '11 categories', String(cats.length));
 
@@ -104,7 +104,7 @@ ok(desk.includes('aria-current="page">The Desk'), 'desk.html marks itself curren
 
 // 7. Sitemap + llms.txt surface updates.
 const sm = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
-ok(sm.includes('<loc>/desk.html</loc>'), 'sitemap has desk.html');
+ok(sm.includes('<loc>https://activity-vault-live.vercel.app/desk.html</loc>'), 'sitemap has desk.html');
 const llms = fs.readFileSync(path.join(ROOT, 'llms.txt'), 'utf8');
 ok(/^-\sdesk\.html\s/m.test(llms), 'llms.txt lists desk.html');
 

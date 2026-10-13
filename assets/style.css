@@ -1998,3 +1998,9 @@ html[data-calm="true"] .drawer-pull { transition: none; }
   .party-sheet a { color: #000; text-decoration: none; }
   .party-sheet .kit-group { break-inside: avoid; }
 }
+
+/* Rotation 13 placement: Commons photo on activity pages (print cards stay one page) */
+.activity-photo { margin: 1.1rem 0 0.4rem; }
+.activity-photo img { display: block; width: 100%; height: auto; border: 1px solid var(--line, #ddd0b4); border-radius: 10px; }
+.activity-photo figcaption { margin-top: 0.45rem; font-size: 0.92rem; line-height: 1.45; }
+.activity-photo .photo-credit { opacity: 0.72; font-size: 0.85em; }
