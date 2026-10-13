@@ -2,7 +2,7 @@
  "meta": {
   "site": "Activity Vault",
   "version": "1.0.0",
-  "generated": "2026-10-13T08:02:54Z",
+  "generated": "2026-10-13T08:14:21Z",
   "source_snapshot": "data/activities.json + data/categories.json — 673 activities, 11 categories"
  },
  "endpoints": [

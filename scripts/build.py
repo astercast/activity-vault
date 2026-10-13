@@ -1669,6 +1669,16 @@ def main():
               "  from the selected activities' real materials fields: deduplicated,",
               "  grouped (consumables / equipment / print-at-desk), every line traced",
               "  to the activity that asked for it. Copy-as-text included.",
+              "- partypack.html — The Party Pack: plan a whole group event — pick an",
+              "  occasion (birthday, Halloween, Thanksgiving, winter holiday,",
+              "  Valentine's, spring, summer, rainy-day), an age band, and a group",
+              "  size — and it composes a five-part party arc from real activities",
+              "  (welcome, big group opener, making & games, movement break, calm",
+              "  close), then packs the party bag from the picks' real materials",
+              "  fields through the Kit Bag's aggregation. Honest thin coverage:",
+              "  when an occasion holds fewer real activities than the arc has",
+              "  parts, the page says so in numbers and offers the nearest real",
+              "  options — it never pads a plan. Printable party sheet + copy-as-text.",
               "- collections.html — Curated collections: 25 teacher-ready bundles (rainy-day",
               "  rescue, first day, sub tub, winter party, spring burst, summer splash, haunted halls, grateful gathering, winter lights…)",
               "  each with a curator's note per pick; printable and copy-able per collection.",
@@ -1693,7 +1703,7 @@ def main():
     open(os.path.join(SITE, 'llms-full.txt'), 'w').write('\n'.join(full) + '\n')
 
     # 4. sitemap.xml
-    urls = ["", "desk.html", "planner.html", "day.html", "kit.html", "kitbag.html", "sub.html", "party.html", "fieldtrip.html", "collections.html", "api.html", "review.html", "halloween.html", "thanksgiving.html", "winter.html", "spring.html", "summer.html"] + [f"activity/{a['id']}.html" for a in acts]
+    urls = ["", "desk.html", "planner.html", "day.html", "kit.html", "kitbag.html", "partypack.html", "sub.html", "party.html", "fieldtrip.html", "collections.html", "api.html", "review.html", "halloween.html", "thanksgiving.html", "winter.html", "spring.html", "summer.html"] + [f"activity/{a['id']}.html" for a in acts]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:
