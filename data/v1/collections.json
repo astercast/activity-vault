@@ -1096,8 +1096,73 @@
     25
    ],
    "page": "collections.html#little-hands-next-steps"
+  },
+  {
+   "id": "little-hands-third-shelf",
+   "title": "Little Hands, Third Shelf",
+   "glyph": "🧺",
+   "when_to_use": "The third shelf for the youngest kids in the building: twelve more activities designed for three-year-olds first — the first holiday records ever written for that room, a second and third seasons and rainy-day shelf, and the landing, crossing and trail-following skills a three-year-old day actually runs on. Grab it when Next Steps has been through the rotation and the little-kid group is still yours next week.",
+   "picks": [
+    {
+     "activity_id": "soft-ball-new-year-drop",
+     "curator_note": "Five fingers fold down to one, and only then does the ball fall. The long pause at 'two' is where the laughing lives."
+    },
+    {
+     "activity_id": "big-egg-roll-slope",
+     "curator_note": "Roll, walk down, roll again — the White House has run this since 1878, and the fetching is half the activity."
+    },
+    {
+     "activity_id": "first-puddle-walk",
+     "curator_note": "Walking first, stomping last, and only at the final puddle. Boots learn the difference before the splash is earned."
+    },
+    {
+     "activity_id": "cup-of-snow-melting-watch",
+     "curator_note": "Nobody touches the cup. The marker lines tell the whole story — that water was the top of the cup."
+    },
+    {
+     "activity_id": "cushion-train-all-aboard",
+     "curator_note": "The ticket block travels hand to hand before the train may leave. Drivers swap every two stops, without a fuss."
+    },
+    {
+     "activity_id": "box-boat-row-along",
+     "curator_note": "A chair boat counts in full — the boat is the rowing and the song, the cardboard was only the costume."
+    },
+    {
+     "activity_id": "wide-plank-bridge-crossing",
+     "curator_note": "Two stacks, one plank, a toy that walks it. 'Longer bridge, more bend' is real engineering at three."
+    },
+    {
+     "activity_id": "blanket-ball-bounce-together",
+     "curator_note": "One ball, kept low, visited person to person. Holding one thing still together is the hard part — and they do it first."
+    },
+    {
+     "activity_id": "animal-sound-find-your-pair",
+     "curator_note": "Make your sound and find your match. Found pairs become landmarks the still-searching kids navigate by."
+    },
+    {
+     "activity_id": "chalk-arrow-trail",
+     "curator_note": "Stand on the arrow, point, say 'that way' — then walk. Reading comes before following, every single arrow."
+    },
+    {
+     "activity_id": "loud-quiet-song-switch",
+     "curator_note": "Hands up, song gets big; hands down, it shrinks. End on a whisper the whole room has to lean in for."
+    },
+    {
+     "activity_id": "two-foot-landing-pads",
+     "curator_note": "Land like a cat and hold for the count of three. Stepping across counts — the skill is stopping on purpose."
+    }
+   ],
+   "age_span": [
+    3,
+    6
+   ],
+   "time_span": [
+    10,
+    25
+   ],
+   "page": "collections.html#little-hands-third-shelf"
   }
  ],
- "count": 17,
+ "count": 18,
  "updated": "2026-10-13"
 }

@@ -20,7 +20,7 @@ function ok(cond, label, extra) {
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const byId = {};
 acts.forEach(a => { byId[a.id] = a; });
-ok(acts.length === 577, '577 activities total', String(acts.length));
+ok(acts.length === 589, '589 activities total', String(acts.length));
 ok(new Set(acts.map(a => a.id)).size === acts.length, 'all ids unique');
 
 const MLK = ['mlk-freedom-quilt-squares', 'civil-rights-timeline-walk',
@@ -87,9 +87,9 @@ NEW.forEach(id => {
 });
 
 // 4. Enrichment deltas from this wave.
-ok(acts.filter(a => a.copy_free).length === 197, 'copy_free 165 -> 173 in wave 25; wave 26 -> 184; wave 27 -> 197');
-ok(acts.filter(a => a.no_elimination).length === 57, 'no_elimination 43 -> 47 in wave 25; wave 26 -> 51; wave 27 -> 57');
-ok(acts.filter(a => a.inclusion).length === 75, 'inclusion 51 -> 64 in wave 25; wave 26 -> 69; wave 27 -> 75');
+ok(acts.filter(a => a.copy_free).length === 209, 'copy_free 165 -> 173 in wave 25; wave 26 -> 184; wave 27 -> 197; wave 28 -> 209');
+ok(acts.filter(a => a.no_elimination).length === 63, 'no_elimination 43 -> 47 in wave 25; wave 26 -> 51; wave 27 -> 57; wave 28 -> 63');
+ok(acts.filter(a => a.inclusion).length === 81, 'inclusion 51 -> 64 in wave 25; wave 26 -> 69; wave 27 -> 75; wave 28 -> 81');
 [13, 14].forEach(age => {
   const n = acts.filter(a => a.age_min <= age && a.age_max >= age).length;
   ok(n === 76, 'age ' + age + ' coverage 70 -> 76', String(n));

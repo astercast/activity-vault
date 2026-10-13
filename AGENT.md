@@ -14,7 +14,7 @@ This archive is built to be driven by agents, no browser needed. Everything is s
 
 | Endpoint | What it is | Schema |
 |---|---|---|
-| `data/v1/activities.json` | All 577 activity records with full details | `data/v1/schema/activities.schema.json` |
+| `data/v1/activities.json` | All 589 activity records with full details | `data/v1/schema/activities.schema.json` |
 | `data/v1/categories.json` | The 11 categories (`id`, `name`, `blurb`, `color`, `glyph`) | `data/v1/schema/categories.schema.json` |
 | `data/v1/filters.json` | Machine-readable filter config — the same matching logic the browser UI uses | `data/v1/schema/filters.schema.json` |
 | `data/v1/skills.json` | Registry of the 10 reusable skill recipes in `skills/` | (self-describing) |

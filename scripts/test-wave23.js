@@ -15,7 +15,7 @@ function ok(cond, label, extra) {
 
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const actIds = new Set(acts.map(a => a.id));
-ok(acts.length === 577, '577 activities total', String(acts.length));
+ok(acts.length === 589, '589 activities total', String(acts.length));
 ok(actIds.size === acts.length, 'all activity ids unique');
 
 const TEEN = ['lightning-debates', 'escape-room-build', 'mini-podcast-studio',
@@ -43,7 +43,7 @@ ok(teenDesigned >= 13, 'teen-designed activities (age_min>=11)', String(teenDesi
 const tagCount = t => acts.filter(a => (a.tags || []).includes(t)).length;
 ok(tagCount('holiday:july-4th') === 5, 'july-4th 2 -> 5', String(tagCount('holiday:july-4th')));
 ok(tagCount('holiday:earth-day') === 6, 'earth-day 3 -> 6', String(tagCount('holiday:earth-day')));
-ok(tagCount('holiday:easter') === 7, 'easter 4 -> 7', String(tagCount('holiday:easter')));
+ok(tagCount('holiday:easter') === 8, 'easter 4 -> 7 in wave 23; wave 28 -> 8', String(tagCount('holiday:easter')));
 ok(tagCount('holiday:dia-de-muertos') === 6, 'dia-de-muertos 3 -> 6', String(tagCount('holiday:dia-de-muertos')));
 
 // 2. Tag correctness per activity.
