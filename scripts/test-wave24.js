@@ -17,7 +17,7 @@ function ok(cond, label, extra) {
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const byId = {};
 acts.forEach(a => { byId[a.id] = a; });
-ok(acts.length === 697, '685 activities total', String(acts.length));
+ok(acts.length === 703, '685 activities total', String(acts.length));
 ok(new Set(acts.map(a => a.id)).size === acts.length, 'all ids unique');
 
 const SCOUT = ['dream-for-our-community', 'floating-ink-ghost', 'binary-code-keychain',

@@ -33,7 +33,7 @@ const W20 = [
 ];
 
 // 1. ids present and unique; total count
-ok(acts.length === 697, '685 activities total', String(acts.length));
+ok(acts.length === 703, '685 activities total', String(acts.length));
 ok(new Set(acts.map(a => a.id)).size === acts.length, 'all ids unique');
 W20.forEach(id => ok(!!byId[id], 'wave-20 id present: ' + id));
 
@@ -169,7 +169,7 @@ ok(plSrc.includes('function collTitle'), 'planner has collTitle helper');
 // 15. api manifest + sitemap + llms reflect the new totals
 const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/index.json'), 'utf8'));
 const actEp = manifest.endpoints.filter(e => e.path === 'data/v1/activities.json')[0];
-ok(actEp && actEp.records === 697, 'manifest activities records=685', String(actEp && actEp.records));
+ok(actEp && actEp.records === 703, 'manifest activities records=685', String(actEp && actEp.records));
 const apiColls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/collections.json'), 'utf8'));
 ok(apiColls.count === 27 && apiColls.collections.length === 27, 'api collections count 26');
 const sm = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');

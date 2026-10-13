@@ -16,7 +16,7 @@ function ok(cond, label, extra) {
 
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const actIds = new Set(acts.map(a => a.id));
-ok(acts.length === 697, '685 activities total', String(acts.length));
+ok(acts.length === 703, '685 activities total', String(acts.length));
 ok(actIds.size === acts.length, 'all activity ids unique');
 
 // 1. Tag vocabulary: holiday:thanksgiving is NEW in wave 14 — confirm it is
@@ -175,9 +175,9 @@ RESEARCH3.forEach(id => {
   ok((byId[id].source || '').startsWith('https://'), 'research activity has source URL: ' + id);
   ok(byId[id].copy_free === true, 'research activity is copy-free: ' + id);
 });
-ok(acts.filter(a => a.copy_free).length === 317, '269 copy_free notes (197 + 12 wave-28 + 12 wave-29 + 12 wave-30 + 12 wave-31 + 12 wave-32 + 12 wave-33)', String(acts.filter(a => a.copy_free).length));
-ok(acts.filter(a => a.no_elimination).length === 119, '87 no_elimination notes (57 + 6 wave-28 + 7 wave-29 + 5 wave-30 + 6 wave-31 + 6 wave-32)');
-ok(acts.filter(a => a.inclusion).length === 179, '119 inclusion notes (75 + 6 wave-28 + 6 wave-29 + 8 wave-30 + 12 wave-31 + 12 wave-32)');
+ok(acts.filter(a => a.copy_free).length === 323, '269 copy_free notes (197 + 12 wave-28 + 12 wave-29 + 12 wave-30 + 12 wave-31 + 12 wave-32 + 12 wave-33)', String(acts.filter(a => a.copy_free).length));
+ok(acts.filter(a => a.no_elimination).length === 125, '87 no_elimination notes (57 + 6 wave-28 + 7 wave-29 + 5 wave-30 + 6 wave-31 + 6 wave-32)');
+ok(acts.filter(a => a.inclusion).length === 185, '119 inclusion notes (75 + 6 wave-28 + 6 wave-29 + 8 wave-30 + 12 wave-31 + 12 wave-32)');
 // research fields appear on built pages
 const cfPage = fs.readFileSync(path.join(ROOT, 'activity/turkey-code-feathers.html'), 'utf8');
 ok(cfPage.includes('Copy-free'), 'copy-free badge renders on activity page');
@@ -248,7 +248,7 @@ const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/index.json'
 const collEp = manifest.endpoints.find(e => e.path === 'data/v1/collections.json');
 ok(collEp && collEp.records === 27, 'manifest collections records=26');
 const actEp = manifest.endpoints.find(e => e.path === 'data/v1/activities.json');
-ok(actEp && actEp.records === 697, 'manifest activities records=685', String(actEp && actEp.records));
+ok(actEp && actEp.records === 703, 'manifest activities records=685', String(actEp && actEp.records));
 const sitemap = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
 ok(sitemap.includes('thanksgiving.html'), 'sitemap.xml has thanksgiving.html');
 const llms = fs.readFileSync(path.join(ROOT, 'llms.txt'), 'utf8');

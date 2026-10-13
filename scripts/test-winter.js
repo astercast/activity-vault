@@ -16,7 +16,7 @@ function ok(cond, label, extra) {
 
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const actIds = new Set(acts.map(a => a.id));
-ok(acts.length === 697, '685 activities total', String(acts.length));
+ok(acts.length === 703, '685 activities total', String(acts.length));
 ok(actIds.size === acts.length, 'all activity ids unique');
 
 // 1. Tag vocabulary: the four winter holiday tags are in the validator,
@@ -174,7 +174,7 @@ const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/index.json'
 const collEp = manifest.endpoints.find(e => e.path === 'data/v1/collections.json');
 ok(collEp && collEp.records === 27, 'manifest collections records=26');
 const actEp = manifest.endpoints.find(e => e.path === 'data/v1/activities.json');
-ok(actEp && actEp.records === 697, 'manifest activities records=685', String(actEp && actEp.records));
+ok(actEp && actEp.records === 703, 'manifest activities records=685', String(actEp && actEp.records));
 const sitemap = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
 ok(sitemap.includes('winter.html'), 'sitemap.xml has winter.html');
 const llms = fs.readFileSync(path.join(ROOT, 'llms.txt'), 'utf8');

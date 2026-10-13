@@ -5,14 +5,14 @@ Hundreds of real, classic, public-domain activity concepts — filterable by age
 group size, materials, and category. Plan-my-week planner. Printable one-page cards.
 
 ## Categories
-- Seasons: 115 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
-- Holidays: 125 activities — Festive projects and games for the days the whole group looks forward to.
+- Seasons: 116 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
+- Holidays: 126 activities — Festive projects and games for the days the whole group looks forward to.
 - Crafts: 162 activities — Hands-on making: fold it, paint it, build it, take it home.
-- STEM: 156 activities — Experiments, engineering challenges, and satisfying science demos.
+- STEM: 157 activities — Experiments, engineering challenges, and satisfying science demos.
 - PE & Movement: 120 activities — Run, jump, dance — activities that burn off the wiggles.
-- Team & Community: 148 activities — Turn a group into a crew: cooperation, trust, and belonging.
-- Icebreakers: 72 activities — First-day friendly: learn names, laugh, and loosen up fast.
-- Outdoor: 112 activities — Fresh-air activities for fields, playgrounds, and nature walks.
+- Team & Community: 149 activities — Turn a group into a crew: cooperation, trust, and belonging.
+- Icebreakers: 73 activities — First-day friendly: learn names, laugh, and loosen up fast.
+- Outdoor: 113 activities — Fresh-air activities for fields, playgrounds, and nature walks.
 - Rainy Day: 72 activities — Stuck inside? These keep a roomful of kids happy without a gym.
 - Quiet & Focus: 136 activities — Wind-down worthy: calm, creative, individual or small-group.
 - Music & Rhythm: 46 activities — Drums, shakers, rhythm games, and songs — make some noise.
@@ -332,6 +332,11 @@ One big chime bar each, struck once and only when the pointer lands on you: eigh
 Categories: Music & Rhythm | Ages 3-3 | Group 4-10 | 10-15 min | Prep needed | indoor/outdoor
 Page: activity/big-chime-note-when-pointed.html
 
+### Big Choose Your Colour Corner
+Four big colours, one in each corner. Walk to the colour you like best today, stand with your colour, and wave to the other corners. Tomorrow may differ.
+Categories: Icebreakers | Ages 3-3 | Group 4-16 | 10-15 min | No prep | indoor
+Page: activity/big-choose-your-colour-corner.html
+
 ### Big Cloud Lying, Picture Names
 One big blanket on the grass, the whole group on its back, eyes up: every cloud is being something today, and the group's job is to say what.
 Categories: Outdoor | Ages 3-3 | Group 3-12 | 10-15 min | No prep | outdoor
@@ -417,6 +422,11 @@ Palm-sized pretend gold coins carried in two hands, one at a time, and dropped i
 Categories: Holidays | Ages 3-3 | Group 4-16 | 10-20 min | Prep needed | indoor
 Page: activity/big-gold-coin-pot-carry.html
 
+### Big Groundhog Shadow Morning Look
+February the second: a soft groundhog peeks out of its burrow box, and the whole group checks the sunny patch — is anybody's shadow out today?
+Categories: Holidays | Ages 3-3 | Group 3-14 | 10-15 min | Prep needed | indoor/outdoor
+Page: activity/big-groundhog-shadow-morning-look.html
+
 ### Big Handprint Leaf Tree
 One painted palm print each, pressed once onto a big bare tree poster: a tree whose leaves are the group's own hands, every leaf named.
 Categories: Crafts | Ages 3-3 | Group 4-16 | 15-20 min | Prep needed | indoor
@@ -482,10 +492,20 @@ Two partners sit face to face. One makes a face — any face at all. The other c
 Categories: Icebreakers | Ages 3-3 | Group 4-14 | 10-15 min | No prep | indoor
 Page: activity/big-mirror-face-copy-my-face.html
 
+### Big Mud Pie Bakery Morning
+Real mud, big tins, fallen petals for decoration: the bakery opens, the pies are mixed to pie-thickness, served on leaf plates — and never, ever eaten.
+Categories: Outdoor | Ages 3-3 | Group 3-12 | 15-20 min | Prep needed | outdoor
+Page: activity/big-mud-pie-bakery-morning.html
+
 ### Big Name Bell, Ring for You
 One good bell with a clear voice. The bell keeper rings it for ONE name at a time — and the named child answers, in any way at all, when their name is rung.
 Categories: Music & Rhythm | Ages 3-3 | Group 4-16 | 10-15 min | Prep needed | indoor
 Page: activity/big-name-bell-ring-for-you.html
+
+### Big New Friend Room Tour
+A new friend needs three places first: where the cups live, where the coats hang, and where the quiet is. The group shows all three, pointing and naming.
+Categories: Team & Community | Ages 3-3 | Group 4-14 | 10-20 min | No prep | indoor
+Page: activity/big-new-friend-room-tour.html
 
 ### Big One Statue, Many Bodies
 The whole group builds ONE statue together — an arm here, a crouch there — then everybody freezes at once and the statue stands, breathing quietly.
@@ -547,6 +567,11 @@ One ribbon wand per dancer, one slow piece of music: the ribbon draws a river in
 Categories: Quiet & Focus | Ages 3-3 | Group 2-10 | 10-20 min | Prep needed | indoor
 Page: activity/big-ribbon-wand-river-dance.html
 
+### Big Sandcastle, One Bucket Towers
+Wet sand, one big bucket, pat-pat-turn: a tower stands. Dry sand runs through your fingers — wet sand stands up. That is the whole summer science, built.
+Categories: Seasons | Ages 3-3 | Group 2-12 | 15-20 min | Prep needed | outdoor
+Page: activity/big-sandcastle-one-bucket-towers.html
+
 ### Big Shadow Grow and Shrink
 One big cardboard shape, one lamp, one wall: move the shape nearer the light and its shadow grows — the group directs, the shadow obeys.
 Categories: STEM | Ages 3-3 | Group 3-12 | 10-15 min | Prep needed | indoor
@@ -561,6 +586,11 @@ Page: activity/big-shoe-stomp-marching-band.html
 Big jars with one honest smell each — orange peel, cinnamon, fresh mint: lid off, one sniff, and say what your nose found. Nothing to guess, nothing to win.
 Categories: STEM | Ages 3-3 | Group 2-8 | 10-15 min | Prep needed | indoor
 Page: activity/big-smell-jar-sniff-and-say.html
+
+### Big Sound Jar, Loud or Soft
+Big sealed jars, one shake each: some jars are LOUD and some are SOFT, and the ears of the room file every one on its right mat.
+Categories: STEM | Ages 3-3 | Group 2-10 | 10-15 min | Prep needed | indoor
+Page: activity/big-sound-jar-loud-or-soft.html
 
 ### Big Sponge Stamp Mural
 Chunky sponge shapes dipped in paint and pressed straight down on one long shared sheet: print, lift, look — a mural built one honest print at a time.

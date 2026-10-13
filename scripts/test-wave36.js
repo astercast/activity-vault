@@ -32,7 +32,7 @@ function ok(cond, label, extra) {
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const byId = {};
 acts.forEach(a => { byId[a.id] = a; });
-ok(acts.length === 697, '685 activities total', String(acts.length));
+ok(acts.length === 703, '685 activities total', String(acts.length));
 ok(new Set(acts.map(a => a.id)).size === acts.length, 'all ids unique');
 
 const NEW = ['big-story-stone-first-people', 'big-leaf-light-window-hold',
@@ -46,12 +46,12 @@ NEW.forEach(id => ok(byId[id], 'wave-36 id present: ' + id));
 
 // 1. The headline, narrowed for the seventh wave running.
 const covers = age => acts.filter(a => a.age_min <= age && a.age_max >= age).length;
-ok(covers(3) === 154, 'age 3 coverage 130 -> 142', String(covers(3)));
+ok(covers(3) === 160, 'age 3 coverage 130 -> 142', String(covers(3)));
 ok(covers(4) === 160, 'age 4 coverage UNCHANGED at 160 (the 3-only band working)', String(covers(4)));
-ok(covers(4) - covers(3) === 6, 'headline gap 30 -> 18, narrowed a seventh time', String(covers(4) - covers(3)));
-ok(acts.filter(a => a.age_min === 3).length === 154, '142 activities start at age 3');
-ok(acts.filter(a => a.age_max === 3).length === 96, '84 activities banded 3-only (12 each, waves 30-36)');
-ok(acts.filter(a => a.age_max <= 6).length === 147, 'early-years-only (age_max<=6) 123 -> 135');
+ok(covers(4) - covers(3) === 0, 'headline gap 30 -> 18, narrowed a seventh time', String(covers(4) - covers(3)));
+ok(acts.filter(a => a.age_min === 3).length === 160, '142 activities start at age 3');
+ok(acts.filter(a => a.age_max === 3).length === 102, '84 activities banded 3-only (12 each, waves 30-36)');
+ok(acts.filter(a => a.age_max <= 6).length === 153, 'early-years-only (age_max<=6) 123 -> 135');
 [13, 14].forEach(age => ok(covers(age) === 76, 'age ' + age + ' coverage unchanged at 76', String(covers(age))));
 ok(covers(3) > covers(13), 'age 3 (142) stays ahead of ages 13/14 (76)');
 NEW.forEach(id => {
@@ -62,14 +62,14 @@ NEW.forEach(id => {
 // 2. The floor inside age-3 coverage: every primary category now
 //    carries >= 11 age-3 records; the two floor categories rose.
 const age3primary = cat => acts.filter(a => a.categories[0] === cat && a.age_min <= 3 && a.age_max >= 3).length;
-ok(age3primary('holidays') === 12, 'age-3 holidays primary: 10 -> 11 (floor)', String(age3primary('holidays')));
-ok(age3primary('team-community') === 12, 'age-3 team-community primary: 10 -> 11 (floor)', String(age3primary('team-community')));
+ok(age3primary('holidays') === 13, 'age-3 holidays primary: 10 -> 11 (floor)', String(age3primary('holidays')));
+ok(age3primary('team-community') === 13, 'age-3 team-community primary: 10 -> 11 (floor)', String(age3primary('team-community')));
 ok(age3primary('music-rhythm') === 15, 'age-3 music-rhythm primary: 11 -> 13 (thinnest category + second record)', String(age3primary('music-rhythm')));
 ok(age3primary('rainy-day') === 18, 'age-3 rainy-day primary: 16 -> 17', String(age3primary('rainy-day')));
-ok(age3primary('seasons') === 13, 'age-3 seasons primary: 11 -> 12', String(age3primary('seasons')));
-ok(age3primary('stem') === 13, 'age-3 stem primary: 11 -> 12', String(age3primary('stem')));
-ok(age3primary('icebreakers') === 13, 'age-3 icebreakers primary: 11 -> 12', String(age3primary('icebreakers')));
-ok(age3primary('outdoor') === 13, 'age-3 outdoor primary: 11 -> 12', String(age3primary('outdoor')));
+ok(age3primary('seasons') === 14, 'age-3 seasons primary: 11 -> 12', String(age3primary('seasons')));
+ok(age3primary('stem') === 14, 'age-3 stem primary: 11 -> 12', String(age3primary('stem')));
+ok(age3primary('icebreakers') === 14, 'age-3 icebreakers primary: 11 -> 12', String(age3primary('icebreakers')));
+ok(age3primary('outdoor') === 14, 'age-3 outdoor primary: 11 -> 12', String(age3primary('outdoor')));
 ok(age3primary('crafts') === 14, 'age-3 crafts primary: 12 -> 13', String(age3primary('crafts')));
 ok(age3primary('pe-movement') === 14, 'age-3 pe-movement primary: 12 -> 13', String(age3primary('pe-movement')));
 ok(age3primary('quiet-focus') === 17, 'age-3 quiet-focus primary: 15 -> 16', String(age3primary('quiet-focus')));
@@ -136,25 +136,25 @@ ok(/full-weight centre-and-edge test/.test(byId['big-cushion-bridge-crossing'].s
 
 // 5. Category + enrichment deltas from this wave.
 const prim = cat => acts.filter(a => a.categories[0] === cat).length;
-ok(prim('holidays') === 52, 'holidays primary 50 -> 51');
-ok(prim('seasons') === 40, 'seasons primary 38 -> 39');
+ok(prim('holidays') === 53, 'holidays primary 50 -> 51');
+ok(prim('seasons') === 41, 'seasons primary 38 -> 39');
 ok(prim('rainy-day') === 39, 'rainy-day primary 37 -> 38');
-ok(prim('stem') === 119, 'stem primary 117 -> 118');
-ok(prim('team-community') === 76, 'team-community primary 74 -> 75');
-ok(prim('icebreakers') === 46, 'icebreakers primary 44 -> 45');
-ok(prim('outdoor') === 56, 'outdoor primary 54 -> 55');
+ok(prim('stem') === 120, 'stem primary 117 -> 118');
+ok(prim('team-community') === 77, 'team-community primary 74 -> 75');
+ok(prim('icebreakers') === 47, 'icebreakers primary 44 -> 45');
+ok(prim('outdoor') === 57, 'outdoor primary 54 -> 55');
 ok(prim('music-rhythm') === 40, 'music-rhythm primary 36 -> 38');
 ok(prim('crafts') === 98, 'crafts primary 96 -> 97');
 ok(prim('pe-movement') === 69, 'pe-movement primary 67 -> 68');
 ok(prim('quiet-focus') === 62, 'quiet-focus primary 60 -> 61');
-ok(acts.filter(a => a.copy_free).length === 317, 'copy_free 293 -> 305');
-ok(acts.filter(a => a.no_elimination).length === 119, 'no_elimination 105 -> 111');
-ok(acts.filter(a => a.inclusion).length === 179, 'inclusion 155 -> 167');
+ok(acts.filter(a => a.copy_free).length === 323, 'copy_free 293 -> 305');
+ok(acts.filter(a => a.no_elimination).length === 125, 'no_elimination 105 -> 111');
+ok(acts.filter(a => a.inclusion).length === 185, 'inclusion 155 -> 167');
 const tagCount = t => acts.filter(a => (a.tags || []).includes(t)).length;
 ok(tagCount('holiday:indigenous-peoples-day') === 6, 'indigenous-peoples-day tag 5 -> 6 (off the tag floor)', String(tagCount('holiday:indigenous-peoples-day')));
 ok(tagCount('season:spring') === 41, 'spring tag 40 -> 41 (second-thinnest season rises)', String(tagCount('season:spring')));
 ok(tagCount('holiday:mlk-day') === 6, 'mlk-day tag unchanged at 6', String(tagCount('holiday:mlk-day')));
-ok(tagCount('season:summer') === 32, 'summer tag unchanged at 31', String(tagCount('season:summer')));
+ok(tagCount('season:summer') === 33, 'summer tag unchanged at 31', String(tagCount('season:summer')));
 
 // 6. The 26th collection: Little Hands, Just Three, a Seventh Time — earlier shelves intact.
 const colls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/collections.json'), 'utf8')).collections;
@@ -200,7 +200,7 @@ const rootPages = fs.readdirSync(ROOT).filter(f => f.endsWith('.html'));
 const actPages = fs.readdirSync(path.join(ROOT, 'activity')).filter(f => f.endsWith('.html'));
 const allPages = rootPages.map(f => path.join(ROOT, f))
   .concat(actPages.map(f => path.join(ROOT, 'activity', f)));
-ok(allPages.length === 716, '704 pages on disk (685 activity + 19 root)', String(allPages.length));
+ok(allPages.length === 722, '704 pages on disk (685 activity + 19 root)', String(allPages.length));
 const OG = 'https://activity-vault-live.vercel.app/assets/og-card.png';
 allPages.forEach(p => {
   const s = fs.readFileSync(p, 'utf8');
