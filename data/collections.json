@@ -1503,6 +1503,62 @@
      "note": "No words at all: a tune hummed small enough to fit under a blanket, and a room that made itself quiet enough to rock in."
     }
    ]
+  },
+  {
+   "id": "just-teens-first-time",
+   "title": "Just Teens, a First Time",
+   "glyph": "🧭",
+   "when_to_use": "The first shelf banded for thirteen- and fourteen-year-olds ONLY — a tree adopted for a year, a seed library with honest labels, referees running their own tournament, clue chains marked by the strangers who ran them. Reach for it with a teen group that has outgrown the younger shelves and can smell borrowed content at fifty paces: everything here was written for the room it will be used in.",
+   "picks": [
+    {
+     "id": "adopt-a-tree-year-log",
+     "note": "Custodians, not owners — a tree measured monthly for a year, and a log that outlives the group that started it."
+    },
+    {
+     "id": "seed-library-opening-day",
+     "note": "Eight out of ten sprouted means eight out of ten sprouted: the library's labels are its trays' numbers, and its loans are repaid in seed."
+    },
+    {
+     "id": "compass-course-three-flags",
+     "note": "A bearing is a promise your feet keep — set by one team, run by another, and marked on the honesty of the numbers."
+    },
+    {
+     "id": "referee-run-round-robin",
+     "note": "The whistle is a service, not a weapon: teens keep the sheets, run the protocol, and sign their calls."
+    },
+    {
+     "id": "ten-minute-set-handover",
+     "note": "The floor never notices the join — six pairs of hands, one continuous session, and the next DJ's opening never spent."
+    },
+    {
+     "id": "indoor-clue-chain-architects",
+     "note": "A clue is fair when a stranger could solve it — and the architects watch in silence while the strangers find out."
+    },
+    {
+     "id": "hot-seat-kind-questions",
+     "note": "The seat is warm, never hot: screened questions, an absolute pass, and answers sized by their owners."
+    },
+    {
+     "id": "repair-cafe-first-session",
+     "note": "Fixed is a verdict the owner gives — triage, benches, charts, and the professional courage of 'beyond this cafe'."
+    },
+    {
+     "id": "midnight-around-the-world",
+     "note": "Midnight is a place before it is a time — met city by city, with the arithmetic checked and every greeting practised."
+    },
+    {
+     "id": "wind-turbine-blade-trials",
+     "note": "One variable at a time, or the data is weather, not evidence — revolutions and lifted clips overrule every favourite."
+    },
+    {
+     "id": "commonplace-book-first-pages",
+     "note": "A conversation with people who are not in the room — other minds, copied by hand, indexed under your own themes."
+    },
+    {
+     "id": "teach-back-to-the-youngers",
+     "note": "Teaching is the final exam nobody grades: a promise made to real children, kept or not kept in their hands."
+    }
+   ]
   }
  ]
 }

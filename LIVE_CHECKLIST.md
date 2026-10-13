@@ -11,14 +11,16 @@ What is wired into the live release repo `astercast/activity-vault-live`
 - Track rule: push `-live` only on an explicit user "push"/"ship it".
   Verify the remote URL before every push.
 
-## Working-repo state (2026-10-13, wave 38)
+## Working-repo state (2026-10-13, wave 39)
 
-- Working repo (this repo, never deployed): **703 activities, 27
+- Working repo (this repo, never deployed): **715 activities, 28
   collections**, 4 Scout functions (unchanged this wave — still
   inside the free-tier budget: 4 of the ≤12 function cap, every
   entry `{"maxDuration": 10}`, no `runtime` key; the Scout's
   7,000ms deadline guard from wave 35 stands). Wave 38 closed the
-  age-3/age-4 coverage gap at parity (160 each). Rotation 13 added
+  age-3/age-4 coverage gap at parity (160 each); wave 39 opened
+  the teen band (12 records banded 13–14 only; age-13/14 coverage
+  76 → 88 each, the band's primary-category floor 1 → 3). Rotation 13 added
   the placement layer: generator-owned OG/Twitter/theme-color/
   favicon/canonical/JSON-LD head meta on all 722 pages, robots.txt
   (allow-all + Sitemap pointer at the live domain), absolute

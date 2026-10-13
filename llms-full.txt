@@ -5,17 +5,17 @@ Hundreds of real, classic, public-domain activity concepts — filterable by age
 group size, materials, and category. Plan-my-week planner. Printable one-page cards.
 
 ## Categories
-- Seasons: 116 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
-- Holidays: 126 activities — Festive projects and games for the days the whole group looks forward to.
-- Crafts: 162 activities — Hands-on making: fold it, paint it, build it, take it home.
-- STEM: 157 activities — Experiments, engineering challenges, and satisfying science demos.
-- PE & Movement: 120 activities — Run, jump, dance — activities that burn off the wiggles.
-- Team & Community: 149 activities — Turn a group into a crew: cooperation, trust, and belonging.
-- Icebreakers: 73 activities — First-day friendly: learn names, laugh, and loosen up fast.
-- Outdoor: 113 activities — Fresh-air activities for fields, playgrounds, and nature walks.
-- Rainy Day: 72 activities — Stuck inside? These keep a roomful of kids happy without a gym.
-- Quiet & Focus: 136 activities — Wind-down worthy: calm, creative, individual or small-group.
-- Music & Rhythm: 46 activities — Drums, shakers, rhythm games, and songs — make some noise.
+- Seasons: 118 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
+- Holidays: 127 activities — Festive projects and games for the days the whole group looks forward to.
+- Crafts: 163 activities — Hands-on making: fold it, paint it, build it, take it home.
+- STEM: 158 activities — Experiments, engineering challenges, and satisfying science demos.
+- PE & Movement: 121 activities — Run, jump, dance — activities that burn off the wiggles.
+- Team & Community: 150 activities — Turn a group into a crew: cooperation, trust, and belonging.
+- Icebreakers: 74 activities — First-day friendly: learn names, laugh, and loosen up fast.
+- Outdoor: 114 activities — Fresh-air activities for fields, playgrounds, and nature walks.
+- Rainy Day: 73 activities — Stuck inside? These keep a roomful of kids happy without a gym.
+- Quiet & Focus: 137 activities — Wind-down worthy: calm, creative, individual or small-group.
+- Music & Rhythm: 47 activities — Drums, shakers, rhythm games, and songs — make some noise.
 
 ## API — start at data/v1/index.json (self-describing manifest)
 - data/v1/index.json — api manifest
@@ -101,7 +101,7 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
   when an occasion holds fewer real activities than the arc has
   parts, the page says so in numbers and offers the nearest real
   options — it never pads a plan. Printable party sheet + copy-as-text.
-- collections.html — Curated collections: 27 teacher-ready bundles (rainy-day
+- collections.html — Curated collections: 28 teacher-ready bundles (rainy-day
   rescue, first day, sub tub, winter party, spring burst, summer splash, haunted halls, grateful gathering, winter lights…)
   each with a curator's note per pick; printable and copy-able per collection.
 - api.html — API docs with a Try-the-API console (endpoint picker, fetch, pretty JSON).
@@ -141,6 +141,11 @@ Page: activity/accordion-paper-fan.html
 Acorn caps, paint, and pipe cleaners: the tiniest witches in the Vault.
 Categories: Seasons, Crafts | Ages 4-10 | Group 2-25 | 20-30 min | Prep needed | indoor
 Page: activity/acorn-cap-witches.html
+
+### Adopt-a-Tree Year Log
+One tree, adopted for a whole year: measured monthly, watched through every season, and handed on to next year's custodians with its log.
+Categories: Seasons | Ages 13-14 | Group 3-16 | 30-45 min | Prep needed | outdoor
+Page: activity/adopt-a-tree-year-log.html
 
 ### Advent Kindness Envelopes
 Twenty-five sealed envelopes, each hiding one small kindness to do that day.
@@ -987,10 +992,20 @@ Small groups race to find five surprising things all members share — obvious a
 Categories: Icebreakers, Team & Community | Ages 7-12 | Group 8-30 | 20-20 min | Prep needed | indoor
 Page: activity/common-ground.html
 
+### Commonplace Book, First Pages
+Other people's best sentences, copied by hand into a book that is yours: a centuries-old way to build a mind — and an index that argues back.
+Categories: Quiet & Focus | Ages 13-14 | Group 2-20 | 25-40 min | Prep needed | indoor
+Page: activity/commonplace-book-first-pages.html
+
 ### Community Helper Interviews
 Interview a real community helper, publish the profile.
 Categories: Team & Community | Ages 8-12 | Group 4-30 | 30-60 min | No prep | indoor
 Page: activity/community-helper-interviews.html
+
+### Compass Course, Three Flags
+Real bearings, counted paces, three flags to find: teen teams set an orienteering course, then run each other's — navigation, not wandering.
+Categories: Outdoor | Ages 13-14 | Group 4-20 | 30-50 min | Prep needed | outdoor
+Page: activity/compass-course-three-flags.html
 
 ### Compliment Card Exchange
 Everyone makes a card mailbox, then the group fills them with anonymous compliments — the sweetest mail call of the year.
@@ -1752,6 +1767,11 @@ Classic kid-made ornaments — keep some for your tree, gift the rest.
 Categories: Crafts, Holidays | Ages 4-12 | Group 2-30 | 20-45 min | Prep needed | indoor
 Page: activity/homemade-christmas-ornaments.html
 
+### Hot Seat, Kind Questions
+One chair, the whole group's kind attention, and questions screened in advance — the seat is warm, never hot, and the pass is absolute.
+Categories: Icebreakers | Ages 13-14 | Group 6-30 | 20-30 min | Prep needed | indoor
+Page: activity/hot-seat-kind-questions.html
+
 ### How I Got Here Moves
 Tell the group how you travel — feet, wheels, bus, car — and everyone copies the movement: marching feet, steering hands, a gentle bus bounce.
 Categories: Icebreakers | Ages 3-3 | Group 6-20 | 10-15 min | No prep | indoor/outdoor
@@ -1836,6 +1856,11 @@ Page: activity/indoor-campfire-circle.html
 Blanket forts, flashlight stories, trail mix — camping without the weather.
 Categories: Rainy Day, Team & Community | Ages 5-11 | Group 4-28 | 30-60 min | Prep needed | indoor
 Page: activity/indoor-camping-day.html
+
+### Indoor Clue Chain Architects
+Teams design a chain of sealed clues that leads somewhere real — then watch, silent, while another team runs it and finds every weak link.
+Categories: Rainy Day | Ages 13-14 | Group 4-24 | 45-60 min | Prep needed | indoor
+Page: activity/indoor-clue-chain-architects.html
 
 ### Indoor Color Scavenger Hunt
 Hunt the room for red things, soft things, noisy things — point, don't touch, and beat the 10-minute clock.
@@ -2131,6 +2156,11 @@ Page: activity/mehndi-paper-patterns.html
 Nine branches, hundreds of paper tiles — a mosaic menorah built one square at a time.
 Categories: Crafts | Ages 5-12 | Group 2-30 | 25-45 min | Prep needed | indoor
 Page: activity/menorah-mosaic-tiles.html
+
+### Midnight Around the World
+One hosted evening that follows midnight across the time zones: live arithmetic, a wall map, and each city greeted properly as its year turns.
+Categories: Holidays | Ages 13-14 | Group 6-30 | 40-60 min | Prep needed | indoor
+Page: activity/midnight-around-the-world.html
 
 ### Midnight Countdown Rehearsal
 A practice New Year's Eve: chant the 10-to-0 countdown and cheer in a brand-new pretend year.
@@ -2697,6 +2727,11 @@ A holiday red-light-green-light: freeze when the reindeer nose turns red.
 Categories: PE & Movement, Holidays, Icebreakers | Ages 5-10 | Group 6-30 | 15-25 min | No prep | indoor/outdoor
 Page: activity/red-nose-green-nose.html
 
+### Referee-Run Round Robin
+Teens officiate their own tournament: whistles, scoresheets, a dispute protocol, and a rotation where everybody referees and everybody plays.
+Categories: PE & Movement | Ages 13-14 | Group 8-30 | 40-60 min | Prep needed | indoor/outdoor
+Page: activity/referee-run-round-robin.html
+
 ### Reindeer Grid Coding
 Program a reindeer across a grid with arrow cards: no screens needed.
 Categories: STEM, Holidays, Quiet & Focus | Ages 6-12 | Group 1-24 | 25-40 min | Prep needed | indoor
@@ -2716,6 +2751,11 @@ Page: activity/reindeer-shelter-storm.html
 Classic relays, but every round adds a sillier way to move.
 Categories: PE & Movement, Outdoor | Ages 6-12 | Group 8-40 | 15-35 min | No prep | outdoor
 Page: activity/relay-race-mixup.html
+
+### Repair Cafe, First Session
+Teens run a working repair cafe: triage, mending benches, honest verdicts — and owners who leave with fixed things and real explanations.
+Categories: Crafts | Ages 13-14 | Group 6-24 | 45-60 min | Prep needed | indoor
+Page: activity/repair-cafe-first-session.html
 
 ### Resolution Ladder
 New Year goals as a ladder — one small, doable rung per month.
@@ -2831,6 +2871,11 @@ Page: activity/seed-ball-wildflowers.html
 Maple seeds spin — design a paper seed that stays airborne even longer.
 Categories: STEM | Ages 7-12 | Group 2-30 | 20-40 min | Prep needed | indoor/outdoor
 Page: activity/seed-dispersal-design.html
+
+### Seed Library Opening Day
+A real lending library of seeds: every packet germination-tested, honestly labelled, and lent out on a ledger the teen librarians keep.
+Categories: Seasons | Ages 13-14 | Group 4-20 | 40-60 min | Prep needed | indoor/outdoor
+Page: activity/seed-library-opening-day.html
 
 ### Seed Starter Cups
 Plant seeds in clear cups and watch roots and sprouts develop day by day — a living science journal.
@@ -3237,6 +3282,11 @@ Painter's tape on the floor becomes a balance path — straight, zigzag, and cur
 Categories: PE & Movement, Rainy Day | Ages 3-5 | Group 2-20 | 10-20 min | Prep needed | indoor
 Page: activity/tape-path-balance-walk.html
 
+### Teach-Back to the Youngers
+Teens prepare and deliver a real ten-minute session for younger children: rehearsed, supervised, and marked only by the youngers' attention.
+Categories: Team & Community | Ages 13-14 | Group 4-20 | 40-60 min | Prep needed | indoor/outdoor
+Page: activity/teach-back-to-the-youngers.html
+
 ### Teach-a-Move Dance Tutorial
 Each group invents a dance move, teaches it to everyone, then strings them all into one epic group routine.
 Categories: Music & Rhythm, PE & Movement | Ages 6-12 | Group 4-25 | 25-25 min | Prep needed | indoor
@@ -3261,6 +3311,11 @@ Page: activity/telephone-game.html
 Three cups of water, three ice cubes — predict which melts first, then watch.
 Categories: STEM | Ages 5-12 | Group 2-30 | 15-25 min | Prep needed | indoor
 Page: activity/temperature-melt-race.html
+
+### Ten-Minute Set, Clean Handover
+Teen DJs each play a short set and hand the floor to the next DJ without a gap, a clash, or a dead second — the join is the skill.
+Categories: Music & Rhythm | Ages 13-14 | Group 4-20 | 30-45 min | Prep needed | indoor
+Page: activity/ten-minute-set-handover.html
 
 ### Tense and Release
 Squeeze everything tight — then let it all go.
@@ -3511,6 +3566,11 @@ Page: activity/wide-plank-bridge-crossing.html
 Ribbons tied along a fence by a grown-up, and one job: watch them, point when a gust comes, and say which way the wind is pushing.
 Categories: Seasons, Outdoor | Ages 3-6 | Group 2-16 | 10-20 min | Prep needed | outdoor
 Page: activity/wind-ribbon-watch.html
+
+### Wind Turbine Blade Trials
+One fan, one hub, many blades: change a single variable at a time and let two honest measures — revolutions and lifted clips — judge every design.
+Categories: STEM | Ages 13-14 | Group 3-18 | 40-60 min | Prep needed | indoor
+Page: activity/wind-turbine-blade-trials.html
 
 ### Window Raindrop Follow
 Real rain on a real window: pick one drop at the top, put your finger beside it on the glass, and follow it all the way down.

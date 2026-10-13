@@ -1746,8 +1746,73 @@
     20
    ],
    "page": "collections.html#little-hands-just-three-eighth-time"
+  },
+  {
+   "id": "just-teens-first-time",
+   "title": "Just Teens, a First Time",
+   "glyph": "🧭",
+   "when_to_use": "The first shelf banded for thirteen- and fourteen-year-olds ONLY — a tree adopted for a year, a seed library with honest labels, referees running their own tournament, clue chains marked by the strangers who ran them. Reach for it with a teen group that has outgrown the younger shelves and can smell borrowed content at fifty paces: everything here was written for the room it will be used in.",
+   "picks": [
+    {
+     "activity_id": "adopt-a-tree-year-log",
+     "curator_note": "Custodians, not owners — a tree measured monthly for a year, and a log that outlives the group that started it."
+    },
+    {
+     "activity_id": "seed-library-opening-day",
+     "curator_note": "Eight out of ten sprouted means eight out of ten sprouted: the library's labels are its trays' numbers, and its loans are repaid in seed."
+    },
+    {
+     "activity_id": "compass-course-three-flags",
+     "curator_note": "A bearing is a promise your feet keep — set by one team, run by another, and marked on the honesty of the numbers."
+    },
+    {
+     "activity_id": "referee-run-round-robin",
+     "curator_note": "The whistle is a service, not a weapon: teens keep the sheets, run the protocol, and sign their calls."
+    },
+    {
+     "activity_id": "ten-minute-set-handover",
+     "curator_note": "The floor never notices the join — six pairs of hands, one continuous session, and the next DJ's opening never spent."
+    },
+    {
+     "activity_id": "indoor-clue-chain-architects",
+     "curator_note": "A clue is fair when a stranger could solve it — and the architects watch in silence while the strangers find out."
+    },
+    {
+     "activity_id": "hot-seat-kind-questions",
+     "curator_note": "The seat is warm, never hot: screened questions, an absolute pass, and answers sized by their owners."
+    },
+    {
+     "activity_id": "repair-cafe-first-session",
+     "curator_note": "Fixed is a verdict the owner gives — triage, benches, charts, and the professional courage of 'beyond this cafe'."
+    },
+    {
+     "activity_id": "midnight-around-the-world",
+     "curator_note": "Midnight is a place before it is a time — met city by city, with the arithmetic checked and every greeting practised."
+    },
+    {
+     "activity_id": "wind-turbine-blade-trials",
+     "curator_note": "One variable at a time, or the data is weather, not evidence — revolutions and lifted clips overrule every favourite."
+    },
+    {
+     "activity_id": "commonplace-book-first-pages",
+     "curator_note": "A conversation with people who are not in the room — other minds, copied by hand, indexed under your own themes."
+    },
+    {
+     "activity_id": "teach-back-to-the-youngers",
+     "curator_note": "Teaching is the final exam nobody grades: a promise made to real children, kept or not kept in their hands."
+    }
+   ],
+   "age_span": [
+    13,
+    14
+   ],
+   "time_span": [
+    20,
+    60
+   ],
+   "page": "collections.html#just-teens-first-time"
   }
  ],
- "count": 27,
+ "count": 28,
  "updated": "2026-10-13"
 }
