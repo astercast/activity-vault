@@ -1055,7 +1055,7 @@ def main():
         sys.exit(1)
     actmap = {a['id']: a for a in acts}
     # Wave 9 explicit assert: every collection pick resolves to a real activity id.
-    assert len(colls) == 24, f"expected 24 collections, got {len(colls)}"
+    assert len(colls) == 25, f"expected 25 collections, got {len(colls)}"
     assert all(p['id'] in actmap for c in colls for p in c['picks']), \
         "collection pick does not resolve to a real activity id"
     # Wave 10 explicit assert: balance-buckets covers all 11 categories.
@@ -1669,7 +1669,7 @@ def main():
               "  from the selected activities' real materials fields: deduplicated,",
               "  grouped (consumables / equipment / print-at-desk), every line traced",
               "  to the activity that asked for it. Copy-as-text included.",
-              "- collections.html — Curated collections: 24 teacher-ready bundles (rainy-day",
+              "- collections.html — Curated collections: 25 teacher-ready bundles (rainy-day",
               "  rescue, first day, sub tub, winter party, spring burst, summer splash, haunted halls, grateful gathering, winter lights…)",
               "  each with a curator's note per pick; printable and copy-able per collection.",
               "- api.html — API docs with a Try-the-API console (endpoint picker, fetch, pretty JSON).",
