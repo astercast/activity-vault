@@ -1599,6 +1599,46 @@
      "note": "A rule that only works when everyone is being nice is not a rule yet — strangers break it, the log records it, the card is rewritten."
     }
    ]
+  },
+  {
+   "id": "just-teens-third-time",
+   "title": "Just Teens, a Third Time",
+   "glyph": "🌔",
+   "when_to_use": "The third shelf banded for thirteen- and fourteen-year-olds ONLY — the floor-raising shelf: seeds given their winter, a field line surveyed square by square, a long rope turned for everyone's courage, a choir holding two lines at once, a radio play recorded in one take per scene, an interview that introduces the person actually met, a whole publication folded from one sheet, and a new year folded in by the tray. Reach for it when the teen room needs the band's eight thinnest categories — seasons, outdoor, movement, music, rainy-day, icebreakers, crafts and holidays — written for the room itself, not borrowed from younger shelves.",
+   "picks": [
+    {
+     "id": "cold-stratification-seed-bank",
+     "note": "Cold is an ingredient, and the calendar is the recipe — jars of logged winter, weekly rounds, and a spring test that grades the bank in numbers."
+    },
+    {
+     "id": "transect-line-field-survey",
+     "note": "The line does not move; that is what makes it evidence — quadrats at fixed intervals, named only as far as the guide honestly carries."
+    },
+    {
+     "id": "long-rope-turning-crew",
+     "note": "The rope belongs to the turners; the jumping belongs to everyone — height, beat and rescue, with the crew's mark chalked honest, landed or not."
+    },
+    {
+     "id": "part-singing-choir-first-rehearsals",
+     "note": "Blending is listening louder than you sing — two lines learned apart until boring, then held together, falls and joins in the same log."
+    },
+    {
+     "id": "foley-radio-play-recording",
+     "note": "The audience believes its ears; the studio's job is to deserve that — actors, a hand-made Foley table, one take and at most one retake per scene."
+    },
+    {
+     "id": "partner-portrait-interviews",
+     "note": "You introduce the person you actually met, not the one you expected — three questions, a partner's own words on the card, and the right to strike any line."
+    },
+    {
+     "id": "one-sheet-zine-workshop",
+     "note": "Eight pages, one sheet, no editor but the maker — planned on the map, lettered in the flat order, and traded only after being read entire."
+    },
+    {
+     "id": "lunar-new-year-dumpling-folding-night",
+     "note": "Every fold is a signature the steamer will read — teens fold and tally by the tray, the adult alone runs the steamer, and the feast is eaten together."
+    }
+   ]
   }
  ]
 }

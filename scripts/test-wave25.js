@@ -20,7 +20,7 @@ function ok(cond, label, extra) {
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const byId = {};
 acts.forEach(a => { byId[a.id] = a; });
-ok(acts.length === 723, '685 activities total', String(acts.length));
+ok(acts.length === 731, '685 activities total', String(acts.length));
 ok(new Set(acts.map(a => a.id)).size === acts.length, 'all ids unique');
 
 const MLK = ['mlk-freedom-quilt-squares', 'civil-rights-timeline-walk',
@@ -44,7 +44,7 @@ IND.forEach(id => ok(byId[id].tags.includes('holiday:indigenous-peoples-day'), i
 DIW.forEach(id => ok(byId[id].tags.includes('holiday:diwali'), id + ': diwali tag'));
 STP.forEach(id => ok(byId[id].tags.includes('holiday:st-patricks-day'), id + ': st-patricks tag'));
 // The next thin spots, recorded honestly (not fixed this wave):
-ok(tagCount('holiday:lunar-new-year') === 6, 'lunar-new-year was 3 after wave 25; wave 26 -> 5; wave 29 -> 6');
+ok(tagCount('holiday:lunar-new-year') === 7, 'lunar-new-year was 3 after wave 25; wave 26 -> 5; wave 29 -> 6');
 ok(tagCount('holiday:valentines-day') === 7, 'valentines-day was 4 after wave 25; wave 26 -> 6; wave 31 -> 7');
 
 // 2. Quality bar on every new record.
@@ -87,12 +87,12 @@ NEW.forEach(id => {
 });
 
 // 4. Enrichment deltas from this wave.
-ok(acts.filter(a => a.copy_free).length === 343, 'copy_free 165 -> 173 in wave 25; wave 26 -> 184; wave 27 -> 197; wave 28 -> 209; wave 29 -> 221; wave 30 -> 233; wave 31 -> 245; wave 32 -> 257; wave 33 -> 269');
-ok(acts.filter(a => a.no_elimination).length === 145, 'no_elimination 43 -> 47 in wave 25; wave 26 -> 51; wave 27 -> 57; wave 28 -> 63; wave 29 -> 70; wave 30 -> 75; wave 31 -> 81; wave 32 -> 87; wave 33 -> 93');
-ok(acts.filter(a => a.inclusion).length === 205, 'inclusion 51 -> 64 in wave 25; wave 26 -> 69; wave 27 -> 75; wave 28 -> 81; wave 29 -> 87; wave 30 -> 95; wave 31 -> 107; wave 32 -> 119; wave 33 -> 131');
+ok(acts.filter(a => a.copy_free).length === 351, 'copy_free 165 -> 173 in wave 25; wave 26 -> 184; wave 27 -> 197; wave 28 -> 209; wave 29 -> 221; wave 30 -> 233; wave 31 -> 245; wave 32 -> 257; wave 33 -> 269');
+ok(acts.filter(a => a.no_elimination).length === 153, 'no_elimination 43 -> 47 in wave 25; wave 26 -> 51; wave 27 -> 57; wave 28 -> 63; wave 29 -> 70; wave 30 -> 75; wave 31 -> 81; wave 32 -> 87; wave 33 -> 93');
+ok(acts.filter(a => a.inclusion).length === 213, 'inclusion 51 -> 64 in wave 25; wave 26 -> 69; wave 27 -> 75; wave 28 -> 81; wave 29 -> 87; wave 30 -> 95; wave 31 -> 107; wave 32 -> 119; wave 33 -> 131');
 [13, 14].forEach(age => {
   const n = acts.filter(a => a.age_min <= age && a.age_max >= age).length;
-  ok(n === 96, 'age ' + age + ' coverage 70 -> 76 -> 88 (wave-39)', String(n));
+  ok(n === 104, 'age ' + age + ' coverage 70 -> 76 -> 88 (wave-39)', String(n));
 });
 
 // 5. Scout cycle: the queue after the live 2026-10-12 scan — fully

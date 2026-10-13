@@ -5,17 +5,17 @@ Hundreds of real, classic, public-domain activity concepts — filterable by age
 group size, materials, and category. Plan-my-week planner. Printable one-page cards.
 
 ## Categories
-- Seasons: 121 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
-- Holidays: 127 activities — Festive projects and games for the days the whole group looks forward to.
-- Crafts: 163 activities — Hands-on making: fold it, paint it, build it, take it home.
+- Seasons: 122 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
+- Holidays: 128 activities — Festive projects and games for the days the whole group looks forward to.
+- Crafts: 164 activities — Hands-on making: fold it, paint it, build it, take it home.
 - STEM: 158 activities — Experiments, engineering challenges, and satisfying science demos.
-- PE & Movement: 123 activities — Run, jump, dance — activities that burn off the wiggles.
+- PE & Movement: 124 activities — Run, jump, dance — activities that burn off the wiggles.
 - Team & Community: 150 activities — Turn a group into a crew: cooperation, trust, and belonging.
-- Icebreakers: 74 activities — First-day friendly: learn names, laugh, and loosen up fast.
-- Outdoor: 117 activities — Fresh-air activities for fields, playgrounds, and nature walks.
-- Rainy Day: 73 activities — Stuck inside? These keep a roomful of kids happy without a gym.
+- Icebreakers: 75 activities — First-day friendly: learn names, laugh, and loosen up fast.
+- Outdoor: 118 activities — Fresh-air activities for fields, playgrounds, and nature walks.
+- Rainy Day: 74 activities — Stuck inside? These keep a roomful of kids happy without a gym.
 - Quiet & Focus: 137 activities — Wind-down worthy: calm, creative, individual or small-group.
-- Music & Rhythm: 47 activities — Drums, shakers, rhythm games, and songs — make some noise.
+- Music & Rhythm: 48 activities — Drums, shakers, rhythm games, and songs — make some noise.
 
 ## API — start at data/v1/index.json (self-describing manifest)
 - data/v1/index.json — api manifest
@@ -101,7 +101,7 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
   when an occasion holds fewer real activities than the arc has
   parts, the page says so in numbers and offers the nearest real
   options — it never pads a plan. Printable party sheet + copy-as-text.
-- collections.html — Curated collections: 29 teacher-ready bundles (rainy-day
+- collections.html — Curated collections: 30 teacher-ready bundles (rainy-day
   rescue, first day, sub tub, winter party, spring burst, summer splash, haunted halls, grateful gathering, winter lights…)
   each with a curator's note per pick; printable and copy-able per collection.
 - api.html — API docs with a Try-the-API console (endpoint picker, fetch, pretty JSON).
@@ -977,6 +977,11 @@ Markers plus a spritz of water turn a coffee filter into butterfly wings.
 Categories: Crafts | Ages 4-12 | Group 2-30 | 15-30 min | Prep needed | indoor
 Page: activity/coffee-filter-butterflies.html
 
+### Cold Stratification Seed Bank
+Teens give native seeds the winter they require: labelled jars of cold, damp weeks, logged chill, and a spring germination test that grades the bank.
+Categories: Seasons | Ages 13-14 | Group 4-14 | 40-55 min | Prep needed | indoor
+Page: activity/cold-stratification-seed-bank.html
+
 ### Collage Self-Portrait
 Cut-up magazines become portraits of who you are inside.
 Categories: Crafts | Ages 6-12 | Group 2-30 | 25-50 min | Prep needed | indoor
@@ -1416,6 +1421,11 @@ Page: activity/fog-window-finger-drawing.html
 Fold, draw half a heart on the fold, cut, open — the fold did the matching. Symmetry you can hold up to the light.
 Categories: Holidays, STEM | Ages 4-8 | Group 2-28 | 15-25 min | Prep needed | indoor
 Page: activity/fold-and-open-hearts.html
+
+### Foley Radio Play, Recorded Live
+A scripted radio drama performed entire on a rainy day: actors at the microphone, live sound effects made by hand at the Foley table, one take per scene.
+Categories: Rainy Day | Ages 13-14 | Group 6-24 | 50-60 min | Prep needed | indoor
+Page: activity/foley-radio-play-recording.html
 
 ### Food Drive Planning
 Kids plan the whole canned-food drive: goal, posters, collection crew.
@@ -2077,6 +2087,11 @@ A long paper banner and a hand every few steps along its edge: the whole crew wa
 Categories: Team & Community | Ages 3-3 | Group 6-18 | 10-20 min | Prep needed | indoor
 Page: activity/long-banner-carry-together.html
 
+### Long Rope Turning Crew
+Two turners, one long rope, a whole crew jumping in turn: turning is the skilled job, entries are timed to a moving rope, and nobody jumps alone.
+Categories: PE & Movement | Ages 13-14 | Group 6-24 | 30-50 min | Prep needed | indoor/outdoor
+Page: activity/long-rope-turning-crew.html
+
 ### Longest Day Shadow Track
 Track one shadow from morning to afternoon on the solstice — the sun draws the graph.
 Categories: STEM, Outdoor, Seasons | Ages 6-12 | Group 2-30 | 30-60 min | Prep needed | outdoor
@@ -2091,6 +2106,11 @@ Page: activity/loud-quiet-song-switch.html
 A soft doll in your arms and one slow song from the whole group: rock side to side in time, and when the song ends, the baby is asleep.
 Categories: Music & Rhythm | Ages 3-5 | Group 4-20 | 10-15 min | No prep | indoor
 Page: activity/lullaby-rock-and-sway.html
+
+### Lunar New Year Dumpling Folding Night
+Teens host a dumpling night for the new year: folds sealed with water and patience, counted by the tray — the adult runs the steamer, the crew folds.
+Categories: Holidays | Ages 13-14 | Group 6-20 | 50-60 min | Prep needed | indoor
+Page: activity/lunar-new-year-dumpling-folding-night.html
 
 ### MLK Day Service Sprint
 The holiday is a day on, not a day off — pick one real job this building needs and finish it in one session.
@@ -2367,6 +2387,11 @@ One autumn tree, counted colour by colour with pointing fingers: how many colour
 Categories: Seasons | Ages 3-3 | Group 3-12 | 10-15 min | No prep | outdoor
 Page: activity/one-tree-autumn-color-count.html
 
+### One-Sheet Zine Workshop
+Eight pages from a single folded sheet: teens plan, sequence, letter and trade a finished zine — a whole publication with no editor but its maker.
+Categories: Crafts | Ages 13-14 | Group 2-24 | 40-55 min | Prep needed | indoor
+Page: activity/one-sheet-zine-workshop.html
+
 ### One-Word Story Chain
 Build a story one sentence per person around the circle — plot twists mandatory, logic optional.
 Categories: Team & Community, Icebreakers, Quiet & Focus | Ages 7-12 | Group 5-25 | 20-20 min | No prep | indoor
@@ -2536,6 +2561,16 @@ Page: activity/parachute-popcorn.html
 Map the parade: scale the route, time the march, beat the road closures.
 Categories: STEM, Holidays | Ages 8-12 | Group 4-24 | 30-45 min | Prep needed | indoor
 Page: activity/parade-route-planners.html
+
+### Part-Singing Choir, First Rehearsals
+Teens form a choir that sings in parts: sections, blending, a conductor's beat shared in rotation — two lines held at once, by listening.
+Categories: Music & Rhythm | Ages 13-14 | Group 8-30 | 45-60 min | Prep needed | indoor
+Page: activity/part-singing-choir-first-rehearsals.html
+
+### Partner Portrait Interviews
+One deep interview per pair, notes kept, and then the introduction nobody else could give: you present the partner you actually met.
+Categories: Icebreakers | Ages 13-14 | Group 4-30 | 30-45 min | Prep needed | indoor
+Page: activity/partner-portrait-interviews.html
 
 ### Pass the Face
 Copy the silly face, change it, pass it on.
@@ -3456,6 +3491,11 @@ Page: activity/traffic-cop.html
 Teens maintain a real path under permission: drainage cleared, waymarks renewed, and every stretch of work logged in the crew book.
 Categories: Outdoor | Ages 13-14 | Group 4-18 | 45-60 min | Prep needed | outdoor
 Page: activity/trail-crew-first-pass.html
+
+### Transect Line Field Survey
+Teens survey one fixed line across real ground — quadrats at set intervals, every plant and surface recorded square by square, season after season.
+Categories: Outdoor | Ages 13-14 | Group 4-16 | 45-60 min | Prep needed | outdoor
+Page: activity/transect-line-field-survey.html
 
 ### Tribal Nations Map Study
 Whose land is the school on? Find the tribal nations of your region on a real map and learn their names right.
