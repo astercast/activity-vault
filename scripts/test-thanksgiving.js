@@ -177,7 +177,7 @@ RESEARCH3.forEach(id => {
 });
 ok(acts.filter(a => a.copy_free).length === 197, '197 copy_free notes (196 + 1 wave-27 Scout accept)', String(acts.filter(a => a.copy_free).length));
 ok(acts.filter(a => a.no_elimination).length === 57, '57 no_elimination notes (51 + 6 wave-27)');
-ok(acts.filter(a => a.inclusion).length === 74, '74 inclusion notes (69 + 5 wave-27)');
+ok(acts.filter(a => a.inclusion).length === 75, '75 inclusion notes (69 + 5 wave-27 age-3 pack + 1 wave-27 Scout accept)');
 // research fields appear on built pages
 const cfPage = fs.readFileSync(path.join(ROOT, 'activity/turkey-code-feathers.html'), 'utf8');
 ok(cfPage.includes('Copy-free'), 'copy-free badge renders on activity page');

@@ -89,7 +89,7 @@ NEW.forEach(id => {
 // 4. Enrichment deltas from this wave.
 ok(acts.filter(a => a.copy_free).length === 197, 'copy_free 165 -> 173 in wave 25; wave 26 -> 184; wave 27 -> 197');
 ok(acts.filter(a => a.no_elimination).length === 57, 'no_elimination 43 -> 47 in wave 25; wave 26 -> 51; wave 27 -> 57');
-ok(acts.filter(a => a.inclusion).length === 74, 'inclusion 51 -> 64 in wave 25; wave 26 -> 69; wave 27 -> 74');
+ok(acts.filter(a => a.inclusion).length === 75, 'inclusion 51 -> 64 in wave 25; wave 26 -> 69; wave 27 -> 75');
 [13, 14].forEach(age => {
   const n = acts.filter(a => a.age_min <= age && a.age_max >= age).length;
   ok(n === 76, 'age ' + age + ' coverage 70 -> 76', String(n));

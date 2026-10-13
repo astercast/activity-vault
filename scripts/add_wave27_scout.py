@@ -30,7 +30,8 @@ place on review — not to pad the thin "coding" keyword count, which
 wave 26 recorded as a shelf the Vault does not promise.
 
 Deltas from this accept: total 576 -> 577, stem primary 107 -> 108,
-copy_free 196 -> 197. Age-3 numbers unchanged (this is a 7-12 record).
+copy_free 196 -> 197, inclusion 74 -> 75. Age-3 numbers unchanged
+(this is a 7-12 record).
 
 Run once: dedupes by id, writes data/activities.json and
 pipeline/review-queue.json. Run scripts/build.py afterwards.

@@ -103,7 +103,7 @@ ok(acts.filter(a => a.categories[0] === 'music-rhythm').length === 28, 'music-rh
 ok(acts.filter(a => a.categories.includes('rainy-day')).length === 55, 'rainy-day any-category 50 -> 53 in wave 26; wave 27 -> 55');
 ok(acts.filter(a => a.copy_free).length === 197, 'copy_free 173 -> 184 in wave 26; wave 27 -> 197');
 ok(acts.filter(a => a.no_elimination).length === 57, 'no_elimination 47 -> 51 in wave 26; wave 27 -> 57');
-ok(acts.filter(a => a.inclusion).length === 74, 'inclusion 64 -> 69 in wave 26; wave 27 -> 74');
+ok(acts.filter(a => a.inclusion).length === 75, 'inclusion 64 -> 69 in wave 26; wave 27 -> 75');
 [13, 14].forEach(age => ok(covers(age) === 76, 'age ' + age + ' coverage unchanged at 76', String(covers(age))));
 
 // 6. The 16th collection: Little Hands, First Years.

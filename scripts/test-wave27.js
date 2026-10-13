@@ -121,7 +121,7 @@ ok(prim('outdoor') === 46, 'outdoor primary 45 -> 46');
 ok(prim('pe-movement') === 60, 'pe-movement primary 59 -> 60');
 ok(acts.filter(a => a.copy_free).length === 197, 'copy_free 184 -> 196 in the age-3 pack; 197 with the Scout Morse accept');
 ok(acts.filter(a => a.no_elimination).length === 57, 'no_elimination 51 -> 57');
-ok(acts.filter(a => a.inclusion).length === 74, 'inclusion 69 -> 74');
+ok(acts.filter(a => a.inclusion).length === 75, 'inclusion 69 -> 74 in the age-3 pack; 75 with the Scout Morse accept');
 
 // 6. The 17th collection: Little Hands, Next Steps — and First Years intact.
 const colls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/collections.json'), 'utf8')).collections;
