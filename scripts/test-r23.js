@@ -42,8 +42,8 @@ for (const a of acts) {
   if (a.photo) ok(page.includes('assets/photos/' + a.photo.file) && page.includes('Photo source'), a.id + ': photo + photo source render on the page');
   if (a.source) ok(page.includes('class="source-line"') && page.includes(a.source.replace(/&/g, '&amp;')), a.id + ': source link renders plainly on the page');
 }
-/* Filed rotation-23 coverage floors: 104 photos, 93 source links.
+/* Filed rotation-24 coverage floors: 198 photos, 93 source links.
    The floors only ever move up; a drop below the filed count fails. */
-ok(withPhoto >= 104, 'coverage: at least the filed 104 activities carry a sourced photo (got ' + withPhoto + ')');
+ok(withPhoto >= 198, 'coverage: at least the filed 198 activities carry a sourced photo (got ' + withPhoto + ')');
 ok(withSource >= 93, 'coverage: at least the filed 93 activities carry a source link (got ' + withSource + ')');
 console.log('test-r23: ' + passed + ' assertions passed; photo ' + withPhoto + '/747, source ' + withSource + '/747');
