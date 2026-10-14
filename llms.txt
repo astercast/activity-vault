@@ -1,116 +1,116 @@
 # Activity Vault
 
 The all-in-one activity archive for teachers and after-school program teachers.
-Hundreds of real, classic, public-domain activity concepts — filterable by age, time,
+Hundreds of real, classic, public-domain activity concepts, filterable by age, time,
 group size, materials, and category. Plan-my-week planner. Printable one-page cards.
 
 ## Categories
-- Seasons: 124 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
-- Holidays: 129 activities — Festive projects and games for the days the whole group looks forward to.
-- Crafts: 166 activities — Hands-on making: fold it, paint it, build it, take it home.
-- STEM: 159 activities — Experiments, engineering challenges, and satisfying science demos.
-- PE & Movement: 126 activities — Run, jump, dance — activities that burn off the wiggles.
-- Team & Community: 150 activities — Turn a group into a crew: cooperation, trust, and belonging.
-- Icebreakers: 77 activities — First-day friendly: learn names, laugh, and loosen up fast.
-- Outdoor: 120 activities — Fresh-air activities for fields, playgrounds, and nature walks.
-- Rainy Day: 76 activities — Stuck inside? These keep a roomful of kids happy without a gym.
-- Quiet & Focus: 137 activities — Wind-down worthy: calm, creative, individual or small-group.
-- Music & Rhythm: 50 activities — Drums, shakers, rhythm games, and songs — make some noise.
+- Seasons: 124 activities, Activities that ride the turning year. Fall leaves, winter making, spring planting, summer play.
+- Holidays: 129 activities, Festive projects and games for the days the whole group looks forward to.
+- Crafts: 166 activities, Hands-on making: fold it, paint it, build it, take it home.
+- STEM: 159 activities, Experiments, engineering challenges, and satisfying science demos.
+- PE & Movement: 126 activities, Run, jump, dance. Activities that burn off the wiggles.
+- Team & Community: 150 activities, Turn a group into a crew: cooperation, trust, and belonging.
+- Icebreakers: 77 activities, First-day friendly: learn names, laugh, and loosen up fast.
+- Outdoor: 120 activities, Fresh-air activities for fields, playgrounds, and nature walks.
+- Rainy Day: 76 activities, Stuck inside? These keep a roomful of kids happy without a gym.
+- Quiet & Focus: 137 activities, Wind-down worthy: calm, creative, individual or small-group.
+- Music & Rhythm: 50 activities, Drums, shakers, rhythm games, and songs. Make some noise.
 
-## API — start at data/v1/index.json (self-describing manifest)
-- data/v1/index.json — api manifest
-- data/v1/activities.json — full activity library
-- data/v1/categories.json — category definitions
-- data/v1/filters.json — filter configuration
-- data/v1/skills.json — skills registry
-- data/v1/collections.json — curated collections
-- data/v1/balance-buckets.json — energy balance buckets
-- data/v1/review-queue.json — scout review queue (open candidates)
-- data/v1/decided.json — scout decisions (90-day log)
+## API. Start at data/v1/index.json (self-describing manifest)
+- data/v1/index.json, api manifest
+- data/v1/activities.json, full activity library
+- data/v1/categories.json, category definitions
+- data/v1/filters.json, filter configuration
+- data/v1/skills.json, skills registry
+- data/v1/collections.json, curated collections
+- data/v1/balance-buckets.json, energy balance buckets
+- data/v1/review-queue.json, scout review queue (open candidates)
+- data/v1/decided.json, scout decisions (90-day log)
 
 ## Skills
-- skills/activity-finder.md — Find the right activity fast using age, time, group size, and materials-on-hand filters.
-- skills/balanced-week-builder.md — Build auto-balanced multi-week activity plans with an energy balance meter, prep caps, and no repeats — the Smart Weekly Planner 3.0 recipe (brain breaks, weather backups, supply lists, substitute kits).
-- skills/halloween-party-planner.md — Turn party constraints into a timed station-rotation plan from seasonal activities. Covers the Halloween, winter, spring, and summer party presets.
-- skills/icebreaker-chooser.md — Pick first-day and new-group icebreakers matched to group size and shyness level.
-- skills/no-prep-rescue.md — Grab-and-go activities that need zero prep and zero (or near-zero) materials.
-- skills/outdoor-play-picker.md — Pick the right outdoor activity for the space, weather, and energy level you have.
-- skills/quiet-focus-picker.md — Pick wind-down and calm-focus activities to land a loud group or fill a calm slot.
-- skills/rainy-day-rescue.md — Instant indoor plan when the weather kills outdoor time.
-- skills/stem-demo-picker.md — Pick the right STEM demo or engineering challenge for the age group and time available.
-- skills/sub-tub-rescue.md — Build a print-ready substitute-teacher emergency plan for any grade band and time gap.
-- skills/week-planner.md — Build a no-repeat week of activities from days, slots, and constraints.
+- skills/activity-finder.md, Find the right activity fast using age, time, group size, and materials-on-hand filters.
+- skills/balanced-week-builder.md, Build auto-balanced multi-week activity plans with an energy balance meter, prep caps, and no repeats, the Smart Weekly Planner 3.0 recipe (brain breaks, weather backups, supply lists, substitute kits).
+- skills/halloween-party-planner.md, Turn party constraints into a timed station-rotation plan from seasonal activities. Covers the Halloween, winter, spring, and summer party presets.
+- skills/icebreaker-chooser.md, Pick first-day and new-group icebreakers matched to group size and shyness level.
+- skills/no-prep-rescue.md, Grab-and-go activities that need zero prep and zero (or near-zero) materials.
+- skills/outdoor-play-picker.md, Pick the right outdoor activity for the space, weather, and energy level you have.
+- skills/quiet-focus-picker.md, Pick wind-down and calm-focus activities to land a loud group or fill a calm slot.
+- skills/rainy-day-rescue.md, Instant indoor plan when the weather kills outdoor time.
+- skills/stem-demo-picker.md, Pick the right STEM demo or engineering challenge for the age group and time available.
+- skills/sub-tub-rescue.md, Build a print-ready substitute-teacher emergency plan for any grade band and time gap.
+- skills/week-planner.md, Build a no-repeat week of activities from days, slots, and constraints.
 
 ## Tools
-- desk.html — The Teacher's Desk: the whole archive as 11 wooden category drawers.
+- desk.html (The Teacher's Desk): the whole archive as 11 wooden category drawers.
   Every drawer opens (real working drawers, keyboard + reduced-motion friendly) onto
-  six index cards on top of the pile — curator picks first, then no-prep — plus a
+  six index cards on top of the pile, curator picks first, then no-prep, plus a
   pencil note with honest per-drawer counts; each drawer deep-links to the matching
   filtered browse view (index.html?cats=<id>). The kneehole blotter links the planner.
-- sub.html — Sub Tub: the substitute-teacher rescue kit.
-  Pick grade band, minutes to fill, materials on hand, location —
+- sub.html, Sub Tub: the substitute-teacher rescue kit.
+  Pick grade band, minutes to fill, materials on hand, location, 
   generates a sequenced print-ready emergency plan plus a 'Dear sub' note template.
-- party.html — Party Planner (Halloween, Thanksgiving, winter, spring, and summer presets).
-  Pick a theme, class size, minutes, stations, and budget — generates a timed
+- party.html, Party Themes (Halloween, Thanksgiving, winter, spring, and summer presets).
+  Pick a theme, class size, minutes, stations, and budget, generates a timed
   station-rotation plan from seasonal activities, plus a setup list and a
   print-ready run sheet.
-- halloween.html — Halloween hub: the Halloween 2026 pack's crafts, costume and
+- halloween.html. Halloween hub: the Halloween 2026 pack's crafts, costume and
   party games, not-too-spooky science, harvest activities, and trick-or-treat
   alternatives, plus the Haunted Halls collection, a Halloween party-theme shortcut,
   and a spookiness-level filter.
-- spring.html — Spring hub: the spring 2027 pack's crafts, outdoor games,
+- spring.html. Spring hub: the spring 2027 pack's crafts, outdoor games,
   spring science, rainy-day backups, and spring-holiday activities, plus the
   Spring Burst collection and a spring party-theme shortcut.
-- summer.html — Summer hub: the summer 2027 pack's water play, outdoor games,
+- summer.html. Summer hub: the summer 2027 pack's water play, outdoor games,
   summer crafts, beat-the-heat indoor backups, and camp + July 4th activities,
   plus the Summer Splash collection and a summer party-theme shortcut.
-- fieldtrip.html — Field Trip Planner: destination, group size, and trip length
+- fieldtrip.html, Field Trip Planner: destination, group size, and trip length
   become a clock-time timeline, chaperone and buddy-pair math, a budget estimate,
   on-site activity ideas matched from the real library, bus-ride activities from the
   field-trip-bus-ride collection, and printable permission-slip + pack checklists.
-- thanksgiving.html — Thanksgiving hub: the Thanksgiving 2026 pack's gratitude
+- thanksgiving.html. Thanksgiving hub: the Thanksgiving 2026 pack's gratitude
   crafts, harvest games, Thanksgiving STEM, gratitude and friendsgiving activities,
   and giving-back projects, plus the Grateful Gathering collection and a
   Thanksgiving party-theme shortcut.
-- winter.html — Winter Holidays hub: the Winter 2026 pack's Christmas crafts and
+- winter.html. Winter Holidays hub: the Winter 2026 pack's Christmas crafts and
   games, Hanukkah and Kwanzaa activities, New Year countdowns, and winter-break
   science, plus the Winter Lights collection and a winter party-theme shortcut.
-- planner.html — Smart Weekly Planner 3.0: program presets (after-school / camp /
+- planner.html, Smart Weekly Planner 3.0: program presets (after-school / camp /
   classroom), age bands, auto-built no-repeat weeks with a per-day energy balance meter,
   drag-and-drop reorder, per-slot swap, surprise gap-fill, prep-level caps, collection
   seeding (?from=collection:<id>), named saved plans, .ics calendar export, shareable
   ?plan= links, and a print-ready card deck.
-- kit.html — The After-School Kit: the flagship low-materials week builder.
+- kit.html, The After-School Kit: the flagship low-materials week builder.
   Group size + age band + days/week + what you have on hand (16-staple pantry,
   low-materials, or no-prep mode) become a week of sessions from the real library,
   each day with a run-of-show timeline, a printable session plan sheet, per-slot
   swap, one aggregated material checklist (have vs. gather), copy-as-text, and
   shareable ?kit= links that restore the exact kit on any device.
-- kitbag.html — The Kit Bag: pack one rainy day indoors — five roles filled
-  from the real rainy-day shelf by age — and a printable kit list composed
+- kitbag.html, The Kit Bag: pack one rainy day indoors, five roles filled
+  from the real rainy-day shelf by age, and a printable kit list composed
   from the selected activities' real materials fields: deduplicated,
   grouped (consumables / equipment / print-at-desk), every line traced
   to the activity that asked for it. Copy-as-text included.
-- partypack.html — The Party Pack: plan a whole group event — pick an
+- partypack.html, The Party Pack: plan a whole group event, pick an
   occasion (birthday, Halloween, Thanksgiving, winter holiday,
   Valentine's, spring, summer, rainy-day), an age band, and a group
-  size — and it composes a five-part party arc from real activities
+  size, and it composes a five-part party arc from real activities
   (welcome, big group opener, making & games, movement break, calm
   close), then packs the party bag from the picks' real materials
   fields through the Kit Bag's aggregation. Honest thin coverage:
   when an occasion holds fewer real activities than the arc has
   parts, the page says so in numbers and offers the nearest real
-  options — it never pads a plan. Printable party sheet + copy-as-text.
-- collections.html — Curated collections: 32 teacher-ready bundles (rainy-day
+  options. It never pads a plan. Printable party sheet + copy-as-text.
+- collections.html, Curated collections: 32 teacher-ready bundles (rainy-day
   rescue, first day, sub tub, winter party, spring burst, summer splash, haunted halls, grateful gathering, winter lights…)
   each with a curator's note per pick; printable and copy-able per collection.
-- api.html — API docs with a Try-the-API console (endpoint picker, fetch, pretty JSON).
-- review.html — Scout review queue: pending activity ideas plus the 90-day
+- api.html. API docs with a Try-the-API console (endpoint picker, fetch, pretty JSON).
+- review.html, Scout review queue: pending activity ideas plus the 90-day
   decision log. Tries the live /api/review-queue first, falls back to the
   static data/v1 JSON with an honest cached badge when the server is down.
 
 ## Docs
-- API.md — full API reference
-- PIPELINE.md — how the library grows
-- AGENT.md — how an agent uses this archive: endpoints, example requests,
+- API.md, full API reference
+- PIPELINE.md, how the library grows
+- AGENT.md. How an agent uses this archive: endpoints, example requests,
   end-to-end workflows (filtering, party planning, week planning)

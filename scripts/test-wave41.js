@@ -115,7 +115,7 @@ ok(/never wrapped around a hand or wrist/.test(byId['long-rope-turning-crew'].sa
 ok(/Blending is listening louder than you sing/.test(JSON.stringify(byId['part-singing-choir-first-rehearsals'])), 'choir: blending is listening');
 ok(/warm-up is never skipped/.test(byId['part-singing-choir-first-rehearsals'].safety || ''), 'choir: voices worked like instruments');
 ok(/The audience believes its ears/.test(JSON.stringify(byId['foley-radio-play-recording'])), 'foley: the audience believes its ears');
-ok(/no glass is broken for any sound/.test(byId['foley-radio-play-recording'].safety || ''), 'foley: no glass, ever');
+ok(/No glass is broken for any sound/.test(byId['foley-radio-play-recording'].safety || ''), 'foley: no glass, ever');
 ok(/You introduce the person you actually met, not the one you expected/.test(JSON.stringify(byId['partner-portrait-interviews'])), 'portraits: the person actually met');
 ok(/strike law is absolute/.test(byId['partner-portrait-interviews'].safety || ''), 'portraits: the strike law is absolute');
 ok(/Eight pages, one sheet, no editor but the maker/.test(JSON.stringify(byId['one-sheet-zine-workshop'])), 'zine: no editor but the maker');

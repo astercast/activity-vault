@@ -1,4 +1,4 @@
-/* Activity Vault — After-School Kit UI (wave 18).
+/* Activity Vault, After-School Kit UI (wave 18).
    Wizard -> generated week kit -> print sheets, checklist, shareable ?kit= link.
    Pure logic lives in assets/kit-core.js (window.VaultKit, UMD). */
 (function () {
@@ -89,17 +89,17 @@
     checkEl.innerHTML = '';
     actionsEl.innerHTML = '';
     if (!kit || !kit.days.length) {
-      statusEl.textContent = 'No kit yet — set your options and build one.';
+      statusEl.textContent = 'No kit yet. Set your options and build one.';
       return;
     }
     var cfg = kit.cfg;
     var slotCount = kit.days.length * 3;
     var mats = K.aggregateMaterials(kit, byId, cfg.pantry);
     var gather = mats.filter(function (m) { return !m.have; });
-    statusEl.textContent = 'Your kit is ready — ' + kit.days.length + ' day' +
+    statusEl.textContent = 'Your kit is ready, ' + kit.days.length + ' day' +
       (kit.days.length === 1 ? '' : 's') + ', ' + slotCount + ' sessions, ' +
       mats.length + ' material line' + (mats.length === 1 ? '' : 's') +
-      (gather.length ? ' (' + gather.length + ' to gather).' : ' — everything\'s on hand.');
+      (gather.length? ' (' + gather.length + ' to gather).': ', everything\'s on hand.');
 
     /* warnings */
     if (kit.warnings.length) {
@@ -112,7 +112,7 @@
       resultsEl.appendChild(w);
     }
 
-    /* day cards — index-card language, screen shows the plan, print turns
+    /* day cards. Index-card language, screen shows the plan, print turns
        each day into its own session plan sheet */
     kit.days.forEach(function (day, di) {
       var card = document.createElement('section');
@@ -141,11 +141,11 @@
       }).join('');
       card.innerHTML =
         '<div class="kit-day-head"><span class="kicker">📋 Session plan sheet</span>' +
-        '<h2>Day ' + (di + 1) + ' — ' + esc(day.label) + '</h2>' +
+        '<h2>Day ' + (di + 1) + ', ' + esc(day.label) + '</h2>' +
         '<p class="plan-meta">' + cfg.groupSize + ' kids · starts ' + esc(cfg.startTime) + ' · ' +
         cfg.minutes + ' minutes · run of show below</p></div>' +
         '<ol class="plan-blocks">' + blocks + '</ol>' +
-        '<p class="print-only print-url">Session plan — <span>' + esc(cardUrl('kit.html')) + '</span></p>';
+        '<p class="print-only print-url">Session plan, <span>' + esc(cardUrl('kit.html')) + '</span></p>';
       deckEl.appendChild(card);
     });
 
@@ -159,7 +159,7 @@
       if (!list.length) return '<p class="dim">None.</p>';
       return '<ul>' + list.map(function (m) {
         return '<li>' + glyph + ' ' + esc(m.item) +
-          ' <span class="opt">— day' + (m.days.length > 1 ? 's' : '') + ' ' + m.days.join(', ') + '</span></li>';
+          ' <span class="opt">, day' + (m.days.length > 1? 's': '') + ' ' + m.days.join(', ') + '</span></li>';
       }).join('') + '</ul>';
     }
     det.innerHTML = '<summary>🧾 Material checklist (' + mats.length + ' lines' +
@@ -178,7 +178,7 @@
       '<button type="button" class="btn btn-ghost" id="kit-copy-text">📋 Copy kit as text</button> ' +
       '<button type="button" class="btn btn-ghost" id="kit-copy-link">🔗 Copy share link</button> ' +
       '<span class="copy-status" id="kit-action-status" role="status" aria-live="polite"></span>' +
-      '<p class="dim" style="margin-top:.6rem;">The share link restores this exact kit — wizard answers and all — on any device.</p>';
+      '<p class="dim" style="margin-top:.6rem;">The share link restores this exact kit, wizard answers and all, on any device.</p>';
     wireActions();
     Array.prototype.forEach.call(deckEl.querySelectorAll('.kit-swap'), function (btn) {
       btn.addEventListener('click', function () { swapSlot(btn); });
@@ -203,7 +203,7 @@
       ta.style.position = 'fixed'; ta.style.opacity = '0';
       document.body.appendChild(ta); ta.focus(); ta.select();
       try { document.execCommand('copy'); done(); }
-      catch (e) { flash('Copy failed — select the text manually.'); }
+      catch (e) { flash('Copy failed, select the text manually.'); }
       document.body.removeChild(ta);
     }
     if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -213,16 +213,16 @@
 
   function copyChecklist() {
     var mats = K.aggregateMaterials(kit, byId, kit.cfg.pantry);
-    var lines = ['MATERIAL CHECKLIST — After-School Kit'];
+    var lines = ['MATERIAL CHECKLIST, After-School Kit'];
     mats.forEach(function (m) {
       lines.push((m.have ? '[have] ' : '[GATHER] ') + m.item +
-        ' — day' + (m.days.length > 1 ? 's' : '') + ' ' + m.days.join(', '));
+        ', day' + (m.days.length > 1? 's': '') + ' ' + m.days.join(', '));
     });
     var s = document.getElementById('kit-check-status');
     function done() { if (s) { s.textContent = 'Copied ✓'; setTimeout(function () { s.textContent = ''; }, 3000); } }
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(lines.join('\n')).then(done, function () { flash('Copy failed.'); });
-    } else { flash('Copy failed — select the text manually.'); }
+    } else { flash('Copy failed, select the text manually.'); }
   }
 
   function wireActions() {
@@ -329,7 +329,7 @@
           return;
         }
       }
-      statusEl.textContent = 'Set your options and build your kit — ' + acts.length + ' activities in the Vault.';
+      statusEl.textContent = 'Set your options and build your kit, ' + acts.length + ' activities in the Vault.';
     }).catch(function () {
       statusEl.textContent = 'Could not load the activity library. Check your connection and reload.';
     });

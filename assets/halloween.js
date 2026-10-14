@@ -1,7 +1,7 @@
-/* Activity Vault — Halloween hub page (wave 13).
+/* Activity Vault, Halloween hub page (wave 13).
    Renders the curated Halloween sections from data/v1/activities.json using
    explicit, build-validated id lists (scripts/test-halloween.js asserts every
-   id resolves). Picks show the visitor's own rating badges (localStorage only —
+   id resolves). Picks show the visitor's own rating badges (localStorage only
    never invented), matching the collections page pattern.
    The spookiness filter is client-side: every pick carries a spook level
    (none / fun / mild) and the buttons show or hide picks without reloading. */
@@ -23,39 +23,39 @@
   var SECTIONS = [
     {
       id: 'wave20', glyph: '⚡', title: 'Wave 20 · The Halloween 2026 Pack',
-      blurb: 'Forty brand-new Halloween activities — costumes, STEM, crafts, movement, quiet-focus, treats, and more. Everything below is new this wave.',
+      blurb: 'Forty brand-new Halloween activities, costumes, STEM, crafts, movement, quiet-focus, treats, and more. Everything below is new this wave.',
       browse: 'index.html?tag=holiday:halloween',
       picks: [
-        ['roll-a-monster-dice-draw', 'Roll for each monster part, draw the result — no two monsters match.', 'fun'],
+        ['roll-a-monster-dice-draw', 'Roll for each monster part, draw the result, no two monsters match.', 'fun'],
         ['marigold-cempasuchil-flowers', 'Tissue-paper cempasúchil: a respectful Día de los Muertos craft about remembrance.', 'none'],
-        ['pumpkin-seed-mosaic', 'Roasted seeds become jack-o\u2019-lantern mosaics — zero-waste art from pumpkin guts.', 'none'],
-        ['witch-hat-decorate', 'Plain hats in, runway-ready witch hats out — the costume-station classic.', 'fun'],
-        ['ghost-rocket-fizz', 'Film-canister rockets in ghost costumes — chemistry does the launching.', 'fun'],
-        ['glow-stick-temperature-lab', 'Same glow sticks, three water temperatures — real data, real light.', 'none'],
-        ['spiderweb-weight-bridge', 'Weave a yarn web, load it with pennies — how strong is your silk?', 'none'],
-        ['vampire-teeth-acid-test', 'Eggshell \u2018fangs\u2019 soak overnight — which liquid is toughest on teeth?', 'none'],
-        ['witch-broomstick-relay', 'Pool-noodle broomsticks, full-speed relay — cackling encouraged.', 'fun'],
+        ['pumpkin-seed-mosaic', 'Roasted seeds become jack-o\u2019-lantern mosaics, zero-waste art from pumpkin guts.', 'none'],
+        ['witch-hat-decorate', 'Plain hats in, runway-ready witch hats out, the costume-station classic.', 'fun'],
+        ['ghost-rocket-fizz', 'Film-canister rockets in ghost costumes. Chemistry does the launching.', 'fun'],
+        ['glow-stick-temperature-lab', 'Same glow sticks, three water temperatures. Real data, real light.', 'none'],
+        ['spiderweb-weight-bridge', 'Weave a yarn web, load it with pennies. How strong is your silk?', 'none'],
+        ['vampire-teeth-acid-test', 'Eggshell \u2018fangs\u2019 soak overnight. Which liquid is toughest on teeth?', 'none'],
+        ['witch-broomstick-relay', 'Pool-noodle broomsticks, full-speed relay, cackling encouraged.', 'fun'],
         ['ghost-freeze-tag', 'Tagged? Freeze like a ghost. A teammate\u2019s \u2018BOO!\u2019 sets you free.', 'fun'],
         ['monster-movement-dice', 'Roll the die, move like the monster: zombie shuffle to ghost glide.', 'fun'],
-        ['zombie-walk-relay', 'Each leg is a different monster walk — the team votes the winner.', 'fun'],
+        ['zombie-walk-relay', 'Each leg is a different monster walk, the team votes the winner.', 'fun'],
         ['halloween-inference-riddles', 'Read the riddle, cite your clue: inference practice in a witch hat.', 'none'],
         ['thumbprint-monsters', 'One ink thumbprint becomes a monster: add eyes, horns, and attitude.', 'fun'],
         ['halloween-dots-and-boxes', 'The pencil-and-paper classic, Halloween edition: claim boxes, draw the face.', 'none'],
         ['spiderweb-sketch-study', 'Find a real web, sketch it slow, label the spokes: quiet science.', 'none'],
-        ['ghost-banana-pops', 'Frozen banana ghosts on sticks — the two-ingredient Halloween treat.', 'none'],
+        ['ghost-banana-pops', 'Frozen banana ghosts on sticks, the two-ingredient Halloween treat.', 'none'],
         ['monster-mix-bags', 'Scoop, mix, bag: every kid builds their own Halloween trail mix.', 'none'],
         ['candy-apple-slices', 'All the caramel-apple joy, none of the whole-apple wrestling: slice bar.', 'none'],
         ['witches-brew-punch', 'No-cook punch mixing: the class brews a cauldron of something delicious.', 'fun'],
         ['halloween-countdown-calendar', 'Thirteen doors, thirteen mini-activities: the class counts down to the 31st.', 'none'],
-        ['monster-name-alliteration-circle', '\u2018Marvelous Mummy Maya\u2019 — alliterative monster names around the circle.', 'fun'],
+        ['monster-name-alliteration-circle', '\u2018Marvelous Mummy Maya\u2019. Alliterative monster names around the circle.', 'fun'],
         ['costume-guess-who', 'Twenty questions, one costume: can the class guess what you are?', 'fun'],
-        ['halloween-this-or-that', 'Candy corn: love it or leave it? Stand on your side — then defend it.', 'fun'],
+        ['halloween-this-or-that', 'Candy corn: love it or leave it? Stand on your side. Then defend it.', 'fun'],
         ['monster-stomp-rhythms', 'Stomp-clap patterns for every monster: learn it, layer it, perform it.', 'fun'],
         ['trick-or-treat-chant-parade', 'A marching chant for the big night: rhythm, rhyme, and doorbell timing.', 'fun'],
         ['haunted-house-soundtrack', 'Compose the soundscape for a haunted tour: creaks, whispers, one big scare.', 'mild'],
-        ['haunted-hallway-build', 'Teams transform one hallway into a silly-spooky walkthrough — designed by kids.', 'mild'],
+        ['haunted-hallway-build', 'Teams transform one hallway into a silly-spooky walkthrough, designed by kids.', 'mild'],
         ['costume-swap-shop', 'Outgrown costumes find new kids: the community swap, run like a real shop.', 'none'],
-        ['kindness-pumpkins', 'Paint them kind, deliver them in pairs — trick-or-treating in reverse.', 'none'],
+        ['kindness-pumpkins', 'Paint them kind, deliver them in pairs, trick-or-treating in reverse.', 'none'],
         ['pumpkin-bowling', 'Mini pumpkins vs. bottle pins: the indoor bowling alley builds itself.', 'fun'],
         ['spiderweb-yarn-maze', 'Crawl the yarn maze without touching a strand: the quietest challenge indoors.', 'mild'],
         ['haunted-lantern-tour', 'Lights low, lanterns up: a guided tour of the room\u2019s \u2018haunted\u2019 corners.', 'mild'],
@@ -70,82 +70,82 @@
     },
     {
       id: 'crafts', glyph: '🎨', title: 'Halloween crafts',
-      blurb: 'Ghosts, monsters, and lollipop ghosts — plus the no-carve pumpkin classics for little hands.',
+      blurb: 'Ghosts, monsters, and lollipop ghosts, plus the no-carve pumpkin classics for little hands.',
       browse: 'index.html?tag=holiday:halloween',
       picks: [
-        ['ghost-garland-string', 'Tissue ghosts on a string — the fastest room transformation in the Vault.', 'fun'],
-        ['monster-mask-making', 'Cardstock monsters with real 3D horns and fangs — costume-station ready.', 'fun'],
-        ['lollipop-ghost-treats', 'The classic Halloween handout, made by the kids — with an allergy-aware twist.', 'fun'],
-        ['pressed-leaf-mandala', 'Fall leaves into perfect symmetrical circles — harvest math you can hang up.', 'none'],
-        ['no-carve-pumpkin-decorating', 'All the pumpkin fun, zero knives — the young-kid classic.', 'none'],
-        ['halloween-shadow-puppets', 'Cardboard puppets and a flashlight — the shadow show, Halloween edition.', 'mild'],
-        ['paper-bag-ghost-puppets', 'Paper-bag ghosts with speaking parts — puppet theatre in 20 minutes.', 'mild']
+        ['ghost-garland-string', 'Tissue ghosts on a string, the fastest room transformation in the Vault.', 'fun'],
+        ['monster-mask-making', 'Cardstock monsters with real 3D horns and fangs, costume-station ready.', 'fun'],
+        ['lollipop-ghost-treats', 'The classic Halloween handout, made by the kids, with an allergy-aware twist.', 'fun'],
+        ['pressed-leaf-mandala', 'Fall leaves into perfect symmetrical circles. Harvest math you can hang up.', 'none'],
+        ['no-carve-pumpkin-decorating', 'All the pumpkin fun, zero knives, the young-kid classic.', 'none'],
+        ['halloween-shadow-puppets', 'Cardboard puppets and a flashlight. The shadow show, Halloween edition.', 'mild'],
+        ['paper-bag-ghost-puppets', 'Paper-bag ghosts with speaking parts, puppet theatre in 20 minutes.', 'mild']
       ]
     },
     {
       id: 'games', glyph: '🏃', title: 'Costume & party games',
-      blurb: 'Runways, relays, freeze dances, and feel-boxes — the party half of the pack.',
+      blurb: 'Runways, relays, freeze dances, and feel-boxes, the party half of the pack.',
       browse: 'index.html?tag=holiday:halloween',
       picks: [
         ['costume-runway-walk', 'Every costume gets its strut and its narrator moment.', 'fun'],
-        ['costume-piece-relay', 'Each runner adds one costume piece — by the anchor leg, everyone is a monster.', 'fun'],
-        ['monster-mash-dance', 'Freeze when the music stops — in your spookiest pose.', 'fun'],
+        ['costume-piece-relay', 'Each runner adds one costume piece, by the anchor leg, everyone is a monster.', 'fun'],
+        ['monster-mash-dance', 'Freeze when the music stops, in your spookiest pose.', 'fun'],
         ['mystery-feel-boxes', 'Peeled grapes, cold spaghetti: mild thrills, lights on, zero scares.', 'mild'],
         ['costume-parade-pose-freeze', 'The parade classic: pose like your character when the music stops.', 'fun'],
         ['pin-the-hat-on-witch', 'The party-game evergreen, Halloween edition.', 'fun'],
-        ['glow-stick-ring-toss', 'Ring toss that glows — built for dim October afternoons.', 'fun'],
+        ['glow-stick-ring-toss', 'Ring toss that glows, built for dim October afternoons.', 'fun'],
         ['halloween-bingo', 'Bingo with bats and black cats instead of numbers.', 'fun']
       ]
     },
     {
       id: 'science', glyph: '🔬', title: 'Not-too-spooky science',
-      blurb: 'Erupting pumpkins, rainbow candy dyes, monster slime — real experiments in costume.',
+      blurb: 'Erupting pumpkins, rainbow candy dyes, monster slime, real experiments in costume.',
       browse: 'index.html?tag=holiday:halloween',
       picks: [
-        ['pumpkin-volcano-fizz', 'The jack-o\u2019-lantern erupts — baking soda, vinegar, dish soap.', 'fun'],
-        ['candy-chromatography', 'Candy dyes split into rainbows on coffee filters — real separation science.', 'none'],
+        ['pumpkin-volcano-fizz', 'The jack-o\u2019-lantern erupts, baking soda, vinegar, dish soap.', 'fun'],
+        ['candy-chromatography', 'Candy dyes split into rainbows on coffee filters, real separation science.', 'none'],
         ['monster-slime-lab', 'Classic slime, monster-fied: googly eyes and glitter fur.', 'fun'],
         ['haunted-house-blueprint', 'Design a not-scary haunted house: silly scares, secret passages, marked exit.', 'mild'],
-        ['pumpkin-seed-sprout-baggies', 'The Vault\u2019s pumpkin science classic — seeds sprouting in a baggie.', 'none'],
-        ['measure-the-pumpkin', 'Weigh it, measure it, estimate the seeds — pumpkin math.', 'none']
+        ['pumpkin-seed-sprout-baggies', 'The Vault\u2019s pumpkin science classic, seeds sprouting in a baggie.', 'none'],
+        ['measure-the-pumpkin', 'Weigh it, measure it, estimate the seeds, pumpkin math.', 'none']
       ]
     },
     {
       id: 'harvest', glyph: '🍎', title: 'Harvest',
-      blurb: 'Apples, leaves, and gratitude — the calm, tasty side of October.',
+      blurb: 'Apples, leaves, and gratitude, the calm, tasty side of October.',
       browse: 'index.html?tag=season:fall',
       browseLabel: 'Browse the full fall set',
       picks: [
         ['apple-tasting-party', 'The harvest anchor: blind taste-test, vote, graph the results.', 'none'],
         ['harvest-gratitude-circle', 'One thankful thought each, added to the paper harvest wreath.', 'none'],
-        ['pumpkin-guts-sensory', 'Scoop, squish, sort — gloriously messy pumpkin science for little hands.', 'none'],
-        ['apple-string-bite', 'Bite the hanging apple, no hands — bobbing without the shared water.', 'none'],
+        ['pumpkin-guts-sensory', 'Scoop, squish, sort, gloriously messy pumpkin science for little hands.', 'none'],
+        ['apple-string-bite', 'Bite the hanging apple, no hands, bobbing without the shared water.', 'none'],
         ['apple-browning-lab', 'Which apple slice browns first? The kitchen-chemistry classic.', 'none'],
         ['leaf-animal-collage', 'Fall leaves become foxes, owls, and hedgehogs.', 'none']
       ]
     },
     {
       id: 'alternatives', glyph: '🏠', title: 'Beyond trick-or-treating',
-      blurb: 'For programs that skip the door-to-door route — planned alternatives and the allergy-aware must-dos.',
+      blurb: 'For programs that skip the door-to-door route. Planned alternatives and the allergy-aware must-dos.',
       groups: [
         {
           label: '🏠 Trick-or-treat alternatives', tag: 'holiday:halloween',
           picks: [
             ['trunk-or-treat-planning', 'The parking-lot alternative, planned by the kids themselves.', 'none'],
-            ['reverse-trick-or-treat', 'Deliver treats instead of collecting them — the kindness flip.', 'none'],
+            ['reverse-trick-or-treat', 'Deliver treats instead of collecting them, the kindness flip.', 'none'],
             ['trick-or-treat-route-map', 'Map the safe route before the big night: lit streets, buddy pairs.', 'none']
           ]
         },
         {
           label: '💜 Allergy-aware', tag: 'holiday:halloween',
           picks: [
-            ['teal-pumpkin-project', 'Teal pumpkin, non-food treat box — Halloween for every kid.', 'none']
+            ['teal-pumpkin-project', 'Teal pumpkin, non-food treat box, Halloween for every kid.', 'none']
           ]
         },
         {
           label: '💀 Respectful pick', tag: 'holiday:dia-de-muertos',
           picks: [
-            ['ofrenda-memory-circle', 'A respectful D\u00eda de los Muertos craft about remembrance — learning, not dressing up.', 'none']
+            ['ofrenda-memory-circle', 'A respectful D\u00eda de los Muertos craft about remembrance, learning, not dressing up.', 'none']
           ]
         }
       ]
@@ -169,7 +169,7 @@
     if (!R) return null;
     var entry = R.getRating(activityId);
     if (!entry) return null;
-    var s = el('span', 'rate-badge', '⭐ ' + entry.stars + '★ — your rating');
+    var s = el('span', 'rate-badge', '⭐ ' + entry.stars + '★, your rating');
     s.setAttribute('aria-label', 'You rated this activity ' + entry.stars + ' of 5 stars');
     return s;
   }
@@ -205,7 +205,7 @@
       var li = pickItem(actmap, p[0], p[1], p[2]);
       if (li) { list.appendChild(li); n++; }
     });
-    if (!n) list.appendChild(el('p', null, 'No activities found — the library may have failed to load.'));
+    if (!n) list.appendChild(el('p', null, 'No activities found. The library may have failed to load.'));
     return list;
   }
 

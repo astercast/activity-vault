@@ -99,7 +99,7 @@ NEW.forEach(id => {
 // 4. Honest framing + real-world safety, checked on the records.
 // Heart delivery: the adult's list guarantees give-one/get-one.
 ok(/every kid gives exactly one and receives exactly one/.test(byId['big-heart-hand-delivery'].setup || ''), 'heart delivery: give-one/get-one guaranteed by the adult list');
-ok(/a heart given stays given/.test(byId['big-heart-hand-delivery'].safety || ''), 'heart delivery: a heart given stays given');
+ok(/A heart given stays given/.test(byId['big-heart-hand-delivery'].safety || ''), 'heart delivery: a heart given stays given');
 // Bud count: one finger, one bud, one number; unnamed plants are not touched.
 ok(/One finger, one bud, one number/.test(JSON.stringify(byId['one-branch-bud-count'])), 'bud count: one finger, one bud, one number');
 ok(/if the plant cannot be named, it is looked at, not touched/.test(byId['one-branch-bud-count'].safety || ''), 'bud count: unnamed plant is looked at, not touched');
@@ -129,7 +129,7 @@ ok(/no blades at a painting session/.test(byId['paint-the-big-box-house'].safety
 ok(/Nobody is ever out, nobody is sent back/.test(JSON.stringify(byId['giant-steps-baby-steps'])), 'giant steps: nobody out, nobody sent back');
 ok(/Giant steps are stretches, not leaps/.test(byId['giant-steps-baby-steps'].safety || ''), 'giant steps: stretches, not leaps');
 // Sock basket: every pair genuinely in the basket; near-matches are discoveries.
-ok(/count them in pairs as you load it/.test(byId['sock-pair-match-basket'].setup || ''), 'sock basket: pairs audited as the basket is built');
+ok(/Count them in pairs as you load it/.test(byId['sock-pair-match-basket'].setup || ''), 'sock basket: pairs audited as the basket is built');
 ok(/Those two fooled us for a second/.test(JSON.stringify(byId['sock-pair-match-basket'])), 'sock basket: a near-match is a discovery, not an error');
 
 // 5. Category + enrichment deltas from this wave.

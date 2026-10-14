@@ -1,4 +1,4 @@
-/* Activity Vault — "The Desk" drawer pulls (wave 21).
+/* Activity Vault, "The Desk" drawer pulls (wave 21).
    Progressive enhancement: desk.html renders every tray OPEN in the markup,
    so no-JS readers (and printers) get the full content. This script adds
    `desk-ready` to <html> (CSS then collapses the trays) and wires the brass
@@ -37,7 +37,7 @@
       drawers.forEach(function (d) { setOpen(d, false); });
     });
 
-    /* Escape closes every open drawer — the tidy-desk gesture. */
+    /* Escape closes every open drawer, the tidy-desk gesture. */
     document.addEventListener('keydown', function (e) {
       if (e.key !== 'Escape') return;
       var anyOpen = false;

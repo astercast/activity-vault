@@ -104,7 +104,7 @@ ok(/Nobody climbs the tree to measure it|never climbed/.test(byId['adopt-a-tree-
 ok(/eight out of ten sprouted means eight out of ten sprouted/.test(JSON.stringify(byId['seed-library-opening-day'])), 'seed library: honest percentages');
 ok(/Seeds are stock, not food/.test(byId['seed-library-opening-day'].safety || ''), 'seed library: seeds not food');
 ok(/A bearing is a promise your feet keep/.test(JSON.stringify(byId['compass-course-three-flags'])), 'compass: the bearing promise');
-ok(/reporting a bad leg is a result/.test(byId['compass-course-three-flags'].safety || ''), 'compass: boundaries are law');
+ok(/Reporting a bad leg is a result/.test(byId['compass-course-three-flags'].safety || ''), 'compass: boundaries are law');
 ok(/The whistle is a service, not a weapon/.test(JSON.stringify(byId['referee-run-round-robin'])), 'referee: the whistle serves');
 ok(/safety calls/.test(byId['referee-run-round-robin'].safety || ''), 'referee: the adult backstop is narrow and real');
 ok(/The floor never notices the join/.test(JSON.stringify(byId['ten-minute-set-handover'])), 'DJ handover: the join is the skill');

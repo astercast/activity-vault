@@ -1,4 +1,4 @@
-/* Activity Vault — Day Planner page logic (Wave 33 flagship).
+/* Activity Vault, Day Planner page logic (Wave 33 flagship).
    Thin DOM layer over window.VaultDayPlanner (pure core) +
    window.VaultPlanner (bucket meter). All filtering decisions
    live in the core; this file only renders and wires events. */
@@ -52,12 +52,12 @@
       var body;
       if (!pool.length) {
         body = '<p class="dp-empty">Nothing in the catalog honestly fits this slot for age ' +
-          state.age + ' — the slot stays open rather than stretching a record that does not belong here.</p>';
+          state.age + '. The slot stays open rather than stretching a record that does not belong here.</p>';
       } else if (!a) {
-        body = '<p class="dp-empty">Open slot — pick from ' + pool.length + ' honest fits below, or compose the day.</p>' +
+        body = '<p class="dp-empty">Open slot, pick from ' + pool.length + ' honest fits below, or compose the day.</p>' +
           '<label class="flabel" for="sel-' + slot.id + '">Activity</label>' +
           '<select class="dp-select" id="sel-' + slot.id + '" data-slot="' + slot.id + '">' +
-          '<option value="">— choose —</option>' + opts + '</select>';
+          '<option value="">, choose, </option>' + opts + '</select>';
       } else {
         body = '<p class="dp-tagline">' + esc(a.tagline) + '</p>' +
           '<p class="dp-facts">' + esc(facts) + ' · ' +
@@ -88,7 +88,7 @@
         if (next) { s.activityId = next; renderAll(); }
         else {
           el('dp-status').textContent = 'No other honest fit for the ' + slot.label +
-            ' slot at age ' + state.age + ' — this is the one.';
+            ' slot at age ' + state.age + '. This is the one.';
         }
       });
     });
@@ -109,7 +109,7 @@
       if (!a) {
         return '<div class="day-sheet-row day-sheet-open"><div class="day-sheet-when">' +
           slot.clock + '<br>' + slot.glyph + ' ' + slot.label + '</div>' +
-          '<div class="day-sheet-what"><p class="day-sheet-name">— open slot —</p>' +
+          '<div class="day-sheet-what"><p class="day-sheet-name">, open slot, </p>' +
           '<p class="day-sheet-sub">Nothing in the catalog honestly fits this slot at this age.</p></div></div>';
       }
       var mats = (a.materials || []).slice(0, 4).map(function (m) { return m.item; }).join(' · ');
@@ -129,7 +129,7 @@
     el('dp-summary').textContent = t.filled
       ? 'Day so far: ' + t.filled + ' of ' + t.total + ' slots filled · ' + t.minMinutes + '–' +
         t.maxMinutes + ' minutes of activities · every pick a real catalog record covering age ' + state.age + '.'
-      : 'No slots filled yet — compose the day, load the starter, or pick slot by slot.';
+: 'No slots filled yet, compose the day, load the starter, or pick slot by slot.';
   }
 
   function renderAll() { renderSlots(); renderSheet(); }
@@ -177,7 +177,7 @@
       var text = DP.daySheetText(
         { title: state.starter ? 'Just Three Starter Day' : 'My day', dateLabel: dateLabel(), age: state.age, slots: state.slots },
         byId, function (c) { return catName[c] || c; });
-      function done() { el('dp-copy-status').textContent = 'Day copied — paste it anywhere.'; }
+      function done() { el('dp-copy-status').textContent = 'Day copied, paste it anywhere.'; }
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(done, done);
       } else { done(); }
@@ -185,7 +185,7 @@
 
     // A first day, pre-composed: the starter, so the sheet never opens blank.
     setDay(DP.starterDay(acts), true);
-    el('dp-status').textContent = 'Pre-loaded with the Just Three starter day — compose your own above, or swap any slot.';
+    el('dp-status').textContent = 'Pre-loaded with the Just Three starter day, compose your own above, or swap any slot.';
   }
 
   Promise.all([
@@ -199,6 +199,6 @@
     if (VP) catBucket = VP.buildCatBucket(res[2].mapping);
     init();
   }).catch(function () {
-    el('dp-status').textContent = 'The catalog could not be loaded — the day sheet is unavailable right now.';
+    el('dp-status').textContent = 'The catalog could not be loaded. The day sheet is unavailable right now.';
   });
 })();

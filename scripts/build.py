@@ -52,13 +52,13 @@ TAG_LABELS = {
 
 # ---------------------------------------------------------------------------
 # Rotation 13 placement pass (Foundry placement packet, 2026-10-13):
-# the generator owns the <head> meta block on EVERY page — OG/Twitter
+# the generator owns the <head> meta block on EVERY page, OG/Twitter
 # cards (og:image absolutized against the live domain), theme-color,
 # favicon links, a self-referential absolute canonical, and honest
 # JSON-LD built only from the page's own title/description and, for
 # activity pages, the activity record itself. Root pages are static
 # files, so the block is (re)injected into every .html on disk at the
-# end of main(), between PLACEMENT markers, idempotently — hand edits
+# end of main(), between PLACEMENT markers, idempotently, hand edits
 # outside the markers are never touched, and the next rebuild keeps
 # the placement instead of reverting it. VP-0002's nav is untouched.
 # ---------------------------------------------------------------------------
@@ -72,8 +72,8 @@ THEME_COLOR = "#fffdf7"  # --paper, verbatim from assets/style.css
 ACTIVITY_PHOTOS = {
     "board-game-prototype": {
         "file": "board-game.webp",
-        "alt": "The party game Just One spread out on a table — box, rulebook, cards and pieces",
-        "caption": "A finished game, out on a real table: box, rules, cards, pieces. Yours will look different — that is the point of a prototype.",
+        "alt": "The party game Just One spread out on a table, box, rulebook, cards and pieces",
+        "caption": "A finished game, out on a real table: box, rules, cards, pieces. Yours will look different. That is the point of a prototype.",
         "credit": "Photo: Harrison Keely, CC BY 4.0, via Wikimedia Commons",
     },
     "origami-corner-bookmark": {
@@ -85,7 +85,7 @@ ACTIVITY_PHOTOS = {
     "ice-cube-painting": {
         "file": "watercolor-set.webp",
         "alt": "An abstract watercolor painting in blues and greens",
-        "caption": "Watercolor doing what it does when it melts and moves — the look these frozen paint cubes are chasing.",
+        "caption": "Watercolor doing what it does when it melts and moves. The look these frozen paint cubes are chasing.",
         "credit": "Photo: Fons Heijnsbroek, CC0, via Wikimedia Commons",
     },
     "story-building-blocks": {
@@ -197,11 +197,11 @@ def inject_site_meta(acts, colls):
 
 
 # ---------------------------------------------------------------------------
-# Rotation 20 minimal pass — the generator owns the site header on EVERY
+# Rotation 20 minimal pass, the generator owns the site header on EVERY
 # page. The old header was the busiest element sitewide: 8 folder-tab
 # primary links + 9 secondary links sprawling across three rows. The
 # minimal header is ONE primary row (Browse, The Desk, Plan my week,
-# Collections, Kit Bag, Party Pack — VP-0002 pair kept in primary) plus
+# Collections, Kit Bag, Party Pack, VP-0002 pair kept in primary) plus
 # a single "More" disclosure grouping the remaining tools and all five
 # season hubs. Every destination survives; presentation only. Applied
 # idempotently to every .html on disk in main(), after placement, so
@@ -219,15 +219,21 @@ def _minimal_header(prefix, current_href, no_print):
         return ' aria-current="page"' if current_href == href else ''
     # Rotation 21 rollout: primary row cut to FOUR visitor-word links +
     # More (was six + More). The Desk and Party Pack move into the More
-    # panel's Tools group — every destination survives, reachable in one
+    # panel's Tools group, every destination survives, reachable in one
     # extra click, and both stay linked from every page (VP-0002 guard).
     links_primary = [
         ("index.html", "Browse"),
         ("planner.html", "Plan my week"), ("collections.html", "Collections"),
         ("kitbag.html", "Kit Bag"),
     ]
-    tools = [("desk.html", "The Desk"), ("day.html", "Day Planner"), ("kit.html", "Kit"),
-             ("sub.html", "Sub Tub"), ("party.html", "Party Planner"),
+    # VP-0016 (rotation 21): the duplicate pairs are DECIDED here, not
+    # demoted again. Kit (kit.html, builds a whole week) is labelled
+    # "Week Kit"; Kit Bag (kitbag.html, packs one day) keeps its name.
+    # Party Planner (party.html, party themes) is labelled "Party Themes";
+    # Party Pack (partypack.html, packs a whole party) keeps its name.
+    # No two doors in this menu name the same errand.
+    tools = [("desk.html", "The Desk"), ("day.html", "Day Planner"), ("kit.html", "Week Kit"),
+             ("sub.html", "Sub Tub"), ("party.html", "Party Themes"),
              ("partypack.html", "Party Pack"),
              ("fieldtrip.html", "Field Trips")]
     seasons = [("halloween.html", "Halloween"), ("thanksgiving.html", "Thanksgiving"),
@@ -479,7 +485,7 @@ ACTIVITY_TEMPLATE = """<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{name} — Activity Vault</title>
+<title>{name} · Activity Vault</title>
 <meta name="description" content="{tagline}">
 <link rel="stylesheet" href="../assets/style.css">
 <link rel="preload" href="../assets/fonts/fraunces-latin-var.woff2" as="font" type="font/woff2" crossorigin>
@@ -521,12 +527,13 @@ ACTIVITY_TEMPLATE = """<!DOCTYPE html>
 </header>
 <main id="main" class="wrap activity-page">
   <p class="crumbs no-print"><a href="../index.html">← All activities</a> · <a href="../index.html?cats={crumb_cat}">{crumb_cat_name}</a></p>
-  <article class="activity-card print-card" aria-labelledby="act-title">
+  <article class="activity-card print-card" style="--cat:{cat_color}" aria-labelledby="act-title">
     <span class="file-stamp" aria-hidden="true">Filed &#10003;</span>
     <div class="cat-chips">{chips}</div>
     {badges}
     <h1 id="act-title">{name}</h1>
     <p class="tagline">{tagline}</p>
+    <p class="tombstone" aria-label="The facts, in order"><span class="tomb-fact">Ages {age_min}–{age_max}</span><span class="tomb-sep" aria-hidden="true"> · </span><span class="tomb-fact">{time_min}–{time_max} min</span><span class="tomb-sep" aria-hidden="true"> · </span><span class="tomb-fact">{materials_fact}</span></p>
     <dl class="fact-grid">
       <div><dt>Ages</dt><dd>{age_min}–{age_max}</dd></div>
       <div><dt>Group</dt><dd>{group_min}–{group_max} kids</dd></div>
@@ -558,7 +565,7 @@ ACTIVITY_TEMPLATE = """<!DOCTYPE html>
     {inclusion_block}
     <section class="rate-box no-print" aria-labelledby="h-rate">
       <h2 id="h-rate">⭐ Tried this? Rate it</h2>
-      <p class="rate-privacy">Your ratings live in <strong>this browser only</strong> — nobody else can see them. There are no community ratings here; every star on this card is yours.</p>
+      <p class="rate-privacy">Your ratings live in <strong>this browser only</strong>. Nobody else can see them. There are no community ratings here; every star on this card is yours.</p>
       <details class="disclosure rate-disclosure">
       <summary>Rate this activity, add a note, or write a reflection</summary>
       <form id="rate-form">
@@ -584,7 +591,7 @@ ACTIVITY_TEMPLATE = """<!DOCTYPE html>
       </form>
       <div id="rate-reflect" hidden>
         <h3>✏️ Quick reflection</h3>
-        <p class="rate-privacy">Optional — saved with your rating, and exported with "📋 Copy my week".</p>
+        <p class="rate-privacy">Optional, saved with your rating, and exported with "📋 Copy my week".</p>
         <div class="reflect-row">
           <label for="reflect-change">What would you change next time?</label>
           <input type="text" id="reflect-change" maxlength="280">
@@ -607,12 +614,12 @@ ACTIVITY_TEMPLATE = """<!DOCTYPE html>
       <span class="copy-status" id="copy-card-status" role="status" aria-live="polite"></span>
       <a class="btn btn-ghost" href="../planner.html">Add to my week →</a>
     </div>
-    <p class="print-only print-url">Full activity card — <span class="print-url-here"></span></p>
+    <p class="print-only print-url">Full activity card, <span class="print-url-here"></span></p>
   </article>
   {related_block}
 </main>
 <footer class="site-footer no-print">
-  <div class="wrap"><p>Activity Vault — the all-in-one activity archive for teachers &amp; after-school programs.</p></div>
+  <div class="wrap"><p>Activity Vault, the all-in-one activity archive for teachers &amp; after-school programs.</p></div>
 </footer>
 <script>
 (function(){{'use strict';
@@ -623,7 +630,7 @@ function flash(msg){{var s=document.getElementById('copy-card-status');s.textCon
 setTimeout(function(){{s.textContent='';}},2500);}}
 function fallbackCopy(text){{var ta=document.createElement('textarea');ta.value=text;
 ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.focus();ta.select();
-try{{document.execCommand('copy');flash('Copied ✓');}}catch(e){{flash('Copy failed — copy the URL manually.');}}
+try{{document.execCommand('copy');flash('Copied ✓');}}catch(e){{flash('Copy failed, copy the URL manually.');}}
 document.body.removeChild(ta);}}
 var btn=document.getElementById('copy-card-link');
 if(btn){{btn.addEventListener('click',function(){{
@@ -637,7 +644,7 @@ else{{fallbackCopy(url);}}
 <script src="../assets/site.js" defer></script>
 <script>
 (function(){{'use strict';
-/* Personal rating widget — stars + note + reflection, localStorage only. */
+/* Personal rating widget, stars + note + reflection, localStorage only. */
 var R=window.VaultRatings;
 var ACT_ID=(location.pathname.split('/').pop()||'').replace(new RegExp('[.]html$','i'),'');
 if(!R||!/^[a-z0-9-]+$/.test(ACT_ID)){{return;}}
@@ -676,24 +683,24 @@ function currentEntry(){{
 function persist(entry,msg){{
   if(!entry.stars){{return;}}
   if(R.setRating(ACT_ID,entry)){{paint(R.getRating(ACT_ID));flash(msg);}}
-  else{{flash('Could not save — is private browsing blocking storage?');}}
+  else{{flash('Could not save. Is private browsing blocking storage?');}}
 }}
 form.addEventListener('submit',function(ev){{
   ev.preventDefault();
   var e=currentEntry();
   if(!e.stars){{flash('Pick 1\u20135 stars first.');return;}}
-  persist(e,'Saved \u2014 you rated this '+e.stars+' of 5 stars. Your ratings stay in this browser.');
+  persist(e,'Saved. You rated this '+e.stars+' of 5 stars. Your ratings stay in this browser.');
 }});
 Array.prototype.forEach.call(form.querySelectorAll('input[name="av-rate"]'),function(r){{
-  /* Native radio group: arrow keys move, Enter/Space selects — no custom key handling. */
+  /* Native radio group: arrow keys move, Enter/Space selects, no custom key handling. */
   r.addEventListener('change',function(){{
     var e=currentEntry();
-    persist(e,'Saved \u2014 '+e.stars+' of 5 stars. Ratings stay in this browser.');
+    persist(e,'Saved, '+e.stars+' of 5 stars. Ratings stay in this browser.');
   }});
 }});
 document.getElementById('rate-note').addEventListener('change',function(){{
   var e=currentEntry();
-  if(!e.stars&&!R.getRating(ACT_ID)){{flash('Pick 1\u20135 stars first \u2014 the note saves with your rating.');return;}}
+  if(!e.stars&&!R.getRating(ACT_ID)){{flash('Pick 1\u20135 stars first. The note saves with your rating.');return;}}
   persist(e,'Note saved with your '+e.stars+'-star rating.');
 }});
 var rt=null;
@@ -739,7 +746,7 @@ def related_activities(a, acts, n=3):
     return picks[:n]
 
 # ---------------------------------------------------------------------------
-# Wave B — Scout review queue page (human-in-the-loop READ surface).
+# Wave B, Scout review queue page (human-in-the-loop READ surface).
 # Pre-rendered from the same normalized data that publishes data/v1/review-queue.json
 # (spec §3.1: the page ships with static data baked in; fetchWithFallback swaps in
 # live data on load). Approve/reject stays server-only: POST /api/review-decide is
@@ -748,7 +755,7 @@ def related_activities(a, acts, n=3):
 
 REVIEW_CLIENT_JS = """(function () {
   'use strict';
-  // DOM-built rendering (textContent throughout — no HTML string escaping issues,
+  // DOM-built rendering (textContent throughout, no HTML string escaping issues,
   // and no anchor-markup fragments in the source for the link checker to trip on).
   function el(tag, cls, txt) {
     var e = document.createElement(tag);
@@ -756,13 +763,14 @@ REVIEW_CLIENT_JS = """(function () {
     if (txt !== undefined && txt !== null) e.textContent = txt;
     return e;
   }
+  function disp(s) { return (s || '').replace(/ \u2013 /g, ' \u00b7 '); }
   function fmtDay(iso) {
     try { return new Date(iso).toISOString().slice(0, 10); }
-    catch (e) { return iso || '\\u2014'; }
+    catch (e) { return iso || '(no date)'; }
   }
   function card(c) {
     var li = el('li', 'queue-card');
-    li.appendChild(el('h3', null, c.title || 'untitled'));
+    li.appendChild(el('h3', null, disp(c.title) || 'untitled'));
     var meta = el('p', 'qmeta');
     meta.appendChild(el('code', null, c.id || ''));
     var bits = [];
@@ -771,7 +779,7 @@ REVIEW_CLIENT_JS = """(function () {
     if (c.detected_at) bits.push('detected ' + fmtDay(c.detected_at));
     if (bits.length) meta.appendChild(document.createTextNode(' \\u00b7 ' + bits.join(' \\u00b7 ')));
     li.appendChild(meta);
-    if (c.summary) li.appendChild(el('p', 'qsummary', c.summary));
+    if (c.summary) li.appendChild(el('p', 'qsummary', disp(c.summary)));
     if (c.note) li.appendChild(el('p', 'qnote', c.note));
     var tg = el('div', null);
     (c.suggested_tags || []).forEach(function (t) { tg.appendChild(el('span', 'tag-pill', t)); });
@@ -789,7 +797,7 @@ REVIEW_CLIENT_JS = """(function () {
   function decidedRow(d) {
     var tr = document.createElement('tr');
     tr.appendChild(el('td', null, fmtDay(d.decided_at)));
-    tr.appendChild(el('td', null, d.title || ''));
+    tr.appendChild(el('td', null, disp(d.title)));
     var decCell = document.createElement('td');
     decCell.appendChild(el('span', d.decision === 'approve' ? 'dec-approve' : 'dec-reject',
       d.decision === 'approve' ? 'approved' : 'rejected'));
@@ -799,7 +807,7 @@ REVIEW_CLIENT_JS = """(function () {
       var a = el('a', null, d.activity_id);
       a.setAttribute('href', 'activity/' + d.activity_id + '.html');
       actCell.appendChild(a);
-    } else { actCell.textContent = '\\u2014'; }
+    } else { actCell.textContent = 'none'; }
     tr.appendChild(actCell);
     tr.appendChild(el('td', null, d.note || ''));
     return tr;
@@ -812,7 +820,7 @@ REVIEW_CLIENT_JS = """(function () {
     container.textContent = '';
     if (!list.length) {
       container.appendChild(el('div', 'queue-empty',
-        'The queue is clear \\u2014 nothing awaiting review. \\U0001f33f'));
+        'The queue is clear, nothing awaiting review. \\U0001f33f'));
       return;
     }
     var ul = el('ul', 'queue-list');
@@ -845,7 +853,7 @@ REVIEW_CLIENT_JS = """(function () {
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    if (!window.ApiClient) return; // api-client.js failed to load — pre-rendered content stays
+    if (!window.ApiClient) return; // api-client.js failed to load. Pre-rendered content stays
     var qBadge = document.getElementById('queue-badge');
     var qList = document.getElementById('queue-list');
     var qCounts = document.getElementById('queue-counts');
@@ -870,7 +878,7 @@ REVIEW_TEMPLATE = """<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Scout review queue — Activity Vault</title>
+<title>Scout review queue · Activity Vault</title>
 <meta name="description" content="The Scout's human-in-the-loop review queue: activity ideas the RSS watch found, waiting for a human to adapt them into original words.">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="preload" href="assets/fonts/fraunces-latin-var.woff2" as="font" type="font/woff2" crossorigin>
@@ -917,7 +925,7 @@ REVIEW_TEMPLATE = """<!DOCTYPE html>
   <div class="review-head">
     <div>
       <h1 id="queue">Scout review queue</h1>
-      <p class="lede">Ideas the Scout's RSS watch flagged — each waits for a human to adapt it
+      <p class="lede">Ideas the Scout's RSS watch flagged, each waits for a human to adapt it
       into original words before it can enter the Vault (PIPELINE.md).</p>
     </div>
     <span class="api-badge" id="queue-badge" data-api-state="waking"
@@ -945,14 +953,14 @@ REVIEW_TEMPLATE = """<!DOCTYPE html>
       -H "Authorization: Bearer $CRON_SECRET" -H "Content-Type: application/json" \\<br>
       -d '{{"id":"&lt;candidate id&gt;","decision":"approve","note":"&lt;optional&gt;"}}'</code></p>
       <p>Approvals record <code>approved_via:'scout'</code> on the decision; the human's wave
-      adds the real activity in original words — nothing auto-publishes.</p>
+      adds the real activity in original words, nothing auto-publishes.</p>
     </div>
   </section>
 </main>
 
 <footer class="site-footer">
   <div class="wrap">
-    <p><strong>Activity Vault</strong> — the all-in-one activity archive for teachers &amp; after-school programs. All activities are classic, public-domain concepts described in our own words.</p>
+    <p><strong>Activity Vault</strong>, the all-in-one activity archive for teachers &amp; after-school programs. All activities are classic, public-domain concepts described in our own words.</p>
     <p><a href="data/v1/activities.json">API</a> · <a href="api.html">API docs &amp; console</a> · <a href="review.html">Scout review queue</a> · <a href="llms.txt">llms.txt</a> · <a href="AGENT.md">Agent guide</a></p>
   </div>
 </footer>
@@ -962,6 +970,15 @@ REVIEW_TEMPLATE = """<!DOCTYPE html>
 </body>
 </html>
 """
+
+
+def _display_quote(s):
+    """Display normalization for QUOTED third-party text (Scout feed
+    titles and summaries): storage in pipeline/review-queue.json stays
+    byte-true; on the rendered page a spaced en dash used as a title
+    separator is shown as a middot. Our own copy never passes through
+    here, it was swept at source."""
+    return (s or '').replace(' \u2013 ', ' \u00b7 ')
 
 
 def _review_card(c):
@@ -976,9 +993,9 @@ def _review_card(c):
     src = (f'<p class="qactions"><a href="{esc(c["source_url"])}" rel="noopener">source post ↗</a></p>'
            if c.get('source_url') else '')
     tags = ''.join(f'<span class="tag-pill">{esc(t)}</span>' for t in (c.get('suggested_tags') or []))
-    return (f'<li class="queue-card"><h3>{esc(c["title"])}</h3>'
+    return (f'<li class="queue-card"><h3>{esc(_display_quote(c["title"]))}</h3>'
             f'<p class="qmeta">{meta}</p>'
-            f'<p class="qsummary">{esc(c.get("summary") or "")}</p>'
+            f'<p class="qsummary">{esc(_display_quote(c.get("summary") or ""))}</p>'
             f'{note}<div>{tags}</div>{src}</li>')
 
 
@@ -988,10 +1005,10 @@ def _review_decided_rows(decisions):
         dec = ('<span class="dec-approve">approved</span>' if d.get('decision') == 'approve'
                else '<span class="dec-reject">rejected</span>')
         act = (f'<a href="activity/{esc(d["activity_id"])}.html">{esc(d["activity_id"])}</a>'
-               if d.get('activity_id') else '—')
+               if d.get('activity_id') else ', ')
         day = esc((d.get('decided_at') or '')[:10])
         rows.append(
-            f'<tr><td>{day}</td><td>{esc(d.get("title") or "")}</td><td>{dec}</td>'
+            f'<tr><td>{day}</td><td>{esc(_display_quote(d.get("title") or ""))}</td><td>{dec}</td>'
             f'<td>{act}</td><td>{esc(d.get("note") or "")}</td></tr>')
     return rows
 
@@ -1003,7 +1020,7 @@ def render_review(open_candidates, decisions, gen_at):
     if pending:
         pre_pending = '<ul class="queue-list">' + ''.join(_review_card(c) for c in pending) + '</ul>'
     else:
-        pre_pending = ('<div class="queue-empty">The queue is clear — nothing awaiting review. 🌿</div>')
+        pre_pending = ('<div class="queue-empty">The queue is clear, nothing awaiting review. 🌿</div>')
     if decisions:
         rows = _review_decided_rows(decisions)
         pre_decided = ('<div class="table-wrap"><table class="decided-table">'
@@ -1042,7 +1059,7 @@ def render_activity(a, catmap, acts):
                   f'<h2 id="h-safety">⚠️ Safety</h2><p>{esc(a["safety"])}</p></section>')
     source = ''
     if a.get('source'):
-        source = (f'<p class="source-line">Inspired by an idea from the teaching community — '
+        source = (f'<p class="source-line">Inspired by an idea from the teaching community, '
                   f'<a href="{esc(a["source"])}" rel="noopener">source post</a> '
                   f'(adapted in our own words).</p>')
     prep = '✅ No prep needed' if a['no_prep'] else 'Some prep needed'
@@ -1062,7 +1079,8 @@ def render_activity(a, catmap, acts):
             f'<li class="pick"><div class="pick-row">'
             f'<a class="pick-name" href="{r["id"]}.html">{esc(r["name"])}</a></div>'
             f'<p class="pick-facts">Ages {r["age_min"]}–{r["age_max"]} · '
-            f'{r["time_min"]}–{r["time_max"]} min</p>'
+            f'{r["time_min"]}–{r["time_max"]} min · '
+            f'{len(r["materials"])} materials</p>'
             f'<p class="pick-note">{esc(r["tagline"])}</p></li>'
             for r in related)
         primary_name = esc(catmap[a['categories'][0]]['name']) if a['categories'] else 'activities'
@@ -1083,7 +1101,11 @@ def render_activity(a, catmap, acts):
             f'<img src="../assets/photos/{_ph["file"]}" alt="{esc(_ph["alt"])}" loading="lazy">'
             f'<figcaption>{esc(_ph["caption"])} '
             f'<span class="photo-credit">{esc(_ph["credit"])}</span></figcaption></figure>')
+    mats_fact = (f'{len(a["materials"])} material' + ('s' if len(a["materials"]) != 1 else '')
+                 ) if a["materials"] else 'no materials'
     return ACTIVITY_TEMPLATE.format(
+        cat_color=catmap[a['categories'][0]]['color'] if a['categories'] else '#b7413c',
+        materials_fact=mats_fact,
         photo_block=photo_block,
         name=esc(a['name']), tagline=esc(a['tagline']),
         chips=chips + tagchips, badges=badges,
@@ -1099,11 +1121,11 @@ def render_activity(a, catmap, acts):
         safety_block=safety, source_block=source)
 
 # ---------------------------------------------------------------------------
-# Wave 21 — "The Desk": the archive as a physical teacher's desk.
+# Wave 21, "The Desk": the archive as a physical teacher's desk.
 # desk.html renders 11 wooden drawers (one per category), each with a brass
 # label holder, a hand-written pencil note carrying REAL build-computed
 # counts (research rule 191: grease-pencil marginalia), and a tray holding
-# the 6 cards "on top of the pile" — curator-picked first, then no-prep,
+# the 6 cards "on top of the pile", curator-picked first, then no-prep,
 # then alphabetical (stable, honest). The tray footer deep-links to the
 # working filter page (index.html?cats=<id>, the wave-14 deep-link
 # mechanism), so every drawer is a real doorway, not a diorama.
@@ -1150,7 +1172,7 @@ def desk_drawers_html(acts, cats, colls):
                 f'<p class="desk-card-tag">{esc(a["tagline"])}</p>'
                 f'<p class="desk-card-meta">{meta}</p></li>')
         rest = total - len(picks)
-        foot = (f'\u2026and {rest} more cards in this drawer \u2014 '
+        foot = (f'\u2026and {rest} more cards in this drawer, '
                 f'<a href="index.html?cats={cid}#browse">Open the full drawer \u2192</a>') if rest > 0 else ''
         num = f"DRAWER {i + 1:02d}"
         drawers.append(
@@ -1175,47 +1197,158 @@ def desk_drawers_html(acts, cats, colls):
     return left, right
 
 
-def render_landing_desk(acts, cats, colls):
-    """Wave 23: the archive landing (index.html) becomes a desk you can open.
-    Same drawers as desk.html (shared builder above), with the kneehole
-    blotter pointing at the planner — the week, laid out on the desk."""
-    left, right = desk_drawers_html(acts, cats, colls)
-    n_acts, n_colls = len(acts), len(colls)
+# ---------------------------------------------------------------------------
+# Rotation 21 identity pass (ACTIVITY-STUDY section 4.1): the home opens
+# with the calendar, then the verb doors, then ONE season band. The desk
+# grid and the three-stat strip do not survive on the home; counts live
+# in prose (the colophon strip in index.html) and in row marginalia.
+# Occasion dates are real calendar facts: fixed feasts by month/day,
+# movable feasts by rule (Thanksgiving, MLK Day, Easter computus) or by
+# a named per-year table (Diwali, Hanukkah, Lunar New Year). Counts are
+# computed from the activities' own tags at build time.
+# ---------------------------------------------------------------------------
+def _nth_weekday(year, month, weekday, n):
+    """The nth weekday (Mon=0) of a month, as a date."""
+    first = date(year, month, 1)
+    delta = (weekday - first.weekday()) % 7
+    return date(year, month, 1 + delta + 7 * (n - 1))
+
+
+def _easter(year):
+    """Gregorian computus, anonymous algorithm."""
+    a, b, c = year % 19, year // 100, year % 100
+    d, e = b // 4, b % 4
+    f = (b + 8) // 25
+    g = (b - f + 1) // 3
+    h = (19 * a + b - d - g + 15) % 30
+    i, k = c // 4, c % 4
+    l = (32 + 2 * e + 2 * i - h - k) % 7
+    m = (a + 11 * h + 22 * l) // 451
+    month = (h + l - 7 * m + 114) // 31
+    day = ((h + l - 7 * m + 114) % 31) + 1
+    return date(year, month, day)
+
+
+_MOVABLE = {  # (month, day) by year, for feasts with no short rule
+    'holiday:diwali': {2026: (10, 20), 2027: (11, 8), 2028: (10, 28), 2029: (11, 5)},
+    'holiday:hanukkah': {2026: (12, 15), 2027: (12, 5), 2028: (11, 24), 2029: (12, 13)},
+    'holiday:lunar-new-year': {2026: (2, 17), 2027: (2, 6), 2028: (1, 26), 2029: (2, 13)},
+}
+
+_OCCASIONS = [  # (name, tag) in the planner's vocabulary
+    ("Diwali", "holiday:diwali"),
+    ("Halloween", "holiday:halloween"),
+    ("Day of the Dead", "holiday:dia-de-muertos"),
+    ("Thanksgiving", "holiday:thanksgiving"),
+    ("Hanukkah", "holiday:hanukkah"),
+    ("Christmas", "holiday:christmas"),
+    ("New Year", "holiday:new-year"),
+    ("Martin Luther King Jr. Day", "holiday:mlk-day"),
+    ("Valentine's Day", "holiday:valentines-day"),
+    ("Lunar New Year", "holiday:lunar-new-year"),
+    ("St. Patrick's Day", "holiday:st-patricks-day"),
+    ("Easter", "holiday:easter"),
+    ("Earth Day", "holiday:earth-day"),
+    ("July 4th", "holiday:july-4th"),
+    ("Indigenous Peoples' Day", "holiday:indigenous-peoples-day"),
+]
+
+_FIXED = {
+    "holiday:halloween": (10, 31), "holiday:dia-de-muertos": (11, 2),
+    "holiday:christmas": (12, 25), "holiday:new-year": (1, 1),
+    "holiday:valentines-day": (2, 14), "holiday:st-patricks-day": (3, 17),
+    "holiday:earth-day": (4, 22), "holiday:july-4th": (7, 4),
+}
+
+
+def _occasion_date(tag, year):
+    if tag in _MOVABLE:
+        md = _MOVABLE[tag].get(year)
+        return date(year, md[0], md[1]) if md else None
+    if tag == "holiday:thanksgiving":
+        return _nth_weekday(year, 11, 3, 4)  # fourth Thursday of November
+    if tag == "holiday:mlk-day":
+        return _nth_weekday(year, 1, 0, 3)  # third Monday of January
+    if tag == "holiday:indigenous-peoples-day":
+        return _nth_weekday(year, 10, 0, 2)  # second Monday of October
+    if tag == "holiday:easter":
+        return _easter(year)
+    md = _FIXED.get(tag)
+    return date(year, md[0], md[1]) if md else None
+
+
+def _next_occasions(acts, today, n=9):
+    counts = {}
+    for a in acts:
+        for t in a.get('tags', []):
+            counts[t] = counts.get(t, 0) + 1
+    out = []
+    for name, tag in _OCCASIONS:
+        for year in (today.year, today.year + 1):
+            d = _occasion_date(tag, year)
+            if d and d >= today:
+                out.append((d, name, tag, counts.get(tag, 0)))
+                break
+    out.sort(key=lambda r: r[0])
+    return out[:n]
+
+
+_VERB_DOORS = [  # Tate contract: one word, one illustration, nothing else
+    ("Make", "crafts"), ("Play", "pe-movement"), ("Celebrate", "holidays"),
+    ("Learn", "stem"), ("Calm", "quiet-focus"),
+]
+
+_SEASON_BANDS = {  # L11 collapse: exactly ONE season band on the home
+    12: ("Winter", "winter.html"), 1: ("Winter", "winter.html"), 2: ("Winter", "winter.html"),
+    3: ("Spring", "spring.html"), 4: ("Spring", "spring.html"), 5: ("Spring", "spring.html"),
+    6: ("Summer", "summer.html"), 7: ("Summer", "summer.html"), 8: ("Summer", "summer.html"),
+    9: ("Fall", "halloween.html"), 10: ("Fall", "halloween.html"), 11: ("Fall", "halloween.html"),
+}
+
+
+def render_home_identity(acts, cats, colls):
+    """Rotation 21: calendar first, verb doors second, one season band.
+    Spliced into index.html between the BUILD:DESK markers (marker names
+    kept from wave 23 so the splice contract does not change)."""
+    catmap = {c['id']: c for c in cats}
+    today = date.today()
+    rows = []
+    for d, name, tag, count in _next_occasions(acts, today):
+        days = (d - today).days
+        when = 'today' if days == 0 else ('tomorrow' if days == 1 else f'in {days} days')
+        rows.append(
+            f'      <li class="cal-row">'
+            f'<a class="cal-name" href="index.html?tag={tag}#browse">{esc(name)}</a>'
+            f'<span class="cal-date">{d.strftime("%a %b %-d")}</span>'
+            f'<span class="cal-count">{count} activities</span>'
+            f'<span class="cal-days">{when}</span></li>')
+    doors = []
+    for word, cid in _VERB_DOORS:
+        c = catmap[cid]
+        doors.append(
+            f'      <a class="verb-door" style="--cat:{c["color"]}" href="index.html?cats={cid}#browse">'
+            f'<span class="verb-glyph" aria-hidden="true">{c["glyph"]}</span>'
+            f'<span class="verb-word">{word}</span></a>')
+    season, hub = _SEASON_BANDS[today.month]
     return (
-        '  <section class="desk-section" id="desk" aria-label="The teacher\'s desk: eleven category drawers">\n'
-        '    <div class="desk">\n'
-        '      <p class="desk-nameplate" aria-hidden="true"><span>Activity Vault</span></p>\n'
-        '      <p class="desk-sub">Browse the whole archive by category — eleven groups, each opening to the six activities on top and the honest counts.</p>\n'
-        '      <div class="desk-toolbar no-print" role="group" aria-label="Drawer controls">\n'
-        '        <button class="btn btn-small" id="drawers-open-all" type="button">Open all drawers</button>\n'
-        '        <button class="btn btn-small btn-ghost" id="drawers-close-all" type="button">Close all</button>\n'
-        '      </div>\n'
-        '      <div class="pedestals">\n'
-        '        <div class="pedestal" aria-label="Left drawers">\n'
-        + '\n'.join('          ' + line for line in left.split('\n')) + '\n'
-        '        </div>\n'
-        '        <div class="kneehole">\n'
-        '          <section class="blotter-card" aria-labelledby="blotter-h">\n'
-        '            <p class="blotter-stamp" aria-hidden="true">The blotter</p>\n'
-        '            <h2 id="blotter-h">Your week, laid out here.</h2>\n'
-        f'            <p>The Smart Weekly Planner deals no-repeat weeks from the same {n_acts} cards in these drawers — balanced days, brain breaks, supply lists.</p>\n'
-        '            <p><a class="btn" href="planner.html">Open the planner</a></p>\n'
-        f'            <p class="blotter-alt">or browse the <a href="collections.html">{n_colls} curated collections</a></p>\n'
-        '          </section>\n'
-        '        </div>\n'
-        '        <div class="pedestal" aria-label="Right drawers">\n'
-        + '\n'.join('          ' + line for line in right.split('\n')) + '\n'
-        '        </div>\n'
-        '      </div>\n'
-        '    </div>\n'
+        '  <section class="calendar-first" aria-labelledby="cal-h">\n'
+        '    <h2 id="cal-h">What\'s coming up</h2>\n'
+        '    <ol class="cal-rows">\n' + '\n'.join(rows) + '\n    </ol>\n'
+        '  </section>\n'
+        '  <section class="verb-doors-section" aria-labelledby="doors-h">\n'
+        '    <h2 id="doors-h">Choose where to start</h2>\n'
+        '    <div class="verb-doors">\n' + '\n'.join(doors) + '\n    </div>\n'
+        '  </section>\n'
+        '  <section class="season-band no-print" aria-label="This season in the Vault">\n'
+        f'    <p><strong>{season} in the Vault.</strong> The season\'s activities, '
+        f'gathered in one place. <a href="{hub}">Open the {season.lower()} hub</a></p>\n'
         '  </section>\n'
     )
 
 
-def inject_landing_desk(acts, cats, colls):
-    """Wave 23: splice the generated desk section into index.html between the
-    BUILD:DESK markers. Hand edits outside the markers survive every build;
-    the drawer markup inside is build-owned (real counts, real cards)."""
+def inject_home_identity(acts, cats, colls):
+    """Splice the rotation-21 home composition into index.html between the
+    BUILD:DESK markers. Hand edits outside the markers survive the build."""
     path = os.path.join(SITE, 'index.html')
     html_text = open(path).read()
     start = '<!-- BUILD:DESK -->'
@@ -1223,10 +1356,11 @@ def inject_landing_desk(acts, cats, colls):
     assert start in html_text and end in html_text, "index.html missing BUILD:DESK markers"
     before, rest = html_text.split(start, 1)
     _, after = rest.split(end, 1)
-    section = render_landing_desk(acts, cats, colls)
-    assert 'DRAWER 01' in section and 'DRAWER 11' in section, "landing desk render check failed"
+    section = render_home_identity(acts, cats, colls)
+    assert 'cal-row' in section and 'verb-door' in section, "home identity render check failed"
+    assert 'desk-card' not in section and 'class="stat"' not in section, "home identity: desk/stat leaked"
     open(path, 'w').write(before + start + '\n' + section + '  ' + end + after)
-    print(f"index.html: landing desk injected ({len(acts)} activities, {len(cats)} drawers)")
+    print(f"index.html: home identity injected (calendar + verb doors, {len(acts)} activities)")
 
 
 def render_desk(acts, cats, colls):
@@ -1242,7 +1376,7 @@ DESK_TEMPLATE = """<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Teacher's Desk — Activity Vault</title>
+<title>The Teacher's Desk · Activity Vault</title>
 <meta name="description" content="The whole activity archive filed like a teacher's desk: 11 wooden drawers, one per category. Pull a drawer, grab an index card, plan your week.">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="preload" href="assets/fonts/fraunces-latin-var.woff2" as="font" type="font/woff2" crossorigin>
@@ -1290,8 +1424,8 @@ DESK_TEMPLATE = """<!DOCTYPE html>
   <section class="hero" aria-labelledby="hero-title">
     <span class="kicker">The teacher's desk</span>
     <h1 id="hero-title">Pull a drawer.<br>Grab a <span class="squiggle">card.</span></h1>
-    <p class="lede">The whole Vault, grouped by category — {n_acts} real activities in {n_cats} groups. Each group opens to the six activities on top of the pile, with the honest counts beside it. Every card is a real activity page.</p>
-    <aside class="desk-note no-print" aria-label="A note from the teacher's desk">every drawer opens —<br>try the brass pulls ↓</aside>
+    <p class="lede">The whole Vault, grouped by category, {n_acts} real activities in {n_cats} groups. Each group opens to the six activities on top of the pile, with the honest counts beside it. Every card is a real activity page.</p>
+    <aside class="desk-note no-print" aria-label="A note from the teacher's desk">every drawer opens. <Br>try the brass pulls ↓</aside>
     <div class="stats" aria-label="Library stats">
       <div class="stat"><b>{n_acts}</b><span>activities</span></div>
       <div class="stat"><b>{n_cats}</b><span>drawers</span></div>
@@ -1314,7 +1448,7 @@ DESK_TEMPLATE = """<!DOCTYPE html>
           <section class="blotter-card" aria-labelledby="blotter-h">
             <p class="blotter-stamp" aria-hidden="true">The blotter</p>
             <h2 id="blotter-h">Your week, laid out here.</h2>
-            <p>The Smart Weekly Planner deals no-repeat weeks from the same {n_acts} cards in these drawers — balanced days, brain breaks, supply lists.</p>
+            <p>The Smart Weekly Planner deals no-repeat weeks from the same {n_acts} cards in these drawers, balanced days, brain breaks, supply lists.</p>
             <p><a class="btn" href="planner.html">Open the planner</a></p>
             <p class="blotter-alt">or browse the <a href="collections.html">{n_colls} curated collections</a></p>
           </section>
@@ -1328,7 +1462,7 @@ DESK_TEMPLATE = """<!DOCTYPE html>
 </main>
 
 <footer class="site-footer no-print">
-  <div class="wrap"><p><strong>Activity Vault</strong> — the all-in-one activity archive for teachers &amp; after-school programs.</p></div>
+  <div class="wrap"><p><strong>Activity Vault</strong>, the all-in-one activity archive for teachers &amp; after-school programs.</p></div>
 </footer>
 </body>
 </html>
@@ -1373,11 +1507,11 @@ def main():
         f.write(desk_page)
 
     # 1c. Wave 23: the archive landing (index.html) becomes a desk you can
-    # open — the generated desk section is spliced between BUILD:DESK markers.
-    inject_landing_desk(acts, cats, colls)
+    # open. The generated desk section is spliced between BUILD:DESK markers.
+    inject_home_identity(acts, cats, colls)
 
     # 2. API
-    # 2026-10-12: static data lives in data/v1/ — Vercel never serves static
+    # 2026-10-12: static data lives in data/v1/, Vercel never serves static
     # files from under api/ (every frontend fetch of api/v1/*.json 404s in
     # production). Only real serverless function handlers stay under api/.
     api = os.path.join(SITE, 'data', 'v1')
@@ -1432,7 +1566,7 @@ def main():
                "count": len(bucket_records), "updated": today},
               open(os.path.join(api, 'balance-buckets.json'), 'w'), indent=1, ensure_ascii=False)
     # 2e. Scout review queue + decisions (Vercel wave A): publish the pipeline's
-    # review-queue.json at data/v1/review-queue.json (OPEN candidates only — the
+    # review-queue.json at data/v1/review-queue.json (OPEN candidates only, the
     # §5.1 retention shape) and the 90-day decision log at data/v1/decided.json.
     # The cron job and review-decide endpoint own pipeline/*.json (source of
     # truth); this is the read projection the functions and the static fallback
@@ -1633,7 +1767,7 @@ def main():
          "updated": today, "records": len(cats), "stability": "stable"},
         {"path": "data/v1/filters.json",
          "title": "Filter configuration",
-         "description": "Machine-readable filter configuration — the same matching logic the browser UI uses "
+         "description": "Machine-readable filter configuration, the same matching logic the browser UI uses "
                         "(range, select, multiselect, boolean, text search across name/tagline/materials/steps).",
          "schema": "data/v1/schema/filters.schema.json",
          "updated": today, "stability": "stable"},
@@ -1675,7 +1809,7 @@ def main():
          "description": "RSS-pipeline working queue: accepted / rejected / deferred activity candidates "
                         "under review, with decisions and source links.",
          "schema": None, "updated": None, "stability": "internal",
-         "notes": "Not a stable public API — statuses and shape change as the pipeline runs. "
+         "notes": "Not a stable public API. Statuses and shape change as the pipeline runs. "
                   "Treat undated numbers as stale."},
     ]
     manifest = {
@@ -1683,7 +1817,7 @@ def main():
             "site": "Activity Vault",
             "version": "1.0.0",
             "generated": datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
-            "source_snapshot": ("data/activities.json + data/categories.json — "
+            "source_snapshot": ("data/activities.json + data/categories.json, "
                                 f"{len(acts)} activities, {len(cats)} categories"),
         },
         "endpoints": endpoints,
@@ -1901,88 +2035,88 @@ def main():
     # 3. llms.txt + llms-full.txt
     lines = ["# Activity Vault", "",
              "The all-in-one activity archive for teachers and after-school program teachers.",
-             "Hundreds of real, classic, public-domain activity concepts — filterable by age, time,",
+             "Hundreds of real, classic, public-domain activity concepts, filterable by age, time,",
              "group size, materials, and category. Plan-my-week planner. Printable one-page cards.", "",
              "## Categories"]
     for c in cats:
         n = sum(1 for a in acts if c['id'] in a['categories'])
-        lines.append(f"- {c['name']}: {n} activities — {c['blurb']}")
-    lines += ["", "## API — start at data/v1/index.json (self-describing manifest)"]
+        lines.append(f"- {c['name']}: {n} activities, {c['blurb']}")
+    lines += ["", "## API. Start at data/v1/index.json (self-describing manifest)"]
     for ep in endpoints:
         if ep['path'].startswith('data/'):
-            lines.append(f"- {ep['path']} — {ep['title'].lower()}")
+            lines.append(f"- {ep['path']}, {ep['title'].lower()}")
     lines += ["", "## Skills"]
     for s in skills:
-        lines.append(f"- {s['file']} — {s['description']}")
+        lines.append(f"- {s['file']}, {s['description']}")
     lines += ["", "## Tools",
-              "- desk.html — The Teacher's Desk: the whole archive as 11 wooden category drawers.",
+              "- desk.html (The Teacher's Desk): the whole archive as 11 wooden category drawers.",
               "  Every drawer opens (real working drawers, keyboard + reduced-motion friendly) onto",
-              "  six index cards on top of the pile — curator picks first, then no-prep — plus a",
+              "  six index cards on top of the pile, curator picks first, then no-prep, plus a",
               "  pencil note with honest per-drawer counts; each drawer deep-links to the matching",
               "  filtered browse view (index.html?cats=<id>). The kneehole blotter links the planner.",
-              "- sub.html — Sub Tub: the substitute-teacher rescue kit.",
-              "  Pick grade band, minutes to fill, materials on hand, location —",
+              "- sub.html, Sub Tub: the substitute-teacher rescue kit.",
+              "  Pick grade band, minutes to fill, materials on hand, location, ",
               "  generates a sequenced print-ready emergency plan plus a 'Dear sub' note template.",
-              "- party.html — Party Planner (Halloween, Thanksgiving, winter, spring, and summer presets).",
-              "  Pick a theme, class size, minutes, stations, and budget — generates a timed",
+              "- party.html, Party Themes (Halloween, Thanksgiving, winter, spring, and summer presets).",
+              "  Pick a theme, class size, minutes, stations, and budget, generates a timed",
               "  station-rotation plan from seasonal activities, plus a setup list and a",
               "  print-ready run sheet.",
-              "- halloween.html — Halloween hub: the Halloween 2026 pack's crafts, costume and",
+              "- halloween.html. Halloween hub: the Halloween 2026 pack's crafts, costume and",
               "  party games, not-too-spooky science, harvest activities, and trick-or-treat",
               "  alternatives, plus the Haunted Halls collection, a Halloween party-theme shortcut,",
               "  and a spookiness-level filter.",
-              "- spring.html — Spring hub: the spring 2027 pack's crafts, outdoor games,",
+              "- spring.html. Spring hub: the spring 2027 pack's crafts, outdoor games,",
               "  spring science, rainy-day backups, and spring-holiday activities, plus the",
               "  Spring Burst collection and a spring party-theme shortcut.",
-              "- summer.html — Summer hub: the summer 2027 pack's water play, outdoor games,",
+              "- summer.html. Summer hub: the summer 2027 pack's water play, outdoor games,",
               "  summer crafts, beat-the-heat indoor backups, and camp + July 4th activities,",
               "  plus the Summer Splash collection and a summer party-theme shortcut.",
-              "- fieldtrip.html — Field Trip Planner: destination, group size, and trip length",
+              "- fieldtrip.html, Field Trip Planner: destination, group size, and trip length",
               "  become a clock-time timeline, chaperone and buddy-pair math, a budget estimate,",
               "  on-site activity ideas matched from the real library, bus-ride activities from the",
               "  field-trip-bus-ride collection, and printable permission-slip + pack checklists.",
-              "- thanksgiving.html — Thanksgiving hub: the Thanksgiving 2026 pack's gratitude",
+              "- thanksgiving.html. Thanksgiving hub: the Thanksgiving 2026 pack's gratitude",
               "  crafts, harvest games, Thanksgiving STEM, gratitude and friendsgiving activities,",
               "  and giving-back projects, plus the Grateful Gathering collection and a",
               "  Thanksgiving party-theme shortcut.",
-              "- winter.html — Winter Holidays hub: the Winter 2026 pack's Christmas crafts and",
+              "- winter.html. Winter Holidays hub: the Winter 2026 pack's Christmas crafts and",
               "  games, Hanukkah and Kwanzaa activities, New Year countdowns, and winter-break",
               "  science, plus the Winter Lights collection and a winter party-theme shortcut.",
-              "- planner.html — Smart Weekly Planner 3.0: program presets (after-school / camp /",
+              "- planner.html, Smart Weekly Planner 3.0: program presets (after-school / camp /",
               "  classroom), age bands, auto-built no-repeat weeks with a per-day energy balance meter,",
               "  drag-and-drop reorder, per-slot swap, surprise gap-fill, prep-level caps, collection",
               "  seeding (?from=collection:<id>), named saved plans, .ics calendar export, shareable",
               "  ?plan= links, and a print-ready card deck.",
-              "- kit.html — The After-School Kit: the flagship low-materials week builder.",
+              "- kit.html, The After-School Kit: the flagship low-materials week builder.",
               "  Group size + age band + days/week + what you have on hand (16-staple pantry,",
               "  low-materials, or no-prep mode) become a week of sessions from the real library,",
               "  each day with a run-of-show timeline, a printable session plan sheet, per-slot",
               "  swap, one aggregated material checklist (have vs. gather), copy-as-text, and",
               "  shareable ?kit= links that restore the exact kit on any device.",
-              "- kitbag.html — The Kit Bag: pack one rainy day indoors — five roles filled",
-              "  from the real rainy-day shelf by age — and a printable kit list composed",
+              "- kitbag.html, The Kit Bag: pack one rainy day indoors, five roles filled",
+              "  from the real rainy-day shelf by age, and a printable kit list composed",
               "  from the selected activities' real materials fields: deduplicated,",
               "  grouped (consumables / equipment / print-at-desk), every line traced",
               "  to the activity that asked for it. Copy-as-text included.",
-              "- partypack.html — The Party Pack: plan a whole group event — pick an",
+              "- partypack.html, The Party Pack: plan a whole group event, pick an",
               "  occasion (birthday, Halloween, Thanksgiving, winter holiday,",
               "  Valentine's, spring, summer, rainy-day), an age band, and a group",
-              "  size — and it composes a five-part party arc from real activities",
+              "  size, and it composes a five-part party arc from real activities",
               "  (welcome, big group opener, making & games, movement break, calm",
               "  close), then packs the party bag from the picks' real materials",
               "  fields through the Kit Bag's aggregation. Honest thin coverage:",
               "  when an occasion holds fewer real activities than the arc has",
               "  parts, the page says so in numbers and offers the nearest real",
-              "  options — it never pads a plan. Printable party sheet + copy-as-text.",
-              f"- collections.html — Curated collections: {len(colls)} teacher-ready bundles (rainy-day",
+              "  options. It never pads a plan. Printable party sheet + copy-as-text.",
+              f"- collections.html, Curated collections: {len(colls)} teacher-ready bundles (rainy-day",
               "  rescue, first day, sub tub, winter party, spring burst, summer splash, haunted halls, grateful gathering, winter lights…)",
               "  each with a curator's note per pick; printable and copy-able per collection.",
-              "- api.html — API docs with a Try-the-API console (endpoint picker, fetch, pretty JSON).",
-              "- review.html — Scout review queue: pending activity ideas plus the 90-day",
+              "- api.html. API docs with a Try-the-API console (endpoint picker, fetch, pretty JSON).",
+              "- review.html, Scout review queue: pending activity ideas plus the 90-day",
               "  decision log. Tries the live /api/review-queue first, falls back to the",
               "  static data/v1 JSON with an honest cached badge when the server is down.",
-              "", "## Docs", "- API.md — full API reference", "- PIPELINE.md — how the library grows",
-              "- AGENT.md — how an agent uses this archive: endpoints, example requests,",
+              "", "## Docs", "- API.md, full API reference", "- PIPELINE.md, how the library grows",
+              "- AGENT.md. How an agent uses this archive: endpoints, example requests,",
               "  end-to-end workflows (filtering, party planning, week planning)"]
     open(os.path.join(SITE, 'llms.txt'), 'w').write('\n'.join(lines) + '\n')
 
@@ -2020,7 +2154,7 @@ def main():
     print(f"minimal header (rotation 20): one primary row + More on {n_headers} pages")
     print(f"placement: meta block on {n_updated}/{n_pages} pages.")
 
-    print(f"BUILD OK — {len(acts)} activities, {rendered} pages rendered, "
+    print(f"BUILD OK, {len(acts)} activities, {rendered} pages rendered, "
           f"{len(cats)} categories, {len(coll_records)} collections, "
           f"{len(bucket_records)} balance-bucket mappings, "
           f"api + llms + sitemap written.")

@@ -1,31 +1,31 @@
 {
  "buckets": [
   {
-   "description": "Run, jump, dance — the wiggles-burners that tire the room out (in a good way).",
+   "description": "Run, jump, dance, the wiggles-burners that tire the room out (in a good way).",
    "glyph": "⚡",
    "id": "movement",
    "label": "High-energy movement"
   },
   {
-   "description": "Wind-down worthy — quiet, focused, individual or small-group energy.",
+   "description": "Wind-down worthy, quiet, focused, individual or small-group energy.",
    "glyph": "🧘",
    "id": "calm",
    "label": "Calm & focus"
   },
   {
-   "description": "Hands-on making and music — expressive, sometimes messy, take-home energy.",
+   "description": "Hands-on making and music. Expressive, sometimes messy, take-home energy.",
    "glyph": "🎨",
    "id": "creative",
    "label": "Creative & messy"
   },
   {
-   "description": "Fresh air — fields, playgrounds, and nature walks.",
+   "description": "Fresh air, fields, playgrounds, and nature walks.",
    "glyph": "🌳",
    "id": "outdoor",
    "label": "Outdoor"
   },
   {
-   "description": "Flexible energy — social, seasonal, or first-day friendly; fits anywhere.",
+   "description": "Flexible energy, social, seasonal, or first-day friendly; fits anywhere.",
    "glyph": "🔀",
    "id": "mixed",
    "label": "All-rounder"

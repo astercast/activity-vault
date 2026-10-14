@@ -1,4 +1,4 @@
-/* GET /api/cron/scout — §7.6 "The Scout" daily RSS scan.
+/* GET /api/cron/scout, §7.6 "The Scout" daily RSS scan.
  * Cron only (CRON_SECRET bearer). Cache: no-store. Idempotent (§4.3):
  * content-hash commits (identical output -> no commit), stable upstream ids
  * (sha256, same scheme as pipeline/scan.py so the two never double-queue),
@@ -7,7 +7,7 @@
  * Each run (≤10s):
  *  1. load pipeline/feeds.json (bundled), the queue + seen set (GitHub when the
  *     token exists, bundled copies otherwise), and data/v1/activities.json (bundled)
- *  2. fetch feeds in parallel (fetchx, 4000ms each, Promise.allSettled —
+ *  2. fetch feeds in parallel (fetchx, 4000ms each, Promise.allSettled
  *     partial success is the normal case), parse RSS 2.0 / Atom
  *  3. relevance filter (KEEP/DROP, ported verbatim from pipeline/scan.py) +
  *     airtight dedupe: uid in seen/queue -> skip; near-dupe screen vs the full
@@ -15,7 +15,7 @@
  *  4. append `pending` candidates (with detected_at + suggested_tags) to the queue,
  *     move decided items to decided.json (90d retention), prune
  *  5. writeJsonIfChanged back to pipeline/seen.json, pipeline/review-queue.json,
- *     pipeline/decided.json — then the triggered redeploy runs scripts/build.py,
+ *     pipeline/decided.json. Then the triggered redeploy runs scripts/build.py,
  *     which publishes data/v1/review-queue.json + data/v1/decided.json.
  *
  * PENDING TOKEN (2026-10-11): GITHUB_REPO_TOKEN is still awaiting the user's
@@ -345,7 +345,7 @@ module.exports = async (req, res) => {
      the platform would kill the run mid-commit, leaving the three
      pipeline files half-updated. If the fetch+filter phases have
      already burned most of the budget, skip the writes entirely
-     and say so honestly — tomorrow's run re-derives everything
+     and say so honestly. Tomorrow's run re-derives everything
      from the feeds, so a skipped commit loses nothing. */
   const WRITE_DEADLINE_MS = 7000;
   const elapsedMs = Date.now() - Date.parse(runStart);
@@ -365,12 +365,12 @@ module.exports = async (req, res) => {
   const notes = [];
   if (writeSkipped) {
     notes.push('Commit skipped on purpose: the fetch and filter phases took ' + elapsedMs +
-      'ms, past the safe write deadline inside the 10s function ceiling — committing now could be ' +
+      'ms, past the safe write deadline inside the 10s function ceiling. Committing now could be ' +
       'killed mid-write. Nothing was lost: tomorrow\u2019s run re-derives the same candidates.');
   }
   if (feedsOk < feeds.length) {
     const failed = upstream.filter((u) => !u.ok).map((u) => u.source).join(', ');
-    notes.push('Feed fetch failed for: ' + failed + ' — candidates below come only from the feeds that answered.');
+    notes.push('Feed fetch failed for: ' + failed + '. Candidates below come only from the feeds that answered.');
   }
   if (!writable) {
     notes.push('Read-only run: the GITHUB_REPO_TOKEN commit-back token is still pending setup ' +

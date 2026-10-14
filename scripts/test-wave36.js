@@ -102,10 +102,10 @@ ok(/no invented ceremonies/.test(byId['big-story-stone-first-people'].safety || 
 ok(/said correctly/.test(JSON.stringify(byId['big-story-stone-first-people'])), 'story stone: the name said properly');
 // Leaf light: we look at the leaf, never at the sun.
 ok(/We never look at the sun/.test(JSON.stringify(byId['big-leaf-light-window-hold'])), 'leaf light: never the sun');
-ok(/walking with eyes up/.test(byId['big-leaf-light-window-hold'].safety || ''), 'leaf light: feet plant before leaves rise');
+ok(/Walking with eyes up/.test(byId['big-leaf-light-window-hold'].safety || ''), 'leaf light: feet plant before leaves rise');
 // Tissue snow: slowness noticed is the entertainment; nobody climbs to drop from higher.
 ok(/It took a LONG time/.test(JSON.stringify(byId['big-tissue-snow-gentle-fall'])), 'tissue snow: the long fall');
-ok(/nobody climbs anything/.test(byId['big-tissue-snow-gentle-fall'].safety || ''), 'tissue snow: no climbing for height');
+ok(/Nobody climbs anything/.test(byId['big-tissue-snow-gentle-fall'].safety || ''), 'tissue snow: no climbing for height');
 // First dip: two words only; the sponge honestly earns both.
 ok(/It floated, AND it sank/.test(JSON.stringify(byId['big-float-or-sink-first-dip'])), 'first dip: the sponge does both');
 ok(/No head, face, or hair goes over the water/.test(byId['big-float-or-sink-first-dip'].safety || ''), 'first dip: heads stay out');

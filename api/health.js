@@ -1,6 +1,6 @@
-/* GET /api/health — §1.4. No auth. Edge-cacheable (s-maxage=60).
+/* GET /api/health, §1.4. No auth. Edge-cacheable (s-maxage=60).
  * Never returns 5xx: status is 'ok' unless a check fails, then 'degraded'.
- * uptime_s is per-instance (resets on cold start — expected, not a bug).
+ * uptime_s is per-instance (resets on cold start, expected, not a bug).
  */
 'use strict';
 
@@ -10,7 +10,7 @@ const { tokenConfigured } = require('../lib/github');
 
 const SERVICE = 'vault-scout';
 const VERSION = '1.0.0';
-// §7.6 roster — the wave A test asserts this list matches exactly.
+// §7.6 roster, the wave A test asserts this list matches exactly.
 const ROSTER = ['health', 'review-queue', 'review-decide', 'cron/scout'];
 const STARTED_AT = new Date().toISOString().replace(/\.\d{3}Z$/, 'Z');
 

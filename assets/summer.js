@@ -1,7 +1,7 @@
-/* Activity Vault — summer hub page (wave 12).
+/* Activity Vault, summer hub page (wave 12).
    Renders the curated summer sections from data/v1/activities.json using
    explicit, build-validated id lists (scripts/test-summer.js asserts every id
-   resolves). Picks show the visitor's own rating badges (localStorage only —
+   resolves). Picks show the visitor's own rating badges (localStorage only
    never invented), matching the collections page pattern. */
 (function () {
   'use strict';
@@ -17,36 +17,36 @@
       browse: 'index.html?tag=season:summer',
       picks: [
         ['water-balloon-toss', 'The classic, done right: step back after every catch, cleanup before the next game.'],
-        ['drip-drip-drop', 'Duck-duck-goose with a wet sponge — the goose gets a squeeze overhead.'],
-        ['bucket-brigade-race', 'Pass it over heads, cup to cup — first team to the tape line wins.'],
+        ['drip-drip-drop', 'Duck-duck-goose with a wet sponge. The goose gets a squeeze overhead.'],
+        ['bucket-brigade-race', 'Pass it over heads, cup to cup. First team to the tape line wins.'],
         ['sponge-launch-bullseye', 'Wet sponges, chalk targets, argued line calls like pros.'],
         ['sprinkler-limbo', 'How low can you go before you are soaked? Grass only.'],
-        ['water-relay', 'The Vault classic sponge relay — already in the library, now properly tagged.']
+        ['water-relay', 'The Vault classic sponge relay, already in the library, now properly tagged.']
       ]
     },
     {
       id: 'outdoor', glyph: '🏃', title: 'Outdoor & camp games',
-      blurb: 'Field games for the long-light weeks — capture the flag, flashlight tag, and chalk everything.',
+      blurb: 'Field games for the long-light weeks, capture the flag, flashlight tag, and chalk everything.',
       browse: 'index.html?tag=season:summer',
       picks: [
-        ['capture-the-flag-basics', 'Two teams, two flags, one field — simplified so it actually finishes in 40 minutes.'],
+        ['capture-the-flag-basics', 'Two teams, two flags, one field, simplified so it actually finishes in 40 minutes.'],
         ['flashlight-tag', 'Tag by flashlight beam at dusk: frozen when the light finds you.'],
         ['chalk-obstacle-course', 'Draw the course, run the course, then let the kids redesign it.'],
-        ['frisbee-golf-nine', 'Nine cone-and-chalk holes around the field — fewest throws wins.'],
+        ['frisbee-golf-nine', 'Nine cone-and-chalk holes around the field. Fewest throws wins.'],
         ['nature-color-scavenger', 'A rainbow hunt with a hard rule: fallen and found only, nothing picked.'],
-        ['chalk-art', 'Sidewalk squares for masterpieces — the sun dries them into the pavement gallery.']
+        ['chalk-art', 'Sidewalk squares for masterpieces, the sun dries them into the pavement gallery.']
       ]
     },
     {
       id: 'crafts', glyph: '🎨', title: 'Summer crafts',
-      blurb: 'Bracelets, sun prints, pinwheels, and sand art — table crafts that survive a heat wave.',
+      blurb: 'Bracelets, sun prints, pinwheels, and sand art, table crafts that survive a heat wave.',
       browse: 'index.html?tag=season:summer',
       picks: [
         ['friendship-bracelet-basics', 'The camp classic: one knot learned in a sitting, bracelets made for giving.'],
-        ['sun-print-cards', 'The sun does the printing — arrange, expose, rinse, done.'],
+        ['sun-print-cards', 'The sun does the printing, arrange, expose, rinse, done.'],
         ['pinwheel-garden', 'Paper pinwheels on sticks, planted along the walkway for the wind.'],
-        ['sand-art-bottles', 'Layered desert landscapes in a bottle — fill to the brim so they keep.'],
-        ['ice-cube-painting', 'Frozen paint cubes that melt into watercolor art — built for hot days.']
+        ['sand-art-bottles', 'Layered desert landscapes in a bottle. Fill to the brim so they keep.'],
+        ['ice-cube-painting', 'Frozen paint cubes that melt into watercolor art, built for hot days.']
       ]
     },
     {
@@ -55,8 +55,8 @@
       browse: 'collections.html#rainy-day-rescue',
       browseLabel: '🌧️ Open the Rainy-day rescue collection (storm-day backup)',
       picks: [
-        ['ice-excavation-dig', 'Toys frozen in ice, freed with salt and droppers — the salt-spot race is real science.'],
-        ['fan-boat-races', 'Paper boats, fanned air only — no touching the boat, no mouth-blowing.'],
+        ['ice-excavation-dig', 'Toys frozen in ice, freed with salt and droppers. The salt-spot race is real science.'],
+        ['fan-boat-races', 'Paper boats, fanned air only, no touching the boat, no mouth-blowing.'],
         ['indoor-campfire-circle', 'A paper campfire, lights down, one sentence each around the circle.'],
         ['shadow-puppet-matinee', 'Cardboard puppets and a flashlight: the hottest-hour show.']
       ]
@@ -68,7 +68,7 @@
         {
           label: '🎆 July 4th', tag: 'holiday:july-4th',
           picks: [
-            ['star-spangled-shoebox-parade', 'Shoebox floats in red, white, and blue — parade the whole route.'],
+            ['star-spangled-shoebox-parade', 'Shoebox floats in red, white, and blue, parade the whole route.'],
             ['liberty-quiz-bowl', 'Team trivia on the real basics: 1776, the 13 colonies, the 50 stars.']
           ]
         },
@@ -76,7 +76,7 @@
           label: '🏕️ Camp week', tag: 'season:summer',
           picks: [
             ['camp-week-kickoff', 'The opening assembly that turns 30 strangers into one camp.'],
-            ['talent-showcase-night', 'Ninety seconds per act, every act gets cheers — that is the whole contract.'],
+            ['talent-showcase-night', 'Ninety seconds per act, every act gets cheers. That is the whole contract.'],
             ['longest-day-shadow-track', 'Trace one shadow all solstice day: the sun draws the graph.']
           ]
         }
@@ -96,7 +96,7 @@
     if (!R) return null;
     var entry = R.getRating(activityId);
     if (!entry) return null;
-    var s = el('span', 'rate-badge', '⭐ ' + entry.stars + '★ — your rating');
+    var s = el('span', 'rate-badge', '⭐ ' + entry.stars + '★, your rating');
     s.setAttribute('aria-label', 'You rated this activity ' + entry.stars + ' of 5 stars');
     return s;
   }
@@ -154,7 +154,7 @@
         chip.href = 'index.html?tag=' + encodeURIComponent(g.tag);
         chipRow.appendChild(chip);
         s.appendChild(chipRow);
-        if (!n) s.appendChild(el('p', null, 'No activities found — the library may have failed to load.'));
+        if (!n) s.appendChild(el('p', null, 'No activities found. The library may have failed to load.'));
       });
     } else {
       var list = el('ol', 'pick-list');
@@ -164,7 +164,7 @@
         if (li) { list.appendChild(li); n++; }
       });
       s.appendChild(list);
-      if (!n) s.appendChild(el('p', null, 'No activities found — the library may have failed to load.'));
+      if (!n) s.appendChild(el('p', null, 'No activities found. The library may have failed to load.'));
     }
 
     if (sec.browse) {

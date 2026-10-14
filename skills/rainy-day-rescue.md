@@ -20,7 +20,7 @@ The forecast just ruined the field plan: "it's pouring, I have 30 kids inside fo
 
 1. Filter `data/v1/activities.json` for `categories` containing `rainy-day` AND `indoor` in `location`.
 2. Build a 3-act arc: **burn** (10–15 min: `freeze-dance`, `silent-ball`), **engage** (20–30 min: `pictionary`, `charades`, `indoor-scavenger-hunt`), **land** (10 min: `calm-breathing-shapes`, `story-dice`).
-3. Prefer no-prep first — rainy days are when prep time evaporates too.
+3. Prefer no-prep first. Rainy days are when prep time evaporates too.
 4. Always include one calm landing activity. Ending a rainy-day block on a high-energy game releases a room you then have to manage.
 
 ## Worked example
@@ -33,5 +33,5 @@ The forecast just ruined the field plan: "it's pouring, I have 30 kids inside fo
 
 ## Pitfalls
 
-- Picking only quiet activities for a cooped-up group — they need to move *first*, then focus.
-- `musical-chairs` in a small classroom — check the room fits the game, not just the category.
+- Picking only quiet activities for a cooped-up group. They need to move *first*, then focus.
+- `musical-chairs` in a small classroom, check the room fits the game, not just the category.

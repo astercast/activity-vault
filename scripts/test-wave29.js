@@ -109,7 +109,7 @@ ok(/Prints are prints/.test(byId['boot-print-snow-trail'].inclusion || ''), 'boo
 ok(/Step IN the puddles/.test(JSON.stringify(byId['paper-puddle-stepping'])), 'paper puddles: stepping in is the rule');
 ok(/Wheeling across/.test(byId['paper-puddle-stepping'].inclusion || ''), 'paper puddles: wheeling across counts in full');
 // Ice move: tongs only, and the choking note is on the record.
-ok(/hands do not help/.test(JSON.stringify(byId['big-tongs-ice-move'])), 'ice move: tongs carry it, hands do not help');
+ok(/Hands do not help/.test(JSON.stringify(byId['big-tongs-ice-move'])), 'ice move: tongs carry it, hands do not help');
 ok(/choking hazard/.test(byId['big-tongs-ice-move'].safety || ''), 'ice move: choking hazard stated');
 // Balance: the beam decides; directing the test is doing the test.
 ok(/goes DOWN is carrying the heavier/.test(JSON.stringify(byId['pan-balance-heavy-light'])), 'balance: side that goes down is heavier');

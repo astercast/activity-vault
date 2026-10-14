@@ -3,11 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>API docs — Activity Vault</title>
+<title>API docs · Activity Vault</title>
 <meta name="description" content="Activity Vault API: endpoints, shared conventions, JSON schemas, and a Try-the-API console.">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="preload" href="assets/fonts/fraunces-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <script src="assets/site.js" defer></script>
+
+
+
+
+
 
 
 
@@ -40,17 +45,17 @@
 <link rel="canonical" href="https://activity-vault-live.vercel.app/api.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Activity Vault">
-<meta property="og:title" content="API docs — Activity Vault">
+<meta property="og:title" content="API docs · Activity Vault">
 <meta property="og:description" content="Activity Vault API: endpoints, shared conventions, JSON schemas, and a Try-the-API console.">
 <meta property="og:url" content="https://activity-vault-live.vercel.app/api.html">
 <meta property="og:image" content="https://activity-vault-live.vercel.app/assets/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="API docs — Activity Vault">
+<meta name="twitter:title" content="API docs · Activity Vault">
 <meta name="twitter:description" content="Activity Vault API: endpoints, shared conventions, JSON schemas, and a Try-the-API console.">
 <meta name="twitter:image" content="https://activity-vault-live.vercel.app/assets/og-card.png">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "API docs — Activity Vault", "description": "Activity Vault API: endpoints, shared conventions, JSON schemas, and a Try-the-API console.", "url": "https://activity-vault-live.vercel.app/api.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "API docs · Activity Vault", "description": "Activity Vault API: endpoints, shared conventions, JSON schemas, and a Try-the-API console.", "url": "https://activity-vault-live.vercel.app/api.html"}</script>
 <!-- PLACEMENT:END -->
 </head>
 <body>
@@ -71,9 +76,9 @@
           <p class="nav-more-h">Tools</p>
           <a href="desk.html">The Desk</a>
           <a href="day.html">Day Planner</a>
-          <a href="kit.html">Kit</a>
+          <a href="kit.html">Week Kit</a>
           <a href="sub.html">Sub Tub</a>
-          <a href="party.html">Party Planner</a>
+          <a href="party.html">Party Themes</a>
           <a href="partypack.html">Party Pack</a>
           <a href="fieldtrip.html">Field Trips</a>
           <p class="nav-more-h">Seasons</p>
@@ -94,7 +99,7 @@
 
 <main class="wrap docs-page">
   <h1>API docs</h1>
-  <p class="lede">The whole archive is static JSON — no auth, no keys, no rate limits. Agents: start at <code>data/v1/index.json</code> (or read <code>AGENT.md</code> for worked end-to-end examples).</p>
+  <p class="lede">The whole archive is static JSON, no auth, no keys, no rate limits. Agents: start at <code>data/v1/index.json</code> (or read <code>AGENT.md</code> for worked end-to-end examples).</p>
 
   <section aria-labelledby="h-conventions">
     <h2 id="h-conventions">Shared API conventions (all sites)</h2>
@@ -103,8 +108,8 @@
       <li>Manifest: <code>data/v1/index.json</code> lists every endpoint with its schema URL, <code>updated</code> timestamp, and notes. Start here.</li>
       <li>Timestamps: ISO-8601 UTC (<code>2026-10-11T00:00:00Z</code>). Date-only fields are <code>YYYY-MM-DD</code>.</li>
       <li>Versions: <code>meta.version</code> semver on the manifest; breaking changes get a new <code>v2/</code> path, never a silent shape change.</li>
-      <li>Errors: static files can't return error bodies. A missing endpoint means a wrong path — re-read <code>index.json</code>. Empty results are <code>[]</code>, never <code>null</code>. Every record carries its provenance (<code>source</code>, <code>observed</code>/<code>updated</code>).</li>
-      <li>Pagination: not needed — payloads are complete snapshots sized for client-side filtering. If a future endpoint paginates, it will use <code>?page=</code> and document it here.</li>
+      <li>Errors: static files can't return error bodies. A missing endpoint means a wrong path. Re-read <code>index.json</code>. Empty results are <code>[]</code>, never <code>null</code>. Every record carries its provenance (<code>source</code>, <code>observed</code>/<code>updated</code>).</li>
+      <li>Pagination: not needed. Payloads are complete snapshots sized for client-side filtering. If a future endpoint paginates, it will use <code>?page=</code> and document it here.</li>
       <li>Freshness: every payload states when it was generated and from what snapshot. Treat undated numbers as stale.</li>
     </ul>
   </section>
@@ -115,12 +120,12 @@
     <table class="api-table">
       <thead><tr><th scope="col">Endpoint</th><th scope="col">What it is</th><th scope="col">Schema</th></tr></thead>
       <tbody>
-        <tr><td><code>data/v1/index.json</code></td><td>Self-describing manifest — every endpoint, schema URL, updated timestamp, record counts, stability. Start here.</td><td><a href="data/v1/schema/index.schema.json">index.schema.json</a></td></tr>
+        <tr><td><code>data/v1/index.json</code></td><td>Self-describing manifest, every endpoint, schema URL, updated timestamp, record counts, stability. Start here.</td><td><a href="data/v1/schema/index.schema.json">index.schema.json</a></td></tr>
         <tr><td><code>data/v1/activities.json</code></td><td>All 213 activity records: filters, setup, steps, materials, variations, safety, season/occasion tags.</td><td><a href="data/v1/schema/activities.schema.json">activities.schema.json</a></td></tr>
         <tr><td><code>data/v1/categories.json</code></td><td>The 11 categories: id, name, blurb, color, glyph.</td><td><a href="data/v1/schema/categories.schema.json">categories.schema.json</a></td></tr>
-        <tr><td><code>data/v1/filters.json</code></td><td>Machine-readable filter config — the same matching logic the browser UI uses.</td><td><a href="data/v1/schema/filters.schema.json">filters.schema.json</a></td></tr>
+        <tr><td><code>data/v1/filters.json</code></td><td>Machine-readable filter config, the same matching logic the browser UI uses.</td><td><a href="data/v1/schema/filters.schema.json">filters.schema.json</a></td></tr>
         <tr><td><code>data/v1/skills.json</code></td><td>Registry of the 10 reusable skill recipes in <code>skills/</code>.</td><td>self-describing</td></tr>
-        <tr><td><code>pipeline/review-queue.json</code></td><td>RSS-pipeline working queue — internal, not a stable public API.</td><td>—</td></tr>
+        <tr><td><code>pipeline/review-queue.json</code></td><td>RSS-pipeline working queue, internal, not a stable public API.</td><td>, </td></tr>
       </tbody>
     </table>
     </div>
@@ -128,16 +133,16 @@
   </section>
 
   <section aria-labelledby="h-live">
-    <h2 id="h-live">Live server functions (<code>/api/*</code>, Vercel — live-ready, not deployed)</h2>
+    <h2 id="h-live">Live server functions (<code>/api/*</code>, Vercel. Live-ready, not deployed)</h2>
     <p>The Scout's serverless layer (service <code>vault-scout</code>): unversioned functions, every response in the shared <code>ok</code>/<code>data</code>/<code>meta</code> envelope (<a href="data/v1/schema/envelope.json">envelope.json</a>). The frontend tries the function first and falls back to the static <code>data/v1/*.json</code> twin with an honest "cached · updated HH:MM" badge when the server is unreachable.</p>
     <div class="table-wrap">
     <table class="api-table">
       <thead><tr><th scope="col">Endpoint</th><th scope="col">What it is</th><th scope="col">Fallback</th></tr></thead>
       <tbody>
-        <tr><td><code>GET /api/health</code></td><td>Health: <code>status</code> ok/degraded (never 5xx), function roster, data freshness (24h SLA), boolean checks (never secret values).</td><td>—</td></tr>
-        <tr><td><code>GET /api/review-queue</code></td><td>The Scout's review queue: <code>?status=pending|all|decided</code> (default pending) — candidates awaiting a human, plus the 90-day decision log. Human-readable surface: <a href="review.html">review.html</a>.</td><td><code>data/v1/review-queue.json</code></td></tr>
-        <tr><td><code>POST /api/review-decide</code></td><td>Approve/reject a candidate — <strong>operator only</strong>: needs the <code>CRON_SECRET</code> bearer token and is never called from the browser. Approve records <code>approved_via:'scout'</code>; it does not mint an activity (the human's wave does that in original words).</td><td>— (no static fallback)</td></tr>
-        <tr><td><code>GET /api/cron/scout</code></td><td>Daily cron (<code>0 11 * * *</code> UTC): RSS scan → dedupe → review queue. <code>CRON_SECRET</code>-gated, idempotent.</td><td>—</td></tr>
+        <tr><td><code>GET /api/health</code></td><td>Health: <code>status</code> ok/degraded (never 5xx), function roster, data freshness (24h SLA), boolean checks (never secret values).</td><td>, </td></tr>
+        <tr><td><code>GET /api/review-queue</code></td><td>The Scout's review queue: <code>?status=pending|all|decided</code> (default pending), candidates awaiting a human, plus the 90-day decision log. Human-readable surface: <a href="review.html">review.html</a>.</td><td><code>data/v1/review-queue.json</code></td></tr>
+        <tr><td><code>POST /api/review-decide</code></td><td>Approve/reject a candidate. <Strong>operator only</strong>: needs the <code>CRON_SECRET</code> bearer token and is never called from the browser. Approve records <code>approved_via:'scout'</code>; it does not mint an activity (the human's wave does that in original words).</td><td>, (no static fallback)</td></tr>
+        <tr><td><code>GET /api/cron/scout</code></td><td>Daily cron (<code>0 11 * * *</code> UTC): RSS scan → dedupe → review queue. <code>CRON_SECRET</code>-gated, idempotent.</td><td>, </td></tr>
       </tbody>
     </table>
     </div>
@@ -146,7 +151,7 @@
 
   <section aria-labelledby="h-console">
     <h2 id="h-console">Try the API</h2>
-    <p>Pick an endpoint, fetch it, and see the JSON — everything runs in your browser, nothing leaves the page.</p>
+    <p>Pick an endpoint, fetch it, and see the JSON. Everything runs in your browser, nothing leaves the page.</p>
     <form id="api-console" class="console-form" onsubmit="return false;">
       <label for="endpoint-picker">Endpoint</label>
       <select id="endpoint-picker" aria-describedby="console-status">
@@ -161,7 +166,7 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <p><strong>Activity Vault</strong> — the all-in-one activity archive for teachers &amp; after-school programs.</p>
+    <p><strong>Activity Vault</strong>, the all-in-one activity archive for teachers &amp; after-school programs.</p>
     <p><a href="data/v1/index.json">API manifest</a> · <a href="llms.txt">llms.txt</a> · <a href="AGENT.md">Agent guide</a></p>
   </div>
 </footer>
@@ -189,7 +194,7 @@
   function loadJSON(url, ok, fail) {
     fetch(url, { headers: { 'Accept': 'application/json' } })
       .then(function (res) {
-        if (!res.ok) throw new Error('HTTP ' + res.status + ' — ' + url);
+        if (!res.ok) throw new Error('HTTP ' + res.status + ', ' + url);
         return res.json();
       })
       .then(ok)
@@ -203,7 +208,7 @@
       if (typeof ep.path !== 'string') return;
       var opt = document.createElement('option');
       opt.value = ep.path;
-      opt.textContent = ep.path + ' — ' + (ep.title || '');
+      opt.textContent = ep.path + ', ' + (ep.title || '');
       picker.appendChild(opt);
     });
     btn.disabled = false;
@@ -212,7 +217,7 @@
     picker.textContent = '';
     var opt = document.createElement('option');
     opt.value = 'data/v1/index.json';
-    opt.textContent = 'data/v1/index.json — manifest (fallback)';
+    opt.textContent = 'data/v1/index.json, manifest (fallback)';
     picker.appendChild(opt);
     btn.disabled = false;
     show('Could not load data/v1/index.json (' + err + '). The manifest itself is pre-selected as a fallback.', true);

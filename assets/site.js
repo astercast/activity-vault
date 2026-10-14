@@ -1,4 +1,4 @@
-/* Activity Vault — shared site chrome.
+/* Activity Vault, shared site chrome.
    1. Calm mode (sensory-envelope toggle, web-craft 2026-10-11 round 2):
       a user-controlled kill switch for motion + transparency, beyond the
       prefers-reduced-motion binary. Persists in localStorage; the planner
@@ -59,7 +59,7 @@
   }
 
   /* 3. Index-card stagger reveals (wave 17, "The Teacher's Desk"):
-        progressive enhancement — the .js class gates the hidden initial
+        progressive enhancement, the.js class gates the hidden initial
         state in CSS, so no-JS / no-IO never hides content. Calm mode and
         prefers-reduced-motion reveal instantly with no stagger. */
   var REVEAL_SEL = '.act-card, .collection-card, .collection-section, .day-card, .pick, .extra-section, .plan-block';
@@ -109,7 +109,7 @@
   function initReveal() {
     watchReveals(document);
     /* pages render cards after DOMContentLoaded (planner, collections, sub,
-       party, field trip) — catch late arrivals without touching those files */
+       party, field trip), catch late arrivals without touching those files */
     if ('MutationObserver' in window && document.body) {
       var mo = new MutationObserver(function (muts) {
         for (var m = 0; m < muts.length; m++) {

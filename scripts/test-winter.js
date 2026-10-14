@@ -159,11 +159,11 @@ const partyHtml = fs.readFileSync(path.join(ROOT, 'party.html'), 'utf8');
 ok(partyHtml.includes('value="winter"'), 'party.html has winter radio chip');
 
 // 8. app.js winter promo hook (Dec=11, Jan=0) + index.html promo section
-ok(appSrc.includes("getElementById('season-promo-winter')"), 'app.js winter promo hook');
-ok(/pm === 11 \|\| pm === 0/.test(appSrc), 'app.js gates winter promo on Dec/Jan');
+ok(!appSrc.includes('season-promo'), 'app.js: season promo hooks removed (L11 collapse, rotation 21)');
+ok(!/pm === 11/.test(appSrc), 'app.js: no month-gated promo remains (rotation 21)');
 const indexHtml = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
-ok(indexHtml.includes('id="season-promo-winter"'), 'index.html has winter promo section');
-ok(indexHtml.includes('collections.html#winter-lights'), 'promo links winter-lights');
+ok(indexHtml.includes('tag=holiday:christmas'), 'index.html calendar row links the christmas tag');
+ok(indexHtml.includes('collections.html'), 'index links collections');
 ok(indexHtml.includes('winter.html'), 'promo links winter.html');
 
 // 9. Generated API: collections + manifest + sitemap + llms mention winter

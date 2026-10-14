@@ -75,7 +75,7 @@ ok(/names nations use for themselves/.test(byId['tribal-nations-map-study'].incl
 ok(/does not borrow any nation/.test(byId['seasonal-rounds-phenology-wheel'].inclusion || ''), 'phenology wheel: no borrowed ceremonies');
 ok(/never a real flame/.test(byId['clay-diya-pinch-pots'].safety || ''), 'clay diya: LED-only (never a real flame)');
 ok(/not fireproof/.test(byId['clay-diya-pinch-pots'].safety || ''), 'clay diya: clay not fireproof, stated');
-ok(/nobody draws on skin/.test(byId['mehndi-paper-patterns'].safety || ''), 'mehndi: paper only, nobody draws on skin');
+ok(/Nobody draws on skin/.test(byId['mehndi-paper-patterns'].safety || ''), 'mehndi: paper only, nobody draws on skin');
 ok(/sacred Hindu epic/.test(byId['ramayana-story-sequence'].inclusion || ''), 'ramayana: sacred Hindu epic, named');
 ok(/never act it out in costume/.test(byId['ramayana-story-sequence'].inclusion || ''), 'ramayana: no costume acting');
 ok(/Limerick, a city in Ireland|Limerick, Ireland/.test(JSON.stringify(byId['limerick-writing-circle'])), 'limerick: named for Limerick, Ireland');

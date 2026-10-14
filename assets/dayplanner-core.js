@@ -1,7 +1,7 @@
-/* Activity Vault — Day Planner core logic (Wave 33 flagship).
+/* Activity Vault, Day Planner core logic (Wave 33 flagship).
    Compose ONE day: five named slots (arrival, morning meeting,
    centers, outdoor, closing), each filled from the real catalog
-   filtered by the room's age and the slot's honest shape — the
+   filtered by the room's age and the slot's honest shape, the
    real age_min/age_max/time_min fields, the slot's categories,
    and (for the outdoor slot) a real outdoor location. Pure
    functions only: no DOM, no network, no localStorage.
@@ -31,7 +31,7 @@
       hint: 'Small groups, busy hands: making, testing, concentrating.',
       cats: ['crafts', 'stem', 'quiet-focus'], maxMinutes: 30, outdoorOnly: false },
     { id: 'outdoor', label: 'Outdoor', glyph: '🌳', clock: '11:30',
-      hint: 'Fresh air and big movement — a real outdoor activity, not an indoor one renamed.',
+      hint: 'Fresh air and big movement, a real outdoor activity, not an indoor one renamed.',
       cats: ['outdoor', 'pe-movement'], maxMinutes: 30, outdoorOnly: true },
     { id: 'closing', label: 'Closing', glyph: '🌙', clock: '14:30',
       hint: 'Land the day softly: quiet, together, done.',
@@ -43,7 +43,7 @@
     return null;
   }
 
-  /* mulberry32 — same seeded PRNG family as planner-core, so a
+  /* mulberry32, same seeded PRNG family as planner-core, so a
      composed day is reproducible in tests for a given seed. */
   function mulberry32(seed) {
     var t = seed >>> 0;
@@ -67,7 +67,7 @@
   /* Does this activity honestly serve a room of exactly `age`?
      The real band fields: it must START at or before the age and
      still COVER the age. A 3-only record serves age 3 and no one
-     else — that is the band doing its job, not a filter trick. */
+     else. That is the band doing its job, not a filter trick. */
   function fitsAge(a, age) {
     return !!a && a.age_min <= age && a.age_max >= age;
   }
@@ -93,7 +93,7 @@
   /* Compose a full day. Deterministic for a given seed. Prefers a
      fresh primary category per slot, then no-prep, so a composed
      day feels varied rather than five of the same shelf. Slots
-     with an empty honest pool come back null — an honest empty
+     with an empty honest pool come back null. An honest empty
      state, never a stretched fit. */
   function composeDay(activities, opts) {
     opts = opts || {};
@@ -164,7 +164,7 @@
      Deterministic rotation through the pool (by id order, from
      just after the current pick) so repeated swaps cycle the
      whole shelf instead of re-rolling dice. Null when the pool
-     has nothing else — the UI says so plainly. */
+     has nothing else, the UI says so plainly. */
   function swapCandidate(activities, slot, currentId, usedIds, age) {
     var used = {};
     (usedIds || []).forEach(function (id) { if (id && id !== currentId) used[id] = true; });
@@ -192,10 +192,10 @@
     return { filled: filled, total: (daySlots || []).length, minMinutes: min, maxMinutes: max };
   }
 
-  /* Plain-text day sheet — the copy/paste twin of the printed
+  /* Plain-text day sheet, the copy/paste twin of the printed
      sheet, in the wave-7 export pattern. */
   function daySheetText(day, byId, catName) {
-    var lines = ['🗓️ ' + (day.title || 'My day') + ' — Activity Vault', ''];
+    var lines = ['🗓️ ' + (day.title || 'My day') + ' · Activity Vault', ''];
     if (day.dateLabel) lines.push('Date: ' + day.dateLabel);
     if (day.age != null) lines.push('Room age: ' + day.age);
     if (day.dateLabel || day.age != null) lines.push('');
@@ -205,7 +205,7 @@
         (slot ? ' · ' + slot.clock : '');
       lines.push(head);
       var a = s.activityId && byId[s.activityId];
-      if (!a) { lines.push('  — open slot (nothing in the catalog honestly fits)'); lines.push(''); return; }
+      if (!a) { lines.push('  \u00b7 open slot (nothing in the catalog honestly fits)'); lines.push(''); return; }
       lines.push('  ' + a.name);
       lines.push('    Ages ' + a.age_min + '–' + a.age_max + ' · ' +
         a.time_min + '–' + a.time_max + ' min · Group ' + a.group_min + '–' + a.group_max +

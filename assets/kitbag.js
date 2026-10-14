@@ -1,4 +1,4 @@
-/* Activity Vault — The Kit Bag page logic (Wave 34 flagship).
+/* Activity Vault, The Kit Bag page logic (Wave 34 flagship).
    Thin DOM layer over window.VaultKitBag (pure core). All
    filtering and aggregation decisions live in the core; this
    file only renders and wires events. */
@@ -45,11 +45,11 @@
       var body;
       if (!pool.length) {
         body = '<p class="kb-empty">Nothing in the rainy-day catalog honestly fits this role at age ' +
-          state.age + ' — the slot stays open rather than borrowing a record that does not belong in this bag.</p>';
+          state.age + '. The slot stays open rather than borrowing a record that does not belong in this bag.</p>';
       } else if (!a) {
-        body = '<p class="kb-empty">Open slot — pick from ' + pool.length + ' honest fits below, or pack the bag.</p>' +
+        body = '<p class="kb-empty">Open slot, pick from ' + pool.length + ' honest fits below, or pack the bag.</p>' +
           '<label class="flabel" for="sel-' + slot.id + '">Activity</label>' +
-          '<select class="kb-select" id="sel-' + slot.id + '" data-slot="' + slot.id + '"><option value="">— choose —</option>' +
+          '<select class="kb-select" id="sel-' + slot.id + '" data-slot="' + slot.id + '"><option value="">, choose, </option>' +
           pool.slice().sort(function (x, y) { return x.name < y.name ? -1 : 1; }).map(function (p) {
             return '<option value="' + esc(p.id) + '">' + esc(p.name) + ' (' + p.time_min + '–' + p.time_max + ' min)</option>';
           }).join('') + '</select>';
@@ -62,7 +62,7 @@
           '<p class="kb-mats"><strong>Packs:</strong> ' +
           ((a.materials || []).length
             ? a.materials.map(function (m) { return esc(m.item); }).join(' · ')
-            : 'nothing — this one needs no materials') + '</p>' +
+: 'nothing. This one needs no materials') + '</p>' +
           '<label class="flabel" for="sel-' + slot.id + '">Activity</label>' +
           '<div class="kb-pickrow"><select class="kb-select" id="sel-' + slot.id + '" data-slot="' + slot.id + '">' +
           pool.slice().sort(function (x, y) { return x.name < y.name ? -1 : 1; }).map(function (p) {
@@ -92,7 +92,7 @@
         if (next) { s.activityId = next; renderAll(); }
         else {
           el('kb-status').textContent = 'No other honest fit for the ' + slot.label +
-            ' role at age ' + state.age + ' — this is the one.';
+            ' role at age ' + state.age + '. This is the one.';
         }
       });
     });
@@ -116,7 +116,7 @@
       if (!a) {
         return '<div class="kit-sheet-row kit-sheet-open"><div class="kit-sheet-when">' +
           slot.clock + '<br>' + slot.glyph + ' ' + slot.label + '</div>' +
-          '<div><p class="kit-sheet-name">— open slot —</p>' +
+          '<div><p class="kit-sheet-name">, open slot, </p>' +
           '<p class="kit-sheet-sub">Nothing in the rainy-day catalog honestly fits this role at this age.</p></div></div>';
       }
       return '<div class="kit-sheet-row"><div class="kit-sheet-when">' + slot.clock + '<br>' +
@@ -134,14 +134,14 @@
           var variants = e.variants.filter(function (v) { return v !== e.item; })
             .map(function (v) { return '<span class="kit-variant">also listed as: ' + esc(v) + '</span>'; }).join(' ');
           return '<li><span class="kit-box" aria-hidden="true">☐</span> <span class="kit-item">' +
-            esc(e.item) + '</span> <span class="kit-for">— for: ' +
+            esc(e.item) + '</span> <span class="kit-for">, for: ' +
             e.activities.map(function (x) { return esc(x.name); }).join(', ') + '</span>' +
             (variants ? ' ' + variants : '') + '</li>';
         }).join('') + '</ul></section>';
     }).join('') + (kit.noMaterials.length
       ? '<p class="kit-none">Nothing to pack for: ' +
         kit.noMaterials.map(function (n) { return esc(n.name); }).join(', ') +
-        ' — those activities need no materials at all.</p>'
+        '. Those activities need no materials at all.</p>'
       : '');
 
     el('kb-summary').textContent = totals.filled
@@ -150,7 +150,7 @@
         (kit.sharedCount ? '; ' + kit.sharedCount + ' item' + (kit.sharedCount > 1 ? 's' : '') +
           ' shared by more than one activity, listed once' : '') +
         '). Every line is copied from a real activity\u2019s materials list.'
-      : 'No roles filled yet — pack the bag, or pick role by role.';
+: 'No roles filled yet, pack the bag, or pick role by role.';
   }
 
   function renderAll() { renderSlots(); renderSheet(); }
@@ -189,7 +189,7 @@
       var text = KB.kitBagText(
         { dateLabel: dateLabel(), age: state.age, slots: state.slots },
         byId, function (c) { return catName[c] || c; });
-      function done() { el('kb-copy-status').textContent = 'Kit list copied — paste it anywhere.'; }
+      function done() { el('kb-copy-status').textContent = 'Kit list copied, paste it anywhere.'; }
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(done, done);
       } else { done(); }
@@ -197,7 +197,7 @@
 
     setBag(KB.composeBag(acts, { age: state.age, seed: 34 }));
     el('kb-status').textContent = 'Pre-packed for age ' + state.age +
-      ' — repack above, swap any role, or print the kit list.';
+      ', repack above, swap any role, or print the kit list.';
   }
 
   Promise.all([
@@ -209,6 +209,6 @@
     res[1].forEach(function (c) { catName[c.id] = c.name; });
     init();
   }).catch(function () {
-    el('kb-status').textContent = 'The catalog could not be loaded — the Kit Bag is unavailable right now.';
+    el('kb-status').textContent = 'The catalog could not be loaded. The Kit Bag is unavailable right now.';
   });
 })();

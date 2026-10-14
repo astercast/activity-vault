@@ -1,4 +1,4 @@
-/* Activity Vault — Sub Tub emergency planner.
+/* Activity Vault, Sub Tub emergency planner.
    Fetches data/activities.json, builds a sequenced print-ready plan
    for a grade band + minutes + materials + location. */
 (function () {
@@ -186,7 +186,7 @@
           fl.rel = 'noopener';
           more.appendChild(fl);
           if (a.safety) {
-            more.appendChild(document.createTextNode(' — ⚠️ ' + a.safety));
+            more.appendChild(document.createTextNode(', ⚠️ ' + a.safety));
           }
           body.appendChild(more);
         }
@@ -200,7 +200,7 @@
     meta.textContent = BANDS[opts.band].label + ' · ' + opts.minutes + ' minutes · ' +
       MAT_LABELS[opts.tier] + ' · ' + (opts.loc === 'indoor' ? 'indoors' : 'outdoors OK') +
       ' · ' + plan.picks.length + ' blocks';
-    $('plan-title').textContent = 'Emergency plan — ' + opts.minutes + ' minutes';
+    $('plan-title').textContent = 'Emergency plan, ' + opts.minutes + ' minutes';
 
     buildNote(plan, opts);
     $('sub-plan').hidden = false;
@@ -217,7 +217,7 @@
     lines.push('');
     lines.push('Thank you for covering ' + cls + ' today (' + date + ')! This emergency plan fills ' +
       opts.minutes + ' minutes with ' + MAT_LABELS[opts.tier] + ', ' +
-      (opts.loc === 'indoor' ? 'indoors' : 'indoors or outdoors') + '. Follow it top to bottom — times are suggestions.');
+      (opts.loc === 'indoor'? 'indoors': 'indoors or outdoors') + '. Follow it top to bottom. Times are suggestions.');
     lines.push('');
     lines.push('CLASS AT A GLANCE (fill in before printing):');
     lines.push('- Schedule quirks: [lunch, recess, specials times]');
@@ -231,12 +231,12 @@
     var t = 0;
     plan.picks.forEach(function (p, i) {
       var name = p.filler ? p.name : p.activity.name;
-      lines.push((i + 1) + '. ' + fmtClock(t) + '–' + fmtClock(t + p.minutes) + ' — ' + name + ' (' + p.minutes + ' min)');
+      lines.push((i + 1) + '. ' + fmtClock(t) + '–' + fmtClock(t + p.minutes) + '. ' + Name + ' (' + p.minutes + ' min)');
       t += p.minutes;
     });
     lines.push('');
     lines.push('Full activity cards with step-by-step instructions: open the links in the printed plan, or browse the Activity Vault.');
-    lines.push('If anything feels off, swap in any no-prep activity — the plan is a guide, not a script. You have got this!');
+    lines.push('If anything feels off, swap in any no-prep activity. The plan is a guide, not a script. You have got this!');
     lines.push('');
     lines.push('- ' + (teacher || '[your name]'));
     $('sub-note-text').value = lines.join('\n');
@@ -250,7 +250,7 @@
     var pool = filterPool(band, tier, loc);
     var status = $('sub-status');
     if (!pool.length) {
-      status.textContent = 'No activities match that combo — try "Full classroom" or "Outdoors OK".';
+      status.textContent = 'No activities match that combo. Try "Full classroom" or "Outdoors OK".';
       $('sub-plan').hidden = true;
       $('sub-actions').hidden = true;
       return;
@@ -264,7 +264,7 @@
   function init() {
     fetch('data/activities.json').then(function (r) { return r.json(); }).then(function (d) {
       activities = d.activities || d;
-      $('sub-status').textContent = 'Ready — ' + activities.length + ' activities loaded.';
+      $('sub-status').textContent = 'Ready, ' + activities.length + ' activities loaded.';
     }).catch(function () {
       $('sub-status').textContent = 'Could not load the activity library. Check your connection and reload.';
     });
@@ -277,7 +277,7 @@
       function fallback() {
         ta.focus(); ta.select();
         try { document.execCommand('copy'); ok(); }
-        catch (e) { done.textContent = 'Copy failed — select the text manually.'; }
+        catch (e) { done.textContent = 'Copy failed, select the text manually.'; }
       }
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(ta.value).then(ok, fallback);

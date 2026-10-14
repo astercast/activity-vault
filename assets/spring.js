@@ -1,7 +1,7 @@
-/* Activity Vault — spring hub page (wave 11).
+/* Activity Vault, spring hub page (wave 11).
    Renders the curated spring sections from data/v1/activities.json using
    explicit, build-validated id lists (scripts/test-spring.js asserts every id
-   resolves). Picks show the visitor's own rating badges (localStorage only —
+   resolves). Picks show the visitor's own rating badges (localStorage only
    never invented), matching the collections page pattern. */
 (function () {
   'use strict';
@@ -13,40 +13,40 @@
   var SECTIONS = [
     {
       id: 'crafts', glyph: '🌱', title: 'Spring crafts',
-      blurb: 'Blossoms, butterflies, and ladybugs — table crafts that bring spring indoors.',
+      blurb: 'Blossoms, butterflies, and ladybugs. Table crafts that bring spring indoors.',
       browse: 'index.html?tag=season:spring',
       picks: [
-        ['tissue-paper-cherry-blossoms', 'Twisted paper branches, pinch-and-glue blossoms — a whole orchard by cleanup time.'],
+        ['tissue-paper-cherry-blossoms', 'Twisted paper branches, pinch-and-glue blossoms, a whole orchard by cleanup time.'],
         ['coffee-filter-butterflies', 'Markers plus one spritz: the color-bleed moment never fails to get gasps.'],
-        ['painted-rock-ladybugs', 'Yard rocks become garden art — hide the extras for other classes to find.'],
+        ['painted-rock-ladybugs', 'Yard rocks become garden art, hide the extras for other classes to find.'],
         ['pressed-flower-bookmarks', 'Start the pressing book now; harvest the bookmarks in a week.'],
-        ['egg-carton-tulip-garden', 'A full tray of tulips from trash-bound cartons — zero watering required.'],
+        ['egg-carton-tulip-garden', 'A full tray of tulips from trash-bound cartons, zero watering required.'],
         ['paper-plate-sunflower', 'The fastest bloom in the pack: fifteen minutes, plate to sunflower.']
       ]
     },
     {
       id: 'outdoor', glyph: '🏃', title: 'Outdoor games',
-      blurb: 'For the wiggly weeks — relays, chases, and puddle games that burn the spring fidgets off.',
+      blurb: 'For the wiggly weeks. Relays, chases, and puddle games that burn the spring fidgets off.',
       browse: 'index.html?tag=season:spring',
       picks: [
         ['sponge-bucket-relay', 'The rare relay where getting soaked is the strategy.'],
-        ['puddle-stomp-parade', 'Zero materials, pure joy — rain boots required, dignity optional.'],
+        ['puddle-stomp-parade', 'Zero materials, pure joy, rain boots required, dignity optional.'],
         ['puddle-hopscotch', 'Hopscotch with blue puddle squares you must jump clean over.'],
-        ['egg-roll-race', 'The egg-and-spoon classic, spring edition — drops cost you seconds.'],
+        ['egg-roll-race', 'The egg-and-spoon classic, spring edition. Drops cost you seconds.'],
         ['bubble-snake-blower', 'A sock and a bottle blow a bubble snake a foot long.'],
         ['kite-flying-basics', 'The spring classic, already in the Vault and now properly tagged.']
       ]
     },
     {
       id: 'science', glyph: '🔬', title: 'Spring science',
-      blurb: 'The season does the demo work — worms, puddles, sprouts, and nests, all observable this week.',
+      blurb: 'The season does the demo work, worms, puddles, sprouts, and nests, all observable this week.',
       browse: 'index.html?tag=season:spring',
       picks: [
-        ['worm-weather-watch', 'After-rain worm counts vs. the weather log — real data, real arguments.'],
+        ['worm-weather-watch', 'After-rain worm counts vs. the weather log, real data, real arguments.'],
         ['puddle-depth-gauge', 'Measure the puddle now, measure it in an hour: where did the water go?'],
-        ['flower-part-dissect', 'Take a tulip apart and find the machinery — pollen included.'],
+        ['flower-part-dissect', 'Take a tulip apart and find the machinery, pollen included.'],
         ['nest-material-challenge', 'Build a nest, then the marble-egg drop test decides the winner.'],
-        ['seed-dispersal-design', 'Maple seeds spin — beat nature with a paper helicopter.'],
+        ['seed-dispersal-design', 'Maple seeds spin, beat nature with a paper helicopter.'],
         ['sprout-growth-race', 'Sun vs. dark cup: place your bets, then watch for a week.'],
         ['evaporation-chalk-lines', 'Trace the puddle edge in chalk and watch the water lose.'],
         ['spring-seed-cups', 'The Vault classic: soil, seeds, and a windowsill race.']
@@ -54,18 +54,18 @@
     },
     {
       id: 'rainy', glyph: '🌧️', title: 'Rainy spring days',
-      blurb: 'When the sky cancels recess — become the storm, or make something while you wait it out.',
+      blurb: 'When the sky cancels recess. Become the storm, or make something while you wait it out.',
       browse: 'collections.html#rainy-day-rescue',
       browseLabel: '🌧️ Open the Rainy-day rescue collection',
       picks: [
         ['thunderstorm-clap-along', 'The whole class becomes the weather: wind, rain, thunder, then calm.'],
-        ['recycled-paper-making', "Yesterday's scrap becomes tomorrow's paper — a perfect two-day rain project."],
+        ['recycled-paper-making', "Yesterday's scrap becomes tomorrow's paper, a perfect two-day rain project."],
         ['jellybean-sort-graph', 'Sort, count, graph: quiet math that eats a rainy afternoon happily.']
       ]
     },
     {
       id: 'holidays', glyph: '🐣', title: 'Spring holidays',
-      blurb: 'Easter stations and Earth Day projects — the season\'s two big classroom moments.',
+      blurb: 'Easter stations and Earth Day projects, the season\'s two big classroom moments.',
       groups: [
         {
           label: '🐣 Easter', tag: 'holiday:easter',
@@ -73,13 +73,13 @@
             ['egg-roll-race', 'The relay every spring party needs.'],
             ['easter-egg-catapult', 'Popsicle-stick engineering with a plastic-egg payload.'],
             ['jellybean-sort-graph', 'Candy math: sort it, graph it, then decide the eating rule.'],
-            ['egg-hunt-design', 'Kids design the hunt — hiding beats finding.']
+            ['egg-hunt-design', 'Kids design the hunt, hiding beats finding.']
           ]
         },
         {
           label: '🌎 Earth Day', tag: 'holiday:earth-day',
           picks: [
-            ['earth-day-trash-audit', 'One day of classroom trash, sorted and weighed — the chart changes behavior.'],
+            ['earth-day-trash-audit', 'One day of classroom trash, sorted and weighed. The chart changes behavior.'],
             ['seed-ball-wildflowers', 'Roll them, dry them, toss them: flowers that outlast the lesson.'],
             ['recycled-paper-making', 'Blend the scrap bin into brand-new paper.']
           ]
@@ -100,7 +100,7 @@
     if (!R) return null;
     var entry = R.getRating(activityId);
     if (!entry) return null;
-    var s = el('span', 'rate-badge', '⭐ ' + entry.stars + '★ — your rating');
+    var s = el('span', 'rate-badge', '⭐ ' + entry.stars + '★, your rating');
     s.setAttribute('aria-label', 'You rated this activity ' + entry.stars + ' of 5 stars');
     return s;
   }
@@ -158,7 +158,7 @@
         chip.href = 'index.html?tag=' + encodeURIComponent(g.tag);
         chipRow.appendChild(chip);
         s.appendChild(chipRow);
-        if (!n) s.appendChild(el('p', null, 'No activities found — the library may have failed to load.'));
+        if (!n) s.appendChild(el('p', null, 'No activities found. The library may have failed to load.'));
       });
     } else {
       var list = el('ol', 'pick-list');
@@ -168,7 +168,7 @@
         if (li) { list.appendChild(li); n++; }
       });
       s.appendChild(list);
-      if (!n) s.appendChild(el('p', null, 'No activities found — the library may have failed to load.'));
+      if (!n) s.appendChild(el('p', null, 'No activities found. The library may have failed to load.'));
     }
 
     if (sec.browse) {

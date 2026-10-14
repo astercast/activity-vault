@@ -161,11 +161,11 @@ const newInPool = pool.filter(a => W14.includes(a.id)).length;
 ok(newInPool >= 6, 'new thanksgiving pack feeds the party pool', String(newInPool));
 
 // 9. app.js November promo hook + index.html promo section
-ok(appSrc.includes("getElementById('season-promo-thanksgiving')"), 'app.js thanksgiving promo hook');
-ok(/pm === 10/.test(appSrc), 'app.js gates thanksgiving promo on November (month 10)');
+ok(!appSrc.includes('season-promo'), 'app.js: season promo hooks removed (L11 collapse, rotation 21)');
+ok(!/pm === 10/.test(appSrc), 'app.js: no month-gated promo remains (rotation 21)');
 const indexHtml = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
-ok(indexHtml.includes('id="season-promo-thanksgiving"'), 'index.html has thanksgiving promo section');
-ok(indexHtml.includes('collections.html#grateful-gathering'), 'promo links grateful-gathering');
+ok(indexHtml.includes('tag=holiday:thanksgiving'), 'index.html calendar row links the thanksgiving tag');
+ok(indexHtml.includes('collections.html'), 'index links collections');
 ok(indexHtml.includes('thanksgiving.html'), 'promo links thanksgiving.html');
 
 // research integration (wave 14 scope-up): the 3 STEM activities carry source

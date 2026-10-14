@@ -3,11 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The After-School Kit — a low-materials week builder — Activity Vault</title>
+<title>The After-School Kit: a low-materials week builder · Activity Vault</title>
 <meta name="description" content="The flagship tool for running a low-materials after-school program: answer 4 questions about your group, and the Kit assembles a week of sessions from the Vault's real library, with a material checklist, session plan sheets, and a run-of-show day view. Print-friendly, shareable via link.">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="preload" href="assets/fonts/fraunces-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <script src="assets/site.js" defer></script>
+
+
+
+
+
 
 
 
@@ -40,17 +45,17 @@
 <link rel="canonical" href="https://activity-vault-live.vercel.app/kit.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Activity Vault">
-<meta property="og:title" content="The After-School Kit — a low-materials week builder — Activity Vault">
+<meta property="og:title" content="The After-School Kit: a low-materials week builder · Activity Vault">
 <meta property="og:description" content="The flagship tool for running a low-materials after-school program: answer 4 questions about your group, and the Kit assembles a week of sessions from the Vault&#x27;s real library, with a material checklist, session plan sheets, and a run-of-show day view. Print-friendly, shareable via link.">
 <meta property="og:url" content="https://activity-vault-live.vercel.app/kit.html">
 <meta property="og:image" content="https://activity-vault-live.vercel.app/assets/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The After-School Kit — a low-materials week builder — Activity Vault">
+<meta name="twitter:title" content="The After-School Kit: a low-materials week builder · Activity Vault">
 <meta name="twitter:description" content="The flagship tool for running a low-materials after-school program: answer 4 questions about your group, and the Kit assembles a week of sessions from the Vault&#x27;s real library, with a material checklist, session plan sheets, and a run-of-show day view. Print-friendly, shareable via link.">
 <meta name="twitter:image" content="https://activity-vault-live.vercel.app/assets/og-card.png">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "The After-School Kit — a low-materials week builder — Activity Vault", "description": "The flagship tool for running a low-materials after-school program: answer 4 questions about your group, and the Kit assembles a week of sessions from the Vault's real library, with a material checklist, session plan sheets, and a run-of-show day view. Print-friendly, shareable via link.", "url": "https://activity-vault-live.vercel.app/kit.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "The After-School Kit: a low-materials week builder · Activity Vault", "description": "The flagship tool for running a low-materials after-school program: answer 4 questions about your group, and the Kit assembles a week of sessions from the Vault's real library, with a material checklist, session plan sheets, and a run-of-show day view. Print-friendly, shareable via link.", "url": "https://activity-vault-live.vercel.app/kit.html"}</script>
 <!-- PLACEMENT:END -->
 </head>
 <body class="tool-page">
@@ -71,9 +76,9 @@
           <p class="nav-more-h">Tools</p>
           <a href="desk.html">The Desk</a>
           <a href="day.html">Day Planner</a>
-          <a href="kit.html" aria-current="page">Kit</a>
+          <a href="kit.html" aria-current="page">Week Kit</a>
           <a href="sub.html">Sub Tub</a>
-          <a href="party.html">Party Planner</a>
+          <a href="party.html">Party Themes</a>
           <a href="partypack.html">Party Pack</a>
           <a href="fieldtrip.html">Field Trips</a>
           <p class="nav-more-h">Seasons</p>
@@ -96,7 +101,7 @@
   <section class="hero" aria-labelledby="hero-title">
     <span class="kicker no-print">🧰 The After-School Kit</span>
     <h1 id="hero-title">The whole week,<br>from what's on the shelf.</h1>
-    <p class="lede no-print">The page to open when the supply closet is nearly empty. Tell the Kit your group size, age band, days per week, and what you actually have on hand — it assembles a week of sessions from the Vault's real 455-activity library, each day with a run-of-show, a session plan sheet, and one material checklist for the week. Print it, share it, run it.</p>
+    <p class="lede no-print">The page to open when the supply closet is nearly empty. Tell the Kit your group size, age band, days per week, and what you actually have on hand. It assembles a week of sessions from the Vault's real 455-activity library, each day with a run-of-show, a session plan sheet, and one material checklist for the week. Print it, share it, run it.</p>
     <aside class="desk-note no-print" aria-label="A note from the teacher's desk">low-prep, low-materials,<br>small-group friendly ↓</aside>
   </section>
 
@@ -153,7 +158,7 @@
           <label class="chip"><input type="radio" name="kit-mode" value="low"> 📦 Low-materials (≤ 3 items)</label>
           <label class="chip"><input type="radio" name="kit-mode" value="noprep"> ⚡ No-prep only</label>
         </div>
-        <p class="dim">“Use what I have” keeps only activities whose materials are all in your pantry below (or need none). The pantry is matched against the real material lists in the Vault — a phone timer and tap water count as on hand.</p>
+        <p class="dim">“Use what I have” keeps only activities whose materials are all in your pantry below (or need none). The pantry is matched against the real material lists in the Vault. A phone timer and tap water count as on hand.</p>
       </div>
       <div class="filter-group">
         <span class="flabel" id="kit-pantry-label">Your pantry</span>
@@ -170,14 +175,14 @@
   <div id="kit-checklist" class="no-print"></div>
   <div id="kit-actions" class="no-print"></div>
 
-  <p class="plan-note no-print">🎒 <strong>New — the Kit Bag:</strong> packing for one specific rainy day instead? <a href="kitbag.html">Open the Kit Bag</a> — five roles filled from the real rainy-day shelf, and a printable kit list composed from the selected activities' own materials lists.</p>
+  <p class="plan-note no-print">🎒 <strong>New, the Kit Bag:</strong> packing for one specific rainy day instead? <a href="kitbag.html">Open the Kit Bag</a>, five roles filled from the real rainy-day shelf, and a printable kit list composed from the selected activities' own materials lists.</p>
 
   <p class="no-print" style="margin-top:2rem;"><a href="index.html">← Back to browsing</a></p>
 </main>
 
 <footer class="site-footer no-print">
   <div class="wrap">
-    <p><strong>Activity Vault</strong> — the all-in-one activity archive for teachers &amp; after-school programs. All activities are classic, public-domain concepts described in our own words.</p>
+    <p><strong>Activity Vault</strong>, the all-in-one activity archive for teachers &amp; after-school programs. All activities are classic, public-domain concepts described in our own words.</p>
     <p><a href="data/v1/activities.json">API</a> · <a href="api.html">API docs &amp; console</a> · <a href="llms.txt">llms.txt</a> · <a href="AGENT.md">Agent guide</a></p>
   </div>
 </footer>

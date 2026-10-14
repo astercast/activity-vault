@@ -1,4 +1,4 @@
-/* Activity Vault — class-party planner (Halloween, Thanksgiving, winter, spring + summer presets).
+/* Activity Vault, class-party planner (Halloween, Thanksgiving, winter, spring + summer presets).
    Fetches data/activities.json, builds a timed station-rotation plan
    from seasonal activities for theme + class size + minutes + stations + budget. */
 (function () {
@@ -12,11 +12,11 @@
       groupNames: ['Ghosts', 'Bats', 'Pumpkins', 'Spiders', 'Witches', 'Black Cats'],
       heroKicker: '🎃 Party Planner',
       heroTitle: 'The Halloween<br>class-party planner.',
-      heroLede: 'Tell it your class size, how long the party runs, how many stations you can staff, and your budget — it builds a timed station-rotation plan from the Vault\'s fall and Halloween activities, with a merged setup list and a print-ready run sheet.',
+      heroLede: 'Tell it your class size, how long the party runs, how many stations you can staff, and your budget. It builds a timed station-rotation plan from the Vault\'s fall and Halloween activities, with a merged setup list and a print-ready run sheet.',
       planKicker: '🎃 Halloween class-party run sheet',
       planTitle: 'Halloween party',
       breakMin: 0,
-      closingIntro: '0:05 — Welcome & costume parade (5 min). Then rotate on the timer.',
+      closingIntro: '0:05, Welcome & costume parade (5 min). Then rotate on the timer.',
       closingRegroup: 'Regroup: costume category vote or group photo, hand out take-homes, clean stations'
     },
     thanksgiving: {
@@ -25,11 +25,11 @@
       groupNames: ['Turkeys', 'Harvesters', 'Cornucopias', 'Acorns', 'Gourds', 'Sunflowers'],
       heroKicker: '🦃 Party Planner',
       heroTitle: 'The Thanksgiving<br>class-party planner.',
-      heroLede: 'Tell it your class size, how long the party runs, how many stations you can staff, and your budget — it builds a timed station-rotation plan from the Vault\'s Thanksgiving and fall activities (gratitude crafts, harvest games, Thanksgiving STEM, and giving-back stations), with a merged setup list and a print-ready run sheet.',
+      heroLede: 'Tell it your class size, how long the party runs, how many stations you can staff, and your budget. It builds a timed station-rotation plan from the Vault\'s Thanksgiving and fall activities (gratitude crafts, harvest games, Thanksgiving STEM, and giving-back stations), with a merged setup list and a print-ready run sheet.',
       planKicker: '🦃 Thanksgiving class-party run sheet',
       planTitle: 'Thanksgiving party',
       breakMin: 0,
-      closingIntro: '0:05 — Welcome & gratitude circle (5 min). Then rotate on the timer.',
+      closingIntro: '0:05, Welcome & gratitude circle (5 min). Then rotate on the timer.',
       closingRegroup: 'Regroup: share one thankful thought, hand out take-homes, clean stations'
     },
     winter: {
@@ -38,11 +38,11 @@
       groupNames: ['Snowflakes', 'Penguins', 'Reindeer', 'Mittens', 'Icicles', 'Cocoa Bears'],
       heroKicker: '❄️ Party Planner',
       heroTitle: 'The winter<br>class-party planner.',
-      heroLede: 'Tell it your class size, how long the party runs, how many stations you can staff, and your budget — it builds a timed station-rotation plan from the Vault\'s winter activities, with a cozy warm-up break halfway through, a merged setup list, and a print-ready run sheet.',
+      heroLede: 'Tell it your class size, how long the party runs, how many stations you can staff, and your budget. It builds a timed station-rotation plan from the Vault\'s winter activities, with a cozy warm-up break halfway through, a merged setup list, and a print-ready run sheet.',
       planKicker: '❄️ Winter class-party run sheet',
       planTitle: 'Winter party',
       breakMin: 5,
-      closingIntro: '0:05 — Welcome & winter wishes (5 min). Then rotate on the timer, with a warm-up break halfway.',
+      closingIntro: '0:05, Welcome & winter wishes (5 min). Then rotate on the timer, with a warm-up break halfway.',
       closingRegroup: 'Regroup: share one favorite moment, hand out take-homes, clean stations'
     },
     spring: {
@@ -51,11 +51,11 @@
       groupNames: ['Bunnies', 'Sprouts', 'Rainclouds', 'Ladybugs', 'Tadpoles', 'Seedlings'],
       heroKicker: '🌷 Party Planner',
       heroTitle: 'The spring<br>class-party planner.',
-      heroLede: 'Tell it your class size, how long the party runs, how many stations you can staff, and your budget — it builds a timed station-rotation plan from the Vault\'s spring activities (Easter stations, Earth Day projects, and outdoor games), with a merged setup list and a print-ready run sheet.',
+      heroLede: 'Tell it your class size, how long the party runs, how many stations you can staff, and your budget. It builds a timed station-rotation plan from the Vault\'s spring activities (Easter stations, Earth Day projects, and outdoor games), with a merged setup list and a print-ready run sheet.',
       planKicker: '🌷 Spring class-party run sheet',
       planTitle: 'Spring party',
       breakMin: 0,
-      closingIntro: '0:05 — Welcome & spring hello (5 min). Then rotate on the timer.',
+      closingIntro: '0:05, Welcome & spring hello (5 min). Then rotate on the timer.',
       closingRegroup: 'Regroup: show off what each station made, hand out take-homes, clean stations'
     },
     summer: {
@@ -64,11 +64,11 @@
       groupNames: ['Sharks', 'Sunbeams', 'Dolphins', 'Wave Riders', 'Sand Dollars', 'Beach Balls'],
       heroKicker: '☀️ Party Planner',
       heroTitle: 'The summer<br>class-party planner.',
-      heroLede: 'Tell it your class size, how long the party runs, how many stations you can staff, and your budget — it builds a timed station-rotation plan from the Vault\'s summer activities (water games, outdoor games, summer crafts, and July 4th stations), with a shade-and-water break halfway through, a merged setup list, and a print-ready run sheet.',
+      heroLede: 'Tell it your class size, how long the party runs, how many stations you can staff, and your budget. It builds a timed station-rotation plan from the Vault\'s summer activities (water games, outdoor games, summer crafts, and July 4th stations), with a shade-and-water break halfway through, a merged setup list, and a print-ready run sheet.',
       planKicker: '☀️ Summer class-party run sheet',
       planTitle: 'Summer party',
       breakMin: 5,
-      closingIntro: '0:05 — Welcome & sunscreen check (5 min). Then rotate on the timer, with a shade-and-water break halfway.',
+      closingIntro: '0:05, Welcome & sunscreen check (5 min). Then rotate on the timer, with a shade-and-water break halfway.',
       closingRegroup: 'Regroup: show off what each station made, hand out take-homes, clean stations'
     }
   };
@@ -128,7 +128,7 @@
   }
 
   function pickStations(pool, n, offset) {
-    // The visitor's own ratings come first (localStorage) — never an aggregate.
+    // The visitor's own ratings come first (localStorage), never an aggregate.
     // Unrated activities sink below every rated one; within a rating the
     // original order (no-prep, longest, id) is kept.
     var R = window.VaultRatings;
@@ -171,11 +171,11 @@
       stations + ' stations (' + roundMin + ' min each) · ' + BUDGET_LABELS[opts.budget];
     $('party-meta').textContent = metaText;
     document.getElementById('party-kicker').textContent = themeDef.planKicker;
-    $('party-plan-title').textContent = themeDef.planTitle + ' — ' + opts.minutes + '-minute run sheet';
+    $('party-plan-title').textContent = themeDef.planTitle + '. ' + opts.minutes + '-minute run sheet';
 
     lastPlan = {
       themeLabel: themeDef.label,
-      title: themeDef.planTitle + ' — ' + opts.minutes + '-minute run sheet',
+      title: themeDef.planTitle + '. ' + opts.minutes + '-minute run sheet',
       meta: metaText,
       picks: picks.map(function (a) {
         var PR = window.VaultRatings;
@@ -220,7 +220,7 @@
         bhead.appendChild(el('span', 'plan-title', '☕ Warm-up break'));
         bli.appendChild(bhead);
         var bbody = el('div', 'plan-block-body');
-        var breakText = 'Stretch, sip water (cocoa if your school allows it), and get cozy — then rotate to your next station.';
+        var breakText = 'Stretch, sip water (cocoa if your school allows it), and get cozy, then rotate to your next station.';
         bbody.appendChild(el('p', null, breakText));
         bli.appendChild(bbody);
         rounds.appendChild(bli);
@@ -253,7 +253,7 @@
         added++;
       });
       if (!added) {
-        ul2.appendChild(el('li', null, 'Nothing to gather — no materials needed.'));
+        ul2.appendChild(el('li', null, 'Nothing to gather, no materials needed.'));
       }
       col.appendChild(ul2);
       setup.appendChild(col);
@@ -285,11 +285,11 @@
       fl.target = '_blank';
       fl.rel = 'noopener';
       more.appendChild(fl);
-      if (a.safety) more.appendChild(document.createTextNode(' — ⚠️ ' + a.safety));
+      if (a.safety) more.appendChild(document.createTextNode(', ⚠️ ' + a.safety));
       body3.appendChild(more);
       var RP = window.VaultRatings;
       var mine = RP ? RP.getRating(a.id) : null;
-      if (mine) body3.appendChild(el('span', 'rate-badge', '⭐ ' + mine.stars + '★ — your rating (picked first)'));
+      if (mine) body3.appendChild(el('span', 'rate-badge', '⭐ ' + mine.stars + '★, your rating (picked first)'));
       li3.appendChild(body3);
       list.appendChild(li3);
     });
@@ -297,7 +297,7 @@
     var wrapMin = opts.minutes - INTRO_MIN - stations * roundMin - themeDef.breakMin + WRAP_MIN;
     var closingText =
       themeDef.closingIntro + ' ' +
-      fmtClock(INTRO_MIN + stations * roundMin + themeDef.breakMin) + ' — ' +
+      fmtClock(INTRO_MIN + stations * roundMin + themeDef.breakMin) + ', ' +
       themeDef.closingRegroup + ' (' + wrapMin + ' min). ' +
       'Tip: ring a bell 1 minute before each rotation so groups can finish up.';
     $('party-closing').textContent = closingText;
@@ -325,7 +325,7 @@
       document.body.appendChild(ta);
       ta.focus(); ta.select();
       try { document.execCommand('copy'); ok(); }
-      catch (e) { statusEl.textContent = 'Copy failed — select the text manually.'; }
+      catch (e) { statusEl.textContent = 'Copy failed, select the text manually.'; }
       document.body.removeChild(ta);
     }
     if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -339,27 +339,27 @@
     var lines = [p.title + ' (Activity Vault)', p.meta, ''];
     lines.push('Stations:');
     p.picks.forEach(function (s, i) {
-      lines.push('  Station ' + (i + 1) + ' — ' + s.name +
+      lines.push('  Station ' + (i + 1) + ' \u00b7 ' + s.name +
         (s.stars ? ' (your rating: ' + s.stars + '/5 stars)' : ''));
       lines.push('  ' + s.url);
     });
     lines.push('');
     lines.push('Rotation:');
     p.rounds.forEach(function (r) {
-      lines.push('  ' + r.time + ' — ' + r.title + ': ' + r.rows.join(' · '));
+      lines.push('  ' + r.time + ', ' + r.title + ': ' + r.rows.join(' · '));
     });
     lines.push('');
     lines.push('Setup checklist:');
     if (p.setup.length) {
       p.setup.forEach(function (it) { lines.push('  ☐ ' + it); });
     } else {
-      lines.push('  Nothing to gather — no materials needed.');
+      lines.push('  Nothing to gather, no materials needed.');
     }
     lines.push('');
     lines.push('Closing:');
     lines.push('  ' + p.closing);
     lines.push('');
-    lines.push('Full cards at the links above — share this sheet with co-teachers and volunteers.');
+    lines.push('Full cards at the links above, share this sheet with co-teachers and volunteers.');
     copyText(lines.join('\n'), $('copy-party-status'));
   }
 
@@ -375,7 +375,7 @@
 
     var roundMin = Math.floor((minutes - INTRO_MIN - WRAP_MIN - themeDef.breakMin) / stations);
     if (roundMin < 10) {
-      status.textContent = 'Only ' + roundMin + ' minutes per station — that is too rushed. Add minutes or drop a station.';
+      status.textContent = 'Only ' + roundMin + ' minutes per station. That is too rushed. Add minutes or drop a station.';
       $('party-plan').hidden = true;
       $('party-actions').hidden = true;
       return;
@@ -403,7 +403,7 @@
   function init() {
     fetch('data/activities.json').then(function (r) { return r.json(); }).then(function (d) {
       activities = d.activities || d;
-      $('party-status').textContent = 'Ready — ' + activities.length + ' activities loaded.';
+      $('party-status').textContent = 'Ready, ' + activities.length + ' activities loaded.';
     }).catch(function () {
       $('party-status').textContent = 'Could not load the activity library. Check your connection and reload.';
     });

@@ -7,7 +7,7 @@ description: Pick the right outdoor activity for the space, weather, and energy 
 
 ## Use when
 
-The group gets the field, playground, or a patch of nature: "we have 40 minutes outside — what actually works out there?"
+The group gets the field, playground, or a patch of nature: "we have 40 minutes outside. What actually works out there?"
 
 ## Inputs
 
@@ -16,7 +16,7 @@ The group gets the field, playground, or a patch of nature: "we have 40 minutes 
 - Group size
 - Space available (field, playground, nature spot, blacktop)
 - Energy goal (burn energy vs. observe and explore)
-- Weather reality (hot sun, cold, wind — affects water and running games)
+- Weather reality (hot sun, cold, wind, affects water and running games)
 
 ## Procedure
 
@@ -37,6 +37,6 @@ The group gets the field, playground, or a patch of nature: "we have 40 minutes 
 
 ## Pitfalls
 
-- Tag games with a wide age spread — the oldest kids dominate; use the `variations.harder` twist or split into age-matched teams.
-- Forgetting water and shade on hot days — a common-sense check, not in the record.
-- Observation activities with a wired group — burn first, then explore.
+- Tag games with a wide age spread. The oldest kids dominate; use the `variations.harder` twist or split into age-matched teams.
+- Forgetting water and shade on hot days, a common-sense check, not in the record.
+- Observation activities with a wired group. Burn first, then explore.

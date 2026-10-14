@@ -1,4 +1,4 @@
-/* Activity Vault — Field Trip Planner core logic (wave 14).
+/* Activity Vault, Field Trip Planner core logic (wave 14).
    Pure functions only: no DOM, no network, no localStorage.
    Browser: window.VaultFieldTrip. Node: module.exports (UMD). */
 (function (global, factory) {
@@ -20,18 +20,18 @@
 
   /* Destination -> library matching. cats are real category ids; keywords are
      matched (case-insensitive) against name + tagline. If fewer than 3 picks
-     match the keywords, the matcher falls back to cats alone — asserted by
+     match the keywords, the matcher falls back to cats alone, asserted by
      scripts/test-fieldtrip.js so every destination always yields suggestions. */
   var DESTINATIONS = {
     'museum': {
       label: 'Museum / science center', glyph: '🏛️',
-      blurb: 'Galleries, exhibits, and quiet looking — then sketch it.',
+      blurb: 'Galleries, exhibits, and quiet looking, then sketch it.',
       cats: ['quiet-focus', 'crafts', 'seasons'],
       keywords: ['museum', 'scavenger', 'sketch', 'gallery', 'observe']
     },
     'nature': {
       label: 'Nature park / trail', glyph: '🌳',
-      blurb: 'Trails, leaves, birds, and dirt — the outdoor classroom.',
+      blurb: 'Trails, leaves, birds, and dirt, the outdoor classroom.',
       cats: ['outdoor', 'seasons', 'stem'],
       keywords: ['nature', 'leaf', 'bird', 'hike', 'trail', 'scavenger', 'bug']
     },
@@ -49,13 +49,13 @@
     },
     'helpers': {
       label: 'Community helpers visit', glyph: '🚒',
-      blurb: 'Fire station, post office, bakery — meet the neighborhood at work.',
+      blurb: 'Fire station, post office, bakery. Meet the neighborhood at work.',
       cats: ['team-community', 'icebreakers', 'seasons'],
       keywords: ['community', 'helper', 'interview', 'thank-you', 'post']
     },
     'playground': {
       label: 'Playground / sports field', glyph: '⚽',
-      blurb: 'Big space, big energy — run it out, together.',
+      blurb: 'Big space, big energy. Run it out, together.',
       cats: ['pe-movement', 'outdoor', 'team-community'],
       keywords: []
     },
@@ -113,7 +113,7 @@
     var warning = null;
     if (travelOut + travelBack > travelBudget) {
       warning = 'Travel (' + (travelOut + travelBack) + ' min) exceeds the ' +
-        travelBudget + '-min travel budget — shorten a block or extend the day.';
+        travelBudget + '-min travel budget, shorten a block or extend the day.';
     }
     var t = opts.startMin | 0;
     blocks.forEach(function (b) {
@@ -123,7 +123,7 @@
   }
 
   /* Chaperones: ratio like 8 means 1 adult per 8 kids. The default (1:8) is a
-     common planning figure — the UI tells the teacher to confirm with their
+     common planning figure. The UI tells the teacher to confirm with their
      program's policy, since required ratios vary. */
   function chaperonesNeeded(kids, ratio) {
     kids = Math.max(1, kids | 0); ratio = Math.max(1, ratio | 0);
@@ -139,7 +139,7 @@
     return { pairs: pairs, trios: trios, covered: pairs * 2 + trios * 3 };
   }
 
-  /* Budget: user-entered numbers only — the tool does the arithmetic. */
+  /* Budget: user-entered numbers only. The tool does the arithmetic. */
   function budgetTotal(kids, admissionPerKid, transportFlat) {
     kids = Math.max(0, kids | 0);
     admissionPerKid = Math.max(0, Number(admissionPerKid) || 0);

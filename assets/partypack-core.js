@@ -1,10 +1,10 @@
-/* Activity Vault — The Party Pack core logic (Wave 35 flagship).
+/* Activity Vault, The Party Pack core logic (Wave 35 flagship).
    The Party Pack composes the two flagships that came before it:
    the Day Planner's slot arc (five slots in an event's order,
    each filled from the real catalog) and the Kit Bag's materials
    aggregation (the party's pack list is built from the REAL
    materials fields of the activities the plan selects, through
-   VaultKitBag.aggregateKit — loaded before this file; in Node,
+   VaultKitBag.aggregateKit, loaded before this file; in Node,
    required from ./kitbag-core.js).
 
    The hard rules never loosen: a pick must really match the
@@ -13,7 +13,7 @@
    age_min/age_max fields), and really fit the group size (the
    real group_min/group_max fields). A slot's categories are a
    preference ladder only, exactly as in the Kit Bag: the slot's
-   own pool first, then the whole honest occasion pool — and a
+   own pool first, then the whole honest occasion pool, and a
    slot with no honest pick left comes back open, never padded.
 
    Honest thin coverage: when an occasion + age band + group
@@ -21,7 +21,7 @@
    coverage report says so in numbers, the composed plan fills
    only what honestly fits, and nearestOptions() names the
    nearest REAL alternatives (a neighbouring age band, a smaller
-   group, another occasion) — each verified against the catalog
+   group, another occasion), each verified against the catalog
    before it is offered. Nothing is invented to fill a gap.
 
    Pure functions only: no DOM, no network, no localStorage.
@@ -36,7 +36,7 @@
   'use strict';
 
   /* Age bands as the page offers them: [min, max]. An activity
-     serves a band when its own band OVERLAPS it — the Vault's
+     serves a band when its own band OVERLAPS it. The Vault's
      standing filter convention (data/v1/filters.json). */
   var AGE_BANDS = [
     { id: '3-4', label: 'Ages 3–4', min: 3, max: 4 },
@@ -48,12 +48,12 @@
   /* Occasions, each defined by the real fields it filters on.
      `tags`: an activity matches when it carries ANY listed tag.
      `anyTag: true` (birthday) means the whole catalog is the
-     honest pool — a birthday has no season in the vocabulary,
+     honest pool. A birthday has no season in the vocabulary,
      and the page says so. `rainy-day` matches on the real
      category + location fields, like the Kit Bag's scenario. */
   var OCCASIONS = [
     { id: 'birthday', label: 'Birthday Party', glyph: '🎂', anyTag: true,
-      blurb: 'No season, no holiday — the whole catalog is honestly in play, filtered by age band and group size.' },
+      blurb: 'No season, no holiday. The whole catalog is honestly in play, filtered by age band and group size.' },
     { id: 'halloween', label: 'Halloween Party', glyph: '🎃', tags: ['holiday:halloween', 'theme:spooky'],
       blurb: 'Activities carrying the Halloween or spooky tags.' },
     { id: 'thanksgiving', label: 'Thanksgiving & Friendsgiving', glyph: '🦃', tags: ['holiday:thanksgiving'],
@@ -62,14 +62,14 @@
       tags: ['holiday:christmas', 'holiday:hanukkah', 'holiday:kwanzaa', 'holiday:new-year', 'season:winter'],
       blurb: 'Christmas, Hanukkah, Kwanzaa, New Year, and winter-season activities.' },
     { id: 'valentines', label: "Valentine's Party", glyph: '💌', tags: ['holiday:valentines-day'],
-      blurb: "Activities carrying the Valentine's Day tag — a small, honest shelf." },
+      blurb: "Activities carrying the Valentine's Day tag, a small, honest shelf." },
     { id: 'spring', label: 'Spring & Easter Party', glyph: '🌷',
       tags: ['holiday:easter', 'holiday:earth-day', 'season:spring'],
       blurb: 'Easter, Earth Day, and spring-season activities.' },
     { id: 'summer', label: 'Summer & July 4th Party', glyph: '☀️', tags: ['holiday:july-4th', 'season:summer'],
       blurb: 'July 4th and summer-season activities.' },
     { id: 'rainy-day', label: 'Rainy-Day Party (indoors)', glyph: '🌧️', rainyDay: true,
-      blurb: 'Real rainy-day activities that really run indoors — the Kit Bag\u2019s scenario, wearing a party hat.' }
+      blurb: 'Real rainy-day activities that really run indoors, the Kit Bag\u2019s scenario, wearing a party hat.' }
   ];
 
   /* The party arc: the Day Planner's slot shape, in an event's
@@ -124,7 +124,7 @@
     return a;
   }
 
-  /* The hard rules — these never loosen, at any fallback. */
+  /* The hard rules, these never loosen, at any fallback. */
   function fitsOccasion(a, occ) {
     if (!a || !occ) return false;
     if (occ.anyTag) return true;
@@ -155,7 +155,7 @@
 
   /* One slot's pool: the slot-preferred slice of the occasion
      pool when it has anything fresh, else the whole fresh
-     occasion pool — the Kit Bag's preference ladder, verbatim
+     occasion pool. The Kit Bag's preference ladder, verbatim
      in spirit. The hard rules are applied before the ladder. */
   function slotPool(activities, slot, opts) {
     var used = (opts && opts.used) || {};
@@ -171,7 +171,7 @@
   /* Compose the party. Deterministic for a given seed. Prefers
      a fresh primary category per slot, then no-prep, as the Day
      Planner does. Slots come back null only when the honest
-     occasion pool is exhausted — never stretched, never padded. */
+     occasion pool is exhausted, never stretched, never padded. */
   function composeParty(activities, opts) {
     opts = opts || {};
     var rng = mulberry32(opts.seed == null ? 35 : opts.seed);
@@ -201,7 +201,7 @@
   /* Swap one slot: the next honest candidate for that slot
      (ladder pool, id order) that is not the current pick and
      not used elsewhere in the party. Null when nothing else
-     honestly fits — the page says so plainly. */
+     honestly fits, the page says so plainly. */
   function swapCandidate(activities, slot, currentId, usedIds, opts) {
     var used = {};
     (usedIds || []).forEach(function (id) { if (id && id !== currentId) used[id] = true; });
@@ -218,7 +218,7 @@
 
   /* Coverage, in honest numbers: how many real records the
      request holds, how many of the arc's slots can honestly
-     fill, and whether the coverage is thin — fewer honest
+     fill, and whether the coverage is thin, fewer honest
      records than the arc has slots, so a full distinct plan
      cannot exist no matter how the picks are arranged. */
   function coverageReport(activities, opts) {
@@ -238,7 +238,7 @@
   }
 
   /* Nearest real options for a thin request: single-dimension
-     neighbours — the adjacent age bands at the same occasion
+     neighbours, the adjacent age bands at the same occasion
      and size, smaller group sizes at the same occasion and
      band, and every other occasion at the same band and size.
      Each candidate is composed against the real catalog before
@@ -286,7 +286,7 @@
   }
 
   /* The party's pack list: the Kit Bag's aggregation, composed
-     — every line copied from a real pick's materials field,
+. Every line copied from a real pick's materials field,
      deduplicated and grouped by the Kit Bag's own rules, every
      line naming every activity that asked for it. */
   function partyKit(picks) {
@@ -306,12 +306,12 @@
     return { filled: filled, total: (partySlots || []).length, minMinutes: min, maxMinutes: max };
   }
 
-  /* Plain-text party sheet — the copy/paste twin of the printed
+  /* Plain-text party sheet, the copy/paste twin of the printed
      sheet, in the established export pattern. */
   function partySheetText(party, byId, catName) {
     var occ = occasionById(party.occasion);
     var band = bandById(party.ageBand);
-    var lines = ['🎉 THE PARTY PACK — ' + (occ ? occ.label : party.occasion) + ' — Activity Vault', '',
+    var lines = ['🎉 THE PARTY PACK, ' + (occ? occ.label: party.occasion) + ' · Activity Vault', '',
       'Party: ' + (occ ? occ.label : '') + ' · ' + (band ? band.label : party.ageBand) +
       ' · Group of ' + party.groupSize, ''];
     var picks = [];
@@ -320,26 +320,26 @@
       var a = s.activityId && byId[s.activityId];
       lines.push((slot ? slot.glyph + ' ' + slot.label : s.slot));
       if (!a) {
-        lines.push('  — open slot (nothing in the catalog honestly fits this part of the arc)');
+        lines.push('  \u00b7 open slot (nothing in the catalog honestly fits this part of the arc)');
         lines.push('');
         return;
       }
       picks.push(a);
-      lines.push('  ' + a.name + ' — ages ' + a.age_min + '–' + a.age_max + ' · ' +
+      lines.push('  ' + a.name + ', ages ' + a.age_min + '–' + a.age_max + ' · ' +
         a.time_min + '–' + a.time_max + ' min · group ' + a.group_min + '–' + a.group_max + ' · ' +
         a.categories.map(catName).join(' · ') + ' · activity/' + a.id + '.html');
       lines.push('');
     });
     var kit = partyKit(picks);
     if (kit) {
-      lines.push('🎒 THE PARTY BAG — ' + kit.lineCount + ' lines from ' + kit.rawTotal +
+      lines.push('🎒 THE PARTY BAG, ' + kit.lineCount + ' lines from ' + kit.rawTotal +
         ' materials listed across the party\u2019s activities' +
         (kit.sharedCount ? ' · ' + kit.sharedCount + ' shared by more than one activity' : ''));
       kit.groups.forEach(function (g) {
         if (!g.items.length) return;
         lines.push('', g.glyph + ' ' + g.label.toUpperCase());
         g.items.forEach(function (e) {
-          lines.push('  [ ] ' + e.item + ' — for: ' +
+          lines.push('  [ ] ' + e.item + ', for: ' +
             e.activities.map(function (x) { return x.name; }).join(', '));
           e.variants.forEach(function (v) {
             if (v !== e.item) lines.push('      also listed as: ' + v);
@@ -347,11 +347,11 @@
         });
       });
       kit.noMaterials.forEach(function (n) {
-        lines.push('  (nothing to pack for ' + n.name + ' — it needs no materials)');
+        lines.push('  (nothing to pack for ' + n.name + '. It needs no materials)');
       });
     }
     lines.push('', 'Every activity and every pack line above is copied from a real ' +
-      'Activity Vault record — open its card for setup, steps, and safety.');
+      'Activity Vault record. Open its card for setup, steps, and safety.');
     return lines.join('\n');
   }
 

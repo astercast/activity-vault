@@ -1,4 +1,4 @@
-/* Activity Vault — "beloved teacher's binder, redesigned"
+/* Activity Vault. "Beloved teacher's binder, redesigned"
    Warm paper, strong type, color-coded categories. Mobile-first. */
 
 /* Self-hosted type (QA-013, aesthetics round 001 section 5).
@@ -469,10 +469,10 @@ input[type="number"] {
   padding: .7rem 1rem; margin: 0 0 1rem; font-size: .92rem;
 }
 
-/* ================= WAVE 15 — Smart Weekly Planner 3.0 ================= */
+/* ================= WAVE 15, Smart Weekly Planner 3.0 ================= */
 /* Design craft: container queries, sticky section nav, fluid week heads,
    scroll-driven card entrance (no-preference only), DnD affordances.
-   Keeps the site's warm-paper identity — no generic redesign. */
+   Keeps the site's warm-paper identity, no generic redesign. */
 
 /* week sections: each week is its own landmark with a fluid-type head */
 .week-section { margin-bottom: 2.2rem; }
@@ -552,7 +552,7 @@ li.slot.drag-over::before {
 }
 
 /* scroll-driven entrance for day cards: subtle rise as they scroll into view.
-   Progressive enhancement — no animation without support; killed entirely
+   Progressive enhancement, no animation without support; killed entirely
    for reduced-motion users by the global rule. Failure mode is "no animation",
    never invisible content (the finished state is the CSS default). */
 @media (prefers-reduced-motion: no-preference) {
@@ -570,7 +570,7 @@ li.slot.drag-over::before {
 }
 
 /* view transitions: cross-document opt-in, gated per the round-2 correction
-   (Firefox doesn't do MPA transitions yet — unsupported browsers ignore it).
+   (Firefox doesn't do MPA transitions yet, unsupported browsers ignore it).
    Keep the crossfade short and calm. */
 @media (prefers-reduced-motion: no-preference) {
   @view-transition { navigation: auto; }
@@ -588,7 +588,7 @@ html[data-calm="true"] .plan-sections { background: var(--paper); backdrop-filte
 /* site-wide calm toggle in the header */
 #site-calm-toggle { white-space: nowrap; }
 /* calm mode: kill ALL animation + transitions site-wide (stronger than the
-   media query — this is the user's explicit choice) */
+   media query. This is the user's explicit choice) */
 html[data-calm="true"] *, html[data-calm="true"] *::before, html[data-calm="true"] *::after {
   animation: none !important;
   transition: none !important;
@@ -728,7 +728,7 @@ html[data-calm="true"] *, html[data-calm="true"] *::before, html[data-calm="true
 .console-output { max-height: 60vh; overflow: auto; padding: 1rem; border: 2px solid var(--line); border-radius: 12px; background: #1f2430; color: #e8edf5; font-size: .82rem; line-height: 1.5; white-space: pre-wrap; word-break: break-word; }
 @media print { .console-form, .console-output { display: none; } }
 
-/* ================= Wave 9 — curated collections ================= */
+/* ================= Wave 9, curated collections ================= */
 .collection-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; margin: 1.5rem 0 2.5rem; }
 @media (min-width: 600px) { .collection-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1000px) { .collection-grid { grid-template-columns: repeat(3, 1fr); } }
@@ -760,7 +760,7 @@ html[data-calm="true"] *, html[data-calm="true"] *::before, html[data-calm="true
 .collection-tie { margin: 0 0 1rem; font-weight: 600; }
 
 /* scroll-driven entrance for hub sections: subtle rise as they scroll into view.
-   Progressive enhancement — unsupported browsers get no animation (content is
+   Progressive enhancement. Unsupported browsers get no animation (content is
    visible by default; the finished state is the CSS default). */
 @media (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: view()) {
@@ -809,7 +809,7 @@ html[data-calm="true"] *, html[data-calm="true"] *::before, html[data-calm="true
   .pick { break-inside: avoid; border: 1px solid #999; }
 }
 
-/* ================= WAVE 10 — Smart Weekly Planner 2.0 ================= */
+/* ================= WAVE 10, Smart Weekly Planner 2.0 ================= */
 .field-hint { font-size: .82rem; color: var(--ink-soft); margin: .25rem 0 0; }
 .muted { color: var(--ink-soft); font-size: .9rem; }
 
@@ -864,13 +864,13 @@ li.slot.drag-over { outline: 3px dashed var(--accent); outline-offset: 3px; bord
 .print-day-head p { font-size: 10pt; color: #333; margin: 0 0 6pt; }
 
 /* =====================================================================
-   WAVE 17 — "The Teacher's Desk" visual identity
+   WAVE 17. "The Teacher's Desk" visual identity
    Warm paper craft pushed fully: index cards, rubber stamps, binder
    rings, sticker sheets, teacher's-desk texture. Token-based and
    re-skin-friendly (swap the --paper/--desk/--grain/--grunge tokens and
    the whole desk re-skins). Motion runs on the --dur-*/--ease-* tokens;
    the data-calm kill switch and prefers-reduced-motion rules below still
-   silence everything. Identity overhaul only — no markup contract changes.
+   silence everything. Identity overhaul only. No markup contract changes.
    ===================================================================== */
 
 /* ---------- typography: the desk's own voice ---------- */
@@ -945,7 +945,7 @@ h2 { font-weight: 700; letter-spacing: -.015em; }
   position: relative;
   top: 3px;
 }
-/* secondary nav: quiet index-divider row under the folder tabs — tools + seasons
+/* secondary nav: quiet index-divider row under the folder tabs, tools + seasons
    recede until invited (makeover wave 22: ruthless hierarchy, progressive disclosure) */
 .site-header .nav-secondary {
   display: flex; flex-wrap: wrap; align-items: center; gap: .1rem .35rem;
@@ -1021,14 +1021,14 @@ h2 { font-weight: 700; letter-spacing: -.015em; }
   .desk-note { position: absolute; right: .5rem; top: 2.4rem; margin: 0; }
 }
 /* the curator's note is a button: clicking cycles through notes (easter egg).
-   Unstyled button — the sticky note IS the affordance. */
+   Unstyled button. The sticky note IS the affordance. */
 #curator-note {
   all: unset; cursor: pointer; display: block; width: 100%;
   font: inherit; color: inherit; text-align: inherit;
 }
 #curator-note:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
 #curator-note:hover #curator-note-text { text-decoration: underline; text-underline-offset: 3px; }
-/* makeover: the hero gets room to breathe — whitespace is a feature */
+/* makeover: the hero gets room to breathe. Whitespace is a feature */
 .hero { padding: 3rem 0 2rem; }
 .hero .lede { margin-top: 1rem; }
 .hero .stats { margin-top: 1.6rem; }
@@ -1131,7 +1131,7 @@ h2 { font-weight: 700; letter-spacing: -.015em; }
 .chip-row .chip[aria-pressed="true"] {
   /* peeled-and-stamped: filled, stamped type. Fill re-declared here (wave 23):
      `.chip-row .chip` (same specificity, later in source) was overriding the
-     base pressed rule's background — white-on-white, label invisible. No
+     base pressed rule's background, white-on-white, label invisible. No
      grunge mask: it ate the fill and left white text on white. */
   background: var(--cat, var(--accent));
   border-color: var(--cat, var(--accent));
@@ -1441,7 +1441,7 @@ h2 { font-weight: 700; letter-spacing: -.015em; }
 
 /* ---------- signature motion ---------- */
 /* index-card stagger reveals: JS adds .reveal + --i, IntersectionObserver adds .in.
-   Progressive enhancement — no .js class, no hiding, ever. */
+   Progressive enhancement, no.js class, no hiding, ever. */
 @media (prefers-reduced-motion: no-preference) {
   html.js:not([data-calm="true"]) .reveal {
     opacity: 0;
@@ -1544,7 +1544,7 @@ html[data-calm="true"] ::view-transition-new(*) { animation: none !important; }
 
 /* ================= END WAVE 17 ================= */
 
-/* ================= Wave 18 — After-School Kit ================= */
+/* ================= Wave 18, After-School Kit ================= */
 
 /* session plan sheets: index-card language, tape strip up top */
 .kit-day {
@@ -1630,9 +1630,9 @@ html[data-calm="true"] ::view-transition-new(*) { animation: none !important; }
 
 /* ================= END WAVE 18 ================= */
 
-/* ================= WAVE B — Vercel frontend integration (The Scout) ================= */
+/* ================= WAVE B, Vercel frontend integration (The Scout) ================= */
 
-/* API status badge — the honesty mechanism (§3). Four states, aria-live,
+/* API status badge, the honesty mechanism (§3). Four states, aria-live,
    keyboard-focusable (tabindex=0 on the element), high-contrast text. */
 .api-badge {
   display: inline-flex; align-items: center; gap: .4em;
@@ -1655,10 +1655,10 @@ html[data-calm="true"] ::view-transition-new(*) { animation: none !important; }
   .api-badge[data-api-state="waking"]::before { animation: none; opacity: .8; }
 }
 /* Contrast vs badge backgrounds (measured 2026-10-12, WCAG): #166b2c on #eef7ef =
-   6.05:1, #8a5a00 on #fdf3dc = 5.37:1, #6b5f4c on #f5eeda = 5.38:1 —
+   6.05:1, #8a5a00 on #fdf3dc = 5.37:1, #6b5f4c on #f5eeda = 5.38:1
    all ≥ 4.5:1 for small text. */
 
-/* Review queue page — Scout human-in-the-loop read surface (read-only;
+/* Review queue page. Scout human-in-the-loop read surface (read-only;
    approve/reject stays server-only, CRON_SECRET-gated, never in the browser). */
 .review-head { display: flex; align-items: baseline; gap: .8rem; flex-wrap: wrap; }
 .review-head .api-badge { margin-left: auto; }
@@ -1698,7 +1698,7 @@ html[data-calm="true"] ::view-transition-new(*) { animation: none !important; }
 
 /* ================= END WAVE B ================= */
 
-/* ================= WAVE 21 — "The Desk" ================= */
+/* ================= WAVE 21, "The Desk" ================= */
 /* The archive as a physical teacher's desk: 11 wooden category drawers
    with brass label holders + cup pulls, pencil-count marginalia, trays of
    index cards; the planner week laid out on a leather blotter.
@@ -1975,7 +1975,7 @@ html.desk-ready .drawer.open .desk-card {
 /* The global calm / prefers-reduced-motion rules already kill transitions
    and animations. These make the intent explicit for the desk pieces:
    drawers still open (display toggle, not motion), stamps and cards appear
-   instantly with the tray — full content, zero motion. */
+   instantly with the tray, full content, zero motion. */
 @media (prefers-reduced-motion: reduce) {
   html.desk-ready .drawer.open .pulled-stamp,
   html.desk-ready .drawer.open .desk-card { animation: none; }
@@ -2015,7 +2015,7 @@ html[data-calm="true"] .drawer-pull { transition: none; }
 .dp-pickrow .dp-select { flex: 1; min-width: 0; }
 .dp-summary { font-weight: 700; margin: .6rem 0 1rem; }
 .dp-sheet-actions { display: flex; gap: .6rem; flex-wrap: wrap; align-items: center; margin: 0 0 1.4rem; }
-/* The day sheet: a sheet of desk paper — ruled lines, red margin. */
+/* The day sheet: a sheet of desk paper, ruled lines, red margin. */
 .day-sheet { background: #fffef9; border: 1px solid var(--line); border-radius: 6px; box-shadow: 0 10px 34px rgba(42,36,28,.16); padding: 2rem 2.2rem 1.6rem 3.2rem; margin: 0 0 2rem; position: relative;
   background-image: linear-gradient(var(--rule-blue) 1px, transparent 1px), linear-gradient(90deg, transparent 0, transparent 2.2rem, rgba(212,105,94,.45) 2.2rem, rgba(212,105,94,.45) calc(2.2rem + 2px), transparent calc(2.2rem + 2px));
   background-size: 100% 2rem, 100% 100%; }
@@ -2059,7 +2059,7 @@ html[data-calm="true"] .drawer-pull { transition: none; }
 .kb-pickrow .kb-select { flex: 1; min-width: 0; }
 .kb-summary { font-weight: 700; margin: .6rem 0 1rem; }
 .kb-sheet-actions { display: flex; gap: .6rem; flex-wrap: wrap; align-items: center; margin: 0 0 1.4rem; }
-/* The kit sheet: the same desk paper as the day sheet — ruled lines, red margin. */
+/* The kit sheet: the same desk paper as the day sheet, ruled lines, red margin. */
 .kit-sheet { background: #fffef9; border: 1px solid var(--line); border-radius: 6px; box-shadow: 0 10px 34px rgba(42,36,28,.16); padding: 2rem 2.2rem 1.6rem 3.2rem; margin: 0 0 2rem; position: relative;
   background-image: linear-gradient(var(--rule-blue) 1px, transparent 1px), linear-gradient(90deg, transparent 0, transparent 2.2rem, rgba(212,105,94,.45) 2.2rem, rgba(212,105,94,.45) calc(2.2rem + 2px), transparent calc(2.2rem + 2px));
   background-size: 100% 2rem, 100% 100%; }
@@ -2115,7 +2115,7 @@ html[data-calm="true"] .drawer-pull { transition: none; }
 .pp-pickrow .pp-select { flex: 1; min-width: 0; }
 .pp-summary { font-weight: 700; margin: .6rem 0 1rem; }
 .pp-sheet-actions { display: flex; gap: .6rem; flex-wrap: wrap; align-items: center; margin: 0 0 1.4rem; }
-/* The party sheet: the same desk paper as the day and kit sheets — ruled lines, red margin. */
+/* The party sheet: the same desk paper as the day and kit sheets, ruled lines, red margin. */
 .party-sheet { background: #fffef9; border: 1px solid var(--line); border-radius: 6px; box-shadow: 0 10px 34px rgba(42,36,28,.16); padding: 2rem 2.2rem 1.6rem 3.2rem; margin: 0 0 2rem; position: relative;
   background-image: linear-gradient(var(--rule-blue) 1px, transparent 1px), linear-gradient(90deg, transparent 0, transparent 2.2rem, rgba(212,105,94,.45) 2.2rem, rgba(212,105,94,.45) calc(2.2rem + 2px), transparent calc(2.2rem + 2px));
   background-size: 100% 2rem, 100% 100%; }
@@ -2147,9 +2147,9 @@ html[data-calm="true"] .drawer-pull { transition: none; }
 .activity-photo .photo-credit { opacity: 0.72; font-size: 0.85em; }
 
 /* =====================================================================
-   ROTATION 20 — MINIMAL PASS (the Vault's turn in the fleet sequence)
+   ROTATION 20. MINIMAL PASS (the Vault's turn in the fleet sequence)
    Teacher's-desk identity at the fleet's sleekest professional register:
-   the desk stays — paper, stamps, drawers — but every surface loses its
+   the desk stays, paper, stamps, drawers, but every surface loses its
    sprawl. One primary nav row + More, flat card grid, quieter chrome,
    progressive disclosure, one primary action on tool pages. Presentation
    only: no content, record or function removed anywhere.
@@ -2211,7 +2211,7 @@ html[data-calm="true"] .drawer-pull { transition: none; }
   margin: 0; padding: .4rem .45rem; top: 0; position: static;
 }
 
-/* browse grid: flat, aligned, professional — no card rotation */
+/* browse grid: flat, aligned, professional, no card rotation */
 .act-card:nth-child(odd), .act-card:nth-child(even) { transform: none; }
 .act-card:hover { transform: translateY(-2px); }
 .act-card::before { width: 84px; height: 20px; opacity: .65; }
@@ -2260,25 +2260,25 @@ body.tool-page .btn.primary-action { font-size: 1.02rem; padding: .7rem 1.5rem; 
   .disclosure > :not(summary) { display: block; }
 }
 
-/* ================= ROTATION 21 — TEACHER'S DESK, SLEEK =================
+/* ================= ROTATION 21. TEACHER'S DESK, SLEEK =================
    The v2 standard, re-expressed for the fleet's light, warm site.
    Identity carriers: the warm paper ground, Fraunces' friendly display
    voice against a clean system sans, brick red as the ONE accent (act /
    attend), and category colour admitted only as a filing code (drawer
-   chips, card category lines) — never as decoration. Furniture dies:
+   chips, card category lines), never as decoration. Furniture dies:
    wood, grain, binder holes, rubber stamps, sticky notes, pushpins,
    tape, ruled lines. Sections separate by space, not borders/textures.
    Legacy tokens (--wood, --brass, --font-stamp, --grunge) remain defined
    above for the locked legacy rules that name them; this block removes
    their use from every re-presented surface. */
 
-/* — ground: warm paper, flat. No desk wood, no grain overlay. */
+/*, ground: warm paper, flat. No desk wood, no grain overlay. */
 body {
   background: var(--paper);
 }
 body::before { display: none; }
 
-/* — header: wordmark + hairline. No binder holes, no stamp brand. */
+/*, header: wordmark + hairline. No binder holes, no stamp brand. */
 .site-header {
   background: var(--paper);
   border-bottom: 1px solid var(--line);
@@ -2290,7 +2290,7 @@ body::before { display: none; }
 #site-calm-toggle { border: 1px solid var(--line); color: var(--ink-soft); }
 #site-calm-toggle:hover { background: var(--paper-deep); color: var(--ink); }
 
-/* — kicker: a plain opening line, not a rubber stamp. No letterspaced
+/*, kicker: a plain opening line, not a rubber stamp. No letterspaced
      eyebrow, no pill border, no uppercase. (Text content unchanged.) */
 .hero .kicker, .kicker {
   display: block; border: 0; border-radius: 0; background: none;
@@ -2300,7 +2300,7 @@ body::before { display: none; }
   transform: none; -webkit-mask-image: none; mask-image: none; box-shadow: none;
 }
 
-/* — hero: headline + subline + ONE primary action + whitespace */
+/*, hero: headline + subline + ONE primary action + whitespace */
 .hero { padding: 4.25rem 0 3rem; }
 @media (min-width: 900px) { .hero { padding-right: 0; } }
 .hero h1 { font-size: clamp(2.5rem, 5.6vw, 3.9rem); font-weight: 800; line-height: 1.08; margin: 0 0 1.1rem; }
@@ -2317,7 +2317,7 @@ body::before { display: none; }
 .hero .stat span { font-size: .85rem; color: var(--ink-soft); }
 .desk-note { display: none; }
 
-/* — buttons: clean, legible, one accent. The grunge-masked stamp CTA
+/*, buttons: clean, legible, one accent. The grunge-masked stamp CTA
      (speckled, half-eaten text) is gone: no mask, no stamp face, no
      rotation, no hard offset shadow. */
 .btn {
@@ -2341,7 +2341,7 @@ body::before { display: none; }
 .btn-small { font-size: .9rem; padding: .5rem 1rem; }
 body.tool-page .btn.primary-action { font-size: 1rem; padding: .8rem 1.6rem; }
 
-/* — the desk, flattened: category rows on paper, colour as a code.
+/*, the desk, flattened: category rows on paper, colour as a code.
      Drawers keep their function (open/close, trays, counts) and lose
      the wood, brass, nameplate, handles and stamps. */
 .desk { background: none; box-shadow: none; border: 0; border-radius: 0; padding: 0; }
@@ -2373,7 +2373,7 @@ html.desk-ready .drawer.open .pulled-stamp { display: none; }
 .blotter-card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; box-shadow: none; padding: 1.6rem; }
 .blotter-stamp { display: none; }
 
-/* — browse grid: index cards without tape or ruled lines */
+/*, browse grid: index cards without tape or ruled lines */
 .act-card {
   background: var(--card);
   border: 1px solid var(--line); border-radius: 14px; box-shadow: none;
@@ -2382,7 +2382,7 @@ html.desk-ready .drawer.open .pulled-stamp { display: none; }
 .act-card:hover { box-shadow: 0 4px 14px rgba(42, 36, 28, .07); }
 .filters { border: 1px solid var(--line); border-radius: 14px; box-shadow: none; background: var(--card); }
 
-/* — activity sheets: no binder rings; the file stamp becomes a quiet
+/*. Activity sheets: no binder rings; the file stamp becomes a quiet
      text label (a whisper, not a prop) */
 .activity-card::before, .activity-card::after { display: none; }
 .file-stamp {
@@ -2394,9 +2394,9 @@ html.desk-ready .drawer.open .pulled-stamp { display: none; }
 .plan-time { font-family: var(--font-body); }
 .ft-table th { font-family: var(--font-body); text-transform: none; letter-spacing: 0; }
 
-/* — collections: cards told apart by content, sections by space.
+/*, collections: cards told apart by content, sections by space.
      The scroll-driven rise (which left cards half-transparent at the
-     fold) is removed outright — content is simply present. */
+     fold) is removed outright. Content is simply present. */
 html:not([data-calm="true"]) .collection-section { animation: none; }
 .collection-grid { gap: 1.25rem; margin: 2rem 0 3.5rem; }
 .collection-card {
@@ -2416,17 +2416,17 @@ html:not([data-calm="true"]) .collection-section { animation: none; }
 .collection-h2 { font-size: 1.7rem; }
 .pick { background: var(--card); }
 
-/* — database coverage: a quiet about-section below the browse surface,
+/*, database coverage: a quiet about-section below the browse surface,
      no longer bookkeeping printed inside the hero */
 .db-strip { border-top: 0; margin: 1rem 0 3.5rem; padding-top: 0; max-width: 46rem; }
 .db-strip h2 { font-size: 1.35rem; margin: 0 0 .6rem; }
 
-/* — footer separated by space and one hairline */
+/*, footer separated by space and one hairline */
 .site-footer { border-top: 1px solid var(--line); margin-top: 2rem; }
 
-/* — motion discipline (rotation 21, second pass): content is present.
-     The wave-17 scroll-reveal stranded cards at opacity 0 — the audit's
-     half-transparent card at the fold — because its observer band could
+/*. Motion discipline (rotation 21, second pass): content is present.
+     The wave-17 scroll-reveal stranded cards at opacity 0. The audit's
+     half-transparent card at the fold, because its observer band could
      be scrolled past without ever firing. Removed: .reveal is now a
      no-op state (JS still toggles the classes; nothing hides, nothing
      waits). The rubber-stamp page transition goes with it: navigation
@@ -2438,7 +2438,7 @@ html:not([data-calm="true"]) .collection-section { animation: none; }
 }
 ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
 
-/* — rotation 21, third pass: the residuals the screenshot caught.
+/*, rotation 21, third pass: the residuals the screenshot caught.
      The wordmark was still a rubber stamp (the rotation-20 block kept
      the double border + grunge mask from the furniture era); collection
      cards still wore manila folder tabs; the desk intro was still
@@ -2461,3 +2461,174 @@ html:not([data-calm="true"]) .collection-section { animation: none; }
 }
 .desk-toolbar .btn:hover { background: var(--paper-deep); filter: none; }
 .drawer-pull { color: var(--ink); }
+
+/* ================= Rotation 21: Activity identity pass =================
+   Gate: ACTIVITY-STUDY section 4. Calendar first, verb doors, tombstone
+   listings, folder tabs with the tab colour law, and the paper motion
+   signature (P12): the squaring stack and the tab hinge. Published
+   values (dates, ages, times, counts) are present instantly and never
+   animate; the calendar rail never animates. */
+
+/* ---- home: calendar first ---- */
+.calendar-first { margin-top: 1.6rem; }
+.calendar-first h2, .verb-doors-section h2 {
+  font-size: clamp(1.5rem, 3.4vw, 2rem); margin: 0 0 .4em;
+}
+.cal-rows { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); }
+.cal-row {
+  display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap;
+  padding: .65rem .2rem; border-bottom: 1px solid var(--line);
+}
+.cal-name {
+  font-family: var(--font-display); font-weight: 700; font-size: 1.12rem;
+  color: var(--ink); text-decoration: none; min-width: 11rem;
+}
+.cal-name:hover { color: var(--accent); text-decoration: underline; }
+.cal-date { color: var(--ink-soft); }
+.cal-count { color: var(--ink-soft); font-size: .92rem; }
+.cal-days {
+  margin-left: auto; font-family: var(--font-type); font-weight: 700;
+  font-size: .95rem; color: var(--accent); white-space: nowrap;
+}
+
+/* ---- home: verb doors (folder-tab faces, one word, one illustration) ---- */
+.verb-doors {
+  display: flex; flex-wrap: wrap; gap: .8rem; margin: .6rem 0 1.4rem;
+}
+.verb-door {
+  flex: 1 1 9.5rem; display: flex; flex-direction: column; align-items: flex-start;
+  gap: .35rem; padding: 1rem 1.1rem .9rem; text-decoration: none; color: var(--ink);
+  background: var(--card); border: 2px solid var(--line); border-radius: 6px 14px 6px 6px;
+  border-top: 8px solid var(--cat, var(--accent));
+  transform-origin: top center;
+  transition: transform .25s var(--ease-standard), box-shadow .25s var(--ease-standard);
+}
+.verb-glyph { font-size: 2rem; line-height: 1; }
+.verb-word { font-family: var(--font-display); font-weight: 900; font-size: 1.7rem; letter-spacing: -.01em; }
+@media (prefers-reduced-motion: no-preference) {
+  html:not([data-calm="true"]) .verb-door:hover,
+  html:not([data-calm="true"]) .verb-door:focus-visible {
+    transform: perspective(600px) rotateX(7deg);
+    box-shadow: var(--shadow-lift);
+  }
+}
+
+/* ---- home: the ONE season band (L11 collapse) ---- */
+.season-band {
+  border-top: 2px solid var(--ink); border-bottom: 1px solid var(--line);
+  padding: .8rem .2rem; margin: 0 0 1.6rem;
+}
+.season-band p { margin: 0; }
+
+/* ---- tombstone: one setting for activity facts, everywhere ---- */
+.tombstone {
+  font-family: var(--font-type); font-size: .92rem; color: var(--ink-soft);
+  margin: .3rem 0;
+}
+.tomb-fact { white-space: nowrap; }
+.tomb-sep { color: var(--line); }
+
+/* ---- browse: ruled rows, not a card grid (L4) ---- */
+.card-grid { grid-template-columns: 1fr !important; gap: 0; border-top: 2px solid var(--ink); }
+.act-row {
+  display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap;
+  background: transparent; border: none; border-bottom: 1px solid var(--line);
+  border-radius: 0; box-shadow: none; padding: .7rem .2rem;
+}
+.act-row:hover { transform: none; box-shadow: none; background: rgba(255, 253, 247, .55); }
+.act-row h3 { font-size: 1.08rem; margin: 0; }
+.action-tag {
+  font-family: var(--font-type); font-weight: 700; font-size: .8rem;
+  text-transform: uppercase; letter-spacing: .06em; color: var(--cat, var(--accent));
+  min-width: 5.2rem;
+}
+.act-row .tombstone { margin: 0; margin-left: auto; }
+.act-row .rate-badge { margin-left: auto; }
+.act-row .tombstone + .rate-badge { margin-left: 0; }
+
+/* ---- folder tabs: attached to the area's top border; the tab colour
+        recurs as a top rule and the note voice, never as a fill ---- */
+.filters { border-top: none; }
+.chip.folder-tab {
+  border-radius: 10px 10px 0 0; border-bottom: none; margin-bottom: -1px;
+  background: var(--card); transform-origin: top center;
+  transition: transform .25s var(--ease-standard);
+}
+.chip.folder-tab[aria-pressed="true"] {
+  background: var(--card); color: var(--ink);
+  border-color: var(--line); border-top: 5px solid var(--cat, var(--accent));
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+@media (prefers-reduced-motion: no-preference) {
+  html:not([data-calm="true"]) .chip.folder-tab:active {
+    transform: perspective(500px) rotateX(10deg);
+  }
+}
+
+/* ---- collections index: ruled rows, count as right-edge marginalia ---- */
+.collection-grid { grid-template-columns: 1fr !important; gap: 0; border-top: 2px solid var(--ink); }
+.collection-card {
+  flex-direction: row; align-items: baseline; gap: 1rem; flex-wrap: wrap;
+  background: transparent; border: none; border-bottom: 1px solid var(--line);
+  border-radius: 0; box-shadow: none; padding: .7rem .2rem;
+  border-left: 5px solid var(--cat, var(--accent));
+}
+.collection-card:hover { transform: none; box-shadow: none; background: rgba(255, 253, 247, .55); }
+.collection-count { margin-left: auto; font-family: var(--font-type); color: var(--ink-soft); font-weight: 400; }
+.collection-when-snippet, .collection-includes { flex-basis: 100%; color: var(--ink-soft); font-size: .92rem; }
+
+/* ---- collection page: tab colour as margin rule + note voice ---- */
+.collection-section { border-left: 6px solid var(--cat, var(--line)); }
+.collection-context {
+  font-family: var(--font-type); font-size: .95rem; color: var(--ink-soft);
+  margin: .4rem 0 .8rem;
+}
+.pick-list { grid-template-columns: 1fr !important; gap: 0; }
+.pick {
+  border: none; border-bottom: 1px solid var(--line); border-radius: 0;
+  background: transparent; padding: .7rem .2rem;
+}
+.pick-note { color: var(--ink-soft); }
+.pick-anchor .pick-note { color: var(--ink); font-size: .98rem; }
+.collection-section .pick-facts { font-family: var(--font-type); }
+
+/* ---- the squaring stack: once, at the collection opener only ---- */
+.square-stack { position: relative; height: 3.2rem; margin-bottom: .6rem; }
+.stack-sheet {
+  position: absolute; left: 0; top: 0; max-width: 80%;
+  background: var(--card); border: 1.5px solid var(--line); border-radius: 4px;
+  padding: .45rem .8rem; font-family: var(--font-hand); font-size: 1.15rem;
+  color: var(--ink-soft); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  transform: rotate(calc(var(--tilt) * 1deg)) translateY(calc(abs(var(--tilt)) * 1px));
+}
+.stack-sheet:nth-child(2) { top: .35rem; }
+.stack-sheet:nth-child(3) { top: .7rem; }
+@media (prefers-reduced-motion: no-preference) {
+  html:not([data-calm="true"]) .stack-sheet {
+    animation: r21-square .6s var(--ease-decelerate) 1 both;
+  }
+  html:not([data-calm="true"]) .stack-sheet:nth-child(2) { animation-delay: .06s; }
+  html:not([data-calm="true"]) .stack-sheet:nth-child(3) { animation-delay: .12s; }
+}
+@keyframes r21-square {
+  from { transform: rotate(calc(var(--tilt) * 2.4deg)) translateY(6px); }
+  to { transform: rotate(calc(var(--tilt) * 1deg)) translateY(calc(abs(var(--tilt)) * 1px)); }
+}
+
+/* ---- activity page: margin rule in the tab colour; steps ruled ---- */
+.activity-card { border-left: 6px solid var(--cat, var(--line)); }
+.activity-card .tombstone { font-size: 1rem; color: var(--ink); }
+.activity-card section ol li {
+  border-bottom: 1px solid var(--rule-blue); padding: .35rem 0;
+}
+.activity-card .activity-photo { max-width: 100%; }
+.activity-card .activity-photo img { max-width: 100%; height: auto; }
+
+/* M5 v3 residence clause on this pass's surfaces: no reveal choreography
+   touches rows, notes, ages, times, or dates. */
+.act-row, .cal-row, .pick, .collection-card, .tombstone { animation: none; }
+
+/* M5 residence, completed: the collection section itself no longer
+   rises or fades on scroll (the pre-R21 vault-rise). On a collection
+   page the only motion is the squaring stack at the opener. */
+.collection-section { animation: none !important; }

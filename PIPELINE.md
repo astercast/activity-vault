@@ -1,4 +1,4 @@
-# PIPELINE — how the Activity Vault library grows
+# PIPELINE. How the Activity Vault library grows
 
 The Vault is a living archive. This doc defines the contribution format and the refresh process so every wave (human or agent) adds activities the same clean way.
 
@@ -10,7 +10,7 @@ Every activity is one JSON object in `data/activities.json`. All fields required
 {
   "id": "paper-airplane-challenge",
   "name": "Paper Airplane Challenge",
-  "tagline": "Fold, throw, measure, iterate — the cheapest engineering lesson there is.",
+  "tagline": "Fold, throw, measure, iterate. The cheapest engineering lesson there is.",
   "categories": ["stem", "crafts"],
   "age_min": 7,
   "age_max": 12,
@@ -44,40 +44,40 @@ Every activity is one JSON object in `data/activities.json`. All fields required
 ## Content rules (standing)
 
 1. **Original words only.** Activities must be real, classic, public-domain concepts (folk games, standard crafts, textbook demos) described in our own words. Never copy text from other sites.
-2. **No invented claims.** Safety notes = common sense (scissors supervision, allergy checks, clear play space). No medical/therapeutic claims — `calm-breathing-shapes` is a calm-down routine, not therapy.
+2. **No invented claims.** Safety notes = common sense (scissors supervision, allergy checks, clear play space). No medical/therapeutic claims. `Calm-breathing-shapes` is a calm-down routine, not therapy.
 3. **Teacher-real.** Every activity must be runnable by one adult with a normal classroom budget. If it needs exotic supplies, it doesn't belong.
-4. **Age-honest.** Ranges must reflect reality — no "ages 5–12" on something needing fine motor skills a 5-year-old doesn't have.
+4. **Age-honest.** Ranges must reflect reality, no "ages 5–12" on something needing fine motor skills a 5-year-old doesn't have.
 
 ## Refresh process (per wave)
 
 1. Pick a theme (e.g. "10 more rainy-day games", "summer water play", "5-minute fillers").
 2. Draft records in the contribution format above.
-3. Run `python3 scripts/build.py` — it validates schema, id uniqueness, category ids, ranges, and renders every page. Fix until `BUILD OK`.
+3. Run `python3 scripts/build.py`. It validates schema, id uniqueness, category ids, ranges, and renders every page. Fix until `BUILD OK`.
 4. Run checks: `node --check` on JS, link check, JSON parse.
 5. Update counts in `WAVELOG.md` and commit.
 
 ## RSS watch (live intake)
 
 `pipeline/` runs a weekly scan over teaching/activity blogs and queues fresh
-activity ideas for **human review** — it never publishes anything on its own.
+activity ideas for **human review**. It never publishes anything on its own.
 
-- `pipeline/feeds.json` — curated feeds (WeAreTeachers, Hands On As We Grow,
+- `pipeline/feeds.json`, curated feeds (WeAreTeachers, Hands On As We Grow,
   Teach Beside Me, Little Bins for Little Hands, Kids Activities Blog,
   Buggy and Buddy). First three verified 2026-10-11; the wave-24 additions
   verified responding 2026-10-12.
-- `pipeline/scan.py` — stdlib-only RSS scanner. Keyword-filters for
+- `pipeline/scan.py`, stdlib-only RSS scanner. Keyword-filters for
   activity-relevant posts, dedupes via `pipeline/seen.json`, appends candidates
   to `pipeline/review-queue.json` with `status: "pending"`. Exits 0 on feed
   errors (logs and continues). **It never touches `data/activities.json`.**
-- `pipeline/refresh.sh` — one-line runner for cron.
-- `pipeline/review-queue.json` — the human queue. Each entry: feed, title, link,
+- `pipeline/refresh.sh`, one-line runner for cron.
+- `pipeline/review-queue.json`, the human queue. Each entry: feed, title, link,
   published date, summary, and a note to adapt into original words.
 
 Review workflow: read a pending candidate → adapt the idea into **original
 words** per the contribution format above (link the source post as inspiration,
 never copy text) → add it in a wave → set its queue entry to `"accepted"` (with
 the new `activity_id`), `"rejected"` (with a `decision` reason), or `"deferred"`
-(good concept, wrong season — hold for a later wave).
+(good concept, wrong season. Hold for a later wave).
 
 Cron (Mondays 7am, no keys needed):
 

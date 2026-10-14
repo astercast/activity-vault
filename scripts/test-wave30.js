@@ -122,7 +122,7 @@ ok(/passed, never thrown/.test(byId['one-shake-pass-around'].safety || ''), 'one
 ok(/retires the window/.test(byId['sticky-window-big-shapes'].safety || ''), 'sticky window: lifting edge retires the window');
 // Hill roll: hug taught first; one roller at a time.
 ok(/One roller at a time/.test(JSON.stringify(byId['grass-hill-roll-down'])), 'hill roll: one roller at a time');
-ok(/rolling stops the moment any kid says stop/.test(byId['grass-hill-roll-down'].safety || ''), 'hill roll: stop means stop');
+ok(/Rolling stops the moment any kid says stop/.test(byId['grass-hill-roll-down'].safety || ''), 'hill roll: stop means stop');
 // Lid basket: the decoy lid is honest — it fits nothing, by design.
 ok(/genuinely fit nothing/.test(byId['big-lid-match-basket'].setup || ''), 'lid basket: decoys genuinely fit nothing');
 

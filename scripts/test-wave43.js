@@ -215,12 +215,12 @@ allPages.forEach(p => {
 
 // 9. Minimal pass, surface by surface.
 const idx = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
-ok(idx.includes('one live database'), 'homepage: live-database framing in the hero');
-ok(idx.includes('The live activity database · kept current by The Scout'), 'homepage: database kicker names The Scout');
+ok(idx.includes('About this database'), 'homepage: live-database framing in the colophon strip (rotation 21)');
+ok(idx.includes('home-promise'), 'homepage: masthead carries the audience promise in prose (rotation 21)');
 ok(idx.includes('class="db-strip"'), 'homepage: published database-coverage strip present');
-ok(idx.includes('ages 13–14 — 120 each'), 'homepage: coverage strip carries the true teen coverage (120)');
-ok(idx.includes('class="home-highlights no-print"'), 'homepage: promo wall behind one disclosure (progressive disclosure below the hero)');
-ok(idx.includes('id="season-promo-halloween"') && idx.includes('href="kitbag.html"'), 'homepage: seasonal + flagship content kept inside the disclosure, not deleted');
+ok(idx.includes('ages 13 to 14 hold 120 each'), 'homepage: coverage strip carries the true teen coverage (120)');
+ok(!idx.includes('home-highlights'), 'homepage: promo wall gone, bands collapsed to one (L11, rotation 21)');
+ok(idx.includes('class="season-band') && idx.includes('class="cal-row"'), 'homepage: calendar rows plus the single season band (rotation 21)');
 const collJs = fs.readFileSync(path.join(ROOT, 'assets/collections.js'), 'utf8');
 ok(collJs.includes('s.hidden = !inSingle || s.id !== hash'), 'collections: detail panels on-demand only in browse mode');
 const sampleAct = fs.readFileSync(path.join(ROOT, 'activity', 'growing-degree-day-ledger.html'), 'utf8');
@@ -232,7 +232,7 @@ ok(sampleAct.includes('related-disclosure'), 'activity page: related activities 
   ok((s.match(/primary-action/g) || []).length === 1, f + ': exactly one primary action');
 });
 const css = fs.readFileSync(path.join(ROOT, 'assets/style.css'), 'utf8');
-ok(css.includes('ROTATION 20 — MINIMAL PASS'), 'style.css carries the rotation-20 minimal-pass block');
+ok(css.includes('ROTATION 20. MINIMAL PASS'), 'style.css carries the rotation-20 minimal-pass block');
 ok(css.includes('.nav-more-panel'), 'style.css styles the More panel');
 
 // 10. T-ACT-1 (printables) deferral lock: deferred BY NAME this

@@ -3,11 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Field Trip Planner — timelines, chaperones, bus activities, checklists — Activity Vault</title>
+<title>Field Trip Planner: timelines, chaperones, bus activities, checklists · Activity Vault</title>
 <meta name="description" content="Plan a class field trip in minutes: destination, group size, and trip length become a clock-time timeline, chaperone and buddy-pair math, a budget estimate, on-site activity ideas from the real library, bus-ride activities, and printable permission-slip and pack checklists.">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="preload" href="assets/fonts/fraunces-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <script src="assets/site.js" defer></script>
+
+
+
+
+
 
 
 
@@ -40,17 +45,17 @@
 <link rel="canonical" href="https://activity-vault-live.vercel.app/fieldtrip.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Activity Vault">
-<meta property="og:title" content="Field Trip Planner — timelines, chaperones, bus activities, checklists — Activity Vault">
+<meta property="og:title" content="Field Trip Planner: timelines, chaperones, bus activities, checklists · Activity Vault">
 <meta property="og:description" content="Plan a class field trip in minutes: destination, group size, and trip length become a clock-time timeline, chaperone and buddy-pair math, a budget estimate, on-site activity ideas from the real library, bus-ride activities, and printable permission-slip and pack checklists.">
 <meta property="og:url" content="https://activity-vault-live.vercel.app/fieldtrip.html">
 <meta property="og:image" content="https://activity-vault-live.vercel.app/assets/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Field Trip Planner — timelines, chaperones, bus activities, checklists — Activity Vault">
+<meta name="twitter:title" content="Field Trip Planner: timelines, chaperones, bus activities, checklists · Activity Vault">
 <meta name="twitter:description" content="Plan a class field trip in minutes: destination, group size, and trip length become a clock-time timeline, chaperone and buddy-pair math, a budget estimate, on-site activity ideas from the real library, bus-ride activities, and printable permission-slip and pack checklists.">
 <meta name="twitter:image" content="https://activity-vault-live.vercel.app/assets/og-card.png">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Field Trip Planner — timelines, chaperones, bus activities, checklists — Activity Vault", "description": "Plan a class field trip in minutes: destination, group size, and trip length become a clock-time timeline, chaperone and buddy-pair math, a budget estimate, on-site activity ideas from the real library, bus-ride activities, and printable permission-slip and pack checklists.", "url": "https://activity-vault-live.vercel.app/fieldtrip.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Field Trip Planner: timelines, chaperones, bus activities, checklists · Activity Vault", "description": "Plan a class field trip in minutes: destination, group size, and trip length become a clock-time timeline, chaperone and buddy-pair math, a budget estimate, on-site activity ideas from the real library, bus-ride activities, and printable permission-slip and pack checklists.", "url": "https://activity-vault-live.vercel.app/fieldtrip.html"}</script>
 <!-- PLACEMENT:END -->
 </head>
 <body class="tool-page">
@@ -71,9 +76,9 @@
           <p class="nav-more-h">Tools</p>
           <a href="desk.html">The Desk</a>
           <a href="day.html">Day Planner</a>
-          <a href="kit.html">Kit</a>
+          <a href="kit.html">Week Kit</a>
           <a href="sub.html">Sub Tub</a>
-          <a href="party.html">Party Planner</a>
+          <a href="party.html">Party Themes</a>
           <a href="partypack.html">Party Pack</a>
           <a href="fieldtrip.html" aria-current="page">Field Trips</a>
           <p class="nav-more-h">Seasons</p>
@@ -96,7 +101,7 @@
   <section class="hero" aria-labelledby="hero-title">
     <span class="kicker no-print">🚌 Field Trip Planner</span>
     <h1 id="hero-title">The field trip,<br>planned before lunch.</h1>
-    <p class="lede no-print">Tell it the destination, group size, and trip length — it builds a clock-time timeline, does the chaperone and buddy-pair math, estimates the budget, matches on-site activities from the Vault's real library, picks bus-ride activities from the field-trip-bus-ride collection, and prints your permission-slip and pack checklists. Ratios and prices are your inputs to confirm; the arithmetic is ours.</p>
+    <p class="lede no-print">Tell it the destination, group size, and trip length. It builds a clock-time timeline, does the chaperone and buddy-pair math, estimates the budget, matches on-site activities from the Vault's real library, picks bus-ride activities from the field-trip-bus-ride collection, and prints your permission-slip and pack checklists. Ratios and prices are your inputs to confirm; the arithmetic is ours.</p>
   </section>
 
   <form class="planner-form no-print" id="fieldtrip-form" onsubmit="return false;" aria-label="Field trip planner options">
@@ -124,7 +129,7 @@
           <option value="8" selected>1 : 8</option>
           <option value="10">1 : 10</option>
         </select>
-        <p class="dim">Confirm the required ratio with your program's policy — requirements vary.</p>
+        <p class="dim">Confirm the required ratio with your program's policy, requirements vary.</p>
       </div>
     </fieldset>
     <fieldset>
@@ -160,7 +165,7 @@
         <label class="flabel" for="ft-transport">Transport flat cost ($)</label>
         <input type="number" id="ft-transport" min="0" step="1" value="0" inputmode="decimal">
       </div>
-      <p class="dim">Confirm prices with the destination — the planner does the arithmetic, not the quotes.</p>
+      <p class="dim">Confirm prices with the destination. The planner does the arithmetic, not the quotes.</p>
     </fieldset>
     <button class="btn primary-action" id="ft-generate" type="button">🚌 Build my field-trip plan</button>
   </form>
@@ -175,7 +180,7 @@
 
 <footer class="site-footer no-print">
   <div class="wrap">
-    <p><strong>Activity Vault</strong> — the all-in-one activity archive for teachers &amp; after-school programs. All activities are classic, public-domain concepts described in our own words.</p>
+    <p><strong>Activity Vault</strong>, the all-in-one activity archive for teachers &amp; after-school programs. All activities are classic, public-domain concepts described in our own words.</p>
     <p><a href="data/v1/activities.json">API</a> · <a href="api.html">API docs &amp; console</a> · <a href="llms.txt">llms.txt</a> · <a href="AGENT.md">Agent guide</a></p>
   </div>
 </footer>

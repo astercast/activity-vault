@@ -1,6 +1,6 @@
-/* Activity Vault — The Kit Bag core logic (Wave 34 flagship).
+/* Activity Vault, The Kit Bag core logic (Wave 34 flagship).
    The Kit Bag packs ONE day that the catalog genuinely serves:
-   a Rainy-Day Indoor day. Its scenario rules never loosen — an
+   a Rainy-Day Indoor day. Its scenario rules never loosen, an
    activity must really carry the rainy-day category, really run
    indoors (the real location field), and really cover the room's
    age (the real age_min/age_max fields). Five roles shape the
@@ -10,8 +10,8 @@
 
    The bag itself is built from the REAL materials fields of the
    activities it selects. Items are deduplicated by a normalized
-   key; every line keeps the activities' own wording — quantities
-   exactly as the activities state them — and names every activity
+   key; every line keeps the activities' own wording, quantities
+   exactly as the activities state them, and names every activity
    that asked for the item. No material is invented, paraphrased
    into a quantity, or dropped: the raw count in always equals
    the occurrence count out. Grouping (consumables / equipment /
@@ -61,9 +61,9 @@
   ];
 
   var GROUPS = [
-    { id: 'consumables', label: 'Consumables — used up: buy, restock, or substitute', glyph: '🛒' },
-    { id: 'equipment', label: 'Equipment — fetch it off the shelves', glyph: '🧺' },
-    { id: 'print', label: 'Print at the desk — before the day starts', glyph: '🖨️' }
+    { id: 'consumables', label: 'Consumables, used up: buy, restock, or substitute', glyph: '🛒' },
+    { id: 'equipment', label: 'Equipment, fetch it off the shelves', glyph: '🧺' },
+    { id: 'print', label: 'Print at the desk. Before the day starts', glyph: '🖨️' }
   ];
 
   function slotById(id) {
@@ -97,7 +97,7 @@
     return !!a && a.age_min <= age && a.age_max >= age;
   }
 
-  /* The scenario's hard rules — these never loosen, at any age,
+  /* The scenario's hard rules, these never loosen, at any age,
      in any fallback: the activity really is a rainy-day record,
      really runs indoors, and really covers the room's age. */
   function fitsScenario(a, age) {
@@ -129,7 +129,7 @@
   /* Compose the bag's day. Deterministic for a given seed.
      Prefers a fresh primary category per slot, then no-prep, so
      the day feels varied. A slot comes back null only when the
-     whole honest scenario pool is exhausted — never stretched. */
+     whole honest scenario pool is exhausted, never stretched. */
   function composeBag(activities, opts) {
     opts = opts || {};
     var rng = mulberry32(opts.seed == null ? 34 : opts.seed);
@@ -177,7 +177,7 @@
      the entry's variants), leading quantifiers/articles stripped,
      whitespace collapsed. Deliberately conservative: "glue sticks"
      and "glue sticks (one per kid)" merge; "glue" and "glue
-     sticks" do NOT — near-identical is not identical, and the bag
+     sticks" do NOT. Near-identical is not identical, and the bag
      never pretends two different wordings were one item. */
   var LEAD_WORDS = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight',
     'nine', 'ten', 'a', 'an', 'the', 'some'];
@@ -274,34 +274,34 @@
     return { filled: filled, total: (bagSlots || []).length, minMinutes: min, maxMinutes: max };
   }
 
-  /* Plain-text kit list — the copy/paste twin of the printed
+  /* Plain-text kit list, the copy/paste twin of the printed
      sheet, in the established export pattern. Quantities appear
      exactly as the activities state them, because the item text
      IS the activities' text. */
   function kitBagText(bag, byId, catName) {
-    var lines = ['🎒 THE KIT BAG — ' + SCENARIO.name + ' — Activity Vault', '',
+    var lines = ['🎒 THE KIT BAG. ' + SCENARIO.name + ' · Activity Vault', '',
       'The day it supports: ' + SCENARIO.dayLabel + ' · Room age: ' + bag.age, ''];
     var picks = [];
     (bag.slots || []).forEach(function (s) {
       var slot = slotById(s.slot);
       var a = s.activityId && byId[s.activityId];
       lines.push((slot ? slot.glyph + ' ' + slot.clock + ' · ' + slot.label : s.slot));
-      if (!a) { lines.push('  — open slot (nothing in the catalog honestly fits)'); lines.push(''); return; }
+      if (!a) { lines.push('  \u00b7 open slot (nothing in the catalog honestly fits)'); lines.push(''); return; }
       picks.push(a);
-      lines.push('  ' + a.name + ' — ages ' + a.age_min + '–' + a.age_max + ' · ' +
+      lines.push('  ' + a.name + ', ages ' + a.age_min + '–' + a.age_max + ' · ' +
         a.time_min + '–' + a.time_max + ' min · ' +
         a.categories.map(catName).join(' · ') + ' · activity/' + a.id + '.html');
       lines.push('');
     });
     var kit = aggregateKit(picks);
-    lines.push('THE BAG — ' + kit.lineCount + ' lines from ' + kit.rawTotal +
+    lines.push('THE BAG, ' + kit.lineCount + ' lines from ' + kit.rawTotal +
       ' materials listed across the day\u2019s activities' +
       (kit.sharedCount ? ' · ' + kit.sharedCount + ' shared by more than one activity' : ''));
     kit.groups.forEach(function (g) {
       if (!g.items.length) return;
       lines.push('', g.glyph + ' ' + g.label.toUpperCase());
       g.items.forEach(function (e) {
-        lines.push('  [ ] ' + e.item + ' — for: ' +
+        lines.push('  [ ] ' + e.item + ', for: ' +
           e.activities.map(function (x) { return x.name; }).join(', '));
         e.variants.forEach(function (v) {
           if (v !== e.item) lines.push('      also listed as: ' + v);
@@ -309,9 +309,9 @@
       });
     });
     kit.noMaterials.forEach(function (n) {
-      lines.push('  (nothing to pack for ' + n.name + ' — it needs no materials)');
+      lines.push('  (nothing to pack for ' + n.name + '. It needs no materials)');
     });
-    lines.push('', 'Every line above is copied from a real activity\u2019s materials list — ' +
+    lines.push('', 'Every line above is copied from a real activity\u2019s materials list, ' +
       'open its card from the Vault for setup, steps, and safety.');
     return lines.join('\n');
   }

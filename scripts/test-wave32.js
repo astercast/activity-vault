@@ -116,7 +116,7 @@ ok(/The sponge travels hand to hand/.test(JSON.stringify(byId['sponge-pass-fill-
 ok(/Slow hands keep the water/.test(JSON.stringify(byId['sponge-pass-fill-the-pot'])), 'sponge pass: slow-hands rule discovered by the team');
 // Three fingers: every version counts; a helped three is the standard three.
 ok(/the whole circle copies their three/.test(JSON.stringify(byId['show-me-three-fingers'])), 'three fingers: the circle copies every shower');
-ok(/fingers get folded by their owner/.test(byId['show-me-three-fingers'].safety || ''), 'three fingers: nobody folds another kid\'s fingers');
+ok(/Fingers get folded by their owner/.test(byId['show-me-three-fingers'].safety || ''), 'three fingers: nobody folds another kid\'s fingers');
 // Worm count: counted with eyes; nobody touches a worm.
 ok(/We count with our eyes/.test(JSON.stringify(byId['after-rain-worm-count'])), 'worm count: counted with eyes');
 ok(/Nobody touches a worm, ever/.test(byId['after-rain-worm-count'].safety || ''), 'worm count: nobody touches a worm, ever');
@@ -130,7 +130,7 @@ ok(/the mural's first comet/.test(JSON.stringify(byId['big-sponge-stamp-mural'])
 ok(/Only the kicker is in the lane/.test(JSON.stringify(byId['big-ball-kick-to-wall'])), 'kick to wall: one kicker in the lane');
 ok(/no running kicks at three/.test(byId['big-ball-kick-to-wall'].safety || ''), 'kick to wall: no running kicks');
 // Zip board: a zip is never forced; expert move is stop and back off.
-ok(/a zip is never forced/.test(JSON.stringify(byId['big-zip-up-down-board'])), 'zip board: a zip is never forced');
+ok(/A zip is never forced/.test(JSON.stringify(byId['big-zip-up-down-board'])), 'zip board: a zip is never forced');
 ok(/Zips pinch/.test(byId['big-zip-up-down-board'].safety || ''), 'zip board: the pinch risk stated plainly');
 
 // 5. Category + enrichment deltas from this wave.

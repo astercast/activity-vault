@@ -109,7 +109,7 @@ ok(/sand in eyes is this record's one real injury/.test(byId['big-sandcastle-one
 ok(/your ears are the filing clerks/.test(JSON.stringify(byId['big-sound-jar-loud-or-soft'])), 'sound jar: filing clerks');
 ok(/behind a sealed lid/.test(byId['big-sound-jar-loud-or-soft'].safety || ''), 'sound jar: sealed by law');
 // Colour corner: a colour cannot be wrong; a mat that can skate is retired.
-ok(/a colour cannot be wrong/.test(JSON.stringify(byId['big-choose-your-colour-corner'])), 'colour corner: no wrong colour');
+ok(/A colour cannot be wrong/.test(JSON.stringify(byId['big-choose-your-colour-corner'])), 'colour corner: no wrong colour');
 ok(/a mat that can skate/.test(byId['big-choose-your-colour-corner'].safety || ''), 'colour corner: flat mats');
 // Mud pie bakery: pie-thickness is the groove staying; mud is never eaten.
 ok(/Pie-thickness/.test(JSON.stringify(byId['big-mud-pie-bakery-morning'])) && /The groove stays/.test(JSON.stringify(byId['big-mud-pie-bakery-morning'])), 'mud pie: the groove stays');

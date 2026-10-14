@@ -1,7 +1,7 @@
-/* Activity Vault — Winter Holidays hub page (wave 22).
+/* Activity Vault, Winter Holidays hub page (wave 22).
    Renders the curated winter sections from data/v1/activities.json using
    explicit, build-validated id lists (scripts/test-winter.js asserts every
-   id resolves). Picks show the visitor's own rating badges (localStorage only —
+   id resolves). Picks show the visitor's own rating badges (localStorage only
    never invented), matching the collections page pattern.
    Hanukkah and Kwanzaa picks use respectful learning framing: real traditions,
    no invented rituals. Semantic HTML + ARIA + keyboard-native; mobile-first. */
@@ -16,46 +16,46 @@
   var SECTIONS = [
     {
       id: 'christmas', glyph: '🎄', title: 'Christmas',
-      blurb: 'Paper-star geometry, working light-up cards, candy-cane relays — crafts that teach and games that tire.',
+      blurb: 'Paper-star geometry, working light-up cards, candy-cane relays. Crafts that teach and games that tire.',
       browse: 'index.html?tag=holiday:christmas',
       browseLabel: 'Browse the full Christmas set',
       picks: [
-        ['ornament-geometry-stars', 'Fold a perfect five-point star from one paper strip — geometry you can hang.'],
+        ['ornament-geometry-stars', 'Fold a perfect five-point star from one paper strip. Geometry you can hang.'],
         ['christmas-light-circuit-cards', 'A greeting card with a working bulb. The debugging IS the lesson.'],
         ['holiday-card-print-shop', 'Carve a foam plate once, print the whole class set.'],
-        ['jingle-bell-rhythm-band', 'Wristfuls of bells + call-and-response — the loudest quiet-focus breaker there is.'],
+        ['jingle-bell-rhythm-band', 'Wristfuls of bells + call-and-response. The loudest quiet-focus breaker there is.'],
         ['candy-cane-olympics', 'Four ridiculous relay events; the canes are the medals.'],
-        ['gumdrop-bridge-build', 'Toothpicks, gumdrops, one span to cross — strongest per gram wins.'],
+        ['gumdrop-bridge-build', 'Toothpicks, gumdrops, one span to cross. Strongest per gram wins.'],
         ['reindeer-relay-race', 'Antler headbands, a red nose, and a relay that rewards silliness over speed.'],
         ['advent-kindness-envelopes', 'Twenty-five sealed envelopes, each hiding one small kindness for that day.']
       ]
     },
     {
       id: 'hanukkah', glyph: '🕎', title: 'Hanukkah',
-      blurb: 'Spin physics, mosaic menorahs, and the story behind the holiday — real traditions, learned with respect.',
+      blurb: 'Spin physics, mosaic menorahs, and the story behind the holiday, real traditions, learned with respect.',
       browse: 'index.html?tag=holiday:hanukkah',
       browseLabel: 'Browse the full Hanukkah set',
       picks: [
-        ['dreidel-spin-physics', 'Whose top spins longest? Friction, weight, and surface — a physics lab in a spinning top.'],
-        ['menorah-mosaic-tiles', 'Nine branches, hundreds of paper tiles — the shamash raised in the middle, as it should be.'],
-        ['hanukkah-story-circle', 'The story behind the holiday, told round-robin — curiosity, not costume.'],
-        ['gelt-math-market', 'Chocolate coins, real prices, making change — the sweetest math lesson of the year.'],
-        ['blue-white-weaving', 'Over-under, over-under — a woven mat in Hanukkah blues, no loom required.'],
+        ['dreidel-spin-physics', 'Whose top spins longest? Friction, weight, and surface, a physics lab in a spinning top.'],
+        ['menorah-mosaic-tiles', 'Nine branches, hundreds of paper tiles, the shamash raised in the middle, as it should be.'],
+        ['hanukkah-story-circle', 'The story behind the holiday, told round-robin, curiosity, not costume.'],
+        ['gelt-math-market', 'Chocolate coins, real prices, making change, the sweetest math lesson of the year.'],
+        ['blue-white-weaving', 'Over-under, over-under, a woven mat in Hanukkah blues, no loom required.'],
         ['hanukkah-counting-chain', 'The Vault\u2019s Hanukkah counting classic, freshly tagged for the hub.']
       ]
     },
     {
       id: 'kwanzaa', glyph: '🖤', title: 'Kwanzaa',
-      blurb: 'The seven principles as living practice — kente patterns with meanings, a mural built collectively, discussion tokens.',
+      blurb: 'The seven principles as living practice, kente patterns with meanings, a mural built collectively, discussion tokens.',
       browse: 'index.html?tag=holiday:kwanzaa',
       browseLabel: 'Browse the full Kwanzaa set',
       picks: [
-        ['kinara-candle-counting', 'Seven candles, three colors, one counting system — the math inside the kinara. Paper flames only.'],
-        ['kente-pattern-strips', 'Bold blocks in the kente tradition — each block carrying a meaning, joined into one class cloth.'],
-        ['ujima-unity-mural', 'One huge mural, every kid holding one section — collective work, made visible.'],
+        ['kinara-candle-counting', 'Seven candles, three colors, one counting system, the math inside the kinara. Paper flames only.'],
+        ['kente-pattern-strips', 'Bold blocks in the kente tradition, each block carrying a meaning, joined into one class cloth.'],
+        ['ujima-unity-mural', 'One huge mural, every kid holding one section. Collective work, made visible.'],
         ['seven-principles-talk-tokens', 'The Nguzo Saba as a discussion game. The winning principle becomes the week\u2019s motto.'],
         ['harvest-bowl-centerpiece', 'The mazao: a harvest bowl arranged like it matters, because it does.'],
-        ['kwanzaa-unity-garland', 'The Vault\u2019s Kwanzaa garland classic — link the principles into a chain.']
+        ['kwanzaa-unity-garland', 'The Vault\u2019s Kwanzaa garland classic, link the principles into a chain.']
       ]
     },
     {
@@ -64,13 +64,13 @@
       browse: 'index.html?tag=holiday:new-year',
       browseLabel: 'Browse the full New Year set',
       picks: [
-        ['countdown-clock-craft', 'Build the countdown, then run it — a paper clock that sweeps a real 60 seconds.'],
+        ['countdown-clock-craft', 'Build the countdown, then run it, a paper clock that sweeps a real 60 seconds.'],
         ['ball-drop-physics', 'Time the drop to land exactly at zero. Miss it? That\u2019s called iteration.'],
         ['new-year-noise-parade', 'Shakers, a new-year sign, one glorious hallway lap. The year deserves an entrance.'],
-        ['resolution-seed-packets', 'Write a resolution, seal it with seeds, plant it in spring — goals you can water.'],
-        ['year-in-review-comic', 'Four panels, one year — the personal highlights reel, drawn not written.'],
-        ['countdown-number-line-hop', 'A giant floor number line, ten hops to zero — subtraction you feel in your legs.'],
-        ['midnight-countdown-rehearsal', 'The Vault\u2019s countdown rehearsal — practice the big moment before it counts.'],
+        ['resolution-seed-packets', 'Write a resolution, seal it with seeds, plant it in spring. Goals you can water.'],
+        ['year-in-review-comic', 'Four panels, one year, the personal highlights reel, drawn not written.'],
+        ['countdown-number-line-hop', 'A giant floor number line, ten hops to zero. Subtraction you feel in your legs.'],
+        ['midnight-countdown-rehearsal', 'The Vault\u2019s countdown rehearsal. Practice the big moment before it counts.'],
         ['new-year-time-capsule', 'Seal the year in a box. Future you will thank present you.']
       ]
     },
@@ -80,13 +80,13 @@
       browse: 'index.html?tag=season:winter',
       browseLabel: 'Browse the full winter set',
       picks: [
-        ['snowflake-symmetry-lab', 'No cutting, just looking — six-fold symmetry in real snowflake photos.'],
+        ['snowflake-symmetry-lab', 'No cutting, just looking, six-fold symmetry in real snowflake photos.'],
         ['ice-melt-rescue-race', 'Toys frozen in ice, warm hands and salt strategy. The rescue parade is mandatory.'],
         ['winter-bird-feeder', 'Pinecones and peanut butter, then a week of watching who shows up.'],
-        ['winter-solstice-shadow-track', 'The shortest day casts the longest shadows — stake one and watch it move.'],
+        ['winter-solstice-shadow-track', 'The shortest day casts the longest shadows. Stake one and watch it move.'],
         ['snowy-day-story-walk', 'A story in stations: walk the pages, act the weather, end warm inside.'],
-        ['arctic-animal-charades', 'Be the polar bear. No talking — the tundra is silent.'],
-        ['solstice-lantern-stroll', 'The Vault\u2019s solstice lantern walk — carry the light through the longest night.'],
+        ['arctic-animal-charades', 'Be the polar bear. No talking. The tundra is silent.'],
+        ['solstice-lantern-stroll', 'The Vault\u2019s solstice lantern walk. Carry the light through the longest night.'],
         ['reindeer-shelter-storm', 'Build a reindeer shelter that survives the (fan-powered) storm.']
       ]
     }
@@ -108,7 +108,7 @@
     if (!R) return null;
     var entry = R.getRating(activityId);
     if (!entry) return null;
-    var s = el('span', 'rate-badge', '⭐ ' + entry.stars + '★ — your rating');
+    var s = el('span', 'rate-badge', '⭐ ' + entry.stars + '★, your rating');
     s.setAttribute('aria-label', 'You rated this activity ' + entry.stars + ' of 5 stars');
     return s;
   }
@@ -143,7 +143,7 @@
       var li = pickItem(actmap, p[0], p[1]);
       if (li) { list.appendChild(li); n++; }
     });
-    if (!n) list.appendChild(el('p', null, 'No activities found — the library may have failed to load.'));
+    if (!n) list.appendChild(el('p', null, 'No activities found. The library may have failed to load.'));
     return list;
   }
 

@@ -68,7 +68,7 @@ trayBlocks.forEach(m => {
     'tray picks match curator-first/no-prep/id order: ' + cid,
     hrefs.join(',') + ' vs ' + expected.join(','));
   // tray footer deep link (checked on the full page: the block regex ends at </ul>)
-  ok(desk.includes('…and ' + (cands.length - 6) + ' more cards in this drawer — ' +
+  ok(desk.includes('…and ' + (cands.length - 6) + ' more cards in this drawer, ' +
     '<a href="index.html?cats=' + cid + '#browse">'),
     'tray footer honest count + deep link: ' + cid);
 });
@@ -131,54 +131,24 @@ let syntaxOk = true;
 try { new (require('vm').Script)(djs); } catch (e) { syntaxOk = false; }
 ok(syntaxOk, 'desk.js parses');
 
-// 10. Wave 23: the archive landing (index.html) is a desk you can open.
+// 10. Rotation 21 (ACTIVITY-STUDY 4.1): the landing is calendar first,
+//     then verb doors, then ONE season band. The desk grid does NOT
+//     survive on the home (the desk itself lives on at desk.html,
+//     asserted in sections 1-9 above).
 const landingPath = path.join(ROOT, 'index.html');
 const landing = fs.readFileSync(landingPath, 'utf8');
 ok(landing.includes('<!-- BUILD:DESK -->') && landing.includes('<!-- /BUILD:DESK -->'),
   'index.html carries BUILD:DESK markers');
-ok(landing.includes('<section class="desk-section" id="desk"'),
-  'landing desk section present');
-ok(landing.includes('assets/desk.js'), 'index.html loads desk.js');
-ok(landing.includes('href="#desk">Find an activity'), 'hero CTA points at the desk');
-const ldrawers = [...landing.matchAll(/<div class="drawer" data-drawer="([a-z-]+)">/g)].map(m => m[1]);
-ok(ldrawers.length === 11, 'landing: 11 drawers', String(ldrawers.length));
-ok(JSON.stringify(ldrawers) === JSON.stringify(cats.map(c => c.id)),
-  'landing: drawers follow data/categories.json order', ldrawers.join(','));
-cats.forEach(c => {
-  const cands = byCat[c.id] || [];
-  const note = cands.length + ' cards · ' + cands.filter(a => a.no_prep).length + ' no-prep';
-  ok(landing.includes('class="pencil-note">' + note + '<'),
-    'landing: pencil note honest for ' + c.id, note);
-  ok(landing.includes('id="pull-' + c.id + '" aria-expanded="false" aria-controls="tray-' + c.id + '"'),
-    'landing: pull button wired: ' + c.id);
-  ok(landing.includes('id="tray-' + c.id + '" role="region" aria-labelledby="pull-' + c.id + '"'),
-    'landing: tray region labeled: ' + c.id);
-  ok(landing.includes('<a href="index.html?cats=' + c.id + '#browse">Open the full drawer'),
-    'landing: tray footer deep-links to the filter browser: ' + c.id);
-});
-const ltrays = [...landing.matchAll(/<div class="drawer-tray" id="tray-([a-z-]+)"[\s\S]*?<\/ul>/g)];
-ok(ltrays.length === 11, 'landing: 11 trays', String(ltrays.length));
-ltrays.forEach(m => {
-  const cid = m[1];
-  const hrefs = [...m[0].matchAll(/href="activity\/([a-z0-9-]+)\.html"/g)].map(x => x[1]);
-  ok(hrefs.length === 6, 'landing: 6 cards in ' + cid + ' tray', String(hrefs.length));
-  hrefs.forEach(id => {
-    ok(actIds.has(id), 'landing: tray card resolves: ' + id, cid);
-    ok(fs.existsSync(path.join(ROOT, 'activity', id + '.html')), 'landing: tray card page exists: ' + id);
-  });
-  const cands = (byCat[cid] || []).slice().sort((a, b) =>
-    ((pickedIds.has(a.id) ? 0 : 1) - (pickedIds.has(b.id) ? 0 : 1)) ||
-    ((a.no_prep ? 0 : 1) - (b.no_prep ? 0 : 1)) ||
-    (a.id < b.id ? -1 : 1));
-  const expected = cands.slice(0, 6).map(a => a.id);
-  ok(JSON.stringify(hrefs) === JSON.stringify(expected),
-    'landing: tray picks match curator-first/no-prep/id order: ' + cid,
-    hrefs.join(',') + ' vs ' + expected.join(','));
-});
-ok(landing.includes('id="drawers-open-all"') && landing.includes('id="drawers-close-all"'),
-  'landing: open-all / close-all toolbar present');
-ok(landing.includes('id="blotter-h"') && landing.includes('href="planner.html"'),
-  'landing: kneehole blotter links the planner');
+ok(landing.includes('<section class="calendar-first"'), 'landing: calendar is the first content section');
+ok(landing.includes('class="cal-row"'), 'landing: calendar rows present');
+ok(landing.includes('class="cal-days"'), 'landing: days-remaining marginalia present');
+ok(!landing.includes('desk-section'), 'landing: no desk grid on the home (rotation 21)');
+ok(!landing.includes('class="stat"'), 'landing: no stat tiles on the home (rotation 21)');
+ok(!landing.includes('season-promo'), 'landing: no stacked season promos (L11 collapse)');
+ok((landing.match(/class="verb-door"/g) || []).length === 5, 'landing: exactly five verb doors');
+for (const w of ['>Make<', '>Play<', '>Celebrate<', '>Learn<', '>Calm<'])
+  ok(landing.includes('verb-word">' + w.slice(1)), 'landing: verb door ' + w);
+ok((landing.match(/<h1[ >]/g) || []).length === 1, 'landing: exactly one h1');
 const lids = [...landing.matchAll(/ id="([^"]+)"/g)].map(m => m[1]);
 ok(new Set(lids).size === lids.length, 'no duplicate ids in index.html', String(lids.length));
 

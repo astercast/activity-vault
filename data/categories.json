@@ -1,6 +1,6 @@
 [
   {
-    "blurb": "Activities that ride the turning year \u2014 fall leaves, winter making, spring planting, summer play.",
+    "blurb": "Activities that ride the turning year. Fall leaves, winter making, spring planting, summer play.",
     "color": "#c77b1e",
     "glyph": "\ud83c\udf42",
     "id": "seasons",
@@ -28,7 +28,7 @@
     "name": "STEM"
   },
   {
-    "blurb": "Run, jump, dance \u2014 activities that burn off the wiggles.",
+    "blurb": "Run, jump, dance. Activities that burn off the wiggles.",
     "color": "#2e9e5b",
     "glyph": "\u26bd",
     "id": "pe-movement",
@@ -74,6 +74,6 @@
     "name": "Music & Rhythm",
     "glyph": "\ud83e\udd41",
     "color": "#a855f7",
-    "blurb": "Drums, shakers, rhythm games, and songs \u2014 make some noise."
+    "blurb": "Drums, shakers, rhythm games, and songs. Make some noise."
   }
 ]

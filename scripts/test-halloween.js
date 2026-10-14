@@ -135,11 +135,11 @@ ok(newInPool >= 6, 'new halloween pack feeds the party pool', String(newInPool))
 
 // 9. app.js October promo hook + index.html promo section
 const appSrc = fs.readFileSync(path.join(ROOT, 'assets/app.js'), 'utf8');
-ok(appSrc.includes("getElementById('season-promo-halloween')"), 'app.js halloween promo hook');
-ok(/pm === 9/.test(appSrc), 'app.js gates halloween promo on October (month 9)');
+ok(!appSrc.includes('season-promo'), 'app.js: season promo hooks removed (L11 collapse, rotation 21)');
+ok(!/pm === 9/.test(appSrc), 'app.js: no month-gated promo remains (rotation 21)');
 const indexHtml = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
-ok(indexHtml.includes('id="season-promo-halloween"'), 'index.html has halloween promo section');
-ok(indexHtml.includes('collections.html#haunted-halls'), 'promo links haunted-halls');
+ok(indexHtml.includes('class="cal-name" href="index.html?tag=holiday:halloween#browse">Halloween<'), 'index.html calendar leads with halloween in season');
+ok(indexHtml.includes('collections.html'), 'index links collections');
 ok(indexHtml.includes('halloween.html'), 'promo links halloween.html');
 
 // 10. Nav: all 10 shells link halloween.html; exactly one aria-current per shell,

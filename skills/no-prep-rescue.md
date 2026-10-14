@@ -19,9 +19,9 @@ The supply closet is empty, the bell rings in five minutes, and the plan just fe
 ## Procedure
 
 1. Filter `data/v1/activities.json` for `no_prep == true`. These need zero advance setup.
-2. If materials matter too, keep only activities where `materials` is empty (`[]`) — genuinely nothing needed.
+2. If materials matter too, keep only activities where `materials` is empty (`[]`), genuinely nothing needed.
 3. Narrow by age overlap (`age_min <= kid_age <= age_max`), group overlap, and `time_min <= minutes`.
-4. If the pool is thin, relax to "materials on hand": keep activities whose every `materials[].item` mentions paper, pencil, pen, crayon, marker, glue, or scissors — the classroom-basics test.
+4. If the pool is thin, relax to "materials on hand": keep activities whose every `materials[].item` mentions paper, pencil, pen, crayon, marker, glue, or scissors, the classroom-basics test.
 5. For a time block, sequence 2–3 short ones back to back rather than stretching one thin.
 
 ## Worked example
@@ -35,5 +35,5 @@ The supply closet is empty, the bell rings in five minutes, and the plan just fe
 
 ## Pitfalls
 
-- Assuming `no_prep` means no materials — check the `materials` array too; some grab-and-go activities still need everyday items.
-- Running one long no-prep game for the whole block — two shorter ones keep attention alive.
+- Assuming `no_prep` means no materials, check the `materials` array too; some grab-and-go activities still need everyday items.
+- Running one long no-prep game for the whole block. Two shorter ones keep attention alive.

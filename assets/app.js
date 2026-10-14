@@ -1,4 +1,4 @@
-/* Activity Vault — filter browser.
+/* Activity Vault, filter browser.
    Fetches data/activities.json + data/categories.json + data/v1/filters.json,
    renders filterable card grid. Age bounds come from filters.json (QA-011). */
 (function () {
@@ -101,68 +101,51 @@
     return state.catMap[a.categories[0]] || { color: '#b7413c', name: '', glyph: '' };
   }
 
+  /* Rotation 21 (ACTIVITY-STUDY 4.2): every listing is a ruled row with
+     a four-fact tombstone in Tate's fixed order: name; age band; time;
+     materials count or the word none. The one-word action tag sits in a
+     fixed position at the row's head (the Tate contract). No card grid. */
+  var ACTION_BY_CAT = {
+    'crafts': 'Make', 'stem': 'Learn', 'pe-movement': 'Play',
+    'holidays': 'Celebrate', 'quiet-focus': 'Calm', 'seasons': 'Explore',
+    'team-community': 'Gather', 'icebreakers': 'Meet', 'outdoor': 'Wander',
+    'rainy-day': 'Play', 'music-rhythm': 'Listen'
+  };
+
   function renderCard(a) {
     var cat = primaryCat(a);
-    var card = el('article', 'act-card');
-    card.style.setProperty('--cat', cat.color);
+    var row = el('article', 'act-card act-row');
+    row.style.setProperty('--cat', cat.color);
 
-    var chips = el('div', 'cat-chips');
-    a.categories.forEach(function (cid) {
-      var c = state.catMap[cid];
-      if (!c) return;
-      var chip = el('span', 'chip cat-chip', c.glyph + ' ' + c.name);
-      chip.style.setProperty('--cat', c.color);
-      chip.setAttribute('aria-hidden', 'true');
-      chips.appendChild(chip);
-    });
-    (a.tags || []).forEach(function (t) {
-      var chip = el('span', 'chip tag-chip', TAG_LABELS[t] || t);
-      chip.setAttribute('aria-hidden', 'true');
-      chips.appendChild(chip);
-    });
-    // wave 14 scope-up: research-backed badges, visible in the browse grid too
-    if (a.copy_free) {
-      var cf = el('span', 'chip tag-chip', '🖨️ Copy-free');
-      cf.setAttribute('aria-hidden', 'true');
-      chips.appendChild(cf);
-    }
-    if (a.no_elimination) {
-      var ne = el('span', 'chip tag-chip', '♾️ No elimination');
-      ne.setAttribute('aria-hidden', 'true');
-      chips.appendChild(ne);
-    }
-    card.appendChild(chips);
+    var action = ACTION_BY_CAT[a.categories[0]] || 'Open';
+    row.appendChild(el('span', 'action-tag', action));
 
     var h = el('h3');
     var link = el('a', null, a.name);
     link.href = 'activity/' + a.id + '.html';
     h.appendChild(link);
-    card.appendChild(h);
+    row.appendChild(h);
 
-    card.appendChild(el('p', 'tagline', a.tagline));
+    var mats = a.materials && a.materials.length
+      ? a.materials.length + (a.materials.length === 1 ? ' material' : ' materials')
+      : 'no materials';
+    var tomb = el('p', 'tombstone');
+    tomb.appendChild(el('span', 'tomb-fact', 'Ages ' + a.age_min + '\u2013' + a.age_max));
+    tomb.appendChild(el('span', 'tomb-sep', ' \u00b7 '));
+    tomb.appendChild(el('span', 'tomb-fact', a.time_min + '\u2013' + a.time_max + ' min'));
+    tomb.appendChild(el('span', 'tomb-sep', ' \u00b7 '));
+    tomb.appendChild(el('span', 'tomb-fact', mats));
+    row.appendChild(tomb);
 
-    var meta = el('div', 'meta');
-    meta.appendChild(metaItem('Ages', a.age_min + '–' + a.age_max));
-    meta.appendChild(metaItem('Time', a.time_min + '–' + a.time_max + ' min'));
-    meta.appendChild(metaItem('Group', a.group_min + '–' + a.group_max));
-    var prep = el('span', 'prep-flag ' + (a.no_prep ? 'yes' : 'no'),
-      a.no_prep ? '✓ No-prep' : '◷ Some prep');
-    meta.appendChild(prep);
-    var loc = el('span', null, '');
-    loc.innerHTML = '⌂ <b>' + (a.location.indexOf('indoor') !== -1 && a.location.indexOf('outdoor') !== -1
-      ? 'In / Out' : (a.location[0] === 'indoor' ? 'Indoors' : 'Outdoors')) + '</b>';
-    meta.appendChild(loc);
-    card.appendChild(meta);
-
-    // The visitor's OWN rating — never an aggregate; there are no community ratings.
+    // The visitor's OWN rating: never an aggregate; no community ratings.
     var mine = myRating(a);
     if (mine) {
-      card.appendChild(el('span', 'rate-badge', '⭐ ' + mine.stars + '★ — your rating'));
+      row.appendChild(el('span', 'rate-badge', '\u2b50 ' + mine.stars + '\u2605, your rating'));
     } else if (state.sortByRating || state.topTen) {
-      card.appendChild(el('span', 'rate-badge unrated', 'Not rated yet'));
+      row.appendChild(el('span', 'rate-badge unrated', 'Not rated yet'));
     }
 
-    return card;
+    return row;
   }
 
   function metaItem(label, value) {
@@ -184,7 +167,7 @@
       });
       list = list.slice(0, 10);
     } else if (state.sortByRating) {
-      // Rated first (best stars first), unrated last — clearly marked.
+      // Rated first (best stars first), unrated last, clearly marked.
       list.sort(function (x, y) {
         var rx = myRating(x), ry = myRating(y);
         return ((ry ? ry.stars : -1) - (rx ? rx.stars : -1)) ||
@@ -205,20 +188,17 @@
       if (state.topTen) {
         empty.innerHTML = '<span class="big" aria-hidden="true">⭐</span>' +
           '<p><strong>No ratings yet.</strong></p>' +
-          '<p>Open any activity card and give it 1–5 stars — your top 10 will appear here.</p>';
+          '<p>Open any activity card and give it 1–5 stars. Your top 10 will appear here.</p>';
       } else {
-        empty.innerHTML = '<span class="big" aria-hidden="true">🗂️</span><p><strong>The drawer came up empty.</strong></p><p>Nothing in the vault matches that exact combination — loosen a filter or two and dig again. The good stuff is in here somewhere.</p>';
+        empty.innerHTML = '<span class="big" aria-hidden="true">🗂️</span><p><strong>The drawer came up empty.</strong></p><p>Nothing in the vault matches that exact combination, loosen a filter or two and dig again. The good stuff is in here somewhere.</p>';
       }
       grid.appendChild(empty);
     } else {
-      list.forEach(function (a, idx) {
-        var c = renderCard(a);
-        c.style.setProperty('--i', String(idx % 9)); /* stagger order for the desk reveal */
-        grid.appendChild(c);
+      list.forEach(function (a) {
+        grid.appendChild(renderCard(a));
       });
     }
     countEl.textContent = list.length + (list.length === 1 ? ' activity' : ' activities');
-    if (window.VaultReveal) window.VaultReveal.watch(grid);
   }
 
   // ---------- share a collection ----------
@@ -273,7 +253,7 @@
       document.body.appendChild(ta);
       ta.focus(); ta.select();
       try { document.execCommand('copy'); ok(); }
-      catch (e) { statusEl.textContent = 'Copy failed — select the text manually.'; }
+      catch (e) { statusEl.textContent = 'Copy failed, select the text manually.'; }
       document.body.removeChild(ta);
     }
     if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -285,12 +265,12 @@
     var list = state.visible || [];
     var bits = describeFilters();
     var title = bits.length
-      ? '🗂️ Activity Vault collection — ' + bits.join(' · ')
-      : '🗂️ Activity Vault collection — all activities';
+? '🗂️ Activity Vault collection, ' + bits.join(' · ')
+: '🗂️ Activity Vault collection, all activities';
     var lines = [title, ''];
     if (list.length) {
       list.forEach(function (a) {
-        lines.push('• ' + a.name + ' — Ages ' + a.age_min + '–' + a.age_max + ', ' +
+        lines.push('• ' + a.name + ', Ages ' + a.age_min + '–' + a.age_max + ', ' +
           a.time_min + '–' + a.time_max + ' min');
         lines.push('  ' + cardUrl('activity/' + a.id + '.html'));
       });
@@ -299,7 +279,7 @@
     }
     lines.push('');
     lines.push('View it: ' + viewUrl());
-    lines.push('Paste this into your newsletter or email — every link opens the right activity card.');
+    lines.push('Paste this into your newsletter or email. Every link opens the right activity card.');
     copyText(lines.join('\n'), document.getElementById('copy-collection-status'));
   }
 
@@ -347,6 +327,7 @@
       var cb = chipButton(c.glyph + ' ' + c.name, false, function (on) {
         if (on) state.cats.add(c.id); else state.cats.delete(c.id);
       }, c.color);
+      cb.classList.add('folder-tab');
       cb.setAttribute('data-cat', c.id);
       row.appendChild(cb);
     });
@@ -372,7 +353,7 @@
     ag.appendChild(el('label', 'flabel', 'Age'));
     var ageWrap = el('div');
     var ageRange = el('input'); ageRange.type = 'range';
-    // QA-011: bounds are NOT literals here — they are set in init() from
+    // QA-011: bounds are NOT literals here. They are set in init() from
     // data/v1/filters.json (filters.age), the same source as the published
     // declaration, with the loaded activities' true span as fallback.
     // Deriving again from activities here covers any init() edge case.
@@ -454,7 +435,7 @@
     }
     host.appendChild(og);
 
-    // your ratings (localStorage only — never aggregated, never shared)
+    // your ratings (localStorage only, never aggregated, never shared)
     var rtg = el('div', 'filter-group');
     rtg.appendChild(el('span', 'flabel', 'Your ratings'));
     var rtHint = el('p', 'rate-privacy',
@@ -525,14 +506,14 @@
       if (statCats) statCats.textContent = state.categories.length;
       if (statPrep) statPrep.textContent = state.activities.filter(function (a) { return a.no_prep; }).length;
       // The curator's note: a sticky note with opinions. Clicking cycles through
-      // them — the human-made easter egg (makeover wave 22).
+      // them, the human-made easter egg (makeover wave 22).
       var noteBtn = document.getElementById('curator-note');
       var noteText = document.getElementById('curator-note-text');
       if (noteBtn && noteText) {
         var notes = [
-          'everything\u2019s filed & ready — grab a card ↓',
+          'everything\u2019s filed & ready, grab a card ↓',
           'if you only try one thing this week: make it the noise parade. trust me.',
-          'psst — the sub tub has saved more mondays than coffee.',
+          'psst. The sub tub has saved more mondays than coffee.',
           'hot take: the best STEM demos use trash. fight me. (kitchen trash. calm down.)'
         ];
         var ni = 0;
@@ -541,23 +522,8 @@
           noteText.textContent = notes[ni];
         });
       }
-      // Seasonal homepage promos: spring (Mar–May), summer (Jun–Aug), halloween (Oct),
-      // thanksgiving (Nov), winter (Dec–Jan) — client-side, month-gated.
-      var promo = document.getElementById('season-promo');
-      var summerPromo = document.getElementById('season-promo-summer');
-      var halloweenPromo = document.getElementById('season-promo-halloween');
-      var thanksgivingPromo = document.getElementById('season-promo-thanksgiving');
-      var winterPromo = document.getElementById('season-promo-winter');
-      if (promo) {
-        var pm = new Date().getMonth();
-        promo.hidden = !(pm === 2 || pm === 3 || pm === 4);
-        if (summerPromo) summerPromo.hidden = !(pm === 5 || pm === 6 || pm === 7);
-        if (halloweenPromo) halloweenPromo.hidden = !(pm === 9);
-        if (thanksgivingPromo) thanksgivingPromo.hidden = !(pm === 10);
-        if (winterPromo) winterPromo.hidden = !(pm === 11 || pm === 0);
-      }
       buildFilters();
-      // ?view=top-rated deep link (My top 10 — ratings live in the visitor's browser)
+      //?view=top-rated deep link (My top 10. Ratings live in the visitor's browser)
       try {
         var qtag = new URLSearchParams(window.location.search).get('tag');
         if (qtag && TAG_ORDER.indexOf(qtag) !== -1) {
@@ -579,7 +545,7 @@
             }
           });
         }
-      } catch (e) { /* malformed query string — ignore */ }
+      } catch (e) { /* malformed query string, ignore */ }
       // "/" focuses search from anywhere (wave 14 nav audit)
       document.addEventListener('keydown', function (e) {
         if (e.key === '/' && !/^(INPUT|TEXTAREA|SELECT)$/.test((document.activeElement || {}).tagName || '')) {

@@ -1,4 +1,4 @@
-/* Activity Vault — Smart Weekly Planner 2.0 core logic.
+/* Activity Vault, Smart Weekly Planner 2.0 core logic.
    Pure functions only: no DOM, no network, no localStorage.
    Browser: window.VaultPlanner. Node: module.exports (UMD). */
 (function (global, factory) {
@@ -54,7 +54,7 @@
     return catBucket[activity.categories[0]] || 'mixed';
   }
 
-  /* mulberry32 — small seeded PRNG so auto-built weeks are reproducible in tests. */
+  /* mulberry32, small seeded PRNG so auto-built weeks are reproducible in tests. */
   function mulberry32(seed) {
     var t = seed >>> 0;
     return function () {
@@ -95,13 +95,13 @@
     });
   }
 
-  /* One line on why an activity fits — carried over from planner 1.0. */
+  /* One line on why an activity fits, carried over from planner 1.0. */
   function whyFits(a, catName) {
     var bits = [a.time_min + '–' + a.time_max + ' min'];
     if (a.no_prep) bits.push('no prep');
     var cnames = a.categories.slice(0, 2).map(function (c) { return catName(c); });
     bits.push(cnames.join(' · '));
-    return bits.join(' — ');
+    return bits.join(', ');
   }
 
   /* Balance-aware scoring: prefer buckets that are scarce today, then this week,
@@ -174,7 +174,7 @@
     var totalSlots = opts.days.length * opts.slotsPerDay;
     if (!opts.allowRepeats && pool.length < totalSlots && !seedIds.length) {
       notes.push('Only ' + pool.length + ' activities match, but you asked for ' + totalSlots +
-        ' slots. Repeats are off — some slots may stay empty, or allow repeats.');
+        ' slots. Repeats are off. Some slots may stay empty, or allow repeats.');
     }
 
     opts.days.forEach(function (day) {
@@ -227,20 +227,20 @@
     if (total < 2) return out;
     var counts = balance.counts;
     BUCKET_IDS.forEach(function (b) {
-      if (b === 'mixed') return; // all-rounders are the neutral filler — no warning
+      if (b === 'mixed') return; // all-rounders are the neutral filler, no warning
       if (counts[b] > total / 2) {
         var advice = {
-          movement: 'High energy all day — add a calm or creative slot so the room lands softly.',
-          calm: 'All calm — the room may get sleepy; mix in some movement.',
-          creative: 'Messy-heavy — budget extra cleanup time between slots.',
-          outdoor: 'Weather-dependent day — keep an indoor backup ready.'
+          movement: 'High energy all day. Add a calm or creative slot so the room lands softly.',
+          calm: 'All calm. The room may get sleepy; mix in some movement.',
+          creative: 'Messy-heavy, budget extra cleanup time between slots.',
+          outdoor: 'Weather-dependent day. Keep an indoor backup ready.'
         }[b];
         out.push(dayName + ' leans hard on ' + bucketLabel(b) + ' (' + counts[b] + ' of ' + total +
           ' slots). ' + advice);
       }
     });
     if (total >= 3 && counts.calm === 0) {
-      out.push(dayName + ' has no calm slot — consider a quiet landing so the day ends settled.');
+      out.push(dayName + ' has no calm slot, consider a quiet landing so the day ends settled.');
     }
     return out;
   }
@@ -255,10 +255,10 @@
     });
     var out = [];
     if (total >= 4 && counts.movement === 0) {
-      out.push('No high-energy slot all week — kids need to move; add a ⚡ slot somewhere.');
+      out.push('No high-energy slot all week. Kids need to move; add a ⚡ slot somewhere.');
     }
     if (total >= 6 && counts.calm === 0) {
-      out.push('No calm slot all week — plan a 🧘 landing at least once.');
+      out.push('No calm slot all week, plan a 🧘 landing at least once.');
     }
     return out;
   }
@@ -500,7 +500,7 @@
   /* ---- plan text export (wave-7 pattern) ----
      3.0: plan.weeks (v2 payload) prints WEEK n of N headers; v1 days still work. */
   function planText(plan, byId, catName, ratingLine) {
-    var lines = ['📅 ' + (plan.name || 'My week') + ' — Activity Vault', ''];
+    var lines = ['📅 ' + (plan.name || 'My week') + ' · Activity Vault', ''];
     if (plan.balanceNote) lines.push(plan.balanceNote, '');
     var weeks = (plan.weeks && plan.weeks.length)
       ? plan.weeks
@@ -512,8 +512,8 @@
         lines.push(d.day);
         d.slots.forEach(function (s) {
           var a = s.activityId && byId[s.activityId];
-          if (!a) { lines.push('  Slot ' + s.slot + ' — open slot'); return; }
-          lines.push('  Slot ' + s.slot + ' — ' + a.name);
+          if (!a) { lines.push('  Slot ' + s.slot + '. Open slot'); return; }
+          lines.push('  Slot ' + s.slot + '. ' + a.name);
           lines.push('    Ages ' + a.age_min + '–' + a.age_max + ' · ' +
             a.time_min + '–' + a.time_max + ' min · Group ' + a.group_min + '–' + a.group_max +
             (a.no_prep ? ' · no prep' : ''));
@@ -525,7 +525,7 @@
       });
     });
     lines.push('Full cards: index.html');
-    lines.push('Paste this into your newsletter or email — every link opens the right activity card.');
+    lines.push('Paste this into your newsletter or email. Every link opens the right activity card.');
     return lines.join('\n');
   }
 
@@ -543,7 +543,7 @@
 
   /* plan: {name, programType, days:[{day, slots:[{slot, activityId}]}]}
      now: Date (injectable for tests). weekOffset: 0-based week index for
-     multi-week plans — shifts every event +7 days and keeps UIDs unique.
+     multi-week plans. Shifts every event +7 days and keeps UIDs unique.
      Returns the .ics file text. */
   function exportICS(plan, byId, now, weekOffset) {
     var prog = PROGRAMS[plan.programType] || PROGRAMS['after-school'];
@@ -581,7 +581,7 @@
   }
 
   /* ---- plan share/import ----
-     Shareable plan payload (v2 — 3.0). Deep link: planner.html?plan=<base64url>.
+     Shareable plan payload (v2, 3.0). Deep link: planner.html?plan=<base64url>.
      v1 payloads (flat `days`) still import: they're wrapped as week 1. */
   var PLAN_VERSION = 2;
   function encodePlan(plan) {

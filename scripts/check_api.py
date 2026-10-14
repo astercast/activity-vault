@@ -200,7 +200,10 @@ check("link check: 0 broken", not broken, str(broken[:5]) if broken else f"{len(
 
 llms = open(os.path.join(ROOT, 'llms.txt')).read()
 path_re = re.compile(r'^- (api/|data/|skills/|pipeline/|[a-zA-Z0-9_.-]+\.(html|md|txt))')
-llms_links = [l.split('—')[0].strip()[2:].strip()
+# Rotation 21: llms.txt entry lines are dash-free now (comma / colon /
+# parenthetical separators), so the link is the first whitespace-delimited
+# token after the bullet, with any trailing separator punctuation removed.
+llms_links = [l[2:].split()[0].rstrip('.,')
               for l in llms.splitlines() if path_re.match(l)]
 missing = [l for l in llms_links
            if not l.startswith('http') and not os.path.exists(os.path.join(ROOT, l))]

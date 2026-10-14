@@ -119,9 +119,9 @@ for (const id of ['puddle-stomp-parade', 'spring-sound-map', 'thunderstorm-clap-
 const appSrc = fs.readFileSync(path.join(ROOT, 'assets/app.js'), 'utf8');
 for (const t of ['season:spring', 'holiday:easter', 'holiday:earth-day'])
   ok(appSrc.includes("'" + t + "'"), 'app.js knows ' + t);
-ok(appSrc.includes("getElementById('season-promo')"), 'app.js season promo hook');
+ok(!appSrc.includes('season-promo'), 'app.js: season promo hooks removed (L11 collapse, rotation 21)');
 const indexHtml = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
-ok(indexHtml.includes('id="season-promo"'), 'index.html has season promo section');
+ok(!indexHtml.includes('season-promo'), 'index.html: no season promo sections (L11 collapse)');
 
 // 10. Generated API: filters.json carries the new tags; collections endpoint count
 const tagOpts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/filters.json'), 'utf8')).filters.tags.options;

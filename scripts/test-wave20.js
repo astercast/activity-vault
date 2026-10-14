@@ -149,10 +149,10 @@ ok(hwHtml.includes('collection:haunted-halls'), 'hub still links haunted-halls (
 
 // 12. index.html: HALLOWEEN 2026 stamp + updated promo
 const idxHtml = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
-ok(idxHtml.includes('class="stamp-season"'), 'index.html has stamp-season element');
-ok(idxHtml.includes('>Halloween 2026</span>'), 'stamp reads HALLOWEEN 2026');
-ok(idxHtml.includes('40 brand-new Halloween activities'), 'promo copy updated to 40 new');
-ok(idxHtml.includes('collections.html#halloween-week'), 'promo links halloween-week');
+ok(!idxHtml.includes('season-promo'), 'index.html: season promos collapsed (L11, rotation 21)');
+ok(idxHtml.includes('tag=holiday:halloween'), 'index.html calendar row links halloween');
+ok(idxHtml.includes('class="cal-count"'), 'index.html calendar rows carry activity counts');
+ok(idxHtml.includes('collections.html'), 'index links collections');
 
 // 13. style.css: stamp-season treatment in Teacher's Desk identity
 const css = fs.readFileSync(path.join(ROOT, 'assets/style.css'), 'utf8');

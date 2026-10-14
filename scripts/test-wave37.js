@@ -127,7 +127,7 @@ ok(/no hands on anybody's face/.test(byId['big-mirror-face-copy-my-face'].safety
 ok(/gone back to being weather/.test(JSON.stringify(byId['big-cloud-lying-picture-names'])), 'cloud lying: back to weather');
 ok(/nobody walks with their eyes up/.test(byId['big-cloud-lying-picture-names'].safety || ''), 'cloud lying: lying, not walking');
 // Water painting: the doing was the picture; brushes never flicked.
-ok(/the doing was the picture/.test(JSON.stringify(byId['big-water-painting-fence-picture'])), 'water painting: doing was the picture');
+ok(/The doing was the picture/.test(JSON.stringify(byId['big-water-painting-fence-picture'])), 'water painting: doing was the picture');
 ok(/never flicked/.test(byId['big-water-painting-fence-picture'].safety || ''), 'water painting: no flicked brushes');
 // Beach ball: down is where it rests, not where it loses; a ball that stings is deflated.
 ok(/Down is where it rests/.test(JSON.stringify(byId['big-beach-ball-keep-it-floating'])), 'beach ball: down is resting');

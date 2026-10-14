@@ -1,9 +1,9 @@
-/* GET /api/review-queue — §7.6 "The Scout".
+/* GET /api/review-queue, §7.6 "The Scout".
  * ?status= pending|all|decided (default pending)
  * Serves the human-in-the-loop review queue: candidates the RSS scan found,
  * awaiting a human to adapt them into original words (PIPELINE.md).
  * Reads the build-published data/v1/review-queue.json + data/v1/decided.json
- * (bundled with the deployment — the same bytes the static fallback serves).
+ * (bundled with the deployment, the same bytes the static fallback serves).
  * Fallback: /data/v1/review-queue.json.
  */
 'use strict';

@@ -33,5 +33,5 @@ New group, first day, or new kids joining: "half my group doesn't know each othe
 
 ## Pitfalls
 
-- Opening with `two-truths-and-a-lie` in a brand-new shy group — being the center of attention on day one is a lot. Warm up first.
-- Icebreakers that eliminate players (`simon-says` with outs) on day one — use the no-elimination variants until the group gels.
+- Opening with `two-truths-and-a-lie` in a brand-new shy group, being the center of attention on day one is a lot. Warm up first.
+- Icebreakers that eliminate players (`simon-says` with outs) on day one. Use the no-elimination variants until the group gels.

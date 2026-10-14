@@ -21,7 +21,7 @@ A teacher wants Monday–Friday planned in one go: "give me two activities a day
 
 1. Pull the matching pool from `data/v1/activities.json` using the constraints (same filter logic as `activity-finder`).
 2. Check the pool is big enough: `pool_size >= days × slots` when repeats are off. If not, say so up front and offer to allow repeats or loosen a constraint.
-3. Deal activities round-robin across days, spreading categories — never put two high-energy PE activities back-to-back; alternate energy levels (move → make → calm → play).
+3. Deal activities round-robin across days, spreading categories. Never put two high-energy PE activities back-to-back; alternate energy levels (move → make → calm → play).
 4. For each pick, write one line on *why it fits* (time, prep, category).
 5. Output a printable plan: day, slot, activity name, page link. Point the teacher at `planner.html` for the interactive version.
 
@@ -36,5 +36,5 @@ Mon–Fri, 2 slots/day, ≤30 min, no-prep, indoor → 10 picks from the 45-acti
 
 ## Pitfalls
 
-- Scheduling three quiet-focus activities in a row on a rainy Friday — alternate energy or the room falls asleep (or riots).
-- Repeating a category-heavy week: if the pool is thin, repeats are better than forcing bad fits — say which slots repeat.
+- Scheduling three quiet-focus activities in a row on a rainy Friday. Alternate energy or the room falls asleep (or riots).
+- Repeating a category-heavy week: if the pool is thin, repeats are better than forcing bad fits, say which slots repeat.

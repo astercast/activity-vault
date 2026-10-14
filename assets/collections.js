@@ -1,7 +1,7 @@
-/* Activity Vault — curated collections page (wave 9).
+/* Activity Vault, curated collections page (wave 9).
    Renders the curated collections from data/v1/collections.json, resolves
    picks against data/v1/activities.json, shows the visitor's own rating badges
-   (localStorage only — never invented), printable per collection, with a
+   (localStorage only, never invented), printable per collection, with a
    "copy this collection" text export per collection (wave-7 pattern). */
 (function () {
   'use strict';
@@ -52,19 +52,28 @@
   }
 
   function facts(a) {
+    var mats = a.materials && a.materials.length
+      ? a.materials.length + (a.materials.length === 1 ? ' material' : ' materials')
+      : 'no materials';
     return 'Ages ' + a.age_min + '–' + a.age_max + ' · ' +
-      a.time_min + '–' + a.time_max + ' min · ' +
-      (a.no_prep ? 'no prep' : 'some prep') + ' · ' +
-      a.location.map(function (l) { return l === 'indoor' ? 'indoors' : 'outdoors'; }).join(' & ');
+      a.time_min + '–' + a.time_max + ' min · ' + mats;
   }
 
-  /* Rotation 21: cards are distinguished by real content — the moment the
+  /* Tab colour law: each collection owns one colour from the vault's
+     category palette; it recurs as the margin rule and note voice on
+     the collection's pages, never as a fill. */
+  var COLL_COLORS = ['#c77b1e', '#b7413c', '#7b5fc7', '#0d8a96', '#2e9e5b',
+    '#c98f1b', '#d4567e', '#4f7d3a', '#4a7ec2', '#6b7280', '#a855f7'];
+  function collColor(c, i) { return COLL_COLORS[i % COLL_COLORS.length]; }
+
+  /* Rotation 21: cards are distinguished by real content, the moment the
      bundle is for (when_to_use), its size, its age/time span, and the names
-     of its first activities — never by an emoji glyph. */
+     of its first activities, never by an emoji glyph. */
   function renderGrid(collections, actmap) {
     grid.textContent = '';
-    collections.forEach(function (c) {
+    collections.forEach(function (c, ci) {
       var card = el('a', 'collection-card');
+      card.style.setProperty('--cat', collColor(c, ci));
       card.href = '#' + c.id;
       var names = c.picks.slice(0, 3).map(function (p) {
         var a = actmap[p.activity_id];
@@ -87,10 +96,24 @@
     grid.hidden = false;
   }
 
-  function renderSection(c, actmap) {
+  function renderSection(c, actmap, ci) {
     var sec = el('section', 'collection-section');
     sec.id = c.id;
+    sec.style.setProperty('--cat', collColor(c, ci || 0));
     sec.setAttribute('aria-labelledby', 'coll-' + c.id);
+
+    /* The squaring stack (P12, paper): the collection opener shows its
+       first papers slightly rotated; they square into the tidy list
+       once, here, and nowhere else. */
+    var stack = el('div', 'square-stack no-print');
+    stack.setAttribute('aria-hidden', 'true');
+    c.picks.slice(0, 3).forEach(function (p, i) {
+      var a = actmap[p.activity_id];
+      var sheet = el('span', 'stack-sheet', a ? a.name : p.activity_id);
+      sheet.style.setProperty('--tilt', String((i - 1) * 4));
+      stack.appendChild(sheet);
+    });
+    sec.appendChild(stack);
 
     var head = el('div', 'collection-head');
     var h2 = el('h2', 'collection-h2', c.title);
@@ -98,13 +121,13 @@
     head.appendChild(h2);
     sec.appendChild(head);
 
-    sec.appendChild(el('p', 'collection-when', 'When to reach for it: ' + c.when_to_use));
+    /* ONE context line per collection (round 3 law): season or moment,
+       plus the age span, set once at the head as furniture. */
+    sec.appendChild(el('p', 'collection-context',
+      c.when_to_use + ' · Ages ' + c.age_span[0] + ' to ' + c.age_span[1] + '.'));
 
-    var stats = el('p', 'collection-stats',
-      c.picks.length + ' hand-picked activities · Ages ' +
-      c.age_span[0] + '–' + c.age_span[1] + ' · ' +
-      c.time_span[0] + '–' + c.time_span[1] + ' min each');
-    sec.appendChild(stats);
+    /* The when line lives inside the one context line above; it is
+       not repeated per section (L13 discipline). */
 
     if (TIES[c.id]) {
       var tie = el('p', 'collection-tie no-print');
@@ -115,10 +138,10 @@
     }
 
     var list = el('ol', 'pick-list');
-    c.picks.forEach(function (p) {
+    c.picks.forEach(function (p, pi) {
       var a = actmap[p.activity_id];
       if (!a) return; /* build-time validated; never happens */
-      var li = el('li', 'pick');
+      var li = el('li', pi === 0 ? 'pick pick-anchor' : 'pick');
       var row = el('div', 'pick-row');
       var link = el('a', 'pick-name', a.name);
       link.href = 'activity/' + a.id + '.html';
@@ -172,20 +195,20 @@
   function copyOne(c, actmap, statusEl) {
     var R = window.VaultRatings;
     var lines = [
-      'Activity Vault — ' + c.title,
+      'Activity Vault, ' + c.title,
       'When to reach for it: ' + c.when_to_use,
       ''
     ];
     c.picks.forEach(function (p) {
       var a = actmap[p.activity_id];
       if (!a) return;
-      lines.push('• ' + a.name + ' — ' + facts(a));
+      lines.push('• ' + a.name + ', ' + facts(a));
       lines.push('  Why it’s here: ' + p.curator_note);
       if (R) {
         var entry = R.getRating(a.id);
         if (entry) {
           var rline = '  You rated this ' + entry.stars + '/5';
-          if (entry.note) rline += ' — “' + entry.note + '”';
+          if (entry.note) rline += ', “' + entry.note + '”';
           lines.push(rline);
         }
       }
@@ -193,7 +216,7 @@
     });
     lines.push('');
     lines.push('View the collection: ' + baseUrl() + 'collections.html#' + c.id);
-    lines.push('Your ratings are yours alone — stored only in this browser.');
+    lines.push('Your ratings are yours alone, stored only in this browser.');
     copyText(lines.join('\n'), statusEl);
   }
 
@@ -209,7 +232,7 @@
       document.body.appendChild(ta);
       ta.focus(); ta.select();
       try { document.execCommand('copy'); ok(); }
-      catch (e) { statusEl.textContent = 'Copy failed — select the text manually.'; }
+      catch (e) { statusEl.textContent = 'Copy failed, select the text manually.'; }
       document.body.removeChild(ta);
     }
     if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -235,9 +258,9 @@
       var target = document.getElementById(hash);
       if (target) target.scrollIntoView({ block: 'start' });
       var h = target && target.querySelector('h2');
-      if (h) document.title = h.textContent + ' — Activity Vault';
+      if (h) document.title = h.textContent + ' · Activity Vault';
     } else {
-      document.title = 'Curated collections — Activity Vault';
+      document.title = 'Curated collections · Activity Vault';
     }
   }
 
@@ -251,14 +274,14 @@
       var actmap = {};
       (res[1].activities || []).forEach(function (a) { actmap[a.id] = a; });
       renderGrid(collections, actmap);
-      collections.forEach(function (c) {
-        sectionsHost.appendChild(renderSection(c, actmap));
+      collections.forEach(function (c, ci) {
+        sectionsHost.appendChild(renderSection(c, actmap, ci));
       });
       applyRoute(collections);
       window.addEventListener('hashchange', function () { applyRoute(collections); });
       statusEl.textContent = collections.length + ' curated collections loaded.';
       /* VP-0008: the hero numeral derives from the same loaded data as
-         the grid and the status line — it can never drift stale again. */
+         the grid and the status line. It can never drift stale again. */
       var heroCount = document.getElementById('coll-hero-count');
       if (heroCount) heroCount.textContent = numberWord(collections.length);
     }).catch(function () {

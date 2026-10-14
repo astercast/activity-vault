@@ -1,4 +1,4 @@
-/* Activity Vault — After-School Kit core logic (wave 18).
+/* Activity Vault, After-School Kit core logic (wave 18).
    Pure functions only: no DOM, no network, no localStorage.
    Browser: window.VaultKit. Node: module.exports (UMD). */
 (function (global, factory) {
@@ -20,7 +20,7 @@
 
   /* The low-materials pantry: 16 classroom staples. Each maps to the
      substrings (word-boundary matched) it covers in real material strings.
-     A phone timer and tap water count as "on hand" — the labels say so. */
+     A phone timer and tap water count as "on hand", the labels say so. */
   var PANTRY = [
     { id: 'paper',    label: 'Printer / copy paper', glyph: '📰', words: ['paper'] },
     { id: 'markers',  label: 'Markers',              glyph: '🖍️', words: ['marker'] },
@@ -45,7 +45,7 @@
 
   var MODES = {
     'pantry': { label: '🧰 Use what I have', blurb: 'Only activities whose materials are all in your pantry (or need none).' },
-    'low': { label: '📦 Low-materials', blurb: 'No-prep or 3 materials or fewer — scrounge-able in one trip.' },
+    'low': { label: '📦 Low-materials', blurb: 'No-prep or 3 materials or fewer, scrounge-able in one trip.' },
     'noprep': { label: '⚡ No-prep only', blurb: 'Only no_prep activities. Nothing to gather, nothing to set up.' }
   };
 
@@ -81,7 +81,7 @@
   }
 
   /* Material fit for one activity against a pantry id list.
-     Returns {ok, missing[]} — missing holds the raw item strings to gather. */
+     Returns {ok, missing[]}. Missing holds the raw item strings to gather. */
   function materialFit(a, pantryIds) {
     var words = pantryWords(pantryIds);
     var missing = [];
@@ -102,7 +102,7 @@
   }
 
   /* Hard filters: age overlap, group range includes groupSize, time_min fits.
-     Material/prep rules live in modeFilter — kept separate so relaxation
+     Material/prep rules live in modeFilter, kept separate so relaxation
      rounds can loosen them without touching age/group/time. */
   function fitsHard(a, cfg) {
     var band = AGE_BANDS[cfg.ageBand] || AGE_BANDS.all;
@@ -268,20 +268,20 @@
 
     var minSlots = cfg.days * 3;
     if (pool.length < minSlots && pool.length >= 3) {
-      warnings.push('Small strict pool (' + pool.length + ' activities) — some favorites may repeat across days.');
+      warnings.push('Small strict pool (' + pool.length + ' activities). Some favorites may repeat across days.');
     }
     if (pool.length < 3) {
       var lowCfg = Object.assign({}, cfg, { mode: 'low' });
       var lowPool = acts.filter(function (a) { return fitsHard(a, lowCfg) && fitsMode(a, lowCfg); });
       if (lowPool.length >= 3 && cfg.mode !== 'low') {
         pool = shuffle(lowPool, rnd);
-        warnings.push('Your pantry was too tight for a full week — loosened to low-materials picks (3 items or fewer). Check the gather list.');
+        warnings.push('Your pantry was too tight for a full week, loosened to low-materials picks (3 items or fewer). Check the gather list.');
       } else {
         pool = shuffle(acts.filter(function (a) { return fitsHard(a, cfg); }), rnd);
         if (pool.length < 3) {
-          return { cfg: cfg, seed: seed, days: [], warnings: warnings.concat(['No activities fit these filters — loosen the age band, group size, or prep mode.']) };
+          return { cfg: cfg, seed: seed, days: [], warnings: warnings.concat(['No activities fit these filters, loosen the age band, group size, or prep mode.']) };
         }
-        warnings.push('Filters were too tight — showing age/group/time fits with no prep restriction. The gather list shows what to grab.');
+        warnings.push('Filters were too tight, showing age/group/time fits with no prep restriction. The gather list shows what to grab.');
       }
     }
 
@@ -290,7 +290,7 @@
     for (var d = 0; d < cfg.days; d++) {
       var day = dealDay(pool, bucketByCat, usedIds, usedCats, rnd);
       if (!day) {
-        warnings.push('Ran out of fresh picks on day ' + (d + 1) + ' — repeats were used.');
+        warnings.push('Ran out of fresh picks on day ' + (d + 1) + '. Repeats were used.');
         var freshIds = {};
         day = dealDay(pool, bucketByCat, freshIds, usedCats, rnd);
       }
@@ -367,12 +367,12 @@
   function kitText(kit, byId) {
     var cfg = kit.cfg;
     var band = AGE_BANDS[cfg.ageBand] || AGE_BANDS.all;
-    var lines = ['THE AFTER-SCHOOL KIT — Activity Vault',
+    var lines = ['THE AFTER-SCHOOL KIT · Activity Vault',
       'Group: ' + cfg.groupSize + ' kids · ' + band.label + ' · ' + cfg.days +
       ' days · ' + cfg.minutes + ' min sessions starting ' + cfg.startTime,
       'Prep mode: ' + (MODES[cfg.mode] ? MODES[cfg.mode].label : cfg.mode), ''];
     kit.days.forEach(function (day, i) {
-      lines.push('— ' + dayLabel(day, i).toUpperCase() + ' —');
+      lines.push(', ' + dayLabel(day, i).toUpperCase() + ', ');
       runOfShow(day, cfg).forEach(function (b) {
         var a = byId[b.id];
         var name = a ? a.name : b.id;
@@ -393,7 +393,7 @@
       lines.push('MATERIAL CHECKLIST');
       mats.forEach(function (m) {
         lines.push((m.have ? '[have] ' : '[gather] ') + m.item +
-          ' — day' + (m.days.length > 1 ? 's' : '') + ' ' + m.days.join(', '));
+          ', day' + (m.days.length > 1? 's': '') + ' ' + m.days.join(', '));
       });
     } else {
       lines.push('MATERIAL CHECKLIST: nothing needed all week.');

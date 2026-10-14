@@ -1,7 +1,7 @@
-/* Activity Vault — Thanksgiving hub page (wave 14).
+/* Activity Vault, Thanksgiving hub page (wave 14).
    Renders the curated Thanksgiving sections from data/v1/activities.json using
    explicit, build-validated id lists (scripts/test-thanksgiving.js asserts every
-   id resolves). Picks show the visitor's own rating badges (localStorage only —
+   id resolves). Picks show the visitor's own rating badges (localStorage only
    never invented), matching the collections page pattern.
    No filters on this hub: gratitude, harvest games, and giving back read fine
    straight through. Semantic HTML + ARIA + keyboard-native; mobile-first. */
@@ -16,62 +16,62 @@
   var SECTIONS = [
     {
       id: 'crafts', glyph: '🎨', title: 'Gratitude crafts',
-      blurb: 'Handprint turkeys, paper cornucopias, and friendsgiving place cards — take-homes that say thanks.',
+      blurb: 'Handprint turkeys, paper cornucopias, and friendsgiving place cards. Take-homes that say thanks.',
       browse: 'index.html?tag=holiday:thanksgiving',
       browseLabel: 'Browse the full Thanksgiving set',
       picks: [
-        ['thankful-turkey-handprints', 'The handprint turkey with a feather for every thankful thought — the pack\u2019s signature craft.'],
+        ['thankful-turkey-handprints', 'The handprint turkey with a feather for every thankful thought, the pack\u2019s signature craft.'],
         ['paper-cornucopia-build', 'A paper horn of plenty for the middle of the friendsgiving table.'],
         ['friendsgiving-place-cards', 'One reason each guest is loved, written on a tent card.'],
-        ['harvest-weave-placemats', 'Paper-strip weaving in harvest colors — the table sets itself.'],
-        ['gratitude-tree', 'The Vault\u2019s gratitude classic — every thankful thought becomes a leaf.'],
+        ['harvest-weave-placemats', 'Paper-strip weaving in harvest colors. The table sets itself.'],
+        ['gratitude-tree', 'The Vault\u2019s gratitude classic. Every thankful thought becomes a leaf.'],
         ['gratitude-door-decor', 'Cover the classroom door in what the group is thankful for.']
       ]
     },
     {
       id: 'games', glyph: '🏃', title: 'Harvest games',
-      blurb: 'Turkey tag, pumpkin tosses, and harvest relays — burn off the pre-feast wiggles.',
+      blurb: 'Turkey tag, pumpkin tosses, and harvest relays. Burn off the pre-feast wiggles.',
       browse: 'index.html?tag=season:fall',
       browseLabel: 'Browse the full fall set',
       picks: [
-        ['turkey-tag-chase', 'Gobble, dodge, don\u2019t get caught — the farmers are coming.'],
+        ['turkey-tag-chase', 'Gobble, dodge, don\u2019t get caught. The farmers are coming.'],
         ['pumpkin-bucket-toss', 'Toss mini pumpkins into harvest buckets from the line.'],
         ['harvest-basket-relay', 'Teams fill their harvest basket one armload at a time.'],
-        ['scarecrow-dress-up-relay', 'The fall relay classic — dress the scarecrow, race back.']
+        ['scarecrow-dress-up-relay', 'The fall relay classic, dress the scarecrow, race back.']
       ]
     },
     {
       id: 'stem', glyph: '🔬', title: 'Thanksgiving STEM',
-      blurb: 'Cranberry engineering, turkey-baster physics, and jar-shaken butter — real science, harvest flavored.',
+      blurb: 'Cranberry engineering, turkey-baster physics, and jar-shaken butter, real science, harvest flavored.',
       browse: 'index.html?tag=holiday:thanksgiving',
       browseLabel: 'Browse the full Thanksgiving set',
       picks: [
-        ['cranberry-toothpick-towers', 'Toothpicks and cranberries — who builds the tallest harvest tower?'],
+        ['cranberry-toothpick-towers', 'Toothpicks and cranberries. Who builds the tallest harvest tower?'],
         ['turkey-baster-relay', 'Move the \u201ccranberries\u201d with nothing but a turkey baster and air pressure.'],
         ['shake-jar-butter', 'Cream, a jar, ten minutes of shaking: that\u2019s butter.'],
-        ['turkey-code-feathers', 'Invent a symbol code and encode a turkey fact — from 2026 teaching research.'],
+        ['turkey-code-feathers', 'Invent a symbol code and encode a turkey fact, from 2026 teaching research.'],
         ['cornucopia-catch-game', 'Build paper cornucopias, then invent your own catch game, rules and all.'],
         ['thanksgiving-table-build', 'Toothpicks and glue: a table with at most 4 legs that holds the feast.']
       ]
     },
     {
       id: 'gratitude', glyph: '🙏', title: 'Gratitude & friendsgiving',
-      blurb: 'Practices that work for everyone — not every family celebrates Thanksgiving, and gratitude doesn\u2019t need a holiday.',
+      blurb: 'Practices that work for everyone, not every family celebrates Thanksgiving, and gratitude doesn\u2019t need a holiday.',
       groups: [
         {
           label: '🙏 Gratitude practices', tag: 'holiday:thanksgiving',
           picks: [
             ['gratitude-alphabet-circle', 'Zero prep, whole group: one thankful word per letter, A to Z.'],
             ['thankful-jar-shares', 'Slips of gratitude in a jar, drawn and read aloud.'],
-            ['gratitude-all-year', 'The inclusive anchor — a gratitude log for everyone, all year.'],
-            ['gratitude-journals', 'Three good things a day — the fastest perspective shift there is.'],
+            ['gratitude-all-year', 'The inclusive anchor, a gratitude log for everyone, all year.'],
+            ['gratitude-journals', 'Three good things a day. The fastest perspective shift there is.'],
             ['harvest-gratitude-circle', 'One thankful thought each, added to the paper harvest wreath.']
           ]
         },
         {
           label: '🍽️ Friendsgiving', tag: 'holiday:thanksgiving',
           picks: [
-            ['friendsgiving-potluck-plan', 'The class plans its own feast — sign-up sheet, ingredient cards, jobs.'],
+            ['friendsgiving-potluck-plan', 'The class plans its own feast, sign-up sheet, ingredient cards, jobs.'],
             ['friendsgiving-story-circle', 'Pair up, trade a favorite memory, introduce your partner\u2019s story.']
           ]
         }
@@ -79,14 +79,14 @@
     },
     {
       id: 'giving', glyph: '🤝', title: 'Giving back',
-      blurb: 'Gratitude with a job to do — food drives, thank-you cards for the staff, and bags for neighbors.',
+      blurb: 'Gratitude with a job to do, food drives, thank-you cards for the staff, and bags for neighbors.',
       browse: 'index.html?tag=holiday:thanksgiving',
       browseLabel: 'Browse the full Thanksgiving set',
       picks: [
         ['food-drive-planning', 'Kids plan the whole canned-food drive: goal, posters, collection crew.'],
-        ['staff-thank-you-cards', 'Cards for the custodians, cafeteria crew, and bus drivers — the holiday heroes.'],
+        ['staff-thank-you-cards', 'Cards for the custodians, cafeteria crew, and bus drivers, the holiday heroes.'],
         ['blessing-bag-pack', 'Pack snack-and-supply bags for neighbors who need them.'],
-        ['harvest-thanksgiving-skits', 'The Vault\u2019s harvest-skits classic — perform the season for the room.']
+        ['harvest-thanksgiving-skits', 'The Vault\u2019s harvest-skits classic, perform the season for the room.']
       ]
     }
   ];
@@ -108,7 +108,7 @@
     if (!R) return null;
     var entry = R.getRating(activityId);
     if (!entry) return null;
-    var s = el('span', 'rate-badge', '⭐ ' + entry.stars + '★ — your rating');
+    var s = el('span', 'rate-badge', '⭐ ' + entry.stars + '★, your rating');
     s.setAttribute('aria-label', 'You rated this activity ' + entry.stars + ' of 5 stars');
     return s;
   }
@@ -143,7 +143,7 @@
       var li = pickItem(actmap, p[0], p[1]);
       if (li) { list.appendChild(li); n++; }
     });
-    if (!n) list.appendChild(el('p', null, 'No activities found — the library may have failed to load.'));
+    if (!n) list.appendChild(el('p', null, 'No activities found. The library may have failed to load.'));
     return list;
   }
 

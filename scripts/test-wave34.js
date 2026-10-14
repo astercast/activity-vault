@@ -103,7 +103,7 @@ ok(/two counters agree/.test(JSON.stringify(byId['one-tree-autumn-color-count'])
 ok(/Nothing is climbed, shaken, or pulled/.test(byId['one-tree-autumn-color-count'].safety || ''), 'colour count: the tree is looked at only');
 // Umbrella drips: counted by listening; wet floors managed, not dramatised.
 ok(/we count the drips by LISTENING/.test(JSON.stringify(byId['umbrella-drip-count-listen'])), 'umbrella drips: counted by ear');
-ok(/wet floors and small running feet are the one real hazard/.test(byId['umbrella-drip-count-listen'].safety || ''), 'umbrella drips: the session is seated');
+ok(/Wet floors and small running feet are the one real hazard/.test(byId['umbrella-drip-count-listen'].safety || ''), 'umbrella drips: the session is seated');
 // Cotton cloud: clouds drift, never bounce; a torn puff retires.
 ok(/Clouds drift. They do not bounce/.test(JSON.stringify(byId['big-cotton-cloud-blanket-drift'])), 'cotton cloud: drift, not bounce');
 ok(/a torn puff retires on the spot/.test(byId['big-cotton-cloud-blanket-drift'].safety || ''), 'cotton cloud: torn puff retires');

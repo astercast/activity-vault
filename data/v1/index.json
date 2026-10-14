@@ -2,8 +2,8 @@
  "meta": {
   "site": "Activity Vault",
   "version": "1.0.0",
-  "generated": "2026-10-14T06:05:43Z",
-  "source_snapshot": "data/activities.json + data/categories.json — 747 activities, 11 categories"
+  "generated": "2026-10-14T08:26:14Z",
+  "source_snapshot": "data/activities.json + data/categories.json, 747 activities, 11 categories"
  },
  "endpoints": [
   {
@@ -35,7 +35,7 @@
   {
    "path": "data/v1/filters.json",
    "title": "Filter configuration",
-   "description": "Machine-readable filter configuration — the same matching logic the browser UI uses (range, select, multiselect, boolean, text search across name/tagline/materials/steps).",
+   "description": "Machine-readable filter configuration, the same matching logic the browser UI uses (range, select, multiselect, boolean, text search across name/tagline/materials/steps).",
    "schema": "data/v1/schema/filters.schema.json",
    "updated": "2026-10-14",
    "stability": "stable"
@@ -88,7 +88,7 @@
    "schema": null,
    "updated": null,
    "stability": "internal",
-   "notes": "Not a stable public API — statuses and shape change as the pipeline runs. Treat undated numbers as stale."
+   "notes": "Not a stable public API. Statuses and shape change as the pipeline runs. Treat undated numbers as stale."
   }
  ],
  "deprecation_notes": "No endpoints are deprecated as of 1.0.0. Breaking changes get a new v2/ path, never a silent shape change."

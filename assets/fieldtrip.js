@@ -1,4 +1,4 @@
-/* Activity Vault — Field Trip Planner (wave 14).
+/* Activity Vault, Field Trip Planner (wave 14).
    Builds a complete field-trip plan from the real library: chaperone math,
    buddy pairs, budget arithmetic, a clock-time timeline, on-site suggestions
    matched to the destination, bus-ride activities from the real
@@ -60,7 +60,7 @@
     var rows = [
       ['Destination', dest.glyph + ' ' + dest.label],
       ['Group', f.kids + ' kids (' + f.bandLabel + ')'],
-      ['Chaperones', chap.chaperones + ' adults (1:' + f.ratio + ' ratio) — ' + chap.total + ' total headcount'],
+      ['Chaperones', chap.chaperones + ' adults (1:' + f.ratio + ' ratio), ' + chap.total + ' total headcount'],
       ['Buddy pairs', buddies.pairs + ' pairs' + (buddies.trios ? ' + 1 trio' : '')],
       ['Budget', money(budget.total) + ' total (' + money(budget.perKid) + ' per kid)']
     ];
@@ -72,7 +72,7 @@
     });
     s.appendChild(dl);
     var note = el('p', 'dim',
-      'Chaperone ratio is your input — confirm the required ratio with your program\u2019s policy before the trip. ' +
+      'Chaperone ratio is your input, confirm the required ratio with your program\u2019s policy before the trip. ' +
       'Budget is arithmetic on the numbers you entered; confirm admission prices with the destination.');
     s.appendChild(note);
     return s;
@@ -146,7 +146,7 @@
     head.appendChild(glyph); head.appendChild(h2);
     s.appendChild(head);
 
-    // web-craft round 2: native <details name> accordions — free keyboard behavior,
+    // web-craft round 2: native <details name> accordions, free keyboard behavior,
     // exclusive-open; print CSS forces them open so nothing is lost on paper.
     function accord(title, open, build) {
       var d = document.createElement('details');
@@ -194,11 +194,11 @@
 
     s.appendChild(accord('🔢 Headcount routine', false, function (d) {
     var hc = el('ol', 'pick-list');
-    ['Count at departure — kids + chaperones, out loud, twice.',
+    ['Count at departure, kids + chaperones, out loud, twice.',
      'Count on arrival before anyone leaves the bus.',
      'Count at every transition: site entry, lunch, site exit.',
      'Buddy check: pairs confirm each other before each move.',
-     'Final count on the bus before it rolls — no one left behind.'].forEach(function (t) {
+     'Final count on the bus before it rolls, no one left behind.'].forEach(function (t) {
       var li = el('li', 'pick');
       li.appendChild(el('p', 'pick-note', t));
       hc.appendChild(li);
@@ -210,9 +210,9 @@
 
   function copyText(f, dest, chap, buddies, budget, tl) {
     var lines = [
-      'FIELD TRIP PLAN — ' + dest.label,
+      'FIELD TRIP PLAN, ' + dest.label,
       f.kids + ' kids (' + f.bandLabel + '), ' + (f.tripLength === 'full' ? 'full day' : 'half day'),
-      'Chaperones: ' + chap.chaperones + ' (1:' + f.ratio + ') — ' + chap.total + ' total',
+      'Chaperones: ' + chap.chaperones + ' (1:' + f.ratio + '), ' + chap.total + ' total',
       'Buddy groups: ' + buddies.pairs + ' pairs' + (buddies.trios ? ' + 1 trio' : ''),
       'Budget: ' + money(budget.total) + ' total, ' + money(budget.perKid) + ' per kid',
       '', 'TIMELINE:'
@@ -262,11 +262,11 @@
       host.appendChild(planSummary(f, chap, buddies, budget, dest));
       host.appendChild(planTimeline(tl));
       host.appendChild(activityCards('On-site activity ideas', dest.glyph,
-        dest.blurb + ' Matched from the Vault to your destination and age band — tap through for full instructions.',
+        dest.blurb + ' Matched from the Vault to your destination and age band, tap through for full instructions.',
         onsite, 'ft-h-onsite'));
       if (busPicks.length) {
         host.appendChild(activityCards('Bus-ride activities', '🚌',
-          'From the Vault\u2019s field-trip-bus-ride collection — sized for a ' + f.rideMin + '-minute ride.',
+          'From the Vault\u2019s field-trip-bus-ride collection, sized for a ' + f.rideMin + '-minute ride.',
           busPicks, 'ft-h-bus'));
       }
       host.appendChild(checklistsSection(f.kids));

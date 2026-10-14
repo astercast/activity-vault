@@ -109,9 +109,9 @@ ok(partyHtml.includes('value="summer"'), 'party.html summer radio');
 const appSrc = fs.readFileSync(path.join(ROOT, 'assets/app.js'), 'utf8');
 for (const t of ['season:summer', 'holiday:july-4th'])
   ok(appSrc.includes("'" + t + "'"), 'app.js knows ' + t);
-ok(appSrc.includes("getElementById('season-promo-summer')"), 'app.js summer promo hook');
+ok(!appSrc.includes('season-promo'), 'app.js: season promo hooks removed (L11 collapse, rotation 21)');
 const indexHtml = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
-ok(indexHtml.includes('id="season-promo-summer"'), 'index.html has summer promo section');
+ok(!indexHtml.includes('season-promo'), 'index.html: no season promo sections (L11 collapse)');
 
 // 9. nav: every hand-written shell links summer.html; generated pages do too
 for (const f of ['index.html', 'planner.html', 'sub.html', 'party.html', 'collections.html',

@@ -1,7 +1,7 @@
-/* POST /api/review-decide — §7.6 "The Scout" human-in-the-loop decision.
+/* POST /api/review-decide, §7.6 "The Scout" human-in-the-loop decision.
  * Body: { id, decision: 'approve'|'reject', note? } + CRON_SECRET bearer.
  * The human operator holds the secret (same mechanism as cron); the browser
- * never sees it — the review panel only renders for ?admin=1 with the secret
+ * never sees it, the review panel only renders for?admin=1 with the secret
  * pasted into session storage, never in a URL, never committed.
  *
  * Approve: the candidate is ACCEPTED into the pipeline and recorded in
@@ -9,7 +9,7 @@
  * the item out of the open queue.
  *
  * DOCUMENTED DEVIATION from §7.6 ("approve appends to activities.json"):
- * the endpoint cannot mint a valid activity record — PIPELINE.md requires a
+ * the endpoint cannot mint a valid activity record, PIPELINE.md requires a
  * human to adapt each idea into original words (steps, materials, safety…),
  * and inventing that content server-side would be fabricated data, violating
  * §6. So approve records the human's acceptance decision honestly; the human's
@@ -20,7 +20,7 @@
  * contents:write on this repo only) is still awaiting the user's decision.
  * Without it the endpoint is read-only: it validates and reports the decision
  * honestly but returns 503 REFRESH_FAILED instead of committing.
- * No static fallback — admin only; the UI hides the control without the secret.
+ * No static fallback, admin only; the UI hides the control without the secret.
  */
 'use strict';
 
@@ -153,7 +153,7 @@ module.exports = async (req, res) => {
   const idx = pipeline.queue.findIndex((c) => c.id === id);
   if (idx === -1) {
     return err(res, SERVICE, VERSION, 404, 'NOT_FOUND',
-      "No review candidate with id '" + id + "'. It may already be decided — check /api/review-queue?status=all.");
+      "No review candidate with id '" + id + "'. It may already be decided, check /api/review-queue?status=all.");
   }
   const candidate = pipeline.queue[idx];
   if (candidate.status && candidate.status !== 'pending') {

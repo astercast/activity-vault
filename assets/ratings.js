@@ -1,8 +1,8 @@
-/* Activity Vault — personal ratings library (shared).
+/* Activity Vault, personal ratings library (shared).
  *
  * Ratings live ONLY in this browser, in localStorage under
  * "activityvault.ratings.v1". There are no accounts, no servers, no
- * community ratings — every "star" on this site is the visitor's own.
+ * community ratings. Every "star" on this site is the visitor's own.
  * Never present a rating as an aggregate, average, or someone else's.
  *
  * localStorage shape:

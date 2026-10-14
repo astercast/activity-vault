@@ -4,11 +4,11 @@
    "id": "rainy-day-rescue",
    "title": "Rainy-day rescue",
    "glyph": "🌧️",
-   "when_to_use": "Recess just got cancelled and 25 kids are stuck inside. Pick any three — they run back-to-back with no setup between them.",
+   "when_to_use": "Recess just got cancelled and 25 kids are stuck inside. Pick any three. They run back-to-back with no setup between them.",
    "picks": [
     {
      "activity_id": "freeze-dance",
-     "curator_note": "Ten minutes of full-body movement — the fastest way to burn off rain-stuck wiggles."
+     "curator_note": "Ten minutes of full-body movement. The fastest way to burn off rain-stuck wiggles."
     },
     {
      "activity_id": "silent-ball",
@@ -16,7 +16,7 @@
     },
     {
      "activity_id": "telephone-game",
-     "curator_note": "Zero materials, huge laughs — works while you quietly re-arrange the room."
+     "curator_note": "Zero materials, huge laughs. Works while you quietly re-arrange the room."
     },
     {
      "activity_id": "would-you-rather-circle",
@@ -24,11 +24,11 @@
     },
     {
      "activity_id": "charades",
-     "curator_note": "Scales from silly to clever — pairs perfectly with a restless afternoon."
+     "curator_note": "Scales from silly to clever. Pairs perfectly with a restless afternoon."
     },
     {
      "activity_id": "mad-libs-live",
-     "curator_note": "Reads like pure mischief, practices language — they'll never notice the learning."
+     "curator_note": "Reads like pure mischief, practices language. They'll never notice the learning."
     },
     {
      "activity_id": "card-tower-challenge",
@@ -40,7 +40,7 @@
     },
     {
      "activity_id": "indoor-scavenger-hunt",
-     "curator_note": "Rediscovers your own classroom — pair up kids who never talk."
+     "curator_note": "Rediscovers your own classroom, pair up kids who never talk."
     },
     {
      "activity_id": "musical-chairs",
@@ -48,7 +48,7 @@
     },
     {
      "activity_id": "balloon-tennis",
-     "curator_note": "Big rallies, zero breakage risk — hallway-safe and endlessly replayable."
+     "curator_note": "Big rallies, zero breakage risk, hallway-safe and endlessly replayable."
     },
     {
      "activity_id": "paper-mitten-match",
@@ -69,7 +69,7 @@
    "id": "first-day-of-program",
    "title": "First day of the program",
    "glyph": "👋",
-   "when_to_use": "New faces, new room, first impressions. Run these in order on day one — names first, kindness last.",
+   "when_to_use": "New faces, new room, first impressions. Run these in order on day one. Names first, kindness last.",
    "picks": [
     {
      "activity_id": "name-chain",
@@ -77,7 +77,7 @@
     },
     {
      "activity_id": "name-memory-chain",
-     "curator_note": "The day-two sequel — run it and watch last week's strangers light up."
+     "curator_note": "The day-two sequel. Run it and watch last week's strangers light up."
     },
     {
      "activity_id": "bingo-mingle",
@@ -85,11 +85,11 @@
     },
     {
      "activity_id": "human-bingo",
-     "curator_note": "Same magic, written down — a lifeline for the shy joiners."
+     "curator_note": "Same magic, written down, a lifeline for the shy joiners."
     },
     {
      "activity_id": "rhythm-name-game",
-     "curator_note": "Names with a beat — the wigglers remember this one all year."
+     "curator_note": "Names with a beat, the wigglers remember this one all year."
     },
     {
      "activity_id": "birthday-lineup",
@@ -105,7 +105,7 @@
     },
     {
      "activity_id": "two-truths-and-a-lie",
-     "curator_note": "The classic first-day reveal — strangers become interesting fast."
+     "curator_note": "The classic first-day reveal. Strangers become interesting fast."
     },
     {
      "activity_id": "common-ground",
@@ -134,11 +134,11 @@
    "id": "last-10-minutes",
    "title": "Last 10 minutes",
    "glyph": "⏱️",
-   "when_to_use": "The clock is dying and dismissal is ten minutes of chaos. These run cold — no setup, and every one ends with a settled room.",
+   "when_to_use": "The clock is dying and dismissal is ten minutes of chaos. These run cold. No setup, and every one ends with a settled room.",
    "picks": [
     {
      "activity_id": "calm-breathing-shapes",
-     "curator_note": "Five shapes, five breaths — the reset button you can run daily."
+     "curator_note": "Five shapes, five breaths. The reset button you can run daily."
     },
     {
      "activity_id": "listening-bell",
@@ -146,7 +146,7 @@
     },
     {
      "activity_id": "breathing-buddies",
-     "curator_note": "Belly breathing with a stuffed buddy riding on top — little ones leave settled."
+     "curator_note": "Belly breathing with a stuffed buddy riding on top. Little ones leave settled."
     },
     {
      "activity_id": "warm-up-countdown",
@@ -154,7 +154,7 @@
     },
     {
      "activity_id": "name-chain",
-     "curator_note": "One fast round while coats go on — names and laughter to close the day."
+     "curator_note": "One fast round while coats go on. Names and laughter to close the day."
     },
     {
      "activity_id": "animal-walk-relay",
@@ -162,7 +162,7 @@
     },
     {
      "activity_id": "freeze-dance",
-     "curator_note": "One song, freeze on cue — energy out, coats on, done."
+     "curator_note": "One song, freeze on cue, energy out, coats on, done."
     },
     {
      "activity_id": "red-light-green-light",
@@ -170,7 +170,7 @@
     },
     {
      "activity_id": "would-you-rather-circle",
-     "curator_note": "Zero setup — just one question the whole group can argue about."
+     "curator_note": "Zero setup. Just one question the whole group can argue about."
     },
     {
      "activity_id": "compliment-circle",
@@ -195,7 +195,7 @@
    "picks": [
     {
      "activity_id": "twenty-questions",
-     "curator_note": "The perfect bus game — one voice at a time, whole bus listening."
+     "curator_note": "The perfect bus game, one voice at a time, whole bus listening."
     },
     {
      "activity_id": "telephone-game",
@@ -203,7 +203,7 @@
     },
     {
      "activity_id": "would-you-rather-circle",
-     "curator_note": "Debate fuel for mile forty — no materials required."
+     "curator_note": "Debate fuel for mile forty, no materials required."
     },
     {
      "activity_id": "story-chain-writing",
@@ -211,7 +211,7 @@
     },
     {
      "activity_id": "mad-libs-live",
-     "curator_note": "Mad Libs at full volume — check with the driver first."
+     "curator_note": "Mad Libs at full volume, check with the driver first."
     },
     {
      "activity_id": "mandala-drawing",
@@ -219,11 +219,11 @@
     },
     {
      "activity_id": "mandala-coloring",
-     "curator_note": "Print-and-go calm — pack a stack of copies before you board."
+     "curator_note": "Print-and-go calm, pack a stack of copies before you board."
     },
     {
      "activity_id": "story-dice",
-     "curator_note": "Tiny dice, endless plots — fits on a seatback tray."
+     "curator_note": "Tiny dice, endless plots, fits on a seatback tray."
     },
     {
      "activity_id": "cloud-spotting-guide",
@@ -231,7 +231,7 @@
     },
     {
      "activity_id": "sound-story",
-     "curator_note": "The bus provides the sound effects — the kids build the story."
+     "curator_note": "The bus provides the sound effects. The kids build the story."
     },
     {
      "activity_id": "two-truths-and-a-lie",
@@ -239,7 +239,7 @@
     },
     {
      "activity_id": "appreciation-postcards",
-     "curator_note": "Write one kind postcard before you arrive — hand them out at pickup."
+     "curator_note": "Write one kind postcard before you arrive, hand them out at pickup."
     }
    ],
    "age_span": [
@@ -256,11 +256,11 @@
    "id": "sub-tub-essentials",
    "title": "Sub Tub essentials",
    "glyph": "🆘",
-   "when_to_use": "The ten cards every sub folder needs — pairs with the Sub Tub kit (sub.html). Every pick runs from its card alone: no hidden setup, no weird supplies.",
+   "when_to_use": "The ten cards every sub folder needs. Pairs with the Sub Tub kit (sub.html). Every pick runs from its card alone: no hidden setup, no weird supplies.",
    "picks": [
     {
      "activity_id": "freeze-dance",
-     "curator_note": "Foolproof energy burner — the sub just presses play."
+     "curator_note": "Foolproof energy burner. The sub just presses play."
     },
     {
      "activity_id": "simon-says",
@@ -272,7 +272,7 @@
     },
     {
      "activity_id": "silent-ball",
-     "curator_note": "Quiet competition — the room practically manages itself."
+     "curator_note": "Quiet competition, the room practically manages itself."
     },
     {
      "activity_id": "mad-libs-live",
@@ -284,7 +284,7 @@
     },
     {
      "activity_id": "would-you-rather-circle",
-     "curator_note": "Discussion for any age — fills any gap in the day."
+     "curator_note": "Discussion for any age. Fills any gap in the day."
     },
     {
      "activity_id": "comic-strip-creations",
@@ -292,7 +292,7 @@
     },
     {
      "activity_id": "exquisite-corpse-draw",
-     "curator_note": "Guaranteed weird results — no drawing skill needed to run it."
+     "curator_note": "Guaranteed weird results. No drawing skill needed to run it."
     },
     {
      "activity_id": "compliment-chain",
@@ -300,7 +300,7 @@
     },
     {
      "activity_id": "paper-airplane-challenge",
-     "curator_note": "Paper only — the classic that has never once failed."
+     "curator_note": "Paper only. The classic that has never once failed."
     },
     {
      "activity_id": "thunderstorm-clap-along",
@@ -321,11 +321,11 @@
    "id": "winter-party-night",
    "title": "Winter party night",
    "glyph": "❄️",
-   "when_to_use": "The winter pack's greatest hits — pairs with the Party Planner's ❄️ Winter theme (party.html). Rotate these through three stations and close with the countdown.",
+   "when_to_use": "The winter pack's greatest hits. Pairs with the Party Planner's ❄️ Winter theme (party.html). Rotate these through three stations and close with the countdown.",
    "picks": [
     {
      "activity_id": "snowflake-paper-patterns",
-     "curator_note": "Every kid leaves with a window-worthy snowflake — and it needs zero prep."
+     "curator_note": "Every kid leaves with a window-worthy snowflake, and it needs zero prep."
     },
     {
      "activity_id": "homemade-christmas-ornaments",
@@ -333,7 +333,7 @@
     },
     {
      "activity_id": "winter-gingerbread-build",
-     "curator_note": "Build with paper shapes — no royal-icing disasters."
+     "curator_note": "Build with paper shapes, no royal-icing disasters."
     },
     {
      "activity_id": "snowball-toss-math",
@@ -341,11 +341,11 @@
     },
     {
      "activity_id": "freeze-dance-winter",
-     "curator_note": "The dance break between stations — one playlist, done."
+     "curator_note": "The dance break between stations, one playlist, done."
     },
     {
      "activity_id": "midnight-countdown-rehearsal",
-     "curator_note": "Practice the big countdown — pure party energy to close the night."
+     "curator_note": "Practice the big countdown. Pure party energy to close the night."
     },
     {
      "activity_id": "cotton-ball-penguin",
@@ -361,7 +361,7 @@
     },
     {
      "activity_id": "year-in-review-quilt",
-     "curator_note": "Everyone contributes one square — hang it in January."
+     "curator_note": "Everyone contributes one square, hang it in January."
     },
     {
      "activity_id": "ice-ornaments",
@@ -390,7 +390,7 @@
    "picks": [
     {
      "activity_id": "two-truths-and-a-lie",
-     "curator_note": "The opener that has never missed — run it with total strangers."
+     "curator_note": "The opener that has never missed. Run it with total strangers."
     },
     {
      "activity_id": "twenty-questions",
@@ -398,7 +398,7 @@
     },
     {
      "activity_id": "story-chain",
-     "curator_note": "One word each — the story surprises everyone, including you."
+     "curator_note": "One word each, the story surprises everyone, including you."
     },
     {
      "activity_id": "compliment-chain",
@@ -410,7 +410,7 @@
     },
     {
      "activity_id": "birthday-lineup",
-     "curator_note": "Silent sorting by birthdays — no words, no materials, full focus."
+     "curator_note": "Silent sorting by birthdays, no words, no materials, full focus."
     },
     {
      "activity_id": "secret-kindness-missions",
@@ -418,7 +418,7 @@
     },
     {
      "activity_id": "appreciation-postcards",
-     "curator_note": "Gratitude in ten minutes — send them home at pickup."
+     "curator_note": "Gratitude in ten minutes, send them home at pickup."
     },
     {
      "activity_id": "storytelling-circle",
@@ -426,7 +426,7 @@
     },
     {
      "activity_id": "duck-duck-goose",
-     "curator_note": "The littles' favorite — zero setup, maximum joy."
+     "curator_note": "The littles' favorite, zero setup, maximum joy."
     },
     {
      "activity_id": "red-light-green-light",
@@ -434,7 +434,7 @@
     },
     {
      "activity_id": "shadow-tag",
-     "curator_note": "Tag without touching — perfect for mixed ages outdoors."
+     "curator_note": "Tag without touching, perfect for mixed ages outdoors."
     }
    ],
    "age_span": [
@@ -451,15 +451,15 @@
    "id": "calm-down-corner",
    "title": "Calm-down corner",
    "glyph": "🧘",
-   "when_to_use": "For the wired, the wobbly, and the overstimulated. Keep these on a ring by the quiet corner — any kid can self-select.",
+   "when_to_use": "For the wired, the wobbly, and the overstimulated. Keep these on a ring by the quiet corner. Any kid can self-select.",
    "picks": [
     {
      "activity_id": "calm-breathing-shapes",
-     "curator_note": "Five shapes, five breaths — the reset button."
+     "curator_note": "Five shapes, five breaths, the reset button."
     },
     {
      "activity_id": "listening-bell",
-     "curator_note": "Follow the bell until the sound disappears — instant quiet."
+     "curator_note": "Follow the bell until the sound disappears, instant quiet."
     },
     {
      "activity_id": "breathing-buddies",
@@ -467,7 +467,7 @@
     },
     {
      "activity_id": "glitter-calm-jars",
-     "curator_note": "Shake it, watch it settle — the metaphor does the teaching."
+     "curator_note": "Shake it, watch it settle. The metaphor does the teaching."
     },
     {
      "activity_id": "coping-strategy-cards",
@@ -475,7 +475,7 @@
     },
     {
      "activity_id": "mandala-drawing",
-     "curator_note": "Repetitive and absorbing — minds quiet down on their own."
+     "curator_note": "Repetitive and absorbing, minds quiet down on their own."
     },
     {
      "activity_id": "mandala-coloring",
@@ -483,7 +483,7 @@
     },
     {
      "activity_id": "gratitude-journals",
-     "curator_note": "Three good things — the fastest perspective shift there is."
+     "curator_note": "Three good things. The fastest perspective shift there is."
     },
     {
      "activity_id": "storytelling-dice",
@@ -499,7 +499,7 @@
     },
     {
      "activity_id": "gratitude-tree",
-     "curator_note": "Pin a leaf for something good — the corner grows its own forest."
+     "curator_note": "Pin a leaf for something good. The corner grows its own forest."
     }
    ],
    "age_span": [
@@ -516,11 +516,11 @@
    "id": "spring-burst",
    "title": "Spring burst",
    "glyph": "🌷",
-   "when_to_use": "The air is warm, the kids are wiggly, and everything is blooming. This is the spring 2027 pack's greatest hits plus the Vault's best older spring picks — crafts, puddle science, outdoor games, and spring-holiday stations.",
+   "when_to_use": "The air is warm, the kids are wiggly, and everything is blooming. This is the spring 2027 pack's greatest hits plus the Vault's best older spring picks, crafts, puddle science, outdoor games, and spring-holiday stations.",
    "picks": [
     {
      "activity_id": "coffee-filter-butterflies",
-     "curator_note": "Fifteen minutes, coffee filters, total magic — the fastest spring win in the pack."
+     "curator_note": "Fifteen minutes, coffee filters, total magic. The fastest spring win in the pack."
     },
     {
      "activity_id": "painted-rock-ladybugs",
@@ -528,7 +528,7 @@
     },
     {
      "activity_id": "worm-weather-watch",
-     "curator_note": "The after-rain classic — kids who claim to hate science love worm duty."
+     "curator_note": "The after-rain classic, kids who claim to hate science love worm duty."
     },
     {
      "activity_id": "puddle-stomp-parade",
@@ -536,7 +536,7 @@
     },
     {
      "activity_id": "easter-egg-catapult",
-     "curator_note": "Engineering with plastic eggs — the design iteration is the lesson."
+     "curator_note": "Engineering with plastic eggs. The design iteration is the lesson."
     },
     {
      "activity_id": "seed-ball-wildflowers",
@@ -544,7 +544,7 @@
     },
     {
      "activity_id": "kite-flying-basics",
-     "curator_note": "The spring classic that was already in the Vault — now properly tagged."
+     "curator_note": "The spring classic that was already in the Vault, now properly tagged."
     },
     {
      "activity_id": "spring-bulb-forcing",
@@ -552,7 +552,7 @@
     },
     {
      "activity_id": "egg-hunt-design",
-     "curator_note": "Let the kids design the hunt — hiding is more fun than finding."
+     "curator_note": "Let the kids design the hunt. Hiding is more fun than finding."
     },
     {
      "activity_id": "thunderstorm-clap-along",
@@ -581,11 +581,11 @@
    "id": "summer-splash",
    "title": "Summer splash",
    "glyph": "☀️",
-   "when_to_use": "The days are long, the kids are restless, and the hose is already out. This is the summer 2027 pack's greatest hits plus the Vault's best older summer picks — water play, camp games, sun crafts, beat-the-heat backups, and July 4th stations.",
+   "when_to_use": "The days are long, the kids are restless, and the hose is already out. This is the summer 2027 pack's greatest hits plus the Vault's best older summer picks. Water play, camp games, sun crafts, beat-the-heat backups, and July 4th stations.",
    "picks": [
     {
      "activity_id": "water-balloon-toss",
-     "curator_note": "Step back after every catch — the rare game where staying dry is the skill."
+     "curator_note": "Step back after every catch. The rare game where staying dry is the skill."
     },
     {
      "activity_id": "drip-drip-drop",
@@ -593,7 +593,7 @@
     },
     {
      "activity_id": "bucket-brigade-race",
-     "curator_note": "Over heads, cup to cup — the loudest fifteen minutes of the week."
+     "curator_note": "Over heads, cup to cup, the loudest fifteen minutes of the week."
     },
     {
      "activity_id": "sponge-launch-bullseye",
@@ -609,7 +609,7 @@
     },
     {
      "activity_id": "friendship-bracelet-basics",
-     "curator_note": "The camp classic — one knot, endless trading."
+     "curator_note": "The camp classic, one knot, endless trading."
     },
     {
      "activity_id": "sun-print-cards",
@@ -625,7 +625,7 @@
     },
     {
      "activity_id": "star-spangled-shoebox-parade",
-     "curator_note": "Red, white, and blue floats — parade the whole route."
+     "curator_note": "Red, white, and blue floats, parade the whole route."
     },
     {
      "activity_id": "longest-day-shadow-track",
@@ -646,11 +646,11 @@
    "id": "haunted-halls",
    "title": "Haunted halls",
    "glyph": "👻",
-   "when_to_use": "October is here and the program needs its Halloween spine: the Halloween 2026 pack's greatest hits plus the Vault's best older not-too-spooky picks — crafts, costume games, mild-thrill science, harvest anchors, trick-or-treat alternatives, and the allergy-aware must-dos.",
+   "when_to_use": "October is here and the program needs its Halloween spine: the Halloween 2026 pack's greatest hits plus the Vault's best older not-too-spooky picks, crafts, costume games, mild-thrill science, harvest anchors, trick-or-treat alternatives, and the allergy-aware must-dos.",
    "picks": [
     {
      "activity_id": "no-carve-pumpkin-decorating",
-     "curator_note": "All the pumpkin fun, zero knives — the young-kid classic that starts every October."
+     "curator_note": "All the pumpkin fun, zero knives. The young-kid classic that starts every October."
     },
     {
      "activity_id": "ghost-garland-string",
@@ -658,7 +658,7 @@
     },
     {
      "activity_id": "monster-mask-making",
-     "curator_note": "Cardstock monsters with real 3D horns and fangs — costume-station ready."
+     "curator_note": "Cardstock monsters with real 3D horns and fangs, costume-station ready."
     },
     {
      "activity_id": "costume-runway-walk",
@@ -666,7 +666,7 @@
     },
     {
      "activity_id": "monster-mash-dance",
-     "curator_note": "Freeze when the music stops — in your spookiest pose."
+     "curator_note": "Freeze when the music stops, in your spookiest pose."
     },
     {
      "activity_id": "mystery-feel-boxes",
@@ -674,11 +674,11 @@
     },
     {
      "activity_id": "pumpkin-volcano-fizz",
-     "curator_note": "The jack-o'-lantern erupts — baking soda, vinegar, dish soap."
+     "curator_note": "The jack-o'-lantern erupts, baking soda, vinegar, dish soap."
     },
     {
      "activity_id": "candy-chromatography",
-     "curator_note": "Candy dyes split into rainbows on coffee filters — real separation science."
+     "curator_note": "Candy dyes split into rainbows on coffee filters, real separation science."
     },
     {
      "activity_id": "apple-tasting-party",
@@ -694,7 +694,7 @@
     },
     {
      "activity_id": "reverse-trick-or-treat",
-     "curator_note": "Deliver treats instead of collecting them — the kindness flip."
+     "curator_note": "Deliver treats instead of collecting them, the kindness flip."
     }
    ],
    "age_span": [
@@ -711,11 +711,11 @@
    "id": "grateful-gathering",
    "title": "Grateful gathering",
    "glyph": "🦃",
-   "when_to_use": "November is here and the program needs its Thanksgiving spine: the Thanksgiving 2026 pack's greatest hits plus the Vault's best older gratitude picks — crafts, harvest games, Thanksgiving STEM, gratitude practices, friendsgiving plans, and giving-back projects. Inclusive by design: not every family celebrates Thanksgiving, and these work for everyone.",
+   "when_to_use": "November is here and the program needs its Thanksgiving spine: the Thanksgiving 2026 pack's greatest hits plus the Vault's best older gratitude picks. Crafts, harvest games, Thanksgiving STEM, gratitude practices, friendsgiving plans, and giving-back projects. Inclusive by design: not every family celebrates Thanksgiving, and these work for everyone.",
    "picks": [
     {
      "activity_id": "thankful-turkey-handprints",
-     "curator_note": "The handprint turkey with a feather for every thankful thought — the pack's signature craft."
+     "curator_note": "The handprint turkey with a feather for every thankful thought. The pack's signature craft."
     },
     {
      "activity_id": "paper-cornucopia-build",
@@ -727,7 +727,7 @@
     },
     {
      "activity_id": "shake-jar-butter",
-     "curator_note": "Ten minutes of shaking and the kids made actual butter — the crowd-pleaser."
+     "curator_note": "Ten minutes of shaking and the kids made actual butter, the crowd-pleaser."
     },
     {
      "activity_id": "turkey-tag-chase",
@@ -735,7 +735,7 @@
     },
     {
      "activity_id": "harvest-basket-relay",
-     "curator_note": "Teamwork disguised as a race — baskets fill fast when the whole crew runs."
+     "curator_note": "Teamwork disguised as a race. Baskets fill fast when the whole crew runs."
     },
     {
      "activity_id": "gratitude-alphabet-circle",
@@ -743,7 +743,7 @@
     },
     {
      "activity_id": "thankful-jar-shares",
-     "curator_note": "The quiet close to a loud week — slips of thanks, read aloud."
+     "curator_note": "The quiet close to a loud week. Slips of thanks, read aloud."
     },
     {
      "activity_id": "friendsgiving-potluck-plan",
@@ -751,7 +751,7 @@
     },
     {
      "activity_id": "food-drive-planning",
-     "curator_note": "Gratitude with a job to do — the giving-back anchor of the pack."
+     "curator_note": "Gratitude with a job to do, the giving-back anchor of the pack."
     },
     {
      "activity_id": "staff-thank-you-cards",
@@ -759,7 +759,7 @@
     },
     {
      "activity_id": "gratitude-tree",
-     "curator_note": "The Vault's gratitude classic — every thankful thought becomes a leaf."
+     "curator_note": "The Vault's gratitude classic. Every thankful thought becomes a leaf."
     }
    ],
    "age_span": [
@@ -845,7 +845,7 @@
    "picks": [
     {
      "activity_id": "ornament-geometry-stars",
-     "curator_note": "Five-point geometry you can hang — the rare craft that's secretly a math lesson."
+     "curator_note": "Five-point geometry you can hang. The rare craft that's secretly a math lesson."
     },
     {
      "activity_id": "christmas-light-circuit-cards",
@@ -857,11 +857,11 @@
     },
     {
      "activity_id": "hanukkah-story-circle",
-     "curator_note": "The story behind the holiday, told round-robin — respectful, real, never a costume."
+     "curator_note": "The story behind the holiday, told round-robin, respectful, real, never a costume."
     },
     {
      "activity_id": "kente-pattern-strips",
-     "curator_note": "Bold blocks with meanings attached — meaning first, decoration second."
+     "curator_note": "Bold blocks with meanings attached, meaning first, decoration second."
     },
     {
      "activity_id": "seven-principles-talk-tokens",
@@ -869,7 +869,7 @@
     },
     {
      "activity_id": "countdown-clock-craft",
-     "curator_note": "Build the countdown, then run it — a paper clock that sweeps a real 60 seconds."
+     "curator_note": "Build the countdown, then run it, a paper clock that sweeps a real 60 seconds."
     },
     {
      "activity_id": "ball-drop-physics",
@@ -881,7 +881,7 @@
     },
     {
      "activity_id": "snowflake-symmetry-lab",
-     "curator_note": "No cutting, just looking — six-fold symmetry in real snowflake photos."
+     "curator_note": "No cutting, just looking, six-fold symmetry in real snowflake photos."
     },
     {
      "activity_id": "ice-melt-rescue-race",
@@ -906,11 +906,11 @@
    "id": "the-whole-calendar",
    "title": "The whole calendar",
    "glyph": "🗓️",
-   "when_to_use": "One shelf for the whole school year: twelve holidays, one strong pick each, in calendar order. Plan the year in January or rescue a holiday week the night before — it works both ways.",
+   "when_to_use": "One shelf for the whole school year: twelve holidays, one strong pick each, in calendar order. Plan the year in January or rescue a holiday week the night before. It works both ways.",
    "picks": [
     {
      "activity_id": "new-year-noise-parade",
-     "curator_note": "January opens loud — shakers and one hallway lap to start the year like you mean it."
+     "curator_note": "January opens loud. Shakers and one hallway lap to start the year like you mean it."
     },
     {
      "activity_id": "dream-for-our-community",
@@ -918,7 +918,7 @@
     },
     {
      "activity_id": "paper-lantern-festival",
-     "curator_note": "Lunar New Year lanterns — make them first, then hang the riddle walk on them later in the week."
+     "curator_note": "Lunar New Year lanterns. Make them first, then hang the riddle walk on them later in the week."
     },
     {
      "activity_id": "valentine-card-exchange",
@@ -926,11 +926,11 @@
     },
     {
      "activity_id": "shamrock-shapes-hunt",
-     "curator_note": "St. Patrick's Day for the youngest kids — shapes, counting, and a hunt set at knee height."
+     "curator_note": "St. Patrick's Day for the youngest kids. Shapes, counting, and a hunt set at knee height."
     },
     {
      "activity_id": "natural-dye-easter-eggs",
-     "curator_note": "Spring eggs dyed with onion skins and beets — the pantry does the chemistry."
+     "curator_note": "Spring eggs dyed with onion skins and beets. The pantry does the chemistry."
     },
     {
      "activity_id": "flag-folding-ceremony",
@@ -938,7 +938,7 @@
     },
     {
      "activity_id": "indigenous-innovators-spotlight",
-     "curator_note": "October's history slot done right — real Indigenous scientists and artists, researched by the kids."
+     "curator_note": "October's history slot done right, real Indigenous scientists and artists, researched by the kids."
     },
     {
      "activity_id": "teal-pumpkin-project",
@@ -946,7 +946,7 @@
     },
     {
      "activity_id": "rangoli-pattern-art",
-     "curator_note": "Diwali's welcome, made in chalk — dot grid, mirrored pattern, hung by the door."
+     "curator_note": "Diwali's welcome, made in chalk, dot grid, mirrored pattern, hung by the door."
     },
     {
      "activity_id": "thankful-turkey-handprints",
@@ -971,15 +971,15 @@
    "id": "little-hands-first-years",
    "title": "Little Hands, First Years",
    "glyph": "🧸",
-   "when_to_use": "Built for the youngest kids in the building: every pick here was designed for three-year-olds first — short runs, big pieces, one rule per game, and honest about what small hands can actually do. The shelf to grab when the little-kid group lands on you at the last minute.",
+   "when_to_use": "Built for the youngest kids in the building: every pick here was designed for three-year-olds first. Short runs, big pieces, one rule per game, and honest about what small hands can actually do. The shelf to grab when the little-kid group lands on you at the last minute.",
    "picks": [
     {
      "activity_id": "tape-path-balance-walk",
-     "curator_note": "The first balance beam is a line of tape — slow feet, airplane arms, and nobody falls off a line."
+     "curator_note": "The first balance beam is a line of tape. Slow feet, airplane arms, and nobody falls off a line."
     },
     {
      "activity_id": "pom-pom-drop-tubes",
-     "curator_note": "Drop, wait, there it is — cause and effect at exactly the speed a three-year-old runs it."
+     "curator_note": "Drop, wait, there it is, cause and effect at exactly the speed a three-year-old runs it."
     },
     {
      "activity_id": "sponge-squeeze-station",
@@ -987,7 +987,7 @@
     },
     {
      "activity_id": "sound-match-shakers",
-     "curator_note": "Find the shaker that sounds like yours — sealed tight by an adult, matched by ear or by colored dot."
+     "curator_note": "Find the shaker that sounds like yours, sealed tight by an adult, matched by ear or by colored dot."
     },
     {
      "activity_id": "bubble-wrap-stomp-path",
@@ -1003,7 +1003,7 @@
     },
     {
      "activity_id": "pouring-practice-trays",
-     "curator_note": "A half-full pitcher and a tray underneath — spills are expected, and wiping them is part of the work."
+     "curator_note": "A half-full pitcher and a tray underneath. Spills are expected, and wiping them is part of the work."
     },
     {
      "activity_id": "nature-color-match-walk",
@@ -1015,11 +1015,11 @@
     },
     {
      "activity_id": "color-sorting-trays",
-     "curator_note": "The shelf's old faithful — sorting by color with big pieces and no way to be wrong."
+     "curator_note": "The shelf's old faithful, sorting by color with big pieces and no way to be wrong."
     },
     {
      "activity_id": "big-brush-painting",
-     "curator_note": "Big brushes, big paper, whole-arm strokes — painting at the scale a three-year-old's shoulder actually works at."
+     "curator_note": "Big brushes, big paper, whole-arm strokes, painting at the scale a three-year-old's shoulder actually works at."
     }
    ],
    "age_span": [
@@ -1036,11 +1036,11 @@
    "id": "little-hands-next-steps",
    "title": "Little Hands, Next Steps",
    "glyph": "🧦",
-   "when_to_use": "The second shelf for the youngest kids in the building: twelve more activities designed for three-year-olds first — the first-ever STEM, team, and rainy-day records written for that room, plus the copying games and quiet stations a three-year-old day actually runs on. Grab it when First Years has been through the rotation and the little-kid group is still yours next week.",
+   "when_to_use": "The second shelf for the youngest kids in the building: twelve more activities designed for three-year-olds first, the first-ever STEM, team, and rainy-day records written for that room, plus the copying games and quiet stations a three-year-old day actually runs on. Grab it when First Years has been through the rotation and the little-kid group is still yours next week.",
    "picks": [
     {
      "activity_id": "cardboard-ramp-roll-lab",
-     "curator_note": "Let go, don't push — a fair test, run at knee height, with a block that refuses to roll and teaches the most."
+     "curator_note": "Let go, don't push. A fair test, run at knee height, with a block that refuses to roll and teaches the most."
     },
     {
      "activity_id": "hand-lens-look-closer",
@@ -1048,7 +1048,7 @@
     },
     {
      "activity_id": "pass-it-down-delivery-line",
-     "curator_note": "Every hand touches every delivery. Seated lines count in full — ready hands are the only rule."
+     "curator_note": "Every hand touches every delivery. Seated lines count in full. Ready hands are the only rule."
     },
     {
      "activity_id": "ring-around-the-rosie-circle",
@@ -1056,11 +1056,11 @@
     },
     {
      "activity_id": "pillow-islands",
-     "curator_note": "Feet on islands, floor is the sea. Flat cushions only — a wobbling island is a different game."
+     "curator_note": "Feet on islands, floor is the sea. Flat cushions only. A wobbling island is a different game."
     },
     {
      "activity_id": "show-me-your-move",
-     "curator_note": "One kid, one move, the whole circle copies it back. Copying is the compliment — name it out loud."
+     "curator_note": "One kid, one move, the whole circle copies it back. Copying is the compliment. Name it out loud."
     },
     {
      "activity_id": "knee-drum-copycat",
@@ -1068,7 +1068,7 @@
     },
     {
      "activity_id": "texture-touch-basket-walk",
-     "curator_note": "Rough, smooth, soft — a hunt run by hand, where a kid who sees differently is the natural leader."
+     "curator_note": "Rough, smooth, soft. A hunt run by hand, where a kid who sees differently is the natural leader."
     },
     {
      "activity_id": "big-dot-sticker-pictures",
@@ -1076,11 +1076,11 @@
     },
     {
      "activity_id": "pool-noodle-rope-threading",
-     "curator_note": "Big soft rings on a tied-down rope — threading practice with nothing small enough to worry about."
+     "curator_note": "Big soft rings on a tied-down rope. Threading practice with nothing small enough to worry about."
     },
     {
      "activity_id": "jump-the-river-ropes",
-     "curator_note": "The river widens one hand-width at a time, and stepping in it is never failing — it is practising."
+     "curator_note": "The river widens one hand-width at a time, and stepping in it is never failing. It is practising."
     },
     {
      "activity_id": "blanket-fort-book-nook",
@@ -1101,7 +1101,7 @@
    "id": "little-hands-third-shelf",
    "title": "Little Hands, Third Shelf",
    "glyph": "🧺",
-   "when_to_use": "The third shelf for the youngest kids in the building: twelve more activities designed for three-year-olds first — the first holiday records ever written for that room, a second and third seasons and rainy-day shelf, and the landing, crossing and trail-following skills a three-year-old day actually runs on. Grab it when Next Steps has been through the rotation and the little-kid group is still yours next week.",
+   "when_to_use": "The third shelf for the youngest kids in the building: twelve more activities designed for three-year-olds first, the first holiday records ever written for that room, a second and third seasons and rainy-day shelf, and the landing, crossing and trail-following skills a three-year-old day actually runs on. Grab it when Next Steps has been through the rotation and the little-kid group is still yours next week.",
    "picks": [
     {
      "activity_id": "soft-ball-new-year-drop",
@@ -1109,7 +1109,7 @@
     },
     {
      "activity_id": "big-egg-roll-slope",
-     "curator_note": "Roll, walk down, roll again — the White House has run this since 1878, and the fetching is half the activity."
+     "curator_note": "Roll, walk down, roll again. The White House has run this since 1878, and the fetching is half the activity."
     },
     {
      "activity_id": "first-puddle-walk",
@@ -1117,7 +1117,7 @@
     },
     {
      "activity_id": "cup-of-snow-melting-watch",
-     "curator_note": "Nobody touches the cup. The marker lines tell the whole story — that water was the top of the cup."
+     "curator_note": "Nobody touches the cup. The marker lines tell the whole story. That water was the top of the cup."
     },
     {
      "activity_id": "cushion-train-all-aboard",
@@ -1125,7 +1125,7 @@
     },
     {
      "activity_id": "box-boat-row-along",
-     "curator_note": "A chair boat counts in full — the boat is the rowing and the song, the cardboard was only the costume."
+     "curator_note": "A chair boat counts in full. The boat is the rowing and the song, the cardboard was only the costume."
     },
     {
      "activity_id": "wide-plank-bridge-crossing",
@@ -1133,7 +1133,7 @@
     },
     {
      "activity_id": "blanket-ball-bounce-together",
-     "curator_note": "One ball, kept low, visited person to person. Holding one thing still together is the hard part — and they do it first."
+     "curator_note": "One ball, kept low, visited person to person. Holding one thing still together is the hard part, and they do it first."
     },
     {
      "activity_id": "animal-sound-find-your-pair",
@@ -1141,7 +1141,7 @@
     },
     {
      "activity_id": "chalk-arrow-trail",
-     "curator_note": "Stand on the arrow, point, say 'that way' — then walk. Reading comes before following, every single arrow."
+     "curator_note": "Stand on the arrow, point, say 'that way', then walk. Reading comes before following, every single arrow."
     },
     {
      "activity_id": "loud-quiet-song-switch",
@@ -1149,7 +1149,7 @@
     },
     {
      "activity_id": "two-foot-landing-pads",
-     "curator_note": "Land like a cat and hold for the count of three. Stepping across counts — the skill is stopping on purpose."
+     "curator_note": "Land like a cat and hold for the count of three. Stepping across counts. The skill is stopping on purpose."
     }
    ],
    "age_span": [
@@ -1166,7 +1166,7 @@
    "id": "little-hands-fourth-shelf",
    "title": "Little Hands, Fourth Shelf",
    "glyph": "🪁",
-   "when_to_use": "The fourth shelf for the youngest kids in the building: twelve more activities designed for three-year-olds first — a lantern carried with two hands, eight lights counted as they go on, paper puddles you are supposed to step in, and the carrying, pouring, rocking and delivering jobs a three-year-old day actually runs on. Grab it when the first three shelves have been through the rotation and the little-kid group is still yours next month.",
+   "when_to_use": "The fourth shelf for the youngest kids in the building: twelve more activities designed for three-year-olds first, a lantern carried with two hands, eight lights counted as they go on, paper puddles you are supposed to step in, and the carrying, pouring, rocking and delivering jobs a three-year-old day actually runs on. Grab it when the first three shelves have been through the rotation and the little-kid group is still yours next month.",
    "picks": [
     {
      "activity_id": "lantern-carry-parade",
@@ -1174,11 +1174,11 @@
     },
     {
      "activity_id": "eight-lights-line-up",
-     "curator_note": "Place one, switch it on, count from one together. Recounting every time is not slow — it is the practice."
+     "curator_note": "Place one, switch it on, count from one together. Recounting every time is not slow. It is the practice."
     },
     {
      "activity_id": "wind-ribbon-watch",
-     "curator_note": "Pointing is the participation. The kid who calls 'still!' has to convince the whole group — then a gust ruins it, correctly."
+     "curator_note": "Pointing is the participation. The kid who calls 'still!' has to convince the whole group, then a gust ruins it, correctly."
     },
     {
      "activity_id": "boot-print-snow-trail",
@@ -1190,7 +1190,7 @@
     },
     {
      "activity_id": "big-tongs-ice-move",
-     "curator_note": "One cube at a time, tongs only. The last cubes are the slipperiest, and by then the group knows why — melting."
+     "curator_note": "One cube at a time, tongs only. The last cubes are the slipperiest, and by then the group knows why, melting."
     },
     {
      "activity_id": "pan-balance-heavy-light",
@@ -1198,7 +1198,7 @@
     },
     {
      "activity_id": "toy-wagon-pull-together",
-     "curator_note": "The wagon only goes when both pullers are holding on. Count the cargo in, count it out — they must match."
+     "curator_note": "The wagon only goes when both pullers are holding on. Count the cargo in, count it out. They must match."
     },
     {
      "activity_id": "teddy-says-my-name",
@@ -1206,11 +1206,11 @@
     },
     {
      "activity_id": "find-a-friend-wearing",
-     "curator_note": "Find a friend wearing the colour and stand WITH them — nobody is out, and the finding job is the bigger one."
+     "curator_note": "Find a friend wearing the colour and stand WITH them. Nobody is out, and the finding job is the bigger one."
     },
     {
      "activity_id": "watering-can-plant-round",
-     "curator_note": "Half full, two hands, water on the soil. The soil-checker reports 'wet now' — a real job, really done."
+     "curator_note": "Half full, two hands, water on the soil. The soil-checker reports 'wet now', a real job, really done."
     },
     {
      "activity_id": "lullaby-rock-and-sway",
@@ -1231,7 +1231,7 @@
    "id": "little-hands-just-three",
    "title": "Little Hands, Just Three",
    "glyph": "🎈",
-   "when_to_use": "The different shelf for the youngest kids in the building: twelve activities banded for three-year-olds ONLY — one shake of one tambourine, a raindrop followed down the glass, lids that fit their pots, a teddy carried to bed without waking him. The four shelves beside this one serve three-to-six; these twelve belong to the threes alone. Grab it for a young-threes room, a first month of program, or any group whose oldest kid just turned three.",
+   "when_to_use": "The different shelf for the youngest kids in the building: twelve activities banded for three-year-olds ONLY, one shake of one tambourine, a raindrop followed down the glass, lids that fit their pots, a teddy carried to bed without waking him. The four shelves beside this one serve three-to-six; these twelve belong to the threes alone. Grab it for a young-threes room, a first month of program, or any group whose oldest kid just turned three.",
    "picks": [
     {
      "activity_id": "felt-tree-one-by-one",
@@ -1243,19 +1243,19 @@
     },
     {
      "activity_id": "rain-call-to-the-rug",
-     "curator_note": "Umbrella up means get dry — walked, never run. The weather-worker with the shaker holds the most powerful job in the room."
+     "curator_note": "Umbrella up means get dry. Walked, never run. The weather-worker with the shaker holds the most powerful job in the room."
     },
     {
      "activity_id": "window-raindrop-follow",
-     "curator_note": "Your drop merging into a bigger one is not losing it — it is what rain does, reported like news. Needs a real rainy day; refuse to fake it."
+     "curator_note": "Your drop merging into a bigger one is not losing it. It is what rain does, reported like news. Needs a real rainy day; refuse to fake it."
     },
     {
      "activity_id": "big-magnet-wand-sticks",
-     "curator_note": "'It sticks! It doesn't.' Those two sentences are the data, and the trays are the graph. Encased wands only — the record says why."
+     "curator_note": "'It sticks! It doesn't.' Those two sentences are the data, and the trays are the graph. Encased wands only, the record says why."
     },
     {
      "activity_id": "blanket-carry-teddy-to-bed",
-     "curator_note": "Four corners, one passenger, walking feet. The hush-crew's whisper-report at the bed — 'He's asleep' — is the teamwork certificate."
+     "curator_note": "Four corners, one passenger, walking feet. The hush-crew's whisper-report at the bed, 'He's asleep', is the teamwork certificate."
     },
     {
      "activity_id": "name-echo-two-claps",
@@ -1271,7 +1271,7 @@
     },
     {
      "activity_id": "sticky-window-big-shapes",
-     "curator_note": "It sticks and it un-sticks, so nothing can be put in the wrong place. Leave it up all day — moving the picture IS the craft."
+     "curator_note": "It sticks and it un-sticks, so nothing can be put in the wrong place. Leave it up all day. Moving the picture IS the craft."
     },
     {
      "activity_id": "grass-hill-roll-down",
@@ -1279,7 +1279,7 @@
     },
     {
      "activity_id": "big-lid-match-basket",
-     "curator_note": "A wobble is information, not failure — and finding the trick lid that fits nothing is the result the whole table celebrates."
+     "curator_note": "A wobble is information, not failure, and finding the trick lid that fits nothing is the result the whole table celebrates."
     }
    ],
    "age_span": [
@@ -1296,11 +1296,11 @@
    "id": "little-hands-just-three-more",
    "title": "Little Hands, Just Three More",
    "glyph": "🧦",
-   "when_to_use": "The second shelf banded for three-year-olds ONLY — a bud counted with one fingertip, a heart carried in two hands, a banner that only arrives if every hand walks together, a house painted by its own tenants. The first Just Three shelf proved the band works; these twelve keep narrowing the one honest gap left in the archive, the distance between the threes and everybody else. Reach for it in a young-threes room, a first month of program, or any group whose oldest kid just turned three.",
+   "when_to_use": "The second shelf banded for three-year-olds ONLY, a bud counted with one fingertip, a heart carried in two hands, a banner that only arrives if every hand walks together, a house painted by its own tenants. The first Just Three shelf proved the band works; these twelve keep narrowing the one honest gap left in the archive, the distance between the threes and everybody else. Reach for it in a young-threes room, a first month of program, or any group whose oldest kid just turned three.",
    "picks": [
     {
      "activity_id": "big-heart-hand-delivery",
-     "curator_note": "One heart, two hands, one named friend — and the adult's list quietly guarantees every kid both gives one and gets one."
+     "curator_note": "One heart, two hands, one named friend, and the adult's list quietly guarantees every kid both gives one and gets one."
     },
     {
      "activity_id": "one-branch-bud-count",
@@ -1308,7 +1308,7 @@
     },
     {
      "activity_id": "big-pot-stir-together",
-     "curator_note": "Nothing real goes in and nobody tastes it — dinosaur soup is legitimate in this kitchen, and five counted circles is a finished stir."
+     "curator_note": "Nothing real goes in and nobody tastes it. Dinosaur soup is legitimate in this kitchen, and five counted circles is a finished stir."
     },
     {
      "activity_id": "rain-drums-on-pots",
@@ -1316,11 +1316,11 @@
     },
     {
      "activity_id": "big-funnel-sand-pour",
-     "curator_note": "The bottle fills from the bottom up and the top fills last — said out loud, over a tray that makes missing safe."
+     "curator_note": "The bottle fills from the bottom up and the top fills last, said out loud, over a tray that makes missing safe."
     },
     {
      "activity_id": "long-banner-carry-together",
-     "curator_note": "A hand every few steps or it folds. The halfway stop, holding it level together, is harder than the walking — they can feel it."
+     "curator_note": "A hand every few steps or it folds. The halfway stop, holding it level together, is harder than the walking. They can feel it."
     },
     {
      "activity_id": "how-i-got-here-moves",
@@ -1336,15 +1336,15 @@
     },
     {
      "activity_id": "paint-the-big-box-house",
-     "curator_note": "Paint goes on the house, brushes stay at the house — then the craft dries and becomes the room's new building for days."
+     "curator_note": "Paint goes on the house, brushes stay at the house. Then the craft dries and becomes the room's new building for days."
     },
     {
      "activity_id": "giant-steps-baby-steps",
-     "curator_note": "Nobody is ever out and nobody is sent back — said as a promise on the start line, and the whole line lands at the gate together."
+     "curator_note": "Nobody is ever out and nobody is sent back. Said as a promise on the start line, and the whole line lands at the gate together."
     },
     {
      "activity_id": "sock-pair-match-basket",
-     "curator_note": "A near-match held up to the light is the favourite discovery. Every finished pair gets rolled into a ball — real laundry, done."
+     "curator_note": "A near-match held up to the light is the favourite discovery. Every finished pair gets rolled into a ball, real laundry, done."
     }
    ],
    "age_span": [
@@ -1361,11 +1361,11 @@
    "id": "little-hands-just-three-again",
    "title": "Little Hands, Just Three, Again",
    "glyph": "🧤",
-   "when_to_use": "The third shelf banded for three-year-olds ONLY — a welcome written in lamplight along a floor path, every kid in the room holding up the same hard-won three fingers, a snowball that outgrows its rollers, a heart's own beat tapped on knees. Three waves of this kind have narrowed the threes' gap by a third without one record a three-year-old is merely tolerated by. Reach for it in a young-threes room, a first month of program, or any group whose oldest kid just turned three.",
+   "when_to_use": "The third shelf banded for three-year-olds ONLY, a welcome written in lamplight along a floor path, every kid in the room holding up the same hard-won three fingers, a snowball that outgrows its rollers, a heart's own beat tapped on knees. Three waves of this kind have narrowed the threes' gap by a third without one record a three-year-old is merely tolerated by. Reach for it in a young-threes room, a first month of program, or any group whose oldest kid just turned three.",
    "picks": [
     {
      "activity_id": "paper-diya-welcome-row",
-     "curator_note": "Two hands carry the lamp; the adult's hand brings the light. The welcome is half built — and the group can SEE it is."
+     "curator_note": "Two hands carry the lamp; the adult's hand brings the light. The welcome is half built, and the group can SEE it is."
     },
     {
      "activity_id": "roll-it-bigger-snowball",
@@ -1377,15 +1377,15 @@
     },
     {
      "activity_id": "fog-window-finger-drawing",
-     "curator_note": "The one drawing medium with no wrong marks in it — the window keeps nothing, and the fading is the frame."
+     "curator_note": "The one drawing medium with no wrong marks in it. The window keeps nothing, and the fading is the frame."
     },
     {
      "activity_id": "big-shadow-grow-shrink",
-     "curator_note": "Directors direct, the shadow obeys: nearer the light, bigger the shadow — two facts, both visible, both theirs."
+     "curator_note": "Directors direct, the shadow obeys: nearer the light, bigger the shadow, two facts, both visible, both theirs."
     },
     {
      "activity_id": "sponge-pass-fill-the-pot",
-     "curator_note": "Slow hands keep the water — a rule no adult announced. The sponge taught it, and a team keeps what it discovers."
+     "curator_note": "Slow hands keep the water, a rule no adult announced. The sponge taught it, and a team keeps what it discovers."
     },
     {
      "activity_id": "show-me-three-fingers",
@@ -1393,11 +1393,11 @@
     },
     {
      "activity_id": "after-rain-worm-count",
-     "curator_note": "Counted with eyes, greeted by number, touched by nobody — the path belongs to its residents until the ground dries."
+     "curator_note": "Counted with eyes, greeted by number, touched by nobody, the path belongs to its residents until the ground dries."
     },
     {
      "activity_id": "feel-the-beat-heart-tap",
-     "curator_note": "Fast after marching, slower after resting, tapped on knees both times — a drum every musician carries everywhere."
+     "curator_note": "Fast after marching, slower after resting, tapped on knees both times. A drum every musician carries everywhere."
     },
     {
      "activity_id": "big-sponge-stamp-mural",
@@ -1409,7 +1409,7 @@
     },
     {
      "activity_id": "big-zip-up-down-board",
-     "curator_note": "One hand holds, one hand works — every zip on every coat, discovered at a board where no coat is waiting."
+     "curator_note": "One hand holds, one hand works, every zip on every coat, discovered at a board where no coat is waiting."
     }
    ],
    "age_span": [
@@ -1426,11 +1426,11 @@
    "id": "little-hands-just-three-once-more",
    "title": "Little Hands, Just Three, Once More",
    "glyph": "🧸",
-   "when_to_use": "The fourth shelf banded for three-year-olds ONLY — a pretend pot of gold collected coin by clinking coin, fireflies counted by their blinks and never caught, a beanbag that falls and gets picked up by its own walker. Four waves of this kind have now cut the threes' gap by nearly half without one record a three-year-old is merely tolerated by. Reach for it in a young-threes room, a first month of program, or any group whose oldest kid just turned three.",
+   "when_to_use": "The fourth shelf banded for three-year-olds ONLY, a pretend pot of gold collected coin by clinking coin, fireflies counted by their blinks and never caught, a beanbag that falls and gets picked up by its own walker. Four waves of this kind have now cut the threes' gap by nearly half without one record a three-year-old is merely tolerated by. Reach for it in a young-threes room, a first month of program, or any group whose oldest kid just turned three.",
    "picks": [
     {
      "activity_id": "big-gold-coin-pot-carry",
-     "curator_note": "The pot sounds fuller as the coins land — a job half done you can HEAR. The story stays a story, said out loud."
+     "curator_note": "The pot sounds fuller as the coins land. A job half done you can HEAR. The story stays a story, said out loud."
     },
     {
      "activity_id": "first-firefly-blink-count",
@@ -1438,15 +1438,15 @@
     },
     {
      "activity_id": "big-pillow-mountain-climb",
-     "curator_note": "Up one side, a sit at the top, down the other — the summit sit gets its full moment, beheld by the whole line."
+     "curator_note": "Up one side, a sit at the top, down the other. The summit sit gets its full moment, beheld by the whole line."
     },
     {
      "activity_id": "blanket-sled-slow-pull",
-     "curator_note": "The sled departs on the rider's word — 'Ready!' — and the pulling adjusts to every rider's review, out loud."
+     "curator_note": "The sled departs on the rider's word, 'Ready!', and the pulling adjusts to every rider's review, out loud."
     },
     {
      "activity_id": "big-smell-jar-sniff-and-say",
-     "curator_note": "Found by Maya's nose: a name, a description, or an honest 'I don't know' — every report is a complete turn."
+     "curator_note": "Found by Maya's nose: a name, a description, or an honest 'I don't know'. Every report is a complete turn."
     },
     {
      "activity_id": "big-felt-quilt-wall-build",
@@ -1458,7 +1458,7 @@
     },
     {
      "activity_id": "big-texture-feet-path-walk",
-     "curator_note": "Tickly-cool, smooth, soft-moving, warm-squishy — four feelings reported in foot words, wince and giggle included."
+     "curator_note": "Tickly-cool, smooth, soft-moving, warm-squishy, four feelings reported in foot words, wince and giggle included."
     },
     {
      "activity_id": "big-pot-lid-cymbal-band",
@@ -1466,15 +1466,15 @@
     },
     {
      "activity_id": "big-finger-paint-sky-sheet",
-     "curator_note": "Sky first, clouds after — the white arrives as an event. A sleeve is not a brush; the sky takes every style."
+     "curator_note": "Sky first, clouds after. The white arrives as an event. A sleeve is not a brush; the sky takes every style."
     },
     {
      "activity_id": "big-beanbag-balance-walk",
-     "curator_note": "It fell, you fixed it, you are walking — from THAT spot, never from the start. Falls are part of walking."
+     "curator_note": "It fell, you fixed it, you are walking, from THAT spot, never from the start. Falls are part of walking."
     },
     {
      "activity_id": "big-peg-clip-card-row",
-     "curator_note": "The peg was hungry: more card in the mouth. A row built by the right hands, then unbuilt — the second skill."
+     "curator_note": "The peg was hungry: more card in the mouth. A row built by the right hands, then unbuilt, the second skill."
     }
    ],
    "age_span": [
@@ -1491,7 +1491,7 @@
    "id": "little-hands-just-three-fifth-time",
    "title": "Little Hands, Just Three, a Fifth Time",
    "glyph": "🧤",
-   "when_to_use": "The fifth shelf banded for three-year-olds ONLY — a ribbon-wand parade walked for the country's birthday, ants counted as they cross on a road the watchers never touch, one chime note each, struck only when the pointer lands. Five waves of this kind have now cut the threes' gap by more than half without one record a three-year-old is merely tolerated by. Reach for it in a young-threes room, a first month of program, or any group whose oldest kid just turned three.",
+   "when_to_use": "The fifth shelf banded for three-year-olds ONLY, a ribbon-wand parade walked for the country's birthday, ants counted as they cross on a road the watchers never touch, one chime note each, struck only when the pointer lands. Five waves of this kind have now cut the threes' gap by more than half without one record a three-year-old is merely tolerated by. Reach for it in a young-threes room, a first month of program, or any group whose oldest kid just turned three.",
    "picks": [
     {
      "activity_id": "big-ribbon-wand-parade-walk",
@@ -1503,7 +1503,7 @@
     },
     {
      "activity_id": "umbrella-drip-count-listen",
-     "curator_note": "The grown-up makes the rain; the counters count it by ear, eyes closed — ears only, checked against honest fingers."
+     "curator_note": "The grown-up makes the rain; the counters count it by ear, eyes closed, ears only, checked against honest fingers."
     },
     {
      "activity_id": "big-cotton-cloud-blanket-drift",
@@ -1515,7 +1515,7 @@
     },
     {
      "activity_id": "big-picnic-blanket-set-together",
-     "curator_note": "A pretend picnic, said out loud — no food on the blanket, so every child in the room is equally at the table."
+     "curator_note": "A pretend picnic, said out loud, no food on the blanket, so every child in the room is equally at the table."
     },
     {
      "activity_id": "big-feelings-card-show-and-say",
@@ -1527,7 +1527,7 @@
     },
     {
      "activity_id": "big-chime-note-when-pointed",
-     "curator_note": "Your note is still coming — mallets rest until the pointer lands. Waiting with a promise inside it."
+     "curator_note": "Your note is still coming. Mallets rest until the pointer lands. Waiting with a promise inside it."
     },
     {
      "activity_id": "big-handprint-leaf-tree",
@@ -1556,15 +1556,15 @@
    "id": "little-hands-just-three-sixth-time",
    "title": "Little Hands, Just Three, a Sixth Time",
    "glyph": "🖐️",
-   "when_to_use": "The sixth shelf banded for three-year-olds ONLY — a smile passed face to face round a whole circle, a puddle holding the sky until one toe closes the picture, one rainstick tipped so slowly its rain takes a minute to fall. Six waves of this kind have now cut the threes' gap from 102 to 30 without one record a three-year-old is merely tolerated by. Reach for it in a young-threes room, a first month of program, or any group whose oldest kid just turned three.",
+   "when_to_use": "The sixth shelf banded for three-year-olds ONLY, a smile passed face to face round a whole circle, a puddle holding the sky until one toe closes the picture, one rainstick tipped so slowly its rain takes a minute to fall. Six waves of this kind have now cut the threes' gap from 102 to 30 without one record a three-year-old is merely tolerated by. Reach for it in a young-threes room, a first month of program, or any group whose oldest kid just turned three.",
    "picks": [
     {
      "activity_id": "big-dream-echo-circle",
-     "curator_note": "Every dream is a right dream — said out loud, echoed whole, and never ranked. That is how dreams start travelling."
+     "curator_note": "Every dream is a right dream, said out loud, echoed whole, and never ranked. That is how dreams start travelling."
     },
     {
      "activity_id": "big-warm-stone-hold-tell",
-     "curator_note": "Eyes cannot weigh and eyes cannot warm: the palms read the day and report it — 'this hand is holding summer.'"
+     "curator_note": "Eyes cannot weigh and eyes cannot warm: the palms read the day and report it. 'This hand is holding summer.'"
     },
     {
      "activity_id": "big-bus-stop-ride-along",
@@ -1580,7 +1580,7 @@
     },
     {
      "activity_id": "big-one-statue-many-bodies",
-     "curator_note": "Nobody holds anybody up, and the whole thing stands anyway — that is the trick this room now knows."
+     "curator_note": "Nobody holds anybody up, and the whole thing stands anyway. That is the trick this room now knows."
     },
     {
      "activity_id": "big-pass-the-smile-circle",
@@ -1588,7 +1588,7 @@
     },
     {
      "activity_id": "big-puddle-sky-mirror-look",
-     "curator_note": "A picture that only exists while nobody touches it — and the puddle is already mending it."
+     "curator_note": "A picture that only exists while nobody touches it, and the puddle is already mending it."
     },
     {
      "activity_id": "big-rainstick-tip-and-listen",
@@ -1621,11 +1621,11 @@
    "id": "little-hands-just-three-seventh-time",
    "title": "Little Hands, Just Three, a Seventh Time",
    "glyph": "🖐️",
-   "when_to_use": "The seventh shelf banded for three-year-olds ONLY — a name rung on a good bell and answered any way at all, a tissue snowfall watched the whole way down, warm hands lent palm to palm until both pairs agree. Seven waves of this kind have now cut the threes' gap from 102 to 18 without one record a three-year-old is merely tolerated by. Reach for it in a young-threes room, a first month of program, or any group whose oldest kid just turned three.",
+   "when_to_use": "The seventh shelf banded for three-year-olds ONLY. A name rung on a good bell and answered any way at all, a tissue snowfall watched the whole way down, warm hands lent palm to palm until both pairs agree. Seven waves of this kind have now cut the threes' gap from 102 to 18 without one record a three-year-old is merely tolerated by. Reach for it in a young-threes room, a first month of program, or any group whose oldest kid just turned three.",
    "picks": [
     {
      "activity_id": "big-story-stone-first-people",
-     "curator_note": "A true story, told plainly, about the first people of this place — their name said properly by every child in the circle."
+     "curator_note": "A true story, told plainly, about the first people of this place. Their name said properly by every child in the circle."
     },
     {
      "activity_id": "big-leaf-light-window-hold",
@@ -1633,11 +1633,11 @@
     },
     {
      "activity_id": "big-tissue-snow-gentle-fall",
-     "curator_note": "It turned twice. It landed on its corner. It took a LONG time — slowness, noticed, is the entertainment."
+     "curator_note": "It turned twice. It landed on its corner. It took a LONG time. Slowness, noticed, is the entertainment."
     },
     {
      "activity_id": "big-float-or-sink-first-dip",
-     "curator_note": "One word, big and plain: FLOAT or SINK — and the sponge, watched long enough, honestly earns both."
+     "curator_note": "One word, big and plain: FLOAT or SINK, and the sponge, watched long enough, honestly earns both."
     },
     {
      "activity_id": "big-warm-hand-lend-a-hand",
@@ -1645,7 +1645,7 @@
     },
     {
      "activity_id": "big-find-the-matching-sock-pair",
-     "curator_note": "Ten socks, five truths, no orphans — a wrong sock goes back softly and the finding goes on."
+     "curator_note": "Ten socks, five truths, no orphans. A wrong sock goes back softly and the finding goes on."
     },
     {
      "activity_id": "big-paper-fan-wind-maker",
@@ -1653,19 +1653,19 @@
     },
     {
      "activity_id": "big-name-bell-ring-for-you",
-     "curator_note": "One ring. One name. One answer, in any form at all — and a name not answered is rung again later, kindly, never louder."
+     "curator_note": "One ring. One name. One answer, in any form at all, and a name not answered is rung again later, kindly, never louder."
     },
     {
      "activity_id": "big-shoe-stomp-marching-band",
-     "curator_note": "The band marched nowhere and arrived everywhere — and stopped as one band, on one raised hand."
+     "curator_note": "The band marched nowhere and arrived everywhere, and stopped as one band, on one raised hand."
     },
     {
      "activity_id": "big-tear-and-stick-paper-mosaic",
-     "curator_note": "Torn by hand, stuck inside one huge shared sun — a torn edge is the correct edge, every time."
+     "curator_note": "Torn by hand, stuck inside one huge shared sun. A torn edge is the correct edge, every time."
     },
     {
      "activity_id": "big-ribbon-wand-river-dance",
-     "curator_note": "One slow river per dancer, drawn in the air — a dropped ribbon is part of the river, and the river rests when it rests."
+     "curator_note": "One slow river per dancer, drawn in the air. A dropped ribbon is part of the river, and the river rests when it rests."
     },
     {
      "activity_id": "big-cushion-bridge-crossing",
@@ -1686,19 +1686,19 @@
    "id": "little-hands-just-three-eighth-time",
    "title": "Little Hands, Just Three, an Eighth Time",
    "glyph": "🤚",
-   "when_to_use": "The eighth shelf banded for three-year-olds ONLY — a plant given a drink and a promise on Earth Day, a rainbow watched for at a sprinkler's edge, a bear hummed to sleep by a circle with no words at all. Eight waves of this kind have now cut the threes' gap from 102 to 6 without one record a three-year-old is merely tolerated by. Reach for it in a young-threes room, a first month of program, or any group whose oldest kid just turned three.",
+   "when_to_use": "The eighth shelf banded for three-year-olds ONLY, a plant given a drink and a promise on Earth Day, a rainbow watched for at a sprinkler's edge, a bear hummed to sleep by a circle with no words at all. Eight waves of this kind have now cut the threes' gap from 102 to 6 without one record a three-year-old is merely tolerated by. Reach for it in a young-threes room, a first month of program, or any group whose oldest kid just turned three.",
    "picks": [
     {
      "activity_id": "big-earth-day-first-garden-promise",
-     "curator_note": "You were thirsty, and somebody came — a drink poured slow, a promise stone set down gently, and the keeping left where the room walks past it daily."
+     "curator_note": "You were thirsty, and somebody came, a drink poured slow, a promise stone set down gently, and the keeping left where the room walks past it daily."
     },
     {
      "activity_id": "big-sprinkler-rainbow-edge-walk",
-     "curator_note": "Rainbows are not ours to order. The rain is still ours — one slow walk through a whole summer shower in four steps."
+     "curator_note": "Rainbows are not ours to order. The rain is still ours, one slow walk through a whole summer shower in four steps."
     },
     {
      "activity_id": "big-hide-the-bear-seek-together",
-     "curator_note": "Found five times, once by a nose — nobody hid alone, nobody sought alone, and the finding belonged to everybody."
+     "curator_note": "Found five times, once by a nose, nobody hid alone, nobody sought alone, and the finding belonged to everybody."
     },
     {
      "activity_id": "big-cardboard-brick-wall-build",
@@ -1706,11 +1706,11 @@
     },
     {
      "activity_id": "big-laundry-line-helping-hands",
-     "curator_note": "Two hands here, two hands there — nine cloths waving because the room hung its own washing, two corners at a time."
+     "curator_note": "Two hands here, two hands there, nine cloths waving because the room hung its own washing, two corners at a time."
     },
     {
      "activity_id": "big-mirror-face-copy-my-face",
-     "curator_note": "Your face knew mine: a copy that wanders is not wrong, it is a new face — and new faces get copied back."
+     "curator_note": "Your face knew mine: a copy that wanders is not wrong, it is a new face, and new faces get copied back."
     },
     {
      "activity_id": "big-cloud-lying-picture-names",
@@ -1722,7 +1722,7 @@
     },
     {
      "activity_id": "big-beach-ball-keep-it-floating",
-     "curator_note": "Down is where it rests, not where it loses — the flight's count belongs to the whole circle, and every hand owns a share."
+     "curator_note": "Down is where it rests, not where it loses. The flight's count belongs to the whole circle, and every hand owns a share."
     },
     {
      "activity_id": "big-belly-buddy-breathing-watch",
@@ -1730,7 +1730,7 @@
     },
     {
      "activity_id": "big-echo-drum-one-hit-back",
-     "curator_note": "One hit, one hit back — the listening in between is part of the music, and the silences were music too."
+     "curator_note": "One hit, one hit back. The listening in between is part of the music, and the silences were music too."
     },
     {
      "activity_id": "big-humming-lullaby-bear-sleep",
@@ -1751,11 +1751,11 @@
    "id": "just-teens-first-time",
    "title": "Just Teens, a First Time",
    "glyph": "🧭",
-   "when_to_use": "The first shelf banded for thirteen- and fourteen-year-olds ONLY — a tree adopted for a year, a seed library with honest labels, referees running their own tournament, clue chains marked by the strangers who ran them. Reach for it with a teen group that has outgrown the younger shelves and can smell borrowed content at fifty paces: everything here was written for the room it will be used in.",
+   "when_to_use": "The first shelf banded for thirteen- and fourteen-year-olds ONLY, a tree adopted for a year, a seed library with honest labels, referees running their own tournament, clue chains marked by the strangers who ran them. Reach for it with a teen group that has outgrown the younger shelves and can smell borrowed content at fifty paces: everything here was written for the room it will be used in.",
    "picks": [
     {
      "activity_id": "adopt-a-tree-year-log",
-     "curator_note": "Custodians, not owners — a tree measured monthly for a year, and a log that outlives the group that started it."
+     "curator_note": "Custodians, not owners, a tree measured monthly for a year, and a log that outlives the group that started it."
     },
     {
      "activity_id": "seed-library-opening-day",
@@ -1763,7 +1763,7 @@
     },
     {
      "activity_id": "compass-course-three-flags",
-     "curator_note": "A bearing is a promise your feet keep — set by one team, run by another, and marked on the honesty of the numbers."
+     "curator_note": "A bearing is a promise your feet keep. Set by one team, run by another, and marked on the honesty of the numbers."
     },
     {
      "activity_id": "referee-run-round-robin",
@@ -1771,11 +1771,11 @@
     },
     {
      "activity_id": "ten-minute-set-handover",
-     "curator_note": "The floor never notices the join — six pairs of hands, one continuous session, and the next DJ's opening never spent."
+     "curator_note": "The floor never notices the join. Six pairs of hands, one continuous session, and the next DJ's opening never spent."
     },
     {
      "activity_id": "indoor-clue-chain-architects",
-     "curator_note": "A clue is fair when a stranger could solve it — and the architects watch in silence while the strangers find out."
+     "curator_note": "A clue is fair when a stranger could solve it, and the architects watch in silence while the strangers find out."
     },
     {
      "activity_id": "hot-seat-kind-questions",
@@ -1783,19 +1783,19 @@
     },
     {
      "activity_id": "repair-cafe-first-session",
-     "curator_note": "Fixed is a verdict the owner gives — triage, benches, charts, and the professional courage of 'beyond this cafe'."
+     "curator_note": "Fixed is a verdict the owner gives, triage, benches, charts, and the professional courage of 'beyond this cafe'."
     },
     {
      "activity_id": "midnight-around-the-world",
-     "curator_note": "Midnight is a place before it is a time — met city by city, with the arithmetic checked and every greeting practised."
+     "curator_note": "Midnight is a place before it is a time, met city by city, with the arithmetic checked and every greeting practised."
     },
     {
      "activity_id": "wind-turbine-blade-trials",
-     "curator_note": "One variable at a time, or the data is weather, not evidence — revolutions and lifted clips overrule every favourite."
+     "curator_note": "One variable at a time, or the data is weather, not evidence, revolutions and lifted clips overrule every favourite."
     },
     {
      "activity_id": "commonplace-book-first-pages",
-     "curator_note": "A conversation with people who are not in the room — other minds, copied by hand, indexed under your own themes."
+     "curator_note": "A conversation with people who are not in the room, other minds, copied by hand, indexed under your own themes."
     },
     {
      "activity_id": "teach-back-to-the-youngers",
@@ -1816,39 +1816,39 @@
    "id": "just-teens-second-time",
    "title": "Just Teens, a Second Time",
    "glyph": "🌌",
-   "when_to_use": "The second shelf banded for thirteen- and fourteen-year-olds ONLY — the floor shelf: a compost heap read by thermometer, a frost forecast graded by its mornings, summer kept in jars, a path maintained under permission, a sky hosted for families, a stream graded by its own citizens, a circuit designed by its coaches, and games invented to survive strangers. Reach for it when the teen room needs work with real responsibility in the band's three thinnest categories — seasons, outdoor, and movement — written for the room itself, not borrowed from younger shelves.",
+   "when_to_use": "The second shelf banded for thirteen- and fourteen-year-olds ONLY. The floor shelf: a compost heap read by thermometer, a frost forecast graded by its mornings, summer kept in jars, a path maintained under permission, a sky hosted for families, a stream graded by its own citizens, a circuit designed by its coaches, and games invented to survive strangers. Reach for it when the teen room needs work with real responsibility in the band's three thinnest categories, seasons, outdoor, and movement, written for the room itself, not borrowed from younger shelves.",
    "picks": [
     {
      "activity_id": "compost-heap-temperature-ledger",
-     "curator_note": "The heap is alive, and the ledger is how you know — layers, a turning rota, and a core temperature taken weekly in the same ink, up or down."
+     "curator_note": "The heap is alive, and the ledger is how you know, layers, a turning rota, and a core temperature taken weekly in the same ink, up or down."
     },
     {
      "activity_id": "first-frost-forecast-desk",
-     "curator_note": "A forecast is a promise you check in the morning — a signed call at the board each evening, graded right, wrong, or lucky at dawn."
+     "curator_note": "A forecast is a promise you check in the morning. A signed call at the board each evening, graded right, wrong, or lucky at dawn."
     },
     {
      "activity_id": "summer-glut-preserving-day",
-     "curator_note": "A jar sealed properly is summer kept — one tested recipe followed exactly, prep by teens, processing by the adult, every batch vouched for in the day book."
+     "curator_note": "A jar sealed properly is summer kept, one tested recipe followed exactly, prep by teens, processing by the adult, every batch vouched for in the day book."
     },
     {
      "activity_id": "trail-crew-first-pass",
-     "curator_note": "Leave the path better than the weather left it — drainage, waymarks and an honest crew book, under a permission whose edges are respected exactly."
+     "curator_note": "Leave the path better than the weather left it, drainage, waymarks and an honest crew book, under a permission whose edges are respected exactly."
     },
     {
      "activity_id": "star-party-hosts",
-     "curator_note": "Darkness is the venue; the hosts protect it — red light only, a rehearsed tour of tonight's real sky, and a meteor tally never improved in the retelling."
+     "curator_note": "Darkness is the venue; the hosts protect it. Red light only, a rehearsed tour of tonight's real sky, and a meteor tally never improved in the retelling."
     },
     {
      "activity_id": "stream-watch-testing-round",
-     "curator_note": "The stream grades itself; the watch just reads the marks — temperature, clarity, and citizens counted at the same points, then returned unharmed."
+     "curator_note": "The stream grades itself; the watch just reads the marks, temperature, clarity, and citizens counted at the same points, then returned unharmed."
     },
     {
      "activity_id": "circuit-course-design-and-coach",
-     "curator_note": "A station earns its place by being doable well when tired — proposed, tested on the designers, cut or kept by evidence, then coached."
+     "curator_note": "A station earns its place by being doable well when tired, proposed, tested on the designers, cut or kept by evidence, then coached."
     },
     {
      "activity_id": "new-game-playtest-league",
-     "curator_note": "A rule that only works when everyone is being nice is not a rule yet — strangers break it, the log records it, the card is rewritten."
+     "curator_note": "A rule that only works when everyone is being nice is not a rule yet, strangers break it, the log records it, the card is rewritten."
     }
    ],
    "age_span": [
@@ -1865,39 +1865,39 @@
    "id": "just-teens-third-time",
    "title": "Just Teens, a Third Time",
    "glyph": "🌔",
-   "when_to_use": "The third shelf banded for thirteen- and fourteen-year-olds ONLY — the floor-raising shelf: seeds given their winter, a field line surveyed square by square, a long rope turned for everyone's courage, a choir holding two lines at once, a radio play recorded in one take per scene, an interview that introduces the person actually met, a whole publication folded from one sheet, and a new year folded in by the tray. Reach for it when the teen room needs the band's eight thinnest categories — seasons, outdoor, movement, music, rainy-day, icebreakers, crafts and holidays — written for the room itself, not borrowed from younger shelves.",
+   "when_to_use": "The third shelf banded for thirteen- and fourteen-year-olds ONLY, the floor-raising shelf: seeds given their winter, a field line surveyed square by square, a long rope turned for everyone's courage, a choir holding two lines at once, a radio play recorded in one take per scene, an interview that introduces the person actually met, a whole publication folded from one sheet, and a new year folded in by the tray. Reach for it when the teen room needs the band's eight thinnest categories, seasons, outdoor, movement, music, rainy-day, icebreakers, crafts and holidays, written for the room itself, not borrowed from younger shelves.",
    "picks": [
     {
      "activity_id": "cold-stratification-seed-bank",
-     "curator_note": "Cold is an ingredient, and the calendar is the recipe — jars of logged winter, weekly rounds, and a spring test that grades the bank in numbers."
+     "curator_note": "Cold is an ingredient, and the calendar is the recipe, jars of logged winter, weekly rounds, and a spring test that grades the bank in numbers."
     },
     {
      "activity_id": "transect-line-field-survey",
-     "curator_note": "The line does not move; that is what makes it evidence — quadrats at fixed intervals, named only as far as the guide honestly carries."
+     "curator_note": "The line does not move; that is what makes it evidence, quadrats at fixed intervals, named only as far as the guide honestly carries."
     },
     {
      "activity_id": "long-rope-turning-crew",
-     "curator_note": "The rope belongs to the turners; the jumping belongs to everyone — height, beat and rescue, with the crew's mark chalked honest, landed or not."
+     "curator_note": "The rope belongs to the turners; the jumping belongs to everyone. Height, beat and rescue, with the crew's mark chalked honest, landed or not."
     },
     {
      "activity_id": "part-singing-choir-first-rehearsals",
-     "curator_note": "Blending is listening louder than you sing — two lines learned apart until boring, then held together, falls and joins in the same log."
+     "curator_note": "Blending is listening louder than you sing, two lines learned apart until boring, then held together, falls and joins in the same log."
     },
     {
      "activity_id": "foley-radio-play-recording",
-     "curator_note": "The audience believes its ears; the studio's job is to deserve that — actors, a hand-made Foley table, one take and at most one retake per scene."
+     "curator_note": "The audience believes its ears; the studio's job is to deserve that, actors, a hand-made Foley table, one take and at most one retake per scene."
     },
     {
      "activity_id": "partner-portrait-interviews",
-     "curator_note": "You introduce the person you actually met, not the one you expected — three questions, a partner's own words on the card, and the right to strike any line."
+     "curator_note": "You introduce the person you actually met, not the one you expected. Three questions, a partner's own words on the card, and the right to strike any line."
     },
     {
      "activity_id": "one-sheet-zine-workshop",
-     "curator_note": "Eight pages, one sheet, no editor but the maker — planned on the map, lettered in the flat order, and traded only after being read entire."
+     "curator_note": "Eight pages, one sheet, no editor but the maker, planned on the map, lettered in the flat order, and traded only after being read entire."
     },
     {
      "activity_id": "lunar-new-year-dumpling-folding-night",
-     "curator_note": "Every fold is a signature the steamer will read — teens fold and tally by the tray, the adult alone runs the steamer, and the feast is eaten together."
+     "curator_note": "Every fold is a signature the steamer will read, teens fold and tally by the tray, the adult alone runs the steamer, and the feast is eaten together."
     }
    ],
    "age_span": [
@@ -1914,39 +1914,39 @@
    "id": "just-teens-fourth-time",
    "title": "Just Teens, a Fourth Time",
    "glyph": "🌕",
-   "when_to_use": "The fourth shelf banded for thirteen- and fourteen-year-olds ONLY — the floor-to-eight shelf: garlic planted in autumn for a summer harvest, bats counted out of a roost at dusk, a no-contact game won by the catch, a song taken apart and rearranged, a documentary filmed with consent before camera, introductions answered with feet first, a blank book bound by hand, and sunlight trialled one variable at a time. Reach for it when the teen room needs the band's eight thinnest categories — seasons, outdoor, movement, music, rainy-day, icebreakers, crafts and STEM — written for the room itself, not borrowed from younger shelves.",
+   "when_to_use": "The fourth shelf banded for thirteen- and fourteen-year-olds ONLY, the floor-to-eight shelf: garlic planted in autumn for a summer harvest, bats counted out of a roost at dusk, a no-contact game won by the catch, a song taken apart and rearranged, a documentary filmed with consent before camera, introductions answered with feet first, a blank book bound by hand, and sunlight trialled one variable at a time. Reach for it when the teen room needs the band's eight thinnest categories, seasons, outdoor, movement, music, rainy-day, icebreakers, crafts and STEM, written for the room itself, not borrowed from younger shelves.",
    "picks": [
     {
      "activity_id": "overwintering-garlic-planting-crew",
-     "curator_note": "You plant for a harvest you will hand to summer — cloves pointed up at a measured depth, the winter logged honestly, spring emergence counted shoot by shoot."
+     "curator_note": "You plant for a harvest you will hand to summer, cloves pointed up at a measured depth, the winter logged honestly, spring emergence counted shoot by shoot."
     },
     {
      "activity_id": "dusk-bat-exit-count",
-     "curator_note": "Count what leaves; never chase what returns — sectors, silence and tallies by the minute from one set watch point, and no bat ever approached."
+     "curator_note": "Count what leaves; never chase what returns, sectors, silence and tallies by the minute from one set watch point, and no bat ever approached."
     },
     {
      "activity_id": "tchoukball-first-session",
-     "curator_note": "The catch is the defence — shots rebound off a frame, the forbidden zone stays empty, and landings are judged once, settled and chalked."
+     "curator_note": "The catch is the defence, shots rebound off a frame, the forbidden zone stays empty, and landings are judged once, settled and chalked."
     },
     {
      "activity_id": "song-arranging-studio-first-session",
-     "curator_note": "An arrangement is an argument about what the song is — one change at a time, predictions written before they are heard, verdicts in the same ink."
+     "curator_note": "An arrangement is an argument about what the song is. One change at a time, predictions written before they are heard, verdicts in the same ink."
     },
     {
      "activity_id": "one-room-documentary-crew",
-     "curator_note": "Consent comes before camera, every time — a true film about one real room, its subjects seeing the cut before any other audience."
+     "curator_note": "Consent comes before camera, every time, a true film about one real room, its subjects seeing the cut before any other audience."
     },
     {
      "activity_id": "spectrum-line-introductions",
-     "curator_note": "Your feet answer first; then you get to explain — a room sorts itself along a line, then talks across the whole distance of its disagreement."
+     "curator_note": "Your feet answer first; then you get to explain, a room sorts itself along a line, then talks across the whole distance of its disagreement."
     },
     {
      "activity_id": "pamphlet-stitch-bookbinding-studio",
-     "curator_note": "A book is a machine you can make by hand — grain with the spine, holes measured before they are punched, a stitch inspected by a friend."
+     "curator_note": "A book is a machine you can make by hand, grain with the spine, holes measured before they are punched, a stitch inspected by a friend."
     },
     {
      "activity_id": "solar-oven-temperature-trials",
-     "curator_note": "Sunlight is slow; the log is how you know it is working — a shared control, one variable at a time, and a void trial declared without flinching."
+     "curator_note": "Sunlight is slow; the log is how you know it is working, a shared control, one variable at a time, and a void trial declared without flinching."
     }
    ],
    "age_span": [
@@ -1963,39 +1963,39 @@
    "id": "just-teens-fifth-time",
    "title": "Just Teens, a Fifth Time",
    "glyph": "🌗",
-   "when_to_use": "The fifth shelf banded for thirteen- and fourteen-year-olds ONLY — the floor-to-nine shelf: a season's heat counted in degree-days and a budburst predicted in ink, one yard mapped into its many microclimates, a three-team game with one enormous ball, a room conducted by learned hands, a museum of loaned objects on one table, counted sashiko stitches in indigo and white, introductions toured across drawn countries, and a true Celtic knot traced strand by strand. Reach for it when the teen room needs the band's eight thinnest categories — seasons, outdoor, movement, music, rainy-day, crafts, icebreakers and holidays — written for the room itself, not borrowed from younger shelves.",
+   "when_to_use": "The fifth shelf banded for thirteen- and fourteen-year-olds ONLY. The floor-to-nine shelf: a season's heat counted in degree-days and a budburst predicted in ink, one yard mapped into its many microclimates, a three-team game with one enormous ball, a room conducted by learned hands, a museum of loaned objects on one table, counted sashiko stitches in indigo and white, introductions toured across drawn countries, and a true Celtic knot traced strand by strand. Reach for it when the teen room needs the band's eight thinnest categories, seasons, outdoor, movement, music, rainy-day, crafts, icebreakers and holidays, written for the room itself, not borrowed from younger shelves.",
    "picks": [
     {
      "activity_id": "growing-degree-day-ledger",
-     "curator_note": "A plant keeps its calendar in heat, not in dates — daily degree-days in one ledger, a prediction in ink, and the plant itself does the grading."
+     "curator_note": "A plant keeps its calendar in heat, not in dates, daily degree-days in one ledger, a prediction in ink, and the plant itself does the grading."
     },
     {
      "activity_id": "microclimate-map-survey",
-     "curator_note": "One yard holds many climates — twelve stations read inside one ten-minute window, drawn as a map that anyone can check with a thermometer."
+     "curator_note": "One yard holds many climates. Twelve stations read inside one ten-minute window, drawn as a map that anyone can check with a thermometer."
     },
     {
      "activity_id": "kin-ball-first-session",
-     "curator_note": "Three teams, one ball, no owner — serve by calling a colour, lift everything, and win by being the team the ball cannot catch out."
+     "curator_note": "Three teams, one ball, no owner. Serve by calling a colour, lift everything, and win by being the team the ball cannot catch out."
     },
     {
      "activity_id": "conducting-patterns-studio",
-     "curator_note": "Your hands speak first; the room answers — patterns in two, three and four, cues that land, and a cut-off whose silence counts as music."
+     "curator_note": "Your hands speak first; the room answers, patterns in two, three and four, cues that land, and a cut-off whose silence counts as music."
     },
     {
      "activity_id": "one-table-micro-museum",
-     "curator_note": "A museum is an argument made of objects — loans under law, labels checked by their owners, and every object signed home entire."
+     "curator_note": "A museum is an argument made of objects, loans under law, labels checked by their owners, and every object signed home entire."
     },
     {
      "activity_id": "sashiko-stitch-sampler-studio",
-     "curator_note": "Small stitches, counted rows, no loose ends — a centuries-old stitch learned on scrap first, its wandering rows unpicked by their own makers."
+     "curator_note": "Small stitches, counted rows, no loose ends, a centuries-old stitch learned on scrap first, its wandering rows unpicked by their own makers."
     },
     {
      "activity_id": "personal-map-introductions",
-     "curator_note": "Draw the country only you know — three-station tours of the places that made you, and blank regions that stay blank, unasked, entire."
+     "curator_note": "Draw the country only you know, three-station tours of the places that made you, and blank regions that stay blank, unasked, entire."
     },
     {
      "activity_id": "celtic-knot-drawing-studio",
-     "curator_note": "One line, no beginning it will admit to — over, under, over, traced all the way home before a drop of ink is allowed near it."
+     "curator_note": "One line, no beginning it will admit to, over, under, over, traced all the way home before a drop of ink is allowed near it."
     }
    ],
    "age_span": [
