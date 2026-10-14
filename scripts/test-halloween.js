@@ -15,7 +15,7 @@ function ok(cond, label, extra) {
 
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const actIds = new Set(acts.map(a => a.id));
-ok(acts.length === 739, '685 activities total', String(acts.length));
+ok(acts.length === 747, '685 activities total', String(acts.length));
 ok(actIds.size === acts.length, 'all activity ids unique');
 
 // 1. Tag vocabulary: holiday:halloween predates this wave (wave 4); confirm it is
@@ -76,8 +76,8 @@ ok(JSON.stringify((byId['pumpkin-letter-hunt'].tags || []).slice().sort()) ===
 
 // 4. Collections: 11 total, haunted-halls valid
 const colls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/collections.json'), 'utf8')).collections;
-ok(colls.length === 31, '26 collections', String(colls.length));
-ok(new Set(colls.map(c => c.id)).size === 31, 'collection ids unique');
+ok(colls.length === 32, '26 collections', String(colls.length));
+ok(new Set(colls.map(c => c.id)).size === 32, 'collection ids unique');
 const halls = colls.find(c => c.id === 'haunted-halls');
 ok(!!halls, 'haunted-halls exists');
 ok(halls.glyph === '👻', 'haunted-halls glyph');
@@ -171,16 +171,16 @@ ok(samplePage.includes('../halloween.html'), 'generated activity page nav links 
 const tagOpts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/filters.json'), 'utf8')).filters.tags.options;
 ok(tagOpts.includes('holiday:halloween'), 'filters.json has holiday:halloween');
 const apiColls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/collections.json'), 'utf8'));
-ok(apiColls.count === 31 && apiColls.collections.length === 31, 'api collections.json count 26');
+ok(apiColls.count === 32 && apiColls.collections.length === 32, 'api collections.json count 26');
 ok(apiColls.collections.some(c => c.id === 'haunted-halls'), 'api has haunted-halls');
 const hh = apiColls.collections.find(c => c.id === 'haunted-halls');
 ok(hh.page === 'collections.html#haunted-halls', 'haunted-halls deep link');
 ok(hh.age_span.length === 2 && hh.time_span.length === 2, 'haunted-halls spans computed');
 const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/index.json'), 'utf8'));
 const collEp = manifest.endpoints.find(e => e.path === 'data/v1/collections.json');
-ok(collEp && collEp.records === 31, 'manifest collections records=26');
+ok(collEp && collEp.records === 32, 'manifest collections records=26');
 const actEp = manifest.endpoints.find(e => e.path === 'data/v1/activities.json');
-ok(actEp && actEp.records === 739, 'manifest activities records=685', String(actEp && actEp.records));
+ok(actEp && actEp.records === 747, 'manifest activities records=685', String(actEp && actEp.records));
 const schema = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/schema/activity.schema.json'), 'utf8'));
 ok(JSON.stringify(schema).includes('holiday:halloween'), 'activity schema enum has holiday:halloween');
 const sitemap = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');

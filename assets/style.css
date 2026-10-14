@@ -2004,3 +2004,117 @@ html[data-calm="true"] .drawer-pull { transition: none; }
 .activity-photo img { display: block; width: 100%; height: auto; border: 1px solid var(--line, #ddd0b4); border-radius: 10px; }
 .activity-photo figcaption { margin-top: 0.45rem; font-size: 0.92rem; line-height: 1.45; }
 .activity-photo .photo-credit { opacity: 0.72; font-size: 0.85em; }
+
+/* =====================================================================
+   ROTATION 20 — MINIMAL PASS (the Vault's turn in the fleet sequence)
+   Teacher's-desk identity at the fleet's sleekest professional register:
+   the desk stays — paper, stamps, drawers — but every surface loses its
+   sprawl. One primary nav row + More, flat card grid, quieter chrome,
+   progressive disclosure, one primary action on tool pages. Presentation
+   only: no content, record or function removed anywhere.
+   ===================================================================== */
+
+/* header: no binder-hole strip, hairline rule, single clean row */
+.site-header::before { display: none; }
+.site-header { border-bottom: 1px solid var(--line); }
+.header-inner { align-items: center; padding: .55rem 1rem; position: relative; }
+.brand-text {
+  font-size: .92rem; transform: rotate(-1deg);
+  border-width: 2px; padding: .14rem .55rem .1rem;
+}
+.brand-mark { font-size: 1.25rem; transform: none; }
+
+/* primary nav: plain professional links, no folder tabs */
+.site-header .nav-primary { display: flex; align-items: center; gap: .15rem; flex-wrap: wrap; }
+.site-header .nav-primary > a {
+  font-family: var(--font-body); font-size: .92rem; font-weight: 600;
+  text-transform: none; letter-spacing: 0;
+  border: 0; border-radius: 999px; background: none; box-shadow: none;
+  padding: .45rem .75rem; margin: 0; position: static;
+}
+.site-header .nav-primary > a:hover { background: var(--paper-deep); border: 0; }
+.site-header .nav-primary > a[aria-current="page"] {
+  background: var(--paper-deep); color: var(--accent);
+  border: 0; box-shadow: none; margin: 0; padding: .45rem .75rem; top: 0;
+}
+
+/* More grouping: one disclosure holding tools + seasons */
+.nav-more { position: relative; }
+.nav-more > summary {
+  list-style: none; cursor: pointer;
+  font-family: var(--font-body); font-size: .92rem; font-weight: 600; color: var(--ink);
+  padding: .45rem .75rem; border-radius: 999px;
+}
+.nav-more > summary::-webkit-details-marker { display: none; }
+.nav-more > summary::after { content: " ▾"; color: var(--ink-soft); font-size: .8em; }
+.nav-more > summary:hover { background: var(--paper-deep); }
+.nav-more[open] > summary { background: var(--paper-deep); color: var(--accent); }
+.nav-more-panel {
+  position: absolute; right: 0; top: calc(100% + 8px); z-index: 60;
+  background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  box-shadow: var(--shadow-lift); padding: .7rem; min-width: 13.5rem;
+}
+.nav-more-panel .nav-more-h {
+  margin: .35rem .45rem .25rem; font-size: .7rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .09em; color: var(--ink-soft);
+}
+.nav-more-panel a {
+  display: block; font-family: var(--font-body); font-size: .92rem; font-weight: 600;
+  text-transform: none; letter-spacing: 0; color: var(--ink); text-decoration: none;
+  border: 0; border-radius: 8px; background: none; box-shadow: none;
+  padding: .4rem .45rem; margin: 0;
+}
+.nav-more-panel a:hover { background: var(--paper); border: 0; }
+.nav-more-panel a[aria-current="page"] {
+  color: var(--accent); background: var(--paper-deep); border: 0; box-shadow: none;
+  margin: 0; padding: .4rem .45rem; top: 0; position: static;
+}
+
+/* browse grid: flat, aligned, professional — no card rotation */
+.act-card:nth-child(odd), .act-card:nth-child(even) { transform: none; }
+.act-card:hover { transform: translateY(-2px); }
+.act-card::before { width: 84px; height: 20px; opacity: .65; }
+
+/* binder furniture on activity sheets: present, but quieter */
+.activity-card::before, .activity-card::after { opacity: .45; }
+.file-stamp { transform: rotate(3deg); }
+
+/* live-database strip on the homepage */
+.db-strip {
+  margin-top: 1.4rem; max-width: 62rem;
+  border-top: 2px solid var(--line); padding-top: .9rem;
+  font-size: .95rem; color: var(--ink-soft);
+}
+.db-strip p { margin: 0; }
+.db-strip strong { color: var(--ink); }
+
+/* homepage highlights: one disclosure instead of a promo wall */
+.home-highlights { margin: 0 0 1.5rem; }
+.home-highlights > summary {
+  cursor: pointer; font-weight: 700; color: var(--accent);
+  padding: .6rem .2rem; font-size: 1rem;
+}
+.home-highlights .season-promo { margin-top: .8rem; }
+
+/* generic on-demand disclosure (activity rating / related) */
+.disclosure > summary {
+  cursor: pointer; font-weight: 700; color: var(--accent); padding: .4rem 0;
+}
+.disclosure { margin-top: .8rem; }
+
+/* tool pages: exactly one solid primary action; the rest recede to ghost */
+body.tool-page .btn:not(.primary-action):not(#site-calm-toggle) {
+  background: transparent; color: var(--accent);
+}
+body.tool-page .btn.primary-action { font-size: 1.02rem; padding: .7rem 1.5rem; }
+
+/* filters panel: flatter, quieter */
+.filters { box-shadow: var(--shadow); }
+
+/* narrower, calmer measure on wide screens */
+@media (min-width: 1200px) { .wrap { max-width: 1120px; } }
+
+@media print {
+  .nav-more, .db-strip, .home-highlights { display: none !important; }
+  .disclosure > :not(summary) { display: block; }
+}

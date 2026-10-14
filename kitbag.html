@@ -29,6 +29,9 @@
 
 
 
+
+
+
 <!-- PLACEMENT:BEGIN -->
 <meta name="theme-color" content="#fffdf7">
 <link rel="icon" href="favicon.ico" sizes="48x48">
@@ -50,7 +53,7 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "The Kit Bag — Pack One Rainy Day — Activity Vault", "description": "The Kit Bag packs one whole rainy day indoors from the real Activity Vault catalog — five roles filled from the rainy-day shelf by age — and composes a printable kit list from the real materials fields of the activities it selects: deduplicated, grouped into consumables, equipment, and print-at-desk, every line traced to the activity that asked for it.", "url": "https://activity-vault-live.vercel.app/kitbag.html"}</script>
 <!-- PLACEMENT:END -->
 </head>
-<body>
+<body class="tool-page">
 <a class="skip-link" href="#kb-slots">Skip to the Kit Bag roles</a>
 <header class="site-header no-print">
   <div class="wrap header-inner">
@@ -58,26 +61,30 @@
       <span class="brand-mark" aria-hidden="true">🗂️</span>
       <span class="brand-text">Activity <strong>Vault</strong></span>
     </a>
-    <nav aria-label="Primary">
+    <nav aria-label="Primary" class="nav-primary">
       <a href="index.html">Browse</a>
-      <a href="desk.html">The Desk 🗄️</a>
+      <a href="desk.html">The Desk</a>
       <a href="planner.html">Plan my week</a>
-      <a href="day.html">Day Planner 🗓️</a>
-      <a href="kit.html">Kit 🧰</a>
-      <a href="partypack.html">Party Pack 🎉</a>
-      <a href="kitbag.html" aria-current="page">Kit Bag 🎒</a>
-      <a href="collections.html">Collections 📚</a>
-    </nav>
-    <nav aria-label="More tools and seasons" class="nav-secondary">
-      <a href="sub.html">Sub Tub 🆘</a>
-      <a href="party.html">Party Planner 🎉</a>
-      <a href="fieldtrip.html">Field Trips 🚌</a>
-      <span class="nav-div" aria-hidden="true">·</span>
-      <a href="halloween.html">Halloween 🎃</a>
-      <a href="thanksgiving.html">Thanksgiving 🦃</a>
-      <a href="winter.html">Winter ❄️</a>
-      <a href="spring.html">Spring 🌷</a>
-      <a href="summer.html">Summer ☀️</a>
+      <a href="collections.html">Collections</a>
+      <a href="kitbag.html" aria-current="page">Kit Bag</a>
+      <a href="partypack.html">Party Pack</a>
+      <details class="nav-more">
+        <summary>More</summary>
+        <div class="nav-more-panel">
+          <p class="nav-more-h">Tools</p>
+          <a href="day.html">Day Planner</a>
+          <a href="kit.html">Kit</a>
+          <a href="sub.html">Sub Tub</a>
+          <a href="party.html">Party Planner</a>
+          <a href="fieldtrip.html">Field Trips</a>
+          <p class="nav-more-h">Seasons</p>
+          <a href="halloween.html">Halloween</a>
+          <a href="thanksgiving.html">Thanksgiving</a>
+          <a href="winter.html">Winter</a>
+          <a href="spring.html">Spring</a>
+          <a href="summer.html">Summer</a>
+        </div>
+      </details>
     </nav>
     <button class="btn btn-ghost btn-small no-print" id="site-calm-toggle" type="button"
             aria-pressed="false" aria-label="Calm mode: turn off page animations and motion">
@@ -114,7 +121,7 @@
       <p class="field-hint">Filters use each activity's real age band, its real rainy-day category, and its real indoor location — those rules never loosen.</p>
     </div>
     <div class="kb-actions">
-      <button class="btn" id="kb-compose" type="button">🎒 Pack my bag</button>
+      <button class="btn primary-action" id="kb-compose" type="button">🎒 Pack my bag</button>
     </div>
     <p class="kb-status" id="kb-status" role="status" aria-live="polite"></p>
   </form>

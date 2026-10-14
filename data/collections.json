@@ -1679,6 +1679,46 @@
      "note": "Sunlight is slow; the log is how you know it is working — a shared control, one variable at a time, and a void trial declared without flinching."
     }
    ]
+  },
+  {
+   "id": "just-teens-fifth-time",
+   "title": "Just Teens, a Fifth Time",
+   "glyph": "🌗",
+   "when_to_use": "The fifth shelf banded for thirteen- and fourteen-year-olds ONLY — the floor-to-nine shelf: a season's heat counted in degree-days and a budburst predicted in ink, one yard mapped into its many microclimates, a three-team game with one enormous ball, a room conducted by learned hands, a museum of loaned objects on one table, counted sashiko stitches in indigo and white, introductions toured across drawn countries, and a true Celtic knot traced strand by strand. Reach for it when the teen room needs the band's eight thinnest categories — seasons, outdoor, movement, music, rainy-day, crafts, icebreakers and holidays — written for the room itself, not borrowed from younger shelves.",
+   "picks": [
+    {
+     "id": "growing-degree-day-ledger",
+     "note": "A plant keeps its calendar in heat, not in dates — daily degree-days in one ledger, a prediction in ink, and the plant itself does the grading."
+    },
+    {
+     "id": "microclimate-map-survey",
+     "note": "One yard holds many climates — twelve stations read inside one ten-minute window, drawn as a map that anyone can check with a thermometer."
+    },
+    {
+     "id": "kin-ball-first-session",
+     "note": "Three teams, one ball, no owner — serve by calling a colour, lift everything, and win by being the team the ball cannot catch out."
+    },
+    {
+     "id": "conducting-patterns-studio",
+     "note": "Your hands speak first; the room answers — patterns in two, three and four, cues that land, and a cut-off whose silence counts as music."
+    },
+    {
+     "id": "one-table-micro-museum",
+     "note": "A museum is an argument made of objects — loans under law, labels checked by their owners, and every object signed home entire."
+    },
+    {
+     "id": "sashiko-stitch-sampler-studio",
+     "note": "Small stitches, counted rows, no loose ends — a centuries-old stitch learned on scrap first, its wandering rows unpicked by their own makers."
+    },
+    {
+     "id": "personal-map-introductions",
+     "note": "Draw the country only you know — three-station tours of the places that made you, and blank regions that stay blank, unasked, entire."
+    },
+    {
+     "id": "celtic-knot-drawing-studio",
+     "note": "One line, no beginning it will admit to — over, under, over, traced all the way home before a drop of ink is allowed near it."
+    }
+   ]
   }
  ]
 }

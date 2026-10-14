@@ -29,6 +29,9 @@
 
 
 
+
+
+
 <!-- PLACEMENT:BEGIN -->
 <meta name="theme-color" content="#fffdf7">
 <link rel="icon" href="favicon.ico" sizes="48x48">
@@ -50,7 +53,7 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Sub Tub — emergency substitute plans — Activity Vault", "description": "The substitute-teacher rescue kit: pick your grade band, minutes to fill, and materials on hand — get a print-ready emergency plan with a sub note template.", "url": "https://activity-vault-live.vercel.app/sub.html"}</script>
 <!-- PLACEMENT:END -->
 </head>
-<body>
+<body class="tool-page">
 <a class="skip-link" href="#sub-plan">Skip to emergency plan</a>
 <header class="site-header">
   <div class="wrap header-inner">
@@ -58,26 +61,30 @@
       <span class="brand-mark" aria-hidden="true">🗂️</span>
       <span class="brand-text">Activity <strong>Vault</strong></span>
     </a>
-    <nav aria-label="Primary">
+    <nav aria-label="Primary" class="nav-primary">
       <a href="index.html">Browse</a>
-      <a href="desk.html">The Desk 🗄️</a>
+      <a href="desk.html">The Desk</a>
       <a href="planner.html">Plan my week</a>
-      <a href="day.html">Day Planner 🗓️</a>
-      <a href="kit.html">Kit 🧰</a>
-      <a href="kitbag.html">Kit Bag 🎒</a>
-      <a href="partypack.html">Party Pack 🎉</a>
-      <a href="collections.html">Collections 📚</a>
-    </nav>
-    <nav aria-label="More tools and seasons" class="nav-secondary">
-      <a href="sub.html" aria-current="page">Sub Tub 🆘</a>
-      <a href="party.html">Party Planner 🎉</a>
-      <a href="fieldtrip.html">Field Trips 🚌</a>
-      <span class="nav-div" aria-hidden="true">·</span>
-      <a href="halloween.html">Halloween 🎃</a>
-      <a href="thanksgiving.html">Thanksgiving 🦃</a>
-      <a href="winter.html">Winter ❄️</a>
-      <a href="spring.html">Spring 🌷</a>
-      <a href="summer.html">Summer ☀️</a>
+      <a href="collections.html">Collections</a>
+      <a href="kitbag.html">Kit Bag</a>
+      <a href="partypack.html">Party Pack</a>
+      <details class="nav-more">
+        <summary>More</summary>
+        <div class="nav-more-panel">
+          <p class="nav-more-h">Tools</p>
+          <a href="day.html">Day Planner</a>
+          <a href="kit.html">Kit</a>
+          <a href="sub.html" aria-current="page">Sub Tub</a>
+          <a href="party.html">Party Planner</a>
+          <a href="fieldtrip.html">Field Trips</a>
+          <p class="nav-more-h">Seasons</p>
+          <a href="halloween.html">Halloween</a>
+          <a href="thanksgiving.html">Thanksgiving</a>
+          <a href="winter.html">Winter</a>
+          <a href="spring.html">Spring</a>
+          <a href="summer.html">Summer</a>
+        </div>
+      </details>
     </nav>
     <button class="btn btn-ghost btn-small no-print" id="site-calm-toggle" type="button"
             aria-pressed="false" aria-label="Calm mode: turn off page animations and motion">
@@ -143,7 +150,7 @@
         <input type="text" id="sub-class" placeholder="e.g., 3rd grade, Room 12">
       </div>
     </fieldset>
-    <button class="btn" id="sub-generate" type="button">🆘 Build my emergency plan</button>
+    <button class="btn primary-action" id="sub-generate" type="button">🆘 Build my emergency plan</button>
   </form>
 
   <p id="sub-status" role="status" aria-live="polite" class="no-print"></p>

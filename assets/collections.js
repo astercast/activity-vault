@@ -219,7 +219,10 @@
     grid.hidden = inSingle;
     var sections = sectionsHost.querySelectorAll('.collection-section');
     Array.prototype.forEach.call(sections, function (s) {
-      s.hidden = inSingle && s.id !== hash;
+      /* Rotation 20 minimal pass: detail panels are on-demand only.
+         Browse mode shows the grid alone; a panel opens only when its
+         collection is routed to (card click / deep link). */
+      s.hidden = !inSingle || s.id !== hash;
     });
     allLinkWrap.hidden = !inSingle;
     statusEl.hidden = true;

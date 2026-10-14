@@ -196,6 +196,91 @@ def inject_site_meta(acts, colls):
     return len(pages), updated
 
 
+# ---------------------------------------------------------------------------
+# Rotation 20 minimal pass — the generator owns the site header on EVERY
+# page. The old header was the busiest element sitewide: 8 folder-tab
+# primary links + 9 secondary links sprawling across three rows. The
+# minimal header is ONE primary row (Browse, The Desk, Plan my week,
+# Collections, Kit Bag, Party Pack — VP-0002 pair kept in primary) plus
+# a single "More" disclosure grouping the remaining tools and all five
+# season hubs. Every destination survives; presentation only. Applied
+# idempotently to every .html on disk in main(), after placement, so
+# hand-written root pages and generated pages converge. aria-current is
+# preserved from the page's previous header.
+# ---------------------------------------------------------------------------
+_HEADER_RE = re.compile(r'<header class="site-header[^"]*">.*?</header>', re.S)
+_CURRENT_RE = re.compile(r'href="([^"]+)"[^>]*aria-current="page"|aria-current="page"[^>]*href="([^"]+)"')
+
+def _minimal_header(prefix, current_href, no_print):
+    def cur(href):
+        return ' aria-current="page"' if current_href and href.endswith(current_href.split('/')[-1]) and current_href == href else ''
+    # current_href is stored as the full href found on the page (with prefix)
+    def c(href):
+        return ' aria-current="page"' if current_href == href else ''
+    links_primary = [
+        ("index.html", "Browse"), ("desk.html", "The Desk"),
+        ("planner.html", "Plan my week"), ("collections.html", "Collections"),
+        ("kitbag.html", "Kit Bag"), ("partypack.html", "Party Pack"),
+    ]
+    tools = [("day.html", "Day Planner"), ("kit.html", "Kit"),
+             ("sub.html", "Sub Tub"), ("party.html", "Party Planner"),
+             ("fieldtrip.html", "Field Trips")]
+    seasons = [("halloween.html", "Halloween"), ("thanksgiving.html", "Thanksgiving"),
+               ("winter.html", "Winter"), ("spring.html", "Spring"), ("summer.html", "Summer")]
+    prim = "\n      ".join(
+        f'<a href="{prefix}{h}"{c(prefix + h)}>{label}</a>' for h, label in links_primary)
+    tool_links = "\n          ".join(
+        f'<a href="{prefix}{h}"{c(prefix + h)}>{label}</a>' for h, label in tools)
+    season_links = "\n          ".join(
+        f'<a href="{prefix}{h}"{c(prefix + h)}>{label}</a>' for h, label in seasons)
+    cls = 'site-header no-print' if no_print else 'site-header'
+    return f"""<header class="{cls}">
+  <div class="wrap header-inner">
+    <a class="brand" href="{prefix}index.html" aria-label="Activity Vault home">
+      <span class="brand-mark" aria-hidden="true">🗂️</span>
+      <span class="brand-text">Activity <strong>Vault</strong></span>
+    </a>
+    <nav aria-label="Primary" class="nav-primary">
+      {prim}
+      <details class="nav-more">
+        <summary>More</summary>
+        <div class="nav-more-panel">
+          <p class="nav-more-h">Tools</p>
+          {tool_links}
+          <p class="nav-more-h">Seasons</p>
+          {season_links}
+        </div>
+      </details>
+    </nav>
+    <button class="btn btn-ghost btn-small no-print" id="site-calm-toggle" type="button"
+            aria-pressed="false" aria-label="Calm mode: turn off page animations and motion">
+      <span aria-hidden="true">🍃</span> Calm: <span class="calm-state">off</span>
+    </button>
+  </div>
+</header>"""
+
+def inject_minimal_headers():
+    """Rewrite every page's header to the minimal one-row + More form."""
+    pages = [n for n in sorted(os.listdir(SITE)) if n.endswith(".html")]
+    actdir = os.path.join(SITE, "activity")
+    pages += [os.path.join("activity", n) for n in sorted(os.listdir(actdir)) if n.endswith(".html")]
+    done = 0
+    for rel in pages:
+        path = os.path.join(SITE, rel)
+        page = open(path).read()
+        m = _HEADER_RE.search(page)
+        assert m, f"minimal-header: no site header on {rel}"
+        old = m.group(0)
+        prefix = "../" if rel.startswith("activity" + os.sep) else ""
+        cm = _CURRENT_RE.search(old)
+        current = (cm.group(1) or cm.group(2)) if cm else None
+        new = _minimal_header(prefix, current, 'no-print' in old.split('>', 1)[0])
+        page = page[:m.start()] + new + page[m.end():]
+        open(path, "w").write(page)
+        done += 1
+    return done
+
+
 def load():
     acts = json.load(open(os.path.join(DATA, 'activities.json')))
     cats = json.load(open(os.path.join(DATA, 'categories.json')))
@@ -433,6 +518,8 @@ ACTIVITY_TEMPLATE = """<!DOCTYPE html>
     <section class="rate-box no-print" aria-labelledby="h-rate">
       <h2 id="h-rate">⭐ Tried this? Rate it</h2>
       <p class="rate-privacy">Your ratings live in <strong>this browser only</strong> — nobody else can see them. There are no community ratings here; every star on this card is yours.</p>
+      <details class="disclosure rate-disclosure">
+      <summary>Rate this activity, add a note, or write a reflection</summary>
       <form id="rate-form">
         <fieldset class="star-field">
           <legend>Your rating (1 to 5 stars)</legend>
@@ -471,6 +558,7 @@ ACTIVITY_TEMPLATE = """<!DOCTYPE html>
         </div>
         <p class="copy-status" id="reflect-status" role="status" aria-live="polite"></p>
       </div>
+      </details>
     </section>
     <div class="print-actions no-print">
       <button type="button" class="btn" onclick="window.print()">🖨️ Print this card</button>
@@ -944,7 +1032,8 @@ def render_activity(a, catmap, acts):
             '<div class="collection-head">'
             '<span class="collection-glyph-lg" aria-hidden="true">🔗</span>'
             f'<h2 class="collection-h2" id="h-related">Related {primary_name.lower()}</h2></div>'
-            f'<ol class="pick-list">{items}</ol></section>')
+            f'<details class="disclosure related-disclosure"><summary>See the related activities</summary>'
+            f'<ol class="pick-list">{items}</ol></details></section>')
     crumb_cat = a['categories'][0] if a['categories'] else ''
     crumb_cat_name = esc(catmap[crumb_cat]['name']) if crumb_cat else 'All'
     photo_block = ''
@@ -1220,7 +1309,7 @@ def main():
         sys.exit(1)
     actmap = {a['id']: a for a in acts}
     # Wave 9 explicit assert: every collection pick resolves to a real activity id.
-    assert len(colls) == 31, f"expected 31 collections, got {len(colls)}"
+    assert len(colls) == 32, f"expected 32 collections, got {len(colls)}"
     assert all(p['id'] in actmap for c in colls for p in c['picks']), \
         "collection pick does not resolve to a real activity id"
     # Wave 10 explicit assert: balance-buckets covers all 11 categories.
@@ -1884,6 +1973,8 @@ def main():
 
     # 6. Placement pass: generator-owned <head> meta on every page.
     n_pages, n_updated = inject_site_meta(acts, colls)
+    n_headers = inject_minimal_headers()
+    print(f"minimal header (rotation 20): one primary row + More on {n_headers} pages")
     print(f"placement: meta block on {n_updated}/{n_pages} pages.")
 
     print(f"BUILD OK — {len(acts)} activities, {rendered} pages rendered, "

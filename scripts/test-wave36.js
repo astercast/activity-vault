@@ -32,7 +32,7 @@ function ok(cond, label, extra) {
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const byId = {};
 acts.forEach(a => { byId[a.id] = a; });
-ok(acts.length === 739, '685 activities total', String(acts.length));
+ok(acts.length === 747, '685 activities total', String(acts.length));
 ok(new Set(acts.map(a => a.id)).size === acts.length, 'all ids unique');
 
 const NEW = ['big-story-stone-first-people', 'big-leaf-light-window-hold',
@@ -52,7 +52,7 @@ ok(covers(4) - covers(3) === 0, 'headline gap 30 -> 18, narrowed a seventh time'
 ok(acts.filter(a => a.age_min === 3).length === 160, '142 activities start at age 3');
 ok(acts.filter(a => a.age_max === 3).length === 102, '84 activities banded 3-only (12 each, waves 30-36)');
 ok(acts.filter(a => a.age_max <= 6).length === 153, 'early-years-only (age_max<=6) 123 -> 135');
-[13, 14].forEach(age => ok(covers(age) === 112, 'age ' + age + ' coverage 76 -> 88 (wave-39)', String(covers(age))));
+[13, 14].forEach(age => ok(covers(age) === 120, 'age ' + age + ' coverage 76 -> 88 (wave-39)', String(covers(age))));
 ok(covers(3) > covers(13), 'age 3 (142) stays ahead of ages 13/14 (76)');
 NEW.forEach(id => {
   ok(byId[id].age_min === 3 && byId[id].age_max === 3, id + ': banded 3-only (age_min 3, age_max 3)');
@@ -136,29 +136,29 @@ ok(/full-weight centre-and-edge test/.test(byId['big-cushion-bridge-crossing'].s
 
 // 5. Category + enrichment deltas from this wave.
 const prim = cat => acts.filter(a => a.categories[0] === cat).length;
-ok(prim('holidays') === 55, 'holidays primary 50 -> 51');
-ok(prim('seasons') === 48, 'seasons primary 38 -> 39');
-ok(prim('rainy-day') === 42, 'rainy-day primary 37 -> 38');
+ok(prim('holidays') === 56, 'holidays primary 50 -> 51');
+ok(prim('seasons') === 49, 'seasons primary 38 -> 39');
+ok(prim('rainy-day') === 43, 'rainy-day primary 37 -> 38');
 ok(prim('stem') === 122, 'stem primary 117 -> 118');
 ok(prim('team-community') === 78, 'team-community primary 74 -> 75');
-ok(prim('icebreakers') === 50, 'icebreakers primary 44 -> 45');
-ok(prim('outdoor') === 63, 'outdoor primary 54 -> 55');
-ok(prim('music-rhythm') === 43, 'music-rhythm primary 36 -> 38');
-ok(prim('crafts') === 101, 'crafts primary 96 -> 97');
-ok(prim('pe-movement') === 74, 'pe-movement primary 67 -> 68');
+ok(prim('icebreakers') === 51, 'icebreakers primary 44 -> 45');
+ok(prim('outdoor') === 64, 'outdoor primary 54 -> 55');
+ok(prim('music-rhythm') === 44, 'music-rhythm primary 36 -> 38');
+ok(prim('crafts') === 102, 'crafts primary 96 -> 97');
+ok(prim('pe-movement') === 75, 'pe-movement primary 67 -> 68');
 ok(prim('quiet-focus') === 63, 'quiet-focus primary 60 -> 61');
-ok(acts.filter(a => a.copy_free).length === 359, 'copy_free 293 -> 305');
-ok(acts.filter(a => a.no_elimination).length === 161, 'no_elimination 105 -> 111');
-ok(acts.filter(a => a.inclusion).length === 221, 'inclusion 155 -> 167');
+ok(acts.filter(a => a.copy_free).length === 367, 'copy_free 293 -> 305');
+ok(acts.filter(a => a.no_elimination).length === 169, 'no_elimination 105 -> 111');
+ok(acts.filter(a => a.inclusion).length === 229, 'inclusion 155 -> 167');
 const tagCount = t => acts.filter(a => (a.tags || []).includes(t)).length;
 ok(tagCount('holiday:indigenous-peoples-day') === 6, 'indigenous-peoples-day tag 5 -> 6 (off the tag floor)', String(tagCount('holiday:indigenous-peoples-day')));
-ok(tagCount('season:spring') === 43, 'spring tag 40 -> 41 (second-thinnest season rises)', String(tagCount('season:spring')));
+ok(tagCount('season:spring') === 44, 'spring tag 40 -> 41 (second-thinnest season rises)', String(tagCount('season:spring')));
 ok(tagCount('holiday:mlk-day') === 6, 'mlk-day tag unchanged at 6', String(tagCount('holiday:mlk-day')));
-ok(tagCount('season:summer') === 37, 'summer tag unchanged at 31', String(tagCount('season:summer')));
+ok(tagCount('season:summer') === 39, 'summer tag unchanged at 31', String(tagCount('season:summer')));
 
 // 6. The 26th collection: Little Hands, Just Three, a Seventh Time — earlier shelves intact.
 const colls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/collections.json'), 'utf8')).collections;
-ok(colls.length === 31, '26 collections', String(colls.length));
+ok(colls.length === 32, '26 collections', String(colls.length));
 const jt = colls.find(c => c.id === 'little-hands-just-three-seventh-time');
 ok(!!jt, 'little-hands-just-three-seventh-time collection present');
 ok(jt.picks.length === 12, 'just-three-seventh-time collection has 12 picks');
@@ -200,7 +200,7 @@ const rootPages = fs.readdirSync(ROOT).filter(f => f.endsWith('.html'));
 const actPages = fs.readdirSync(path.join(ROOT, 'activity')).filter(f => f.endsWith('.html'));
 const allPages = rootPages.map(f => path.join(ROOT, f))
   .concat(actPages.map(f => path.join(ROOT, 'activity', f)));
-ok(allPages.length === 758, '704 pages on disk (685 activity + 19 root)', String(allPages.length));
+ok(allPages.length === 766, '704 pages on disk (685 activity + 19 root)', String(allPages.length));
 const OG = 'https://activity-vault-live.vercel.app/assets/og-card.png';
 allPages.forEach(p => {
   const s = fs.readFileSync(p, 'utf8');
@@ -251,13 +251,13 @@ ok(!ogPage.includes('baking-cupcakes'), 'cupcake photo NOT wired onto the volcan
 const collHtml = fs.readFileSync(path.join(ROOT, 'collections.html'), 'utf8');
 ok(!collHtml.includes('Nine teacher-ready'), 'VP-0008: stale "Nine" gone from the hero');
 ok(!collHtml.includes('Nine hand-picked'), 'VP-0008: stale "Nine" gone from the meta description');
-ok(collHtml.includes('<span id="coll-hero-count">Thirty-one</span>'),
+ok(collHtml.includes('<span id="coll-hero-count">Thirty-two</span>'),
   'VP-0008: hero numeral is a live-derived span (static fallback = current count, spelled out)');
 const collJs = fs.readFileSync(path.join(ROOT, 'assets/collections.js'), 'utf8');
 ok(collJs.includes("getElementById('coll-hero-count')") && collJs.includes('numberWord(collections.length)'),
   'VP-0008: hero numeral set from collections.length on load — same source as grid + status line');
 const collLd = JSON.parse(collHtml.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
-ok(collLd.mainEntity && collLd.mainEntity.numberOfItems === 31,
+ok(collLd.mainEntity && collLd.mainEntity.numberOfItems === 32,
   'VP-0008: collections JSON-LD numberOfItems derives from the data (26)');
 // Same-class catch, same pass: planner.html's "521 real activities"
 // matched no derivable pool (defaults give 655) — numeral dropped.

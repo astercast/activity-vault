@@ -5,17 +5,17 @@ Hundreds of real, classic, public-domain activity concepts — filterable by age
 group size, materials, and category. Plan-my-week planner. Printable one-page cards.
 
 ## Categories
-- Seasons: 123 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
-- Holidays: 128 activities — Festive projects and games for the days the whole group looks forward to.
-- Crafts: 165 activities — Hands-on making: fold it, paint it, build it, take it home.
+- Seasons: 124 activities — Activities that ride the turning year — fall leaves, winter making, spring planting, summer play.
+- Holidays: 129 activities — Festive projects and games for the days the whole group looks forward to.
+- Crafts: 166 activities — Hands-on making: fold it, paint it, build it, take it home.
 - STEM: 159 activities — Experiments, engineering challenges, and satisfying science demos.
-- PE & Movement: 125 activities — Run, jump, dance — activities that burn off the wiggles.
+- PE & Movement: 126 activities — Run, jump, dance — activities that burn off the wiggles.
 - Team & Community: 150 activities — Turn a group into a crew: cooperation, trust, and belonging.
-- Icebreakers: 76 activities — First-day friendly: learn names, laugh, and loosen up fast.
-- Outdoor: 119 activities — Fresh-air activities for fields, playgrounds, and nature walks.
-- Rainy Day: 75 activities — Stuck inside? These keep a roomful of kids happy without a gym.
+- Icebreakers: 77 activities — First-day friendly: learn names, laugh, and loosen up fast.
+- Outdoor: 120 activities — Fresh-air activities for fields, playgrounds, and nature walks.
+- Rainy Day: 76 activities — Stuck inside? These keep a roomful of kids happy without a gym.
 - Quiet & Focus: 137 activities — Wind-down worthy: calm, creative, individual or small-group.
-- Music & Rhythm: 49 activities — Drums, shakers, rhythm games, and songs — make some noise.
+- Music & Rhythm: 50 activities — Drums, shakers, rhythm games, and songs — make some noise.
 
 ## API — start at data/v1/index.json (self-describing manifest)
 - data/v1/index.json — api manifest
@@ -101,7 +101,7 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
   when an occasion holds fewer real activities than the arc has
   parts, the page says so in numbers and offers the nearest real
   options — it never pads a plan. Printable party sheet + copy-as-text.
-- collections.html — Curated collections: 31 teacher-ready bundles (rainy-day
+- collections.html — Curated collections: 32 teacher-ready bundles (rainy-day
   rescue, first day, sub tub, winter party, spring burst, summer splash, haunted halls, grateful gathering, winter lights…)
   each with a curator's note per pick; printable and copy-able per collection.
 - api.html — API docs with a Try-the-API console (endpoint picker, fetch, pretty JSON).
@@ -882,6 +882,11 @@ One sentence: a celebration your family loves.
 Categories: Holidays, Team & Community | Ages 5-14 | Group 4-40 | 5-10 min | No prep | indoor
 Page: activity/celebration-circle.html
 
+### Celtic Knot Drawing Studio
+For St. Patrick's Day, teens draw true Celtic knots on a dot grid: one unbroken line woven over and under itself, checked crossing by crossing.
+Categories: Holidays | Ages 13-14 | Group 4-16 | 45-60 min | Prep needed | indoor
+Page: activity/celtic-knot-drawing-studio.html
+
 ### Chain Reaction Machines
 Teams build one link each of a giant chain-reaction machine — then debug the handoffs until the whole thing runs.
 Categories: STEM, Team & Community | Ages 8-12 | Group 6-25 | 60-60 min | Prep needed | indoor
@@ -1036,6 +1041,11 @@ Page: activity/compliment-circle.html
 A working compost heap run by teens: built in layers, turned on a rota, and read weekly by thermometer — the heat is the evidence it is alive.
 Categories: Seasons | Ages 13-14 | Group 4-16 | 45-60 min | Prep needed | outdoor
 Page: activity/compost-heap-temperature-ledger.html
+
+### Conducting Patterns Studio
+Teens learn to lead music with their hands: beat patterns in two, three and four, clear cueing, and a room that starts and stops together.
+Categories: Music & Rhythm | Ages 13-14 | Group 6-24 | 45-60 min | Prep needed | indoor
+Page: activity/conducting-patterns-studio.html
 
 ### Continents Map Puzzle
 Cut out the seven continents and fit them onto a blank world map.
@@ -1647,6 +1657,11 @@ Cover a wall in butcher paper and let every group claim a section — the finish
 Categories: Team & Community, Crafts | Ages 5-12 | Group 6-30 | 45-45 min | Prep needed | indoor
 Page: activity/group-mural.html
 
+### Growing Degree-Day Ledger
+Teens keep a season's heat accounts: daily temperatures become growing degree-days, a budburst prediction is written down, and the plants grade it.
+Categories: Seasons | Ages 13-14 | Group 4-16 | 45-60 min | Prep needed | outdoor
+Page: activity/growing-degree-day-ledger.html
+
 ### Guess the Leader
 One guesser, one secret leader — the whole room copies the moves.
 Categories: Icebreakers | Ages 5-12 | Group 6-30 | 5-10 min | No prep | indoor
@@ -1952,6 +1967,11 @@ Bold color blocks in the kente tradition — design a strip that means something
 Categories: Crafts | Ages 6-12 | Group 2-30 | 25-40 min | Prep needed | indoor
 Page: activity/kente-pattern-strips.html
 
+### Kin-Ball First Session
+A three-team game played with one enormous ball: serve by calling a colour, keep the ball off your ground, and win by being hardest to catch out.
+Categories: PE & Movement | Ages 13-14 | Group 12-24 | 45-60 min | Prep needed | indoor/outdoor
+Page: activity/kin-ball-first-session.html
+
 ### Kinara Candle Counting
 Seven candles, three colors, one counting system — the math inside the kinara.
 Categories: STEM, Crafts | Ages 5-10 | Group 2-24 | 20-30 min | Prep needed | indoor
@@ -2197,6 +2217,11 @@ Nine branches, hundreds of paper tiles — a mosaic menorah built one square at 
 Categories: Crafts | Ages 5-12 | Group 2-30 | 25-45 min | Prep needed | indoor
 Page: activity/menorah-mosaic-tiles.html
 
+### Microclimate Map Survey
+Teens read temperature, shade and wind at a grid of stations in one place at one hour, and draw the map of its many small climates.
+Categories: Outdoor | Ages 13-14 | Group 6-18 | 45-60 min | Prep needed | outdoor
+Page: activity/microclimate-map-survey.html
+
 ### Midnight Around the World
 One hosted evening that follows midnight across the time zones: live arithmetic, a wall map, and each city greeted properly as its year turns.
 Categories: Holidays | Ages 13-14 | Group 6-30 | 40-60 min | Prep needed | indoor
@@ -2402,6 +2427,11 @@ Eight pages from a single folded sheet: teens plan, sequence, letter and trade a
 Categories: Crafts | Ages 13-14 | Group 2-24 | 40-55 min | Prep needed | indoor
 Page: activity/one-sheet-zine-workshop.html
 
+### One-Table Micro Museum
+On a rainy day, teen curators build a real museum on one table: objects on loan from their owners, honest labels, and one argument made of things.
+Categories: Rainy Day | Ages 13-14 | Group 6-18 | 50-60 min | Prep needed | indoor
+Page: activity/one-table-micro-museum.html
+
 ### One-Word Story Chain
 Build a story one sentence per person around the circle — plot twists mandatory, logic optional.
 Categories: Team & Community, Icebreakers, Quiet & Focus | Ages 7-12 | Group 5-25 | 20-20 min | No prep | indoor
@@ -2606,6 +2636,11 @@ Page: activity/pass-it-down-delivery-line.html
 Everyone teaches a five-minute skill — you leave knowing twelve new things.
 Categories: Team & Community | Ages 12-14 | Group 6-30 | 30-60 min | No prep | indoor
 Page: activity/peer-skill-swap.html
+
+### Personal Map Introductions
+New teens draw a map of the places that made them — real, remembered, or hoped for — and introduce themselves by giving the room a tour.
+Categories: Icebreakers | Ages 13-14 | Group 6-24 | 40-55 min | Prep needed | indoor
+Page: activity/personal-map-introductions.html
 
 ### Photo Scavenger Sprint
 Teams sprint around capturing a photo list — funniest, tallest, bluest — then present their best shots for votes.
@@ -2896,6 +2931,11 @@ Page: activity/rose-thorn-bud.html
 Layered colored sand in clear bottles — desert landscapes you can shake.
 Categories: Crafts, Seasons | Ages 4-12 | Group 2-30 | 20-35 min | Prep needed | indoor
 Page: activity/sand-art-bottles.html
+
+### Sashiko Stitch Sampler Studio
+Teens learn sashiko's running stitch — counted rows of small, even stitches through cloth — and build a sampler of traditional geometric patterns.
+Categories: Crafts | Ages 13-14 | Group 4-16 | 50-60 min | Prep needed | indoor
+Page: activity/sashiko-stitch-sampler-studio.html
 
 ### Scarecrow Dress-Up Relay
 Sprint, dress like a scarecrow, strike a pose, sprint back — tag, you're it.

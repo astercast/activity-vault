@@ -39,26 +39,30 @@
       <span class="brand-mark" aria-hidden="true">🗂️</span>
       <span class="brand-text">Activity <strong>Vault</strong></span>
     </a>
-    <nav aria-label="Primary">
+    <nav aria-label="Primary" class="nav-primary">
       <a href="../index.html">Browse</a>
-      <a href="../desk.html">The Desk 🗄️</a>
+      <a href="../desk.html">The Desk</a>
       <a href="../planner.html">Plan my week</a>
-      <a href="../day.html">Day Planner 🗓️</a>
-      <a href="../kit.html">Kit 🧰</a>
-      <a href="../kitbag.html">Kit Bag 🎒</a>
-      <a href="../partypack.html">Party Pack 🎉</a>
-      <a href="../collections.html">Collections 📚</a>
-    </nav>
-    <nav aria-label="More tools and seasons" class="nav-secondary">
-      <a href="../sub.html">Sub Tub 🆘</a>
-      <a href="../party.html">Party Planner 🎉</a>
-      <a href="../fieldtrip.html">Field Trips 🚌</a>
-      <span class="nav-div" aria-hidden="true">·</span>
-      <a href="../halloween.html">Halloween 🎃</a>
-      <a href="../thanksgiving.html">Thanksgiving 🦃</a>
-      <a href="../winter.html">Winter ❄️</a>
-      <a href="../spring.html">Spring 🌷</a>
-      <a href="../summer.html">Summer ☀️</a>
+      <a href="../collections.html">Collections</a>
+      <a href="../kitbag.html">Kit Bag</a>
+      <a href="../partypack.html">Party Pack</a>
+      <details class="nav-more">
+        <summary>More</summary>
+        <div class="nav-more-panel">
+          <p class="nav-more-h">Tools</p>
+          <a href="../day.html">Day Planner</a>
+          <a href="../kit.html">Kit</a>
+          <a href="../sub.html">Sub Tub</a>
+          <a href="../party.html">Party Planner</a>
+          <a href="../fieldtrip.html">Field Trips</a>
+          <p class="nav-more-h">Seasons</p>
+          <a href="../halloween.html">Halloween</a>
+          <a href="../thanksgiving.html">Thanksgiving</a>
+          <a href="../winter.html">Winter</a>
+          <a href="../spring.html">Spring</a>
+          <a href="../summer.html">Summer</a>
+        </div>
+      </details>
     </nav>
     <button class="btn btn-ghost btn-small no-print" id="site-calm-toggle" type="button"
             aria-pressed="false" aria-label="Calm mode: turn off page animations and motion">
@@ -106,6 +110,8 @@
     <section class="rate-box no-print" aria-labelledby="h-rate">
       <h2 id="h-rate">⭐ Tried this? Rate it</h2>
       <p class="rate-privacy">Your ratings live in <strong>this browser only</strong> — nobody else can see them. There are no community ratings here; every star on this card is yours.</p>
+      <details class="disclosure rate-disclosure">
+      <summary>Rate this activity, add a note, or write a reflection</summary>
       <form id="rate-form">
         <fieldset class="star-field">
           <legend>Your rating (1 to 5 stars)</legend>
@@ -144,6 +150,7 @@
         </div>
         <p class="copy-status" id="reflect-status" role="status" aria-live="polite"></p>
       </div>
+      </details>
     </section>
     <div class="print-actions no-print">
       <button type="button" class="btn" onclick="window.print()">🖨️ Print this card</button>
@@ -153,7 +160,7 @@
     </div>
     <p class="print-only print-url">Full activity card — <span class="print-url-here"></span></p>
   </article>
-  <section class="collection-section no-print" aria-labelledby="h-related"><div class="collection-head"><span class="collection-glyph-lg" aria-hidden="true">🔗</span><h2 class="collection-h2" id="h-related">Related team &amp; community</h2></div><ol class="pick-list"><li class="pick"><div class="pick-row"><a class="pick-name" href="big-new-friend-room-tour.html">Big New Friend Room Tour</a></div><p class="pick-facts">Ages 3–3 · 10–20 min</p><p class="pick-note">A new friend needs three places first: where the cups live, where the coats hang, and where the quiet is. The group shows all three, pointing and naming.</p></li><li class="pick"><div class="pick-row"><a class="pick-name" href="blanket-ball-bounce-together.html">Blanket Ball Bounce Together</a></div><p class="pick-facts">Ages 3–5 · 10–20 min</p><p class="pick-note">Everyone holds the edge of one blanket, one soft ball rolls in the middle, and the whole group&#x27;s job is the same: keep it on, keep it low.</p></li><li class="pick"><div class="pick-row"><a class="pick-name" href="pass-it-down-delivery-line.html">Pass-It-Down Delivery Line</a></div><p class="pick-facts">Ages 3–5 · 10–20 min</p><p class="pick-note">A line of hands moves soft picnic things, one at a time, into the basket — every hand touches every delivery.</p></li></ol></section>
+  <section class="collection-section no-print" aria-labelledby="h-related"><div class="collection-head"><span class="collection-glyph-lg" aria-hidden="true">🔗</span><h2 class="collection-h2" id="h-related">Related team &amp; community</h2></div><details class="disclosure related-disclosure"><summary>See the related activities</summary><ol class="pick-list"><li class="pick"><div class="pick-row"><a class="pick-name" href="big-new-friend-room-tour.html">Big New Friend Room Tour</a></div><p class="pick-facts">Ages 3–3 · 10–20 min</p><p class="pick-note">A new friend needs three places first: where the cups live, where the coats hang, and where the quiet is. The group shows all three, pointing and naming.</p></li><li class="pick"><div class="pick-row"><a class="pick-name" href="blanket-ball-bounce-together.html">Blanket Ball Bounce Together</a></div><p class="pick-facts">Ages 3–5 · 10–20 min</p><p class="pick-note">Everyone holds the edge of one blanket, one soft ball rolls in the middle, and the whole group&#x27;s job is the same: keep it on, keep it low.</p></li><li class="pick"><div class="pick-row"><a class="pick-name" href="pass-it-down-delivery-line.html">Pass-It-Down Delivery Line</a></div><p class="pick-facts">Ages 3–5 · 10–20 min</p><p class="pick-note">A line of hands moves soft picnic things, one at a time, into the basket — every hand touches every delivery.</p></li></ol></details></section>
 </main>
 <footer class="site-footer no-print">
   <div class="wrap"><p>Activity Vault — the all-in-one activity archive for teachers &amp; after-school programs.</p></div>

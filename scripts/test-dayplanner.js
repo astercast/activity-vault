@@ -157,7 +157,7 @@ ok(DP.fitsAge(byId['morse-code-signal-post'], 9) === true, 'older record fits in
   ok(html.indexOf('id="day-sheet"') !== -1, 'day.html has the printable day sheet');
   ok(html.indexOf('id="dp-starter"') !== -1, 'day.html offers the Just Three starter day');
   ok(html.indexOf('id="dp-print"') !== -1, 'day.html has the print action');
-  ok(html.indexOf('739 real activities') !== -1, 'day.html cites the true catalog size');
+  ok(html.indexOf('747 real activities') !== -1, 'day.html cites the true catalog size');
   const js = fs.readFileSync(path.join(ROOT, 'assets/dayplanner.js'), 'utf8');
   ok(js.indexOf('VaultDayPlanner') !== -1, 'day logic runs on the pure core');
   ok(js.indexOf('data/activities.json') !== -1, 'day logic reads the real catalog file');
