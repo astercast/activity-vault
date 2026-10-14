@@ -57,7 +57,12 @@ for (const a of acts) {
    frame shows, 21 pulled to designed absence, 2 already resolved in
    rotation 27. The floor is RE-DERIVED DOWN 241 -> 220 in this same
    commit: an unprovable claim may not stand, and floors state the truth,
-   never protect a number. */
-ok(withPhoto >= 220, 'coverage: at least the filed 220 activities carry a sourced photo (got ' + withPhoto + ')');
+   never protect a number.
+   Rotation 29: the honest-remainder hunt sourced two more truthful photos
+   (ice-melt-rescue-race, children working toys out of an ice block at
+   Akita Station, CC BY-SA 4.0; nature-color-match-walk, a BLM Alaska
+   student matching nature finds to colour cards, Public domain), raising
+   the filed photo floor 220 -> 222 in the same commit. */
+ok(withPhoto >= 222, 'coverage: at least the filed 222 activities carry a sourced photo (got ' + withPhoto + ')');
 ok(withSource >= 93, 'coverage: at least the filed 93 activities carry a source link (got ' + withSource + ')');
 console.log('test-r23: ' + passed + ' assertions passed; photo ' + withPhoto + '/747, source ' + withSource + '/747');
