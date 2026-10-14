@@ -13,8 +13,8 @@
 
   /* Hand links: collections that tie to a tool get a "pairs with" callout. */
   var TIES = {
-    'sub-tub-essentials': { label: '🆘 Pairs with the Sub Tub kit', href: 'sub.html' },
-    'winter-party-night': { label: '❄️ Pairs with the Party Planner winter theme', href: 'party.html' }
+    'sub-tub-essentials': { label: 'Pairs with the Sub Tub kit', href: 'sub.html' },
+    'winter-party-night': { label: 'Pairs with the Party Planner winter theme', href: 'party.html' }
   };
 
   /* Spelled-out count for the hero (VP-0008): 0–99, Title-case first word. */
@@ -46,7 +46,7 @@
     if (!R) return null;
     var entry = R.getRating(activityId);
     if (!entry) return null;
-    var s = el('span', 'rate-badge', '⭐ ' + entry.stars + '★ — your rating');
+    var s = el('span', 'rate-badge', 'Your rating: ' + entry.stars + ' of 5');
     s.setAttribute('aria-label', 'You rated this activity ' + entry.stars + ' of 5 stars');
     return s;
   }
@@ -58,22 +58,30 @@
       a.location.map(function (l) { return l === 'indoor' ? 'indoors' : 'outdoors'; }).join(' & ');
   }
 
-  function renderGrid(collections) {
+  /* Rotation 21: cards are distinguished by real content — the moment the
+     bundle is for (when_to_use), its size, its age/time span, and the names
+     of its first activities — never by an emoji glyph. */
+  function renderGrid(collections, actmap) {
     grid.textContent = '';
     collections.forEach(function (c) {
       var card = el('a', 'collection-card');
       card.href = '#' + c.id;
-      card.setAttribute('aria-label', c.glyph + ' ' + c.title + ': ' + c.picks.length +
+      var names = c.picks.slice(0, 3).map(function (p) {
+        var a = actmap[p.activity_id];
+        return a ? a.name : p.activity_id;
+      });
+      var more = c.picks.length - names.length;
+      card.setAttribute('aria-label', c.title + ': ' + c.picks.length +
         ' activities, ages ' + c.age_span[0] + ' to ' + c.age_span[1] +
-        ', ' + c.time_span[0] + ' to ' + c.time_span[1] + ' minutes each');
-      var glyph = el('span', 'collection-glyph', c.glyph);
-      glyph.setAttribute('aria-hidden', 'true');
-      card.appendChild(glyph);
+        ', ' + c.time_span[0] + ' to ' + c.time_span[1] + ' minutes each. Includes ' +
+        names.join(', ') + (more > 0 ? ' and ' + more + ' more' : ''));
       card.appendChild(el('span', 'collection-title', c.title));
-      card.appendChild(el('span', 'collection-count', c.picks.length + ' activities'));
-      card.appendChild(el('span', 'collection-span',
-        'Ages ' + c.age_span[0] + '–' + c.age_span[1] + ' · ' +
-        c.time_span[0] + '–' + c.time_span[1] + ' min'));
+      card.appendChild(el('span', 'collection-count',
+        c.picks.length + ' activities · Ages ' + c.age_span[0] + '–' + c.age_span[1] +
+        ' · ' + c.time_span[0] + '–' + c.time_span[1] + ' min each'));
+      card.appendChild(el('span', 'collection-when-snippet', c.when_to_use));
+      card.appendChild(el('span', 'collection-includes',
+        'Includes: ' + names.join(', ') + (more > 0 ? ' · +' + more + ' more' : '')));
       grid.appendChild(card);
     });
     grid.hidden = false;
@@ -85,11 +93,8 @@
     sec.setAttribute('aria-labelledby', 'coll-' + c.id);
 
     var head = el('div', 'collection-head');
-    var glyph = el('span', 'collection-glyph-lg', c.glyph);
-    glyph.setAttribute('aria-hidden', 'true');
     var h2 = el('h2', 'collection-h2', c.title);
     h2.id = 'coll-' + c.id;
-    head.appendChild(glyph);
     head.appendChild(h2);
     sec.appendChild(head);
 
@@ -122,22 +127,22 @@
       if (badge) row.appendChild(badge);
       li.appendChild(row);
       li.appendChild(el('p', 'pick-facts', facts(a)));
-      li.appendChild(el('p', 'pick-note', '💡 Why it’s here: ' + p.curator_note));
+      li.appendChild(el('p', 'pick-note', 'Why it’s here: ' + p.curator_note));
       list.appendChild(li);
     });
     sec.appendChild(list);
 
     var actions = el('div', 'collection-actions no-print');
-    var printBtn = el('button', 'btn btn-small', '🖨️ Print this collection');
+    var printBtn = el('button', 'btn btn-small', 'Print this collection');
     printBtn.type = 'button';
     printBtn.addEventListener('click', function () { printOne(c.id); });
-    var copyBtn = el('button', 'btn btn-small btn-ghost', '📋 Copy this collection');
+    var copyBtn = el('button', 'btn btn-small btn-ghost', 'Copy this collection');
     copyBtn.type = 'button';
     var copyStatus = el('span', 'copy-status');
     copyStatus.setAttribute('role', 'status');
     copyStatus.setAttribute('aria-live', 'polite');
     copyBtn.addEventListener('click', function () { copyOne(c, actmap, copyStatus); });
-    var planLink = el('a', 'btn btn-small btn-ghost', '🗓️ Plan a week from this');
+    var planLink = el('a', 'btn btn-small btn-ghost', 'Plan a week from this');
     planLink.href = 'planner.html?from=collection:' + encodeURIComponent(c.id);
     actions.appendChild(printBtn);
     actions.appendChild(copyBtn);
@@ -167,7 +172,7 @@
   function copyOne(c, actmap, statusEl) {
     var R = window.VaultRatings;
     var lines = [
-      '📚 Activity Vault — ' + c.glyph + ' ' + c.title,
+      'Activity Vault — ' + c.title,
       'When to reach for it: ' + c.when_to_use,
       ''
     ];
@@ -175,11 +180,11 @@
       var a = actmap[p.activity_id];
       if (!a) return;
       lines.push('• ' + a.name + ' — ' + facts(a));
-      lines.push('  💡 Why it’s here: ' + p.curator_note);
+      lines.push('  Why it’s here: ' + p.curator_note);
       if (R) {
         var entry = R.getRating(a.id);
         if (entry) {
-          var rline = '  ⭐ You rated this ' + entry.stars + '/5';
+          var rline = '  You rated this ' + entry.stars + '/5';
           if (entry.note) rline += ' — “' + entry.note + '”';
           lines.push(rline);
         }
@@ -245,7 +250,7 @@
       var collections = res[0].collections || [];
       var actmap = {};
       (res[1].activities || []).forEach(function (a) { actmap[a.id] = a; });
-      renderGrid(collections);
+      renderGrid(collections, actmap);
       collections.forEach(function (c) {
         sectionsHost.appendChild(renderSection(c, actmap));
       });

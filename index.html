@@ -33,6 +33,7 @@
 
 
 
+
 <!-- PLACEMENT:BEGIN -->
 <meta name="theme-color" content="#fffdf7">
 <link rel="icon" href="favicon.ico" sizes="48x48">
@@ -59,24 +60,23 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="brand" href="index.html" aria-label="Activity Vault home">
-      <span class="brand-mark" aria-hidden="true">🗂️</span>
       <span class="brand-text">Activity <strong>Vault</strong></span>
     </a>
     <nav aria-label="Primary" class="nav-primary">
       <a href="index.html" aria-current="page">Browse</a>
-      <a href="desk.html">The Desk</a>
       <a href="planner.html">Plan my week</a>
       <a href="collections.html">Collections</a>
       <a href="kitbag.html">Kit Bag</a>
-      <a href="partypack.html">Party Pack</a>
       <details class="nav-more">
         <summary>More</summary>
         <div class="nav-more-panel">
           <p class="nav-more-h">Tools</p>
+          <a href="desk.html">The Desk</a>
           <a href="day.html">Day Planner</a>
           <a href="kit.html">Kit</a>
           <a href="sub.html">Sub Tub</a>
           <a href="party.html">Party Planner</a>
+          <a href="partypack.html">Party Pack</a>
           <a href="fieldtrip.html">Field Trips</a>
           <p class="nav-more-h">Seasons</p>
           <a href="halloween.html">Halloween</a>
@@ -89,7 +89,7 @@
     </nav>
     <button class="btn btn-ghost btn-small no-print" id="site-calm-toggle" type="button"
             aria-pressed="false" aria-label="Calm mode: turn off page animations and motion">
-      <span aria-hidden="true">🍃</span> Calm: <span class="calm-state">off</span>
+      Calm: <span class="calm-state">off</span>
     </button>
   </div>
 </header>
@@ -97,24 +97,16 @@
 <main class="wrap">
   <section class="hero" aria-labelledby="hero-title">
     <span class="kicker">The live activity database · kept current by The Scout</span>
-    <h1 id="hero-title">Every great activity,<br>in <span class="squiggle">one live database.</span></h1>
-    <p class="lede">A living database of full-length activity records — games, crafts, STEM demos, wind-downs — searchable by age, time, group size, and what you actually have on hand. Every record is complete: setup, materials, steps, variations, safety and inclusion. It grows every wave, and its gaps are published, not hidden.</p>
+    <h1 id="hero-title">Every great activity,<br>in one live database.</h1>
+    <p class="lede">Full-length activities — games, crafts, STEM demos, wind-downs — searchable by age, time, group size, and what you actually have on hand. Every record is complete: setup, materials, steps, variations, safety and inclusion.</p>
     <div class="hero-actions no-print">
-      <a class="btn" href="#desk">Find an activity ↓</a>
-      <a class="btn btn-ghost" href="planner.html">Plan my week</a>
+      <a class="btn" href="#desk">Find an activity</a>
+      <a class="hero-secondary" href="planner.html">Plan my week →</a>
     </div>
-    <aside class="desk-note no-print" aria-label="A note from the curator">
-      <button type="button" id="curator-note" aria-live="polite" title="Another note from the curator">
-        <span id="curator-note-text">everything's filed &amp; ready — grab a card ↓</span>
-      </button>
-    </aside>
     <div class="stats" aria-label="Library stats">
       <div class="stat"><b id="stat-activities">–</b><span>activities</span></div>
       <div class="stat"><b id="stat-categories">–</b><span>categories</span></div>
       <div class="stat"><b id="stat-noprep">–</b><span>need zero prep</span></div>
-    </div>
-    <div class="db-strip" aria-label="Database coverage">
-      <p><strong>Database coverage:</strong> ages 3–4 — 160 records each · ages 5–12 — 329–530 each · ages 13–14 — 120 each and growing · 11 categories · <span id="db-collections">32</span> curated collections. Thinnest shelf, named honestly: ages 13–14, still 40 short of the young-end benchmark — closing eight records a wave. New finds arrive through <a href="review.html">The Scout's review queue</a>, where a human decides before anything enters the database.</p>
     </div>
   </section>
 
@@ -158,9 +150,9 @@
   <section class="desk-section" id="desk" aria-label="The teacher's desk: eleven category drawers">
     <div class="desk">
       <p class="desk-nameplate" aria-hidden="true"><span>Activity Vault</span></p>
-      <p class="desk-sub">The whole archive, filed the old way — pull a drawer, grab a card. Every drawer opens.</p>
+      <p class="desk-sub">Browse the whole archive by category — eleven groups, each opening to the six activities on top and the honest counts.</p>
       <div class="desk-toolbar no-print" role="group" aria-label="Drawer controls">
-        <button class="btn btn-small" id="drawers-open-all" type="button">🗄️ Open all drawers</button>
+        <button class="btn btn-small" id="drawers-open-all" type="button">Open all drawers</button>
         <button class="btn btn-small btn-ghost" id="drawers-close-all" type="button">Close all</button>
       </div>
       <div class="pedestals">
@@ -177,7 +169,7 @@
             <p class="blotter-stamp" aria-hidden="true">The blotter</p>
             <h2 id="blotter-h">Your week, laid out here.</h2>
             <p>The Smart Weekly Planner deals no-repeat weeks from the same 747 cards in these drawers — balanced days, brain breaks, supply lists.</p>
-            <p><a class="btn" href="planner.html">📅 Open the planner</a></p>
+            <p><a class="btn" href="planner.html">Open the planner</a></p>
             <p class="blotter-alt">or browse the <a href="collections.html">32 curated collections</a></p>
           </section>
         </div>
@@ -203,14 +195,19 @@
       <div class="results-bar">
         <p><strong id="result-count" role="status" aria-live="polite">Loading…</strong></p>
         <div class="results-actions no-print">
-          <button class="btn btn-small btn-ghost" id="copy-collection" type="button">📋 Copy collection</button>
+          <button class="btn btn-small btn-ghost" id="copy-collection" type="button">Copy collection</button>
           <span class="copy-status" id="copy-collection-status" role="status" aria-live="polite"></span>
-          <a class="btn btn-small btn-ghost" href="planner.html">📅 Plan my week</a>
+          <a class="btn btn-small btn-ghost" href="planner.html">Plan my week</a>
         </div>
       </div>
       <div class="card-grid" id="cards"></div>
     </section>
   </div>
+
+  <section class="db-strip" aria-label="Database coverage">
+    <h2>About this database</h2>
+    <p><strong>Database coverage:</strong> ages 3–4 — 160 records each · ages 5–12 — 329–530 each · ages 13–14 — 120 each and growing · 11 categories · <span id="db-collections">32</span> curated collections. Thinnest shelf, named honestly: ages 13–14, still 40 short of the young-end benchmark — closing eight records a wave. New finds arrive through <a href="review.html">The Scout's review queue</a>, where a human decides before anything enters the database.</p>
+  </section>
 </main>
 
 <footer class="site-footer">

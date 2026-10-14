@@ -2118,3 +2118,205 @@ body.tool-page .btn.primary-action { font-size: 1.02rem; padding: .7rem 1.5rem; 
   .nav-more, .db-strip, .home-highlights { display: none !important; }
   .disclosure > :not(summary) { display: block; }
 }
+
+/* ================= ROTATION 21 — TEACHER'S DESK, SLEEK =================
+   The v2 standard, re-expressed for the fleet's light, warm site.
+   Identity carriers: the warm paper ground, Fraunces' friendly display
+   voice against a clean system sans, brick red as the ONE accent (act /
+   attend), and category colour admitted only as a filing code (drawer
+   chips, card category lines) — never as decoration. Furniture dies:
+   wood, grain, binder holes, rubber stamps, sticky notes, pushpins,
+   tape, ruled lines. Sections separate by space, not borders/textures.
+   Legacy tokens (--wood, --brass, --font-stamp, --grunge) remain defined
+   above for the locked legacy rules that name them; this block removes
+   their use from every re-presented surface. */
+
+/* — ground: warm paper, flat. No desk wood, no grain overlay. */
+body {
+  background: var(--paper);
+}
+body::before { display: none; }
+
+/* — header: wordmark + hairline. No binder holes, no stamp brand. */
+.site-header {
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.site-header::before { display: none; }
+.brand-mark { display: none; }
+.brand-text { font-family: var(--font-display); font-weight: 700; font-size: 1.28rem; letter-spacing: -.01em; }
+.brand-text strong { color: var(--accent); font-weight: 700; }
+#site-calm-toggle { border: 1px solid var(--line); color: var(--ink-soft); }
+#site-calm-toggle:hover { background: var(--paper-deep); color: var(--ink); }
+
+/* — kicker: a plain opening line, not a rubber stamp. No letterspaced
+     eyebrow, no pill border, no uppercase. (Text content unchanged.) */
+.hero .kicker, .kicker {
+  display: block; border: 0; border-radius: 0; background: none;
+  padding: 0; margin: 0 0 1rem;
+  font-family: var(--font-body); font-size: .98rem; font-weight: 600;
+  letter-spacing: 0; text-transform: none; color: var(--ink-soft);
+  transform: none; -webkit-mask-image: none; mask-image: none; box-shadow: none;
+}
+
+/* — hero: headline + subline + ONE primary action + whitespace */
+.hero { padding: 4.25rem 0 3rem; }
+@media (min-width: 900px) { .hero { padding-right: 0; } }
+.hero h1 { font-size: clamp(2.5rem, 5.6vw, 3.9rem); font-weight: 800; line-height: 1.08; margin: 0 0 1.1rem; }
+.hero p.lede { font-size: 1.18rem; line-height: 1.6; color: var(--ink-soft); max-width: 38rem; margin: 0; }
+.squiggle { background: none; padding-bottom: 0; }
+.hero-actions { align-items: center; gap: 1.1rem; margin-top: 1.8rem; }
+.hero-secondary { font-weight: 600; color: var(--accent); text-decoration: none; }
+.hero-secondary:hover { text-decoration: underline; text-underline-offset: 3px; }
+.hero .stats { gap: 2.5rem; margin-top: 2.6rem; }
+.hero .stat b {
+  font-family: var(--font-display); font-weight: 800; font-size: 1.9rem;
+  color: var(--ink); border-bottom: 0;
+}
+.hero .stat span { font-size: .85rem; color: var(--ink-soft); }
+.desk-note { display: none; }
+
+/* — buttons: clean, legible, one accent. The grunge-masked stamp CTA
+     (speckled, half-eaten text) is gone: no mask, no stamp face, no
+     rotation, no hard offset shadow. */
+.btn {
+  font-family: var(--font-body); font-size: 1rem; font-weight: 700;
+  letter-spacing: 0; text-transform: none;
+  border: 1px solid var(--accent); border-radius: 12px;
+  padding: .8rem 1.6rem; background: var(--accent); color: var(--accent-ink);
+  transform: none; box-shadow: none;
+  -webkit-mask-image: none; mask-image: none;
+  transition: filter var(--dur-fast) var(--ease-standard);
+}
+.btn:hover { filter: brightness(1.07); transform: none; box-shadow: none; }
+.btn:active { transform: none; box-shadow: none; }
+.btn-ghost {
+  font-family: var(--font-body); text-transform: none; letter-spacing: 0;
+  background: transparent; color: var(--ink);
+  border: 1px solid var(--line); border-radius: 12px;
+  transform: none; box-shadow: none; -webkit-mask-image: none; mask-image: none;
+}
+.btn-ghost:hover { background: var(--paper-deep); transform: none; box-shadow: none; }
+.btn-small { font-size: .9rem; padding: .5rem 1rem; }
+body.tool-page .btn.primary-action { font-size: 1rem; padding: .8rem 1.6rem; }
+
+/* — the desk, flattened: category rows on paper, colour as a code.
+     Drawers keep their function (open/close, trays, counts) and lose
+     the wood, brass, nameplate, handles and stamps. */
+.desk { background: none; box-shadow: none; border: 0; border-radius: 0; padding: 0; }
+.desk-section { padding: 1rem 0 3rem; }
+.desk-nameplate { display: none; }
+.desk-sub { font-family: var(--font-body); font-size: 1.05rem; color: var(--ink-soft); max-width: 40rem; margin: 0 0 1.4rem; }
+.drawer { background: var(--card); border: 1px solid var(--line); border-radius: 14px; box-shadow: none; margin-bottom: .8rem; overflow: hidden; }
+.drawer-pull { background: none; box-shadow: none; border: 0; border-radius: 0; padding: 1rem 1.2rem; }
+.drawer-pull:hover { box-shadow: none; background: var(--paper); }
+.drawer.open .drawer-pull { transform: none; }
+.drawer-num { font-family: var(--font-body); font-size: .78rem; font-weight: 600; color: var(--ink-soft); letter-spacing: .04em; }
+.drawer-stamp {
+  font-family: var(--font-body); font-weight: 700; font-size: 1.02rem; color: var(--ink);
+  border: 0; background: none; transform: none; box-shadow: none;
+  -webkit-mask-image: none; mask-image: none; padding: 0;
+}
+.drawer-stamp::before {
+  content: ""; display: inline-block; width: .72em; height: .72em;
+  border-radius: 3px; background: var(--cat, var(--accent));
+  margin-right: .55em; vertical-align: -.06em;
+}
+.drawer-stamp > span[aria-hidden="true"] { display: none; }
+.drawer-handle { display: none; }
+.pencil-note { font-family: var(--font-body); font-size: .85rem; color: var(--ink-soft); transform: none; }
+.pulled-stamp { display: none; }
+html.desk-ready .drawer.open .pulled-stamp { display: none; }
+.tray-head .tray-label { font-family: var(--font-body); font-weight: 600; color: var(--ink-soft); }
+.desk-card { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; box-shadow: none; }
+.blotter-card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; box-shadow: none; padding: 1.6rem; }
+.blotter-stamp { display: none; }
+
+/* — browse grid: index cards without tape or ruled lines */
+.act-card {
+  background: var(--card);
+  border: 1px solid var(--line); border-radius: 14px; box-shadow: none;
+}
+.act-card::before { display: none; }
+.act-card:hover { box-shadow: 0 4px 14px rgba(42, 36, 28, .07); }
+.filters { border: 1px solid var(--line); border-radius: 14px; box-shadow: none; background: var(--card); }
+
+/* — activity sheets: no binder rings; the file stamp becomes a quiet
+     text label (a whisper, not a prop) */
+.activity-card::before, .activity-card::after { display: none; }
+.file-stamp {
+  font-family: var(--font-body); font-size: .8rem; font-weight: 600;
+  letter-spacing: .02em; text-transform: none; color: var(--ink-soft);
+  border: 1px solid var(--line); border-radius: 8px; background: none;
+  transform: none; -webkit-mask-image: none; mask-image: none; box-shadow: none;
+}
+.plan-time { font-family: var(--font-body); }
+.ft-table th { font-family: var(--font-body); text-transform: none; letter-spacing: 0; }
+
+/* — collections: cards told apart by content, sections by space.
+     The scroll-driven rise (which left cards half-transparent at the
+     fold) is removed outright — content is simply present. */
+html:not([data-calm="true"]) .collection-section { animation: none; }
+.collection-grid { gap: 1.25rem; margin: 2rem 0 3.5rem; }
+.collection-card {
+  background: var(--card); border: 1px solid var(--line); border-top: 1px solid var(--line);
+  border-radius: 14px; box-shadow: none; padding: 1.4rem 1.5rem; gap: .45rem;
+}
+.collection-card:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(42, 36, 28, .08); border-color: var(--desk-deep); }
+.collection-glyph, .collection-glyph-lg { display: none; }
+.collection-title { font-size: 1.3rem; }
+.collection-count { color: var(--ink); font-weight: 600; font-size: .92rem; }
+.collection-when-snippet { color: var(--ink-soft); font-size: .95rem; line-height: 1.5; }
+.collection-includes { color: var(--ink-soft); font-size: .88rem; border-top: 1px solid var(--line); padding-top: .6rem; margin-top: .35rem; }
+.collection-section {
+  background: none; border: 0; border-radius: 0; box-shadow: none;
+  padding: 0; margin: 0 0 4rem;
+}
+.collection-h2 { font-size: 1.7rem; }
+.pick { background: var(--card); }
+
+/* — database coverage: a quiet about-section below the browse surface,
+     no longer bookkeeping printed inside the hero */
+.db-strip { border-top: 0; margin: 1rem 0 3.5rem; padding-top: 0; max-width: 46rem; }
+.db-strip h2 { font-size: 1.35rem; margin: 0 0 .6rem; }
+
+/* — footer separated by space and one hairline */
+.site-footer { border-top: 1px solid var(--line); margin-top: 2rem; }
+
+/* — motion discipline (rotation 21, second pass): content is present.
+     The wave-17 scroll-reveal stranded cards at opacity 0 — the audit's
+     half-transparent card at the fold — because its observer band could
+     be scrolled past without ever firing. Removed: .reveal is now a
+     no-op state (JS still toggles the classes; nothing hides, nothing
+     waits). The rubber-stamp page transition goes with it: navigation
+     is an instant, quiet swap. */
+@media (prefers-reduced-motion: no-preference) {
+  html.js:not([data-calm="true"]) .reveal {
+    opacity: 1; transform: none; transition: none; transition-delay: 0ms;
+  }
+}
+::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+
+/* — rotation 21, third pass: the residuals the screenshot caught.
+     The wordmark was still a rubber stamp (the rotation-20 block kept
+     the double border + grunge mask from the furniture era); collection
+     cards still wore manila folder tabs; the desk intro was still
+     centred handwriting on a grained panel. All dead now. */
+.brand-text {
+  font-family: var(--font-display); font-size: 1.28rem; font-weight: 700;
+  color: var(--ink); text-transform: none; letter-spacing: -.01em;
+  border: 0; border-radius: 0; background: none; padding: 0;
+  transform: none; -webkit-mask-image: none; mask-image: none;
+  white-space: nowrap;
+}
+.collection-card::before { display: none; }
+.collection-card { margin-top: 0; padding-top: 1.4rem; }
+.collection-count { font-family: var(--font-body); }
+.desk::before { display: none; }
+.desk-sub { text-align: left; }
+.desk-toolbar { justify-content: flex-start; margin: 0 0 1.4rem; }
+.desk-toolbar .btn {
+  background: transparent; color: var(--ink); border: 1px solid var(--line);
+}
+.desk-toolbar .btn:hover { background: var(--paper-deep); filter: none; }
+.drawer-pull { color: var(--ink); }

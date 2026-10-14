@@ -217,13 +217,18 @@ def _minimal_header(prefix, current_href, no_print):
     # current_href is stored as the full href found on the page (with prefix)
     def c(href):
         return ' aria-current="page"' if current_href == href else ''
+    # Rotation 21 rollout: primary row cut to FOUR visitor-word links +
+    # More (was six + More). The Desk and Party Pack move into the More
+    # panel's Tools group — every destination survives, reachable in one
+    # extra click, and both stay linked from every page (VP-0002 guard).
     links_primary = [
-        ("index.html", "Browse"), ("desk.html", "The Desk"),
+        ("index.html", "Browse"),
         ("planner.html", "Plan my week"), ("collections.html", "Collections"),
-        ("kitbag.html", "Kit Bag"), ("partypack.html", "Party Pack"),
+        ("kitbag.html", "Kit Bag"),
     ]
-    tools = [("day.html", "Day Planner"), ("kit.html", "Kit"),
+    tools = [("desk.html", "The Desk"), ("day.html", "Day Planner"), ("kit.html", "Kit"),
              ("sub.html", "Sub Tub"), ("party.html", "Party Planner"),
+             ("partypack.html", "Party Pack"),
              ("fieldtrip.html", "Field Trips")]
     seasons = [("halloween.html", "Halloween"), ("thanksgiving.html", "Thanksgiving"),
                ("winter.html", "Winter"), ("spring.html", "Spring"), ("summer.html", "Summer")]
@@ -237,7 +242,6 @@ def _minimal_header(prefix, current_href, no_print):
     return f"""<header class="{cls}">
   <div class="wrap header-inner">
     <a class="brand" href="{prefix}index.html" aria-label="Activity Vault home">
-      <span class="brand-mark" aria-hidden="true">🗂️</span>
       <span class="brand-text">Activity <strong>Vault</strong></span>
     </a>
     <nav aria-label="Primary" class="nav-primary">
@@ -254,7 +258,7 @@ def _minimal_header(prefix, current_href, no_print):
     </nav>
     <button class="btn btn-ghost btn-small no-print" id="site-calm-toggle" type="button"
             aria-pressed="false" aria-label="Calm mode: turn off page animations and motion">
-      <span aria-hidden="true">🍃</span> Calm: <span class="calm-state">off</span>
+      Calm: <span class="calm-state">off</span>
     </button>
   </div>
 </header>"""
@@ -453,7 +457,7 @@ ACTIVITY_TEMPLATE = """<!DOCTYPE html>
     </a>
     <nav aria-label="Primary">
       <a href="../index.html">Browse</a>
-      <a href="../desk.html">The Desk 🗄️</a>
+      <a href="../desk.html">The Desk</a>
       <a href="../planner.html">Plan my week</a>
       <a href="../day.html">Day Planner 🗓️</a>
       <a href="../kit.html">Kit 🧰</a>
@@ -848,7 +852,7 @@ REVIEW_TEMPLATE = """<!DOCTYPE html>
     </a>
     <nav aria-label="Primary">
       <a href="index.html">Browse</a>
-      <a href="desk.html">The Desk 🗄️</a>
+      <a href="desk.html">The Desk</a>
       <a href="planner.html">Plan my week</a>
       <a href="day.html">Day Planner 🗓️</a>
       <a href="kit.html">Kit 🧰</a>
@@ -1146,9 +1150,9 @@ def render_landing_desk(acts, cats, colls):
         '  <section class="desk-section" id="desk" aria-label="The teacher\'s desk: eleven category drawers">\n'
         '    <div class="desk">\n'
         '      <p class="desk-nameplate" aria-hidden="true"><span>Activity Vault</span></p>\n'
-        '      <p class="desk-sub">The whole archive, filed the old way — pull a drawer, grab a card. Every drawer opens.</p>\n'
+        '      <p class="desk-sub">Browse the whole archive by category — eleven groups, each opening to the six activities on top and the honest counts.</p>\n'
         '      <div class="desk-toolbar no-print" role="group" aria-label="Drawer controls">\n'
-        '        <button class="btn btn-small" id="drawers-open-all" type="button">\U0001f5c4\ufe0f Open all drawers</button>\n'
+        '        <button class="btn btn-small" id="drawers-open-all" type="button">Open all drawers</button>\n'
         '        <button class="btn btn-small btn-ghost" id="drawers-close-all" type="button">Close all</button>\n'
         '      </div>\n'
         '      <div class="pedestals">\n'
@@ -1160,7 +1164,7 @@ def render_landing_desk(acts, cats, colls):
         '            <p class="blotter-stamp" aria-hidden="true">The blotter</p>\n'
         '            <h2 id="blotter-h">Your week, laid out here.</h2>\n'
         f'            <p>The Smart Weekly Planner deals no-repeat weeks from the same {n_acts} cards in these drawers — balanced days, brain breaks, supply lists.</p>\n'
-        '            <p><a class="btn" href="planner.html">\U0001f4c5 Open the planner</a></p>\n'
+        '            <p><a class="btn" href="planner.html">Open the planner</a></p>\n'
         f'            <p class="blotter-alt">or browse the <a href="collections.html">{n_colls} curated collections</a></p>\n'
         '          </section>\n'
         '        </div>\n'
@@ -1223,7 +1227,7 @@ DESK_TEMPLATE = """<!DOCTYPE html>
     </a>
     <nav aria-label="Primary">
       <a href="index.html">Browse</a>
-      <a href="desk.html" aria-current="page">The Desk 🗄️</a>
+      <a href="desk.html" aria-current="page">The Desk</a>
       <a href="planner.html">Plan my week</a>
       <a href="day.html">Day Planner 🗓️</a>
       <a href="kit.html">Kit 🧰</a>
@@ -1253,7 +1257,7 @@ DESK_TEMPLATE = """<!DOCTYPE html>
   <section class="hero" aria-labelledby="hero-title">
     <span class="kicker">The teacher's desk</span>
     <h1 id="hero-title">Pull a drawer.<br>Grab a <span class="squiggle">card.</span></h1>
-    <p class="lede">The whole Vault, filed the old way — {n_acts} real activities in {n_cats} wooden drawers, one per category. Every drawer opens: the six cards on top of the pile, plus a pencil note with the honest counts. Nothing here is decoration — every card is a real activity page.</p>
+    <p class="lede">The whole Vault, grouped by category — {n_acts} real activities in {n_cats} groups. Each group opens to the six activities on top of the pile, with the honest counts beside it. Every card is a real activity page.</p>
     <aside class="desk-note no-print" aria-label="A note from the teacher's desk">every drawer opens —<br>try the brass pulls ↓</aside>
     <div class="stats" aria-label="Library stats">
       <div class="stat"><b>{n_acts}</b><span>activities</span></div>
@@ -1266,7 +1270,7 @@ DESK_TEMPLATE = """<!DOCTYPE html>
     <div class="desk">
       <p class="desk-nameplate" aria-hidden="true"><span>Activity Vault</span></p>
       <div class="desk-toolbar no-print" role="group" aria-label="Drawer controls">
-        <button class="btn btn-small" id="drawers-open-all" type="button">🗄️ Open all drawers</button>
+        <button class="btn btn-small" id="drawers-open-all" type="button">Open all drawers</button>
         <button class="btn btn-small btn-ghost" id="drawers-close-all" type="button">Close all</button>
       </div>
       <div class="pedestals">
@@ -1278,7 +1282,7 @@ DESK_TEMPLATE = """<!DOCTYPE html>
             <p class="blotter-stamp" aria-hidden="true">The blotter</p>
             <h2 id="blotter-h">Your week, laid out here.</h2>
             <p>The Smart Weekly Planner deals no-repeat weeks from the same {n_acts} cards in these drawers — balanced days, brain breaks, supply lists.</p>
-            <p><a class="btn" href="planner.html">📅 Open the planner</a></p>
+            <p><a class="btn" href="planner.html">Open the planner</a></p>
             <p class="blotter-alt">or browse the <a href="collections.html">{n_colls} curated collections</a></p>
           </section>
         </div>
