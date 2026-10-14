@@ -1030,6 +1030,14 @@
    "variations": {
     "easier": "Provide printed card templates with a design to color.",
     "harder": "Make pop-up cards, cut two slits in the fold and push the shape inward."
+   },
+   "photo": {
+    "file": "r26/holiday-card-workshop.webp",
+    "alt": "Making Christmas Cards DPLA 2b4d27df3970c71f2258556c683dd8f0",
+    "caption": "Making Christmas Cards DPLA 2b4d27df3970c71f2258556c683dd8f0.",
+    "credit": "Photo: Unknown, Public domain, via Wikimedia Commons",
+    "licence": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Making_Christmas_Cards_-_DPLA_-_2b4d27df3970c71f2258556c683dd8f0.jpg"
    }
   },
   {
@@ -1380,7 +1388,15 @@
     "easier": "Use scarves or balloons first. They move slowly and are easy to catch.",
     "harder": "Reverse the pattern mid-game on the leader's call."
    },
-   "source": "https://en.wikipedia.org/wiki/Juggling"
+   "source": "https://en.wikipedia.org/wiki/Juggling",
+   "photo": {
+    "file": "r26/group-juggling.webp",
+    "alt": "Juggling Eeyores Birthday Austin Texas",
+    "caption": "Juggling Eeyores Birthday Austin Texas.",
+    "credit": "Photo: Larry D. Moore, CC BY 4.0, via Wikimedia Commons",
+    "licence": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Juggling_Eeyores_Birthday_Austin_Texas_2023.jpg"
+   }
   },
   {
    "age_max": 12,
@@ -1423,6 +1439,14 @@
    "variations": {
     "easier": "Allow one designated 'placer' to use hands for the final set-down.",
     "harder": "Build a 10-cup pyramid (4-3-2-1) or race two teams head to head."
+   },
+   "photo": {
+    "file": "r26/tower-of-trust-build.webp",
+    "alt": "Army Reserve’s 7th MSC hosts “resiliency summit” in Germany (9312412)",
+    "caption": "Army Reserve’s 7th MSC hosts “resiliency summit” in Germany (9312412).",
+    "credit": "Photo: U.S. Army Reserve photo by Staff Sgt. Angela Ohearn, Public domain, via Wikimedia Commons",
+    "licence": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Army_Reserve%E2%80%99s_7th_MSC_hosts_%E2%80%9Cresiliency_summit%E2%80%9D_in_Germany_(9312412).jpg"
    }
   },
   {
@@ -3518,7 +3542,15 @@
    },
    "tags": [
     "holiday:halloween"
-   ]
+   ],
+   "photo": {
+    "file": "r26/halloween-mummy-wrap.webp",
+    "alt": "American Frights and Polish Delights U S Soldiers and Żagań kids celebrate Halloween in Poland (8726422)",
+    "caption": "American Frights and Polish Delights U S Soldiers and Żagań kids celebrate Halloween in Poland (8726422).",
+    "credit": "Photo: U.S. Army USARASGP by Bryan Araujo, Public domain, via Wikimedia Commons",
+    "licence": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:American_Frights_and_Polish_Delights-_U_S_Soldiers_and_%C5%BBaga%C5%84_kids_celebrate_Halloween_in_Poland_(8726422).jpg"
+   }
   },
   {
    "id": "halloween-pumpkin-bowl",
@@ -4003,7 +4035,15 @@
     "easier": "Give a theme ('my perfect day') to focus choices.",
     "harder": "Add a written artist statement explaining three choices."
    },
-   "source": "https://en.wikipedia.org/wiki/Collage"
+   "source": "https://en.wikipedia.org/wiki/Collage",
+   "photo": {
+    "file": "r26/collage-dreams.webp",
+    "alt": "Collage graphic workshop, Lodz Design Festival",
+    "caption": "Collage graphic workshop, Lodz Design Festival.",
+    "credit": "Photo: Lodz Design, CC BY 2.0, via Wikimedia Commons",
+    "licence": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Collage_graphic_workshop,_Lodz_Design_Festival.jpg"
+   }
   },
   {
    "id": "paper-plate-masks",
@@ -4370,6 +4410,14 @@
    "variations": {
     "easier": "Allow unlimited tape.",
     "harder": "Limit to 3 sheets of paper and require a 100-penny hold."
+   },
+   "photo": {
+    "file": "r26/paper-bridges.webp",
+    "alt": "47th Annual Colorado High School Bridge Building Competition (12772430554)",
+    "caption": "47th Annual Colorado High School Bridge Building Competition (12772430554).",
+    "credit": "Photo: Bureau of Reclamation, CC BY-SA 2.0, via Wikimedia Commons",
+    "licence": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:47th_Annual_Colorado_High_School_Bridge_Building_Competition_(12772430554).jpg"
    }
   },
   {
@@ -4473,6 +4521,14 @@
    "variations": {
     "easier": "Leader mixes to the kneading stage; kids customize with color and glitter.",
     "harder": "Test three recipes and rank them on stretchiness with measurements."
+   },
+   "photo": {
+    "file": "r26/slime-lab.webp",
+    "alt": "Slime 02471 Nevit",
+    "caption": "Slime 02471 Nevit.",
+    "credit": "Photo: Nevit, CC BY-SA 3.0, via Wikimedia Commons",
+    "licence": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Slime_02471_Nevit.jpg"
    }
   },
   {
@@ -4938,6 +4994,14 @@
    "variations": {
     "easier": "Play without goals. Just keep-away.",
     "harder": "Shrink the field and play 3-minute sudden-death rounds."
+   },
+   "photo": {
+    "file": "r26/crab-soccer.webp",
+    "alt": "Crab Soccer (8423494658)",
+    "caption": "Crab Soccer (8423494658).",
+    "credit": "Photo: Eugene Kim from San Francisco, USA, CC BY 2.0, via Wikimedia Commons",
+    "licence": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Crab_Soccer_(8423494658).jpg"
    }
   },
   {
@@ -5900,6 +5964,14 @@
    "variations": {
     "easier": "Safari in one garden bed with the leader pointing out finds.",
     "harder": "Identify every find to family level with a field guide."
+   },
+   "photo": {
+    "file": "r26/bug-safari.webp",
+    "alt": "Child and men look for insects in the grass",
+    "caption": "Child and men look for insects in the grass.",
+    "credit": "Photo: Ryan Hagerty, Public domain, via Wikimedia Commons",
+    "licence": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Child_and_men_look_for_insects_in_the_grass.jpg"
    }
   },
   {
@@ -8132,7 +8204,15 @@
     "easier": "Markers only. Draw the whole face, no gluing.",
     "harder": "Write and perform a 3-minute puppet play in pairs."
    },
-   "source": "https://en.wikipedia.org/wiki/Puppet"
+   "source": "https://en.wikipedia.org/wiki/Puppet",
+   "photo": {
+    "file": "r26/sock-puppet-studio.webp",
+    "alt": "Make a sock puppet",
+    "caption": "Make a sock puppet.",
+    "credit": "Photo: Avery Jensen, CC BY-SA 4.0, via Wikimedia Commons",
+    "licence": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Make_a_sock_puppet_2243.jpg"
+   }
   },
   {
    "age_max": 12,
@@ -8536,7 +8616,15 @@
    "safety": "Rubbing alcohol is adult-handled only, and jars stay on the table, no carrying them around. Work in a ventilated room.",
    "tags": [
     "season:fall"
-   ]
+   ],
+   "photo": {
+    "file": "r26/fall-leaf-chromatography.webp",
+    "alt": "Spinach chromatography 20211026",
+    "caption": "Spinach chromatography 20211026.",
+    "credit": "Photo: HunterRSC, CC0, via Wikimedia Commons",
+    "licence": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Spinach_chromatography_20211026_093046.jpg"
+   }
   },
   {
    "id": "leaf-animal-collage",
@@ -9187,7 +9275,15 @@
    "safety": "Check the area for hazards before collecting. No tasting leaves.",
    "tags": [
     "season:fall"
-   ]
+   ],
+   "photo": {
+    "file": "r26/leaf-collect-sort-science.webp",
+    "alt": "Collecting leaves",
+    "caption": "Collecting leaves.",
+    "credit": "Photo: GHS Doddabanahalli, CC BY-SA 4.0, via Wikimedia Commons",
+    "licence": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Collecting_leaves.jpg"
+   }
   },
   {
    "id": "scarecrow-dress-up-relay",
@@ -11239,7 +11335,15 @@
    "tags": [
     "season:winter",
     "holiday:christmas"
-   ]
+   ],
+   "photo": {
+    "file": "r26/winter-wreath-collage.webp",
+    "alt": "Wreath making workshop geograph.org.uk",
+    "caption": "Wreath making workshop geograph.org.uk.",
+    "credit": "Photo: Jonathan Billinger, CC BY-SA 2.0, via Wikimedia Commons",
+    "licence": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Wreath-making_workshop_-_geograph.org.uk_-_7666805.jpg"
+   }
   },
   {
    "id": "cotton-ball-penguin",
@@ -11772,7 +11876,15 @@
    "safety": "Wash hands after. Handle worms gently and put them back. Never take them inside, and do not dig up garden beds.",
    "tags": [
     "season:spring"
-   ]
+   ],
+   "photo": {
+    "file": "r26/worm-weather-watch.webp",
+    "alt": "Lumbricidae earthworm on wet asphalt in Dnipro by baby bear.org 01",
+    "caption": "Lumbricidae earthworm on wet asphalt in Dnipro by baby bear.org 01.",
+    "credit": "Photo: Natalka Ukraine (baby-bear.org), CC BY 4.0, via Wikimedia Commons",
+    "licence": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lumbricidae_earthworm_on_wet_asphalt_in_Dnipro_by_baby-bear.org_01.jpg"
+   }
   },
   {
    "id": "puddle-depth-gauge",
@@ -12202,7 +12314,15 @@
    "safety": "Wet pavement is slippery. Walk the turn at the far bucket, no diving stops. Shoes stay on.",
    "tags": [
     "season:spring"
-   ]
+   ],
+   "photo": {
+    "file": "r26/sponge-bucket-relay.webp",
+    "alt": "Soldiers Give 'aid' to Local Students, School DVIDS296583",
+    "caption": "Soldiers Give 'aid' to Local Students, School DVIDS296583.",
+    "credit": "Photo: Spc. Derek Nelson, Public domain, via Wikimedia Commons",
+    "licence": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Soldiers_Give_%27aid%27_to_Local_Students,_School_DVIDS296583.jpg"
+   }
   },
   {
    "id": "puddle-stomp-parade",
@@ -12285,7 +12405,15 @@
    "tags": [
     "season:spring"
    ],
-   "copy_free": true
+   "copy_free": true,
+   "photo": {
+    "file": "r26/spring-sound-map.webp",
+    "alt": "Children at a World Wildlife Fund for Nature camp in Tuscany, Italy",
+    "caption": "Children at a World Wildlife Fund for Nature camp in Tuscany, Italy.",
+    "credit": "Photo: alessandro pucci, CC BY 2.0, via Wikimedia Commons",
+    "licence": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Children_at_a_World_Wildlife_Fund_for_Nature_camp_in_Tuscany,_Italy_-_20060615.jpg"
+   }
   },
   {
    "id": "puddle-hopscotch",
@@ -12546,7 +12674,15 @@
    "tags": [
     "season:spring",
     "holiday:earth-day"
-   ]
+   ],
+   "photo": {
+    "file": "r26/earth-day-trash-audit.webp",
+    "alt": "Camp Hansen Marines help cleanup and plant mangrove trees Earth Day 2025 (8997514)",
+    "caption": "Camp Hansen Marines help cleanup and plant mangrove trees Earth Day 2025 (8997514).",
+    "credit": "Photo: U.S. Marine Corps photo by Cpl. Jesse Davis, Public domain, via Wikimedia Commons",
+    "licence": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Camp_Hansen_Marines_help_cleanup_and_plant_mangrove_trees_-_Earth_Day_2025_(8997514).jpg"
+   }
   },
   {
    "id": "seed-ball-wildflowers",
@@ -14505,7 +14641,15 @@
     "holiday:halloween",
     "theme:spooky"
    ],
-   "source": "https://en.wikipedia.org/wiki/Monster_Mash"
+   "source": "https://en.wikipedia.org/wiki/Monster_Mash",
+   "photo": {
+    "file": "r26/monster-mash-dance.webp",
+    "alt": "Houston Halloween Dancing",
+    "caption": "Houston Halloween Dancing.",
+    "credit": "Photo: Bart Everson, CC BY 2.0, via Wikimedia Commons",
+    "licence": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Houston_Halloween_Dancing.jpg"
+   }
   },
   {
    "id": "apple-string-bite",
@@ -16121,7 +16265,15 @@
     "holiday:thanksgiving"
    ],
    "inclusion": "Seated assembly line; decorating counts as full participation.",
-   "copy_free": true
+   "copy_free": true,
+   "photo": {
+    "file": "r26/blessing-bag-pack.webp",
+    "alt": "Packing up food DVIDS135748",
+    "caption": "Packing up food DVIDS135748.",
+    "credit": "Photo: Seaman Christopher A. Baker, Public domain, via Wikimedia Commons",
+    "licence": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Packing_up_food_DVIDS135748.jpg"
+   }
   },
   {
    "id": "turkey-code-feathers",
@@ -18894,7 +19046,15 @@
     "easier": "Just the drawing, skip the labels.",
     "harder": "Sketch the same window again tomorrow and spot three differences."
    },
-   "safety": "Stay inside. This is a watch-the-weather activity, not a go-into-it one."
+   "safety": "Stay inside. This is a watch-the-weather activity, not a go-into-it one.",
+   "photo": {
+    "file": "r26/window-weather-sketch.webp",
+    "alt": "Child reaches for window during rainy day touching glass with hands",
+    "caption": "Child reaches for window during rainy day touching glass with hands.",
+    "credit": "Photo: Shixart1985, CC BY 2.0, via Wikimedia Commons",
+    "licence": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Child_reaches_for_window_during_rainy_day_touching_glass_with_hands.jpg"
+   }
   },
   {
    "id": "indoor-picnic-memory",
@@ -19007,7 +19167,15 @@
     "easier": "The shadow-maker announces the category: animal, food, or thing.",
     "harder": "Two-person shadows: build the shape together."
    },
-   "safety": "Hands only, no whole-body shadows that block the light for everyone."
+   "safety": "Hands only, no whole-body shadows that block the light for everyone.",
+   "photo": {
+    "file": "r26/shadow-guess.webp",
+    "alt": "Chimera hand shadow Flickr muffinn",
+    "caption": "Chimera hand shadow Flickr muffinn.",
+    "credit": "Photo: Mike Finn from Worcester, United Kingdom, CC BY 2.0, via Wikimedia Commons",
+    "licence": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chimera_-_hand_shadow_-_Flickr_-_muffinn.jpg"
+   }
   },
   {
    "id": "puddle-poetry",
@@ -24265,7 +24433,15 @@
     "harder": "Add audience-thrown curveballs mid-scene, or require every scene to end with a moral."
    },
    "safety": null,
-   "no_elimination": true
+   "no_elimination": true,
+   "photo": {
+    "file": "r26/improv-scene-showdown.webp",
+    "alt": "Improvisational theatre in Iran Qom City 2018 Canon 5d Mark11",
+    "caption": "Improvisational theatre in Iran Qom City 2018 Canon 5d Mark11.",
+    "credit": "Photo: Mostafameraji, CC0, via Wikimedia Commons",
+    "licence": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Improvisational_theatre_in_Iran-Qom_City-2018-Canon_5d_Mark11.jpg"
+   }
   },
   {
    "id": "event-budget-challenge",
@@ -24728,7 +24904,15 @@
    "tags": [
     "holiday:earth-day"
    ],
-   "copy_free": true
+   "copy_free": true,
+   "photo": {
+    "file": "r26/litter-tally-cleanup.webp",
+    "alt": "The Litter Pickers of Mount Rainier (51914792655)",
+    "caption": "The Litter Pickers of Mount Rainier (51914792655).",
+    "credit": "Photo: Mount Rainier NPS, Public domain, via Wikimedia Commons",
+    "licence": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:The_Litter_Pickers_of_Mount_Rainier_(51914792655).jpg"
+   }
   },
   {
    "id": "natural-dye-easter-eggs",
@@ -25191,7 +25375,15 @@
    },
    "safety": "Beads are a choking hazard for little siblings. Keep them in trays on the table and count them back in at cleanup.",
    "copy_free": true,
-   "source": "https://littlebinsforlittlehands.com/binary-code-keychain/"
+   "source": "https://littlebinsforlittlehands.com/binary-code-keychain/",
+   "photo": {
+    "file": "r26/binary-code-keychain.webp",
+    "alt": "Bracelet making",
+    "caption": "Bracelet making.",
+    "credit": "Photo: Mqhest15, CC BY-SA 4.0, via Wikimedia Commons",
+    "licence": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bracelet_making.jpg"
+   }
   },
   {
    "id": "indigenous-innovators-spotlight",
@@ -25406,7 +25598,15 @@
    "tags": [
     "season:winter"
    ],
-   "source": "https://buggyandbuddy.com/tissue-paper-twig-snowflake-craft-kids/"
+   "source": "https://buggyandbuddy.com/tissue-paper-twig-snowflake-craft-kids/",
+   "photo": {
+    "file": "r26/twig-snowflake-craft.webp",
+    "alt": "Families work together on a snowflake craft. (e119d216 f144 4526 a261 7792b3b8ea01)",
+    "caption": "Families work together on a snowflake craft. (e119d216 f144 4526 a261 7792b3b8ea01).",
+    "credit": "Photo: NPS, Public domain, via Wikimedia Commons",
+    "licence": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Families_work_together_on_a_snowflake_craft._(e119d216-f144-4526-a261-7792b3b8ea01).JPG"
+   }
   },
   {
    "id": "cd-rainbow-light-lab",
@@ -26540,7 +26740,15 @@
    ],
    "copy_free": true,
    "no_elimination": true,
-   "inclusion": "Teach it as Ireland's real dance tradition, the actual steps and music, learned properly, in your own clothes. No costumes, no put-on accents, and no leprechaun jokes standing in for the culture."
+   "inclusion": "Teach it as Ireland's real dance tradition, the actual steps and music, learned properly, in your own clothes. No costumes, no put-on accents, and no leprechaun jokes standing in for the culture.",
+   "photo": {
+    "file": "r26/irish-reel-steps.webp",
+    "alt": "Black Rock Irish Dance Wessex Folk Festival 2025",
+    "caption": "Black Rock Irish Dance Wessex Folk Festival 2025.",
+    "credit": "Photo: dorsetbays, CC BY-SA 2.0, via Wikimedia Commons",
+    "licence": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Black_Rock_Irish_Dance-_Wessex_Folk_Festival_2025_-_54564572922.jpg"
+   }
   },
   {
    "id": "tape-path-balance-walk",
@@ -27294,7 +27502,15 @@
    },
    "safety": "Lenses are for looking, never for aiming at the sun. Say it once, plainly, before they go out: never point a lens at the sun or look through it at the sun. Living things get looked at where they live and left there; hands wash when the group comes back in.",
    "copy_free": true,
-   "inclusion": "A kid with low vision is this activity's natural expert-by-feel: pair the lens with touch, the same leaf's edge, bark's roughness, and let them report what fingers find that lenses can't. Every find can be told, pointed at, or held up; nobody has to describe in sentences to have found something."
+   "inclusion": "A kid with low vision is this activity's natural expert-by-feel: pair the lens with touch, the same leaf's edge, bark's roughness, and let them report what fingers find that lenses can't. Every find can be told, pointed at, or held up; nobody has to describe in sentences to have found something.",
+   "photo": {
+    "file": "r26/hand-lens-look-closer.webp",
+    "alt": "Student with a Magnifying Glass (51834102771)",
+    "caption": "Student with a Magnifying Glass (51834102771).",
+    "credit": "Photo: ShenandoahNPS, Public domain, via Wikimedia Commons",
+    "licence": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Student_with_a_Magnifying_Glass_(51834102771).jpg"
+   }
   },
   {
    "id": "pass-it-down-delivery-line",
@@ -27378,7 +27594,15 @@
    "safety": "The fall is a sit, never a drop or a pull: hands let go rather than drag a neighbour down, and the pace stays at a walk. A running ring of three-year-olds holding hands is a pile-up waiting for its moment. Check the ground for anything hard before the first round.",
    "copy_free": true,
    "no_elimination": true,
-   "inclusion": "The circle seats as happily as it stands: a kid in a chair or a wheelchair is a full part of the ring, hands held on both sides, and on 'fall down' the whole circle sits to their level, the game adapts to its players, the way it has for a very long time. The words vary from place to place and family to family; sing the version your room knows and say so. That variation is the game's real history."
+   "inclusion": "The circle seats as happily as it stands: a kid in a chair or a wheelchair is a full part of the ring, hands held on both sides, and on 'fall down' the whole circle sits to their level, the game adapts to its players, the way it has for a very long time. The words vary from place to place and family to family; sing the version your room knows and say so. That variation is the game's real history.",
+   "photo": {
+    "file": "r26/ring-around-the-rosie-circle.webp",
+    "alt": "Children playing \"Ring Around the Rosie\" at the Model Playground of the 1904 World's Fair",
+    "caption": "Children playing \"Ring Around the Rosie\" at the Model Playground of the 1904 World's Fair.",
+    "credit": "Photo: Jessie Tarbox Beals, Public domain, via Wikimedia Commons",
+    "licence": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Children_playing_%22Ring_Around_the_Rosie%22_at_the_Model_Playground_of_the_1904_World%27s_Fair.jpg"
+   }
   },
   {
    "id": "pillow-islands",
@@ -33667,7 +33891,15 @@
    ],
    "copy_free": true,
    "no_elimination": true,
-   "inclusion": "Librarianship is a desk with many chairs: the testing bench needs counters, dampness-keepers, and label-writers; the lending table needs a ledger-keeper, a packet-finder, and the adviser who gives the sowing advice, and every one of those jobs can be done seated, one-handed, by direction, or by a librarian whose strength is the ledger's memory rather than its handwriting (the audit read-back at closing is an oral honour, rotated by list). Advice and labels can be given in any register the borrowers need, spoken, written large on the packet, drawn as the sowing-depth line the library uses on every label, and the research list is read aloud in full at closing so that no librarian needs to have read handwriting to own a question. The library's founding rule helps here too: it lends to every borrower who signs, at the same ceremony, with the same honest label."
+   "inclusion": "Librarianship is a desk with many chairs: the testing bench needs counters, dampness-keepers, and label-writers; the lending table needs a ledger-keeper, a packet-finder, and the adviser who gives the sowing advice, and every one of those jobs can be done seated, one-handed, by direction, or by a librarian whose strength is the ledger's memory rather than its handwriting (the audit read-back at closing is an oral honour, rotated by list). Advice and labels can be given in any register the borrowers need, spoken, written large on the packet, drawn as the sowing-depth line the library uses on every label, and the research list is read aloud in full at closing so that no librarian needs to have read handwriting to own a question. The library's founding rule helps here too: it lends to every borrower who signs, at the same ceremony, with the same honest label.",
+   "photo": {
+    "file": "r26/seed-library-opening-day.webp",
+    "alt": "Benbrook Public Library Seed Library",
+    "caption": "Benbrook Public Library Seed Library.",
+    "credit": "Photo: Aspensmonster, CC BY-SA 4.0, via Wikimedia Commons",
+    "licence": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Benbrook_Public_Library_Seed_Library.jpg"
+   }
   },
   {
    "id": "compass-course-three-flags",
@@ -34068,7 +34300,15 @@
    "safety": "The fan is the weather and it is caged weather: the grille stays on, the fan is positioned and switched by the adult or at the adult's word, and no hand, blade, pencil, or trials sheet goes near the rig while it is running. Blades are changed only with the fan off and the hub still, and a blade that leaves the hub during a run stops the session's rig until the adult has re-checked the mounting, because a loose blade at fan speed is the one accident this record designs out in advance. Blade stock is card, cut at the bench with the bench's scissors, and finished blades are checked for the stiffness that keeps them out of the grille: a blade that flexes into the fan's face is retired at inspection, before it can be tested into trouble. The rig's stand is weighted and its fall zone kept clear; threads and clips are small parts that live on the tray and are counted at clearing-up like any bench's small stock. The generator variation, if used at all, is low-voltage hobby equipment assembled by the adult beforehand. No mains electricity is anywhere near this record's benches, ever.",
    "copy_free": true,
    "no_elimination": true,
-   "inclusion": "The trials run on jobs at every reach: blade design can be led by the mind that draws the pattern while a partner's hands do the cutting to their line, the sheet credits the design to its team, and the pattern is the design's signature. Counting is doubled by design, which makes the second counter, the sheet-keeper, and the clip-loader full experimental roles rather than spare parts; a run's numbers enter the record through voices as readily as through hands, and the sheet-keeper's reading-back of each run before it is inked is the protocol that lets every team member verify what the sheet says. The rig's measures are announced aloud as standard practice, revolutions and clips called, not just written, so the evidence is public to the whole room in the moment it lands. Pitch is set with a protractor jig the adult prepares for any hand that needs one, and the workload final's presentation, each team's story from its sheet, can be given by any member, in any register, from a sheet that was kept to be read aloud."
+   "inclusion": "The trials run on jobs at every reach: blade design can be led by the mind that draws the pattern while a partner's hands do the cutting to their line, the sheet credits the design to its team, and the pattern is the design's signature. Counting is doubled by design, which makes the second counter, the sheet-keeper, and the clip-loader full experimental roles rather than spare parts; a run's numbers enter the record through voices as readily as through hands, and the sheet-keeper's reading-back of each run before it is inked is the protocol that lets every team member verify what the sheet says. The rig's measures are announced aloud as standard practice, revolutions and clips called, not just written, so the evidence is public to the whole room in the moment it lands. Pitch is set with a protractor jig the adult prepares for any hand that needs one, and the workload final's presentation, each team's story from its sheet, can be given by any member, in any register, from a sheet that was kept to be read aloud.",
+   "photo": {
+    "file": "r26/wind-turbine-blade-trials.webp",
+    "alt": "Wind turbine design 001",
+    "caption": "Wind turbine design 001.",
+    "credit": "Photo: Gulraize1, CC BY-SA 3.0, via Wikimedia Commons",
+    "licence": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Wind_turbine_design_001.jpeg"
+   }
   },
   {
    "id": "commonplace-book-first-pages",
@@ -34335,7 +34575,15 @@
    ],
    "copy_free": true,
    "no_elimination": true,
-   "inclusion": "The preserving line is a row of real jobs at every reach: washing and sorting can be done seated at the table's low end; the day book, the batch's memory and the day's conscience, is kept by a seated keeper whose entries the adult reads before any jar is processed; labelling is fine, unhurried work done sitting, with labels written large, dictated to a partner scribe, or lettered from the batch's stamp set where the site keeps one. The recipe is read aloud entire at the framing and the card stands at the line's centre in the largest clear print the room can make, so no hand's work depends on another's eyes or memory. Tasting is offered, never owed. A crew member who does not taste loses no standing, and the tasting notes take 'not tasted' as a complete entry. The cooling racks and the larder run are arranged on the route the crew walks together for step-free passage before the first jar is filled, so the day's proudest trip, summer, carried to its shelf, is a trip every member of the crew can make."
+   "inclusion": "The preserving line is a row of real jobs at every reach: washing and sorting can be done seated at the table's low end; the day book, the batch's memory and the day's conscience, is kept by a seated keeper whose entries the adult reads before any jar is processed; labelling is fine, unhurried work done sitting, with labels written large, dictated to a partner scribe, or lettered from the batch's stamp set where the site keeps one. The recipe is read aloud entire at the framing and the card stands at the line's centre in the largest clear print the room can make, so no hand's work depends on another's eyes or memory. Tasting is offered, never owed. A crew member who does not taste loses no standing, and the tasting notes take 'not tasted' as a complete entry. The cooling racks and the larder run are arranged on the route the crew walks together for step-free passage before the first jar is filled, so the day's proudest trip, summer, carried to its shelf, is a trip every member of the crew can make.",
+   "photo": {
+    "file": "r26/summer-glut-preserving-day.webp",
+    "alt": "Making Blueberry Jam 6",
+    "caption": "Making Blueberry Jam 6.",
+    "credit": "Photo: Quadell, CC BY 3.0, via Wikimedia Commons",
+    "licence": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Making_Blueberry_Jam_6.jpg"
+   }
   },
   {
    "id": "trail-crew-first-pass",
@@ -34761,7 +35009,15 @@
    "safety": "The rope's sweep is this record's first law and it is geographic: nobody stands, sits, crosses or leaves belongings inside the turning arc plus a body's length beyond it, except the jumpers whose entry the turners are expecting, and the line waits outside the sweep at the open side where the framing placed it. Turners hold handles with a grip that keeps the rope if it snags, never wrapped around a hand or wrist, because a snagged rope must be droppable, and a rope that catches a jumper is dropped by both turners on the adult's call or the turners' own judgement, instantly, without finishing the beat. Jumpers wear shoes that grip and stay on; loose laces are tied before the line, not during an entry. The practice corner is not optional for new jumpers and re-entry after a tangle is always through it, nobody returns to the long rope shaken and unbriefed, because the next entry after a fright is the session's most losable moment. The adult watches turners for the fatigue signs the rotation exists to prevent, dropping height, drifting beat, and ends or rests the rope on those signs as readily as on any fall; a fall inside the rope stops the session until the jumper is up, checked, and choosing for themselves whether the practice corner, another job, or the line is next.",
    "copy_free": true,
    "no_elimination": true,
-   "inclusion": "Turning a long rope is a seated-tolerant, strength-sharing craft, and this crew staffs it as the honour it is: turners may turn sitting on a low bench at the rope's end where the ground allows, handles can be worked by a pair sharing one end in relay, and the slate-keeper, caller of the beat, recorder of entries and rescues, holder of the crew's mark, runs the session's voice from the rope's side at full authority. The beat is given in sight as well as sound: the lead turner raises a free shoulder on each turn for jumpers who read rhythm with their eyes, and entries are called by gesture as well as voice as the crew agrees at the framing, so no jumper's timing depends on hearing one voice across a turning rope. The practice corner runs at whatever pace its jumper sets, for as many rehearsals as they want, with no audience but its turner, a door into the session that never has to be explained to the line. Every job in the crew rotates through the slate's published order, so a member whose day is turning, keeping and coaching entries is not having a lesser session: the framing said the skilled job is the turning, and the crew's honours are chalked to prove it."
+   "inclusion": "Turning a long rope is a seated-tolerant, strength-sharing craft, and this crew staffs it as the honour it is: turners may turn sitting on a low bench at the rope's end where the ground allows, handles can be worked by a pair sharing one end in relay, and the slate-keeper, caller of the beat, recorder of entries and rescues, holder of the crew's mark, runs the session's voice from the rope's side at full authority. The beat is given in sight as well as sound: the lead turner raises a free shoulder on each turn for jumpers who read rhythm with their eyes, and entries are called by gesture as well as voice as the crew agrees at the framing, so no jumper's timing depends on hearing one voice across a turning rope. The practice corner runs at whatever pace its jumper sets, for as many rehearsals as they want, with no audience but its turner, a door into the session that never has to be explained to the line. Every job in the crew rotates through the slate's published order, so a member whose day is turning, keeping and coaching entries is not having a lesser session: the framing said the skilled job is the turning, and the crew's honours are chalked to prove it.",
+   "photo": {
+    "file": "r26/long-rope-turning-crew.webp",
+    "alt": "USMC 120704 M BM244 005",
+    "caption": "USMC 120704 M BM244 005.",
+    "credit": "Photo: Cpl. Paul D. Zellner II, Public domain, via Wikimedia Commons",
+    "licence": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:USMC-120704-M-BM244-005.jpg"
+   }
   },
   {
    "id": "part-singing-choir-first-rehearsals",
@@ -35398,7 +35654,15 @@
    "safety": "Sharp points set this studio's laws and they are geographic: the awl and the craft knives live only at the sharp station, are used only by the adult, travel point-down in the tray between uses, and are counted out and back by name at the session's start and end. A count that does not agree stops the tidying until it does. Makers' own tools are blunt by design: tapestry needles for stitching, scissors where the pattern needs them used at the maker's own place, point-down in their pots when hands leave them, and thread is cut, never bitten, never snapped toward a face. Paper cuts are this craft's small honest hazard and the studio treats them without drama and without neglect: a cut is washed, dried and covered before work resumes, and a maker keeps working one-handed or keeps the studio book for ten minutes, at their own election, because thread and a stinging hand are a combination that produces bad stitches and worse tempers. Paste and glue, where the size uses them, stay at the finishing bench in their pots, off the folding tables, and hands that have handled them are washed before the books' pages are touched, a glue thumbprint on a first page is forever, and the studio's order of work exists to prevent exactly that sentence.",
    "copy_free": true,
    "no_elimination": true,
-   "inclusion": "A binding table is a row of seated, measured crafts at full standing, and the studio staffs it as such: the keeper's chair, signature counts, fault causes, the tool tally, is the session's memory and conscience, and inspection pairs are formed so that every book is read by hands other than its binder's, which makes the inspector's office, flexing, opening, reporting true, a position of trust open to any maker at the table. Folding, marking and stitching can all be done from whatever seat and at whatever table height a maker works best at; holes are always punched at the adult's station, so no maker's access to the sharp work depends on their own hands' strength or steadiness, the law that reserves the awl to the adult is an inclusion as well as a safety, and the framing says both halves of that aloud. The pattern card is drawn large and read aloud entire before the first fold, stitch order is demonstrated at a pace the whole table follows and repeated on request without ceremony, and a maker may dictate their studio-book entry, have their holes marked by a partner at their direction from their own measurements, or sew with a needle threader and a thimble from the kit the table keeps as ordinary equipment. Nobody's book is compared with another's except by the inspection's own terms, does it open, does it hold, will it last, and the closing row is spines out and makers unnamed unless a maker chooses to show their binder's mark, because the first page of a person's book is theirs to show or to keep."
+   "inclusion": "A binding table is a row of seated, measured crafts at full standing, and the studio staffs it as such: the keeper's chair, signature counts, fault causes, the tool tally, is the session's memory and conscience, and inspection pairs are formed so that every book is read by hands other than its binder's, which makes the inspector's office, flexing, opening, reporting true, a position of trust open to any maker at the table. Folding, marking and stitching can all be done from whatever seat and at whatever table height a maker works best at; holes are always punched at the adult's station, so no maker's access to the sharp work depends on their own hands' strength or steadiness, the law that reserves the awl to the adult is an inclusion as well as a safety, and the framing says both halves of that aloud. The pattern card is drawn large and read aloud entire before the first fold, stitch order is demonstrated at a pace the whole table follows and repeated on request without ceremony, and a maker may dictate their studio-book entry, have their holes marked by a partner at their direction from their own measurements, or sew with a needle threader and a thimble from the kit the table keeps as ordinary equipment. Nobody's book is compared with another's except by the inspection's own terms, does it open, does it hold, will it last, and the closing row is spines out and makers unnamed unless a maker chooses to show their binder's mark, because the first page of a person's book is theirs to show or to keep.",
+   "photo": {
+    "file": "r26/pamphlet-stitch-bookbinding-studio.webp",
+    "alt": "Bookbinding tie thread 1",
+    "caption": "Bookbinding tie thread 1.",
+    "credit": "Photo: Simon Eugster – Simon / ?! 18:07, 10 May 2008 (UTC), CC BY-SA 3.0, via Wikimedia Commons",
+    "licence": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bookbinding_tie_thread_1.jpg"
+   }
   },
   {
    "id": "solar-oven-temperature-trials",
