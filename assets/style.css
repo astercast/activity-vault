@@ -2755,3 +2755,44 @@ html:not([data-calm="true"]) .collection-section { animation: none; }
   .almanac .cal-days { margin-left: auto; }
   .home-promise { font-size: 1.05rem; }
 }
+
+/* ---------- rotation 29 (S6): the 44px tap-target pass, phone widths only ----------
+   Every rule below lives inside the phone breakpoint, so desktop geometry is
+   untouched by construction. Shared components first: header, chips, buttons,
+   form controls, pick rows, browse-row titles. Standalone-line links grow by
+   the fat-finger pattern (padding grows the hit box, the matching negative
+   margin hands the space back, so text ink and line rhythm do not move).
+   Deliberately NOT grown here: checkboxes inside chip labels (the label is
+   the tap surface; the label grows, the box keeps its size), inline links in
+   running prose and data tables, and the photo-credit microprint. Those stay
+   named in the landing record. */
+@media (max-width: 700px) {
+  /* header: brand, folder tabs, the More toggle and its panel links */
+  .brand { min-height: 44px; }
+  .site-header nav a { min-height: 44px; }
+  .nav-more > summary { min-height: 44px; }
+  .nav-more-panel a { display: flex; align-items: center; min-height: 44px; }
+  /* small buttons and disclosure summaries */
+  .btn-small { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+  summary { min-height: 44px; }
+  /* interactive chips: filter buttons, chip links, chip labels, folder tabs */
+  button.chip, a.chip, label.chip { min-height: 44px; }
+  /* form controls */
+  select, input[type="search"], input[type="text"], input[type="time"],
+  input[type="number"], input[type="date"], input[type="email"] { min-height: 44px; }
+  /* browse rows and pick rows: the title is the target */
+  .activity-row h3 a { display: flex; align-items: center; min-height: 44px; }
+  .pick-name { display: inline-flex; align-items: center; min-height: 44px; }
+  .cal-name { display: inline-flex; align-items: center; min-height: 44px; }
+  /* desk trays (closed until a drawer opens): card titles + tray footers */
+  .desk-card-name { display: flex; align-items: center; min-height: 44px; }
+  .tray-foot a { display: inline-block; padding-block: 13px; margin-block: -13px; }
+  /* standalone-line links: fat-finger padding, ink unmoved */
+  .crumbs a { display: inline-block; min-width: 44px; text-align: center; padding-block: 15px; margin-block: -15px; }
+  .dp-facts a, .kb-facts a, .pp-facts a { display: inline-block; padding-block: 15px; margin-block: -15px; }
+  .site-footer a { display: inline-block; padding-block: 15px; margin-block: -15px; padding-inline: 11px; margin-inline: -11px; }
+  .source-line a { display: inline-block; min-height: 44px; padding-block: 3px; margin-block: -3px; }
+  .blotter-alt a { display: inline-block; min-height: 44px; padding-block: 4px; margin-block: -4px; }
+  .no-print a:not(.chip) { display: inline-block; padding-block: 14px; margin-block: -14px; }
+  .db-strip a { display: inline-block; min-height: 44px; padding-block: 3px; margin-block: -3px; }
+}
