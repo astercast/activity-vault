@@ -1,5 +1,6 @@
 /* Activity Vault — filter browser.
-   Fetches data/activities.json + data/categories.json, renders filterable card grid. */
+   Fetches data/activities.json + data/categories.json + data/v1/filters.json,
+   renders filterable card grid. Age bounds come from filters.json (QA-011). */
 (function () {
   'use strict';
 
@@ -19,7 +20,9 @@
     copyFreeOnly: false,  // wave 14 scope-up: only activities verified copy-free (zero printing)
     noElimOnly: false,    // wave 14 scope-up: only no-elimination activities
     sortByRating: false, // sort by the visitor's OWN ratings (localStorage)
-    topTen: false        // "My top 10": rated-only, top 10 by own stars
+    topTen: false,       // "My top 10": rated-only, top 10 by own stars
+    ageMin: null,        // QA-011: derived in init() from data/v1/filters.json
+    ageMax: null         // (fallback: true span of the loaded activities)
   };
 
   function myRating(a) {
@@ -369,9 +372,19 @@
     ag.appendChild(el('label', 'flabel', 'Age'));
     var ageWrap = el('div');
     var ageRange = el('input'); ageRange.type = 'range';
-    ageRange.min = '5'; ageRange.max = '12'; ageRange.value = '9';
+    // QA-011: bounds are NOT literals here — they are set in init() from
+    // data/v1/filters.json (filters.age), the same source as the published
+    // declaration, with the loaded activities' true span as fallback.
+    // Deriving again from activities here covers any init() edge case.
+    var ageLo = state.ageMin, ageHi = state.ageMax;
+    if (ageLo == null || ageHi == null) {
+      ageLo = Math.min.apply(null, state.activities.map(function (a) { return a.age_min; }));
+      ageHi = Math.max.apply(null, state.activities.map(function (a) { return a.age_max; }));
+    }
+    var ageDefault = Math.min(Math.max(9, ageLo), ageHi);
+    ageRange.min = String(ageLo); ageRange.max = String(ageHi); ageRange.value = String(ageDefault);
     ageRange.setAttribute('aria-label', 'Age of kids');
-    var ageOut = el('div', null, 'Age 9');
+    var ageOut = el('div', null, 'Age ' + ageDefault);
     ageOut.style.fontWeight = '700';
     var ageOn = false;
     var ageToggle = chipButton('Filter by age', false, function (on) {
@@ -484,10 +497,26 @@
     if (!grid) return;
     Promise.all([
       fetch('data/activities.json').then(function (r) { return r.json(); }),
-      fetch('data/categories.json').then(function (r) { return r.json(); })
+      fetch('data/categories.json').then(function (r) { return r.json(); }),
+      // QA-011: the published filter declaration is the source of truth for
+      // the Age control's bounds. A failed fetch must not break the browser:
+      // resolve to null and fall back to the activities' true span below.
+      fetch('data/v1/filters.json').then(function (r) {
+        if (!r.ok) throw new Error('filters fetch failed');
+        return r.json();
+      }).catch(function () { return null; })
     ]).then(function (res) {
       state.activities = res[0];
       state.categories = res[1];
+      // QA-011: derive Age bounds from filters.json; fallback = true span.
+      var declaredAge = res[2] && res[2].filters && res[2].filters.age;
+      if (declaredAge && typeof declaredAge.min === 'number' && typeof declaredAge.max === 'number') {
+        state.ageMin = declaredAge.min;
+        state.ageMax = declaredAge.max;
+      } else {
+        state.ageMin = Math.min.apply(null, state.activities.map(function (a) { return a.age_min; }));
+        state.ageMax = Math.max.apply(null, state.activities.map(function (a) { return a.age_max; }));
+      }
       res[1].forEach(function (c) { state.catMap[c.id] = c; });
       var statActs = document.getElementById('stat-activities');
       var statCats = document.getElementById('stat-categories');

@@ -1350,8 +1350,12 @@ def main():
               open(os.path.join(api, 'activities.json'), 'w'), indent=1, ensure_ascii=False)
     json.dump({'categories': cats, 'count': len(cats), 'updated': today},
               open(os.path.join(api, 'categories.json'), 'w'), indent=1, ensure_ascii=False)
+    # QA-011: age declaration derives from the catalogue's true span so it
+    # can never silently drift from the data again (was a literal 3/14).
+    _age_min = min(a['age_min'] for a in acts)
+    _age_max = max(a['age_max'] for a in acts)
     filters = {
-        "age": {"type": "range", "min": 3, "max": 14, "unit": "years",
+        "age": {"type": "range", "min": _age_min, "max": _age_max, "unit": "years",
                 "description": "Activity fits if the age range overlaps the selected age."},
         "time_available": {"type": "select", "options": [15, 20, 30, 45, 60], "unit": "minutes",
                 "description": "Activity fits if time_min <= selected minutes."},
