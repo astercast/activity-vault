@@ -821,14 +821,6 @@
    "variations": {
     "easier": "Give a starter prompt: 'The day my pet could talk...'",
     "harder": "Require a plot twist in the final panel, or make a silent comic with no words at all."
-   },
-   "photo": {
-    "file": "r23/comic-strip-creations.webp",
-    "alt": "Belgian Comic Strip Center + Lucky Luke",
-    "caption": "Belgian Comic Strip Center + Lucky Luke.",
-    "credit": "Photo: Spielvogel\n\nFor a gallery of some more of my uploaded pictures see:  here., CC BY-SA 3.0, via Wikimedia Commons",
-    "licence": "CC BY-SA 3.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Belgian_Comic_Strip_Center_%2B_Lucky_Luke.jpg"
    }
   },
   {
@@ -1215,12 +1207,12 @@
    },
    "copy_free": true,
    "photo": {
-    "file": "r23/storytelling-circle.webp",
-    "alt": "Bardic chair in sheltered storytelling circle, Holywells Park, Ipswich",
-    "caption": "Bardic chair in sheltered storytelling circle, Holywells Park, Ipswich.",
-    "credit": "Photo: Leutha, CC BY-SA 4.0, via Wikimedia Commons",
-    "licence": "CC BY-SA 4.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Bardic_chair_in_sheltered_storytelling_circle,_Holywells_Park,_Ipswich.jpg"
+    "file": "r27/storytelling-circle.webp",
+    "alt": "A storyteller standing before a room of seated children, telling her story",
+    "caption": "Storytelling, live: one teller standing, a roomful of children seated on the floor listening.",
+    "credit": "Photo: Anthony Cross, Public domain, via Wikimedia Commons",
+    "licence": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Beatrice_Birra_Storytelling_at_African_Art_Museum.jpg"
    },
    "source": "https://en.wikipedia.org/wiki/Storytelling"
   },
@@ -1295,14 +1287,6 @@
     "harder": "One player is the 'director' who can only talk, not be part of the knot."
    },
    "copy_free": true,
-   "photo": {
-    "file": "r23/human-knot.webp",
-    "alt": "Alakazam (Al Millar) \"The Human Knot\" at the 2018 Waterloo Busker Carnival 09",
-    "caption": "Alakazam (Al Millar) \"The Human Knot\" at the 2018 Waterloo Busker Carnival 09.",
-    "credit": "Photo: Ryan Hodnett, CC BY-SA 4.0, via Wikimedia Commons",
-    "licence": "CC BY-SA 4.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Alakazam_(Al_Millar)_%22The_Human_Knot%22_at_the_2018_Waterloo_Busker_Carnival_09.jpg"
-   },
    "source": "https://en.wikipedia.org/wiki/Human_knot"
   },
   {
@@ -2284,14 +2268,6 @@
    },
    "copy_free": true,
    "no_elimination": true,
-   "photo": {
-    "file": "r23/telephone-game.webp",
-    "alt": "Telephone 01: a photograph for Telephone",
-    "caption": "Telephone 01.",
-    "credit": "Photo: Amuzujoe, CC BY-SA 4.0, via Wikimedia Commons",
-    "licence": "CC BY-SA 4.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Telephone_01.jpg"
-   },
    "source": "https://en.wikipedia.org/wiki/Telephone"
   },
   {
@@ -3118,12 +3094,12 @@
     "holiday:halloween"
    ],
    "photo": {
-    "file": "r23/no-carve-pumpkin-decorating.webp",
-    "alt": "A& FRC; hosts deployed family pumpkin patch 131024 F VS255 064",
-    "caption": "A& FRC; hosts deployed family pumpkin patch 131024 F VS255 064.",
-    "credit": "Photo: Staff Sgt. Christopher Ruano, Public domain, via Wikimedia Commons",
+    "file": "r27/no-carve-pumpkin-decorating.webp",
+    "alt": "A young girl beside the pumpkin she decorated with a painted monster face, no carving",
+    "caption": "A finished no-carve pumpkin: a painted monster face, done at the table with her mum beside her.",
+    "credit": "Photo: U.S. Air Force photo by Airman William Tracy, Public domain, via Wikimedia Commons",
     "licence": "Public domain",
-    "source_url": "https://commons.wikimedia.org/wiki/File:A%26_FRC;_hosts_deployed_family_pumpkin_patch_131024-F-VS255-064.jpg"
+    "source_url": "https://commons.wikimedia.org/wiki/File:Parents,_children_decorate_pumpkins_(3917479).jpg"
    }
   },
   {
@@ -3244,12 +3220,12 @@
     "holiday:halloween"
    ],
    "photo": {
-    "file": "r23/pumpkin-painting-party.webp",
-    "alt": "Hand carved pumpkin decorations for the globe, handicrafts",
-    "caption": "Hand carved pumpkin decorations for the globe, handicrafts.",
-    "credit": "Photo: Hassan Hassoon, CC BY-SA 4.0, via Wikimedia Commons",
-    "licence": "CC BY-SA 4.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Hand-carved_pumpkin_decorations_for_the_globe,_handicrafts.jpg"
+    "file": "r27/pumpkin-painting-party.webp",
+    "alt": "Children painting small pumpkins at an outdoor table, paint pots in front of them",
+    "caption": "Children painting pumpkins at a park table: small pumpkins, big brushes, paint in every colour.",
+    "credit": "Photo: Virginia State Parks staff, CC BY 2.0, via Wikimedia Commons",
+    "licence": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:FL_Children_painting_pumpkins_(6197876199).jpg"
    }
   },
   {
@@ -3601,15 +3577,7 @@
    "tags": [
     "season:fall",
     "holiday:halloween"
-   ],
-   "photo": {
-    "file": "r23/halloween-pumpkin-bowl.webp",
-    "alt": "Little boy dressed as cowboy with cowboy hat playing bowling with plush candycorn on a hardwood floor by stairs with pumpkin by front door (16805093849)",
-    "caption": "Little boy dressed as cowboy with cowboy hat playing bowling with plush candycorn on a hardwood floor by stairs with pumpkin by front door (16805093849).",
-    "credit": "Photo: Personal Creations, CC BY 2.0, via Wikimedia Commons",
-    "licence": "CC BY 2.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Little_boy_dressed_as_cowboy_with_cowboy_hat_playing_bowling_with_plush_candycorn_on_a_hardwood_floor_by_stairs_with_pumpkin_by_front_door_(16805093849).jpg"
-   }
+   ]
   },
   {
    "id": "winter-gingerbread-build",
@@ -5633,14 +5601,6 @@
    "variations": {
     "easier": "Decorate and present in the same session with classroom items.",
     "harder": "Add a 'mystery item' the group must guess the story behind."
-   },
-   "photo": {
-    "file": "r23/all-about-me-bags.webp",
-    "alt": "All About the Bags (18458933759)",
-    "caption": "All About the Bags (18458933759).",
-    "credit": "Photo: Garry Knight from London, England, CC BY 2.0, via Wikimedia Commons",
-    "licence": "CC BY 2.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:All_About_the_Bags_(18458933759).jpg"
    }
   },
   {
@@ -6376,14 +6336,6 @@
    "variations": {
     "easier": "Three rounds instead of five.",
     "harder": "Practice 'smell the flowers, blow the candle' extended exhales."
-   },
-   "photo": {
-    "file": "r23/breathing-buddies.webp",
-    "alt": "Buddy Breathing Practice (4581145103)",
-    "caption": "Buddy Breathing Practice (4581145103).",
-    "credit": "Photo: NASA Analogs, Public domain, via Wikimedia Commons",
-    "licence": "Public domain",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Buddy_Breathing_Practice_(4581145103).jpg"
    }
   },
   {
@@ -6870,12 +6822,12 @@
     "holiday:easter"
    ],
    "photo": {
-    "file": "r23/egg-hunt-design.webp",
-    "alt": "The Big Egg Hunt 2013 Covent Garden, London (8623261487)",
-    "caption": "The Big Egg Hunt 2013 Covent Garden, London (8623261487).",
-    "credit": "Photo: Karen Roe from Bury St Edmunds, Suffolk, UK, United Kingdom, CC BY 2.0, via Wikimedia Commons",
-    "licence": "CC BY 2.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:The_Big_Egg_Hunt_2013_-_Covent_Garden,_London_(8623261487).jpg"
+    "file": "r27/egg-hunt-design.webp",
+    "alt": "Children hunting for Easter eggs scattered across a grassy field, bags in hand",
+    "caption": "The hunt itself: eggs scattered over the grass and children combing the field for them, bags ready.",
+    "credit": "Photo: HutchDoesStuff, CC0, via Wikimedia Commons",
+    "licence": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Church_Easter_Egg_Hunt.jpg"
    }
   },
   {
@@ -9085,15 +9037,7 @@
    "safety": "Adults do all the apple cutting. Smocks on, paint washes out of hands, not always out of shirts.",
    "tags": [
     "season:fall"
-   ],
-   "photo": {
-    "file": "r23/apple-print-painting.webp",
-    "alt": "An Apple, Grapes and a Hazelnut on a Mossy Bank MET DP829448",
-    "caption": "An Apple, Grapes and a Hazelnut on a Mossy Bank MET DP829448.",
-    "credit": "Photo: William Henry Hunt, CC0, via Wikimedia Commons",
-    "licence": "CC0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:An_Apple,_Grapes_and_a_Hazelnut_on_a_Mossy_Bank_MET_DP829448.jpg"
-   }
+   ]
   },
   {
    "id": "ghost-footprint-keepsake",
@@ -10523,15 +10467,7 @@
    "safety": "No tasting the 'ingredients'; melt water goes on the garden, not in mouths.",
    "tags": [
     "season:winter"
-   ],
-   "photo": {
-    "file": "r23/ice-ornaments.webp",
-    "alt": "Coeur Heart Ice Blue",
-    "caption": "Coeur Heart Ice Blue.",
-    "credit": "Photo: Herze1729, CC0, via Wikimedia Commons",
-    "licence": "CC0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Coeur_Heart_Ice_Blue.png"
-   }
+   ]
   },
   {
    "id": "hanukkah-counting-chain",
@@ -11255,15 +11191,7 @@
    "tags": [
     "season:winter"
    ],
-   "copy_free": true,
-   "photo": {
-    "file": "r23/warm-up-countdown.webp",
-    "alt": "2009 Summer Deaflympics Power in Me Warming Event the Countdown Launch",
-    "caption": "2009 Summer Deaflympics Power in Me Warming Event the Countdown Launch.",
-    "credit": "Photo: Rico Shen, CC BY-SA 3.0, via Wikimedia Commons",
-    "licence": "CC BY-SA 3.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:2009_Summer_Deaflympics_Power_in_Me_Warming_Event_the_Countdown_Launch.jpg"
-   }
+   "copy_free": true
   },
   {
    "id": "paper-mitten-match",
@@ -12832,12 +12760,12 @@
     "holiday:earth-day"
    ],
    "photo": {
-    "file": "r23/recycled-paper-making.webp",
-    "alt": "India Varanasi paper bag maker",
-    "caption": "India Varanasi paper bag maker.",
-    "credit": "Photo: Jorge Royan, CC BY-SA 3.0, via Wikimedia Commons",
+    "file": "r27/recycled-paper-making.webp",
+    "alt": "Children in yellow aprons making paper, lifting a fresh sheet on a mould from the pulp vat",
+    "caption": "Paper being made: children at the vat, a fresh sheet coming up on the mould and deckle.",
+    "credit": "Photo: Grzegorz Wysocki, CC BY-SA 3.0, via Wikimedia Commons",
     "licence": "CC BY-SA 3.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:India_-_Varanasi_paper_bag_maker_-_0078.jpg"
+    "source_url": "https://commons.wikimedia.org/wiki/File:Czerpanie_papieru_w_Muzeum_Papiernictwa_w_Dusznikach.jpg"
    }
   },
   {
@@ -12976,15 +12904,7 @@
    "safety": "Squeeze gently, never hard. Barefoot-friendly grass only, no running on wet concrete.",
    "tags": [
     "season:summer"
-   ],
-   "photo": {
-    "file": "r23/drip-drip-drop.webp",
-    "alt": "Drip drop (32597138914)",
-    "caption": "Drip drop (32597138914).",
-    "credit": "Photo: Lorie Shaull from Washington, United States, CC BY-SA 2.0, via Wikimedia Commons",
-    "licence": "CC BY-SA 2.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Drip_drop_(32597138914).jpg"
-   }
+   ]
   },
   {
    "id": "bucket-brigade-race",
@@ -13283,14 +13203,6 @@
    "tags": [
     "season:summer"
    ],
-   "photo": {
-    "file": "r23/flashlight-tag.webp",
-    "alt": "Children playing tag",
-    "caption": "Children playing tag.",
-    "credit": "Photo: EJ Fox (\"pseudoplacebo\") from Circleville, United States, CC BY-SA 2.0, via Wikimedia Commons",
-    "licence": "CC BY-SA 2.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Children_playing_tag.jpg"
-   },
    "source": "https://en.wikipedia.org/wiki/Flashlight"
   },
   {
@@ -13336,15 +13248,7 @@
    "safety": "Chalk dust is slippery when thick. Sweep the lane between runs. Hats and water on hot pavement days.",
    "tags": [
     "season:summer"
-   ],
-   "photo": {
-    "file": "r23/chalk-obstacle-course.webp",
-    "alt": "Fuerzas Comando 2025 Obstacle Course (9281157)",
-    "caption": "Fuerzas Comando 2025 Obstacle Course (9281157).",
-    "credit": "Photo: U.S. Army National Guard photo by Sgt. Hassani Ribera Soto, Public domain, via Wikimedia Commons",
-    "licence": "Public domain",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Fuerzas_Comando_2025_Obstacle_Course_(9281157).jpg"
-   }
+   ]
   },
   {
    "id": "frisbee-golf-nine",
@@ -13499,12 +13403,12 @@
     "season:summer"
    ],
    "photo": {
-    "file": "r25/friendship-bracelet-basics.webp",
-    "alt": "Kamala Harris rally at Alliant Energy Center in October 2024 friendship bracelet making station IMG",
-    "caption": "Kamala Harris rally at Alliant Energy Center in October 2024 friendship bracelet making station IMG.",
-    "credit": "Photo: SecretName101, CC BY 4.0, via Wikimedia Commons",
-    "licence": "CC BY 4.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Kamala_Harris_rally_at_Alliant_Energy_Center_in_October_2024_friendship_bracelet_making_station_IMG_9801.jpg"
+    "file": "r27/friendship-bracelet-basics.webp",
+    "alt": "People at a table making friendship bracelets with coloured thread, finished bracelets spread out",
+    "caption": "Bracelet making at the table: coloured thread, knots in progress, finished bracelets piling up.",
+    "credit": "Photo: college.library, CC BY 2.0, via Wikimedia Commons",
+    "licence": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Making_friends,_one_bracelet_at_a_time_(3926049301).jpg"
    }
   },
   {
@@ -13742,15 +13646,7 @@
    "safety": "Meltwater goes in trays, not on the floor, wet floors, wet socks, slipped kids. Towels down before blocks come out.",
    "tags": [
     "season:summer"
-   ],
-   "photo": {
-    "file": "r23/ice-excavation-dig.webp",
-    "alt": "Jersey Ice Age Island archaeological project 2013 03",
-    "caption": "Jersey Ice Age Island archaeological project 2013 03.",
-    "credit": "Photo: Man vyi, Public domain, via Wikimedia Commons",
-    "licence": "Public domain",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Jersey_Ice_Age_Island_archaeological_project_2013_03.jpg"
-   }
+   ]
   },
   {
    "id": "fan-boat-races",
@@ -13981,15 +13877,7 @@
    "safety": "Keep the circle in shade if outdoors. Opening assemblies run long and kids wilt. Water within reach.",
    "tags": [
     "season:summer"
-   ],
-   "photo": {
-    "file": "r23/camp-week-kickoff.webp",
-    "alt": "94th AAMDC volunteers at the 2025 Youth Impact Program Football Camp (9107914)",
-    "caption": "94th AAMDC volunteers at the 2025 Youth Impact Program Football Camp (9107914).",
-    "credit": "Photo: U.S. Army 94AAMDC by Sgt. 1st Class William Tanner, Public domain, via Wikimedia Commons",
-    "licence": "Public domain",
-    "source_url": "https://commons.wikimedia.org/wiki/File:94th_AAMDC_volunteers_at_the_2025_Youth_Impact_Program_Football_Camp_(9107914).jpg"
-   }
+   ]
   },
   {
    "id": "talent-showcase-night",
@@ -14259,15 +14147,7 @@
    "safety": "Bubble solution stings eyes. Keep a water bottle handy for rinses and remind kids to pop with fingers, not faces. Slippery when spilled: trays on grass, not pavement.",
    "tags": [
     "season:summer"
-   ],
-   "photo": {
-    "file": "r23/giant-bubble-chase.webp",
-    "alt": "Moonlit Bubble Chase",
-    "caption": "Moonlit Bubble Chase.",
-    "credit": "Photo: Kanesha Sree.S, CC BY-SA 4.0, via Wikimedia Commons",
-    "licence": "CC BY-SA 4.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Moonlit_Bubble_Chase.jpg"
-   }
+   ]
   },
   {
    "id": "ghost-garland-string",
@@ -14721,15 +14601,7 @@
    "tags": [
     "season:fall",
     "holiday:halloween"
-   ],
-   "photo": {
-    "file": "r23/apple-string-bite.webp",
-    "alt": "Golden Delicious apples",
-    "caption": "Golden Delicious apples.",
-    "credit": "Photo: Ivar Leidus, CC BY-SA 4.0, via Wikimedia Commons",
-    "licence": "CC BY-SA 4.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Golden_Delicious_apples.jpg"
-   }
+   ]
   },
   {
    "id": "pumpkin-volcano-fizz",
@@ -15029,12 +14901,12 @@
     "holiday:halloween"
    ],
    "photo": {
-    "file": "r23/apple-tasting-party.webp",
-    "alt": "Apple tasting 2020 01",
-    "caption": "Apple tasting 2020 01.",
-    "credit": "Photo: Johan Jönsson (Julle), CC BY-SA 4.0, via Wikimedia Commons",
-    "licence": "CC BY-SA 4.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Apple_tasting_2020_01.jpg"
+    "file": "r27/apple-tasting-party.webp",
+    "alt": "People tasting apples at a long table covered with baskets of different apple varieties",
+    "caption": "An apple tasting in a barn: baskets of varieties down the table and tasters working through them.",
+    "credit": "Photo: Bob Embleton, CC BY-SA 2.0, via Wikimedia Commons",
+    "licence": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Dessert_apple_tasting,_Hellens,_Much_Marcle_-_geograph.org.uk_-_1529186.jpg"
    },
    "source": "https://en.wikipedia.org/wiki/Apple"
   },
@@ -15372,15 +15244,7 @@
    "safety": "This is the safety activity: daylight planning for a nighttime event. The standing rules, reflective gear or glow sticks, an adult with every group, no entering homes, get said out loud and written on the map.",
    "tags": [
     "holiday:halloween"
-   ],
-   "photo": {
-    "file": "r24/trick-or-treat-route-map.webp",
-    "alt": "02024244 Trick or treating",
-    "caption": "02024244 Trick or treating.",
-    "credit": "Photo: Silar, CC BY-SA 4.0, via Wikimedia Commons",
-    "licence": "CC BY-SA 4.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:02024244_Trick-or-treating.jpg"
-   }
+   ]
   },
   {
    "id": "thankful-turkey-handprints",
@@ -15792,15 +15656,7 @@
     "holiday:thanksgiving"
    ],
    "inclusion": "Build flat shapes instead of towers; partner roles for every step.",
-   "copy_free": true,
-   "photo": {
-    "file": "r23/cranberry-toothpick-towers.webp",
-    "alt": "Cranberry Fruit",
-    "caption": "Cranberry Fruit.",
-    "credit": "Photo: Torresmeraz, CC BY-SA 4.0, via Wikimedia Commons",
-    "licence": "CC BY-SA 4.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Cranberry_Fruit.png"
-   }
+   "copy_free": true
   },
   {
    "id": "turkey-baster-relay",
@@ -16180,15 +16036,7 @@
     "holiday:thanksgiving"
    ],
    "inclusion": "Poster, counter, and greeter roles for every mobility level.",
-   "copy_free": true,
-   "photo": {
-    "file": "r23/food-drive-planning.webp",
-    "alt": "A food market at the entrance to the Valley Gardens, Valley Drive, Harrogate geograph.org.uk",
-    "caption": "A food market at the entrance to the Valley Gardens, Valley Drive, Harrogate geograph.org.uk.",
-    "credit": "Photo: habiloid, CC BY-SA 2.0, via Wikimedia Commons",
-    "licence": "CC BY-SA 2.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:A_food_market_at_the_entrance_to_the_Valley_Gardens,_Valley_Drive,_Harrogate_-_geograph.org.uk_-_8299958.jpg"
-   }
+   "copy_free": true
   },
   {
    "id": "staff-thank-you-cards",
@@ -16453,15 +16301,7 @@
    ],
    "source": "https://naomimeredith.com/tag/fall/",
    "copy_free": true,
-   "inclusion": "Thicker skewers for easier grip; team roles (planner, builder, tester); test narrated aloud so everyone follows the results.",
-   "photo": {
-    "file": "r23/thanksgiving-table-build.webp",
-    "alt": "Flowers for Thanksgiving table (11109751585)",
-    "caption": "Flowers for Thanksgiving table (11109751585).",
-    "credit": "Photo: Dorian Wallender from Lake Havasu City, Arizona, USA, CC BY-SA 2.0, via Wikimedia Commons",
-    "licence": "CC BY-SA 2.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Flowers_for_Thanksgiving_table_(11109751585).jpg"
-   }
+   "inclusion": "Thicker skewers for easier grip; team roles (planner, builder, tester); test narrated aloud so everyone follows the results."
   },
   {
    "age_max": 12,
@@ -17724,14 +17564,6 @@
    "variations": {
     "easier": "Skip the points; just beat the timer together.",
     "harder": "Add a 'mystery item' round: sort tricky items like tape rolls and ribbons."
-   },
-   "photo": {
-    "file": "r23/holiday-cleanup-crew-game.webp",
-    "alt": "Holiday Farm Fire Cleanup (50860329407)",
-    "caption": "Holiday Farm Fire Cleanup (50860329407).",
-    "credit": "Photo: Oregon Department of Transportation, CC BY 2.0, via Wikimedia Commons",
-    "licence": "CC BY 2.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Holiday_Farm_Fire_Cleanup_(50860329407).jpg"
    }
   },
   {
@@ -19070,15 +18902,7 @@
     "easier": "Just the drawing, skip the labels.",
     "harder": "Sketch the same window again tomorrow and spot three differences."
    },
-   "safety": "Stay inside. This is a watch-the-weather activity, not a go-into-it one.",
-   "photo": {
-    "file": "r26/window-weather-sketch.webp",
-    "alt": "Child reaches for window during rainy day touching glass with hands",
-    "caption": "Child reaches for window during rainy day touching glass with hands.",
-    "credit": "Photo: Shixart1985, CC BY 2.0, via Wikimedia Commons",
-    "licence": "CC BY 2.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Child_reaches_for_window_during_rainy_day_touching_glass_with_hands.jpg"
-   }
+   "safety": "Stay inside. This is a watch-the-weather activity, not a go-into-it one."
   },
   {
    "id": "indoor-picnic-memory",
@@ -20842,15 +20666,7 @@
     "theme:spooky"
    ],
    "why_it_works": "Slow looking is attention training: close observation and sketching give selective attention a real workout.",
-   "inclusion": "Photo-based version works for anyone who can't get to the webs; sketching needs no art skill - labels count as success.",
-   "photo": {
-    "file": "r24/spiderweb-sketch-study.webp",
-    "alt": "Dew on spider web Luc Viatour",
-    "caption": "Dew on spider web Luc Viatour.",
-    "credit": "Photo: Luc Viatour, CC BY-SA 3.0, via Wikimedia Commons",
-    "licence": "CC BY-SA 3.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Dew_on_spider_web_Luc_Viatour.jpg"
-   }
+   "inclusion": "Photo-based version works for anyone who can't get to the webs; sketching needs no art skill - labels count as success."
   },
   {
    "id": "ghost-banana-pops",
@@ -21239,15 +21055,7 @@
     "holiday:halloween"
    ],
    "copy_free": true,
-   "no_elimination": true,
-   "photo": {
-    "file": "r23/halloween-this-or-that.webp",
-    "alt": "020251011 Halloween mask",
-    "caption": "020251011 Halloween mask.",
-    "credit": "Photo: Marsilar, CC BY-SA 4.0, via Wikimedia Commons",
-    "licence": "CC BY-SA 4.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:020251011_Halloween_mask.jpg"
-   }
+   "no_elimination": true
   },
   {
    "id": "monster-stomp-rhythms",
@@ -21588,12 +21396,12 @@
    ],
    "no_elimination": true,
    "photo": {
-    "file": "r23/pumpkin-bowling.webp",
-    "alt": "Little boy dressed as cowboy with cowboy hat playing bowling with plush candycorn on a hardwood floor by stairs with pumpkin by front door (16805093849)",
-    "caption": "Little boy dressed as cowboy with cowboy hat playing bowling with plush candycorn on a hardwood floor by stairs with pumpkin by front door (16805093849).",
-    "credit": "Photo: Personal Creations, CC BY 2.0, via Wikimedia Commons",
-    "licence": "CC BY 2.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Little_boy_dressed_as_cowboy_with_cowboy_hat_playing_bowling_with_plush_candycorn_on_a_hardwood_floor_by_stairs_with_pumpkin_by_front_door_(16805093849).jpg"
+    "file": "r27/pumpkin-bowling.webp",
+    "alt": "A girl bowling down a hay-bale lane toward gourd pins, her ball rolling ahead of her",
+    "caption": "Pumpkin bowling on a hay-bale lane: the ball is away and the gourd pins are waiting.",
+    "credit": "Photo: U.S. Department of Agriculture, Public domain, via Wikimedia Commons",
+    "licence": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:20171027-AMS-LSC-0338_(38068297471).jpg"
    }
   },
   {
@@ -21734,15 +21542,7 @@
    "tags": [
     "season:fall",
     "holiday:halloween"
-   ],
-   "photo": {
-    "file": "r24/pumpkin-patch-scavenger-hunt.webp",
-    "alt": "Park Avenue United Methodist Church, Valdosta pumpkin patch 2016 1",
-    "caption": "Park Avenue United Methodist Church, Valdosta pumpkin patch 2016 1.",
-    "credit": "Photo: Michael Rivera, CC BY-SA 4.0, via Wikimedia Commons",
-    "licence": "CC BY-SA 4.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Park_Avenue_United_Methodist_Church,_Valdosta_pumpkin_patch_2016_1.jpg"
-   }
+   ]
   },
   {
    "id": "leaf-pile-monster-dig",
@@ -22628,15 +22428,7 @@
    "tags": [
     "holiday:hanukkah",
     "season:winter"
-   ],
-   "photo": {
-    "file": "r24/gelt-math-market.webp",
-    "alt": "Chocolate Gold Coins",
-    "caption": "Chocolate Gold Coins.",
-    "credit": "Photo: Evan-Amos, CC0, via Wikimedia Commons",
-    "licence": "CC0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Chocolate-Gold-Coins.jpg"
-   }
+   ]
   },
   {
    "id": "blue-white-weaving",
@@ -22685,12 +22477,12 @@
    ],
    "copy_free": true,
    "photo": {
-    "file": "r23/blue-white-weaving.webp",
-    "alt": "Blue end on cloth with white stripes",
-    "caption": "Blue end on cloth with white stripes.",
-    "credit": "Photo: Edward G. FitzGerald, CC BY-SA 3.0, via Wikimedia Commons",
-    "licence": "CC BY-SA 3.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Blue_end-on-cloth_with_white_stripes.JPG"
+    "file": "r27/blue-white-weaving.webp",
+    "alt": "A weaver working at a wooden loom weaving blue indigo kasuri cloth",
+    "caption": "Weaving in progress: a weaver at her loom, blue-and-white indigo kasuri cloth growing on the beam.",
+    "credit": "Photo: Jyo81, CC BY 3.0, via Wikimedia Commons",
+    "licence": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Iyo-Kasuri-Museum_3(Matsuyama_City).JPG"
    }
   },
   {
@@ -22989,15 +22781,7 @@
     "holiday:new-year",
     "season:winter"
    ],
-   "copy_free": true,
-   "photo": {
-    "file": "r23/countdown-clock-craft.webp",
-    "alt": "2002 Winter Olympics Countdown Clock 5 September",
-    "caption": "2002 Winter Olympics Countdown Clock 5 September.",
-    "credit": "Photo: Mangoman88, CC0, via Wikimedia Commons",
-    "licence": "CC0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:2002_Winter_Olympics_-_Countdown_Clock_-_5_September_2012.jpg"
-   }
+   "copy_free": true
   },
   {
    "id": "resolution-seed-packets",
@@ -23614,15 +23398,7 @@
    "tags": [
     "season:winter"
    ],
-   "copy_free": true,
-   "photo": {
-    "file": "r24/rainstick-rhythm-circle.webp",
-    "alt": "Cactus rainstick healing instruments",
-    "caption": "Cactus rainstick healing instruments.",
-    "credit": "Photo: Mia lan mia, CC0, via Wikimedia Commons",
-    "licence": "CC0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Cactus_rainstick_healing_instruments.jpg"
-   }
+   "copy_free": true
   },
   {
    "id": "body-percussion-patterns",
@@ -24073,15 +23849,7 @@
     "season:winter"
    ],
    "copy_free": true,
-   "no_elimination": true,
-   "photo": {
-    "file": "r23/animal-parade-march.webp",
-    "alt": "Cleveland, Ohio St. Patrick's Day Parade Animal Protection League (8566900905)",
-    "caption": "Cleveland, Ohio St. Patrick's Day Parade Animal Protection League (8566900905).",
-    "credit": "Photo: Erik Drost, CC BY 2.0, via Wikimedia Commons",
-    "licence": "CC BY 2.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Cleveland,_Ohio_St._Patrick%27s_Day_Parade_Animal_Protection_League_(8566900905).jpg"
-   }
+   "no_elimination": true
   },
   {
    "id": "nesting-cup-towers",
@@ -24790,15 +24558,7 @@
    "tags": [
     "holiday:july-4th"
    ],
-   "copy_free": true,
-   "photo": {
-    "file": "r23/independence-debate.webp",
-    "alt": "2022 03 09 Dhaka International University Independence Day Debate Competition Awards Ceremony (PID 0024346)",
-    "caption": "2022 03 09 Dhaka International University Independence Day Debate Competition Awards Ceremony (PID 0024346).",
-    "credit": "Photo: Press Information Department, Public domain, via Wikimedia Commons",
-    "licence": "Public domain",
-    "source_url": "https://commons.wikimedia.org/wiki/File:2022-03-09_Dhaka_International_University_Independence_Day_Debate_Competition_Awards_Ceremony_(PID-0024346).jpg"
-   }
+   "copy_free": true
   },
   {
    "id": "upcycle-invention-challenge",
@@ -25009,12 +24769,12 @@
     "holiday:easter"
    ],
    "photo": {
-    "file": "r23/natural-dye-easter-eggs.webp",
-    "alt": "SK Coloring eggs with natural dyes (5664339145)",
-    "caption": "SK Coloring eggs with natural dyes (5664339145).",
-    "credit": "Photo: Virginia State Parks staff, CC BY 2.0, via Wikimedia Commons",
-    "licence": "CC BY 2.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:SK_Coloring_eggs_with_natural_dyes_(5664339145).jpg"
+    "file": "r27/natural-dye-easter-eggs.webp",
+    "alt": "Eggs sitting in mugs of coloured dye, yellow and red, with more dyed eggs resting nearby",
+    "caption": "Eggs in their dye cups, mid-colour: one yellow, one red, the rest of the batch cooling alongside.",
+    "credit": "Photo: daryl_mitchell, CC BY-SA 2.0, via Wikimedia Commons",
+    "licence": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Dyeing_Easter_Eggs_(41203978720).jpg"
    }
   },
   {
@@ -26332,12 +26092,12 @@
    "copy_free": true,
    "inclusion": "This is real agricultural science developed by Indigenous farmers over centuries. Teach it as engineering with named peoples, not as a cute legend. If you plant, say whose knowledge made the plan before the first seed goes in.",
    "photo": {
-    "file": "r23/three-sisters-garden-plan.webp",
-    "alt": "Keya Wakpala Garden, Mission SD 3",
-    "caption": "Keya Wakpala Garden, Mission SD 3.",
-    "credit": "Photo: USDA NRCS South Dakota, CC BY-SA 2.0, via Wikimedia Commons",
-    "licence": "CC BY-SA 2.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Keya_Wakpala_Garden,_Mission_SD_3.jpg"
+    "file": "r27/three-sisters-garden-plan.webp",
+    "alt": "A fenced garden bed planted three-sisters style: corn standing tall behind low bean and squash leaves",
+    "caption": "A working three sisters bed: corn up the back, beans and squash covering the ground in front.",
+    "credit": "Photo: Myotus, CC BY-SA 4.0, via Wikimedia Commons",
+    "licence": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Three_Sisters_Garden.jpg"
    }
   },
   {
@@ -28384,15 +28144,7 @@
    },
    "safety": "Plank stays low, stacks no higher than two big blocks, and bridges are for toys, never for feet: nobody stands, sits, or crawls on the plank, and that rule is said before the first crossing. Kids' hands stay off the plank while a toy is crossing; a bridge being held is a bridge that cannot be tested.",
    "copy_free": true,
-   "inclusion": "The crosser's job can be done entirely by voice: a kid who directs, 'my turn to cross, walk him slow', while a friend's hand walks their toy across is the bridge's engineer that round, and the group counts their traveller in with the rest. Directing is building, said so out loud.",
-   "photo": {
-    "file": "r23/wide-plank-bridge-crossing.webp",
-    "alt": "'NIGHT VIEW' OF END POST Atherton Bridge, Spanning Nashua River on Bolton Road, Lancaster, Worcester County, MA HAER MASS,14 LANC.V,1 6",
-    "caption": "'NIGHT VIEW' OF END POST Atherton Bridge, Spanning Nashua River on Bolton Road, Lancaster, Worcester County, MA HAER MASS,14 LANC.V,1 6.",
-    "credit": "Photo: Unknown, Public domain, via Wikimedia Commons",
-    "licence": "Public domain",
-    "source_url": "https://commons.wikimedia.org/wiki/File:%27NIGHT_VIEW%27_OF_END_POST_-_Atherton_Bridge,_Spanning_Nashua_River_on_Bolton_Road,_Lancaster,_Worcester_County,_MA_HAER_MASS,14-LANC.V,1-6.tif"
-   }
+   "inclusion": "The crosser's job can be done entirely by voice: a kid who directs, 'my turn to cross, walk him slow', while a friend's hand walks their toy across is the bridge's engineer that round, and the group counts their traveller in with the rest. Directing is building, said so out loud."
   },
   {
    "id": "blanket-ball-bounce-together",
@@ -28643,12 +28395,12 @@
    "no_elimination": true,
    "inclusion": "A lantern carried on a lap tray, or set on the front of a wheelchair and pushed along the same route, is in the parade in full. The parade is the line, the lights and the slow pace, and every carrier in it is carrying. A kid who would rather be the rug-keeper, holding the row straight as lanterns arrive, has the job the whole parade is walking toward.",
    "photo": {
-    "file": "r23/lantern-carry-parade.webp",
-    "alt": "Boy's Brigade Parade, Kenya, ca.1905 ca.1940 (imp cswc GB 237 CSWC47 LS7 051)",
-    "caption": "Boy's Brigade Parade, Kenya, ca.1905 ca.1940 (imp cswc GB 237 CSWC47 LS7 051).",
-    "credit": "Photo: Unknown authorUnknown author, Public domain, via Wikimedia Commons",
-    "licence": "Public domain",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Boy%27s_Brigade_Parade,_Kenya,_ca.1905-ca.1940_(imp-cswc-GB-237-CSWC47-LS7-051).jpg"
+    "file": "r27/lantern-carry-parade.webp",
+    "alt": "Two children in festival dress carrying large paper lanterns in a night parade",
+    "caption": "Carrying the light: two children in festival dress, each with a big paper lantern, in a night parade.",
+    "credit": "Photo: Los Angeles Daily News, CC BY 4.0, via Wikimedia Commons",
+    "licence": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:MoonFestLA.jpg"
    }
   },
   {
@@ -29369,12 +29121,12 @@
    "safety": "Fingers stay on the inside glass, flat and gentle, no banging, no leaning body weight on the pane, and stools are placed and held by an adult, never climbed mid-game. The window stays shut whatever the weather is doing; the rain is watched, not let in. If thunder starts, the group leaves the window. Storm watching is not this activity.",
    "copy_free": true,
    "photo": {
-    "file": "r23/window-raindrop-follow.webp",
-    "alt": "Four versions of a floodlight through rain on a window",
-    "caption": "Four versions of a floodlight through rain on a window.",
-    "credit": "Photo: W.carter, CC BY-SA 4.0, via Wikimedia Commons",
-    "licence": "CC BY-SA 4.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Four_versions_of_a_floodlight_through_rain_on_a_window.jpg"
+    "file": "r27/window-raindrop-follow.webp",
+    "alt": "Large raindrops beading and running on a window pane",
+    "caption": "Raindrops on the glass, big and clear: pick one and follow it all the way down.",
+    "credit": "Photo: The Eloquent Peasant, CC BY 4.0, via Wikimedia Commons",
+    "licence": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Big_raindrops_on_car_window.jpg"
    }
   },
   {
@@ -29552,12 +29304,12 @@
    "safety": "Untreated grass only, no exceptions. A lawn whose spray history is unknown is not used, and the adult, not the patch, decides. Blowing is always away from faces and eyes; a kid who wants to watch from a step back is watching in full. Seeds and stems are not eaten, hands get washed back inside, and clocks near pathsides where dogs are walked are looked at, not picked.",
    "copy_free": true,
    "photo": {
-    "file": "r24/dandelion-clock-blow-walk.webp",
-    "alt": "Dandelion clock best",
-    "caption": "Dandelion clock best.",
-    "credit": "Photo: Marko27, CC BY-SA 2.0, via Wikimedia Commons",
-    "licence": "CC BY-SA 2.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Dandelion_clock_best.jpg"
+    "file": "r27/dandelion-clock-blow-walk.webp",
+    "alt": "A young child blowing a dandelion clock, its seeds scattering in the sunlight",
+    "caption": "One dandelion clock, one big blow: the seeds are already away.",
+    "credit": "Photo: Shixart1985, CC BY 2.0, via Wikimedia Commons",
+    "licence": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:A_young_child_holds_a_dandelion_puff_and_blows_to_scatter_its_seeds_as_an_adult_supports_her.jpg"
    }
   },
   {
@@ -31452,15 +31204,7 @@
     "season:fall"
    ],
    "copy_free": true,
-   "inclusion": "Pointing is the only instrument, so the count is open at every height and from every seat: a counter stationed at the tree's best vantage in whatever seat they use has the same tree, the same colours, and the same deciding vote. A colour they call still needs its second agreer, exactly like everyone else's. Calls arrive as words, points, or a sound the group learns means 'THERE. That one'; the adult checks every call against the tree the same way. The count-keeper job, holding up the running fingers where all can see them, belongs to whoever holds it and is the expedition's official record.",
-   "photo": {
-    "file": "r23/one-tree-autumn-color-count.webp",
-    "alt": "Mount Wilson Colour of Autumn 16 (26607293871)",
-    "caption": "Mount Wilson Colour of Autumn 16 (26607293871).",
-    "credit": "Photo: Sheba_Also 43,000 photos, CC BY-SA 2.0, via Wikimedia Commons",
-    "licence": "CC BY-SA 2.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Mount_Wilson_Colour_of_Autumn-16_(26607293871).jpg"
-   }
+   "inclusion": "Pointing is the only instrument, so the count is open at every height and from every seat: a counter stationed at the tree's best vantage in whatever seat they use has the same tree, the same colours, and the same deciding vote. A colour they call still needs its second agreer, exactly like everyone else's. Calls arrive as words, points, or a sound the group learns means 'THERE. That one'; the adult checks every call against the tree the same way. The count-keeper job, holding up the running fingers where all can see them, belongs to whoever holds it and is the expedition's official record."
   },
   {
    "id": "umbrella-drip-count-listen",
@@ -32061,12 +31805,12 @@
    "no_elimination": true,
    "inclusion": "Every job on the route exists at more than one height: the driver's chair takes any driver, the conductor's prompting works in words, signs, or a tapped order card, and a rider can travel the whole route from a seat that is already theirs, placed in the row like any other seat, paying and alighting by the same calls. A rider who communicates their stop by holding up its picture sign has called it in full; the driver answers every form of 'that's mine' identically. The token can be paid hand to hand, slid across the driver's tray, or dropped in the driver's tin. The fare is the handing over, in whatever form the hand offers.",
    "photo": {
-    "file": "r23/big-bus-stop-ride-along.webp",
-    "alt": "UTA bus stop, North Tooele Park and Ride lot, Mar 16",
-    "caption": "UTA bus stop, North Tooele Park and Ride lot, Mar 16.",
-    "credit": "Photo: An Errant Knight, CC BY-SA 4.0, via Wikimedia Commons",
-    "licence": "CC BY-SA 4.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:UTA_bus_stop,_North_Tooele_Park_and_Ride_lot,_Mar_16.jpg"
+    "file": "r27/big-bus-stop-ride-along.webp",
+    "alt": "A bus full of children, faces at every window, about to ride in 1927",
+    "caption": "A busload of children, every window full: the ride-along, 1927 style.",
+    "credit": "Photo: Webster & Stevens, Public domain, via Wikimedia Commons",
+    "licence": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Busload_of_children_from_the_Theodora_Home,_ca_1927_(MOHAI_5794).jpg"
    }
   },
   {
@@ -32466,15 +32210,7 @@
    },
    "safety": "Beads are big, smooth, single-piece, and audited one by one before every session, at three, the store's rule has no exceptions argued: anything small, cracked, splintered, sharp at the hole's rim, or losing its colour is out permanently. Stringing happens seated with the bowl still on the table: beads roll, and a rolled bead is retrieved by the adult at a walk, because beads on a floor under small feet are marbles' treacherous cousins. Laces are thick, soft-ended by tape, and never worn round a neck by the child themselves. Finished strings worn over the head are tied by the adult with a breakaway loose knot, worn supervised, and are the session's, coming off before any running, climbing, or leaving the room.",
    "copy_free": true,
-   "inclusion": "The threading works at every station: the lace can be held in a full fist, pushed with a palm-rock, or worked with the bead held in a table clamp the adult has placed, so the stringer's hands do only the aiming and pushing that are theirs today. A stringer can direct a whole string, choosing every bead by colour from the store, calling each push, 'that one... hole up... PUSH', while a partner's hands follow the direction exactly; the finished string, its pattern, and its length are the director's work, and it is worn by its director. Pattern-reading at the end, calling a finished string's colours bead by bead for the room, is the jeweller's official voice and belongs to whoever holds it.",
-   "photo": {
-    "file": "r23/big-wooden-bead-stringing.webp",
-    "alt": "Traditional wooden bead necklace",
-    "caption": "Traditional wooden bead necklace.",
-    "credit": "Photo: Warmglow, CC BY-SA 4.0, via Wikimedia Commons",
-    "licence": "CC BY-SA 4.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Traditional_wooden_bead_necklace.jpg"
-   }
+   "inclusion": "The threading works at every station: the lace can be held in a full fist, pushed with a palm-rock, or worked with the bead held in a table clamp the adult has placed, so the stringer's hands do only the aiming and pushing that are theirs today. A stringer can direct a whole string, choosing every bead by colour from the store, calling each push, 'that one... hole up... PUSH', while a partner's hands follow the direction exactly; the finished string, its pattern, and its length are the director's work, and it is worn by its director. Pattern-reading at the end, calling a finished string's colours bead by bead for the room, is the jeweller's official voice and belongs to whoever holds it."
   },
   {
    "id": "big-story-stone-first-people",
@@ -33111,12 +32847,12 @@
    "no_elimination": true,
    "inclusion": "The edge is a wide place: a crossing can be a whole walk through, one hand dipped from the line, a face turned up at the very edge from a seat set at mist's reach, or a crossing by direction. Coaching a partner's walk from the shore: 'in... you're IN the rain... out the other side!', with every report entering the day's telling at the same size. The rainbow hunt belongs to every eye equally and to some ears too: the mist's sound changes at its edge, and the sound-spotter's job, standing at the line and calling 'louder... softer...' as the sprinkler swings. Is one of the session's real instruments. The tap-keeper, who ends the weather, holds the morning's official last word from any position at the shore.",
    "photo": {
-    "file": "r25/big-sprinkler-rainbow-edge-walk.webp",
-    "alt": "Garden rainbow sprinkler",
-    "caption": "Garden rainbow sprinkler.",
-    "credit": "Photo: Karlhof26, CC BY-SA 4.0, via Wikimedia Commons",
-    "licence": "CC BY-SA 4.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Garden_rainbow_sprinkler.jpg"
+    "file": "r27/big-sprinkler-rainbow-edge-walk.webp",
+    "alt": "A young boy playing in the spray of a garden sprinkler",
+    "caption": "In the spray: a small boy and a garden sprinkler, which is the whole game at this age.",
+    "credit": "Photo: Carissa Rogers, CC BY 2.0, via Wikimedia Commons",
+    "licence": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Little_Boy_in_Sprinkler.jpg"
    }
   },
   {
@@ -34506,12 +34242,12 @@
    "no_elimination": true,
    "inclusion": "Heap work divides into jobs at every strength: the thermometer is read by one pair of hands and called aloud to the ledger-keeper, who may be seated at the bay's edge in the dry with the book, the readings, the weather column and the stall reasoning are the heap's intellectual core, and they are a seated job done at full authority. Turning itself scales honestly: a fork can be worked by a pair sharing the lift, the sieve can be shaken by turns or rocked by two, and the barrow runs to the beds go at the carrier's pace over the route the crew has walked for firm, step-free ground before building day. The ledger welcomes every register. A turning note can be written, dictated to the keeper verbatim, or given as the round's spoken report the keeper records with the reporter's name attached. The rota is published a season ahead, so every crew member's weeks are known, swappable by agreement, and never sprung on anyone. A heap kept by rota is a heap nobody has to be surprised by.",
    "photo": {
-    "file": "r24/compost-heap-temperature-ledger.webp",
-    "alt": "Compost heap: a photograph for Compost Heap Temperature Ledger",
-    "caption": "Compost heap.",
-    "credit": "Photo: Sten Porse, CC BY-SA 3.0, via Wikimedia Commons",
-    "licence": "CC BY-SA 3.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Compost-heap.jpg"
+    "file": "r27/compost-heap-temperature-ledger.webp",
+    "alt": "A gloved hand lifting compost in a straw-covered heap, a temperature gauge resting in the pile",
+    "caption": "Reading the heap: a hand turns the compost while the temperature gauge sits in the pile doing its job.",
+    "credit": "Photo: SuSanA Secretariat, CC BY 2.0, via Wikimedia Commons",
+    "licence": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Showing_us_the_compost_and_measuring_temperature_and_oxygen._(6879870707).jpg"
    }
   },
   {
@@ -35335,12 +35071,12 @@
    "no_elimination": true,
    "inclusion": "A folding row is a row of seated, skilled places, and the night staffs it as such: every station is a chair, a bowl and a tray at a height the folder chooses, the two folds are taught at folding distance at every seat, demonstrators walk the row rather than summoning folders to a front, and a fold can be learned from hands guided hand-over-hand, from the drawn card, or from a neighbour's repeated slow fold, all at identical standing. Folders work at their own honest pace inside the tray system, because the night is counted by trays, not by folders: a slow folder's tray is finished by the row without comment, a fast folder's hands are borrowed by the practice tray's teaching, and nobody's output is chalked by name. The tally boards count trays and totals, never people. The night's other offices are full honours: the tally-keeper holds the night's arithmetic and calls its position at every round, the card-reader reads the ingredients and allergens at the two ceremonies, and the greeter speaks the new year greeting for the table. Each an office that can be held seated, standing, or in whatever register its holder commands, including read from the card by the keeper at the holder's request. Guests and folders who cannot eat the filling are planned for from the night's card onward, their alternative arriving with the feast's own ceremony. Inclusion in this night is a menu decision made at planning, not an improvisation made at a table.",
    "photo": {
-    "file": "r23/lunar-new-year-dumpling-folding-night.webp",
-    "alt": "02021 0459 (4) Galician dumplings as a symbolic food for the Lunar New Year",
-    "caption": "02021 0459 (4) Galician dumplings as a symbolic food for the Lunar New Year.",
-    "credit": "Photo: Silar, CC BY-SA 4.0, via Wikimedia Commons",
-    "licence": "CC BY-SA 4.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:02021_0459_(4)_Galician_dumplings_as_a_symbolic_food_for_the_Lunar_New_Year.jpg"
+    "file": "r27/lunar-new-year-dumpling-folding-night.webp",
+    "alt": "Hands folding a dumpling, pinching its edge closed over a plate",
+    "caption": "The fold, up close: fingers pinching a dumpling shut, one pleat at a time.",
+    "credit": "Photo: Quadell, CC BY-SA 3.0, via Wikimedia Commons",
+    "licence": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Making_potstickers_6.jpeg"
    }
   },
   {

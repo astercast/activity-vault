@@ -77,24 +77,12 @@ ACTIVITY_PHOTOS = {
         "caption": "A finished game, out on a real table: box, rules, cards, pieces. Yours will look different. That is the point of a prototype.",
         "credit": "Photo: Harrison Keely, CC BY 4.0, via Wikimedia Commons",
     },
-    "origami-corner-bookmark": {
-        "file": "origami-cranes.webp",
-        "alt": "Strands of folded paper cranes hanging in long rows",
-        "caption": "Where folding can go: strands of paper cranes, every one of them starting from the same first folds as your corner bookmark.",
-        "credit": "Photo: shankar s., CC BY 2.0, via Wikimedia Commons",
-    },
-    "ice-cube-painting": {
-        "file": "watercolor-set.webp",
-        "alt": "An abstract watercolor painting in blues and greens",
-        "caption": "Watercolor doing what it does when it melts and moves. The look these frozen paint cubes are chasing.",
-        "credit": "Photo: Fons Heijnsbroek, CC0, via Wikimedia Commons",
-    },
-    "story-building-blocks": {
-        "file": "wooden-blocks.webp",
-        "alt": "Hands sorting colourful wooden blocks on a tray",
-        "caption": "Wooden blocks, mid-sort: the raw material of a story that has not decided its ending yet.",
-        "credit": "Photo: Shixart1985, CC BY 2.0, via Wikimedia Commons",
-    },
+    # Rotation 27 photo-truth fix (VP-0024/25/27): the origami-cranes,
+    # watercolor-set and wooden-blocks placements were pulled — cranes are
+    # not a corner bookmark, a finished abstract is not ice-cube painting,
+    # and Story Building Blocks is a closed designed-absence record whose
+    # leaked cover had to come off. Board Game Prototype's photo was
+    # audited MATCH and stays.
 }
 
 _PLACEMENT_RE = re.compile(r"\n<!-- PLACEMENT:BEGIN -->.*?<!-- PLACEMENT:END -->", re.S)
@@ -1359,9 +1347,8 @@ def _cover_for(acts, season_tag, occasion_tag):
     # own subjects, chosen at this build. (Fall, October 2026: a child
     # bowling with a pumpkin beats every still life in the file.)
     _COVER_PREFS = {
-        "season:fall": ["halloween-pumpkin-bowl", "papel-picado-banners",
-                        "build-a-scarecrow", "one-tree-autumn-color-count",
-                        "corn-husk-dolls"],
+        "season:fall": ["pumpkin-bowling", "papel-picado-banners",
+                        "build-a-scarecrow", "corn-husk-dolls"],
         "season:winter": ["winter-bird-feeder", "paper-snowflakes",
                           "twig-snowflake-craft"],
         "season:spring": ["seed-starter-cups", "three-sisters-garden-plan"],

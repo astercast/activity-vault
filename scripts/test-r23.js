@@ -42,8 +42,12 @@ for (const a of acts) {
   if (a.photo) ok(page.includes('assets/photos/' + a.photo.file) && page.includes('Photo source'), a.id + ': photo + photo source render on the page');
   if (a.source) ok(page.includes('class="source-line"') && page.includes(a.source.replace(/&/g, '&amp;')), a.id + ': source link renders plainly on the page');
 }
-/* Filed rotation-27 coverage floors: 273 photos, 93 source links.
-   The floors only ever move up; a drop below the filed count fails. */
-ok(withPhoto >= 273, 'coverage: at least the filed 273 activities carry a sourced photo (got ' + withPhoto + ')');
+/* Filed rotation-27 (photo-truth fix) coverage floors: 240 photos, 93 source
+   links. The floor was RE-DERIVED DOWN from 273 in the photo-truth fix:
+   the audit (VP-0024..VP-0027) proved 33 of the 273 data-carried photos did
+   not depict their activity, 18 were replaced with truthful Commons photos
+   and the rest were pulled to designed absence. Floors state the truth,
+   never protect a number. */
+ok(withPhoto >= 240, 'coverage: at least the filed 240 activities carry a sourced photo (got ' + withPhoto + ')');
 ok(withSource >= 93, 'coverage: at least the filed 93 activities carry a source link (got ' + withSource + ')');
 console.log('test-r23: ' + passed + ' assertions passed; photo ' + withPhoto + '/747, source ' + withSource + '/747');

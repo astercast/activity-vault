@@ -228,13 +228,21 @@ ok(!/<loc>\//.test(smap), 'sitemap locs all absolute (no relative locs remain)')
   ok(fs.existsSync(path.join(ROOT, f)), 'icon file present: ' + f));
 const favSvg = fs.readFileSync(path.join(ROOT, 'favicon.svg'), 'utf8');
 ok(favSvg.includes('#b7413c') && favSvg.includes('#fffdf7'), 'favicon.svg uses the site tokens (--accent squiggle on --paper)');
-// Photos: 4 wired with their manifest attribution lines, 1 honestly not wired.
+// Photos: 1 wired with its manifest attribution line (board-game, audited
+// MATCH in the r27 photo-truth audit). The other three Foundry placements
+// were pulled by that audit (VP-0024/25/27): origami cranes are not a corner
+// bookmark, a finished abstract is not ice-cube painting, and Story
+// Building Blocks is a closed designed-absence record — its page must
+// render with NO cover photo.
 const PHOTO_CHECKS = [
   ['board-game-prototype', 'board-game.webp', 'Photo: Harrison Keely, CC BY 4.0, via Wikimedia Commons'],
-  ['origami-corner-bookmark', 'origami-cranes.webp', 'Photo: shankar s., CC BY 2.0, via Wikimedia Commons'],
-  ['ice-cube-painting', 'watercolor-set.webp', 'Photo: Fons Heijnsbroek, CC0, via Wikimedia Commons'],
-  ['story-building-blocks', 'wooden-blocks.webp', 'Photo: Shixart1985, CC BY 2.0, via Wikimedia Commons'],
 ];
+['origami-corner-bookmark', 'ice-cube-painting', 'story-building-blocks'].forEach(id => {
+  const s = fs.readFileSync(path.join(ROOT, 'activity', id + '.html'), 'utf8');
+  ok(!s.includes('class="activity-photo cover-photo'), id + ': photo-truth pull — page renders with no cover photo');
+});
+['origami-cranes.webp', 'watercolor-set.webp', 'wooden-blocks.webp'].forEach(f =>
+  ok(!fs.existsSync(path.join(ROOT, 'assets/photos', f)), 'pulled photo file gone: ' + f));
 PHOTO_CHECKS.forEach(([id, file, credit]) => {
   const s = fs.readFileSync(path.join(ROOT, 'activity', id + '.html'), 'utf8');
   ok(s.includes('../assets/photos/' + file), id + ': photo wired: ' + file);
