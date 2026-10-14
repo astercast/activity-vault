@@ -1351,7 +1351,7 @@ def main():
     json.dump({'categories': cats, 'count': len(cats), 'updated': today},
               open(os.path.join(api, 'categories.json'), 'w'), indent=1, ensure_ascii=False)
     filters = {
-        "age": {"type": "range", "min": 5, "max": 12, "unit": "years",
+        "age": {"type": "range", "min": 3, "max": 14, "unit": "years",
                 "description": "Activity fits if the age range overlaps the selected age."},
         "time_available": {"type": "select", "options": [15, 20, 30, 45, 60], "unit": "minutes",
                 "description": "Activity fits if time_min <= selected minutes."},
