@@ -220,7 +220,8 @@ ok(idx.includes('home-promise'), 'homepage: masthead carries the audience promis
 ok(idx.includes('class="db-strip"'), 'homepage: published database-coverage strip present');
 ok(idx.includes('ages 13 to 14 hold 120 each'), 'homepage: coverage strip carries the true teen coverage (120)');
 ok(!idx.includes('home-highlights'), 'homepage: promo wall gone, bands collapsed to one (L11, rotation 21)');
-ok(idx.includes('class="season-band') && idx.includes('class="cal-row"'), 'homepage: calendar rows plus the single season band (rotation 21)');
+ok(idx.includes('class="issue-hero"') && idx.includes('class="cal-row"'), 'homepage: the season issue hero plus calendar rows (rotation 23)');
+ok(!idx.includes('season-band'), 'homepage: the season band is gone, the issue hero does its job (rotation 23)');
 const collJs = fs.readFileSync(path.join(ROOT, 'assets/collections.js'), 'utf8');
 ok(collJs.includes('s.hidden = !inSingle || s.id !== hash'), 'collections: detail panels on-demand only in browse mode');
 const sampleAct = fs.readFileSync(path.join(ROOT, 'activity', 'growing-degree-day-ledger.html'), 'utf8');

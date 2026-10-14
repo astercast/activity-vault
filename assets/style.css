@@ -51,6 +51,35 @@
   descent-override: 25.50%;
   line-gap-override: 0.00%;
 }
+/* Newsreader (rotation 23): the chosen warm text face for body copy.
+   Self-hosted variable files, SIL Open Font License 1.1, from the
+   Google Fonts distribution of the Newsreader project. */
+@font-face {
+  font-family: "Newsreader";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("fonts/newsreader-latin-var.woff2") format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Newsreader";
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("fonts/newsreader-italic-latin-var.woff2") format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Newsreader Fallback";
+  font-style: normal;
+  font-weight: 400 700;
+  src: local("Georgia");
+  size-adjust: 102%;
+  ascent-override: 96%;
+  descent-override: 26%;
+  line-gap-override: 0.00%;
+}
 @font-face {
   font-family: "Caveat";
   font-style: normal;
@@ -160,7 +189,8 @@
   --shadow: 0 2px 10px rgba(42, 36, 28, .08);
   --shadow-lift: 0 1px 2px rgba(42, 36, 28, .14), 0 10px 24px rgba(42, 36, 28, .10);
   --font-display: "Fraunces", "Fraunces Fallback", Georgia, 'Iowan Old Style', 'Times New Roman', serif;
-  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-body: "Newsreader", "Newsreader Fallback", Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+  --season: #b7413c; /* rotation 23: the current season's one colour (fall, at this build) */
   --font-hand: "Caveat", "Caveat Fallback", 'Segoe Script', cursive;
   --font-type: "Courier Prime", "Courier Prime Fallback", 'Courier New', Courier, monospace;
   --font-stamp: "Archivo Black", "Archivo Black Fallback", 'Arial Black', 'Archivo', sans-serif;
@@ -188,8 +218,8 @@ body {
     var(--desk);
   color: var(--ink);
   font-family: var(--font-body);
-  line-height: 1.55;
-  font-size: 1rem;
+  line-height: 1.6;
+  font-size: 1.06rem;
 }
 
 /* teacher's-desk texture: kraft grain over the blotter */
@@ -309,24 +339,24 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
 .results-bar { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: .8rem; flex-wrap: wrap; }
 .results-bar p { margin: 0; color: var(--ink-soft); }
 .results-actions { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
-.card-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
-@media (min-width: 600px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1100px) { .browser .card-grid { grid-template-columns: repeat(2, 1fr); } }
+.browse-rows { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 600px) { .browse-rows { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1100px) { .browser .browse-rows { grid-template-columns: repeat(2, 1fr); } }
 
-.act-card {
+.activity-row {
   background: var(--card); border: 2px solid var(--line); border-radius: var(--radius);
   padding: 1rem 1.1rem; box-shadow: var(--shadow); position: relative;
   border-top: 6px solid var(--cat, var(--accent));
   display: flex; flex-direction: column; gap: .5rem;
   transition: transform .15s ease, box-shadow .15s ease;
 }
-.act-card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(42,36,28,.12); }
-.act-card h3 { margin: 0; font-size: 1.15rem; }
-.act-card h3 a { color: var(--ink); text-decoration: none; }
-.act-card h3 a:hover { color: var(--accent); text-decoration: underline; }
-.act-card .tagline { margin: 0; color: var(--ink-soft); font-size: .93rem; }
-.act-card .meta { display: flex; flex-wrap: wrap; gap: .35rem .9rem; font-size: .82rem; color: var(--ink-soft); margin-top: auto; padding-top: .4rem; }
-.act-card .meta b { color: var(--ink); }
+.activity-row:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(42,36,28,.12); }
+.activity-row h3 { margin: 0; font-size: 1.15rem; }
+.activity-row h3 a { color: var(--ink); text-decoration: none; }
+.activity-row h3 a:hover { color: var(--accent); text-decoration: underline; }
+.activity-row .tagline { margin: 0; color: var(--ink-soft); font-size: .93rem; }
+.activity-row .meta { display: flex; flex-wrap: wrap; gap: .35rem .9rem; font-size: .82rem; color: var(--ink-soft); margin-top: auto; padding-top: .4rem; }
+.activity-row .meta b { color: var(--ink); }
 .cat-chips { display: flex; flex-wrap: wrap; gap: .35rem; }
 .cat-chips .chip { cursor: default; font-size: .75rem; padding: .2rem .55rem; }
 .prep-flag { font-size: .78rem; font-weight: 700; }
@@ -1036,7 +1066,7 @@ h2 { font-weight: 700; letter-spacing: -.015em; }
 .hero .stat span { font-size: .82rem; color: var(--ink-soft); }
 
 /* ---------- index cards: the browse grid ---------- */
-.act-card {
+.activity-row {
   background:
     linear-gradient(90deg, transparent 0 42px, var(--margin-red) 42px 44px, transparent 44px),
     repeating-linear-gradient(180deg, transparent 0 29px, var(--rule-blue) 29px 30px),
@@ -1047,14 +1077,14 @@ h2 { font-weight: 700; letter-spacing: -.015em; }
   box-shadow: var(--shadow-lift);
   padding: 2.3rem 1.1rem 1rem 3.4rem;
 }
-.act-card:nth-child(odd) { transform: rotate(-.45deg); }
-.act-card:nth-child(even) { transform: rotate(.35deg); }
-.act-card:hover {
+.activity-row:nth-child(odd) { transform: rotate(-.45deg); }
+.activity-row:nth-child(even) { transform: rotate(.35deg); }
+.activity-row:hover {
   transform: rotate(0deg) translateY(-4px);
   box-shadow: 0 2px 3px rgba(42,36,28,.12), 0 16px 32px rgba(42,36,28,.14);
 }
 /* washi tape strip, category-tinted, alternating tilt */
-.act-card::before {
+.activity-row::before {
   content: ""; position: absolute; top: -13px; left: 50%;
   width: 112px; height: 27px;
   background: color-mix(in srgb, var(--cat, var(--accent)) 42%, #fdfdf8);
@@ -1065,15 +1095,15 @@ h2 { font-weight: 700; letter-spacing: -.015em; }
   border-left: 1px dashed rgba(42,36,28,.15);
   border-right: 1px dashed rgba(42,36,28,.15);
 }
-.act-card:nth-child(even)::before { transform: translateX(-50%) rotate(2.6deg); }
-.act-card h3 { font-size: 1.22rem; font-weight: 700; }
-.act-card .tagline { font-size: .94rem; }
-.act-card .meta {
+.activity-row:nth-child(even)::before { transform: translateX(-50%) rotate(2.6deg); }
+.activity-row h3 { font-size: 1.22rem; font-weight: 700; }
+.activity-row .tagline { font-size: .94rem; }
+.activity-row .meta {
   font-family: var(--font-type);
   font-size: .78rem;
   letter-spacing: .01em;
 }
-.act-card .meta b { font-weight: 700; }
+.activity-row .meta b { font-weight: 700; }
 
 /* rubber-stamp category chips on cards */
 .cat-chips { padding-top: .15rem; }
@@ -1522,7 +1552,7 @@ html[data-calm="true"] ::view-transition-new(*) { animation: none !important; }
       transparent 8.8px, #8d8d95 9.3px, #d9d9de 11.4px, #76767e 12.6px, transparent 13.4px);
   }
   .file-stamp { top: 3.4rem; }
-  .act-card { padding-left: 2.9rem; }
+  .activity-row { padding-left: 2.9rem; }
   .brand-text { font-size: .85rem; }
 }
 
@@ -1530,11 +1560,11 @@ html[data-calm="true"] ::view-transition-new(*) { animation: none !important; }
 @media print {
   body::before { display: none; }
   body { background: #fff; }
-  .act-card, .activity-card, .day-card, .plan-sheet, .filters, .collection-card, .extra-section {
+  .activity-row, .activity-card, .day-card, .plan-sheet, .filters, .collection-card, .extra-section {
     transform: none !important;
     box-shadow: none;
   }
-  .act-card::before, .plan-sheet::before, .desk-note::before { display: none; }
+  .activity-row::before, .plan-sheet::before, .desk-note::before { display: none; }
   .file-stamp { -webkit-mask-image: none; mask-image: none; }
   .activity-card::before, .activity-card::after { display: none; }
   .activity-card { padding-left: 0; }
@@ -2212,9 +2242,9 @@ html[data-calm="true"] .drawer-pull { transition: none; }
 }
 
 /* browse grid: flat, aligned, professional, no card rotation */
-.act-card:nth-child(odd), .act-card:nth-child(even) { transform: none; }
-.act-card:hover { transform: translateY(-2px); }
-.act-card::before { width: 84px; height: 20px; opacity: .65; }
+.activity-row:nth-child(odd), .activity-row:nth-child(even) { transform: none; }
+.activity-row:hover { transform: translateY(-2px); }
+.activity-row::before { width: 84px; height: 20px; opacity: .65; }
 
 /* binder furniture on activity sheets: present, but quieter */
 .activity-card::before, .activity-card::after { opacity: .45; }
@@ -2374,12 +2404,12 @@ html.desk-ready .drawer.open .pulled-stamp { display: none; }
 .blotter-stamp { display: none; }
 
 /*, browse grid: index cards without tape or ruled lines */
-.act-card {
+.activity-row {
   background: var(--card);
   border: 1px solid var(--line); border-radius: 14px; box-shadow: none;
 }
-.act-card::before { display: none; }
-.act-card:hover { box-shadow: 0 4px 14px rgba(42, 36, 28, .07); }
+.activity-row::before { display: none; }
+.activity-row:hover { box-shadow: 0 4px 14px rgba(42, 36, 28, .07); }
 .filters { border: 1px solid var(--line); border-radius: 14px; box-shadow: none; background: var(--card); }
 
 /*. Activity sheets: no binder rings; the file stamp becomes a quiet
@@ -2471,7 +2501,7 @@ html:not([data-calm="true"]) .collection-section { animation: none; }
 
 /* ---- home: calendar first ---- */
 .calendar-first { margin-top: 1.6rem; }
-.calendar-first h2, .verb-doors-section h2 {
+.calendar-first h2, .contents-section h2 {
   font-size: clamp(1.5rem, 3.4vw, 2rem); margin: 0 0 .4em;
 }
 .cal-rows { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); }
@@ -2491,34 +2521,9 @@ html:not([data-calm="true"]) .collection-section { animation: none; }
   font-size: .95rem; color: var(--accent); white-space: nowrap;
 }
 
-/* ---- home: verb doors (folder-tab faces, one word, one illustration) ---- */
-.verb-doors {
-  display: flex; flex-wrap: wrap; gap: .8rem; margin: .6rem 0 1.4rem;
-}
-.verb-door {
-  flex: 1 1 9.5rem; display: flex; flex-direction: column; align-items: flex-start;
-  gap: .35rem; padding: 1rem 1.1rem .9rem; text-decoration: none; color: var(--ink);
-  background: var(--card); border: 2px solid var(--line); border-radius: 6px 14px 6px 6px;
-  border-top: 8px solid var(--cat, var(--accent));
-  transform-origin: top center;
-  transition: transform .25s var(--ease-standard), box-shadow .25s var(--ease-standard);
-}
-.verb-glyph { font-size: 2rem; line-height: 1; }
-.verb-word { font-family: var(--font-display); font-weight: 900; font-size: 1.7rem; letter-spacing: -.01em; }
-@media (prefers-reduced-motion: no-preference) {
-  html:not([data-calm="true"]) .verb-door:hover,
-  html:not([data-calm="true"]) .verb-door:focus-visible {
-    transform: perspective(600px) rotateX(7deg);
-    box-shadow: var(--shadow-lift);
-  }
-}
-
-/* ---- home: the ONE season band (L11 collapse) ---- */
-.season-band {
-  border-top: 2px solid var(--ink); border-bottom: 1px solid var(--line);
-  padding: .8rem .2rem; margin: 0 0 1.6rem;
-}
-.season-band p { margin: 0; }
+/* ---- home: verb doors and the season band were deleted in rotation 23.
+        Their job is done by the issue hero and the Contents lines in the
+        rotation 23 block at the end of this file. ---- */
 
 /* ---- tombstone: one setting for activity facts, everywhere ---- */
 .tombstone {
@@ -2529,7 +2534,7 @@ html:not([data-calm="true"]) .collection-section { animation: none; }
 .tomb-sep { color: var(--line); }
 
 /* ---- browse: ruled rows, not a card grid (L4) ---- */
-.card-grid { grid-template-columns: 1fr !important; gap: 0; border-top: 2px solid var(--ink); }
+.browse-rows { grid-template-columns: 1fr !important; gap: 0; border-top: 2px solid var(--ink); }
 .act-row {
   display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap;
   background: transparent; border: none; border-bottom: 1px solid var(--line);
@@ -2632,3 +2637,111 @@ html:not([data-calm="true"]) .collection-section { animation: none; }
    rises or fades on scroll (the pre-R21 vault-rise). On a collection
    page the only motion is the squaring stack at the opener. */
 .collection-section { animation: none !important; }
+
+/* ================= Rotation 23: the year's almanac =================
+   The year as issues (Surfer's Journal system): one colour per season,
+   set on .almanac as --season by the generator, and it is the only
+   colour doing work on the home. The countdown is the furniture:
+   Fraunces numerals set huge. Real photographs are covers. Body type
+   is Newsreader, a chosen warm text face (see the @font-face block).
+   Teacher's-desk warmth survives only as the paper grain and the hand
+   face in marginal notes, sparingly. */
+
+/* ---- the issue hero ---- */
+.issue-hero { padding: 1.2rem 0 .4rem; border-bottom: 2px solid var(--ink); }
+.issue-kicker {
+  font-family: var(--font-type); font-size: .82rem; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--season, var(--accent));
+  margin: 0 0 .2rem;
+}
+.issue-title {
+  font-family: var(--font-display); font-weight: 900; letter-spacing: -.02em;
+  font-size: clamp(3.6rem, 13vw, 7.5rem); line-height: .95; margin: 0;
+  color: var(--ink);
+}
+.issue-count { display: flex; align-items: flex-end; gap: 1.2rem; margin: .6rem 0 1rem; }
+.issue-num {
+  font-family: var(--font-display); font-weight: 900; letter-spacing: -.03em;
+  font-size: clamp(6.5rem, 30vw, 12.5rem); line-height: .82; color: var(--season, var(--accent));
+}
+.issue-num-text { font-size: 1.12rem; line-height: 1.45; padding-bottom: .9rem; }
+.issue-num-text a { color: var(--ink); font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; text-decoration: none; }
+.issue-num-text a:hover { color: var(--season, var(--accent)); text-decoration: underline; }
+.issue-cover { margin: 0 0 1rem; }
+.issue-cover img {
+  display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover;
+  border: 1px solid var(--line);
+}
+.issue-cover figcaption, .cover-photo figcaption {
+  font-size: .92rem; color: var(--ink-soft); padding: .45rem .1rem 0; line-height: 1.45;
+}
+.issue-cover .photo-credit, .cover-photo .photo-credit { color: var(--ink-soft); }
+.issue-standfirst { font-size: 1.18rem; line-height: 1.55; max-width: 38rem; margin: 0 0 1.2rem; }
+
+/* ---- the calendar, staged as the issue's ledger ---- */
+.almanac .cal-num {
+  font-family: var(--font-display); font-weight: 900; font-size: 2rem; line-height: 1;
+  color: var(--season, var(--accent)); letter-spacing: -.02em;
+}
+.almanac .cal-days {
+  font-family: var(--font-body); font-weight: 400; font-size: 1rem; color: var(--ink-soft);
+  display: inline-flex; align-items: baseline; gap: .4rem;
+}
+.almanac .cal-name { font-size: 1.25rem; }
+
+/* ---- Contents: ruled, numbered lines (the emoji cards are deleted) ---- */
+.contents-section { margin-top: 1.8rem; }
+.contents-sub {
+  font-family: var(--font-display); font-size: 1.35rem; margin: 1.6em 0 .5em;
+}
+.contents-lines { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); }
+.contents-line {
+  display: flex; align-items: baseline; gap: 1rem; min-height: 56px;
+  padding: .8rem .2rem; border-bottom: 1px solid var(--line);
+  text-decoration: none; color: var(--ink);
+}
+.contents-line:hover { background: rgba(255, 253, 247, .6); }
+.contents-line:hover .contents-word { color: var(--season, var(--accent)); text-decoration: underline; }
+.contents-num {
+  font-family: var(--font-display); font-weight: 900; font-size: 1.6rem; line-height: 1;
+  color: var(--season, var(--accent)); min-width: 2.6rem;
+}
+.contents-word { font-family: var(--font-display); font-weight: 700; font-size: 1.45rem; }
+.contents-count { margin-left: auto; color: var(--ink-soft); font-size: 1rem; text-align: right; }
+.contents-current { color: var(--season, var(--accent)); font-weight: 700; }
+
+/* ---- season hub banner (winter, spring, summer, halloween, thanksgiving) ---- */
+.issue-banner {
+  border-bottom: 2px solid var(--ink); padding: .9rem 0 .55rem; margin-bottom: 1rem;
+  display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap;
+}
+.issue-banner-name {
+  font-family: var(--font-display); font-weight: 900; letter-spacing: -.02em;
+  font-size: clamp(1.9rem, 5.5vw, 2.7rem); line-height: 1; margin: 0; color: var(--ink);
+}
+.issue-banner .issue-kicker { color: var(--season, var(--accent)); }
+
+/* ---- activity page: the photograph as a cover, the source plain ---- */
+.cover-photo { margin: 0 0 1.1rem; }
+.cover-photo img {
+  display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover;
+  object-position: center 25%;
+  border: 1px solid var(--line);
+}
+.source-line { font-size: 1rem; border-top: 1px solid var(--line); padding-top: .7rem; }
+.source-line a { font-weight: 700; }
+
+/* ---- phone: composed almanac pages (390 and 320) ---- */
+@media (max-width: 560px) {
+  .issue-count { gap: .8rem; align-items: flex-end; }
+  .issue-num-text { font-size: 1rem; padding-bottom: 1.1rem; }
+  .issue-num-text a { font-size: 1.25rem; }
+  .issue-cover img { aspect-ratio: 4 / 3; }
+  .contents-line { flex-wrap: nowrap; gap: .6rem; padding: .75rem .1rem; }
+  .contents-num { font-size: 1.3rem; min-width: 2rem; }
+  .contents-word { font-size: 1.22rem; }
+  .contents-count { font-size: .92rem; white-space: nowrap; }
+  .almanac .cal-row { row-gap: .2rem; }
+  .almanac .cal-days { margin-left: auto; }
+  .home-promise { font-size: 1.05rem; }
+}

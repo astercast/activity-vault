@@ -145,9 +145,11 @@ ok(landing.includes('class="cal-days"'), 'landing: days-remaining marginalia pre
 ok(!landing.includes('desk-section'), 'landing: no desk grid on the home (rotation 21)');
 ok(!landing.includes('class="stat"'), 'landing: no stat tiles on the home (rotation 21)');
 ok(!landing.includes('season-promo'), 'landing: no stacked season promos (L11 collapse)');
-ok((landing.match(/class="verb-door"/g) || []).length === 5, 'landing: exactly five verb doors');
-for (const w of ['>Make<', '>Play<', '>Celebrate<', '>Learn<', '>Calm<'])
-  ok(landing.includes('verb-word">' + w.slice(1)), 'landing: verb door ' + w);
+ok((landing.match(/class="contents-line"/g) || []).length === 9, 'landing: nine contents lines, five kinds plus four issues (rotation 23)');
+for (const w of ['Make', 'Play', 'Celebrate', 'Learn', 'Calm'])
+  ok(landing.includes('contents-word">' + w + '<'), 'landing: contents line ' + w);
+ok(!landing.includes('verb-door') && !landing.includes('verb-glyph'), 'landing: the five emoji cards are deleted (rotation 23)');
+ok(landing.includes('class="issue-num"'), 'landing: the day count set huge in the issue hero (rotation 23)');
 ok((landing.match(/<h1[ >]/g) || []).length === 1, 'landing: exactly one h1');
 const lids = [...landing.matchAll(/ id="([^"]+)"/g)].map(m => m[1]);
 ok(new Set(lids).size === lids.length, 'no duplicate ids in index.html', String(lids.length));

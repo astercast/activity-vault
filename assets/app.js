@@ -114,7 +114,7 @@
 
   function renderCard(a) {
     var cat = primaryCat(a);
-    var row = el('article', 'act-card act-row');
+    var row = el('article', 'activity-row act-row');
     row.style.setProperty('--cat', cat.color);
 
     var action = ACTION_BY_CAT[a.categories[0]] || 'Open';

@@ -7,6 +7,7 @@ Generates: activity/*.html, data/v1/*.json, data/v1/schema/*.schema.json,
 Validates: schema, ids, categories, required fields, render check for every activity.
 """
 import json, os, re, sys, html
+from urllib.parse import urlparse
 from datetime import date, datetime, timezone
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -472,6 +473,14 @@ def validate(acts, cats):
         src = a.get('source')
         if src is not None and (not isinstance(src, str) or not src.startswith('http')):
             errs.append(f"{tag}: source must be an http(s) URL")
+        ph = a.get('photo')
+        if ph is not None:
+            if not isinstance(ph, dict) or not all(isinstance(ph.get(k), str) and ph[k] for k in ('file', 'alt', 'caption', 'credit', 'licence', 'source_url')):
+                errs.append(f"{tag}: photo needs file, alt, caption, credit, licence, source_url")
+            elif not os.path.exists(os.path.join(ROOT, 'assets', 'photos', ph['file'])):
+                errs.append(f"{tag}: photo file missing: assets/photos/{ph['file']}")
+            elif not ph['source_url'].startswith('http'):
+                errs.append(f"{tag}: photo source_url must be an http(s) URL")
         for bf in ('copy_free', 'no_elimination'):
             if bf in a and not isinstance(a[bf], bool):
                 errs.append(f"{tag}: {bf} must be boolean")
@@ -1059,9 +1068,12 @@ def render_activity(a, catmap, acts):
                   f'<h2 id="h-safety">⚠️ Safety</h2><p>{esc(a["safety"])}</p></section>')
     source = ''
     if a.get('source'):
-        source = (f'<p class="source-line">Inspired by an idea from the teaching community, '
-                  f'<a href="{esc(a["source"])}" rel="noopener">source post</a> '
-                  f'(adapted in our own words).</p>')
+        _host = urlparse(a['source']).netloc.removeprefix('www.')
+        if 'wikipedia.org' in _host:
+            _label = f'Source: <a href="{esc(a["source"])}" rel="noopener">Wikipedia, {_host}</a>'
+        else:
+            _label = f'Source: <a href="{esc(a["source"])}" rel="noopener">source post at {_host}</a>, adapted in our own words'
+        source = f'<p class="source-line">{_label}</p>'
     prep = '✅ No prep needed' if a['no_prep'] else 'Some prep needed'
     loc = ' & '.join('Indoors' if l=='indoor' else 'Outdoors' for l in a['location'])
     why_block = ''
@@ -1094,13 +1106,16 @@ def render_activity(a, catmap, acts):
     crumb_cat = a['categories'][0] if a['categories'] else ''
     crumb_cat_name = esc(catmap[crumb_cat]['name']) if crumb_cat else 'All'
     photo_block = ''
-    _ph = ACTIVITY_PHOTOS.get(a['id'])
+    _ph = _photo_for(a)
     if _ph:
+        _credit = esc(_ph["credit"])
+        if _ph.get("source_url"):
+            _credit += f' <a href="{esc(_ph["source_url"])}" rel="noopener">Photo source</a>'
         photo_block = (
-            f'<figure class="activity-photo no-print">'
-            f'<img src="../assets/photos/{_ph["file"]}" alt="{esc(_ph["alt"])}" loading="lazy">'
-            f'<figcaption>{esc(_ph["caption"])} '
-            f'<span class="photo-credit">{esc(_ph["credit"])}</span></figcaption></figure>')
+            f'<figure class="activity-photo cover-photo no-print">'
+            f'<img src="../assets/photos/{esc(_ph["file"])}" alt="{esc(_ph["alt"])}" loading="lazy">'
+            f'<figcaption>{esc(_ph.get("caption", ""))} '
+            f'<span class="photo-credit">{_credit}</span></figcaption></figure>')
     mats_fact = (f'{len(a["materials"])} material' + ('s' if len(a["materials"]) != 1 else '')
                  ) if a["materials"] else 'no materials'
     return ACTIVITY_TEMPLATE.format(
@@ -1293,56 +1308,166 @@ def _next_occasions(acts, today, n=9):
     return out[:n]
 
 
-_VERB_DOORS = [  # Tate contract: one word, one illustration, nothing else
+_CONTENTS = [  # Rotation 23: the almanac contents. Ruled, numbered lines,
+    # one word each, in the season colour only. No glyphs, no cards.
     ("Make", "crafts"), ("Play", "pe-movement"), ("Celebrate", "holidays"),
     ("Learn", "stem"), ("Calm", "quiet-focus"),
 ]
 
-_SEASON_BANDS = {  # L11 collapse: exactly ONE season band on the home
-    12: ("Winter", "winter.html"), 1: ("Winter", "winter.html"), 2: ("Winter", "winter.html"),
-    3: ("Spring", "spring.html"), 4: ("Spring", "spring.html"), 5: ("Spring", "spring.html"),
-    6: ("Summer", "summer.html"), 7: ("Summer", "summer.html"), 8: ("Summer", "summer.html"),
-    9: ("Fall", "halloween.html"), 10: ("Fall", "halloween.html"), 11: ("Fall", "halloween.html"),
+_SEASON_BANDS = {  # month -> season name (the current issue)
+    12: "Winter", 1: "Winter", 2: "Winter",
+    3: "Spring", 4: "Spring", 5: "Spring",
+    6: "Summer", 7: "Summer", 8: "Summer",
+    9: "Fall", 10: "Fall", 11: "Fall",
 }
+
+_SEASON_SYSTEM = {  # Rotation 23: one colour per season, and it is the only
+    # colour doing work while that season is on screen.
+    "Winter": ("#38607c", "winter.html", "season:winter"),
+    "Spring": ("#2e7d46", "spring.html", "season:spring"),
+    "Summer": ("#a86a08", "summer.html", "season:summer"),
+    "Fall": ("#b7413c", "halloween.html", "season:fall"),
+}
+_SEASON_ORDER = ["Spring", "Summer", "Fall", "Winter"]
+
+
+def _photo_for(a):
+    """An activity's photo record: the data-carried photo (rotation 23)
+    first, then the legacy Foundry batch wired in ACTIVITY_PHOTOS."""
+    if a.get("photo"):
+        return a["photo"]
+    legacy = ACTIVITY_PHOTOS.get(a["id"])
+    if legacy:
+        return {"file": legacy["file"], "alt": legacy["alt"],
+                "caption": legacy["caption"], "credit": legacy["credit"],
+                "licence": "", "source_url": ""}
+    return None
+
+
+def _cover_for(acts, season_tag, occasion_tag):
+    """The issue cover: a real, sourced photograph. Prefer a photo whose
+    activity is filed under the current season or the next occasion;
+    fall back to the first photo-carrying activity, by id, so the
+    choice is stable across rebuilds."""
+    cands = [a for a in acts if _photo_for(a)]
+    if not cands:
+        return None
+    fresh = [a for a in cands if a.get("photo")]
+    if fresh:
+        cands = fresh
+    # Cover-grade preference, by season: real photographs of the season's
+    # own subjects, chosen at this build. (Fall, October 2026: a child
+    # bowling with a pumpkin beats every still life in the file.)
+    _COVER_PREFS = {
+        "season:fall": ["halloween-pumpkin-bowl", "papel-picado-banners",
+                        "build-a-scarecrow", "one-tree-autumn-color-count",
+                        "corn-husk-dolls"],
+        "season:winter": ["winter-bird-feeder", "paper-snowflakes",
+                          "twig-snowflake-craft"],
+        "season:spring": ["seed-starter-cups", "three-sisters-garden-plan"],
+        "season:summer": ["kite-flying", "water-balloon-toss"],
+    }
+    by_id = {a["id"]: a for a in cands}
+    for pid in _COVER_PREFS.get(season_tag, []):
+        if pid in by_id:
+            return by_id[pid]
+    for pref_tags in ((occasion_tag,), (season_tag,)):
+        hits = [a for a in cands if any(t in a.get("tags", []) for t in pref_tags)]
+        if hits:
+            return sorted(hits, key=lambda a: a["id"])[0]
+    return sorted(cands, key=lambda a: a["id"])[0]
 
 
 def render_home_identity(acts, cats, colls):
-    """Rotation 21: calendar first, verb doors second, one season band.
-    Spliced into index.html between the BUILD:DESK markers (marker names
-    kept from wave 23 so the splice contract does not change)."""
-    catmap = {c['id']: c for c in cats}
+    """Rotation 23: the year as issues. The current season is the cover:
+    its one colour, the day count to the next occasion set huge in
+    Fraunces, a real photograph as the cover, the calendar as ruled
+    rows with Fraunces day numerals, and Contents as ruled, numbered
+    lines (the five emoji cards are deleted). Spliced into index.html
+    between the BUILD:DESK markers."""
     today = date.today()
+    season = _SEASON_BANDS[today.month]
+    season_color, season_hub, season_tag = _SEASON_SYSTEM[season]
+    upcoming = _next_occasions(acts, today)
+    d0, occ_name, occ_tag, occ_count = upcoming[0]
+    days0 = (d0 - today).days
     rows = []
-    for d, name, tag, count in _next_occasions(acts, today):
+    for d, name, tag, count in upcoming:
         days = (d - today).days
-        when = 'today' if days == 0 else ('tomorrow' if days == 1 else f'in {days} days')
+        if days == 0:
+            when = '<span class="cal-days">today</span>'
+        elif days == 1:
+            when = '<span class="cal-days"><span class="cal-num">1</span> day</span>'
+        else:
+            when = f'<span class="cal-days"><span class="cal-num">{days}</span> days</span>'
         rows.append(
             f'      <li class="cal-row">'
             f'<a class="cal-name" href="index.html?tag={tag}#browse">{esc(name)}</a>'
             f'<span class="cal-date">{d.strftime("%a %b %-d")}</span>'
             f'<span class="cal-count">{count} activities</span>'
-            f'<span class="cal-days">{when}</span></li>')
-    doors = []
-    for word, cid in _VERB_DOORS:
-        c = catmap[cid]
-        doors.append(
-            f'      <a class="verb-door" style="--cat:{c["color"]}" href="index.html?cats={cid}#browse">'
-            f'<span class="verb-glyph" aria-hidden="true">{c["glyph"]}</span>'
-            f'<span class="verb-word">{word}</span></a>')
-    season, hub = _SEASON_BANDS[today.month]
+            f'{when}</li>')
+    cat_counts = {}
+    for a in acts:
+        for c in a["categories"]:
+            cat_counts[c] = cat_counts.get(c, 0) + 1
+    contents = []
+    for i, (word, cid) in enumerate(_CONTENTS, 1):
+        contents.append(
+            f'      <li><a class="contents-line" href="index.html?cats={cid}#browse">'
+            f'<span class="contents-num">{i:02d}</span>'
+            f'<span class="contents-word">{word}</span>'
+            f'<span class="contents-count">{cat_counts.get(cid, 0)} activities</span></a></li>')
+    tag_counts = {}
+    for a in acts:
+        for t in a.get("tags", []):
+            tag_counts[t] = tag_counts.get(t, 0) + 1
+    issues = []
+    for i, sname in enumerate(_SEASON_ORDER, 1):
+        _, shub, stag = _SEASON_SYSTEM[sname]
+        cur = ' <span class="contents-current">the current issue</span>' if sname == season else ''
+        issues.append(
+            f'      <li><a class="contents-line" href="{shub}">'
+            f'<span class="contents-num">{i:02d}</span>'
+            f'<span class="contents-word">{sname}</span>'
+            f'<span class="contents-count">{tag_counts.get(stag, 0)} activities filed{cur}</span></a></li>')
+    cover = _cover_for(acts, season_tag, occ_tag)
+    cover_html = ''
+    if cover:
+        ph = _photo_for(cover)
+        credit = esc(ph["credit"])
+        if ph.get("source_url"):
+            credit += f' <a href="{esc(ph["source_url"])}" rel="noopener">Photo source</a>'
+        cover_html = (
+            f'    <figure class="issue-cover">'
+            f'<img src="assets/photos/{esc(ph["file"])}" alt="{esc(ph["alt"])}">'
+            f'<figcaption><a href="activity/{cover["id"]}.html">{esc(cover["name"])}</a>: '
+            f'{esc(ph.get("caption", ""))} <span class="photo-credit">{credit}</span></figcaption></figure>\n')
+    season_filed = tag_counts.get(season_tag, 0)
     return (
+        f'  <div class="almanac" style="--season:{season_color}">\n'
+        '  <section class="issue-hero" aria-labelledby="issue-h">\n'
+        f'    <p class="issue-kicker">Activity Vault &middot; the current issue &middot; {today.strftime("%B %Y")}</p>\n'
+        f'    <h1 class="issue-title" id="issue-h">{season}</h1>\n'
+        '    <div class="issue-count">\n'
+        f'      <span class="issue-num">{days0}</span>\n'
+        f'      <span class="issue-num-text">days to<br><a href="index.html?tag={occ_tag}#browse">{esc(occ_name)}</a><br>'
+        f'{d0.strftime("%A, %B %-d")} &middot; {occ_count} activities filed for it</span>\n'
+        '    </div>\n'
+        + cover_html +
+        f'    <p class="issue-standfirst">{season_filed} activities are filed under {season.lower()} in this vault, '
+        f'and {len(acts)} in the year altogether. What is coming up is below, in the order it arrives.</p>\n'
+        '  </section>\n'
         '  <section class="calendar-first" aria-labelledby="cal-h">\n'
         '    <h2 id="cal-h">What\'s coming up</h2>\n'
         '    <ol class="cal-rows">\n' + '\n'.join(rows) + '\n    </ol>\n'
         '  </section>\n'
-        '  <section class="verb-doors-section" aria-labelledby="doors-h">\n'
-        '    <h2 id="doors-h">Choose where to start</h2>\n'
-        '    <div class="verb-doors">\n' + '\n'.join(doors) + '\n    </div>\n'
+        '  <section class="contents-section" aria-labelledby="contents-h">\n'
+        '    <h2 id="contents-h">Contents</h2>\n'
+        '    <ol class="contents-lines">\n' + '\n'.join(contents) + '\n    </ol>\n'
+        '    <h3 class="contents-sub">The year\'s issues</h3>\n'
+        '    <ol class="contents-lines">\n' + '\n'.join(issues) + '\n    </ol>\n'
         '  </section>\n'
-        '  <section class="season-band no-print" aria-label="This season in the Vault">\n'
-        f'    <p><strong>{season} in the Vault.</strong> The season\'s activities, '
-        f'gathered in one place. <a href="{hub}">Open the {season.lower()} hub</a></p>\n'
-        '  </section>\n'
+        '  </div>\n'
     )
 
 
@@ -1357,10 +1482,11 @@ def inject_home_identity(acts, cats, colls):
     before, rest = html_text.split(start, 1)
     _, after = rest.split(end, 1)
     section = render_home_identity(acts, cats, colls)
-    assert 'cal-row' in section and 'verb-door' in section, "home identity render check failed"
+    assert 'cal-row' in section and 'contents-line' in section and 'issue-num' in section, "home identity render check failed"
+    assert 'verb-door' not in section and 'verb-glyph' not in section, "home identity: emoji cards leaked back"
     assert 'desk-card' not in section and 'class="stat"' not in section, "home identity: desk/stat leaked"
     open(path, 'w').write(before + start + '\n' + section + '  ' + end + after)
-    print(f"index.html: home identity injected (calendar + verb doors, {len(acts)} activities)")
+    print(f"index.html: home identity injected (issue hero + contents, {len(acts)} activities)")
 
 
 def render_desk(acts, cats, colls):
@@ -1860,7 +1986,14 @@ def main():
             "tags": {"type": "array", "items": {"enum": TAG_IDS},
                      "description": "Optional season/occasion tags for filtering."},
             "source": {"type": ["string", "null"], "format": "uri",
-                       "description": "Optional inspiration source URL (RSS pipeline)."}
+                       "description": "Optional inspiration source URL (RSS pipeline)."},
+            "photo": {"type": ["object", "null"],
+                      "description": "Optional real photograph (rotation 23): file under assets/photos/, alt text, caption, credit line, licence, and the photo's own source page URL. Public/CC-licensed sources only; provenance travels with the record.",
+                      "required": ["file", "alt", "caption", "credit", "licence", "source_url"],
+                      "properties": {
+                          "file": {"type": "string"}, "alt": {"type": "string"},
+                          "caption": {"type": "string"}, "credit": {"type": "string"},
+                          "licence": {"type": "string"}, "source_url": {"type": "string", "format": "uri"}}}
         }
     }
     json.dump(act_schema, open(os.path.join(schemadir, 'activity.schema.json'), 'w'), indent=1)

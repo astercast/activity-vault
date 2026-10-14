@@ -186,6 +186,42 @@
       ],
       "format": "uri",
       "description": "Optional inspiration source URL (RSS pipeline)."
+     },
+     "photo": {
+      "type": [
+       "object",
+       "null"
+      ],
+      "description": "Optional real photograph (rotation 23): file under assets/photos/, alt text, caption, credit line, licence, and the photo's own source page URL. Public/CC-licensed sources only; provenance travels with the record.",
+      "required": [
+       "file",
+       "alt",
+       "caption",
+       "credit",
+       "licence",
+       "source_url"
+      ],
+      "properties": {
+       "file": {
+        "type": "string"
+       },
+       "alt": {
+        "type": "string"
+       },
+       "caption": {
+        "type": "string"
+       },
+       "credit": {
+        "type": "string"
+       },
+       "licence": {
+        "type": "string"
+       },
+       "source_url": {
+        "type": "string",
+        "format": "uri"
+       }
+      }
      }
     }
    }

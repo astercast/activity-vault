@@ -11,6 +11,23 @@ What is wired into the live release repo `astercast/activity-vault-live`
 - Track rule: push `-live` only on an explicit user "push"/"ship it".
   Verify the remote URL before every push.
 
+## Working-repo state (2026-10-14, rotation 23)
+
+- Rotation 23, "The year's almanac": the year as seasonal issues
+  (one colour per season, the day count set huge in Fraunces, real
+  photographs as covers), the five emoji cards deleted for ruled,
+  numbered Contents lines, body type now Newsreader (self-hosted,
+  OFL). Counts stand at **747 activities, 32 collections**; of the
+  747, **108 carry a real sourced photograph** (104 rotation-23
+  Commons photos with per-photo licence, credit and source page
+  recorded in `data/activities.json`, plus the 4 wave-36 photos) and
+  **93 carry a source link** presented plainly on the activity page.
+  The remainder is counted debt, named in the rotation-23 landing
+  record: no honest, rights-clear source was found for those records
+  this pass, and no link or photo was fabricated to close the gap.
+  Function count, vercel.json, and the free-tier audit below are
+  unchanged by this rotation.
+
 ## Working-repo state (2026-10-13, wave 43)
 
 - Working repo (this repo, never deployed): **747 activities, 32

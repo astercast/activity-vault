@@ -62,7 +62,7 @@
         progressive enhancement, the.js class gates the hidden initial
         state in CSS, so no-JS / no-IO never hides content. Calm mode and
         prefers-reduced-motion reveal instantly with no stagger. */
-  var REVEAL_SEL = '.act-card, .collection-card, .collection-section, .day-card, .pick, .extra-section, .plan-block';
+  var REVEAL_SEL = '.activity-row, .collection-card, .collection-section, .day-card, .pick, .extra-section, .plan-block';
 
   function motionOK() {
     if (calmOn()) return false;
