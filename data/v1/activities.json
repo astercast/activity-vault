@@ -4736,6 +4736,14 @@
    "variations": {
     "easier": "Test 4 obvious objects (rock, leaf, coin, sponge).",
     "harder": "Challenge kids to make a sinker float and a floater sink, then explain how."
+   },
+   "photo": {
+    "file": "r28/sink-float.webp",
+    "alt": "A child holds the next test canister over a tub of water at a science festival table, filled canisters lined up and a results chart taped to the tub",
+    "caption": "Sink or float, tested live: test canisters, a water tub and a results chart at the 2014 USA Science and Engineering Festival.",
+    "credit": "Photo: National Science Foundation, Public domain, via Wikimedia Commons",
+    "licence": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:NSF_amazes_and_engages_at_the_2014_USA_Science_and_Engineering_Festival_(14275927076).jpg"
    }
   },
   {

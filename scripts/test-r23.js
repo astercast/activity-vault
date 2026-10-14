@@ -46,8 +46,11 @@ for (const a of acts) {
    links. The floor was RE-DERIVED DOWN from 273 in the photo-truth fix:
    the audit (VP-0024..VP-0027) proved 33 of the 273 data-carried photos did
    not depict their activity, 18 were replaced with truthful Commons photos
-   and the rest were pulled to designed absence. Floors state the truth,
-   never protect a number. */
-ok(withPhoto >= 240, 'coverage: at least the filed 240 activities carry a sourced photo (got ' + withPhoto + ')');
+   and 36 placements in total were pulled to designed absence. Floors state
+   the truth, never protect a number.
+   Rotation 28: the honest-remainder hunt sourced one more truthful photo
+   (sink-float, NSF science-festival float test, Public domain), raising the
+   filed photo floor 240 -> 241 in the same commit. */
+ok(withPhoto >= 241, 'coverage: at least the filed 241 activities carry a sourced photo (got ' + withPhoto + ')');
 ok(withSource >= 93, 'coverage: at least the filed 93 activities carry a source link (got ' + withSource + ')');
 console.log('test-r23: ' + passed + ' assertions passed; photo ' + withPhoto + '/747, source ' + withSource + '/747');
