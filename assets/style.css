@@ -2741,6 +2741,16 @@ html:not([data-calm="true"]) .collection-section { animation: none; }
   .contents-num { font-size: 1.3rem; min-width: 2rem; }
   .contents-word { font-size: 1.22rem; }
   .contents-count { font-size: .92rem; white-space: nowrap; }
+  /* R23 fix (QA round 78): the year's-issues Fall row carries the extra
+     "the current issue" mark inside its count; at .92rem nowrap the count
+     alone measured 227px and pushed the row's right edge to 333px in a
+     320px viewport (13px horizontal overflow). On phone widths the marked
+     row alone steps down a size so the full line — number, word, count,
+     mark — stays on one line at the 56px ruled rhythm, inside the frame. */
+  .contents-line:has(.contents-current) { gap: .45rem; }
+  .contents-line:has(.contents-current) .contents-num { font-size: 1.2rem; min-width: 1.9rem; }
+  .contents-line:has(.contents-current) .contents-word { font-size: 1.15rem; }
+  .contents-line:has(.contents-current) .contents-count { font-size: .82rem; }
   .almanac .cal-row { row-gap: .2rem; }
   .almanac .cal-days { margin-left: auto; }
   .home-promise { font-size: 1.05rem; }
