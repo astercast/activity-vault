@@ -50,7 +50,14 @@ for (const a of acts) {
    the truth, never protect a number.
    Rotation 28: the honest-remainder hunt sourced one more truthful photo
    (sink-float, NSF science-festival float test, Public domain), raising the
-   filed photo floor 240 -> 241 in the same commit. */
-ok(withPhoto >= 241, 'coverage: at least the filed 241 activities carry a sourced photo (got ' + withPhoto + ')');
+   filed photo floor 240 -> 241 in the same commit.
+   Rotation 28 (S2, photo-truth UNCERTAINs): the audit's 27 UNCERTAIN
+   placements were resolved: 3 replaced with provable Commons frames from
+   the same documented events, 1 caption corrected to claim only what its
+   frame shows, 21 pulled to designed absence, 2 already resolved in
+   rotation 27. The floor is RE-DERIVED DOWN 241 -> 220 in this same
+   commit: an unprovable claim may not stand, and floors state the truth,
+   never protect a number. */
+ok(withPhoto >= 220, 'coverage: at least the filed 220 activities carry a sourced photo (got ' + withPhoto + ')');
 ok(withSource >= 93, 'coverage: at least the filed 93 activities carry a source link (got ' + withSource + ')');
 console.log('test-r23: ' + passed + ' assertions passed; photo ' + withPhoto + '/747, source ' + withSource + '/747');

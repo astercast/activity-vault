@@ -1349,8 +1349,7 @@ def _cover_for(acts, season_tag, occasion_tag):
     _COVER_PREFS = {
         "season:fall": ["pumpkin-bowling", "papel-picado-banners",
                         "build-a-scarecrow", "corn-husk-dolls"],
-        "season:winter": ["winter-bird-feeder", "paper-snowflakes",
-                          "twig-snowflake-craft"],
+        "season:winter": ["winter-bird-feeder", "paper-snowflakes"],
         "season:spring": ["seed-starter-cups", "three-sisters-garden-plan"],
         "season:summer": ["kite-flying", "water-balloon-toss"],
     }
