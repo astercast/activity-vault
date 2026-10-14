@@ -285,6 +285,45 @@ def inject_minimal_headers():
     return done
 
 
+# ---------------------------------------------------------------------------
+# QA-013 self-hosted type: the generator owns font delivery on EVERY page.
+# All faces ship from assets/fonts/ and are declared once in
+# assets/style.css. No page may reference an external font host: this
+# pass strips any such line wherever it survives (hand-written root
+# pages included) and ensures the one display face, Fraunces, is
+# preloaded from the page head at the correct depth. Idempotent, in the
+# same spirit as inject_site_meta and inject_minimal_headers above, so a
+# rebuild can never regress a page back to a CDN font call.
+# ---------------------------------------------------------------------------
+_GF_HOSTS = ("fonts." "googleapis.com", "fonts." "gstatic.com")
+_FONT_EXTERNAL_RE = re.compile(r"[^\n]*(?:" + "|".join(h.replace(".", r"\.") for h in _GF_HOSTS) + r")[^\n]*\n?")
+_FONT_PRELOAD_RE = re.compile(r"[^\n]*rel=\"preload\"[^\n]*fraunces-latin-var\.woff2[^\n]*\n?")
+
+
+def inject_font_delivery():
+    """Strip external font links and preload the display face everywhere."""
+    pages = [n for n in sorted(os.listdir(SITE)) if n.endswith(".html")]
+    actdir = os.path.join(SITE, "activity")
+    pages += [os.path.join("activity", n) for n in sorted(os.listdir(actdir)) if n.endswith(".html")]
+    done = 0
+    for rel in pages:
+        path = os.path.join(SITE, rel)
+        page = open(path).read()
+        prefix = "../" if rel.startswith("activity" + os.sep) else ""
+        page = _FONT_EXTERNAL_RE.sub("", page)
+        page = _FONT_PRELOAD_RE.sub("", page)
+        preload = (f'<link rel="preload" href="{prefix}assets/fonts/fraunces-latin-var.woff2" '
+                   f'as="font" type="font/woff2" crossorigin>\n')
+        anchor = f'href="{prefix}assets/style.css">'
+        assert anchor in page, f"font delivery: stylesheet link missing on {rel}"
+        page = page.replace(anchor, anchor + "\n" + preload.rstrip("\n"), 1)
+        assert all(h not in page for h in _GF_HOSTS), \
+            f"font delivery: external font reference survived on {rel}"
+        open(path, "w").write(page)
+        done += 1
+    return done
+
+
 def load():
     acts = json.load(open(os.path.join(DATA, 'activities.json')))
     cats = json.load(open(os.path.join(DATA, 'categories.json')))
@@ -443,9 +482,7 @@ ACTIVITY_TEMPLATE = """<!DOCTYPE html>
 <title>{name} — Activity Vault</title>
 <meta name="description" content="{tagline}">
 <link rel="stylesheet" href="../assets/style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@500;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap">
+<link rel="preload" href="../assets/fonts/fraunces-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to activity</a>
@@ -836,9 +873,7 @@ REVIEW_TEMPLATE = """<!DOCTYPE html>
 <title>Scout review queue — Activity Vault</title>
 <meta name="description" content="The Scout's human-in-the-loop review queue: activity ideas the RSS watch found, waiting for a human to adapt them into original words.">
 <link rel="stylesheet" href="assets/style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@500;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap">
+<link rel="preload" href="assets/fonts/fraunces-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <script src="assets/site.js" defer></script>
 <script src="assets/js/api-client.js" defer></script>
 </head>
@@ -1210,9 +1245,7 @@ DESK_TEMPLATE = """<!DOCTYPE html>
 <title>The Teacher's Desk — Activity Vault</title>
 <meta name="description" content="The whole activity archive filed like a teacher's desk: 11 wooden drawers, one per category. Pull a drawer, grab an index card, plan your week.">
 <link rel="stylesheet" href="assets/style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@500;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap">
+<link rel="preload" href="assets/fonts/fraunces-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <script src="assets/site.js" defer></script>
 <script src="assets/desk.js" defer></script>
 
@@ -1981,6 +2014,8 @@ def main():
 
     # 6. Placement pass: generator-owned <head> meta on every page.
     n_pages, n_updated = inject_site_meta(acts, colls)
+    n_fonts = inject_font_delivery()
+    print(f"font delivery (QA-013): self-hosted preload on {n_fonts} pages, no external font calls")
     n_headers = inject_minimal_headers()
     print(f"minimal header (rotation 20): one primary row + More on {n_headers} pages")
     print(f"placement: meta block on {n_updated}/{n_pages} pages.")
