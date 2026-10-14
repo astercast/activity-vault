@@ -4308,6 +4308,14 @@
    "variations": {
     "easier": "Wrap the hoop and tie on pre-made hanging strands.",
     "harder": "Weave a tight traditional web with an even center hole."
+   },
+   "photo": {
+    "file": "r27/dream-catchers.webp",
+    "alt": "Dream Catcher Craft Event at the Vandenberg Youth Center (7517760)",
+    "caption": "Dream Catcher Craft Event at the Vandenberg Youth Center (7517760).",
+    "credit": "Photo: U.S. Space Force photo by Senior Airman Tiarra Sibley, Public domain, via Wikimedia Commons",
+    "licence": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Dream_Catcher_Craft_Event_at_the_Vandenberg_Youth_Center_(7517760).jpg"
    }
   },
   {
@@ -6614,6 +6622,14 @@
    "variations": {
     "easier": "Teach one move to the whole room together.",
     "harder": "Film the routine and edit it into a music video."
+   },
+   "photo": {
+    "file": "r27/dance-tutorial.webp",
+    "alt": "Teaching a dance 140225 N IC565 528",
+    "caption": "Teaching a dance 140225 N IC565 528.",
+    "credit": "Photo: Petty Officer 3rd Class Bradley Gee, Public domain, via Wikimedia Commons",
+    "licence": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Teaching_a_dance_140225-N-IC565-528.jpg"
    }
   },
   {
@@ -7099,7 +7115,15 @@
     "easier": "Build one class gauge together and check it as a group.",
     "harder": "Graph the week's rainfall and compare it to the local forecast."
    },
-   "source": "https://en.wikipedia.org/wiki/Rain_gauge"
+   "source": "https://en.wikipedia.org/wiki/Rain_gauge",
+   "photo": {
+    "file": "r27/rain-gauge-challenge.webp",
+    "alt": "Post0024 Flickr NOAA Photo Library",
+    "caption": "Post0024 Flickr NOAA Photo Library.",
+    "credit": "Photo: NOAA Photo Library, Public domain, via Wikimedia Commons",
+    "licence": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Post0024_-_Flickr_-_NOAA_Photo_Library.jpg"
+   }
   },
   {
    "age_max": 12,
@@ -19631,7 +19655,15 @@
     "easier": "Just play with the sizes, no theories needed.",
     "harder": "Predict the size before you move: 'halfway to the light means...?'"
    },
-   "safety": "Do not stare into the lamp, watch the wall."
+   "safety": "Do not stare into the lamp, watch the wall.",
+   "photo": {
+    "file": "r27/shadow-size-test.webp",
+    "alt": "Children making shadows2",
+    "caption": "Children making shadows2.",
+    "credit": "Photo: Ramjchandran, CC BY-SA 4.0, via Wikimedia Commons",
+    "licence": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Children_making_shadows2.jpg"
+   }
   },
   {
    "id": "gravity-drop-race",
@@ -23698,7 +23730,15 @@
     "harder": "Record and layer the sections with a phone, or score a 'soundtrack' for a silent film clip."
    },
    "safety": "Nothing glass, nothing sharp, nothing that plugs in. The audition rejects dangerous instruments.",
-   "copy_free": true
+   "copy_free": true,
+   "photo": {
+    "file": "r27/found-sound-orchestra.webp",
+    "alt": "The Music of Junk photo sm",
+    "caption": "The Music of Junk photo sm.",
+    "credit": "Photo: TheMusicOfJunk, CC BY-SA 4.0, via Wikimedia Commons",
+    "licence": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:The_Music_of_Junk_photo_sm.jpg"
+   }
   },
   {
    "id": "indoor-camping-day",
@@ -34904,7 +34944,15 @@
    ],
    "copy_free": true,
    "no_elimination": true,
-   "inclusion": "The bank's work is table work and book work by design, and its authority sits exactly there: the rota's reader calls each jar's state aloud while the keeper enters it, and the keeper's chair, seated, at the vault or the table, with the book, the cards and the tally, is the bank's memory and conscience, a full office held at whatever pace the keeper works. Labelling welcomes every hand: labels can be written, dictated to a scribe verbatim, or lettered from the bank's stamp set where the site keeps one, and the read-back law means no jar's truth depends on one person's handwriting or eyes. The weekly round is short, scheduled, and published a season ahead with named understudies, so no member's winter depends on never being ill, and a round missed is a round the understudy runs from the book. The book, not any person's memory, is what the next round reads. The spring test's counting can be done from photographs the rota takes of each tray, checked at the table by counters who never stood at the vault, and their counts carry the same ink: the bank grades seeds, and it does not grade its bankers."
+   "inclusion": "The bank's work is table work and book work by design, and its authority sits exactly there: the rota's reader calls each jar's state aloud while the keeper enters it, and the keeper's chair, seated, at the vault or the table, with the book, the cards and the tally, is the bank's memory and conscience, a full office held at whatever pace the keeper works. Labelling welcomes every hand: labels can be written, dictated to a scribe verbatim, or lettered from the bank's stamp set where the site keeps one, and the read-back law means no jar's truth depends on one person's handwriting or eyes. The weekly round is short, scheduled, and published a season ahead with named understudies, so no member's winter depends on never being ill, and a round missed is a round the understudy runs from the book. The book, not any person's memory, is what the next round reads. The spring test's counting can be done from photographs the rota takes of each tray, checked at the table by counters who never stood at the vault, and their counts carry the same ink: the bank grades seeds, and it does not grade its bankers.",
+   "photo": {
+    "file": "r27/cold-stratification-seed-bank.webp",
+    "alt": "Stratification in sand of Crataegus seeds",
+    "caption": "Stratification in sand of Crataegus seeds.",
+    "credit": "Photo: Gmihail at Serbian Wikipedia, CC BY-SA 3.0 rs, via Wikimedia Commons",
+    "licence": "CC BY-SA 3.0 rs",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Stratification_in_sand_of_Crataegus_seeds.jpg"
+   }
   },
   {
    "id": "transect-line-field-survey",
