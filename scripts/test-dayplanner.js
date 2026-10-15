@@ -150,14 +150,14 @@ ok(DP.fitsAge(byId['morse-code-signal-post'], 9) === true, 'older record fits in
 
 // 8. Wiring: the page, the DOM layer, the print sheet, the links.
 {
-  const html = fs.readFileSync(path.join(ROOT, 'day.html'), 'utf8');
-  ok(/Day Planner/.test(html), 'day.html exists and is the Day Planner');
-  ok(html.indexOf('assets/dayplanner-core.js') !== -1, 'day.html loads the day planner core');
-  ok(html.indexOf('assets/dayplanner.js') !== -1, 'day.html loads the day planner logic');
-  ok(html.indexOf('id="day-sheet"') !== -1, 'day.html has the printable day sheet');
-  ok(html.indexOf('id="dp-starter"') !== -1, 'day.html offers the Just Three starter day');
-  ok(html.indexOf('id="dp-print"') !== -1, 'day.html has the print action');
-  ok(html.indexOf('747 real activities') !== -1, 'day.html cites the true catalog size');
+  const html = fs.readFileSync(path.join(ROOT, 'planner.html'), 'utf8'); // R47 merge: Day Planner lives in planner.html#day-planner
+  ok(/Day Planner/.test(html), 'planner.html hosts the Day Planner (merged, R47)');
+  ok(html.indexOf('assets/dayplanner-core.js') !== -1, 'planner.html loads the day planner core');
+  ok(html.indexOf('assets/dayplanner.js') !== -1, 'planner.html loads the day planner logic');
+  ok(html.indexOf('id="day-sheet"') !== -1, 'planner.html has the printable day sheet');
+  ok(html.indexOf('id="dp-starter"') !== -1, 'planner.html offers the Just Three starter day');
+  ok(html.indexOf('id="dp-print"') !== -1, 'planner.html has the print action');
+  ok(html.indexOf('from the real catalog') !== -1, 'planner.html Day Planner section cites the real catalog (R47: the 747-count line lived outside day.html main and was not carried; the section copy carries the claim)');
   const js = fs.readFileSync(path.join(ROOT, 'assets/dayplanner.js'), 'utf8');
   ok(js.indexOf('VaultDayPlanner') !== -1, 'day logic runs on the pure core');
   ok(js.indexOf('data/activities.json') !== -1, 'day logic reads the real catalog file');
@@ -165,7 +165,7 @@ ok(DP.fitsAge(byId['morse-code-signal-post'], 9) === true, 'older record fits in
   ok(css.indexOf('.day-sheet') !== -1, 'stylesheet styles the day sheet');
   ok(/@media print[\s\S]*?\.day-sheet/.test(css), 'print stylesheet covers the day sheet');
   const planner = fs.readFileSync(path.join(ROOT, 'planner.html'), 'utf8');
-  ok(planner.indexOf('day.html') !== -1, 'week planner links the Day Planner');
+  ok(planner.indexOf('id="day-planner"') !== -1, 'week planner hosts the Day Planner section (merged, R47)');
   DP.DAY_SLOTS.forEach(s => {
   });
   const st = DP.starterDay(acts);

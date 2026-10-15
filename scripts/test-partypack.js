@@ -196,14 +196,14 @@ PP.OCCASIONS.forEach(occ => {
 
 // 9. Wiring: the page, the DOM layer, the print sheet, the links.
 {
-  const html = fs.readFileSync(path.join(ROOT, 'partypack.html'), 'utf8');
-  ok(/The Party Pack/.test(html), 'partypack.html exists and is the Party Pack');
-  ok(html.indexOf('assets/kitbag-core.js') !== -1, 'partypack.html loads the Kit Bag core (composition, not a rebuild)');
-  ok(html.indexOf('assets/partypack-core.js') !== -1, 'partypack.html loads the party pack core');
-  ok(html.indexOf('assets/partypack.js') !== -1, 'partypack.html loads the party pack logic');
-  ok(html.indexOf('id="party-sheet"') !== -1, 'partypack.html has the printable party sheet');
-  ok(html.indexOf('id="pp-coverage"') !== -1, 'partypack.html has the honest coverage panel');
-  ok(html.indexOf('id="pp-print"') !== -1, 'partypack.html has the print action');
+  const html = fs.readFileSync(path.join(ROOT, 'party.html'), 'utf8'); // R47 merge: Party Pack lives in party.html#party-pack
+  ok(/The Party Pack/.test(html), 'party.html hosts the Party Pack (merged, R47)');
+  ok(html.indexOf('assets/kitbag-core.js') !== -1, 'party.html loads the Kit Bag core (composition, not a rebuild)');
+  ok(html.indexOf('assets/partypack-core.js') !== -1, 'party.html loads the party pack core');
+  ok(html.indexOf('assets/partypack.js') !== -1, 'party.html loads the party pack logic');
+  ok(html.indexOf('id="party-sheet"') !== -1, 'party.html has the printable party sheet');
+  ok(html.indexOf('id="pp-coverage"') !== -1, 'party.html has the honest coverage panel');
+  ok(html.indexOf('id="pp-print"') !== -1, 'party.html has the print action');
   const js = fs.readFileSync(path.join(ROOT, 'assets/partypack.js'), 'utf8');
   ok(js.indexOf('VaultPartyPack') !== -1, 'party logic runs on the pure core');
   ok(js.indexOf('data/activities.json') !== -1, 'party logic reads the real catalog file');
@@ -211,11 +211,11 @@ PP.OCCASIONS.forEach(occ => {
   ok(css.indexOf('.party-sheet') !== -1, 'stylesheet styles the party sheet');
   ok(/@media print[\s\S]*?\.party-sheet/.test(css), 'print stylesheet covers the party sheet');
   const party = fs.readFileSync(path.join(ROOT, 'party.html'), 'utf8');
-  ok(party.indexOf('partypack.html') !== -1, 'the Party Planner page links the Party Pack');
+  ok(party.indexOf('id="party-pack"') !== -1, 'the Party Planner page hosts the Party Pack section (merged, R47)');
   const sitemap = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
-  ok(sitemap.includes('partypack.html'), 'sitemap.xml has partypack.html');
+  ok(sitemap.includes('party.html') && !sitemap.includes('partypack.html'), 'sitemap.xml lists the merged party.html; the partypack.html redirect stub is noindex and stays out (R47)');
   const llms = fs.readFileSync(path.join(ROOT, 'llms.txt'), 'utf8');
-  ok(llms.includes('partypack.html'), 'llms.txt mentions partypack.html');
+  ok(llms.includes('party.html#party-pack'), 'llms.txt mentions the merged Party Pack at party.html#party-pack (R47)');
   const pre = PP.composeParty(acts, { occasion: 'birthday', ageBand: '5-6', groupSize: 16, seed: 35 });
   pre.slots.forEach(s => ok(fs.existsSync(path.join(ROOT, 'activity', s.activityId + '.html')),
     'pre-packed pick page rendered: ' + s.activityId));

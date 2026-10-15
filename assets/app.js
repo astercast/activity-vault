@@ -39,27 +39,27 @@
   }
 
   var TAG_LABELS = {
-    'season:fall': '🎃 Fall',
-    'season:winter': '❄️ Winter',
-    'season:spring': '🌷 Spring',
-    'season:summer': '☀️ Summer',
-    'holiday:halloween': '👻 Halloween',
-    'holiday:thanksgiving': '🦃 Thanksgiving',
-    'holiday:dia-de-muertos': '💀 Día de los Muertos',
-    'holiday:christmas': '🎄 Christmas',
-    'holiday:hanukkah': '🕎 Hanukkah',
-    'holiday:kwanzaa': '🖤 Kwanzaa',
-    'holiday:new-year': '🎆 New Year',
-    'holiday:easter': '🐣 Easter',
-    'holiday:earth-day': '🌎 Earth Day',
-    'holiday:july-4th': '🇺🇸 July 4th',
-    'holiday:mlk-day': '✊🏾 MLK Day',
-    'holiday:valentines-day': "💌 Valentine's Day",
-    'holiday:lunar-new-year': '🧧 Lunar New Year',
-    'holiday:st-patricks-day': "☘️ St. Patrick's Day",
-    'holiday:diwali': '🪔 Diwali',
-    'holiday:indigenous-peoples-day': "🌎 Indigenous Peoples' Day",
-    'theme:spooky': '🕸️ Spooky (not scary)'
+    'season:fall': 'Fall',
+    'season:winter': 'Winter',
+    'season:spring': 'Spring',
+    'season:summer': 'Summer',
+    'holiday:halloween': 'Halloween',
+    'holiday:thanksgiving': 'Thanksgiving',
+    'holiday:dia-de-muertos': 'Día de los Muertos',
+    'holiday:christmas': 'Christmas',
+    'holiday:hanukkah': 'Hanukkah',
+    'holiday:kwanzaa': 'Kwanzaa',
+    'holiday:new-year': 'New Year',
+    'holiday:easter': 'Easter',
+    'holiday:earth-day': 'Earth Day',
+    'holiday:july-4th': 'July 4th',
+    'holiday:mlk-day': 'MLK Day',
+    'holiday:valentines-day': "Valentine's Day",
+    'holiday:lunar-new-year': 'Lunar New Year',
+    'holiday:st-patricks-day': "St. Patrick's Day",
+    'holiday:diwali': 'Diwali',
+    'holiday:indigenous-peoples-day': "Indigenous Peoples' Day",
+    'theme:spooky': 'Spooky (not scary)'
   };
   var TAG_ORDER = ['season:fall', 'season:winter', 'season:spring', 'season:summer', 'holiday:halloween', 'holiday:thanksgiving', 'holiday:dia-de-muertos',
                    'holiday:christmas', 'holiday:hanukkah', 'holiday:kwanzaa', 'holiday:new-year',
@@ -120,6 +120,22 @@
     var action = ACTION_BY_CAT[a.categories[0]] || 'Open';
     row.appendChild(el('span', 'action-tag', action));
 
+    // PRO REWORK 2026-10-15: a pictured record carries its plate into the
+    // listing, so the browse reads photo-led like the records themselves.
+    // An unpictured record keeps the plain typographic row (designed
+    // absence, never a filler image).
+    if (a.photo && a.photo.file) {
+      var th = el('span', 'row-thumb');
+      var im = document.createElement('img');
+      im.src = 'assets/photos/' + a.photo.file;
+      im.alt = '';
+      im.loading = 'lazy';
+      im.decoding = 'async';
+      th.appendChild(im);
+      row.appendChild(th);
+      row.classList.add('has-thumb');
+    }
+
     var h = el('h3');
     var link = el('a', null, a.name);
     link.href = 'activity/' + a.id + '.html';
@@ -140,7 +156,7 @@
     // The visitor's OWN rating: never an aggregate; no community ratings.
     var mine = myRating(a);
     if (mine) {
-      row.appendChild(el('span', 'rate-badge', '\u2b50 ' + mine.stars + '\u2605, your rating'));
+      row.appendChild(el('span', 'rate-badge', mine.stars + ' \u2605, your rating'));
     } else if (state.sortByRating || state.topTen) {
       row.appendChild(el('span', 'rate-badge unrated', 'Not rated yet'));
     }
@@ -155,7 +171,32 @@
     return s;
   }
 
+  function anyFilterActive() {
+    return !!(state.q || state.age != null || state.maxTime != null || state.group != null ||
+      state.cats.size || state.tags.size || state.noPrepOnly || state.indoorOnly ||
+      state.outdoorOnly || state.copyFreeOnly || state.noElimOnly ||
+      state.sortByRating || state.topTen);
+  }
+
   function render() {
+    // CRITIC-001 fix 2 (R47): the homepage is a door, not a dump. With no
+    // search or filter chosen, show the door state (counts + the way in)
+    // instead of pouring all 747 records onto the page. The full vault
+    // renders the moment a visitor searches or picks any filter, and
+    // every category/contents link above arrives with a filter set.
+    if (!anyFilterActive()) {
+      grid.innerHTML = '';
+      state.visible = [];
+      var door = el('div', 'empty');
+      door.innerHTML = '<span class="big" aria-hidden="true">§</span>' +
+        '<p><strong>' + state.activities.length + ' activities in the vault.</strong></p>' +
+        '<p>Search by name, material or keyword, or pick a category, age or season on the left. ' +
+        'The vault opens the moment you choose. Browsing shelf by shelf? ' +
+        '<a href="desk.html">The Desk</a> walks the categories one drawer at a time.</p>';
+      grid.appendChild(door);
+      if (countEl) countEl.textContent = state.activities.length + ' activities · search or filter to browse them';
+      return;
+    }
     var list = state.activities.filter(matches);
     var ratingMode = state.sortByRating || state.topTen;
     if (state.topTen) {
@@ -178,7 +219,7 @@
     grid.innerHTML = '';
     if (ratingMode) {
       var note = el('div', 'top-rated-note');
-      note.innerHTML = '<strong>⭐ ' + (state.topTen ? 'Your top 10' : 'Sorted by your ratings') +
+      note.innerHTML = '<strong>★ ' + (state.topTen ? 'Your top 10' : 'Sorted by your ratings') +
         '.</strong> These are <em>your</em> ratings, stored only in this browser. ' +
         'Activity Vault has no community ratings, so nothing here is an average or a "top" voted by others.';
       grid.appendChild(note);
@@ -186,11 +227,11 @@
     if (!list.length) {
       var empty = el('div', 'empty');
       if (state.topTen) {
-        empty.innerHTML = '<span class="big" aria-hidden="true">⭐</span>' +
+        empty.innerHTML = '<span class="big" aria-hidden="true">★</span>' +
           '<p><strong>No ratings yet.</strong></p>' +
           '<p>Open any activity card and give it 1–5 stars. Your top 10 will appear here.</p>';
       } else {
-        empty.innerHTML = '<span class="big" aria-hidden="true">🗂️</span><p><strong>The drawer came up empty.</strong></p><p>Nothing in the vault matches that exact combination, loosen a filter or two and dig again. The good stuff is in here somewhere.</p>';
+        empty.innerHTML = '<span class="big" aria-hidden="true">§</span><p><strong>The drawer came up empty.</strong></p><p>Nothing in the vault matches that exact combination, loosen a filter or two and dig again. The good stuff is in here somewhere.</p>';
       }
       grid.appendChild(empty);
     } else {
@@ -335,9 +376,14 @@
     cg.appendChild(el('span', 'flabel', 'Category'));
     var row = el('div', 'chip-row');
     state.categories.forEach(function (c) {
-      var cb = chipButton(c.glyph + ' ' + c.name, false, function (on) {
+      // PRO REWORK 2026-10-15: the category speaks in its colour (a dot,
+      // the same device as the record chips), not an emoji glyph.
+      var cb = chipButton(c.name, false, function (on) {
         if (on) state.cats.add(c.id); else state.cats.delete(c.id);
       }, c.color);
+      var dot = el('span', 'chip-dot');
+      dot.setAttribute('aria-hidden', 'true');
+      cb.insertBefore(dot, cb.firstChild);
       cb.classList.add('folder-tab');
       cb.setAttribute('data-cat', c.id);
       row.appendChild(cb);
@@ -352,7 +398,7 @@
     TAG_ORDER.forEach(function (t) {
       var tb = chipButton(TAG_LABELS[t], false, function (on) {
         if (on) state.tags.add(t); else state.tags.delete(t);
-      }, '#8b5cf6');
+      }, '#b7413c');
       tb.setAttribute('data-tag', t);
       tagrow.appendChild(tb);
     });
@@ -568,7 +614,7 @@
       var copyBtn = document.getElementById('copy-collection');
       if (copyBtn) copyBtn.addEventListener('click', copyCollection);
     }).catch(function () {
-      grid.innerHTML = '<div class="empty"><span class="big" aria-hidden="true">⚠️</span><p>Could not load the activity library. Check your connection and reload.</p></div>';
+      grid.innerHTML = '<div class="empty"><p><strong>Could not load the activity library.</strong></p><p>Check your connection and reload.</p></div>';
     });
   }
 

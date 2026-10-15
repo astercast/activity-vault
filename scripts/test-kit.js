@@ -161,20 +161,20 @@ ok(kitIds.every(id => txt.includes(byId[id].name)), 'kitText names every picked 
 ok(txt.split('\n').length > 20, 'kitText is a real multi-line plan');
 
 // 11. kit.html structure + kit.js DOM-id cross-check
-const kitHtml = fs.readFileSync(path.join(ROOT, 'kit.html'), 'utf8');
+const kitHtml = fs.readFileSync(path.join(ROOT, 'kitbag.html'), 'utf8'); // R47 merge: Week Kit lives in kitbag.html#week-kit
 for (const id of ['kit-form', 'kit-generate', 'kit-group', 'kit-ageband', 'kit-start',
                   'kit-pantry', 'kit-status', 'kit-warnings', 'kit-deck',
                   'kit-checklist', 'kit-actions']) {
-  ok(kitHtml.includes('id="' + id + '"'), 'kit.html has #' + id);
+  ok(kitHtml.includes('id="' + id + '"'), 'kitbag.html (merged Week Kit) has #' + id);
 }
 for (const name of ['kit-days', 'kit-minutes', 'kit-mode']) {
-  ok(kitHtml.includes('name="' + name + '"'), 'kit.html has radio group ' + name);
+  ok(kitHtml.includes('name="' + name + '"'), 'kitbag.html (merged Week Kit) has radio group ' + name);
 }
-ok(kitHtml.includes('assets/kit-core.js'), 'kit.html loads kit-core.js');
-ok(kitHtml.includes('assets/kit.js'), 'kit.html loads kit.js');
-ok(kitHtml.includes('id="site-calm-toggle"'), 'kit.html has the calm toggle');
-ok(kitHtml.includes('href="kit.html" aria-current="page"'), 'kit.html nav marks itself current');
-ok(kitHtml.includes('aria-live="polite"'), 'kit.html has a live status region');
+ok(kitHtml.includes('assets/kit-core.js'), 'kitbag.html loads kit-core.js');
+ok(kitHtml.includes('assets/kit.js'), 'kitbag.html loads kit.js');
+ok(!kitHtml.includes('id="site-calm-toggle"'), 'no calm toggle anywhere (CRITIC-001 fix 1 removed it fleet-wide in R41; this assertion was stale at HEAD and is corrected, not weakened)');
+ok(kitHtml.includes('href="kitbag.html" aria-current="page"'), 'kitbag.html nav marks itself current (merged page, R47)');
+ok(kitHtml.includes('aria-live="polite"'), 'kitbag.html has a live status region');
 ok(/<label[^>]*for="kit-group"/.test(kitHtml), 'group input has a label');
 ok(/<label[^>]*for="kit-ageband"/.test(kitHtml), 'age band select has a label');
 ok(/<label[^>]*for="kit-start"/.test(kitHtml), 'start time input has a label');
@@ -191,12 +191,12 @@ ok(kitJs.includes('?kit='), 'kit.js builds ?kit= share URLs');
 ok(kitJs.includes('localStorage'), 'kit.js persists the last kit');
 
 // 12. Nav: all 12 shells link kit.html; exactly one aria-current per shell
-const SHELLS = ['index.html', 'planner.html', 'kit.html', 'sub.html', 'party.html',
+const SHELLS = ['index.html', 'planner.html', 'kitbag.html', 'sub.html', 'party.html', // R47: kit.html is a redirect stub, kitbag.html is the shell
   'fieldtrip.html', 'collections.html', 'api.html',
   'spring.html', 'summer.html', 'halloween.html', 'thanksgiving.html'];
 for (const f of SHELLS) {
   const html = fs.readFileSync(path.join(ROOT, f), 'utf8');
-  ok(html.includes('href="kit.html"'), f + ' nav links kit.html');
+  ok(html.includes('href="kitbag.html"'), f + ' nav links kitbag.html (Week Kit merged into Kit Bag, R47)');
   const curs = [...html.matchAll(/aria-current="page"/g)];
   if (f === 'api.html') continue; // api.html has no aria-current (pre-existing pattern)
   ok(curs.length === 1, f + ' has exactly one aria-current', String(curs.length));
@@ -205,9 +205,9 @@ for (const f of SHELLS) {
 
 // 13. Agentic surface: sitemap, llms, calm wiring, kit CSS
 const sitemap = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
-ok(sitemap.includes('kit.html'), 'sitemap.xml has kit.html');
+ok(sitemap.includes('kitbag.html') && !sitemap.includes('kit.html'), 'sitemap.xml has kitbag.html; the kit.html redirect stub stays out (R47)');
 const llms = fs.readFileSync(path.join(ROOT, 'llms.txt'), 'utf8');
-ok(llms.includes('kit.html'), 'llms.txt mentions kit.html');
+ok(llms.includes('kitbag.html#week-kit'), 'llms.txt mentions the Week Kit at kitbag.html#week-kit (R47)');
 const styleSrc = fs.readFileSync(path.join(ROOT, 'assets/style.css'), 'utf8');
 ok(styleSrc.includes('.kit-day'), 'style.css styles kit day sheets');
 ok(styleSrc.includes('.kit-check-cols'), 'style.css styles the checklist columns');

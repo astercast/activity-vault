@@ -2778,8 +2778,8 @@ html:not([data-calm="true"]) .collection-section { animation: none; }
      "the current issue" mark inside its count; at .92rem nowrap the count
      alone measured 227px and pushed the row's right edge to 333px in a
      320px viewport (13px horizontal overflow). On phone widths the marked
-     row alone steps down a size so the full line — number, word, count,
-     mark — stays on one line at the 56px ruled rhythm, inside the frame. */
+     row alone steps down a size so the full line (number, word, count,
+     mark) stays on one line at the 56px ruled rhythm, inside the frame. */
   .contents-line:has(.contents-current) { gap: .45rem; }
   .contents-line:has(.contents-current) .contents-num { font-size: 1.2rem; min-width: 1.9rem; }
   .contents-line:has(.contents-current) .contents-word { font-size: 1.15rem; }
@@ -2847,3 +2847,142 @@ html:not([data-calm="true"]) .collection-section { animation: none; }
   input[type="range"] { min-height: 44px; }
   .issue-num-text a { display: inline-block; padding-block: 10px; margin-block: -10px; }
 }
+
+/* ================= PRO REWORK 2026-10-15 =================
+   "The Almanac, bound properly" (landing record: fleet-ops/wave-engine/
+   landing-activity-pro-rework-2026-10-15.md). One register, applied as
+   the final layer: print-editorial craft, photography as plates, emoji
+   retired from chrome (categories speak in their own colour), facts
+   stated once, tools presented as instruments. */
+
+/* ---- the blotter card: finish a half-done flattening. An earlier layer
+   lightened this card's ground to paper but left the dark-ground text
+   colours (cream on cream, unreadable). The card is a paper panel now,
+   in ink. ---- */
+.blotter-card { color: var(--ink); }
+.blotter-card h2 { color: var(--ink); }
+.blotter-alt a { color: var(--accent); font-weight: 700; }
+
+/* ---- the issue hero: the countdown as one locked group ---- */
+.issue-count { align-items: flex-start; }
+.issue-num-text { display: grid; gap: .2rem; padding-top: .85rem; }
+.issue-num-kicker {
+  font-family: var(--font-type); font-size: .8rem; font-weight: 700;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--ink-soft);
+}
+.issue-num-text a { font-size: 1.9rem; line-height: 1.12; }
+.issue-num-date { font-size: 1.05rem; color: var(--ink-soft); }
+.issue-cover img { object-position: 50% 22%; }
+@media (max-width: 560px) {
+  .issue-num-text { padding-top: .45rem; padding-bottom: 0; }
+  .issue-num-text a { font-size: 1.5rem; }
+}
+
+/* ---- the five doors: chapter plates, not cards ---- */
+.doors-section { margin-top: 2.2rem; }
+.doors-section h2 { font-size: clamp(1.7rem, 4vw, 2.3rem); margin: 0 0 .2rem; }
+.doors-line { color: var(--ink-soft); font-size: 1.08rem; margin: 0 0 .8rem; }
+.doors { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); }
+.door { display: grid; grid-template-columns: 1fr; border-bottom: 1px solid var(--line); padding: 1.15rem 0 1.3rem; }
+.door-plate { margin: 0; grid-row: 1; }
+.door-plate img {
+  display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover;
+  object-position: 50% 30%; border: 1px solid var(--line); background: var(--paper-deep);
+}
+.door-plate figcaption { font-size: .86rem; color: var(--ink-soft); padding-top: .45rem; line-height: 1.45; }
+.door-main {
+  grid-row: 2; display: grid; align-content: center; gap: .3rem;
+  padding-top: .95rem; text-decoration: none; color: var(--ink);
+}
+.door-num {
+  font-family: var(--font-type); font-size: .78rem; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--season, var(--accent));
+}
+.door-name {
+  font-family: var(--font-display); font-weight: 800; letter-spacing: -.01em;
+  font-size: clamp(1.75rem, 4.5vw, 2.4rem); line-height: 1.05;
+}
+.door-main:hover .door-name, .door-main:focus-visible .door-name {
+  color: var(--season, var(--accent)); text-decoration: underline; text-underline-offset: 4px;
+}
+.door-promise { font-size: 1.12rem; }
+.door-count { color: var(--ink-soft); font-size: .98rem; }
+@media (min-width: 760px) {
+  .door { grid-template-columns: 5fr 7fr; column-gap: 1.6rem; padding: 1.3rem 0; }
+  .door-plate { grid-column: 1; grid-row: 1; }
+  .door-plate img { aspect-ratio: 4 / 3; }
+  .door-main { grid-column: 2; grid-row: 1; padding-top: 0; }
+}
+
+/* ---- browse rows: one register with the rest of the book. The rotated
+   index cards, washi tape and ruled-paper grounds are retired; a pictured
+   record carries its plate, an unpictured one stays typographic. ---- */
+.browse-rows { gap: 1.1rem; }
+.activity-row {
+  transform: none; background: var(--card); border: 1px solid var(--line);
+  border-radius: 10px; box-shadow: var(--shadow); padding: 1.05rem 1.15rem 1rem;
+}
+.activity-row:nth-child(odd), .activity-row:nth-child(even) { transform: none; }
+.activity-row::before { display: none; }
+.activity-row:hover { transform: translateY(-2px); }
+.activity-row .action-tag {
+  position: static; transform: none; background: transparent; border: 0;
+  box-shadow: none; padding: 0; display: block; margin-bottom: .35rem;
+}
+.row-thumb { float: left; margin: .15rem .95rem .3rem 0; }
+.row-thumb img {
+  display: block; width: 92px; aspect-ratio: 4 / 3; object-fit: cover;
+  object-position: 50% 30%; border: 1px solid var(--line); border-radius: 5px;
+  background: var(--paper-deep);
+}
+.activity-row::after { content: ""; display: block; clear: both; }
+
+/* ---- chips: colour carries the category, not a glyph ---- */
+.chip .chip-dot {
+  display: inline-block; width: .58em; height: .58em; border-radius: 50%;
+  background: var(--cat, var(--accent)); margin-right: .45em;
+}
+.cat-chips .chip.tag-chip { border-style: solid; border-color: var(--line); }
+
+/* ---- the activity page: facts once, in one ruled rail ---- */
+.fact-rail-h {
+  font-family: var(--font-type); font-size: .8rem; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft);
+  margin: 1.35rem 0 0; padding: 0; border: 0;
+}
+.fact-grid {
+  border: 0; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--line);
+  border-radius: 0; background: transparent; padding: .85rem 0 .95rem; margin: .5rem 0 1.3rem;
+}
+.fact-grid dd { font-family: var(--font-display); font-size: 1.05rem; }
+
+/* ---- tools: the form is an instrument panel, not a notebook page ---- */
+.planner-form {
+  background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+  box-shadow: var(--shadow); padding: 1.2rem 1.25rem 1.3rem;
+}
+.plan-note { color: var(--ink-soft); }
+
+/* ---- the desk, finished in the same register ---- */
+.desk-card, .desk-card:nth-child(odd), .desk-card:nth-child(even) { transform: none; }
+.drawer.open .drawer-pull { background: var(--paper-deep); }
+
+/* ---- empty states: a typographic mark, not clip-art ---- */
+.empty .big { font-family: var(--font-display); font-weight: 800; color: var(--ink); }
+
+/* ---- refinement loop (cold-walk fixes on the first captures) ---- */
+/* Filter chips sit upright like the rest of the book; the scrapbook
+   rotations stay only inside the tools' own designed surfaces. */
+.chip-row .chip, .cat-chips .chip { transform: none; }
+.chip-row .chip:hover { transform: none; }
+/* The tag accent is the house red, not the old violet. */
+.chip.tag-chip { --cat: var(--accent); }
+.chip-link { --cat: var(--accent); }
+.chip-link:hover, .chip-link:focus-visible { background: var(--paper-deep); }
+/* The record card is clean paper; the red margin line that ran through
+   the whole record belonged to the retired index-card layer. */
+.activity-card { background: var(--card); }
+/* Promo strips ruled solid, like the contents. */
+.season-strip, .season-promo { border-style: solid; border-width: 1px; }
+
+/* ================= END PRO REWORK 2026-10-15 ================= */

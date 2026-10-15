@@ -85,7 +85,7 @@ jsTags.forEach(t => ok(vocab.has(t), 'summer.js group tag in vocabulary: ' + t))
 const plannerSrc = fs.readFileSync(path.join(ROOT, 'assets/planner.js'), 'utf8');
 for (const m of ['5:', '6:', '7:']) ok(plannerSrc.includes(m + " 'season:summer'"), 'planner month ' + m + ' -> season:summer');
 ok(plannerSrc.includes("'holiday:july-4th'"), 'planner strip knows july-4th');
-ok(plannerSrc.includes("'season:summer': '☀️ Summer'"), 'planner summer label');
+ok(plannerSrc.includes("'season:summer': 'Summer'"), 'planner summer label'); // PRO REWORK 2026-10-15: labels are plain words now, emoji retired from chrome
 
 // 7. party.js summer theme: shape + pool
 const partySrc = fs.readFileSync(path.join(ROOT, 'assets/party.js'), 'utf8');

@@ -54,6 +54,10 @@
 
 
 
+
+
+
+
 <!-- PLACEMENT:BEGIN -->
 <meta name="theme-color" content="#fffdf7">
 <link rel="icon" href="favicon.ico" sizes="48x48">
@@ -86,16 +90,13 @@
       <a href="planner.html" aria-current="page">Plan my week <span class="nav-gloss">a week of activities, day by day</span></a>
       <a href="collections.html">Collections</a>
       <a href="kitbag.html">Kit Bag <span class="nav-gloss">pack one day's bag</span></a>
+      <a href="party.html">Party Planner <span class="nav-gloss">themes and the full party pack</span></a>
+      <a href="desk.html">The Desk <span class="nav-gloss">browse the vault by category drawers</span></a>
       <details class="nav-more">
         <summary>More</summary>
         <div class="nav-more-panel">
           <p class="nav-more-h">Tools</p>
-          <a href="desk.html">The Desk <span class="nav-gloss">browse the vault by category drawers</span></a>
-          <a href="day.html">Day Planner <span class="nav-gloss">plan one day, hour by hour</span></a>
-          <a href="kit.html">Week Kit <span class="nav-gloss">one kit list for a whole week</span></a>
           <a href="sub.html">Sub Tub <span class="nav-gloss">a ready day a substitute can run</span></a>
-          <a href="party.html">Party Themes <span class="nav-gloss">choose a theme for a party</span></a>
-          <a href="partypack.html">Party Pack <span class="nav-gloss">pack everything for one party</span></a>
           <a href="fieldtrip.html">Field Trips <span class="nav-gloss">plan a trip out</span></a>
           <p class="nav-more-h">Seasons</p>
           <a href="halloween.html">Halloween</a>
@@ -111,14 +112,14 @@
 
 <main class="wrap">
   <section class="hero" aria-labelledby="hero-title">
-    <span class="kicker no-print">📅 Smart Weekly Planner 3.0</span>
+    <span class="kicker no-print">The week planner</span>
     <h1 id="hero-title">Your weeks, auto-built and balanced.</h1>
-    <p class="lede no-print">Pick a program, an age group, and up to four weeks, the Vault deals no-repeat weeks from the Vault's real activities, balances the energy across every day, and warns you when a day is lopsided. Every day gets a ⚡ brain-break idea, every outdoor slot a 🌦️ weather backup, every plan a 🛒 supply list and a 🆘 substitute kit. Then drag it into shape.</p>
+    <p class="lede no-print">Pick a program, an age group, and up to four weeks. The Vault deals balanced, no-repeat weeks from its real activities, with a brain-break idea for every day, a weather backup for outdoor slots, and a supply list and substitute kit for every plan. Then drag it into shape.</p>
   </section>
 
-  <p class="plan-note no-print">🗓️ <strong>New, the Day Planner:</strong> composing a single day instead? <a href="day.html">Open the Day Planner</a>, five slots (arrival → closing) filled by age from the real catalog, a pre-composed Just Three starter day, and a printable day sheet.</p>
+  <p class="plan-note no-print"><strong>One day instead?</strong> <a href="#day-planner">The Day Planner</a> below composes a single day: five slots, arrival to closing, filled by age from the real catalog, with a printable day sheet.</p>
 
-  <p class="plan-note no-print">📚 Short on inspiration? <a href="collections.html">Start from a curated collection</a>, or seed the planner straight from one: every collection has a “🗓️ Plan a week from this” button.</p>
+  <p class="plan-note no-print">Short on inspiration? <a href="collections.html">Start from a curated collection</a>: every collection can seed this planner with one tap.</p>
 
   <aside class="season-strip no-print" id="season-strip" aria-label="Seasonal picks" hidden></aside>
 
@@ -237,6 +238,69 @@
 
   <section class="print-only print-deck" id="print-week-cards" aria-label="Week card deck (print)" aria-hidden="true"></section>
   <p class="no-print" style="margin-bottom:3rem;"><a href="index.html">← Back to browsing</a></p>
+
+  <section id="day-planner" aria-label="Day Planner: plan one day, hour by hour">
+    <h2>Day Planner: plan one day, hour by hour</h2>
+    <p>The Day Planner lives here now: one door for the week and the day. Compose a single day below, or plan the whole week above.</p>
+
+  <section class="hero dp-hero" aria-labelledby="day-planner-title">
+    <span class="kicker no-print">🗓️ Day Planner, the flagship</span>
+    <h1 id="day-planner-title">One day, composed.</h1>
+    <p class="lede no-print">Five slots make a program day, arrival, morning meeting, centers, outdoor, closing. Pick your room's age and the Day Planner fills each slot from the real catalog: every suggestion is a real activity whose age band covers your kids and whose minutes fit the slot. Swap any slot, or start from the <strong>Just Three starter day</strong>, a whole day pre-composed from records written for three-year-olds alone. Then print the day sheet and pin it where the day can see it.</p>
+  </section>
+
+  <form class="dp-controls no-print" id="dp-form" onsubmit="return false;" aria-label="Day planner options">
+    <div class="filter-group">
+      <label class="flabel" for="dp-date">Date</label>
+      <input type="date" id="dp-date">
+    </div>
+    <div class="filter-group">
+      <label class="flabel" for="dp-age">Room age</label>
+      <select id="dp-age">
+        <option value="3" selected>3 years old</option>
+        <option value="4">4 years old</option>
+        <option value="5">5 years old</option>
+        <option value="6">6 years old</option>
+        <option value="7">7 years old</option>
+        <option value="8">8 years old</option>
+        <option value="9">9 years old</option>
+        <option value="10">10 years old</option>
+      </select>
+      <p class="field-hint">Filters use each activity's real age band, a record only appears if it honestly covers this age.</p>
+    </div>
+    <div class="dp-actions">
+      <button class="btn primary-action" id="dp-compose" type="button">✨ Compose my day</button>
+      <button class="btn btn-ghost" id="dp-starter" type="button">🧸 Just Three starter day</button>
+    </div>
+    <p class="dp-status" id="dp-status" role="status" aria-live="polite"></p>
+  </form>
+
+  <div class="dp-slots no-print" id="dp-slots" tabindex="-1" aria-label="Day slots"></div>
+
+  <p class="dp-summary no-print" id="dp-summary" role="status" aria-live="polite"></p>
+
+  <div class="dp-sheet-actions no-print">
+    <button class="btn" id="dp-print" type="button">🖨️ Print day sheet</button>
+    <button class="btn btn-ghost" id="dp-copy" type="button">📋 Copy day as text</button>
+    <span class="copy-status" id="dp-copy-status" role="status" aria-live="polite"></span>
+    <a class="btn btn-ghost" href="planner.html">📅 Plan a whole week instead</a>
+  </div>
+
+  <section class="day-sheet" id="day-sheet" aria-label="Printable day sheet">
+    <header class="day-sheet-head">
+      <p class="day-sheet-kicker">Activity Vault · Day Sheet</p>
+      <h2 class="day-sheet-title" id="sheet-title">My day</h2>
+      <p class="day-sheet-meta" id="sheet-meta"></p>
+    </header>
+    <div class="day-sheet-rows" id="sheet-rows"></div>
+    <footer class="day-sheet-foot">
+      <p>Every activity is a real catalog card. Open it from the Vault for full steps, materials, and safety notes.</p>
+    </footer>
+  </section>
+
+  <p class="no-print" style="margin: 2rem 0 3rem;"><a href="planner.html">← Back to the week planner</a></p>
+
+  </section>
 </main>
 
 <footer class="site-footer no-print">
@@ -246,5 +310,7 @@
 <script src="assets/ratings.js" defer></script>
 <script src="assets/planner-core.js" defer></script>
 <script src="assets/planner.js" defer></script>
+<script src="assets/dayplanner-core.js" defer></script>
+<script src="assets/dayplanner.js" defer></script>
 </body>
 </html>

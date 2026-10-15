@@ -54,6 +54,10 @@
 
 
 
+
+
+
+
 <!-- PLACEMENT:BEGIN -->
 <meta name="theme-color" content="#fffdf7">
 <link rel="icon" href="favicon.ico" sizes="48x48">
@@ -86,16 +90,13 @@
       <a href="planner.html">Plan my week <span class="nav-gloss">a week of activities, day by day</span></a>
       <a href="collections.html">Collections</a>
       <a href="kitbag.html" aria-current="page">Kit Bag <span class="nav-gloss">pack one day's bag</span></a>
+      <a href="party.html">Party Planner <span class="nav-gloss">themes and the full party pack</span></a>
+      <a href="desk.html">The Desk <span class="nav-gloss">browse the vault by category drawers</span></a>
       <details class="nav-more">
         <summary>More</summary>
         <div class="nav-more-panel">
           <p class="nav-more-h">Tools</p>
-          <a href="desk.html">The Desk <span class="nav-gloss">browse the vault by category drawers</span></a>
-          <a href="day.html">Day Planner <span class="nav-gloss">plan one day, hour by hour</span></a>
-          <a href="kit.html">Week Kit <span class="nav-gloss">one kit list for a whole week</span></a>
           <a href="sub.html">Sub Tub <span class="nav-gloss">a ready day a substitute can run</span></a>
-          <a href="party.html">Party Themes <span class="nav-gloss">choose a theme for a party</span></a>
-          <a href="partypack.html">Party Pack <span class="nav-gloss">pack everything for one party</span></a>
           <a href="fieldtrip.html">Field Trips <span class="nav-gloss">plan a trip out</span></a>
           <p class="nav-more-h">Seasons</p>
           <a href="halloween.html">Halloween</a>
@@ -111,9 +112,9 @@
 
 <main class="wrap">
   <section class="hero kb-hero" aria-labelledby="hero-title">
-    <span class="kicker no-print">🎒 The Kit Bag, the flagship</span>
+    <span class="kicker no-print">The Kit Bag</span>
     <h1 id="hero-title">Pack the rainy day<br>before it packs you.</h1>
-    <p class="lede no-print">The forecast says all day. The Kit Bag packs <strong>one whole rainy day, indoors</strong>, the setting this catalog genuinely serves, with a real rainy-day shelf in its collections, five roles filled from real rainy-day activities that honestly cover your room's age and really run indoors. Then it opens the activities' own materials lists and composes <strong>the bag itself</strong>: a deduplicated, printable kit list, grouped into consumables, equipment, and print-at-desk. Every line is copied from a real activity's materials list, quantities stated exactly the way the activity states them, if two activities both need glue sticks, the bag lists them once and names both activities. Nothing is invented, nothing is estimated, nothing is quietly dropped.</p>
+    <p class="lede no-print">The forecast says all day. The Kit Bag packs <strong>one whole rainy day, indoors</strong>: five roles filled from real rainy-day activities that cover your room's age. Then it composes <strong>the bag itself</strong> from the activities' own materials lists: one printable kit list, every line copied from a real activity, nothing invented.</p>
     <aside class="desk-note no-print" aria-label="A note from the teacher's desk">every line traces to a real card ↓</aside>
   </section>
 
@@ -168,6 +169,93 @@
   </section>
 
   <p class="no-print" style="margin: 2rem 0 3rem;"><a href="kit.html">← Back to the After-School Kit</a></p>
+
+  <section id="week-kit" aria-label="Week Kit: one kit list for a whole week">
+    <h2>Week Kit: one kit list for a whole week</h2>
+    <p>The Week Kit lives here now: one door for the bag. Pack one day above, or build the whole week's kit list below.</p>
+
+  <section class="hero" aria-labelledby="week-kit-title">
+    <span class="kicker no-print">🧰 The After-School Kit</span>
+    <h1 id="week-kit-title">The whole week,<br>from what's on the shelf.</h1>
+    <p class="lede no-print">The page to open when the supply closet is nearly empty. Tell it your group size, age band, days per week, and what you have on hand. It builds a week of sessions, each day with a run-of-show and a plan sheet, and one material checklist for the week. Print it, share it, run it.</p>
+    <aside class="desk-note no-print" aria-label="A note from the teacher's desk">low-prep, low-materials,<br>small-group friendly ↓</aside>
+  </section>
+
+  <form class="planner-form no-print" id="kit-form" onsubmit="return false;" aria-label="After-School Kit options">
+    <fieldset>
+      <legend>Your group</legend>
+      <div class="filter-group">
+        <label class="flabel" for="kit-group">Group size (kids)</label>
+        <input type="number" id="kit-group" min="2" max="60" value="20" inputmode="numeric">
+      </div>
+      <div class="filter-group">
+        <label class="flabel" for="kit-ageband">Age band</label>
+        <select id="kit-ageband">
+          <option value="prek-k">PreK–K (ages 3–6)</option>
+          <option value="g1-2">Grades 1–2 (ages 6–8)</option>
+          <option value="g3-5" selected>Grades 3–5 (ages 8–11)</option>
+          <option value="g6-8">Grades 6–8 (ages 11–14)</option>
+          <option value="all">All ages (3–14)</option>
+        </select>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Your week</legend>
+      <div class="filter-group">
+        <span class="flabel" id="kit-days-label">Days per week</span>
+        <div class="chip-row" role="radiogroup" aria-labelledby="kit-days-label">
+          <label class="chip"><input type="radio" name="kit-days" value="1"> 1 day</label>
+          <label class="chip"><input type="radio" name="kit-days" value="2"> 2 days</label>
+          <label class="chip"><input type="radio" name="kit-days" value="3" checked> 3 days</label>
+          <label class="chip"><input type="radio" name="kit-days" value="4"> 4 days</label>
+          <label class="chip"><input type="radio" name="kit-days" value="5"> 5 days</label>
+        </div>
+      </div>
+      <div class="filter-group">
+        <span class="flabel" id="kit-minutes-label">Minutes per session</span>
+        <div class="chip-row" role="radiogroup" aria-labelledby="kit-minutes-label">
+          <label class="chip"><input type="radio" name="kit-minutes" value="30"> 30</label>
+          <label class="chip"><input type="radio" name="kit-minutes" value="45"> 45</label>
+          <label class="chip"><input type="radio" name="kit-minutes" value="60" checked> 60</label>
+          <label class="chip"><input type="radio" name="kit-minutes" value="90"> 90</label>
+        </div>
+      </div>
+      <div class="filter-group">
+        <label class="flabel" for="kit-start">Session starts at</label>
+        <input type="time" id="kit-start" value="15:30">
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>What you have on hand</legend>
+      <div class="filter-group">
+        <span class="flabel" id="kit-mode-label">Prep strictness</span>
+        <div class="chip-row" role="radiogroup" aria-labelledby="kit-mode-label">
+          <label class="chip"><input type="radio" name="kit-mode" value="pantry" checked> 🧰 Use what I have</label>
+          <label class="chip"><input type="radio" name="kit-mode" value="low"> 📦 Low-materials (≤ 3 items)</label>
+          <label class="chip"><input type="radio" name="kit-mode" value="noprep"> ⚡ No-prep only</label>
+        </div>
+        <p class="dim">“Use what I have” keeps only activities whose materials are all in your pantry below (or need none). The pantry is matched against the real material lists in the Vault. A phone timer and tap water count as on hand.</p>
+      </div>
+      <div class="filter-group">
+        <span class="flabel" id="kit-pantry-label">Your pantry</span>
+        <div class="chip-row" id="kit-pantry" role="group" aria-labelledby="kit-pantry-label"></div>
+      </div>
+    </fieldset>
+    <button class="btn primary-action" id="kit-generate" type="button">🧰 Build my kit</button>
+  </form>
+
+  <p id="kit-status" role="status" aria-live="polite" class="no-print"></p>
+
+  <div id="kit-warnings" class="no-print"></div>
+  <div id="kit-deck"></div>
+  <div id="kit-checklist" class="no-print"></div>
+  <div id="kit-actions" class="no-print"></div>
+
+  <p class="plan-note no-print">🎒 <strong>New, the Kit Bag:</strong> packing for one specific rainy day instead? <a href="kitbag.html">Open the Kit Bag</a>, five roles filled from the real rainy-day shelf, and a printable kit list composed from the selected activities' own materials lists.</p>
+
+  <p class="no-print" style="margin-top:2rem;"><a href="index.html">← Back to browsing</a></p>
+
+  </section>
 </main>
 
 <footer class="site-footer no-print">
@@ -176,5 +264,7 @@
 
 <script src="assets/kitbag-core.js" defer></script>
 <script src="assets/kitbag.js" defer></script>
+<script src="assets/kit-core.js" defer></script>
+<script src="assets/kit.js" defer></script>
 </body>
 </html>

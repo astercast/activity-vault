@@ -205,8 +205,23 @@ path_re = re.compile(r'^- (api/|data/|skills/|pipeline/|[a-zA-Z0-9_.-]+\.(html|m
 # token after the bullet, with any trailing separator punctuation removed.
 llms_links = [l[2:].split()[0].rstrip('.,')
               for l in llms.splitlines() if path_re.match(l)]
-missing = [l for l in llms_links
-           if not l.startswith('http') and not os.path.exists(os.path.join(ROOT, l))]
+# PRO REWORK 2026-10-15 repair: R47 added anchored entries (page.html#section)
+# to llms.txt, and the existence test above never resolved them (the file
+# "kitbag.html#week-kit" does not exist), so this check failed on the merged
+# sections from the day they landed. Resolve the fragment properly: the file
+# must exist AND carry the anchor id. Stricter than before, not weaker.
+def _llms_resolves(link):
+    if link.startswith('http'):
+        return True
+    path, _, frag = link.partition('#')
+    target = os.path.join(ROOT, path)
+    if not os.path.exists(target):
+        return False
+    if frag:
+        return f'id="{frag}"' in open(target, encoding='utf-8').read()
+    return True
+
+missing = [l for l in llms_links if not _llms_resolves(l)]
 check("llms.txt links resolve", not missing, str(missing[:5]) if missing else f"{len(llms_links)} links")
 
 print()

@@ -80,7 +80,10 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
   drag-and-drop reorder, per-slot swap, surprise gap-fill, prep-level caps, collection
   seeding (?from=collection:<id>), named saved plans, .ics calendar export, shareable
   ?plan= links, and a print-ready card deck.
-- kit.html, The After-School Kit: the flagship low-materials week builder.
+- planner.html#day-planner, The Day Planner (merged into Plan my week in R47): compose a single
+  day, five slots (arrival to closing) filled by age from the real catalog, a pre-composed Just Three
+  starter day, and a printable day sheet.
+- kitbag.html#week-kit, The Week Kit (merged into Kit Bag in R47): the flagship low-materials week builder.
   Group size + age band + days/week + what you have on hand (16-staple pantry,
   low-materials, or no-prep mode) become a week of sessions from the real library,
   each day with a run-of-show timeline, a printable session plan sheet, per-slot
@@ -91,7 +94,7 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
   from the selected activities' real materials fields: deduplicated,
   grouped (consumables / equipment / print-at-desk), every line traced
   to the activity that asked for it. Copy-as-text included.
-- partypack.html, The Party Pack: plan a whole group event, pick an
+- party.html#party-pack, The Party Pack (merged into Party Planner in R47): plan a whole group event, pick an
   occasion (birthday, Halloween, Thanksgiving, winter holiday,
   Valentine's, spring, summer, rainy-day), an age band, and a group
   size, and it composes a five-part party arc from real activities

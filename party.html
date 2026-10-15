@@ -54,6 +54,10 @@
 
 
 
+
+
+
+
 <!-- PLACEMENT:BEGIN -->
 <meta name="theme-color" content="#fffdf7">
 <link rel="icon" href="favicon.ico" sizes="48x48">
@@ -86,16 +90,13 @@
       <a href="planner.html">Plan my week <span class="nav-gloss">a week of activities, day by day</span></a>
       <a href="collections.html">Collections</a>
       <a href="kitbag.html">Kit Bag <span class="nav-gloss">pack one day's bag</span></a>
+      <a href="party.html" aria-current="page">Party Planner <span class="nav-gloss">themes and the full party pack</span></a>
+      <a href="desk.html">The Desk <span class="nav-gloss">browse the vault by category drawers</span></a>
       <details class="nav-more">
         <summary>More</summary>
         <div class="nav-more-panel">
           <p class="nav-more-h">Tools</p>
-          <a href="desk.html">The Desk <span class="nav-gloss">browse the vault by category drawers</span></a>
-          <a href="day.html">Day Planner <span class="nav-gloss">plan one day, hour by hour</span></a>
-          <a href="kit.html">Week Kit <span class="nav-gloss">one kit list for a whole week</span></a>
           <a href="sub.html">Sub Tub <span class="nav-gloss">a ready day a substitute can run</span></a>
-          <a href="party.html" aria-current="page">Party Themes <span class="nav-gloss">choose a theme for a party</span></a>
-          <a href="partypack.html">Party Pack <span class="nav-gloss">pack everything for one party</span></a>
           <a href="fieldtrip.html">Field Trips <span class="nav-gloss">plan a trip out</span></a>
           <p class="nav-more-h">Seasons</p>
           <a href="halloween.html">Halloween</a>
@@ -111,7 +112,7 @@
 
 <main class="wrap">
   <section class="hero" aria-labelledby="hero-title">
-    <span class="kicker no-print" id="party-hero-kicker">🎃 Party Planner</span>
+    <span class="kicker no-print" id="party-hero-kicker">Party Planner</span>
     <h1 id="hero-title">The Halloween<br>class-party planner.</h1>
     <p class="lede no-print" id="party-hero-lede">Tell it your class size, how long the party runs, how many stations you can staff, and your budget. It builds a timed station-rotation plan from the Vault's fall and Halloween activities, with a merged setup list and a print-ready run sheet.</p>
   </section>
@@ -211,6 +212,88 @@
     <button class="btn btn-ghost" id="party-reshuffle" type="button">🎲 Shuffle stations</button>
   </div>
   <p class="no-print" style="margin-bottom:3rem;"><a href="index.html">← Back to browsing</a></p>
+
+  <section id="party-pack" aria-label="Party Pack: pack everything for one party">
+    <h2>Party Pack: pack everything for one party</h2>
+    <p>The Party Pack lives here now: one door for the party. Choose a theme above, or pack everything for one party below.</p>
+
+  <section class="hero pp-hero" aria-labelledby="party-pack-title">
+    <span class="kicker no-print">🎉 The Party Pack, the flagship</span>
+    <h1 id="party-pack-title">A whole party,<br>packed from real cards.</h1>
+    <p class="lede no-print">Pick an <strong>occasion</strong>, an <strong>age band</strong>, and a <strong>group size</strong>, the Party Pack composes a five-part party arc (welcome, big group opener, making &amp; games, movement break, calm close) from real Activity Vault activities that honestly match all three, then opens those activities' own materials lists and packs <strong>the party bag</strong>: one deduplicated list, every line traced to the activity that asked for it. And it keeps the Vault's oldest promise: if an occasion is honestly thin at your age band, Valentine's for three-year-olds holds four real activities, not five, the Pack <strong>says so in numbers</strong>, fills only what honestly fits, and shows the nearest real options it verified against the catalog. It never pads a plan with invented activities.</p>
+    <aside class="desk-note no-print" aria-label="A note from the teacher's desk">thin coverage gets numbers, not padding ↓</aside>
+  </section>
+
+  <form class="pp-controls no-print" id="pp-form" onsubmit="return false;" aria-label="Party Pack options">
+    <div class="filter-group">
+      <label class="flabel" for="pp-occasion">Occasion</label>
+      <select id="pp-occasion">
+        <option value="birthday" selected>🎂 Birthday Party</option>
+        <option value="halloween">🎃 Halloween Party</option>
+        <option value="thanksgiving">🦃 Thanksgiving &amp; Friendsgiving</option>
+        <option value="winter-holiday">❄️ Winter Holiday Party</option>
+        <option value="valentines">💌 Valentine's Party</option>
+        <option value="spring">🌷 Spring &amp; Easter Party</option>
+        <option value="summer">☀️ Summer &amp; July 4th Party</option>
+        <option value="rainy-day">🌧️ Rainy-Day Party (indoors)</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label class="flabel" for="pp-band">Age band</label>
+      <select id="pp-band">
+        <option value="3-4">Ages 3–4</option>
+        <option value="5-6" selected>Ages 5–6</option>
+        <option value="7-8">Ages 7–8</option>
+        <option value="9-12">Ages 9–12</option>
+      </select>
+      <p class="field-hint">An activity serves a band when its real age range overlaps the band. The Vault's standing filter rule.</p>
+    </div>
+    <div class="filter-group">
+      <label class="flabel" for="pp-size">Group size</label>
+      <select id="pp-size">
+        <option value="6">Small, about 6</option>
+        <option value="10">Medium, about 10</option>
+        <option value="16" selected>Class-size, about 16</option>
+        <option value="28">Big, about 28</option>
+      </select>
+      <p class="field-hint">An activity fits when its real group range includes your size, those rules never loosen.</p>
+    </div>
+    <div class="pp-actions">
+      <button class="btn primary-action" id="pp-compose" type="button">🎉 Pack a new party</button>
+    </div>
+    <p class="pp-status" id="pp-status" role="status" aria-live="polite"></p>
+  </form>
+
+  <div class="pp-coverage no-print" id="pp-coverage" hidden></div>
+
+  <div class="pp-slots no-print" id="pp-slots" tabindex="-1" aria-label="Party arc"></div>
+
+  <p class="pp-summary no-print" id="pp-summary" role="status" aria-live="polite"></p>
+
+  <div class="pp-sheet-actions no-print">
+    <button class="btn" id="pp-print" type="button">🖨️ Print party sheet</button>
+    <button class="btn btn-ghost" id="pp-copy" type="button">📋 Copy party sheet as text</button>
+    <span class="copy-status" id="pp-copy-status" role="status" aria-live="polite"></span>
+    <a class="btn btn-ghost" href="party.html">🎃 Run it as rotating stations instead</a>
+  </div>
+
+  <section class="party-sheet" id="party-sheet" aria-label="Printable party sheet">
+    <header class="party-sheet-head">
+      <p class="party-sheet-kicker">Activity Vault · The Party Pack · Party Sheet</p>
+      <h2 class="party-sheet-title">The party, on one sheet.</h2>
+      <p class="party-sheet-meta" id="party-sheet-meta"></p>
+    </header>
+    <div id="party-sheet-rows"></div>
+    <h3 class="party-sheet-bagtitle">🎒 The party bag, pack these</h3>
+    <div id="party-sheet-bag"></div>
+    <footer class="party-sheet-foot">
+      <p>Every activity above is a real catalog card and every pack line is copied word-for-word from a real activity's materials list, quantities exactly as that activity states them. Open any activity's card from the Vault for its setup, steps, and safety notes.</p>
+    </footer>
+  </section>
+
+  <p class="no-print" style="margin: 2rem 0 3rem;"><a href="party.html">← Back to the Party Planner</a></p>
+
+  </section>
 </main>
 
 <footer class="site-footer no-print">
@@ -219,5 +302,8 @@
 
 <script src="assets/ratings.js" defer></script>
 <script src="assets/party.js" defer></script>
+<script src="assets/kitbag-core.js" defer></script>
+<script src="assets/partypack-core.js" defer></script>
+<script src="assets/partypack.js" defer></script>
 </body>
 </html>

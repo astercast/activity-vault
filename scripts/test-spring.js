@@ -89,7 +89,7 @@ const plannerSrc = fs.readFileSync(path.join(ROOT, 'assets/planner.js'), 'utf8')
 for (const m of ['2:', '3:', '4:']) ok(plannerSrc.includes(m + " 'season:spring'"), 'planner month ' + m + ' -> season:spring');
 ok(plannerSrc.includes("'holiday:easter'"), 'planner strip knows easter');
 ok(plannerSrc.includes("'holiday:earth-day'"), 'planner strip knows earth-day');
-ok(plannerSrc.includes("'season:spring': '🌷 Spring'"), 'planner spring label');
+ok(plannerSrc.includes("'season:spring': 'Spring'"), 'planner spring label'); // PRO REWORK 2026-10-15: labels are plain words now, emoji retired from chrome
 
 // 7. party.js spring theme: shape + pool
 const partySrc = fs.readFileSync(path.join(ROOT, 'assets/party.js'), 'utf8');

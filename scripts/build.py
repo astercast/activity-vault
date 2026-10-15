@@ -222,17 +222,20 @@ def _minimal_header(prefix, current_href, no_print):
     # one-line gloss saying what its surface does, so the look-alike
     # names (Plan my week / Week Kit / Kit Bag / Day Planner / Sub Tub)
     # can be told apart from the menu alone.
+    # R47 (CRITIC-001 fixes 2+5, parent ruling 2026-10-15 ~15:11Z): the
+    # three duplicate pairs MERGED into one door each - Plan my week
+    # (absorbs Day Planner, #day-planner), Kit Bag (absorbs Week Kit,
+    # #week-kit), Party Planner (absorbs Party Pack, #party-pack).
+    # Retired pages redirect to the merged anchors; nothing deleted.
+    # Primary row is now FIVE plain labels.
     links_primary = [
         ("planner.html", "Plan my week", "a week of activities, day by day"),
         ("collections.html", "Collections", None),
         ("kitbag.html", "Kit Bag", "pack one day's bag"),
+        ("party.html", "Party Planner", "themes and the full party pack"),
+        ("desk.html", "The Desk", "browse the vault by category drawers"),
     ]
-    tools = [("desk.html", "The Desk", "browse the vault by category drawers"),
-             ("day.html", "Day Planner", "plan one day, hour by hour"),
-             ("kit.html", "Week Kit", "one kit list for a whole week"),
-             ("sub.html", "Sub Tub", "a ready day a substitute can run"),
-             ("party.html", "Party Themes", "choose a theme for a party"),
-             ("partypack.html", "Party Pack", "pack everything for one party"),
+    tools = [("sub.html", "Sub Tub", "a ready day a substitute can run"),
              ("fieldtrip.html", "Field Trips", "plan a trip out")]
     seasons = [("halloween.html", "Halloween"), ("thanksgiving.html", "Thanksgiving"),
                ("winter.html", "Winter"), ("spring.html", "Spring"), ("summer.html", "Summer")]
@@ -515,10 +518,10 @@ ACTIVITY_TEMPLATE = """<!DOCTYPE html>
       <a href="../index.html">Browse</a>
       <a href="../desk.html">The Desk</a>
       <a href="../planner.html">Plan my week</a>
-      <a href="../day.html">Day Planner 🗓️</a>
-      <a href="../kit.html">Kit 🧰</a>
+      <a href="../planner.html#day-planner">Day Planner 🗓️</a>
+      <a href="../kitbag.html#week-kit">Week Kit 🧰</a>
       <a href="../kitbag.html">Kit Bag 🎒</a>
-      <a href="../partypack.html">Party Pack 🎉</a>
+      <a href="../party.html#party-pack">Party Pack 🎉</a>
       <a href="../collections.html">Collections 📚</a>
     </nav>
     <nav aria-label="More tools and seasons" class="nav-secondary">
@@ -542,8 +545,8 @@ ACTIVITY_TEMPLATE = """<!DOCTYPE html>
     {badges}
     <h1 id="act-title">{name}</h1>
     <p class="tagline">{tagline}</p>
-    <p class="tombstone" aria-label="The facts, in order"><span class="tomb-fact">Ages {age_min}–{age_max}</span><span class="tomb-sep" aria-hidden="true"> · </span><span class="tomb-fact">{time_min}–{time_max} min</span><span class="tomb-sep" aria-hidden="true"> · </span><span class="tomb-fact">{materials_fact}</span></p>
-    <dl class="fact-grid">
+    <h2 class="fact-rail-h" id="h-facts">Before you begin</h2>
+    <dl class="fact-grid" aria-labelledby="h-facts">
       <div><dt>Ages</dt><dd>{age_min}–{age_max}</dd></div>
       <div><dt>Group</dt><dd>{group_min}–{group_max} kids</dd></div>
       <div><dt>Time</dt><dd>{time_min}–{time_max} min</dd></div>
@@ -573,7 +576,7 @@ ACTIVITY_TEMPLATE = """<!DOCTYPE html>
     {why_block}
     {inclusion_block}
     <section class="rate-box no-print" aria-labelledby="h-rate">
-      <h2 id="h-rate">⭐ Tried this? Rate it</h2>
+      <h2 id="h-rate">Tried this? Rate it</h2>
       <p class="rate-privacy">Your ratings live in <strong>this browser only</strong>. Nobody else can see them. There are no community ratings here; every star on this card is yours.</p>
       <details class="disclosure rate-disclosure">
       <summary>Rate this activity, add a note, or write a reflection</summary>
@@ -599,8 +602,8 @@ ACTIVITY_TEMPLATE = """<!DOCTYPE html>
         <p class="copy-status" id="rate-status" role="status" aria-live="polite"></p>
       </form>
       <div id="rate-reflect" hidden>
-        <h3>✏️ Quick reflection</h3>
-        <p class="rate-privacy">Optional, saved with your rating, and exported with "📋 Copy my week".</p>
+        <h3>Quick reflection</h3>
+        <p class="rate-privacy">Optional, saved with your rating, and exported with "Copy my week".</p>
         <div class="reflect-row">
           <label for="reflect-change">What would you change next time?</label>
           <input type="text" id="reflect-change" maxlength="280">
@@ -906,10 +909,10 @@ REVIEW_TEMPLATE = """<!DOCTYPE html>
       <a href="index.html">Browse</a>
       <a href="desk.html">The Desk</a>
       <a href="planner.html">Plan my week</a>
-      <a href="day.html">Day Planner 🗓️</a>
-      <a href="kit.html">Kit 🧰</a>
+      <a href="planner.html#day-planner">Day Planner 🗓️</a>
+      <a href="kitbag.html#week-kit">Week Kit 🧰</a>
       <a href="kitbag.html">Kit Bag 🎒</a>
-      <a href="partypack.html">Party Pack 🎉</a>
+      <a href="party.html#party-pack">Party Pack 🎉</a>
       <a href="collections.html">Collections 📚</a>
     </nav>
     <nav aria-label="More tools and seasons" class="nav-secondary">
@@ -1043,16 +1046,16 @@ def render_review(open_candidates, decisions, gen_at):
 
 def render_activity(a, catmap, acts):
     chips = ''.join(
-        f'<span class="chip" style="--cat:{catmap[c]["color"]}">{catmap[c]["glyph"]} {esc(catmap[c]["name"])}</span>'
+        f'<span class="chip" style="--cat:{catmap[c]["color"]}"><span class="chip-dot" aria-hidden="true"></span>{esc(catmap[c]["name"])}</span>'
         for c in a['categories'])
     tagchips = ''.join(
         f'<span class="chip tag-chip">{esc(TAG_LABELS.get(t, t))}</span>'
         for t in a.get('tags', []))
     badges = ''
     if a.get('copy_free'):
-        badges += '<span class="chip tag-chip">🖨️ Copy-free</span>'
+        badges += '<span class="chip tag-chip">Copy-free</span>'
     if a.get('no_elimination'):
-        badges += '<span class="chip tag-chip">♾️ No elimination</span>'
+        badges += '<span class="chip tag-chip">No elimination</span>'
     badges = f'<div class="cat-chips">{badges}</div>' if badges else ''
     mats = ''.join(f'<li>{esc(m["item"])}</li>' for m in a['materials'])
     if not a['materials']:
@@ -1061,7 +1064,7 @@ def render_activity(a, catmap, acts):
     safety = ''
     if a.get('safety'):
         safety = ('<section class="safety" aria-labelledby="h-safety">'
-                  f'<h2 id="h-safety">⚠️ Safety</h2><p>{esc(a["safety"])}</p></section>')
+                  f'<h2 id="h-safety">Safety</h2><p>{esc(a["safety"])}</p></section>')
     source = ''
     if a.get('source'):
         _host = urlparse(a['source']).netloc.removeprefix('www.')
@@ -1070,16 +1073,16 @@ def render_activity(a, catmap, acts):
         else:
             _label = f'Source: <a href="{esc(a["source"])}" rel="noopener">source post at {_host}</a>, adapted in our own words'
         source = f'<p class="source-line">{_label}</p>'
-    prep = '✅ No prep needed' if a['no_prep'] else 'Some prep needed'
+    prep = 'No prep needed' if a['no_prep'] else 'Some prep needed'
     loc = ' & '.join('Indoors' if l=='indoor' else 'Outdoors' for l in a['location'])
     why_block = ''
     if a.get('why_it_works'):
         why_block = ('<section aria-labelledby="h-why">'
-                     f'<h2 id="h-why">🔬 Why it works</h2><p>{esc(a["why_it_works"])}</p></section>')
+                     f'<h2 id="h-why">Why it works</h2><p>{esc(a["why_it_works"])}</p></section>')
     inclusion_block = ''
     if a.get('inclusion'):
         inclusion_block = ('<section aria-labelledby="h-inclusion">'
-                           f'<h2 id="h-inclusion">🤝 Inclusion notes</h2><p>{esc(a["inclusion"])}</p></section>')
+                           f'<h2 id="h-inclusion">Inclusion notes</h2><p>{esc(a["inclusion"])}</p></section>')
     related = related_activities(a, acts)
     related_block = ''
     if related:
@@ -1095,7 +1098,6 @@ def render_activity(a, catmap, acts):
         related_block = (
             '<section class="collection-section no-print" aria-labelledby="h-related">'
             '<div class="collection-head">'
-            '<span class="collection-glyph-lg" aria-hidden="true">🔗</span>'
             f'<h2 class="collection-h2" id="h-related">Related {primary_name.lower()}</h2></div>'
             f'<details class="disclosure related-disclosure"><summary>See the related activities</summary>'
             f'<ol class="pick-list">{items}</ol></details></section>')
@@ -1439,6 +1441,63 @@ def render_home_identity(acts, cats, colls):
             f'<span class="contents-num">{i:02d}</span>'
             f'<span class="contents-word">{sname}</span>'
             f'<span class="contents-count">{tag_counts.get(stag, 0)} activities filed{cur}</span></a></li>')
+    # PRO REWORK 2026-10-15: the five doors as chapter plates. Each plate's
+    # photograph belongs to a real record, is captioned as that record's
+    # plate with its licence credit, and links to the record; the door's
+    # own claim is carried by its name and promise line. The five picks
+    # were read against each door's subject before assignment (landing
+    # record, thinking phase): parachute-popcorn (a leader and her group,
+    # mid-activity), seed-library-opening-day (a curated library of
+    # labelled drawers), blanket-fort-book-nook (the rainy day indoors),
+    # dragon-parade (a handmade celebration), one-sheet-zine-workshop
+    # (the work spread across the desk).
+    _DOORS = [
+        ("01", "Plan my week", "planner.html",
+         "A week of activities, day by day.",
+         f"Dealt from all {len(acts)} activities", "parachute-popcorn"),
+        ("02", "Collections", "collections.html",
+         "Teacher-ready bundles for the moments that matter.",
+         f"{len(colls)} bundles, every pick with a curator's note",
+         "seed-library-opening-day"),
+        ("03", "Kit Bag", "kitbag.html",
+         "Pack one day's bag.",
+         "One whole rainy day, indoors, with its kit list",
+         "blanket-fort-book-nook"),
+        ("04", "Party Planner", "party.html",
+         "Themes and the full party pack.",
+         "A timed station plan for your class party", "dragon-parade"),
+        ("05", "The Desk", "desk.html",
+         "Browse the vault by category drawers.",
+         f"{len(acts)} activities in {len(cats)} drawers",
+         "one-sheet-zine-workshop"),
+    ]
+    by_id_all = {a["id"]: a for a in acts}
+    door_items = []
+    for num, dname, href, promise, count_line, pid in _DOORS:
+        rec = by_id_all[pid]
+        ph = _photo_for(rec)
+        credit = esc(ph["credit"])
+        if ph.get("source_url"):
+            credit += f' <a href="{esc(ph["source_url"])}" rel="noopener">Photo source</a>'
+        door_items.append(
+            f'      <li class="door">'
+            f'<a class="door-main" href="{href}">'
+            f'<span class="door-num">Door {num}</span>'
+            f'<span class="door-name">{dname}</span>'
+            f'<span class="door-promise">{promise}</span>'
+            f'<span class="door-count">{count_line}</span></a>'
+            f'<figure class="door-plate">'
+            f'<a class="door-plate-link" href="activity/{pid}.html" tabindex="-1">'
+            f'<img src="assets/photos/{esc(ph["file"])}" alt="" loading="lazy"></a>'
+            f'<figcaption>From <a href="activity/{pid}.html">{esc(rec["name"])}</a>. '
+            f'<span class="photo-credit">{credit}</span></figcaption></figure></li>')
+    doors_html = (
+        '  <section class="doors-section" aria-labelledby="doors-h">\n'
+        '    <h2 id="doors-h">The five doors</h2>\n'
+        '    <p class="doors-line">Five ways in. Pick the one that matches the day you have.</p>\n'
+        '    <ol class="doors">\n' + '\n'.join(door_items) + '\n    </ol>\n'
+        '  </section>\n'
+    )
     cover = _cover_for(acts, season_tag, occ_tag)
     cover_html = ''
     if cover:
@@ -1459,13 +1518,15 @@ def render_home_identity(acts, cats, colls):
         f'    <h1 class="issue-title" id="issue-h">{season}</h1>\n'
         '    <div class="issue-count">\n'
         f'      <span class="issue-num">{days0}</span>\n'
-        f'      <span class="issue-num-text">days to<br><a href="{occasion_href(occ_tag)}">{esc(occ_name)}</a><br>'
-        f'{d0.strftime("%A, %B %-d")} &middot; {occ_count} activities filed for it</span>\n'
+        f'      <span class="issue-num-text"><span class="issue-num-kicker">days to</span>'
+        f'<a href="{occasion_href(occ_tag)}">{esc(occ_name)}</a>'
+        f'<span class="issue-num-date">{d0.strftime("%A, %B %-d")} &middot; {occ_count} activities filed for it</span></span>\n'
         '    </div>\n'
         + cover_html +
-        f'    <p class="issue-standfirst">{season_filed} activities are filed under {season.lower()} in this vault, '
-        f'and {len(acts)} in the year altogether. What is coming up is below, in the order it arrives.</p>\n'
+        f'    <p class="issue-standfirst">{season_filed} activities are filed under {season.lower()}, '
+        f'and {len(acts)} in the year altogether.</p>\n'
         '  </section>\n'
+        + doors_html +
         '  <section class="calendar-first" aria-labelledby="cal-h">\n'
         '    <h2 id="cal-h">What\'s coming up</h2>\n'
         '    <ol class="cal-rows">\n' + '\n'.join(rows) + '\n    </ol>\n'
@@ -1531,10 +1592,10 @@ DESK_TEMPLATE = """<!DOCTYPE html>
       <a href="index.html">Browse</a>
       <a href="desk.html" aria-current="page">The Desk</a>
       <a href="planner.html">Plan my week</a>
-      <a href="day.html">Day Planner 🗓️</a>
-      <a href="kit.html">Kit 🧰</a>
+      <a href="planner.html#day-planner">Day Planner 🗓️</a>
+      <a href="kitbag.html#week-kit">Week Kit 🧰</a>
       <a href="kitbag.html">Kit Bag 🎒</a>
-      <a href="partypack.html">Party Pack 🎉</a>
+      <a href="party.html#party-pack">Party Pack 🎉</a>
       <a href="collections.html">Collections 📚</a>
     </nav>
     <nav aria-label="More tools and seasons" class="nav-secondary">
@@ -1555,8 +1616,8 @@ DESK_TEMPLATE = """<!DOCTYPE html>
   <section class="hero" aria-labelledby="hero-title">
     <span class="kicker">The teacher's desk</span>
     <h1 id="hero-title">Pull a drawer.<br>Grab a <span class="squiggle">card.</span></h1>
-    <p class="lede">The whole Vault, grouped by category, {n_acts} real activities in {n_cats} groups. Each group opens to the six activities on top of the pile, with the honest counts beside it. Every card is a real activity page.</p>
-    <aside class="desk-note no-print" aria-label="A note from the teacher's desk">every drawer opens. <Br>try the brass pulls ↓</aside>
+    <p class="lede">The whole Vault, grouped by category: {n_acts} real activities in {n_cats} groups. Each drawer opens to the six activities on top of the pile, and every card is a real activity page.</p>
+    <aside class="desk-note no-print" aria-label="A note from the teacher's desk">every drawer opens. pull one ↓</aside>
     <div class="stats" aria-label="Library stats">
       <div class="stat"><b>{n_acts}</b><span>activities</span></div>
       <div class="stat"><b>{n_cats}</b><span>drawers</span></div>
@@ -2225,7 +2286,10 @@ def main():
               "  drag-and-drop reorder, per-slot swap, surprise gap-fill, prep-level caps, collection",
               "  seeding (?from=collection:<id>), named saved plans, .ics calendar export, shareable",
               "  ?plan= links, and a print-ready card deck.",
-              "- kit.html, The After-School Kit: the flagship low-materials week builder.",
+              "- planner.html#day-planner, The Day Planner (merged into Plan my week in R47): compose a single",
+              "  day, five slots (arrival to closing) filled by age from the real catalog, a pre-composed Just Three",
+              "  starter day, and a printable day sheet.",
+              "- kitbag.html#week-kit, The Week Kit (merged into Kit Bag in R47): the flagship low-materials week builder.",
               "  Group size + age band + days/week + what you have on hand (16-staple pantry,",
               "  low-materials, or no-prep mode) become a week of sessions from the real library,",
               "  each day with a run-of-show timeline, a printable session plan sheet, per-slot",
@@ -2236,7 +2300,7 @@ def main():
               "  from the selected activities' real materials fields: deduplicated,",
               "  grouped (consumables / equipment / print-at-desk), every line traced",
               "  to the activity that asked for it. Copy-as-text included.",
-              "- partypack.html, The Party Pack: plan a whole group event, pick an",
+              "- party.html#party-pack, The Party Pack (merged into Party Planner in R47): plan a whole group event, pick an",
               "  occasion (birthday, Halloween, Thanksgiving, winter holiday,",
               "  Valentine's, spring, summer, rainy-day), an age band, and a group",
               "  size, and it composes a five-part party arc from real activities",
@@ -2270,7 +2334,7 @@ def main():
     open(os.path.join(SITE, 'llms-full.txt'), 'w').write('\n'.join(full) + '\n')
 
     # 4. sitemap.xml
-    urls = ["", "desk.html", "planner.html", "day.html", "kit.html", "kitbag.html", "partypack.html", "sub.html", "party.html", "fieldtrip.html", "collections.html", "api.html", "review.html", "halloween.html", "thanksgiving.html", "winter.html", "spring.html", "summer.html"] + [f"activity/{a['id']}.html" for a in acts]
+    urls = ["", "desk.html", "planner.html", "kitbag.html", "sub.html", "party.html", "fieldtrip.html", "collections.html", "api.html", "review.html", "halloween.html", "thanksgiving.html", "winter.html", "spring.html", "summer.html"] + [f"activity/{a['id']}.html" for a in acts]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:

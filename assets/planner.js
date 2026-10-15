@@ -1041,21 +1041,21 @@
   /* ---------------- season strip (kept from 1.0) ---------------- */
 
   var SEASON_LABELS = {
-    'season:fall': '🎃 Fall', 'season:winter': '❄️ Winter', 'season:spring': '🌷 Spring',
-    'season:summer': '☀️ Summer',
-    'holiday:halloween': '👻 Halloween', 'holiday:thanksgiving': '🦃 Thanksgiving',
-    'holiday:dia-de-muertos': '💀 Día de los Muertos',
-    'holiday:christmas': '🎄 Christmas', 'holiday:hanukkah': '🕎 Hanukkah',
-    'holiday:kwanzaa': '🖤 Kwanzaa', 'holiday:new-year': '🎆 New Year',
-    'holiday:easter': '🐣 Easter', 'holiday:earth-day': '🌎 Earth Day',
-    'holiday:july-4th': '🇺🇸 July 4th',
-    'holiday:mlk-day': '✊🏾 MLK Day',
-    'holiday:valentines-day': "💌 Valentine's Day",
-    'holiday:lunar-new-year': '🧧 Lunar New Year',
-    'holiday:st-patricks-day': "☘️ St. Patrick's Day",
-    'holiday:diwali': '🪔 Diwali',
-    'holiday:indigenous-peoples-day': "🌎 Indigenous Peoples' Day",
-    'theme:spooky': '🕸️ Spooky (not scary)'
+    'season:fall': 'Fall', 'season:winter': 'Winter', 'season:spring': 'Spring',
+    'season:summer': 'Summer',
+    'holiday:halloween': 'Halloween', 'holiday:thanksgiving': 'Thanksgiving',
+    'holiday:dia-de-muertos': 'Día de los Muertos',
+    'holiday:christmas': 'Christmas', 'holiday:hanukkah': 'Hanukkah',
+    'holiday:kwanzaa': 'Kwanzaa', 'holiday:new-year': 'New Year',
+    'holiday:easter': 'Easter', 'holiday:earth-day': 'Earth Day',
+    'holiday:july-4th': 'July 4th',
+    'holiday:mlk-day': 'MLK Day',
+    'holiday:valentines-day': "Valentine's Day",
+    'holiday:lunar-new-year': 'Lunar New Year',
+    'holiday:st-patricks-day': "St. Patrick's Day",
+    'holiday:diwali': 'Diwali',
+    'holiday:indigenous-peoples-day': "Indigenous Peoples' Day",
+    'theme:spooky': 'Spooky (not scary)'
   };
   var SEASON_BY_MONTH = { 8: 'season:fall', 9: 'season:fall', 10: 'season:fall',
                           11: 'season:winter', 0: 'season:winter', 1: 'season:winter',
@@ -1088,7 +1088,7 @@
     });
     if (!chips.length) { host.hidden = true; return; }
     host.textContent = '';
-    host.appendChild(el('span', 'season-strip-title', '🌿 This season in the Vault:'));
+    host.appendChild(el('span', 'season-strip-title', 'This season in the Vault:'));
     var row = el('div', 'chip-row');
     chips.forEach(function (c) {
       var a = el('a', 'chip chip-link', SEASON_LABELS[c.tag] + ' (' + c.n + ')');
@@ -1106,7 +1106,7 @@
     chips.forEach(function (c) {
       var cid = SEASON_COLLECTION[c.tag];
       if (!cid) return;
-      var seed = el('a', 'chip chip-link', '🗓️ Plan from the ' +
+      var seed = el('a', 'chip chip-link', 'Plan from the ' +
         collTitle(cid) + ' collection');
       seed.href = 'planner.html?from=collection:' + encodeURIComponent(cid);
       row.appendChild(seed);
