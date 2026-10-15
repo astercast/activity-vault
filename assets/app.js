@@ -301,23 +301,34 @@
     var host = document.getElementById('filters');
     if (!host) return;
 
-    // search
-    var g = el('div', 'filter-group');
-    g.appendChild(el('label', 'flabel', 'Search'));
-    searchInput = el('input');
-    searchInput.type = 'search';
-    searchInput.placeholder = 'Name, material, keyword…';
-    searchInput.setAttribute('aria-label', 'Search activities');
+    // search: the keyword box is static HTML in the form (VP-0046,
+    // rotation 30) so the Search label always has its box under it,
+    // with or without scripts. Adopt it when present; build it only
+    // as a fallback for a page that lacks one.
     var t;
-    searchInput.addEventListener('input', function () {
-      clearTimeout(t);
-      t = setTimeout(function () {
-        state.q = searchInput.value.trim().toLowerCase();
-        render();
-      }, 150);
-    });
-    g.appendChild(searchInput);
-    host.appendChild(g);
+    function wireSearch() {
+      searchInput.addEventListener('input', function () {
+        clearTimeout(t);
+        t = setTimeout(function () {
+          state.q = searchInput.value.trim().toLowerCase();
+          render();
+        }, 150);
+      });
+    }
+    searchInput = document.getElementById('q');
+    if (searchInput) {
+      wireSearch();
+    } else {
+      var g = el('div', 'filter-group');
+      g.appendChild(el('label', 'flabel', 'Search'));
+      searchInput = el('input');
+      searchInput.type = 'search';
+      searchInput.placeholder = 'Name, material, keyword…';
+      searchInput.setAttribute('aria-label', 'Search activities');
+      wireSearch();
+      g.appendChild(searchInput);
+      host.appendChild(g);
+    }
 
     // categories
     var cg = el('div', 'filter-group');

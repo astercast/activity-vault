@@ -210,33 +210,49 @@ def _minimal_header(prefix, current_href, no_print):
     # More (was six + More). The Desk and Party Pack move into the More
     # panel's Tools group, every destination survives, reachable in one
     # extra click, and both stay linked from every page (VP-0002 guard).
-    links_primary = [
-        ("index.html", "Browse"),
-        ("planner.html", "Plan my week"), ("collections.html", "Collections"),
-        ("kitbag.html", "Kit Bag"),
-    ]
+    # VP-0046 (rotation 30): the wordmark is the one home door in the bar;
+    # the old "Browse" primary link duplicated it (both -> index.html) and
+    # is removed. Every destination Browse named is the wordmark's own.
     # VP-0016 (rotation 21): the duplicate pairs are DECIDED here, not
     # demoted again. Kit (kit.html, builds a whole week) is labelled
     # "Week Kit"; Kit Bag (kitbag.html, packs one day) keeps its name.
     # Party Planner (party.html, party themes) is labelled "Party Themes";
     # Party Pack (partypack.html, packs a whole party) keeps its name.
-    # No two doors in this menu name the same errand.
-    tools = [("desk.html", "The Desk"), ("day.html", "Day Planner"), ("kit.html", "Week Kit"),
-             ("sub.html", "Sub Tub"), ("party.html", "Party Themes"),
-             ("partypack.html", "Party Pack"),
-             ("fieldtrip.html", "Field Trips")]
+    # VP-0046 (rotation 30): each planner-cluster label now carries a
+    # one-line gloss saying what its surface does, so the look-alike
+    # names (Plan my week / Week Kit / Kit Bag / Day Planner / Sub Tub)
+    # can be told apart from the menu alone.
+    links_primary = [
+        ("planner.html", "Plan my week", "a week of activities, day by day"),
+        ("collections.html", "Collections", None),
+        ("kitbag.html", "Kit Bag", "pack one day's bag"),
+    ]
+    tools = [("desk.html", "The Desk", "browse the vault by category drawers"),
+             ("day.html", "Day Planner", "plan one day, hour by hour"),
+             ("kit.html", "Week Kit", "one kit list for a whole week"),
+             ("sub.html", "Sub Tub", "a ready day a substitute can run"),
+             ("party.html", "Party Themes", "choose a theme for a party"),
+             ("partypack.html", "Party Pack", "pack everything for one party"),
+             ("fieldtrip.html", "Field Trips", "plan a trip out")]
     seasons = [("halloween.html", "Halloween"), ("thanksgiving.html", "Thanksgiving"),
                ("winter.html", "Winter"), ("spring.html", "Spring"), ("summer.html", "Summer")]
+    def glossed(label, gloss):
+        return label + (f' <span class="nav-gloss">{gloss}</span>' if gloss else '')
     prim = "\n      ".join(
-        f'<a href="{prefix}{h}"{c(prefix + h)}>{label}</a>' for h, label in links_primary)
+        f'<a href="{prefix}{h}"{c(prefix + h)}>{glossed(label, gloss)}</a>'
+        for h, label, gloss in links_primary)
     tool_links = "\n          ".join(
-        f'<a href="{prefix}{h}"{c(prefix + h)}>{label}</a>' for h, label in tools)
+        f'<a href="{prefix}{h}"{c(prefix + h)}>{glossed(label, gloss)}</a>'
+        for h, label, gloss in tools)
     season_links = "\n          ".join(
         f'<a href="{prefix}{h}"{c(prefix + h)}>{label}</a>' for h, label in seasons)
     cls = 'site-header no-print' if no_print else 'site-header'
+    # VP-0046 (rotation 30): with "Browse" gone, the wordmark carries
+    # home's current-location marking (it is the bar's one home door).
+    brand_cur = ' aria-current="page"' if current_href == prefix + "index.html" else ''
     return f"""<header class="{cls}">
   <div class="wrap header-inner">
-    <a class="brand" href="{prefix}index.html" aria-label="Activity Vault home">
+    <a class="brand" href="{prefix}index.html"{brand_cur} aria-label="Activity Vault home">
       <span class="brand-text">Activity <strong>Vault</strong></span>
     </a>
     <nav aria-label="Primary" class="nav-primary">
@@ -273,6 +289,10 @@ def inject_minimal_headers():
         prefix = "../" if rel.startswith("activity" + os.sep) else ""
         cm = _CURRENT_RE.search(old)
         current = (cm.group(1) or cm.group(2)) if cm else None
+        if current is None and rel == "index.html":
+            # VP-0046: home's current door is the wordmark itself; if a
+            # previous header left no marking to preserve, home is it.
+            current = "index.html"
         new = _minimal_header(prefix, current, 'no-print' in old.split('>', 1)[0])
         page = page[:m.start()] + new + page[m.end():]
         open(path, "w").write(page)
@@ -1377,6 +1397,15 @@ def render_home_identity(acts, cats, colls):
     upcoming = _next_occasions(acts, today)
     d0, occ_name, occ_tag, occ_count = upcoming[0]
     days0 = (d0 - today).days
+    # VP-0046 (rotation 30): one label, one destination. An occasion that
+    # has its own hub page (Halloween, Thanksgiving) is linked to that hub
+    # everywhere its name appears, never to a tagged browse view in one
+    # place and the hub in another. Occasions without a hub keep the
+    # tagged browse view as their only destination.
+    _HUB_FOR_TAG = {"holiday:halloween": "halloween.html",
+                    "holiday:thanksgiving": "thanksgiving.html"}
+    def occasion_href(tag):
+        return _HUB_FOR_TAG.get(tag, f"index.html?tag={tag}#browse")
     rows = []
     for d, name, tag, count in upcoming:
         days = (d - today).days
@@ -1388,7 +1417,7 @@ def render_home_identity(acts, cats, colls):
             when = f'<span class="cal-days"><span class="cal-num">{days}</span> days</span>'
         rows.append(
             f'      <li class="cal-row">'
-            f'<a class="cal-name" href="index.html?tag={tag}#browse">{esc(name)}</a>'
+            f'<a class="cal-name" href="{occasion_href(tag)}">{esc(name)}</a>'
             f'<span class="cal-date">{d.strftime("%a %b %-d")}</span>'
             f'<span class="cal-count">{count} activities</span>'
             f'{when}</li>')
@@ -1410,6 +1439,12 @@ def render_home_identity(acts, cats, colls):
     issues = []
     for i, sname in enumerate(_SEASON_ORDER, 1):
         _, shub, stag = _SEASON_SYSTEM[sname]
+        # VP-0046 (rotation 30): Fall has no hub page of its own, and its
+        # old entry borrowed Halloween's hub. The Fall issue entry now
+        # leads to the Fall surface itself: the directory filtered to
+        # the fall filing. Other seasons keep their hub pages.
+        if sname == "Fall":
+            shub = f"index.html?tag={stag}#browse"
         cur = ' <span class="contents-current">the current issue</span>' if sname == season else ''
         issues.append(
             f'      <li><a class="contents-line" href="{shub}">'
@@ -1436,7 +1471,7 @@ def render_home_identity(acts, cats, colls):
         f'    <h1 class="issue-title" id="issue-h">{season}</h1>\n'
         '    <div class="issue-count">\n'
         f'      <span class="issue-num">{days0}</span>\n'
-        f'      <span class="issue-num-text">days to<br><a href="index.html?tag={occ_tag}#browse">{esc(occ_name)}</a><br>'
+        f'      <span class="issue-num-text">days to<br><a href="{occasion_href(occ_tag)}">{esc(occ_name)}</a><br>'
         f'{d0.strftime("%A, %B %-d")} &middot; {occ_count} activities filed for it</span>\n'
         '    </div>\n'
         + cover_html +

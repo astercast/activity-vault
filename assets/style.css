@@ -2236,6 +2236,39 @@ html[data-calm="true"] .drawer-pull { transition: none; }
   padding: .4rem .45rem; margin: 0;
 }
 .nav-more-panel a:hover { background: var(--paper); border: 0; }
+
+/* VP-0046 (rotation 30): one-line glosses under the planner-cluster
+   labels, so each label says what its surface does. Quiet micro-type,
+   never a second link. */
+.site-header .nav-gloss {
+  display: block; font-size: .7rem; font-weight: 400;
+  color: var(--ink-soft); letter-spacing: 0; line-height: 1.25;
+  /* The header links speak in tracked mono caps; a gloss is a plain
+     sentence and must not inherit that voice (found on the builder's
+     own 390px capture: glosses rendered as jammed inline caps). */
+  text-transform: none; font-family: var(--font-body);
+}
+.nav-more-panel { min-width: 15.5rem; }
+
+/* VP-0046 (rotation 30): the home masthead signposts the directory's
+   keyword search, in the promise's own register. */
+.home-search-note { margin: .35rem 0 0; font-size: .95rem; color: var(--ink-soft); }
+.home-search-note a { color: var(--accent); font-weight: 600; }
+
+/* VP-0046 (rotation 30): on phones the More panel anchors to the
+   header, not to the More toggle. Anchored to the toggle (right: 0 of
+   a mid-bar details element) the panel already spilled 53px off the
+   left edge at 390px before this rotation; the glossed labels widened
+   it to a 164px spill. The header-inner is positioned, so the panel
+   now spans the bar's own width with a margin on both sides. */
+@media (max-width: 700px) {
+  .site-header .nav-more { position: static; }
+  .site-header .nav-more-panel { left: .5rem; right: .5rem; width: auto; }
+  /* The tap pass made panel links flex rows; the gloss wraps to its
+     own full-width line under the label instead of jamming beside it. */
+  .site-header .nav-more-panel a { flex-wrap: wrap; row-gap: .1rem; }
+  .site-header .nav-more-panel a .nav-gloss { flex: 0 0 100%; }
+}
 .nav-more-panel a[aria-current="page"] {
   color: var(--accent); background: var(--paper-deep); border: 0; box-shadow: none;
   margin: 0; padding: .4rem .45rem; top: 0; position: static;
