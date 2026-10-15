@@ -2828,4 +2828,22 @@ html:not([data-calm="true"]) .collection-section { animation: none; }
   .blotter-alt a { display: inline-block; min-height: 44px; padding-block: 4px; margin-block: -4px; }
   .no-print a:not(.chip) { display: inline-block; padding-block: 14px; margin-block: -14px; }
   .db-strip a { display: inline-block; min-height: 44px; padding-block: 3px; margin-block: -3px; }
+  /* Rotation 30 residue, the two honestly fixable classes. The
+     group-size range slider: the element box IS the touch surface
+     (a tap anywhere on the track moves the thumb), so the box itself
+     grows to the floor; the thumb stays UA-sized and the filter
+     stack, which is vertical, absorbs the height. The countdown
+     occasion link in the issue hero: it stands on its own line
+     between two plain text lines ("days to" above, the date below)
+     with no neighbouring interactive element, so fat-finger growth
+     buys the full box with no mistap band. Everything else in the
+     r30 residue census is named, not forced, in the landing record:
+     chip and toggle-row checkbox boxes (the 44px label/row around
+     each is the real surface), the review ledger's row-height links,
+     the API docs' inline prose and table links, and the issue
+     cover's caption pair (name link + photo credit, whose boxes are
+     set by the cover composition and sit in one another's fat-finger
+     reach). */
+  input[type="range"] { min-height: 44px; }
+  .issue-num-text a { display: inline-block; padding-block: 10px; margin-block: -10px; }
 }
