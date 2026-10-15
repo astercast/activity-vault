@@ -1,38 +1,31 @@
 /* Activity Vault, shared site chrome.
-   1. Calm mode (sensory-envelope toggle, web-craft 2026-10-11 round 2):
-      a user-controlled kill switch for motion + transparency, beyond the
-      prefers-reduced-motion binary. Persists in localStorage; the planner
-      and every motion-gated rule read the same data-calm="true" attribute.
+   1. Motion follows the visitor's own device setting: when the device
+      asks for reduced motion, data-calm="true" is set and every
+      motion-gated rule (planner included) reads that attribute. There
+      is no site-level motion switch (CRITIC-001 fix 1: the "Calm: off"
+      pill was removed; a control a stranger cannot understand in one
+      look is deleted, and the device setting already says it).
    2. Nav hover/focus prefetch: cheap MPA speedup (progressive enhancement). */
 (function () {
   'use strict';
-
-  var CALM_KEY = 'activityvault.calm.v1';
 
   function calmOn() {
     return document.documentElement.getAttribute('data-calm') === 'true';
   }
 
-  function setCalm(on, silent) {
+  function setCalm(on) {
     if (on) document.documentElement.setAttribute('data-calm', 'true');
     else document.documentElement.removeAttribute('data-calm');
-    var b = document.getElementById('site-calm-toggle');
-    if (b) {
-      b.setAttribute('aria-pressed', on ? 'true' : 'false');
-      var label = b.querySelector('.calm-state');
-      if (label) label.textContent = on ? 'on' : 'off';
-    }
-    if (!silent) {
-      try { localStorage.setItem(CALM_KEY, on ? '1' : '0'); } catch (e) { /* storage unavailable */ }
-    }
+    if (on) revealAll(document);
   }
 
   function initCalm() {
-    var stored = null;
-    try { stored = localStorage.getItem(CALM_KEY); } catch (e) { /* storage unavailable */ }
-    setCalm(stored === '1', true);
-    var b = document.getElementById('site-calm-toggle');
-    if (b) b.addEventListener('click', function () { setCalm(!calmOn()); });
+    var mq = null;
+    try { mq = window.matchMedia('(prefers-reduced-motion: reduce)'); } catch (e) { /* no media queries */ }
+    if (!mq) return;
+    setCalm(mq.matches);
+    if (mq.addEventListener) mq.addEventListener('change', function (ev) { setCalm(ev.matches); });
+    else if (mq.addListener) mq.addListener(function (ev) { setCalm(ev.matches); });
   }
 
   function initPrefetch() {
@@ -105,7 +98,7 @@
     }
   }
 
-  /* re-run when the calm toggle flips: instant-reveal everything if calming down */
+  /* when the device setting flips to reduced motion, setCalm instant-reveals everything */
   function initReveal() {
     watchReveals(document);
     /* pages render cards after DOMContentLoaded (planner, collections, sub,
@@ -127,10 +120,6 @@
       });
       mo.observe(document.body, { childList: true, subtree: true });
     }
-    var b = document.getElementById('site-calm-toggle');
-    if (b) b.addEventListener('click', function () {
-      if (!motionOK()) revealAll(document);
-    });
   }
 
   /* pages that render cards after load (browse grid, planner) call this */

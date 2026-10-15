@@ -267,10 +267,6 @@ def _minimal_header(prefix, current_href, no_print):
         </div>
       </details>
     </nav>
-    <button class="btn btn-ghost btn-small no-print" id="site-calm-toggle" type="button"
-            aria-pressed="false" aria-label="Calm mode: turn off page animations and motion">
-      Calm: <span class="calm-state">off</span>
-    </button>
   </div>
 </header>"""
 
@@ -536,10 +532,6 @@ ACTIVITY_TEMPLATE = """<!DOCTYPE html>
       <a href="../spring.html">Spring 🌷</a>
       <a href="../summer.html">Summer ☀️</a>
     </nav>
-    <button class="btn btn-ghost btn-small no-print" id="site-calm-toggle" type="button"
-            aria-pressed="false" aria-label="Calm mode: turn off page animations and motion">
-      <span aria-hidden="true">🍃</span> Calm: <span class="calm-state">off</span>
-    </button>
   </div>
 </header>
 <main id="main" class="wrap activity-page">
@@ -931,10 +923,6 @@ REVIEW_TEMPLATE = """<!DOCTYPE html>
       <a href="spring.html">Spring 🌷</a>
       <a href="summer.html">Summer ☀️</a>
     </nav>
-    <button class="btn btn-ghost btn-small no-print" id="site-calm-toggle" type="button"
-            aria-pressed="false" aria-label="Calm mode: turn off page animations and motion">
-      <span aria-hidden="true">🍃</span> Calm: <span class="calm-state">off</span>
-    </button>
   </div>
 </header>
 
@@ -1560,10 +1548,6 @@ DESK_TEMPLATE = """<!DOCTYPE html>
       <a href="spring.html">Spring 🌷</a>
       <a href="summer.html">Summer ☀️</a>
     </nav>
-    <button class="btn btn-ghost btn-small no-print" id="site-calm-toggle" type="button"
-            aria-pressed="false" aria-label="Calm mode: turn off page animations and motion">
-      <span aria-hidden="true">🍃</span> Calm: <span class="calm-state">off</span>
-    </button>
   </div>
 </header>
 
