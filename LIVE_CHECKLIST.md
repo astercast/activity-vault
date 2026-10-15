@@ -27,6 +27,14 @@ What is wired into the live release repo `astercast/activity-vault-live`
   this pass, and no link or photo was fabricated to close the gap.
   Function count, vercel.json, and the free-tier audit below are
   unchanged by this rotation.
+- **Rotation-32 addendum (2026-10-15):** counts have moved since
+  the rotation-23 block above: **222 activities carry a sourced
+  photograph in data (223 rendered)** and **105 carry a source
+  link** (the first source-link pass since rotation 23: 12
+  Wikipedia concept references admitted under the strict title
+  rule, floor in `scripts/test-r23.js` raised 93 → 105 in the
+  same commit). Function count and the free-tier audit below are
+  unchanged by this rotation.
 
 ## Working-repo state (2026-10-13, wave 43)
 

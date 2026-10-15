@@ -62,7 +62,12 @@ for (const a of acts) {
    (ice-melt-rescue-race, children working toys out of an ice block at
    Akita Station, CC BY-SA 4.0; nature-color-match-walk, a BLM Alaska
    student matching nature finds to colour cards, Public domain), raising
-   the filed photo floor 220 -> 222 in the same commit. */
+   the filed photo floor 220 -> 222 in the same commit.
+   Rotation 32: the first source-link pass since rotation 23 re-ran the
+   strict title rule over all 654 sourceless activities with every item
+   accounted for; 37 rule-passing matches, 12 admitted at the coordinator's
+   title read (25 refused: generic nouns, wrong senses, specific works),
+   raising the filed source floor 93 -> 105 in the same commit. */
 ok(withPhoto >= 222, 'coverage: at least the filed 222 activities carry a sourced photo (got ' + withPhoto + ')');
-ok(withSource >= 93, 'coverage: at least the filed 93 activities carry a source link (got ' + withSource + ')');
+ok(withSource >= 105, 'coverage: at least the filed 105 activities carry a source link (got ' + withSource + ')');
 console.log('test-r23: ' + passed + ' assertions passed; photo ' + withPhoto + '/747, source ' + withSource + '/747');
