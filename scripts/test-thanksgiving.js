@@ -16,7 +16,7 @@ function ok(cond, label, extra) {
 
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const actIds = new Set(acts.map(a => a.id));
-ok(acts.length === 747, '685 activities total', String(acts.length));
+ok(acts.length === 778, '685 activities total', String(acts.length));
 ok(actIds.size === acts.length, 'all activity ids unique');
 
 // 1. Tag vocabulary: holiday:thanksgiving is NEW in wave 14 — confirm it is
@@ -102,8 +102,8 @@ ok(JSON.stringify((byId['harvest-gratitude-circle'].tags || []).slice().sort()) 
 
 // 4. Collections: 12 total, grateful-gathering valid
 const colls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/collections.json'), 'utf8')).collections;
-ok(colls.length === 32, '26 collections', String(colls.length));
-ok(new Set(colls.map(c => c.id)).size === 32, 'collection ids unique');
+ok(colls.length === 34, '26 collections', String(colls.length));
+ok(new Set(colls.map(c => c.id)).size === 34, 'collection ids unique');
 const gg = colls.find(c => c.id === 'grateful-gathering');
 ok(!!gg, 'grateful-gathering exists');
 ok(gg.glyph === '🦃', 'grateful-gathering glyph');
@@ -175,9 +175,9 @@ RESEARCH3.forEach(id => {
   ok((byId[id].source || '').startsWith('https://'), 'research activity has source URL: ' + id);
   ok(byId[id].copy_free === true, 'research activity is copy-free: ' + id);
 });
-ok(acts.filter(a => a.copy_free).length === 367, '269 copy_free notes (197 + 12 wave-28 + 12 wave-29 + 12 wave-30 + 12 wave-31 + 12 wave-32 + 12 wave-33)', String(acts.filter(a => a.copy_free).length));
-ok(acts.filter(a => a.no_elimination).length === 169, '87 no_elimination notes (57 + 6 wave-28 + 7 wave-29 + 5 wave-30 + 6 wave-31 + 6 wave-32)');
-ok(acts.filter(a => a.inclusion).length === 229, '119 inclusion notes (75 + 6 wave-28 + 6 wave-29 + 8 wave-30 + 12 wave-31 + 12 wave-32)');
+ok(acts.filter(a => a.copy_free).length === 394, '269 copy_free notes (197 + 12 wave-28 + 12 wave-29 + 12 wave-30 + 12 wave-31 + 12 wave-32 + 12 wave-33)', String(acts.filter(a => a.copy_free).length));
+ok(acts.filter(a => a.no_elimination).length === 196, '87 no_elimination notes (57 + 6 wave-28 + 7 wave-29 + 5 wave-30 + 6 wave-31 + 6 wave-32)');
+ok(acts.filter(a => a.inclusion).length === 240, '119 inclusion notes (75 + 6 wave-28 + 6 wave-29 + 8 wave-30 + 12 wave-31 + 12 wave-32)');
 // research fields appear on built pages
 const cfPage = fs.readFileSync(path.join(ROOT, 'activity/turkey-code-feathers.html'), 'utf8');
 ok(cfPage.includes('Copy-free'), 'copy-free badge renders on activity page');
@@ -239,16 +239,16 @@ ok(samplePage.includes('../thanksgiving.html'), 'generated activity page nav lin
 
 // 11. Generated API: filters.json + collections + manifest + schema + sitemap + llms
 const apiColls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/collections.json'), 'utf8'));
-ok(apiColls.count === 32 && apiColls.collections.length === 32, 'api collections.json count 26');
+ok(apiColls.count === 34 && apiColls.collections.length === 34, 'api collections.json count 26');
 ok(apiColls.collections.some(c => c.id === 'grateful-gathering'), 'api has grateful-gathering');
 const coll = apiColls.collections.find(c => c.id === 'grateful-gathering');
 ok(coll.page === 'collections.html#grateful-gathering', 'grateful-gathering deep link');
 ok(coll.age_span.length === 2 && coll.time_span.length === 2, 'grateful-gathering spans computed');
 const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/v1/index.json'), 'utf8'));
 const collEp = manifest.endpoints.find(e => e.path === 'data/v1/collections.json');
-ok(collEp && collEp.records === 32, 'manifest collections records=26');
+ok(collEp && collEp.records === 34, 'manifest collections records=26');
 const actEp = manifest.endpoints.find(e => e.path === 'data/v1/activities.json');
-ok(actEp && actEp.records === 747, 'manifest activities records=685', String(actEp && actEp.records));
+ok(actEp && actEp.records === 778, 'manifest activities records=685', String(actEp && actEp.records));
 const sitemap = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
 ok(sitemap.includes('thanksgiving.html'), 'sitemap.xml has thanksgiving.html');
 const llms = fs.readFileSync(path.join(ROOT, 'llms.txt'), 'utf8');

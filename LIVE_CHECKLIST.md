@@ -35,10 +35,20 @@ What is wired into the live release repo `astercast/activity-vault-live`
   rule, floor in `scripts/test-r23.js` raised 93 → 105 in the
   same commit). Function count and the free-tier audit below are
   unchanged by this rotation.
+- **Completeness addendum (2026-10-15, wave 44 + the wave
+  engine's completeness run, one commit):** counts stand at
+  **778 activities, 34 collections**; **233 carry a sourced
+  photograph** and **163 carry a source link**. The day's two
+  builds added 31 records (8 thin-cell records + 23 canonical
+  games), 11 photographs (batch r30, every frame read against
+  its activity before placement), and 58 source links (31 on
+  the new records, 27 backfilled onto existing records, each
+  verified live at its exact URL). Function count and the
+  free-tier audit below are unchanged.
 
 ## Working-repo state (2026-10-13, wave 43)
 
-- Working repo (this repo, never deployed): **747 activities, 32
+- Working repo (this repo, never deployed): **778 activities, 34
   collections**, 4 Scout functions (unchanged this wave, still
   inside the free-tier budget: 4 of the ≤12 function cap, every
   entry `{"maxDuration": 10}`, no `runtime` key; the Scout's

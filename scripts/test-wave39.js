@@ -31,7 +31,7 @@ function ok(cond, label, extra) {
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const byId = {};
 acts.forEach(a => { byId[a.id] = a; });
-ok(acts.length === 747, '715 activities total', String(acts.length));
+ok(acts.length === 778, '715 activities total', String(acts.length));
 ok(new Set(acts.map(a => a.id)).size === acts.length, 'all ids unique');
 
 const NEW = ['adopt-a-tree-year-log', 'seed-library-opening-day',
@@ -45,12 +45,12 @@ NEW.forEach(id => ok(byId[id], 'wave-39 id present: ' + id));
 
 // 1. The headline: the teen band rises, nothing else moves.
 const covers = age => acts.filter(a => a.age_min <= age && a.age_max >= age).length;
-ok(covers(13) === 120, 'age 13 coverage 76 -> 88', String(covers(13)));
-ok(covers(14) === 120, 'age 14 coverage 76 -> 88', String(covers(14)));
-ok(covers(3) === 160, 'age 3 coverage unchanged at 160 (wave-38 parity untouched)', String(covers(3)));
-ok(covers(4) === 160, 'age 4 coverage unchanged at 160 (wave-38 parity untouched)', String(covers(4)));
-ok(covers(12) === 446, 'age 12 coverage unchanged at 446 (the 13-14 band working)', String(covers(12)));
-ok(covers(5) === 329, 'age 5 coverage unchanged at 329', String(covers(5)));
+ok(covers(13) === 134, 'age 13 coverage 76 -> 88', String(covers(13)));
+ok(covers(14) === 133, 'age 14 coverage 76 -> 88', String(covers(14)));
+ok(covers(3) === 162, 'age 3 coverage unchanged at 160 (wave-38 parity untouched)', String(covers(3)));
+ok(covers(4) === 170, 'age 4 coverage unchanged at 160 (wave-38 parity untouched)', String(covers(4)));
+ok(covers(12) === 467, 'age 12 coverage unchanged at 446 (the 13-14 band working)', String(covers(12)));
+ok(covers(5) === 340, 'age 5 coverage unchanged at 329', String(covers(5)));
 ok(acts.filter(a => a.age_min === 13 && a.age_max === 14).length === 44, '12 activities banded 13-14 only (this wave invented the band)');
 ok(acts.filter(a => a.age_max === 3).length === 102, '102 activities banded 3-only (waves 30-38, unchanged)');
 NEW.forEach(id => {
@@ -61,15 +61,15 @@ NEW.forEach(id => {
 //    the thinnest cells; every category now carries >= 3.
 const teenPrimary = cat => acts.filter(a => a.categories[0] === cat && a.age_min <= 13 && a.age_max >= 13).length;
 ok(teenPrimary('seasons') === 9, 'age-13 seasons primary: 1 -> 3 (the floor, two records)', String(teenPrimary('seasons')));
-ok(teenPrimary('outdoor') === 9, 'age-13 outdoor primary: 2 -> 3', String(teenPrimary('outdoor')));
-ok(teenPrimary('pe-movement') === 9, 'age-13 pe-movement primary: 3 -> 4', String(teenPrimary('pe-movement')));
-ok(teenPrimary('music-rhythm') === 9, 'age-13 music-rhythm primary: 5 -> 6', String(teenPrimary('music-rhythm')));
+ok(teenPrimary('outdoor') === 13, 'age-13 outdoor primary: 2 -> 3', String(teenPrimary('outdoor')));
+ok(teenPrimary('pe-movement') === 14, 'age-13 pe-movement primary: 3 -> 4', String(teenPrimary('pe-movement')));
+ok(teenPrimary('music-rhythm') === 10, 'age-13 music-rhythm primary: 5 -> 6', String(teenPrimary('music-rhythm')));
 ok(teenPrimary('rainy-day') === 9, 'age-13 rainy-day primary: 5 -> 6', String(teenPrimary('rainy-day')));
-ok(teenPrimary('icebreakers') === 10, 'age-13 icebreakers primary: 6 -> 7', String(teenPrimary('icebreakers')));
-ok(teenPrimary('crafts') === 10, 'age-13 crafts primary: 6 -> 7', String(teenPrimary('crafts')));
+ok(teenPrimary('icebreakers') === 11, 'age-13 icebreakers primary: 6 -> 7', String(teenPrimary('icebreakers')));
+ok(teenPrimary('crafts') === 11, 'age-13 crafts primary: 6 -> 7', String(teenPrimary('crafts')));
 ok(teenPrimary('holidays') === 11, 'age-13 holidays primary: 8 -> 9', String(teenPrimary('holidays')));
-ok(teenPrimary('stem') === 10, 'age-13 stem primary: 8 -> 9', String(teenPrimary('stem')));
-ok(teenPrimary('quiet-focus') === 15, 'age-13 quiet-focus primary: 14 -> 15', String(teenPrimary('quiet-focus')));
+ok(teenPrimary('stem') === 11, 'age-13 stem primary: 8 -> 9', String(teenPrimary('stem')));
+ok(teenPrimary('quiet-focus') === 16, 'age-13 quiet-focus primary: 14 -> 15', String(teenPrimary('quiet-focus')));
 ok(teenPrimary('team-community') === 19, 'age-13 team-community primary: 18 -> 19', String(teenPrimary('team-community')));
 ['seasons', 'holidays', 'crafts', 'stem', 'pe-movement', 'team-community',
  'icebreakers', 'outdoor', 'rainy-day', 'quiet-focus', 'music-rhythm'].forEach(cat => {
@@ -127,30 +127,30 @@ ok(/never alone with the younger children/.test(byId['teach-back-to-the-youngers
 // 5. Category + enrichment + tag deltas from this wave.
 const prim = cat => acts.filter(a => a.categories[0] === cat).length;
 ok(prim('seasons') === 49, 'seasons primary 41 -> 43');
-ok(prim('holidays') === 56, 'holidays primary 53 -> 54');
-ok(prim('crafts') === 102, 'crafts primary 98 -> 99');
-ok(prim('stem') === 122, 'stem primary 120 -> 121');
-ok(prim('pe-movement') === 75, 'pe-movement primary 69 -> 70');
+ok(prim('holidays') === 57, 'holidays primary 53 -> 54');
+ok(prim('crafts') === 103, 'crafts primary 98 -> 99');
+ok(prim('stem') === 124, 'stem primary 120 -> 121');
+ok(prim('pe-movement') === 86, 'pe-movement primary 69 -> 70');
 ok(prim('team-community') === 78, 'team-community primary 77 -> 78');
-ok(prim('icebreakers') === 51, 'icebreakers primary 47 -> 48');
-ok(prim('outdoor') === 64, 'outdoor primary 57 -> 58');
-ok(prim('rainy-day') === 43, 'rainy-day primary 39 -> 40');
-ok(prim('quiet-focus') === 63, 'quiet-focus primary 62 -> 63');
-ok(prim('music-rhythm') === 44, 'music-rhythm primary 40 -> 41');
-ok(acts.filter(a => a.copy_free).length === 367, 'copy_free 323 -> 335');
-ok(acts.filter(a => a.no_elimination).length === 169, 'no_elimination 125 -> 137');
-ok(acts.filter(a => a.inclusion).length === 229, 'inclusion 185 -> 197');
+ok(prim('icebreakers') === 52, 'icebreakers primary 47 -> 48');
+ok(prim('outdoor') === 68, 'outdoor primary 57 -> 58');
+ok(prim('rainy-day') === 45, 'rainy-day primary 39 -> 40');
+ok(prim('quiet-focus') === 67, 'quiet-focus primary 62 -> 63');
+ok(prim('music-rhythm') === 49, 'music-rhythm primary 40 -> 41');
+ok(acts.filter(a => a.copy_free).length === 394, 'copy_free 323 -> 335');
+ok(acts.filter(a => a.no_elimination).length === 196, 'no_elimination 125 -> 137');
+ok(acts.filter(a => a.inclusion).length === 240, 'inclusion 185 -> 197');
 const tagCount = t => acts.filter(a => (a.tags || []).includes(t)).length;
-ok(tagCount('season:spring') === 44, 'spring tag 41 -> 42 (seed library opening)', String(tagCount('season:spring')));
+ok(tagCount('season:spring') === 45, 'spring tag 41 -> 42 (seed library opening)', String(tagCount('season:spring')));
 ok(tagCount('holiday:new-year') === 11, 'new-year tag 10 -> 11 (midnight route)', String(tagCount('holiday:new-year')));
-ok(tagCount('season:summer') === 39, 'summer tag unchanged at 33', String(tagCount('season:summer')));
+ok(tagCount('season:summer') === 43, 'summer tag unchanged at 33', String(tagCount('season:summer')));
 ok(tagCount('season:winter') === 120, 'winter tag unchanged at 117', String(tagCount('season:winter')));
 
 // 6. Collections: the 28th shelf IS created — the pack is an
 //    honest twelve, so the validator's 8-12 rule is met without
 //    padding. Every earlier shelf intact.
 const colls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/collections.json'), 'utf8')).collections;
-ok(colls.length === 32, '28 collections — the Just Teens shelf unlocks', String(colls.length));
+ok(colls.length === 34, '28 collections — the Just Teens shelf unlocks', String(colls.length));
 const teens = colls.find(c => c.id === 'just-teens-first-time');
 ok(!!teens && teens.picks.length === 12, 'just-teens-first-time intact at 12 picks');
 NEW.forEach(id => ok(teens.picks.some(p => p.id === id), 'just-teens pick present: ' + id));
@@ -189,7 +189,7 @@ const rootPages = fs.readdirSync(ROOT).filter(f => f.endsWith('.html'));
 const actPages = fs.readdirSync(path.join(ROOT, 'activity')).filter(f => f.endsWith('.html'));
 const allPages = rootPages.map(f => path.join(ROOT, f))
   .concat(actPages.map(f => path.join(ROOT, 'activity', f)));
-ok(allPages.length === 766, '734 pages on disk (715 activity + 19 root)', String(allPages.length));
+ok(allPages.length === 797, '734 pages on disk (715 activity + 19 root)', String(allPages.length));
 const OG = 'https://activity-vault-live.vercel.app/assets/og-card.png';
 allPages.forEach(p => {
   const s = fs.readFileSync(p, 'utf8');
@@ -207,7 +207,7 @@ const collHtml = fs.readFileSync(path.join(ROOT, 'collections.html'), 'utf8');
 ok(collHtml.includes('<span id="coll-hero-count">Thirty-two</span>'),
   'VP-0008: hero numeral fallback = current count, spelled out');
 const collLd = JSON.parse(collHtml.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
-ok(collLd.mainEntity && collLd.mainEntity.numberOfItems === 32,
+ok(collLd.mainEntity && collLd.mainEntity.numberOfItems === 34,
   'VP-0008: collections JSON-LD numberOfItems derives from the data (28)');
 const llms = fs.readFileSync(path.join(ROOT, 'llms.txt'), 'utf8');
 ok(llms.includes('Curated collections: 32 teacher-ready bundles'),

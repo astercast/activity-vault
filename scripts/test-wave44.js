@@ -26,14 +26,14 @@ ok(declared.min === 3, 'filters.json age.min === 3', String(declared && declared
 ok(declared.max === 14, 'filters.json age.max === 14', String(declared && declared.max));
 
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
-ok(acts.length === 747, '747 activities total', String(acts.length));
+ok(acts.length === 778, '747 activities total', String(acts.length));
 const trueMin = Math.min.apply(null, acts.map(a => a.age_min));
 const trueMax = Math.max.apply(null, acts.map(a => a.age_max));
 ok(trueMin === declared.min, 'activities true min matches filters.json', String(trueMin));
 ok(trueMax === declared.max, 'activities true max matches filters.json', String(trueMax));
 const covers = age => acts.filter(a => a.age_min <= age && a.age_max >= age).length;
-ok(covers(13) === 120, 'age 13 coverage === 120', String(covers(13)));
-ok(covers(14) === 120, 'age 14 coverage === 120', String(covers(14)));
+ok(covers(13) === 134, 'age 13 coverage === 120', String(covers(13)));
+ok(covers(14) === 133, 'age 14 coverage === 120', String(covers(14)));
 ok(covers(3) > 0, 'age 3 coverage > 0', String(covers(3)));
 ok(covers(4) > 0, 'age 4 coverage > 0', String(covers(4)));
 

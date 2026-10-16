@@ -666,7 +666,8 @@
    "variations": {
     "easier": "Do simple braided bracelets (three strands, plain braid) for kids who find knots frustrating.",
     "harder": "Learn the chevron (V-shape) pattern or add beads to the design."
-   }
+   },
+   "source": "https://en.wikipedia.org/wiki/Friendship_bracelet"
   },
   {
    "age_max": 12,
@@ -762,7 +763,8 @@
    "variations": {
     "easier": "Use only 2 layers and keep bowls small so they dry faster.",
     "harder": "Build the bowl around the whole balloon, pop it, and cut a door to make a little house."
-   }
+   },
+   "source": "https://en.wikipedia.org/wiki/Papier-m%C3%A2ch%C3%A9"
   },
   {
    "age_max": 12,
@@ -1309,7 +1311,8 @@
    "variations": {
     "easier": "Let players use both hands free, just pass the hoop body-to-body.",
     "harder": "Race two teams side by side, or run it in complete silence (gestures only)."
-   }
+   },
+   "source": "http://en.wikipedia.org/wiki/Hula_hoop"
   },
   {
    "age_max": 12,
@@ -1501,7 +1504,8 @@
    "variations": {
     "easier": "Shorten the field so rounds end faster.",
     "harder": "Caught players become extra spotters helping the caller."
-   }
+   },
+   "source": "https://en.wikipedia.org/wiki/Statues_(game)"
   },
   {
    "age_max": 12,
@@ -1636,7 +1640,8 @@
    "variations": {
     "easier": "Shorten the course for younger runners.",
     "harder": "Add a task at the turn-around: 5 jumping jacks before heading back."
-   }
+   },
+   "source": "https://en.wikipedia.org/wiki/Sprint_relay"
   },
   {
    "age_max": 12,
@@ -1721,7 +1726,8 @@
    "variations": {
     "easier": "Let beginners jump without the rope first to learn the timing, or swing the rope slowly.",
     "harder": "Double-unders (rope passes twice per jump) for advanced jumpers."
-   }
+   },
+   "source": "https://en.wikipedia.org/wiki/Skipping_rope"
   },
   {
    "age_max": 12,
@@ -2192,7 +2198,8 @@
    "variations": {
     "easier": "Do it in small groups of 5–6 instead of one big circle.",
     "harder": "Theme it: two truths and a lie about summer, about food, about a talent."
-   }
+   },
+   "source": "https://www.thoughtco.com/2-truths-lie-idea-list-1-31144"
   },
   {
    "age_max": 12,
@@ -2443,7 +2450,8 @@
    "variations": {
     "easier": "Give 25 questions and allow one free hint.",
     "harder": "Ban the most obvious opening questions ('Is it alive?') after round one."
-   }
+   },
+   "source": "https://en.wikipedia.org/wiki/Twenty_questions"
   },
   {
    "age_max": 11,
@@ -4236,7 +4244,8 @@
    "variations": {
     "easier": "Wrap the hoop and tie on pre-made hanging strands.",
     "harder": "Weave a tight traditional web with an even center hole."
-   }
+   },
+   "source": "https://en.wikipedia.org/wiki/Dreamcatcher"
   },
   {
    "age_max": 12,
@@ -5222,7 +5231,8 @@
    "variations": {
     "easier": "Walk instead of sprint.",
     "harder": "Stack with non-dominant hand only."
-   }
+   },
+   "source": "https://en.wikipedia.org/wiki/Sport_stacking"
   },
   {
    "age_max": 12,
@@ -5827,7 +5837,8 @@
    "variations": {
     "easier": "Bigger play area.",
     "harder": "Play at noon when shadows are shortest."
-   }
+   },
+   "source": "https://en.wikipedia.org/wiki/Tag_sports"
   },
   {
    "age_max": 10,
@@ -6014,7 +6025,8 @@
    "variations": {
     "easier": "Stack 3 cups only.",
     "harder": "Learn the 3-6-3 competition stack."
-   }
+   },
+   "source": "https://en.wikipedia.org/wiki/Sport_stacking"
   },
   {
    "age_max": 12,
@@ -7071,7 +7083,8 @@
    "variations": {
     "easier": "One big class print on a single sheet.",
     "harder": "Layer two rounds: move objects halfway through for double-exposure effects."
-   }
+   },
+   "source": "https://en.wikipedia.org/wiki/Sun_printing"
   },
   {
    "age_max": 12,
@@ -8061,7 +8074,8 @@
    "variations": {
     "easier": "Use hands only. Classic shadow animals, no puppets to build.",
     "harder": "Add a narrator and sound effects crew for a full production."
-   }
+   },
+   "source": "https://en.wikipedia.org/wiki/Shadow_play"
   },
   {
    "age_max": 10,
@@ -8161,7 +8175,8 @@
    "variations": {
     "easier": "Teacher folds along with the group, one crease at a time.",
     "harder": "Theme it: fortunes about the school year, or quiz questions inside."
-   }
+   },
+   "source": "https://en.wikipedia.org/wiki/Paper_fortune_teller"
   },
   {
    "age_max": 12,
@@ -12312,6 +12327,15 @@
    "variations": {
     "easier": "Let little ones step around the puddles instead of jumping them.",
     "harder": "Double-puddle jump: two blue squares in a row, only for confident hoppers."
+   },
+   "source": "https://en.wikipedia.org/wiki/Hopscotch",
+   "photo": {
+    "file": "r30/puddle-hopscotch.webp",
+    "alt": "A boy hopping along a chalk hopscotch court on a driveway",
+    "caption": "A chalk court on the pavement, hopped one square at a time.",
+    "credit": "Photo: Lenore Edman, CC BY 2.0, via Wikimedia Commons",
+    "licence": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Hopscotch_in_driveway.jpg"
    }
   },
   {
@@ -13305,7 +13329,8 @@
    "variations": {
     "easier": "Two colors, chunky yarn instead of floss, and the teacher ties the starting knot.",
     "harder": "Pattern challenge: stripes, chevrons, then the diamond, photograph each stage for the camp board."
-   }
+   },
+   "source": "https://en.wikipedia.org/wiki/Friendship_bracelet"
   },
   {
    "age_max": 12,
@@ -13712,7 +13737,8 @@
    "variations": {
     "easier": "Pre-cut animal shapes; kids tape and perform only.",
     "harder": "Multi-light show: two flashlights at angles make double shadows, choreograph them."
-   }
+   },
+   "source": "https://en.wikipedia.org/wiki/Shadow_play"
   },
   {
    "age_max": 12,
@@ -17030,7 +17056,8 @@
    "variations": {
     "easier": "Just spin and act out the letter: gimel means a big cheer.",
     "harder": "Track 50 spins as a group and graph which letter won."
-   }
+   },
+   "source": "https://en.wikipedia.org/wiki/Dreidel"
   },
   {
    "age_max": 12,
@@ -17587,7 +17614,8 @@
    "variations": {
     "easier": "The seeker counts to 60 for more hiding time.",
     "harder": "Sardines style: everyone squeezes into one hiding spot."
-   }
+   },
+   "source": "http://en.wikipedia.org/wiki/Hide-and-seek"
   },
   {
    "age_max": 12,
@@ -19253,7 +19281,8 @@
    "variations": {
     "easier": "Teacher pre-pokes all the holes.",
     "harder": "Try it with a slack string. What changes? That is the science."
-   }
+   },
+   "source": "https://en.wikipedia.org/wiki/Tin-can_telephone"
   },
   {
    "age_max": 14,
@@ -22185,7 +22214,8 @@
    "variations": {
     "easier": "Spin and time only, skip the averages, just find the longest single spin.",
     "harder": "Build DIY dreidels from clay and test whether weight placement changes spin time."
-   }
+   },
+   "source": "https://en.wikipedia.org/wiki/Dreidel"
   },
   {
    "age_max": 12,
@@ -22480,7 +22510,8 @@
    "variations": {
     "easier": "Use 4 big blocks and copy a sample pattern.",
     "harder": "Design a two-strip pattern that interlocks, or research one real kente pattern and reproduce its rhythm."
-   }
+   },
+   "source": "https://en.wikipedia.org/wiki/Kente_cloth"
   },
   {
    "age_max": 12,
@@ -23289,7 +23320,8 @@
    "variations": {
     "easier": "Play free rain sounds with no conducting, or use pre-made shakers.",
     "harder": "Add a thunder drum (box) for the storm, or notate the weather score with symbols."
-   }
+   },
+   "source": "https://en.wikipedia.org/wiki/Rainstick"
   },
   {
    "age_max": 12,
@@ -35532,7 +35564,8 @@
    "variations": {
     "easier": "A two-team version (a small group or a first hall): the same lift, call and fault law played colour against colour with the serve alternating. The diplomacy goes quiet, the handling school entire, and the session's rally mark still honestly kept.",
     "harder": "A seated-circle version (a court whose space is tight): teams in a wide circle lift the ball across and down to the called colour's sector, ground faults judged where the ball lands. The call, the lift and the slate entire, at a scale where control outranks flight."
-   }
+   },
+   "source": "https://en.wikipedia.org/wiki/Kin-Ball"
   },
   {
    "age_max": 14,
@@ -35693,7 +35726,8 @@
    "variations": {
     "easier": "A straight-rows version (a first studio or a short hour): the whole discipline on the ground pattern alone, stitch school entire, one square of counted straight rows in bands of widening and narrowing spacing, because the ground every pattern stands on is a fit first sampler entire.",
     "harder": "A mending version (a returning studio): the stitch turned to its first purpose, a worn patch of the member's own clothing reinforced in counted rows, the owner's consent and the garment's story stated on the card, the sampler's standards applied to a repair that will actually be worn."
-   }
+   },
+   "source": "https://en.wikipedia.org/wiki/Sashiko"
   },
   {
    "age_max": 14,
@@ -35800,9 +35834,1473 @@
    "variations": {
     "easier": "A plait-only version (a short hour or a very first studio): the braid drawn, checked and inked at three lengths, the law entire at the merciful scale, because a true plait is this craft complete, and the knot will keep for a room that has earned it.",
     "harder": "A panel version (a returning studio): makers join their true knots in a shared border panel for the room's St. Patrick's Day display, each knot traced and signed before it is mounted. The panel is only ever as true as its least-checked knot, and its makers say so on its card."
+   },
+   "source": "https://en.wikipedia.org/wiki/Celtic_knot"
+  },
+  {
+   "id": "first-rounds-singing-circle",
+   "name": "First Rounds: Singing in Canon",
+   "tagline": "One song, many starting lines: the group learns to sing the same tune at different times and hears it turn into harmony.",
+   "categories": [
+    "music-rhythm",
+    "team-community"
+   ],
+   "age_min": 7,
+   "age_max": 11,
+   "group_min": 8,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 30,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "no materials at all: voices only"
+    },
+    {
+     "item": "a set of three short rounds the leader knows cold (public-domain staples such as Row, Row, Row Your Boat and Frere Jacques work; pick ones your group already half-knows)"
+    },
+    {
+     "item": "floor markers or chairs in a circle, one spot per singer, so each entry group can see its own corner of the room"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Arrange the circle and split it into three or four arcs before anyone sings; each arc is one entry group and will start the song at a different time. Choose the round with the group, not for them: offer two and let them vote, because a round only locks in when every singer owns the tune. Agree the entry signal now (the leader holds up one finger per group, in order) and the stopping rule (the leader shows a flat palm; everyone finishes the line they are on and stops together). Set the room's one law: nobody sings louder to fix a wobble; you fix a round by listening harder, not by shouting.",
+   "steps": [
+    "Sing the chosen round all together, in unison, twice through, until the tune sits in the room without the leader carrying it. Slow is fine. Boring is fine. This is the foundation pour and it cannot be rushed.",
+    "Teach the entry map with hands before voices: the leader points to arc one, which hums the first line; points to arc two, which hums the first line while arc one hums the second. Walk the whole map humming, so the shape is understood before a single word is sung.",
+    "First true entry: arc one sings line one alone. On the leader's signal, arc two enters at line one while arc one moves to line two. Let it wobble; wobbling is the sound of a group learning to hold its own line while another line happens beside it.",
+    "Add the third arc on the next run. When all arcs are in, the room is singing one song in three places at once. Name what just happened, plainly: the same melody, started at different times, fitting together. That is a round, and musicians have built them this way for centuries.",
+    "Run the full round three times through and end on the flat-palm signal. Ask each arc to describe what it heard from the arcs beside it; the answers teach more than another run would.",
+    "Swap the arcs' entry order and run it again. The group that entered last now leads, and everyone learns the round is a structure, not a ladder: there is no best seat in a canon.",
+    "Close by teaching the room one new round to take away, the simplest the leader knows, sung once in unison and once in two parts. The takeaway is the point: a round needs no instruments, no copies and no kit, only people who can hold a line."
+   ],
+   "variations": {
+    "easier": "Two arcs only, and a four-line round the group already knows from younger years; enter on a drum tap instead of a finger signal if watching and singing at once is too much.",
+    "harder": "Four arcs, a round in a minor key, and a student conductor: the conductor owns the entries, the tempo and the cut-off, and the room reviews the conducting the way it reviewed its own singing."
+   },
+   "safety": "Nobody sings alone at any point; every voice is always inside a group of voices. A singer who goes quiet mid-round simply rejoins at the next line: the structure holds them.",
+   "copy_free": true,
+   "no_elimination": true,
+   "why_it_works": "Part-singing is the oldest documented form of group harmony teaching: a round asks for one melody learned once, then layers it against itself, so the harmony is built into the material rather than added by arrangement.",
+   "inclusion": "Singers who do not use their voice can keep an arc's entry on a shaker or a tapped knee pattern that follows the same entry map; the canon works with any steady sound source. Keep arcs small enough that no singer is ever the only voice on a line.",
+   "source": "https://en.wikipedia.org/wiki/Round_(music)"
+  },
+  {
+   "id": "ostinato-layer-band",
+   "name": "Ostinato Layer Band",
+   "tagline": "Build a whole song out of stubborn little patterns: each crew owns one repeating layer, and the layers stack into music.",
+   "categories": [
+    "music-rhythm"
+   ],
+   "age_min": 11,
+   "age_max": 14,
+   "group_min": 6,
+   "group_max": 24,
+   "time_min": 30,
+   "time_max": 45,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "buckets, bins or sturdy boxes for low drums (one per low-layer player)"
+    },
+    {
+     "item": "shakers: sealed tubs with rice or beans inside (one per high-layer player)"
+    },
+    {
+     "item": "a set of pitched odds and ends if you have them: chime bars, a xylophone, or bottles filled to different water levels"
+    },
+    {
+     "item": "one phone or tablet per crew for a first listen-back recording (optional, and the crew's own device stays in the crew's hands)"
+    },
+    {
+     "item": "index cards and a marker per crew, for writing their pattern down in their own notation"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Split the room into three or four layer crews before touching an instrument: lows (buckets), highs (shakers), mids (body percussion), and pitched (chimes or bottles) if the kit allows. Give each crew one job and one limit: invent a pattern of no more than eight beats that repeats exactly, and can be played for two minutes without stopping. Exact repetition is the whole discipline here: an ostinato is a pattern that refuses to change, and the music comes from what the other layers do around it. Agree the stack order now: lows enter first, one layer added every eight cycles, and the band ends by removing layers in reverse until only the lows remain.",
+   "steps": [
+    "Each crew builds its pattern in its own corner, quietly, testing the only question that matters: can we play this fifty times in a row without it drifting? A pattern that cannot survive repetition is not an ostinato yet; shorten it until it can.",
+    "Notation round: each crew writes its pattern on a card in whatever symbols make sense to them (dots, slashes, words like tap tap rest). Crews swap cards and try to play each other's pattern from the card alone. Where the reading fails, the writing gets fixed. This is real composition paperwork, done in pencil.",
+    "The stack: lows begin. Count eight cycles aloud, then the mids enter on the leader's nod, then highs, then pitched. Nobody speeds up. The leader's only job in the first full stack is to hold the tempo with a foot tap everyone can see.",
+    "Hold the full stack for two minutes. It will feel long. That length is where the music lives: small accidents, a layer leaning on another, the room settling into the groove the patterns make together.",
+    "The teardown: remove layers in reverse order, one every eight cycles, until the lows play alone and stop together on a counted final hit. A band that can end together has actually played together.",
+    "Listen back to the recording if you made one, and let each crew name one thing another crew's layer did that made their own layer easier or harder to hold. Then run the stack once more with one change only: a new stack order, chosen by the crews.",
+    "File the cards. A returning session starts from the filed patterns and adds a fifth layer or a bridge section where every layer drops out for four beats and re-enters, which is the oldest trick in this music and still works every time."
+   ],
+   "variations": {
+    "easier": "Two layers only (lows and highs), four-beat patterns, and the leader counts every cycle out loud for the whole stack.",
+    "harder": "Crews compose in different cycle lengths (a five-beat layer against the fours) so the stack drifts in and out of alignment; the band must hold it without a conductor, listening only."
+   },
+   "safety": "Turn every drum hit soft and close on a shared downbeat if the room gets loud; volume is a dial the band controls together, and blowing out the pitched layer helps nobody.",
+   "copy_free": true,
+   "no_elimination": true,
+   "why_it_works": "Layered repetition is how a great deal of the world's music is actually built, from ground-bass traditions to modern loop-based production; learning it by stacking owned patterns teaches structure by doing, with no notation prerequisite.",
+   "inclusion": "Every layer is a real musical job at every ability level: a player who can only strike on beat one of eight is the anchor the lows are built on. Offer seated positions and table-top drums freely; the stack does not care where a sound comes from, only that it repeats.",
+   "source": "https://en.wikipedia.org/wiki/Ostinato"
+  },
+  {
+   "id": "tempo-parade-turtle-cheetah",
+   "name": "Tempo Parade: Turtle Slow, Cheetah Fast",
+   "tagline": "A drum sets the speed and little bodies learn it: creep like a turtle, scurry like a cheetah, and stop when the beat stops.",
+   "categories": [
+    "music-rhythm",
+    "pe-movement"
+   ],
+   "age_min": 3,
+   "age_max": 5,
+   "group_min": 6,
+   "group_max": 20,
+   "time_min": 15,
+   "time_max": 20,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "one hand drum, bucket or pot lid the leader can play at a steady speed"
+    },
+    {
+     "item": "a clear loop path around the room or yard, wide enough for slow giants and fast cheetahs to share"
+    },
+    {
+     "item": "two picture cards if you have them (a turtle and a cheetah) or two hand signs the group invents on the spot"
+    }
+   ],
+   "no_prep": true,
+   "setup": "Walk the loop path once with the whole group at an ordinary pace so every child knows the route before speed enters the game. Teach the two animal speeds standing still: turtle steps (tiny, heavy, slow, arms swinging low) and cheetah steps (light, quick, on the toes, quiet feet). Set the law of the drum before the first beat: feet follow the drum, and when the drum stops, bodies freeze. Practise the freeze twice with big praise; for this age the stopping is the skill, and the speed is the fun that teaches it.",
+   "steps": [
+    "Drum slow. The parade creeps the loop as turtles, and the leader names the speed out loud while it happens: this slow beat has a name musicians use, and the name is tempo. Slow tempo, turtle steps.",
+    "Drum a little faster, walking pace. The parade walks as people, ordinary speed, and the leader changes the card or the hand sign so the room can see the speed change before they feel it in their feet.",
+    "Drum fast. Cheetahs. Keep the fast stretch short (twenty seconds is plenty at this age) and end it with a drum stop and a freeze, every time, so fast never means out of control.",
+    "Now the drum changes without warning: slow, fast, medium, stop. The leader watches feet, not faces: the win is a whole parade changing speed together within a few beats.",
+    "Hand the drum to a child leader for one loop. The parade follows their tempo, including the stops. The child with the drum learns the other half of the lesson: a tempo is something you give a group, and a group is trusting you to give it clearly.",
+    "Finish slow. One last turtle loop, slower and slower, until the drum fades to single taps and the parade melts down to sitting. Name the day in one line: we moved at the drum's tempo, slow like turtles and fast like cheetahs, and we stopped together."
+   ],
+   "variations": {
+    "easier": "One speed change only (turtle and freeze), a shorter loop, and the leader drums beside the group rather than ahead of it.",
+    "harder": "Add a third animal with its own in-between speed (a trotting horse works), and let children call the changes with the picture cards while the leader drums what they show."
+   },
+   "safety": "Feet stay on the floor at every speed: cheetahs run in place or along the path with walking feet if the room is excited or the floor is slick. Fast is a tempo, not a race.",
+   "copy_free": true,
+   "no_elimination": true,
+   "why_it_works": "Tempo is the first element of music young children can control with their whole bodies; matching movement speed to a heard beat builds the steady-beat foundation every later music skill stands on.",
+   "inclusion": "A child who moves by wheelchair or walker sets their own turtle and cheetah speeds on the same drum; the parade matches the drum, never each other. A child who finds drumming sounds hard can hold the picture cards and be the signal-keeper instead.",
+   "source": "https://en.wikipedia.org/wiki/Tempo"
+  },
+  {
+   "id": "domino-rally-design-studio",
+   "name": "Domino Rally Design Studio",
+   "tagline": "One tile falls and tells the next: design a run with curves, splits and a finale, then earn the single push that sets it off.",
+   "categories": [
+    "rainy-day",
+    "stem"
+   ],
+   "age_min": 6,
+   "age_max": 9,
+   "group_min": 2,
+   "group_max": 20,
+   "time_min": 30,
+   "time_max": 45,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "a class set of dominoes or uniform blocks (books and wooden cubes work if they stand reliably; test one before promising forty)"
+    },
+    {
+     "item": "a hard, flat floor space per builder or pair, marked with tape so runs do not grow into each other's territory"
+    },
+    {
+     "item": "rulers or craft sticks for measuring gaps between tiles"
+    },
+    {
+     "item": "paper and pencil per builder for the run map: every design gets drawn before it gets built"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Test the tiles before the session: stand ten in a row at one-finger gaps on your actual floor and push the first. If the chain stalls, the gaps shrink; the studio's first engineering fact is that spacing is a measurement, not a guess, and builders will discover their own floor's number. Mark each builder's territory with tape and set the studio law: hands in your own territory, and a fallen run is information, never a disaster. Every builder draws their run on paper first (a line, a curve, one split or climb if they are ambitious) because domino builders work from plans, and the plan is what gets graded when the floor disagrees.",
+   "steps": [
+    "Free building, ten minutes: stand tiles, push, watch, adjust. Builders find their floor's spacing number by experiment and write it on their map (my gaps are one finger, or two centimetres). Numbers found by falling tiles are remembered.",
+    "Teach the two reliability tricks the professionals use: firebreaks (leave a removable tile every so often, so an accident only eats one section) and the test push (topple just the first section before building the rest). Builders add both to their maps.",
+    "Design round: each builder or pair draws a run with one named feature: a curve, a split that falls two ways, a bridge of two books the chain climbs, or a finale (a tile that knocks a ball, rings a bell, or drops a flag). Features must be drawn to be claimed.",
+    "Build to the map. When a section falls early, the builder rebuilds only that section (the firebreaks earn their keep) and notes on the map what changed: tighter gap, straighter line, slower hands.",
+    "The gallery push: builders take turns. One push per run, given by its builder, and the room watches in silence until the last tile falls or stops. A run that stops gets one question from the room, answered from the map: where, and what will you change?",
+    "Finale runs: anyone whose run fell entire may rebuild it joined to a neighbour's run, making the room's first two-builder chain. End the studio with every map filed; a returning studio starts from filed maps, not from memory."
+   ],
+   "variations": {
+    "easier": "Straight lines only, ten tiles, gaps measured with a craft stick laid flat between tiles so spacing is a tool, not a judgement.",
+    "harder": "Scoring by reliability: builders predict their run's fall count in writing before the push (all 60, or 45 of 60), then compare. Add a timed element only for builders who ask for it: longest run standing in fifteen minutes."
+   },
+   "safety": "Tiles and blocks stay on the floor; nothing is thrown, ever, and a builder who is frustrated steps back to their map rather than sweeping a run. Crawling and kneeling space is part of the territory marking.",
+   "copy_free": true,
+   "no_elimination": true,
+   "why_it_works": "Domino toppling is applied physics a child can see: spacing, friction and energy transfer decide whether the chain lives, and the plan-build-test loop is the engineering cycle at tabletop scale.",
+   "inclusion": "Builders can work seated at a low table with tiles on a tray rimmed to catch falls; a partner can stand tiles to a builder's map and measurements, with the design and the push belonging to the map's owner.",
+   "source": "https://en.wikipedia.org/wiki/Domino_toppling"
+  },
+  {
+   "id": "sock-bocce-indoor-league",
+   "name": "Sock Bocce: Indoor Court League",
+   "tagline": "The ancient lawn game moves indoors: soft sock balls, a hallway court, and points for whoever rests closest to the little ball.",
+   "categories": [
+    "rainy-day",
+    "pe-movement"
+   ],
+   "age_min": 9,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 16,
+   "time_min": 25,
+   "time_max": 40,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "eight sock balls: clean socks rolled tight and tied or taped into balls, four in each of two colours or patterns"
+    },
+    {
+     "item": "one small target ball (a foam ball, a balled pair of socks in a bright colour): the pallino"
+    },
+    {
+     "item": "masking tape for the court: a foul line at each end of a hallway or cleared floor lane, roughly six to ten metres long"
+    },
+    {
+     "item": "a tape measure or a length of string for the close calls, and a score card and pencil"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Roll the sock balls before the session and throw out any that come undone; a league ball must survive a wall bounce. Tape the court: two foul lines, and a centre line. Explain the shape of the game in one breath before dividing teams: we roll toward the little ball, closest ball scores, and the team that scored throws the little ball next round. Set the indoor law now: every roll is underarm, along the floor, at a speed a library would allow. Bocce is a game of touch, not power, and the sock balls enforce it kindly.",
+   "steps": [
+    "Teams of two to four. One player tosses the pallino down the court; it must cross the centre line to count. If it does not, the other team tosses it. Wherever it stops is the target for the round.",
+    "The team that tossed the pallino rolls the first ball, trying to rest it as close to the pallino as possible. Then the other team rolls, and keeps rolling until one of its balls sits closer than the first team's best, or it runs out of balls. Closest team always waits; the team that is behind does the rolling. This rule is the game's whole tactics lesson.",
+    "Rolls may nudge: a rolling ball can move the pallino or knock an opponent's ball away, and all of it counts. Court surfaces make sock balls wobble and stop short; players learn their lane the way lawn players learn a green.",
+    "When all eight balls are rolled, score the round: the team with the closest ball scores one point for every ball of theirs that sits closer than the other team's best ball. Measure the close ones with the string; arguing about a measurement is a sign the game is working, and the string settles it.",
+    "Play rounds to a league target (first to eight works in a session) rotating who tosses the pallino: the scoring team tosses it, so a comeback always starts with the target in your hand.",
+    "Close with the captains' challenge: each captain picks their team's single best resting position from the whole match and the room votes on the finest roll of the day, judged on touch, not luck. File the score card; a league that keeps its card can run a season."
+   ],
+   "variations": {
+    "easier": "Shorten the court to four metres, use three balls per team, and let every roll be a practice roll until a player asks for the real thing.",
+    "harder": "Add the bank shot: one round per match must be scored off the wall (the roll must touch the side wall before resting). Captains may also call a declared target: name the exact spot, double points if the ball rests within a hand-span of it."
+   },
+   "safety": "Rolls stay on the floor and underarm; no throwing at any height. Players retrieve balls only when the round is scored and the court is called clear.",
+   "copy_free": true,
+   "no_elimination": true,
+   "why_it_works": "Bocce has been played for centuries because its core skill, judging distance and touch under mild pressure, is learnable in one round and deepens for years; the behind-team-rolls rule keeps every player in the game until the last ball.",
+   "inclusion": "The game plays identically seated: a chair at the foul line is a legal and classic position, and rolling ramps (a stiff card channel) are welcome equipment. Sock balls are silent and soft, suiting sound-sensitive rooms.",
+   "source": "https://en.wikipedia.org/wiki/Bocce"
+  },
+  {
+   "id": "cup-anemometer-wind-lab",
+   "name": "Cup Anemometer Wind Lab",
+   "tagline": "Build the weather station's spinning cups, count the turns, and turn a summer week of breezes into numbers you can argue with.",
+   "categories": [
+    "stem",
+    "outdoor"
+   ],
+   "age_min": 9,
+   "age_max": 13,
+   "group_min": 3,
+   "group_max": 24,
+   "time_min": 40,
+   "time_max": 60,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "four small paper or plastic cups per instrument, plus one coloured with a marker (the counting cup)"
+    },
+    {
+     "item": "two stiff straws or thin dowels per instrument, crossed and taped at the centre"
+    },
+    {
+     "item": "a push pin or nail, a pencil with an eraser top, and a bead, per instrument (the axle: pin through the straw cross, into the eraser, bead as spacer)"
+    },
+    {
+     "item": "a stopwatch or phone timer, and a wind log: date, time, place, turns in 30 seconds, and what the air felt like"
+    },
+    {
+     "item": "the Beaufort scale card: the class-agreed version, copied from a trusted weather source onto the log's cover (calm under 1, up to storm)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Build one instrument yourself before the session and spin it outdoors; a cup anemometer that wobbles or stalls teaches the lab's first lesson early, which is that axle friction is the enemy and the bead spacer is the fix. Agree the counting law now, in writing on the log's cover: count only the coloured cup passing one fixed point, count for exactly thirty seconds, count in pairs (one watches, one counts aloud), and log the place and the hour with every reading, because wind numbers without a place and an hour are rumours. Choose the lab's three stations (an open field corner, a sheltered wall, a doorway or gap between buildings) and mark them on a sketch map in the log.",
+   "steps": [
+    "Build: cups stapled or taped to the four straw ends, all openings facing the same way around the cross. That sameness is the entire invention: wind pushes the hollow side harder than the round side, so the cross turns, and the turning can be counted. Spin each finished instrument by blowing gently; fix wobbles before going out.",
+    "Calibration by feel: at station one, take a reading and immediately write what the air did to your clothes, hair and the nearest leaves or grass. Then read the Beaufort card and find the row that matches what you felt. The instrument gives a number; the scale gives the number a meaning; the body checks both.",
+    "Station rounds: every crew reads all three stations inside one fifteen-minute window, so the comparison is honest. Log turns per thirty seconds at each station, twice, and keep the lower-friction reading (the higher count) with a note if the two disagreed wildly.",
+    "The map: crews transfer their numbers onto the sketch map and the room argues the pattern. Where was the wind fastest, and why there? Gaps between buildings squeeze air; open corners catch it; walls make eddies. A good lab ends with a claim the map supports and a claim it refuses to support.",
+    "The week: the log stays open for five days of readings at the agreed hour. Crews predict tomorrow's ranking of the three stations each day, in writing, before reading. The week grades the predictions, and the final session names the room's most reliable station and its most surprising one.",
+    "Close by retiring the instruments properly: repair one, file the log with the map, and write the lab's one-sentence finding on the cover (for example: the doorway beat the field four days out of five). Findings written on covers get read next summer."
+   ],
+   "variations": {
+    "easier": "Build from a pre-made cross, count for a full minute (easier arithmetic), and read one station only, calibrating by feel and the Beaufort card.",
+    "harder": "Convert counts to estimated wind speeds with a researched conversion the crew derives themselves: time a known walk, compare with a trusted weather reading for the same hour, and build the lab's own counts-to-speed table, errors and all."
+   },
+   "safety": "Pins and nails are handled at the build table only, points down in a cork when idle; instruments are carried by the pencil shaft, never swung. Outdoor rounds follow the site's weather rules: no lab in thunder weather, ever.",
+   "tags": [
+    "season:summer"
+   ],
+   "copy_free": false,
+   "no_elimination": true,
+   "why_it_works": "The cup anemometer has measured wind since 1846 because it turns an invisible force into a countable rotation; calibrating counts against felt experience and a standard scale teaches what measurement is for.",
+   "inclusion": "Counting, timing, logging and mapping are full lab roles for anyone who does not build; the coloured-cup counting method works by watching, listening for a partner's count, or tallying on a clicker.",
+   "source": "https://en.wikipedia.org/wiki/Anemometer"
+  },
+  {
+   "id": "rainbow-flower-capillary-lab",
+   "name": "Rainbow Flower Capillary Lab",
+   "tagline": "White flowers drink coloured water and keep the receipt: watch a stem pull colour up into the petals, hour by hour.",
+   "categories": [
+    "stem",
+    "seasons"
+   ],
+   "age_min": 6,
+   "age_max": 10,
+   "group_min": 3,
+   "group_max": 24,
+   "time_min": 25,
+   "time_max": 40,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "white flowers with fresh, pale stems (carnations are the classic; white daisies or celery stalks with leaves also show the effect)"
+    },
+    {
+     "item": "clear cups or jars, one per colour, plus water and food colouring in strong colours"
+    },
+    {
+     "item": "a knife for the leader only, for fresh stem cuts and one split-stem demonstration"
+    },
+    {
+     "item": "a lab sheet per crew: flower drawing outlines to colour in at each check, with the hour written beside each one"
+    },
+    {
+     "item": "a camera if you have one: a photo at each check is the lab's cleanest record"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Buy or pick the flowers the day before so stems can be cut fresh at setup; a stem cut hours early seals itself and drinks slowly, which is the lab's first honest variable. Set out one jar per colour with strong colouring (pale water gives pale results and disappointed scientists). Agree the checking rhythm before the first flower is cut: drawings or photos at the start, at one hour, at the end of the session, and first thing tomorrow. The lab's finding arrives overnight, so the promise to check in the morning is part of the experiment, and the lab sheets stay with the jars, not in bags.",
+   "steps": [
+    "Predict first, in drawing: each crew colours their lab sheet's flower the way they think it will look tomorrow, and signs it. A signed prediction is what turns looking into science.",
+    "The leader cuts each stem fresh, at a slant, under water if possible, and each crew places their flower in its colour jar. One flower goes in plain water: the control, the lab's quiet hero, the one that proves the colour did something.",
+    "The split-stem demonstration (leader-built): one stem split lengthways, half in red, half in blue. Its petals will show both colours, and crews draw their prediction for it too, because it looks like a trick and is not one.",
+    "First checks: at one hour, crews look for the earliest signs (colour creeping up the stem's edges, the faintest petal blush) and record exactly what they see, including 'nothing yet', which is a real result and gets written down like one.",
+    "The explanation, once the colour is visible: the stem is a bundle of narrow tubes, and water climbs narrow tubes and carries the colour with it, the same pull that lets a paper towel soak up a spill and a plant drink from its roots. Crews add the word to their sheets: capillary action, the climb of water in narrow spaces.",
+    "Tomorrow's reveal: compare flowers to the signed predictions and the control. Crews grade their own predictions kindly and precisely (right colour, wrong pattern counts as half right and says why), and the split-stem flower gets the room's verdict: trick, or tubes?"
+   ],
+   "variations": {
+    "easier": "Use celery stalks in coloured water (the tubes show as bright lines within the hour) and one check only, with the drawing done while the colour climbs.",
+    "harder": "Run a race with variables: one flower in warm water, one in cold, one with a longer stem, one with a shorter; crews design the comparison, keep everything else the same, and report which variable mattered and how they know."
+   },
+   "safety": "Food colouring stains hands and clothes; aprons on, jars stay on trays, and nobody drinks from a lab jar, ever. The leader does all knife work, and flowers are looked at, not eaten.",
+   "tags": [
+    "season:spring"
+   ],
+   "copy_free": false,
+   "no_elimination": true,
+   "why_it_works": "Capillary action is one of the few invisible forces that leaves a visible, timed trail; the colour arriving in the petals is direct evidence a child can check against a prediction they signed.",
+   "inclusion": "Drawing the checks, mixing the colours to strength and reading the lab sheet aloud are full crew roles; the reveal works at any distance, and a magnifier at the stem makes the climbing colour lines visible to anyone who wants the close view.",
+   "source": "https://en.wikipedia.org/wiki/Capillary_action"
+  },
+  {
+   "id": "floating-lights-diya-bowl",
+   "name": "Floating Lights: A Diwali Diya Bowl",
+   "tagline": "For the festival of lights, a bowl of water carries the lights: LED diyas floated among petals, glowing without a single flame.",
+   "categories": [
+    "holidays",
+    "crafts"
+   ],
+   "age_min": 7,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 24,
+   "time_min": 25,
+   "time_max": 35,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "a wide, shallow bowl or basin, glass or ceramic, one per table"
+    },
+    {
+     "item": "battery LED tea lights, one or two per maker (these are the diyas: all of the glow, none of the flame)"
+    },
+    {
+     "item": "fresh flower petals and a few whole small flowers for floating (marigolds are the festival's own flower where you can get them)"
+    },
+    {
+     "item": "water, a jug for filling, and a towel under every bowl"
+    },
+    {
+     "item": "optional: small floating decorations makers bring from the craft shelf: foil stars, paper petals, sequins that will be fished out and kept, never poured away"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Learn before you light: this activity is taught the way the vault teaches every festival, by learning the real tradition first (see the steps) and inventing nothing. Traditional diyas are small clay oil lamps, lit for Diwali so that rows of light welcome good into the home and mark light standing against darkness; families place them at doors, windows and courtyards. Our bowls float the lights on water instead, a display many families also make, and every light in the room is battery LED: the festival's glow is welcome in a classroom precisely because the flame stays out of it. Fill bowls three-quarters full and set them on towels before any petals go in.",
+   "steps": [
+    "The story first, told plainly by the leader: Diwali is a festival of lights celebrated by Hindu, Jain, Sikh and some Buddhist families around the world. Its best-known story tells of a prince's long-awaited homecoming, when the people of his city lit rows of small lamps to light his way home. That is why the lamps matter: they are a welcome, made of light.",
+    "Petal laying: makers scatter petals on the water a few at a time, learning the water's rules as they go (petals drift, cluster at edges, and spin slowly if the bowl is nudged). A crowded bowl looks poorer than a spaced one; makers edit their own bowls, removing as well as adding.",
+    "Floating the lights: switch on each LED diya and set it on the water gently, base down. Some lights sit high, some low; makers arrange until their bowl carries its lights the way a doorstep carries lamps: in a row, a ring, or a path. All three patterns are traditional answers, and the maker chooses.",
+    "Lights down: dim the room if you safely can, and walk the gallery of bowls in quiet. The reflections double every light, which is the floating display's own gift, and makers will point it out to each other without being asked.",
+    "The maker's card: each maker writes a small card to stand by their bowl for the gallery: who or what their light is a welcome for. Cards are offered, never required, and a card that says only 'for everyone coming home' is complete.",
+    "Closing law, kept kindly: bowls are emptied by straining the water through a sieve into the sink, so petals and decorations are kept or binned, never poured into drains or gardens. Lights are dried, switched off, and counted back into their box, ready to welcome again at the next festival."
+   ],
+   "variations": {
+    "easier": "One shared bowl for the whole group, with makers taking turns to place a petal or a light; the gallery walk becomes a circle around a single glowing centre.",
+    "harder": "Design brief: makers plan their bowl on paper first as a pattern (ring, path, cluster) with a reason, then build to the plan, and the gallery pairs bowls by pattern so makers can compare how different hands read the same brief."
+   },
+   "safety": "Water and batteries are kept apart except for the sealed LED units, which are checked before floating and retired if a seal is broken. No real candles or oil lamps are used at any point. Wet floors are towelled at once.",
+   "tags": [
+    "holiday:diwali"
+   ],
+   "copy_free": true,
+   "no_elimination": true,
+   "why_it_works": "Festival learning lands when hands do what the tradition does: arranging lights as a welcome, after hearing why the welcome is lit, teaches the festival's meaning as an action rather than a fact.",
+   "inclusion": "Placing petals and lights is gentle, seated, fine-motor work at one's own pace; a maker who prefers not to handle water can direct a partner's hands as the bowl's designer, and the gallery walk is step-free around table-height bowls.",
+   "source": "https://en.wikipedia.org/wiki/Diya_(lamp)"
+  },
+  {
+   "id": "kickball",
+   "name": "Kickball",
+   "tagline": "Baseball's playground cousin: one big ball, pitched slow, kicked far, and run like the bases are on fire.",
+   "categories": [
+    "pe-movement",
+    "outdoor",
+    "team-community"
+   ],
+   "age_min": 6,
+   "age_max": 14,
+   "group_min": 10,
+   "group_max": 30,
+   "time_min": 20,
+   "time_max": 40,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "playground ball (10 inch rubber ball)"
+    },
+    {
+     "item": "4 bases or cones"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Mark a diamond on grass or blacktop with four bases, home plate at one corner. A kickball diamond can be half the size of a baseball one and still play true. Split the group into two teams and write a kicking order for each, so nobody argues about turns.",
+   "steps": [
+    "The pitcher rolls the ball underhand toward home plate, smooth and bouncy. A pitch that hops wildly or rolls too fast can be called back by the kicker.",
+    "The kicker waits for the roll and kicks it into fair ground, anywhere inside the lines the group agreed on.",
+    "Fielders get a runner out three ways: catch the kick in the air, tag a base ahead of the runner, or touch the runner with the ball below the shoulders while they run. Head shots never count and stop play on the spot.",
+    "Three outs and the teams swap sides. Everyone on a team kicks before anyone kicks twice.",
+    "Play two or three innings, or until the agreed time runs out. Count the runs together out loud; the scorekeeping is part of the game."
+   ],
+   "variations": {
+    "easier": "Let young kickers kick a still ball set on a cone, tee style, and shorten the base paths.",
+    "harder": "Shrink the diamond and play hands-free fielding on ground balls: fielders may trap the ball with feet and shins only, soccer style."
+   },
+   "safety": "Throws at runners stay below the shoulders, always. Clear the base paths of bags and bottles before the first pitch, and no fielder stands inside the front arc of the diamond until the ball is kicked.",
+   "inclusion": "A player who kicks from a seated position or off a tee plays by the same outs as everyone else. A larger, softer ball makes one diamond fair for mixed ages.",
+   "source": "https://en.wikipedia.org/wiki/Kickball",
+   "photo": {
+    "file": "r30/kickball.webp",
+    "alt": "Children playing kickball on a grass field, a green playground ball in play",
+    "caption": "Kickball on the grass, playground ball in play.",
+    "credit": "Photo: NPS, Public domain, via Wikimedia Commons",
+    "licence": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Members_of_the_Plains_Boys_and_Girls_Club_play_a_game_of_kickball_on_the_field_at_Plains_High_School._(857f119b-1dd8-b71c-0763-80955484a90e).jpg"
+   },
+   "copy_free": true
+  },
+  {
+   "id": "four-square",
+   "name": "Four Square",
+   "tagline": "Four chalk squares, one ball, and a line of challengers waiting to climb to the top court.",
+   "categories": [
+    "pe-movement",
+    "outdoor"
+   ],
+   "age_min": 6,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 20,
+   "time_min": 10,
+   "time_max": 30,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "playground ball"
+    },
+    {
+     "item": "chalk or tape for the court"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Draw a square about ten feet across and split it into four smaller squares, lettered A to D, with A the top court. One player stands in each square and the rest form a line at the court's edge. Agree the house rules before the first serve; four square runs on rules every player can repeat.",
+   "steps": [
+    "The player in A serves: bounce the ball once in your own square, then hit it underhand into another player's square.",
+    "The receiving player lets it bounce once in their square, then hits it on into any other square. Hands only; no catching, no carrying.",
+    "A player is out when the ball bounces twice in their square, when they hit it out of the court, or when a ball landing in their square goes unreturned.",
+    "The out player goes to the back of the line. Everyone below their square moves up one, and the first player in line enters at D.",
+    "The goal is the long climb: survive at D, rise through C and B, and hold A against all challengers."
+   ],
+   "variations": {
+    "easier": "Allow two bounces and a catch for young players, and shrink the court so small arms can reach every corner.",
+    "harder": "Classic call-outs apply: no backsies, no double taps, and the A player may add one rule per reign, announced before serving."
+   },
+   "safety": "Keep the waiting line a full step behind the court so swings and lunges stay clear of faces. Use a soft playground ball, never a hard ball, and stop play for anyone crossing the court.",
+   "source": "https://en.wikipedia.org/wiki/Four_square",
+   "no_elimination": true,
+   "copy_free": true
+  },
+  {
+   "id": "sharks-and-minnows",
+   "name": "Sharks and Minnows",
+   "tagline": "One shark in the middle of the pool, a wall of minnows at the edge, and a crossing nobody wants to rush.",
+   "categories": [
+    "outdoor",
+    "pe-movement"
+   ],
+   "age_min": 7,
+   "age_max": 14,
+   "group_min": 6,
+   "group_max": 30,
+   "time_min": 15,
+   "time_max": 30,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "a swimming pool, with a lifeguard or supervising adult on watch"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Play in water where every swimmer can handle the depth, with an adult watching the water, and nobody in the game who is not a confident swimmer at that depth. One player starts as the shark in the middle of the pool. Everyone else lines up at one wall as minnows.",
+   "steps": [
+    "The shark calls the start: 'Sharks and minnows, one, two, three, minnows, minnows, swim to me!'",
+    "Minnows swim for the far wall any way they like: fast, slow, along the bottom. Touching the far wall means safety.",
+    "The shark tags as many minnows as possible mid-crossing. A light one-hand touch counts; grabbing and pulling never do.",
+    "Tagged minnows become sharks for the next crossing. The wall of sharks grows every round, and the crossing takes more nerve each time.",
+    "The last minnow still free when the crossings end becomes the first shark of the next game."
+   ],
+   "variations": {
+    "easier": "Play in the shallow end where minnows can run and splash across, and let newer swimmers cross with a pool noodle.",
+    "harder": "Minnows keep their heads above water for the whole crossing, so the sharks hunt by sight and sound."
+   },
+   "safety": "A lifeguard or supervising adult is not optional; this game runs only under watch, in water matched to the weakest swimmer, with no diving in, no dunking, and no holding anyone under. Ever.",
+   "tags": [
+    "season:summer"
+   ],
+   "source": "https://scoutermom.com/24751/sharks-and-minnows/",
+   "no_elimination": true,
+   "copy_free": true
+  },
+  {
+   "id": "marco-polo",
+   "name": "Marco Polo",
+   "tagline": "Eyes closed in the pool: one voice calls 'Marco' and every splash answers 'Polo'.",
+   "categories": [
+    "outdoor",
+    "pe-movement"
+   ],
+   "age_min": 7,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 20,
+   "time_min": 15,
+   "time_max": 30,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "a swimming pool, with a lifeguard or supervising adult on watch"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Play in a pool where everyone can swim the depth, under a lifeguard's or supervising adult's eye. One player is Marco. Everyone else spreads through the water. Agree the boundaries first: the game stays inside the marked area, and climbing out is out of bounds unless the group votes to allow deck play.",
+   "steps": [
+    "Marco closes their eyes, counts to ten out loud, and calls 'Marco!'",
+    "Every other player answers 'Polo!' at once, wherever they are. No silent swimmers; the answer is the game.",
+    "Marco swims toward the voices, calling as often as they like, hunting by ear for a one-hand tag.",
+    "Players dodge, duck, and glide quietly between calls, but the moment 'Marco' rings out, their 'Polo' gives them away.",
+    "A tagged player becomes the new Marco, and the old Marco joins the chorus."
+   ],
+   "variations": {
+    "easier": "Play in the shallow end where everyone can stand, and let Marco take one open-eyed look between every third call.",
+    "harder": "Fish out of water: if Marco calls it and a player is sneaking along the deck, that player is caught on the spot. Use it only where the deck is dry and safe to walk."
+   },
+   "safety": "Supervision is the first rule: a lifeguard or adult watches the whole game. No diving, no holding under, no play in water over a swimmer's depth. A player who needs a break climbs out and says so, and the game pauses for anyone in trouble, instantly.",
+   "tags": [
+    "season:summer"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Marco_Polo_(game)",
+   "no_elimination": true,
+   "copy_free": true
+  },
+  {
+   "id": "hot-potato",
+   "name": "Hot Potato",
+   "tagline": "A beanbag too hot to hold: pass it fast, pass it kind, and never be holding it when the music stops.",
+   "categories": [
+    "music-rhythm",
+    "icebreakers"
+   ],
+   "age_min": 4,
+   "age_max": 10,
+   "group_min": 6,
+   "group_max": 30,
+   "time_min": 10,
+   "time_max": 20,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "beanbag or soft ball"
+    },
+    {
+     "item": "music player"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Sit or stand in a circle close enough to pass hand to hand. One soft object is the potato; a beanbag beats a ball because it does not roll away mid-panic. The music keeper sits outside the circle, back turned or eyes averted, so no stop can be called a fix.",
+   "steps": [
+    "Music starts and the potato travels around the circle, hand to hand, as fast as hands can safely move it. No throwing across the circle.",
+    "The music stops without warning. Whoever holds the potato takes the hot seat: answer a silly question, name a favourite food, or lead three jumping jacks while the circle cheers.",
+    "Music restarts and the potato moves again. Nobody leaves the circle; the hot seat is a moment, not an exit.",
+    "Keep the rounds short and the music clips shorter as the game warms up. End while everyone still wants one more stop."
+   ],
+   "variations": {
+    "easier": "Roll the potato around a seated circle instead of passing, and count down 'three, two, one' before some stops so young players can brace.",
+    "harder": "Two potatoes travelling in opposite directions. When the music stops, both holders take the hot seat and answer as a pair."
+   },
+   "safety": "Underhand, hand to hand, always. A dropped potato is picked up by the nearest hands and play goes on; nobody dives for it.",
+   "source": "https://en.wikipedia.org/wiki/Hot_potato",
+   "no_elimination": true,
+   "copy_free": true
+  },
+  {
+   "id": "pass-the-parcel",
+   "name": "Pass the Parcel",
+   "tagline": "A prize wrapped in a dozen layers, passed to the music: every stop unwraps somebody's layer.",
+   "categories": [
+    "music-rhythm",
+    "icebreakers"
+   ],
+   "age_min": 4,
+   "age_max": 10,
+   "group_min": 6,
+   "group_max": 25,
+   "time_min": 15,
+   "time_max": 25,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "one small prize"
+    },
+    {
+     "item": "wrapping paper or fabric bags, many layers"
+    },
+    {
+     "item": "music player"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Wrap one small prize in many layers, one layer per player plus a few spare, using different papers or fabric bags so the layers are easy to tell apart. Slip a sticker, a joke, or a tiny treat between some of the layers if you like. Players sit in a circle; the music keeper stays outside it, where the stops stay honest.",
+   "steps": [
+    "Music plays and the parcel passes hand to hand around the circle, quickly and kindly.",
+    "The music stops. The player holding the parcel unwraps exactly one layer and keeps whatever they find tucked in it.",
+    "Music starts again and the parcel moves on. The stops come at uneven moments, so over a full game every seat gets its unwrap.",
+    "The last layer holds the prize. The player who unwraps it keeps it, and the circle applauds the parcel that made it all the way around."
+   ],
+   "variations": {
+    "easier": "Hide a small treat in every layer, so the youngest players win something at their very first stop.",
+    "harder": "Hide challenge slips between the layers instead of treats: unwrap, then do the challenge (hop five times, name five animals that swim) before the music may restart."
+   },
+   "safety": "Choose any layer treats with the group's allergies in mind, or skip food entirely for stickers and jokes. Passing stays hand to hand; a torn layer is a hazard to nobody.",
+   "source": "https://en.wikipedia.org/wiki/Pass_the_parcel",
+   "no_elimination": true
+  },
+  {
+   "id": "follow-the-leader",
+   "name": "Follow the Leader",
+   "tagline": "One leader, one winding line, and every hop, spin, and silly walk copied all the way down.",
+   "categories": [
+    "pe-movement",
+    "icebreakers"
+   ],
+   "age_min": 3,
+   "age_max": 7,
+   "group_min": 4,
+   "group_max": 25,
+   "time_min": 10,
+   "time_max": 20,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "setup": "Pick the first leader, often the teacher or an older child, and line everyone else up behind them, an arm's length apart. Clear the path ahead: the line will wind wherever the leader takes it, around the chairs, down the hall, or across the yard.",
+   "steps": [
+    "The leader starts moving: marching, hopping, tiptoeing, flapping, freezing. Whatever the leader does, the line copies.",
+    "Keep the moves big and slow enough for the smallest follower to copy. The leader's job is to be followed, not to escape.",
+    "Every minute or so, or at a natural pause, the leader goes to the back of the line and the next child leads. Everyone leads; nobody waits long.",
+    "Finish with the whole line copying one last slow move together: a stretch up tall, then a melt down to the floor, for quiet."
+   ],
+   "variations": {
+    "easier": "The leader names each move as they do it ('now we hop!'), and the line stays short: five or six followers.",
+    "harder": "Silent leading with an echo rule: the leader adds a rhythm, two claps and a stomp, and the line must copy the moves and echo the rhythm in time."
+   },
+   "safety": "Leaders keep the line on safe ground: no climbing, no running near edges or roads, and a walking pace anywhere near stairs. A follower who needs to stop steps out of the line and rejoins at the back.",
+   "source": "https://en.wikipedia.org/wiki/List_of_children%27s_games",
+   "no_elimination": true,
+   "copy_free": true
+  },
+  {
+   "id": "mother-may-i",
+   "name": "Mother, May I?",
+   "tagline": "Ask politely, move cleverly: giant steps, baby steps, and a leader who loves to answer 'no, but you may instead'.",
+   "categories": [
+    "pe-movement",
+    "outdoor"
+   ],
+   "age_min": 4,
+   "age_max": 8,
+   "group_min": 4,
+   "group_max": 20,
+   "time_min": 10,
+   "time_max": 20,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "setup": "One player is the leader, called Mother, Father, or Captain, standing at one end of the space. Everyone else lines up at the far end, an arm's length apart. Mark both ends so the distance is honest, and agree that the leader's line is the goal.",
+   "steps": [
+    "Players take turns asking: 'Mother, may I take three giant steps?' Every ask names a number and a kind of step: giant steps, baby steps, umbrella steps (twirling), frog hops, crab steps.",
+    "The leader answers 'Yes, you may', or 'No, you may not, but you may take two baby steps instead.' The leader's answer rules, even when it sends a player backwards.",
+    "Move without asking 'may I' and the move does not count; the player returns to where they stood. The asking is the game.",
+    "The first player to reach the leader's line becomes the leader for the next round."
+   ],
+   "variations": {
+    "easier": "Use picture steps for pre-readers, big dinosaur steps and tiny mouse steps, and let the leader always say yes to a polite ask.",
+    "harder": "The leader may only answer with swaps, never a plain yes, and each player may bargain once per turn: 'May I trade those baby steps for one giant step?'"
+   },
+   "safety": "Keep the playing lane clear and the step sizes honest for the smallest legs in the line. Crab walks and frog hops belong on soft ground or mats.",
+   "source": "https://en.wikipedia.org/wiki/Mother_may_I%3F",
+   "no_elimination": true,
+   "copy_free": true
+  },
+  {
+   "id": "whats-the-time-mr-wolf",
+   "name": "What's the Time, Mr Wolf?",
+   "tagline": "'Three o'clock' means three brave steps closer. 'Dinner time' means run for the line.",
+   "categories": [
+    "pe-movement",
+    "outdoor"
+   ],
+   "age_min": 4,
+   "age_max": 9,
+   "group_min": 5,
+   "group_max": 25,
+   "time_min": 10,
+   "time_max": 20,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "setup": "One player is Mr Wolf, standing at one end of the space with their back to the group. Everyone else lines up at the far end. Mark the safe line behind the group: crossing it means safety when the chase comes, and leave room beyond it to slow down.",
+   "steps": [
+    "The group chants together: 'What's the time, Mr Wolf?'",
+    "The Wolf answers with an hour: 'Four o'clock!' Everyone takes four steps toward the Wolf, counting out loud as they go.",
+    "Ask, answer, step, again and again. The Wolf picks the hours: big ones to hurry the group close, small ones to tease.",
+    "Sooner or later the Wolf answers 'Dinner time!' and spins around to chase. Everyone runs for the safe line.",
+    "A player caught before the line becomes the Wolf for the next round. If nobody is caught, the Wolf stays Wolf, and the line creeps closer next time."
+   ],
+   "variations": {
+    "easier": "The Wolf answers only small hours, one to three, and saves 'dinner time' for rare moments, with a head start called for the youngest runners.",
+    "harder": "Add midnight: 'Midnight!' means freeze exactly where you stand until the next question; a mover the Wolf spots returns to the start line."
+   },
+   "safety": "The chase runs one way, toward the safe line, with open room at the end to slow down in. Tag with a touch, never a tackle, and keep the Wolf's turning space clear.",
+   "source": "https://en.wikipedia.org/wiki/What%27s_the_time,_Mr_Wolf%3F",
+   "no_elimination": true,
+   "copy_free": true
+  },
+  {
+   "id": "sardines",
+   "name": "Sardines",
+   "tagline": "Hide and seek turned inside out: one player hides, everyone hunts, and the hiding spot slowly fills with sardines.",
+   "categories": [
+    "icebreakers",
+    "team-community"
+   ],
+   "age_min": 8,
+   "age_max": 14,
+   "group_min": 6,
+   "group_max": 25,
+   "time_min": 20,
+   "time_max": 40,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "setup": "Agree the boundaries and the off-limits places before anyone hides; sardines only works where hiding is allowed. One player is the first sardine and goes off to hide while everyone else closes their eyes and counts slowly to fifty, out loud, together.",
+   "steps": [
+    "Seekers split up and hunt alone and quietly. No teams, no calling out a find; the secret is the game.",
+    "A seeker who finds the hiding spot says nothing. They check that nobody is watching, then squeeze in and hide too, silent as a sardine in the tin.",
+    "The spot fills one player at a time. Seekers still hunting roam a space that feels emptier and emptier, which is its own kind of funny.",
+    "The last seeker still hunting when everyone else is packed in becomes the first sardine of the next round.",
+    "Unpack the tin together, count the sardines, and argue happily about who gave it away by giggling."
+   ],
+   "variations": {
+    "easier": "Play in a small, familiar space and send two sardines out together, so the first hiding spot is found fast and fills faster.",
+    "harder": "Silent round: the packed sardines may not laugh, whisper, or shift. One sound that draws a seeker in, and the tin is found."
+   },
+   "safety": "Hiding spots must be safe to stay in and easy to leave: never inside appliances, cupboards that latch, vehicles, or anywhere a player could be trapped or hard to find in an emergency. The leader always knows the boundaries and the round's time limit, and the leader's whistle ends any round at once.",
+   "source": "https://en.wikipedia.org/wiki/Hide-and-seek",
+   "no_elimination": true,
+   "copy_free": true
+  },
+  {
+   "id": "kick-the-can",
+   "name": "Kick the Can",
+   "tagline": "One can, one jail, and a whole ground full of hiders: kick the can and everybody runs free.",
+   "categories": [
+    "outdoor",
+    "pe-movement"
+   ],
+   "age_min": 8,
+   "age_max": 14,
+   "group_min": 6,
+   "group_max": 20,
+   "time_min": 20,
+   "time_max": 40,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "an empty can or plastic bottle"
+    }
+   ],
+   "no_prep": true,
+   "setup": "Set the can on open ground at home base and mark a jail beside it: a porch step, a bench, a chalk square. Agree the boundaries of the hiding ground and what is off limits, and walk them once with the whole group. One player is It, and guards the can.",
+   "steps": [
+    "It closes their eyes and counts to fifty while everyone hides inside the boundaries.",
+    "It hunts. Spotting a hider, It races back to the can, stamps beside it, and calls the hider's name and hiding place: 'One, two, three on Maya, behind the oak!'",
+    "A named hider comes in and waits in jail. It keeps hunting, but now the can has a second game running around it.",
+    "Any free hider may sneak in and kick the can as hard as they dare. A kicked can frees every prisoner, who scatter and hide again while It sets the can up and counts to twenty.",
+    "The round ends when every hider sits in jail. The first player caught becomes It for the next round."
+   ],
+   "variations": {
+    "easier": "Shrink the ground, shorten the count to twenty, and let jailed players hold a hand-chain reaching out of the jail: a free hider only has to tag the chain's end to free everyone.",
+    "harder": "Twilight round: It hunts with a flashlight, hiders move in the dark, and the can gets a new home base every round."
+   },
+   "safety": "Set the boundaries tighter than feels necessary and keep them off streets and driveways entirely; in fading light, smaller and familiar beats big and thrilling. The can is kicked along the ground, never thrown. Jail is a waiting spot and nothing more: a player who needs out is out, no argument.",
+   "source": "https://en.wikipedia.org/wiki/Tag_sports",
+   "copy_free": true
+  },
+  {
+   "id": "egg-and-spoon-race",
+   "name": "Egg-and-Spoon Race",
+   "tagline": "A spoon, a wobbling egg, and a finish line that punishes every hurried step.",
+   "categories": [
+    "pe-movement",
+    "team-community"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 10,
+   "time_max": 20,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "spoons (one per racer)"
+    },
+    {
+     "item": "eggs, or stand-ins: ping pong balls, small potatoes, cotton balls"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Mark a start and a finish on grass or a gym floor, fifteen to twenty big steps apart for young racers and farther for older ones. Use a stand-in unless the group is ready for real shells and the cleanup that follows them. One spoon and one egg per racer, and a spare basket of eggs at the start line.",
+   "steps": [
+    "Racers line up, spoon held out in one hand at waist height, egg balanced in the spoon's bowl. The free hand goes behind the back.",
+    "On 'go', walk fast. Running breaks eggs; the quickest walker with the steadiest hand wins this race.",
+    "A dropped egg stops its racer: pick it up, set it back on the spoon where it fell, and only then walk on. No steadying the egg with a thumb; thumbs are famous cheats in this race.",
+    "Cross the finish with the egg still riding the spoon. In relay form, pass spoon and egg to the next racer without any hand touching the egg."
+   ],
+   "variations": {
+    "easier": "Balance the egg on a big serving spoon, shorten the course, and let racers walk in pairs who may steady each other by the elbow.",
+    "harder": "Add a slalom of cones and a turn at the far end, or race with the spoon in the non-dominant hand."
+   },
+   "safety": "Walk, do not run, is a safety rule as much as a game rule: racers watch their spoons, so the course stays clear of holes, hoses, and other racers' lanes. Real eggs mean slippery spills underfoot; stop and wipe them at once, or race with stand-ins.",
+   "source": "https://en.wikipedia.org/wiki/Egg-and-spoon_race",
+   "photo": {
+    "file": "r30/egg-and-spoon-race.webp",
+    "alt": "Two racers walking fast, each balancing a small ball on a spoon",
+    "caption": "Spoons steady, eyes down, feet quick.",
+    "credit": "Photo: Dobfalog, CC BY-SA 4.0, via Wikimedia Commons",
+    "licence": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Egg_and_Spoon_Race.jpg"
+   },
+   "no_elimination": true,
+   "copy_free": true
+  },
+  {
+   "id": "sack-race",
+   "name": "Sack Race",
+   "tagline": "Both legs in one burlap sack: the field day race where the fastest runners become beginners again.",
+   "categories": [
+    "pe-movement",
+    "outdoor"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 10,
+   "time_max": 20,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "burlap sacks or sturdy pillowcases (one per racer)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Grass is the only fair course for a sack race; falls are part of the fun and should land softly. Mark a start and a finish about twenty big steps apart. Each racer stands inside a sack pulled up to the waist, holding its top edge with both hands.",
+   "steps": [
+    "On 'go', hop. Both feet stay in the sack and the sack stays held up; a sack that slides to the ankles stops all travel until it is hauled back up.",
+    "Small hops beat giant ones. The racers who try to leap usually meet the grass, to general applause.",
+    "Fall down, get up, hop on. Nobody is out for falling; this race forgives everything except quitting.",
+    "First across the finish with both feet still in the sack wins. In relay form, hop the return leg too, then hand the sack to the next racer, who climbs fully in before hopping."
+   ],
+   "variations": {
+    "easier": "Short course, pillowcases for small racers, and a walking partner beside each racer for balance.",
+    "harder": "Double sack: two racers share one wide sack, four legs and one hop rhythm, or add a turn cone at halfway."
+   },
+   "safety": "Grass only, checked for holes and stones first, and sacks checked for torn seams before racing. A racer who falls badly sits out and cheers; hopping on a hurt ankle is never the price of finishing.",
+   "source": "https://en.wikipedia.org/wiki/Sack_race",
+   "photo": {
+    "file": "r30/sack-race.webp",
+    "alt": "Children hopping in burlap sacks while friends cheer them on",
+    "caption": "Sack racers mid-hop, with the crowd close by.",
+    "credit": "Photo: Irsam Soetarto, CC BY-SA 4.0, via Wikimedia Commons",
+    "licence": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Balap_Karung.jpg"
+   },
+   "no_elimination": true,
+   "copy_free": true
+  },
+  {
+   "id": "three-legged-race",
+   "name": "Three-Legged Race",
+   "tagline": "Two racers, three legs, one rhythm: 'inside, outside' all the way to the finish line.",
+   "categories": [
+    "pe-movement",
+    "team-community"
+   ],
+   "age_min": 6,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 10,
+   "time_max": 20,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "soft ties: scarves, bandanas, or velcro straps (one per pair)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Pair racers of similar height where you can. The tie joins the inside ankles of partners standing side by side; use a soft scarf or a velcro strap, snug but never tight. Mark start and finish on grass, twenty to thirty steps apart, and give every pair two practice minutes before any racing. The practice is where the rhythm is found.",
+   "steps": [
+    "Partners put arms around each other's shoulders or waists. The tied legs move together or nobody moves at all.",
+    "Find the chant: 'inside, outside, inside, outside', with the tied legs stepping on 'inside'. Say it out loud the whole way; every good pair does.",
+    "On 'go', walk the rhythm first. Pairs who start at a run usually finish on the grass. Speed arrives after the chant is steady.",
+    "Cross the finish still tied and still standing. In relay form, the finished pair passes the tie to the next pair, who tie up before stepping off."
+   ],
+   "variations": {
+    "easier": "Walk the whole course with no racing at all, and let first-time pairs hold hands instead of tying, to learn the rhythm.",
+    "harder": "A longer course with one gentle turn, or the whisper rule: no chanting, so pairs must find the rhythm by feel alone."
+   },
+   "safety": "Soft ties only, tied at the ankle and checked before starting; a tie that hurts comes off, full stop. Grass course, clear of holes. Teach the fall in the practice minutes: lean into your partner and sit down together, because pairs fall together or not at all.",
+   "source": "https://en.wikipedia.org/wiki/Three-legged_race",
+   "photo": {
+    "file": "r30/three-legged-race.webp",
+    "alt": "Two racers with their inside legs tied together, mid-stride on a court",
+    "caption": "Tied at the ankle, moving as one.",
+    "credit": "Photo: Tony Alter, CC BY 2.0, via Wikimedia Commons",
+    "licence": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Three-Legged_Race_(8149193405).jpg"
+   },
+   "no_elimination": true,
+   "copy_free": true
+  },
+  {
+   "id": "wheelbarrow-race",
+   "name": "Wheelbarrow Race",
+   "tagline": "One partner walks on their hands while the other steers by the ankles: the race that empties every arm in the field.",
+   "categories": [
+    "pe-movement",
+    "team-community"
+   ],
+   "age_min": 6,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 10,
+   "time_max": 15,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [],
+   "no_prep": true,
+   "setup": "Pairs: one wheelbarrow, one driver. The barrow starts on hands and knees on the grass, and the driver stands behind, ready to lift the barrow's ankles to waist height. Mark a short course, ten to fifteen steps is plenty to begin with; this race is harder on arms than it looks.",
+   "steps": [
+    "The driver lifts the barrow's legs gently, and the barrow walks forward on their hands. Slow is steady; a barrow who rushes plants face first.",
+    "Drivers steer with gentle pressure and call the turns early. The pair that talks is the pair that stays up.",
+    "At the far line, swap: the barrow becomes the driver, the driver becomes the barrow, and the pair races back.",
+    "First pair home with both halves raced wins. Rest between heats; tired arms get a vote on whether there is a final."
+   ],
+   "variations": {
+    "easier": "Half the course, with the driver holding at the knees instead of the ankles, which shortens the lever and the effort.",
+    "harder": "Slalom the cones on the way out, or pivot turns only: at the far line the driver may not set the barrow down, only turn and go."
+   },
+   "safety": "Grass only, soft and clear. Drivers lift by the ankles, never yank, and set their barrow down gently the moment a wrist or shoulder complains. A barrow who says 'down' goes down; that rule outranks every race.",
+   "source": "https://en.wikipedia.org/wiki/Wheelbarrow_race",
+   "photo": {
+    "file": "r30/wheelbarrow-race.webp",
+    "alt": "Children racing as wheelbarrow pairs on grass, partners holding their legs",
+    "caption": "Hands down, legs up, and off they go.",
+    "credit": "Photo: Eirian Evans, CC BY-SA 2.0, via Wikimedia Commons",
+    "licence": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Wheelbarrow_race_-_geograph.org.uk_-_815093.jpg"
+   },
+   "no_elimination": true,
+   "copy_free": true
+  },
+  {
+   "id": "gaga-ball",
+   "name": "Gaga Ball",
+   "tagline": "Inside the pit the ball stays low and the hits stay kind: last player standing takes the round.",
+   "categories": [
+    "pe-movement",
+    "outdoor"
+   ],
+   "age_min": 7,
+   "age_max": 14,
+   "group_min": 6,
+   "group_max": 20,
+   "time_min": 10,
+   "time_max": 25,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "a gaga pit, or a low-walled octagon of benches and mats"
+    },
+    {
+     "item": "a soft foam or light rubber ball"
+    }
+   ],
+   "no_prep": false,
+   "setup": "You need a pit: an octagon of low walls, or a ring of gym benches and mats that keeps a soft ball in play. Players stand inside, spread around the walls, each with one hand touching the wall until the start. The ball must be soft; gaga is a foam or light rubber ball game, never a hard ball game.",
+   "steps": [
+    "The leader bounces the ball in the centre three times, calling 'Ga... Ga... Go!' No player may touch the ball before the third bounce.",
+    "Hit the ball with an open hand, one hit at a time, aiming at other players below the knee. This is a tapping game; swings stay gentle.",
+    "A player hit below the knee is out for the round and steps out to cheer from the wall. Players may block with their hands but may never catch, hold, or carry the ball.",
+    "Last player in the pit takes the round, and the next round starts at once with everyone back inside."
+   ],
+   "variations": {
+    "easier": "Two lives: a first hit costs a hand held behind the back, and only a second hit ends a player's round.",
+    "harder": "Two balls in the pit at once, or a silent round where the only sounds allowed are the ball and the walls."
+   },
+   "safety": "Hits stay below the knee and the ball stays soft; a hit above the knee, a hard swing, or a dive ends that player's round on the spot. The pit floor stays clear and dry, and players enter and leave through the wall gap, never over the top mid-play.",
+   "source": "https://en.wikipedia.org/wiki/Gaga_(game)",
+   "copy_free": true
+  },
+  {
+   "id": "nine-square-in-the-air",
+   "name": "9 Square in the Air",
+   "tagline": "A court in the air on a nine-square frame: one hit per square, and the middle square is the throne.",
+   "categories": [
+    "pe-movement",
+    "team-community"
+   ],
+   "age_min": 9,
+   "age_max": 14,
+   "group_min": 9,
+   "group_max": 25,
+   "time_min": 15,
+   "time_max": 30,
+   "location": [
+    "indoor",
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "a 9 Square frame (commercial set, or a pvc grid raised on poles)"
+    },
+    {
+     "item": "playground ball"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Set the frame so its nine squares stand at overhead height, each square big enough for one player to stand in and reach up through. One player per square; everyone else lines up outside square one. The centre square is the top seat, the King or Top Cat, and every player on the frame is climbing toward it.",
+   "steps": [
+    "The centre player serves: hit the ball up through the top of your own square so it drops into any other square.",
+    "The player in that square gets one hit to send the ball up and out of their square into somebody else's. One hit only; no catches, no double taps.",
+    "A player is out when a ball landing in their square drops, when their hit flies outside the frame, when they hit twice, or when they touch the frame itself.",
+    "The out player leaves to the back of the waiting line. Every player below moves up one square toward the centre, and the first in line enters at square one.",
+    "Hold the centre through as many serves as you can. The throne is rented, never owned."
+   ],
+   "variations": {
+    "easier": "Allow one bounce inside a player's square before the hit, and lower the frame for younger or shorter players.",
+    "harder": "Call your square: the hitter names the target square before hitting, and a ball landing anywhere else costs the point."
+   },
+   "safety": "Eyes up, feet planted inside your own square. Collisions happen when players chase balls into a neighbour's square, so a ball that leaves your square is gone; let it go. Check the frame stands stable before every session, and nobody hangs from the bars, ever.",
+   "source": "https://www.camp-allendale.org/_files/ugd/b61ac6_5952abd65d7744889d87403bb05dd136.pdf",
+   "no_elimination": true,
+   "copy_free": true
+  },
+  {
+   "id": "cornhole",
+   "name": "Cornhole",
+   "tagline": "Two boards, eight bags, and the sweetest three points in the yard: a bag clean through the hole.",
+   "categories": [
+    "outdoor",
+    "team-community"
+   ],
+   "age_min": 6,
+   "age_max": 14,
+   "group_min": 2,
+   "group_max": 20,
+   "time_min": 15,
+   "time_max": 30,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "2 cornhole boards"
+    },
+    {
+     "item": "8 bean bags (4 per side)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Set the two boards facing each other on flat ground. Full distance is 27 feet between the fronts of the boards; for children, pace off a shorter court, 12 to 18 feet, and stretch it back as arms grow. Players pair up: partners stand at opposite boards, with their opponents beside them.",
+   "steps": [
+    "Players at one board throw in turn, one bag at a time, alternating with their opponent, underhand at the far board. Four bags each.",
+    "Score the round when all eight bags have flown. A bag through the hole is worth 3. A bag resting on the board is worth 1. A bag that touched the ground first, or hangs off the board onto the grass, scores nothing and is cleared away.",
+    "Score by cancellation: a round of 9 against 5 is worth 4 to the higher side. Losing rounds sting less and comebacks stay alive.",
+    "The other end throws back. First side to 21 wins; agree before the first bag whether an exact 21 is required."
+   ],
+   "variations": {
+    "easier": "Move the boards closer, let young throwers stand beside their board rather than behind its front edge, and count any bag on the board as 2.",
+    "harder": "Race games: first side to 21 exactly, with a bag that takes you past 21 not counting, so the endgame becomes a marksman's problem."
+   },
+   "safety": "One thrower throws at a time, and nobody walks the court while bags are in the air. Bags are gathered only when both ends agree the round is done.",
+   "source": "https://en.wikipedia.org/wiki/Cornhole",
+   "photo": {
+    "file": "r30/cornhole.webp",
+    "alt": "A cornhole board with bean bags resting on it, a player throwing from the far end",
+    "caption": "Bags on the board, one more in the air.",
+    "credit": "Photo: Viro, Public domain, via Wikimedia Commons",
+    "licence": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cornhole_game.jpg"
+   },
+   "no_elimination": true,
+   "copy_free": true
+  },
+  {
+   "id": "tie-dye-shirts",
+   "name": "Tie-Dye Shirts",
+   "tagline": "Twist it, band it, drown it in colour: no two shirts ever come out of the bucket alike.",
+   "categories": [
+    "crafts",
+    "seasons"
+   ],
+   "age_min": 6,
+   "age_max": 14,
+   "group_min": 4,
+   "group_max": 30,
+   "time_min": 30,
+   "time_max": 60,
+   "location": [
+    "outdoor"
+   ],
+   "materials": [
+    {
+     "item": "plain white cotton shirts (one per child, pre-washed)"
+    },
+    {
+     "item": "fibre-reactive dye kit, or squeeze bottles of dye"
+    },
+    {
+     "item": "rubber bands"
+    },
+    {
+     "item": "plastic gloves (one pair per child)"
+    },
+    {
+     "item": "buckets and plastic bags"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Work outside or over covered tables; dye is forever on everything it touches. Follow the kit on pre-soaking. Lay out gloves, bands, and bottles grouped by colour, and write each child's name on a plastic bag before the first shirt gets wet, because a finished shirt goes straight into its own bag to rest.",
+   "steps": [
+    "Lay a damp shirt flat and choose a pattern. For the classic spiral, pinch the centre, twist the shirt into a flat swirl, and band it into wedges, like a pie.",
+    "Band it tight. The sections the bands divide become the colour zones, and every white line in the finished shirt is a band that held.",
+    "Gloves on, then add dye wedge by wedge: one colour per wedge, or two where wedges meet. Push the bottle's tip into the folds so the colour reaches inside the spiral.",
+    "Slide each shirt, still banded, into its named bag and let it rest as the dye directions say; overnight gives the deepest colour.",
+    "Rinse in cool water until it runs nearly clear, unband over the rinse bucket, and hold the reveal, one shirt at a time, to the group's full gasp. Wash dyed shirts separately for their first few washes."
+   ],
+   "variations": {
+    "easier": "One colour per shirt and a scrunch pattern: ball the shirt up, band it loosely, dye it, and get a mottled sky that never fails.",
+    "harder": "Fold and clamp: accordion folds with wooden shapes clamped on both sides, dyed over the clamps, open to sharp white geometry (the itajime way)."
+   },
+   "safety": "Gloves on every hand, aprons or smocks over anything worth keeping, and dye mixed and poured by an adult or under an adult's eye. Spent dye water goes down a household drain or onto bare dirt away from gardens and pets, never into a storm drain, and no shirt is worn home against skin while still wet with dye.",
+   "tags": [
+    "season:summer"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Tie-dye",
+   "photo": {
+    "file": "r30/tie-dye-shirts.webp",
+    "alt": "A white shirt twisted and bound with rubber bands, held ready for dyeing",
+    "caption": "Bound and banded, the shirt is ready for colour.",
+    "credit": "Photo: Virginia State Parks staff, CC BY 2.0, via Wikimedia Commons",
+    "licence": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Caleb_helping_with_a_tie-dye_shirt_(7726087946).jpg"
    }
+  },
+  {
+   "id": "chess-first-session",
+   "name": "Chess, First Session",
+   "tagline": "Sixteen pieces, six kinds of moves, one quiet hour: the first game, taught so it never feels like a test.",
+   "categories": [
+    "quiet-focus"
+   ],
+   "age_min": 7,
+   "age_max": 14,
+   "group_min": 2,
+   "group_max": 30,
+   "time_min": 30,
+   "time_max": 60,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "chess sets (one per pair)"
+    },
+    {
+     "item": "a demonstration board (optional)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "One set per pair, a quiet table, and no clock anywhere in sight; first sessions run on curiosity, not time. Set up the demonstration position with the group watching: a light square at every player's right hand, and each queen on her own colour. Pair players of similar experience where you can, and let true beginners play two-to-a-side at first.",
+   "steps": [
+    "Teach the board and the army first. Name every piece, set the position together twice, then have every player set it once alone. Setting up correctly is the first skill of chess.",
+    "Teach the moves one piece at a time: pawn first (forward to march, sideways to capture, dreaming of the far side), then rook, bishop, queen, king, and the knight last, because the knight's hop is the move every beginner loves.",
+    "Play pawn games before whole games: eight pawns each, first to march one home or capture all of the other's. Small games finish, and finishing teaches more than any lecture.",
+    "Then play a first full game with one house rule: any player may take back one move per game, no questions asked. Say check kindly: 'your king is in trouble' before the word check.",
+    "End the session mid-interest, never mid-exhaustion, and record nothing but who wants a rematch."
+   ],
+   "variations": {
+    "easier": "Mini-chess with half the army (king, queen, two rooks, pawns) and take-backs allowed freely for the first month.",
+    "harder": "Bring in a friendly ten-minute clock, and teach one opening idea as the session's single lesson: fight for the centre."
+   },
+   "safety": "The safety here is social, and it is real: chess clubs die on mockery. A lost game is never laughed at, a win is celebrated quietly, and any player may resign with dignity at any time. Pieces stay on the table or in hands, never thrown.",
+   "inclusion": "Large-print and tactile sets serve players with low vision, and players may choose the piece colours they read best. A player who cannot yet sit a full game plays the pawn-game circuit at full standing.",
+   "source": "https://en.wikipedia.org/wiki/Chess",
+   "photo": {
+    "file": "r30/chess-first-session.webp",
+    "alt": "Two boys playing chess over a board set between them",
+    "caption": "A game on the street, one move at a time.",
+    "credit": "Photo: Adam Jones, CC BY-SA 3.0, via Wikimedia Commons",
+    "licence": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Children_Playing_Chess_on_the_Street_-_Santiago_de_Cuba_-_Cuba.jpg"
+   },
+   "no_elimination": true,
+   "copy_free": true
+  },
+  {
+   "id": "dominoes-first-game",
+   "name": "Dominoes, First Game",
+   "tagline": "Match the dots and empty your hand: the draw game that teaches counting without ever saying so.",
+   "categories": [
+    "quiet-focus",
+    "rainy-day"
+   ],
+   "age_min": 5,
+   "age_max": 12,
+   "group_min": 2,
+   "group_max": 6,
+   "time_min": 15,
+   "time_max": 30,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "a double-six domino set (28 tiles)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "A double-six set is the teaching set: 28 tiles, dots running from blank to six. Turn every tile face down on the table and shuffle them with flat hands, the wash, which children will happily do for a full minute. That minute is part of the game.",
+   "steps": [
+    "Each player draws seven tiles and stands them on edge, dots facing themselves. The rest form the boneyard, the draw pile at the table's edge.",
+    "The player holding the double six, or the highest double anyone holds, lays it in the centre to start the line.",
+    "Take turns adding one tile to either open end of the line, matching the touching ends dot for dot. Doubles are laid crosswise.",
+    "No match in hand? Draw from the boneyard until you can play, or the boneyard runs out. Passing is for players who truly cannot play, and the table will check.",
+    "The round ends when one player lays their last tile (call 'domino!') or nobody can move. Count the dots still in each hand; the lowest count takes the round."
+   ],
+   "variations": {
+    "easier": "Play one long cooperative snake with all tiles face up, building together and cheering every fit.",
+    "harder": "Keep score across five rounds by leftover dots and play to a match total, or graduate the table to a double-nine set."
+   },
+   "safety": "Tiles are small and hard: keep them off the floor, where bare feet and chair wheels go, and away from the youngest children sharing the room.",
+   "source": "https://en.wikipedia.org/wiki/Dominoes",
+   "photo": {
+    "file": "r30/dominoes-first-game.webp",
+    "alt": "A line of dominoes laid end to end with matching dot counts touching",
+    "caption": "A domino line grows one matched end at a time.",
+    "credit": "Photo: Bermicourt, CC BY-SA 4.0, via Wikimedia Commons",
+    "licence": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Dominoes_-_Muggins_-_IMG_7709.jpg"
+   },
+   "no_elimination": true,
+   "copy_free": true
+  },
+  {
+   "id": "go-fish",
+   "name": "Go Fish",
+   "tagline": "'Do you have any sevens?' The first card game every child learns, and still the best way to teach asking.",
+   "categories": [
+    "quiet-focus",
+    "rainy-day"
+   ],
+   "age_min": 4,
+   "age_max": 10,
+   "group_min": 2,
+   "group_max": 6,
+   "time_min": 10,
+   "time_max": 20,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "a standard deck of cards"
+    }
+   ],
+   "no_prep": true,
+   "setup": "One ordinary deck, jokers out. Deal five cards to each player (seven each when only two play) and scatter the rest face down in a loose pile in the middle: the ocean. Young players may fan their cards face up on the table with a partner's help; the game forgives it completely.",
+   "steps": [
+    "On your turn, choose one player and ask for a rank you already hold: 'Do you have any threes?' You may only ask for what is in your own hand.",
+    "Holding that rank? They hand over every card of it, and you ask again. A good ask earns another turn.",
+    "Holding none? They say 'Go fish!', and you draw one card from the ocean. Draw the rank you asked for and you show it and take another turn; otherwise your turn ends.",
+    "Four cards of one rank make a book. Lay books face up in front of you the moment they are complete.",
+    "When the ocean is empty and the hands run out, count the books. Most books wins, and the player with the fewest deals the rematch."
+   ],
+   "variations": {
+    "easier": "Play in pairs with cards face up on the table, asking together, or play to pairs instead of books of four.",
+    "harder": "The memory rule for older players: nothing may be written down, and a player caught asking for a rank they handed away earlier loses their next turn."
+   },
+   "safety": "Cards are paper; tempers are the only hazard in the game. Keep the asking cheerful and the answers honest, and make rematches instant: the second game of Go Fish is where the learning lives.",
+   "source": "https://en.wikipedia.org/wiki/Go_Fish",
+   "no_elimination": true,
+   "copy_free": true
+  },
+  {
+   "id": "kids-yoga-first-session",
+   "name": "Kids Yoga, First Session",
+   "tagline": "Animal poses, slow breaths, and a room that settles itself: a first yoga session built for wiggly bodies.",
+   "categories": [
+    "quiet-focus",
+    "pe-movement"
+   ],
+   "age_min": 4,
+   "age_max": 12,
+   "group_min": 4,
+   "group_max": 25,
+   "time_min": 20,
+   "time_max": 30,
+   "location": [
+    "indoor"
+   ],
+   "materials": [
+    {
+     "item": "yoga mats or carpet squares (one per child)"
+    },
+    {
+     "item": "calm music (optional)"
+    }
+   ],
+   "no_prep": false,
+   "setup": "Mats or carpet squares in rows with a clear lane to walk, shoes off at the door, and the lights as low as the room allows. The leader sits where every child can see. One rule covers the whole session, said at the start: your mat is your island, and nobody corrects anybody else's pose.",
+   "steps": [
+    "Start seated. Breathe in while hands float up, out while they float down, five slow rounds, until the room's noise drops along with the hands.",
+    "Move through animal poses, three breaths each: cat and cow on hands and knees, downward dog, a low hissing cobra, then frog squats with three jumps at the end of the set to spend the giggles.",
+    "Standing poses next: tree (foot resting at ankle or calf, never pressed into the knee), warrior two, and airplane, tipping forward with arms out, where falling over is expected and applauded.",
+    "Close the active half with a partner pose: seated back to back, breathing slowly enough that each partner can feel the other's breath move. Thirty quiet seconds is a triumph.",
+    "Finish lying down, eyes closed or gazing up, for one minute of stillness with a picture to hold in mind: floating on a raft, snow falling. Wake the room slowly: fingers, toes, then sitting."
+   ],
+   "variations": {
+    "easier": "Chair yoga for the whole session: every pose takes its seated form, and the breathing rounds carry the class.",
+    "harder": "Flow round: link four known poses into a sequence and repeat it without the leader's voice, the group counting breaths in silence."
+   },
+   "safety": "Yoga is invited, never forced: any child may rest in child's pose or sit out any move, no reason needed. No pose pushes a joint past comfort, and a child who feels dizzy sits down at once. Bodies differ; the session bends to the bodies in it, never the other way around.",
+   "inclusion": "Every pose here has a chair form and a standing form of equal standing, and the leader shows both. A child using a mobility aid places their mat where the lane is widest.",
+   "source": "https://cosmickids.com/kids-yoga-in-schools-research-benefits/",
+   "photo": {
+    "file": "r30/kids-yoga-first-session.webp",
+    "alt": "A class of children holding a yoga pose together in a bright room",
+    "caption": "One pose, held together, in a quiet room.",
+    "credit": "Photo: Georgia National Guard, CC BY 2.0, via Wikimedia Commons",
+    "licence": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Kids_Yoga_(19125038413).jpg"
+   },
+   "no_elimination": true,
+   "copy_free": true
   }
  ],
- "count": 747,
+ "count": 778,
  "updated": "2026-10-15"
 }

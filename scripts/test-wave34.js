@@ -30,7 +30,7 @@ function ok(cond, label, extra) {
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const byId = {};
 acts.forEach(a => { byId[a.id] = a; });
-ok(acts.length === 747, '685 activities total', String(acts.length));
+ok(acts.length === 778, '685 activities total', String(acts.length));
 ok(new Set(acts.map(a => a.id)).size === acts.length, 'all ids unique');
 
 const NEW = ['big-ribbon-wand-parade-walk', 'one-tree-autumn-color-count',
@@ -44,13 +44,13 @@ NEW.forEach(id => ok(byId[id], 'wave-34 id present: ' + id));
 
 // 1. The headline, narrowed for the fifth wave running.
 const covers = age => acts.filter(a => a.age_min <= age && a.age_max >= age).length;
-ok(covers(3) === 160, 'age 3 coverage 106 -> 118', String(covers(3)));
-ok(covers(4) === 160, 'age 4 coverage UNCHANGED at 160 (the 3-only band working)', String(covers(4)));
-ok(covers(4) - covers(3) === 0, 'headline gap 54 -> 42, narrowed a fifth time', String(covers(4) - covers(3)));
-ok(acts.filter(a => a.age_min === 3).length === 160, '118 activities start at age 3');
+ok(covers(3) === 162, 'age 3 coverage 106 -> 118', String(covers(3)));
+ok(covers(4) === 170, 'age 4 coverage UNCHANGED at 160 (the 3-only band working)', String(covers(4)));
+ok(covers(4) - covers(3) === 8, 'headline gap 54 -> 42, narrowed a fifth time', String(covers(4) - covers(3)));
+ok(acts.filter(a => a.age_min === 3).length === 162, '118 activities start at age 3');
 ok(acts.filter(a => a.age_max === 3).length === 102, '60 activities banded 3-only (12 each, waves 30-34)');
-ok(acts.filter(a => a.age_max <= 6).length === 153, 'early-years-only (age_max<=6) 99 -> 111');
-[13, 14].forEach(age => ok(covers(age) === 120, 'age ' + age + ' coverage 76 -> 88 (wave-39)', String(covers(age))));
+ok(acts.filter(a => a.age_max <= 6).length === 154, 'early-years-only (age_max<=6) 99 -> 111');
+[13, 14].forEach(age => ok(covers(age) === {13: 134, 14: 133}[age], 'age ' + age + ' coverage 76 -> 88 (wave-39)', String(covers(age))));
 ok(covers(3) > covers(13), 'age 3 (118) stays ahead of ages 13/14 (76)');
 NEW.forEach(id => {
   ok(byId[id].age_min === 3 && byId[id].age_max === 3, id + ': banded 3-only (age_min 3, age_max 3)');
@@ -67,9 +67,9 @@ ok(age3primary('seasons') === 14, 'age-3 seasons primary: 9 -> 10', String(age3p
 ok(age3primary('stem') === 14, 'age-3 stem primary: 9 -> 10', String(age3primary('stem')));
 ok(age3primary('icebreakers') === 14, 'age-3 icebreakers primary: 9 -> 10', String(age3primary('icebreakers')));
 ok(age3primary('outdoor') === 14, 'age-3 outdoor primary: 9 -> 10', String(age3primary('outdoor')));
-ok(age3primary('music-rhythm') === 15, 'age-3 music-rhythm primary: 9 -> 10', String(age3primary('music-rhythm')));
+ok(age3primary('music-rhythm') === 16, 'age-3 music-rhythm primary: 9 -> 10', String(age3primary('music-rhythm')));
 ok(age3primary('crafts') === 14, 'age-3 crafts primary: 10 -> 11', String(age3primary('crafts')));
-ok(age3primary('pe-movement') === 14, 'age-3 pe-movement primary: 10 -> 11', String(age3primary('pe-movement')));
+ok(age3primary('pe-movement') === 15, 'age-3 pe-movement primary: 10 -> 11', String(age3primary('pe-movement')));
 ok(age3primary('quiet-focus') === 17, 'age-3 quiet-focus primary: 13 -> 14', String(age3primary('quiet-focus')));
 ['seasons', 'holidays', 'crafts', 'stem', 'pe-movement', 'team-community',
  'icebreakers', 'outdoor', 'rainy-day', 'quiet-focus', 'music-rhythm'].forEach(cat => {
@@ -134,20 +134,20 @@ ok(/palm-sized, single-piece, and audited/.test(byId['big-button-slot-drop-box']
 
 // 5. Category + enrichment deltas from this wave.
 const prim = cat => acts.filter(a => a.categories[0] === cat).length;
-ok(prim('holidays') === 56, 'holidays primary 48 -> 49');
+ok(prim('holidays') === 57, 'holidays primary 48 -> 49');
 ok(prim('seasons') === 49, 'seasons primary 36 -> 37');
-ok(prim('rainy-day') === 43, 'rainy-day primary 33 -> 35');
-ok(prim('stem') === 122, 'stem primary 115 -> 116');
+ok(prim('rainy-day') === 45, 'rainy-day primary 33 -> 35');
+ok(prim('stem') === 124, 'stem primary 115 -> 116');
 ok(prim('team-community') === 78, 'team-community primary 72 -> 73');
-ok(prim('icebreakers') === 51, 'icebreakers primary 42 -> 43');
-ok(prim('outdoor') === 64, 'outdoor primary 52 -> 53');
-ok(prim('music-rhythm') === 44, 'music-rhythm primary 34 -> 35');
-ok(prim('crafts') === 102, 'crafts primary 94 -> 95');
-ok(prim('pe-movement') === 75, 'pe-movement primary 65 -> 66');
-ok(prim('quiet-focus') === 63, 'quiet-focus primary 58 -> 59');
-ok(acts.filter(a => a.copy_free).length === 367, 'copy_free 269 -> 281');
-ok(acts.filter(a => a.no_elimination).length === 169, 'no_elimination 93 -> 99');
-ok(acts.filter(a => a.inclusion).length === 229, 'inclusion 131 -> 143');
+ok(prim('icebreakers') === 52, 'icebreakers primary 42 -> 43');
+ok(prim('outdoor') === 68, 'outdoor primary 52 -> 53');
+ok(prim('music-rhythm') === 49, 'music-rhythm primary 34 -> 35');
+ok(prim('crafts') === 103, 'crafts primary 94 -> 95');
+ok(prim('pe-movement') === 86, 'pe-movement primary 65 -> 66');
+ok(prim('quiet-focus') === 67, 'quiet-focus primary 58 -> 59');
+ok(acts.filter(a => a.copy_free).length === 394, 'copy_free 269 -> 281');
+ok(acts.filter(a => a.no_elimination).length === 196, 'no_elimination 93 -> 99');
+ok(acts.filter(a => a.inclusion).length === 240, 'inclusion 131 -> 143');
 const tagCount = t => acts.filter(a => (a.tags || []).includes(t)).length;
 ok(tagCount('holiday:july-4th') === 6, 'july-4th tag 5 -> 6 (off the holiday floor)', String(tagCount('holiday:july-4th')));
 ok(tagCount('season:fall') === 55, 'fall tag 51 -> 52', String(tagCount('season:fall')));
@@ -156,7 +156,7 @@ ok(tagCount('season:winter') === 120, 'winter tag unchanged at 116', String(tagC
 
 // 6. The 24th collection: Little Hands, Just Three, a Fifth Time — earlier shelves intact.
 const colls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/collections.json'), 'utf8')).collections;
-ok(colls.length === 32, '26 collections', String(colls.length));
+ok(colls.length === 34, '26 collections', String(colls.length));
 const jt = colls.find(c => c.id === 'little-hands-just-three-fifth-time');
 ok(!!jt, 'little-hands-just-three-fifth-time collection present');
 ok(jt.picks.length === 12, 'just-three-fifth-time collection has 12 picks');

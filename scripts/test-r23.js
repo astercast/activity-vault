@@ -27,7 +27,7 @@ ok(!css.includes('.card-grid') && !css.includes('.act-card'), 'css: legacy card-
 ok(fs.existsSync(path.join(ROOT, 'assets/fonts/newsreader-latin-var.woff2')), 'fonts: Newsreader self-hosted');
 
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
-ok(acts.length === 747, 'data: the full pool stands at 747');
+ok(acts.length === 778, 'data: the full pool stands at 778');
 let withPhoto = 0, withSource = 0;
 for (const a of acts) {
   if (a.source) withSource++;
@@ -67,7 +67,8 @@ for (const a of acts) {
    strict title rule over all 654 sourceless activities with every item
    accounted for; 37 rule-passing matches, 12 admitted at the coordinator's
    title read (25 refused: generic nouns, wrong senses, specific works),
-   raising the filed source floor 93 -> 105 in the same commit. */
-ok(withPhoto >= 222, 'coverage: at least the filed 222 activities carry a sourced photo (got ' + withPhoto + ')');
-ok(withSource >= 105, 'coverage: at least the filed 105 activities carry a source link (got ' + withSource + ')');
-console.log('test-r23: ' + passed + ' assertions passed; photo ' + withPhoto + '/747, source ' + withSource + '/747');
+   raising the filed source floor 93 -> 105 in the same commit;
+   the 2026-10-15 completeness run raises it again 105 -> 133. */
+ok(withPhoto >= 233, 'coverage: at least the filed 233 activities carry a sourced photo (got ' + withPhoto + ')');
+ok(withSource >= 163, 'coverage: at least the filed 163 activities carry a source link (got ' + withSource + ')');
+console.log('test-r23: ' + passed + ' assertions passed; photo ' + withPhoto + '/747, source ' + withSource + '/778');

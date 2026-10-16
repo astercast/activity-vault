@@ -45,7 +45,7 @@ function ok(cond, label, extra) {
 const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 const byId = {};
 acts.forEach(a => { byId[a.id] = a; });
-ok(acts.length === 747, '747 activities total', String(acts.length));
+ok(acts.length === 778, '747 activities total', String(acts.length));
 ok(new Set(acts.map(a => a.id)).size === acts.length, 'all ids unique');
 
 const NEW = ['growing-degree-day-ledger', 'microclimate-map-survey',
@@ -57,14 +57,14 @@ NEW.forEach(id => ok(byId[id], 'wave-43 id present: ' + id));
 
 // 1. The headline: the teen band rises, nothing else moves.
 const covers = age => acts.filter(a => a.age_min <= age && a.age_max >= age).length;
-ok(covers(13) === 120, 'age 13 coverage 112 -> 120', String(covers(13)));
-ok(covers(14) === 120, 'age 14 coverage 112 -> 120', String(covers(14)));
-ok(covers(3) === 160, 'age 3 coverage unchanged at 160 (wave-38 parity untouched)', String(covers(3)));
-ok(covers(4) === 160, 'age 4 coverage unchanged at 160 (wave-38 parity untouched)', String(covers(4)));
-ok(covers(12) === 446, 'age 12 coverage unchanged at 446', String(covers(12)));
-ok(covers(5) === 329, 'age 5 coverage unchanged at 329', String(covers(5)));
-ok(160 - covers(13) === 40, 'remaining gap to the 160 benchmark: 40 at age 13, stated numerically');
-ok(160 - covers(14) === 40, 'remaining gap to the 160 benchmark: 40 at age 14, stated numerically');
+ok(covers(13) === 134, 'age 13 coverage 112 -> 120', String(covers(13)));
+ok(covers(14) === 133, 'age 14 coverage 112 -> 120', String(covers(14)));
+ok(covers(3) === 162, 'age 3 coverage unchanged at 160 (wave-38 parity untouched)', String(covers(3)));
+ok(covers(4) === 170, 'age 4 coverage unchanged at 160 (wave-38 parity untouched)', String(covers(4)));
+ok(covers(12) === 467, 'age 12 coverage unchanged at 446', String(covers(12)));
+ok(covers(5) === 340, 'age 5 coverage unchanged at 329', String(covers(5)));
+ok(160 - covers(13) === 26, 'remaining gap to the 160 benchmark: 40 at age 13, stated numerically');
+ok(160 - covers(14) === 27, 'remaining gap to the 160 benchmark: 40 at age 14, stated numerically');
 ok(acts.filter(a => a.age_min === 13 && a.age_max === 14).length === 44, '44 activities banded 13-14 only (12+8+8+8+8 across waves 39-43)');
 ok(acts.filter(a => a.age_max === 3).length === 102, '102 activities banded 3-only (waves 30-38, unchanged)');
 NEW.forEach(id => {
@@ -74,15 +74,15 @@ NEW.forEach(id => {
 // 2. The floor inside the teen band: every category now >= 9.
 const teenPrimary = cat => acts.filter(a => a.categories[0] === cat && a.age_min <= 13 && a.age_max >= 13).length;
 ok(teenPrimary('seasons') === 9, 'age-13 seasons primary: 8 -> 9', String(teenPrimary('seasons')));
-ok(teenPrimary('outdoor') === 9, 'age-13 outdoor primary: 8 -> 9', String(teenPrimary('outdoor')));
-ok(teenPrimary('pe-movement') === 9, 'age-13 pe-movement primary: 8 -> 9', String(teenPrimary('pe-movement')));
-ok(teenPrimary('music-rhythm') === 9, 'age-13 music-rhythm primary: 8 -> 9', String(teenPrimary('music-rhythm')));
+ok(teenPrimary('outdoor') === 13, 'age-13 outdoor primary: 8 -> 9', String(teenPrimary('outdoor')));
+ok(teenPrimary('pe-movement') === 14, 'age-13 pe-movement primary: 8 -> 9', String(teenPrimary('pe-movement')));
+ok(teenPrimary('music-rhythm') === 10, 'age-13 music-rhythm primary: 8 -> 9', String(teenPrimary('music-rhythm')));
 ok(teenPrimary('rainy-day') === 9, 'age-13 rainy-day primary: 8 -> 9', String(teenPrimary('rainy-day')));
-ok(teenPrimary('icebreakers') === 10, 'age-13 icebreakers primary: 9 -> 10', String(teenPrimary('icebreakers')));
-ok(teenPrimary('crafts') === 10, 'age-13 crafts primary: 9 -> 10', String(teenPrimary('crafts')));
+ok(teenPrimary('icebreakers') === 11, 'age-13 icebreakers primary: 9 -> 10', String(teenPrimary('icebreakers')));
+ok(teenPrimary('crafts') === 11, 'age-13 crafts primary: 9 -> 10', String(teenPrimary('crafts')));
 ok(teenPrimary('holidays') === 11, 'age-13 holidays primary: 10 -> 11 (the tie at 10, broken on the tag shelves)', String(teenPrimary('holidays')));
-ok(teenPrimary('stem') === 10, 'age-13 stem primary: 10, unchanged (the tie\'s other half — no coding record bolted on)', String(teenPrimary('stem')));
-ok(teenPrimary('quiet-focus') === 15, 'age-13 quiet-focus primary: 15, unchanged', String(teenPrimary('quiet-focus')));
+ok(teenPrimary('stem') === 11, 'age-13 stem primary: 10, unchanged (the tie\'s other half — no coding record bolted on)', String(teenPrimary('stem')));
+ok(teenPrimary('quiet-focus') === 16, 'age-13 quiet-focus primary: 15, unchanged', String(teenPrimary('quiet-focus')));
 ok(teenPrimary('team-community') === 19, 'age-13 team-community primary: 19, unchanged', String(teenPrimary('team-community')));
 ['seasons', 'holidays', 'crafts', 'stem', 'pe-movement', 'team-community',
  'icebreakers', 'outdoor', 'rainy-day', 'quiet-focus', 'music-rhythm'].forEach(cat => {
@@ -132,22 +132,22 @@ ok(/Pencil until proven, pen when true/.test(JSON.stringify(byId['celtic-knot-dr
 // 5. Category + enrichment + tag deltas from this wave.
 const prim = cat => acts.filter(a => a.categories[0] === cat).length;
 ok(prim('seasons') === 49, 'seasons primary 48 -> 49');
-ok(prim('outdoor') === 64, 'outdoor primary 63 -> 64');
-ok(prim('pe-movement') === 75, 'pe-movement primary 74 -> 75');
-ok(prim('music-rhythm') === 44, 'music-rhythm primary 43 -> 44');
-ok(prim('rainy-day') === 43, 'rainy-day primary 42 -> 43');
-ok(prim('crafts') === 102, 'crafts primary 101 -> 102');
-ok(prim('icebreakers') === 51, 'icebreakers primary 50 -> 51');
-ok(prim('holidays') === 56, 'holidays primary 55 -> 56');
-ok(prim('stem') === 122, 'stem primary unchanged at 122');
+ok(prim('outdoor') === 68, 'outdoor primary 63 -> 64');
+ok(prim('pe-movement') === 86, 'pe-movement primary 74 -> 75');
+ok(prim('music-rhythm') === 49, 'music-rhythm primary 43 -> 44');
+ok(prim('rainy-day') === 45, 'rainy-day primary 42 -> 43');
+ok(prim('crafts') === 103, 'crafts primary 101 -> 102');
+ok(prim('icebreakers') === 52, 'icebreakers primary 50 -> 51');
+ok(prim('holidays') === 57, 'holidays primary 55 -> 56');
+ok(prim('stem') === 124, 'stem primary unchanged at 122');
 ok(prim('team-community') === 78, 'team-community primary unchanged at 78');
-ok(prim('quiet-focus') === 63, 'quiet-focus primary unchanged at 63');
-ok(acts.filter(a => a.copy_free).length === 367, 'copy_free 359 -> 367');
-ok(acts.filter(a => a.no_elimination).length === 169, 'no_elimination 161 -> 169');
-ok(acts.filter(a => a.inclusion).length === 229, 'inclusion 221 -> 229');
+ok(prim('quiet-focus') === 67, 'quiet-focus primary unchanged at 63');
+ok(acts.filter(a => a.copy_free).length === 394, 'copy_free 359 -> 367');
+ok(acts.filter(a => a.no_elimination).length === 196, 'no_elimination 161 -> 169');
+ok(acts.filter(a => a.inclusion).length === 240, 'inclusion 221 -> 229');
 const tagCount = t => acts.filter(a => (a.tags || []).includes(t)).length;
-ok(tagCount('season:spring') === 44, 'spring tag 43 -> 44 (the degree-day ledger)', String(tagCount('season:spring')));
-ok(tagCount('season:summer') === 39, 'summer tag 37 -> 39 (degree-day + microclimate — the thinnest season rises twice)', String(tagCount('season:summer')));
+ok(tagCount('season:spring') === 45, 'spring tag 43 -> 44 (the degree-day ledger)', String(tagCount('season:spring')));
+ok(tagCount('season:summer') === 43, 'summer tag 37 -> 39 (degree-day + microclimate — the thinnest season rises twice)', String(tagCount('season:summer')));
 ok(tagCount('holiday:st-patricks-day') === 7, 'st-patricks-day tag 6 -> 7 (a floor holiday tag rises — the tie-break, landed)', String(tagCount('holiday:st-patricks-day')));
 ok(tagCount('season:fall') === 55, 'fall tag unchanged at 55', String(tagCount('season:fall')));
 ok(tagCount('season:winter') === 120, 'winter tag unchanged at 120', String(tagCount('season:winter')));
@@ -157,7 +157,7 @@ ok(catsData.length === 11, 'still exactly 11 categories — no drama/coding cate
 
 // 6. Collections: the 32nd shelf at the validator minimum.
 const colls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/collections.json'), 'utf8')).collections;
-ok(colls.length === 32, '32 collections — the Fifth Time shelf unlocks at exactly the 8-pick minimum', String(colls.length));
+ok(colls.length === 34, '32 collections — the Fifth Time shelf unlocks at exactly the 8-pick minimum', String(colls.length));
 const teens5 = colls.find(c => c.id === 'just-teens-fifth-time');
 ok(!!teens5 && teens5.picks.length === 8, 'just-teens-fifth-time at exactly 8 picks (the measured pack, unpadded)');
 NEW.forEach(id => ok(teens5.picks.some(p => p.id === id), 'just-teens-fifth-time pick present: ' + id));
@@ -197,7 +197,7 @@ const rootPages = fs.readdirSync(ROOT).filter(f => f.endsWith('.html'));
 const actPages = fs.readdirSync(path.join(ROOT, 'activity')).filter(f => f.endsWith('.html'));
 const allPages = rootPages.map(f => path.join(ROOT, f))
   .concat(actPages.map(f => path.join(ROOT, 'activity', f)));
-ok(allPages.length === 766, '766 pages on disk (747 activity + 19 root)', String(allPages.length));
+ok(allPages.length === 797, '766 pages on disk (747 activity + 19 root)', String(allPages.length));
 const OG = 'https://activity-vault-live.vercel.app/assets/og-card.png';
 allPages.forEach(p => {
   const s = fs.readFileSync(p, 'utf8');
@@ -250,7 +250,7 @@ const collHtml = fs.readFileSync(path.join(ROOT, 'collections.html'), 'utf8');
 ok(collHtml.includes('<span id="coll-hero-count">Thirty-two</span>'),
   'VP-0008: hero numeral fallback = current count, spelled out');
 const collLd = JSON.parse(collHtml.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
-ok(collLd.mainEntity && collLd.mainEntity.numberOfItems === 32,
+ok(collLd.mainEntity && collLd.mainEntity.numberOfItems === 34,
   'VP-0008: collections JSON-LD numberOfItems derives from the data (32)');
 const llms = fs.readFileSync(path.join(ROOT, 'llms.txt'), 'utf8');
 ok(llms.includes('Curated collections: 32 teacher-ready bundles'),

@@ -1719,6 +1719,86 @@
      "note": "One line, no beginning it will admit to, over, under, over, traced all the way home before a drop of ink is allowed near it."
     }
    ]
+  },
+  {
+   "id": "filling-the-thin-drawers",
+   "title": "Filling the Thin Drawers",
+   "glyph": "🗂️",
+   "when_to_use": "The completeness shelf, built from the vault's own census: rounds sung in canon and a band stacked from stubborn repeating patterns for the music drawer, the thinnest in the vault; a domino rally and an indoor sock-bocce league for the rainy-day cells that measured thinnest in two age bands at once; a cup anemometer logging a summer week's wind and a capillary flower lab for spring, the two thin shelves the almanac cycle reaches next; and a flame-free floating diya bowl that lifts Diwali off the floor shelf. Reach for it when a drawer feels thin because it is thin, measured, and now filled on purpose.",
+   "picks": [
+    {
+     "id": "first-rounds-singing-circle",
+     "note": "One tune, three starting lines: the same melody entered at different times turns into harmony with no instruments at all."
+    },
+    {
+     "id": "ostinato-layer-band",
+     "note": "A pattern that refuses to change, stacked four layers deep, is a whole song: each crew owns one layer and the band is the stack."
+    },
+    {
+     "id": "tempo-parade-turtle-cheetah",
+     "note": "The drum sets the speed and little bodies learn it: turtle slow, cheetah fast, and a freeze every time the beat stops."
+    },
+    {
+     "id": "domino-rally-design-studio",
+     "note": "Spacing is a measurement, not a guess: runs drawn first, built with firebreaks, and earned with a single push."
+    },
+    {
+     "id": "sock-bocce-indoor-league",
+     "note": "Closest to the little ball scores, and the team that is behind does the rolling: the ancient lawn game, hallway-legal."
+    },
+    {
+     "id": "cup-anemometer-wind-lab",
+     "note": "Four cups turn an invisible force into a countable number, and three stations on one map start an honest argument."
+    },
+    {
+     "id": "rainbow-flower-capillary-lab",
+     "note": "The flower drinks the colour and keeps the receipt: signed predictions graded against petals, with a plain-water control."
+    },
+    {
+     "id": "floating-lights-diya-bowl",
+     "note": "A welcome made of light, floated on water among petals: the festival's glow with no flame in the room."
+    }
+   ]
+  },
+  {
+   "id": "field-day-classics",
+   "title": "Field Day Classics",
+   "glyph": "🏅",
+   "when_to_use": "The whole sports day on one shelf: the four races every field day runs (spoon, sack, three legs, wheelbarrow), a relay where every leg travels differently, the home obstacle course, a cup-stacking relay against the clock, and the one-rope closer. Reach for it when the field, the cones, and the whole school are yours for a day.",
+   "picks": [
+    {
+     "id": "egg-and-spoon-race",
+     "note": "Balance beats speed: a spoon, a wobbling egg, and a whole field learning to walk fast without running."
+    },
+    {
+     "id": "sack-race",
+     "note": "Two legs, one sack, no dignity: the hop race that turns the fastest kid in school into a beginner again."
+    },
+    {
+     "id": "three-legged-race",
+     "note": "Pairs tied at the ankle learn the day's real lesson in ten strides: match your partner or sit down together."
+    },
+    {
+     "id": "wheelbarrow-race",
+     "note": "Half of each pair walks on their hands: the race that makes the whole field laugh and every arm honest-tired."
+    },
+    {
+     "id": "relay-race-mixup",
+     "note": "The baton relay where no two legs travel the same way: hop it, spin it, balance it home."
+    },
+    {
+     "id": "obstacle-course",
+     "note": "The home course: chalk lines, hoops, tunnels, and whatever the gym closet gives up."
+    },
+    {
+     "id": "cup-stack-relay",
+     "note": "Pyramids against the clock, run as a team relay: hands fast, stacks faster."
+    },
+    {
+     "id": "tug-of-war",
+     "note": "The closer: one rope, two teams, and a line in the grass that nobody wants to be pulled across."
+    }
+   ]
   }
  ]
 }

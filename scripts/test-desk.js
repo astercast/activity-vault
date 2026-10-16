@@ -17,7 +17,7 @@ const acts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'),
 const cats = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/categories.json'), 'utf8'));
 const colls = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/collections.json'), 'utf8')).collections;
 const actIds = new Set(acts.map(a => a.id));
-ok(acts.length === 747, '685 activities total', String(acts.length));
+ok(acts.length === 778, '685 activities total', String(acts.length));
 ok(actIds.size === acts.length, 'all activity ids unique (validator re-run)');
 ok(cats.length === 11, '11 categories', String(cats.length));
 

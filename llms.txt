@@ -5,17 +5,17 @@ Hundreds of real, classic, public-domain activity concepts, filterable by age, t
 group size, materials, and category. Plan-my-week planner. Printable one-page cards.
 
 ## Categories
-- Seasons: 124 activities, Activities that ride the turning year. Fall leaves, winter making, spring planting, summer play.
-- Holidays: 129 activities, Festive projects and games for the days the whole group looks forward to.
-- Crafts: 166 activities, Hands-on making: fold it, paint it, build it, take it home.
-- STEM: 159 activities, Experiments, engineering challenges, and satisfying science demos.
-- PE & Movement: 126 activities, Run, jump, dance. Activities that burn off the wiggles.
-- Team & Community: 150 activities, Turn a group into a crew: cooperation, trust, and belonging.
-- Icebreakers: 77 activities, First-day friendly: learn names, laugh, and loosen up fast.
-- Outdoor: 120 activities, Fresh-air activities for fields, playgrounds, and nature walks.
-- Rainy Day: 76 activities, Stuck inside? These keep a roomful of kids happy without a gym.
-- Quiet & Focus: 137 activities, Wind-down worthy: calm, creative, individual or small-group.
-- Music & Rhythm: 50 activities, Drums, shakers, rhythm games, and songs. Make some noise.
+- Seasons: 126 activities, Activities that ride the turning year. Fall leaves, winter making, spring planting, summer play.
+- Holidays: 130 activities, Festive projects and games for the days the whole group looks forward to.
+- Crafts: 168 activities, Hands-on making: fold it, paint it, build it, take it home.
+- STEM: 162 activities, Experiments, engineering challenges, and satisfying science demos.
+- PE & Movement: 143 activities, Run, jump, dance. Activities that burn off the wiggles.
+- Team & Community: 158 activities, Turn a group into a crew: cooperation, trust, and belonging.
+- Icebreakers: 81 activities, First-day friendly: learn names, laugh, and loosen up fast.
+- Outdoor: 131 activities, Fresh-air activities for fields, playgrounds, and nature walks.
+- Rainy Day: 80 activities, Stuck inside? These keep a roomful of kids happy without a gym.
+- Quiet & Focus: 141 activities, Wind-down worthy: calm, creative, individual or small-group.
+- Music & Rhythm: 55 activities, Drums, shakers, rhythm games, and songs. Make some noise.
 
 ## API. Start at data/v1/index.json (self-describing manifest)
 - data/v1/index.json, api manifest
@@ -104,7 +104,7 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
   when an occasion holds fewer real activities than the arc has
   parts, the page says so in numbers and offers the nearest real
   options. It never pads a plan. Printable party sheet + copy-as-text.
-- collections.html, Curated collections: 32 teacher-ready bundles (rainy-day
+- collections.html, Curated collections: 34 teacher-ready bundles (rainy-day
   rescue, first day, sub tub, winter party, spring burst, summer splash, haunted halls, grateful gathering, winter lights…)
   each with a curator's note per pick; printable and copy-able per collection.
 - api.html. API docs with a Try-the-API console (endpoint picker, fetch, pretty JSON).
