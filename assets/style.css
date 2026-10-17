@@ -339,6 +339,7 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
 .results-bar { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: .8rem; flex-wrap: wrap; }
 .results-bar p { margin: 0; color: var(--ink-soft); }
 .results-actions { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
+.share-hint { font-size: .9rem; color: var(--ink-soft); margin: -.3rem 0 .8rem; }
 .browse-rows { display: grid; gap: 1rem; grid-template-columns: 1fr; }
 @media (min-width: 600px) { .browse-rows { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1100px) { .browser .browse-rows { grid-template-columns: repeat(2, 1fr); } }

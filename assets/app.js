@@ -284,7 +284,7 @@
 
   function copyText(text, statusEl) {
     function ok() {
-      statusEl.textContent = 'Copied ✓';
+      statusEl.textContent = 'Copied. Paste it into an email or newsletter.';
       setTimeout(function () { statusEl.textContent = ''; }, 2500);
     }
     function fallback() {
@@ -303,6 +303,15 @@
   }
 
   function copyCollection() {
+    // Door state (no search or filter yet): there is no list on screen to
+    // copy, so say the step in plain words instead of copying an empty
+    // list under an "all activities" title (R100, ruling 10: the share
+    // surface carries no gated or mystery step).
+    if (!anyFilterActive()) {
+      var doorStatus = document.getElementById('copy-collection-status');
+      if (doorStatus) doorStatus.textContent = 'Search or pick a category first, then this copies the list you are looking at.';
+      return;
+    }
     var list = state.visible || [];
     var bits = describeFilters();
     var title = bits.length
