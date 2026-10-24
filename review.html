@@ -72,7 +72,7 @@
     <span class="api-badge" id="queue-badge" data-api-state="waking"
           role="status" aria-live="polite" tabindex="0">waking server…</span>
   </div>
-  <p class="qmeta" id="queue-counts">0 pending · 62 decided (last 90 days) · snapshot 2026-10-23T18:22:12Z</p>
+  <p class="qmeta" id="queue-counts">0 pending · 62 decided (last 90 days) · snapshot 2026-10-24T04:58:29Z</p>
   <div id="queue-list"><div class="queue-empty">The queue is clear, nothing awaiting review. 🌿</div></div>
 
   <section aria-labelledby="h-decided">
@@ -206,18 +206,47 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    if (!window.ApiClient) return; // api-client.js failed to load. Pre-rendered content stays
     var qBadge = document.getElementById('queue-badge');
     var qList = document.getElementById('queue-list');
     var qCounts = document.getElementById('queue-counts');
+    var dBadge = document.getElementById('decided-badge');
+    var dBody = document.getElementById('decided-list');
+    // Round 2 (Claude consult 2026-10-24): a plain static server (the
+    // local preview route) has no /api functions, so the two live
+    // fetches 404ed before the fallback ran. On a file/localhost
+    // origin, go straight to the published static JSON: no 404
+    // requests, and the badge honestly says cached. On the deployed
+    // site the live-first contract below is unchanged.
+    var host = location.hostname || '';
+    var staticOnly = location.protocol === 'file:' ||
+      host === 'localhost' || host === '127.0.0.1' || host === '::1';
+    if (staticOnly) {
+      function cached(badge) {
+        if (!badge) return;
+        badge.dataset.apiState = 'cached';
+        badge.textContent = 'cached';
+        badge.title = 'Static preview: showing the last published data.';
+      }
+      fetch('data/v1/review-queue.json').then(function (r) { return r.json(); })
+        .then(function (j) {
+          cached(qBadge);
+          renderPending(j.candidates || [], qList);
+          if (qCounts) qCounts.textContent = countsLine(j);
+        }).catch(function () { cached(qBadge); });
+      fetch('data/v1/decided.json').then(function (r) { return r.json(); })
+        .then(function (j) {
+          cached(dBadge);
+          renderDecided(j.decisions || j.candidates || [], dBody);
+        }).catch(function () { cached(dBadge); });
+      return;
+    }
+    if (!window.ApiClient) return; // api-client.js failed to load. Pre-rendered content stays
     window.ApiClient.fetchWithFallback('/api/review-queue', 'data/v1/review-queue.json', { badgeEl: qBadge })
       .then(function (r) {
         if (!r.data) return;
         renderPending(r.data.candidates || [], qList);
         if (qCounts) qCounts.textContent = countsLine(r.data);
       });
-    var dBadge = document.getElementById('decided-badge');
-    var dBody = document.getElementById('decided-list');
     window.ApiClient.fetchWithFallback('/api/review-queue?status=decided', 'data/v1/decided.json', { badgeEl: dBadge })
       .then(function (r) {
         if (!r.data) return;

@@ -153,7 +153,7 @@ assumption is stated, not hidden.
 - No static.js data files under api/ ever, Vercel deploys every.js there as a function (functions map is not an allowlist); basename collisions (x.js + x.json) fail the build (2026-10-12). Audit 2026-10-12: clean. Only the 4 real functions are.js; all static data is.json.
 - Vercel never serves static files under api/. All static data lives in data/v1/; only real function handlers under api/ (2026-10-12)
 - `lib/` helpers (envelope, fetchx, ratelimit, cronauth, github)
-- `vercel.json`: no buildCommand, `outputDirectory: "."`, functions +
+- `vercel.json`: buildCommand `python3 scripts/build.py`, `outputDirectory: "site"` (round 2, 2026-10-24: build assembles only public files into site/), functions +
   crons config, security headers, Standard build machine
 
 ## Functions

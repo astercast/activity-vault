@@ -6,7 +6,7 @@ Generates: activity/*.html, data/v1/*.json, data/v1/schema/*.schema.json,
            llms.txt, llms-full.txt, sitemap.xml
 Validates: schema, ids, categories, required fields, render check for every activity.
 """
-import json, os, re, sys, html
+import json, os, re, shutil, sys, html
 from urllib.parse import urlparse
 from datetime import date, datetime, timezone
 
@@ -877,18 +877,47 @@ REVIEW_CLIENT_JS = """(function () {
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    if (!window.ApiClient) return; // api-client.js failed to load. Pre-rendered content stays
     var qBadge = document.getElementById('queue-badge');
     var qList = document.getElementById('queue-list');
     var qCounts = document.getElementById('queue-counts');
+    var dBadge = document.getElementById('decided-badge');
+    var dBody = document.getElementById('decided-list');
+    // Round 2 (Claude consult 2026-10-24): a plain static server (the
+    // local preview route) has no /api functions, so the two live
+    // fetches 404ed before the fallback ran. On a file/localhost
+    // origin, go straight to the published static JSON: no 404
+    // requests, and the badge honestly says cached. On the deployed
+    // site the live-first contract below is unchanged.
+    var host = location.hostname || '';
+    var staticOnly = location.protocol === 'file:' ||
+      host === 'localhost' || host === '127.0.0.1' || host === '::1';
+    if (staticOnly) {
+      function cached(badge) {
+        if (!badge) return;
+        badge.dataset.apiState = 'cached';
+        badge.textContent = 'cached';
+        badge.title = 'Static preview: showing the last published data.';
+      }
+      fetch('data/v1/review-queue.json').then(function (r) { return r.json(); })
+        .then(function (j) {
+          cached(qBadge);
+          renderPending(j.candidates || [], qList);
+          if (qCounts) qCounts.textContent = countsLine(j);
+        }).catch(function () { cached(qBadge); });
+      fetch('data/v1/decided.json').then(function (r) { return r.json(); })
+        .then(function (j) {
+          cached(dBadge);
+          renderDecided(j.decisions || j.candidates || [], dBody);
+        }).catch(function () { cached(dBadge); });
+      return;
+    }
+    if (!window.ApiClient) return; // api-client.js failed to load. Pre-rendered content stays
     window.ApiClient.fetchWithFallback('/api/review-queue', 'data/v1/review-queue.json', { badgeEl: qBadge })
       .then(function (r) {
         if (!r.data) return;
         renderPending(r.data.candidates || [], qList);
         if (qCounts) qCounts.textContent = countsLine(r.data);
       });
-    var dBadge = document.getElementById('decided-badge');
-    var dBody = document.getElementById('decided-list');
     window.ApiClient.fetchWithFallback('/api/review-queue?status=decided', 'data/v1/decided.json', { badgeEl: dBadge })
       .then(function (r) {
         if (!r.data) return;
@@ -1085,6 +1114,10 @@ def render_activity(a, catmap, acts):
         else:
             _label = f'Source: <a href="{esc(a["source"])}" rel="noopener">source post at {_host}</a>, adapted in our own words'
         source = f'<p class="source-line">{_label}</p>'
+    else:
+        # Round 2 (Claude consult 2026-10-24): honest empty state. A page
+        # with no source must say so, never look finished when it is not.
+        source = '<p class="provenance">Source: not listed yet.</p>'
     prep = 'No prep needed' if a['no_prep'] else 'Some prep needed'
     loc = ' & '.join('Indoors' if l=='indoor' else 'Outdoors' for l in a['location'])
     why_block = ''
@@ -1126,6 +1159,10 @@ def render_activity(a, catmap, acts):
             f'<img src="../assets/photos/{esc(_ph["file"])}" alt="{esc(_ph["alt"])}" loading="lazy" style="view-transition-name: plate-{a["id"]}">'
             f'<figcaption>{esc(_ph.get("caption", ""))} '
             f'<span class="photo-credit">{_credit}</span></figcaption></figure>')
+    else:
+        # Round 2: honest empty state where the photo figure goes.
+        photo_block = ('<figure class="activity-photo activity-photo--empty no-print">'
+                       '<p>No photo yet for this one.</p></figure>')
     mats_fact = (f'{len(a["materials"])} material' + ('s' if len(a["materials"]) != 1 else '')
                  ) if a["materials"] else 'no materials'
     return ACTIVITY_TEMPLATE.format(
@@ -2014,7 +2051,7 @@ def render_home_identity(acts, cats, colls):
     guide_cover = (
         '  <section class="guide-cover" aria-labelledby="cover-h">\n'
         '    <h1 id="cover-h">A field guide to things kids can do.</h1>\n'
-        f'    <p class="cover-promise">{len(acts)} activities for ages 3 to 14. Each one has its steps, its materials, a photo where we have one, and where it came from.</p>\n'
+        f'    <p class="cover-promise">{len(acts)} activities for ages 3 to 14. Every one has its steps and materials. {sum(1 for a in acts if _photo_for(a))} have a photo and {sum(1 for a in acts if a.get("source"))} name where the idea came from. We are adding the rest.</p>\n'
         f'    <p class="cover-ways"><a href="#browse">Search by name</a> &middot; <a href="halloween.html">Halloween: {halloween_count} entries</a></p>\n'
         '  </section>\n'
     )
@@ -2197,6 +2234,51 @@ DESK_TEMPLATE = """<!DOCTYPE html>
 </body>
 </html>
 """
+
+
+def assemble_public_site():
+    """Copy only the public files into site/ (the Vercel output
+    directory). Returns the number of files copied. See the Round 2
+    note at the call site in main() for the copy-list rationale."""
+    out = os.path.join(ROOT, 'site')
+    if os.path.isdir(out):
+        shutil.rmtree(out)
+    os.makedirs(out)
+    copied = [0]
+
+    def cp(rel):
+        src = os.path.join(ROOT, rel)
+        dst = os.path.join(out, rel)
+        os.makedirs(os.path.dirname(dst), exist_ok=True)
+        shutil.copy2(src, dst)
+        copied[0] += 1
+
+    def cptree(rel):
+        src_root = os.path.join(ROOT, rel)
+        for dirpath, dirnames, filenames in os.walk(src_root):
+            dirnames[:] = [d for d in dirnames if d != '__pycache__']
+            for fn in filenames:
+                if fn.endswith('.pyc'):
+                    continue
+                cp(os.path.relpath(os.path.join(dirpath, fn), ROOT))
+
+    for name in sorted(os.listdir(ROOT)):
+        if name.endswith('.html'):
+            cp(name)
+    for name in ('llms.txt', 'llms-full.txt', 'sitemap.xml', 'robots.txt',
+                 'favicon.ico', 'favicon.svg', 'apple-touch-icon.png',
+                 'icon-192.png', 'icon-512.png',
+                 'AGENT.md', 'API.md', 'GO_LIVE.md'):
+        if os.path.exists(os.path.join(ROOT, name)):
+            cp(name)
+    cptree('activity')
+    cptree('assets')
+    cptree('skills')
+    for name in ('activities.json', 'categories.json', 'collections.json',
+                 'balance-buckets.json'):
+        cp(os.path.join('data', name))
+    cptree(os.path.join('data', 'v1'))
+    return copied[0]
 
 
 def main():
@@ -2893,6 +2975,25 @@ def main():
     n_headers = inject_minimal_headers()
     print(f"minimal header (rotation 20): one primary row + More on {n_headers} pages")
     print(f"placement: meta block on {n_updated}/{n_pages} pages.")
+
+    # 7. Round 2 (Claude consult 2026-10-24): assemble the public site/
+    # output LAST, after every injection pass, so the copies carry the
+    # final markup. vercel.json outputDirectory is "site", so only the
+    # files copied here are published. Repo-only material (WAVELOG.md,
+    # README.md, PIPELINE.md, LIVE_CHECKLIST.md, scripts/, tests/,
+    # pipeline/, lib/, the api/ function sources, data chunk files)
+    # never leaves the repo. The copy list is the public surface the
+    # served pages actually link to or fetch: every root .html page,
+    # activity/, assets/, skills/ (the public skill recipes the API
+    # registry and llms.txt point at), the four data/*.json files the
+    # browser fetches plus all of data/v1/, the llms briefs, and the
+    # three .md docs linked from served pages (AGENT.md and API.md from
+    # the footers, GO_LIVE.md from api.html). llms-full.txt stays
+    # public on purpose: API.md and AGENT.md document it as the public
+    # full catalog for agents. site/ is gitignored build output; the
+    # Vercel build command regenerates it on every deploy.
+    n_site = assemble_public_site()
+    print(f"public site assembly (round 2): {n_site} files copied into site/")
 
     print(f"BUILD OK, {len(acts)} activities, {rendered} pages rendered, "
           f"{len(cats)} categories, {len(coll_records)} collections, "

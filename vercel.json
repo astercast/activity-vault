@@ -69,6 +69,6 @@
     }
   ],
   "installCommand": "echo 'no dependencies'",
-  "outputDirectory": ".",
+  "outputDirectory": "site",
   "trailingSlash": false
 }

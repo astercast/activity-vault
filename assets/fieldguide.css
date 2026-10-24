@@ -343,3 +343,44 @@ a:hover { text-decoration-color: var(--ink); text-decoration-thickness: 2px; }
 .key-line { font-size: 1rem; }
 .key-count { font: 600 var(--fs-key)/1.3 var(--font-key); letter-spacing: .06em; text-transform: uppercase; color: var(--pencil); }
 .key-credit { font: 400 var(--fs-credit)/1.35 var(--font-key); color: var(--pencil); }
+
+/* ============ 9. ROUND 2 HONEST EMPTY STATES (consult 2026-10-24) ====
+   Paste-ready fixes from the round 2 extract, appended at the end as
+   the extract directs. A record with no photo or no source says so,
+   in the guide's own dashed-label vocabulary. */
+.row-thumb--empty {
+  inline-size: 92px;
+  block-size: 68px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: color-mix(in srgb, var(--cat) 14%, #fbf8ef);
+  border: 1px dashed color-mix(in srgb, var(--cat) 55%, transparent);
+  border-radius: 3px;
+  font: 600 .7rem / 1.2 var(--font-key);
+  color: color-mix(in srgb, var(--cat) 70%, #222);
+}
+.row-src--none { color: #7a7468; font-style: italic }
+.activity-photo--empty {
+  margin: 0 1.5rem;
+  padding: 1.25rem;
+  text-align: center;
+  background: color-mix(in srgb, var(--cat) 12%, #fbf8ef);
+  border: 1px dashed color-mix(in srgb, var(--cat) 55%, transparent);
+  color: #6b6558;
+}
+.provenance { color: #6b6558; font-style: italic }
+/* room above the filter panel, and a placeholder that fits */
+#browse { margin-top: 3rem }
+#q::placeholder { font-size: .9rem }
+/* phone: one scrolling nav line with a soft fade, no clipped tab */
+@media (max-width: 640px) {
+  .guide-head .guide-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    scroll-snap-type: x proximity;
+    mask-image: linear-gradient(90deg, #000 88%, transparent);
+  }
+  .guide-head .guide-nav > a { flex: none; scroll-snap-align: start }
+}

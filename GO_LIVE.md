@@ -22,7 +22,7 @@ when the user says they're happy with everything.
 
 ## 2. What deploys
 
-One Vercel project from this repo (`outputDirectory: "."`):
+One Vercel project from this repo (`outputDirectory: "site"`, assembled by `scripts/build.py` from the public files only, round 2, 2026-10-24):
 
 - **Static frontend**. The 455-activity Teacher's Desk site (`index.html`,
   `activity/*.html`, `assets/*`, plus the build-generated `review.html`).

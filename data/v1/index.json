@@ -2,7 +2,7 @@
  "meta": {
   "site": "Activity Vault",
   "version": "1.0.0",
-  "generated": "2026-10-23T18:22:12Z",
+  "generated": "2026-10-24T04:58:29Z",
   "source_snapshot": "data/activities.json + data/categories.json, 778 activities, 11 categories"
  },
  "endpoints": [
@@ -11,7 +11,7 @@
    "title": "API manifest",
    "description": "Self-describing manifest of every API endpoint: title, description, schema URL, updated timestamp, record counts, stability, and deprecation notes. Start here.",
    "schema": "data/v1/schema/index.schema.json",
-   "updated": "2026-10-23",
+   "updated": "2026-10-24",
    "stability": "stable"
   },
   {
@@ -19,7 +19,7 @@
    "title": "Full activity library",
    "description": "Every activity record: filters (age, time, group, location, materials, no_prep), setup, steps, variations, safety, optional season/occasion tags, optional source URL.",
    "schema": "data/v1/schema/activities.schema.json",
-   "updated": "2026-10-23",
+   "updated": "2026-10-24",
    "records": 778,
    "stability": "stable"
   },
@@ -28,7 +28,7 @@
    "title": "Category definitions",
    "description": "The 11 categories: id, name, blurb, color, glyph.",
    "schema": "data/v1/schema/categories.schema.json",
-   "updated": "2026-10-23",
+   "updated": "2026-10-24",
    "records": 11,
    "stability": "stable"
   },
@@ -37,7 +37,7 @@
    "title": "Filter configuration",
    "description": "Machine-readable filter configuration, the same matching logic the browser UI uses (range, select, multiselect, boolean, text search across name/tagline/materials/steps).",
    "schema": "data/v1/schema/filters.schema.json",
-   "updated": "2026-10-23",
+   "updated": "2026-10-24",
    "stability": "stable"
   },
   {
@@ -45,7 +45,7 @@
    "title": "Skills registry",
    "description": "Registry of the reusable skill recipes in skills/: id, description, and file path.",
    "schema": null,
-   "updated": "2026-10-23",
+   "updated": "2026-10-24",
    "records": 11,
    "stability": "stable"
   },
@@ -54,7 +54,7 @@
    "title": "Curated collections",
    "description": "Teacher-ready activity bundles for specific moments (rainy days, first days, last 10 minutes, bus rides, sub coverage, winter parties, no-prep gaps, calm-down needs). Each collection lists activity ids with a curator's one-line note on why each was picked, plus age/time spans.",
    "schema": "data/v1/schema/collections.schema.json",
-   "updated": "2026-10-23",
+   "updated": "2026-10-24",
    "records": 34,
    "stability": "stable"
   },
@@ -63,7 +63,7 @@
    "title": "Energy balance buckets",
    "description": "The 5 energy buckets (movement, calm, creative, outdoor, all-rounder) and the category-to-bucket mapping the Smart Weekly Planner's balance meter uses. An activity's bucket comes from its primary category.",
    "schema": "data/v1/schema/balance-buckets.schema.json",
-   "updated": "2026-10-23",
+   "updated": "2026-10-24",
    "records": 11,
    "stability": "stable"
   },

@@ -162,6 +162,17 @@
       th.appendChild(im);
       row.appendChild(th);
       row.classList.add('has-thumb');
+    } else {
+      // Round 2 (Claude consult 2026-10-24): honest empty state, per
+      // the extract. An unpictured record says so instead of looking
+      // finished. (Deviation from the extract's paste: its comment
+      // above this block called the plain row a designed absence; the
+      // consult's own verdict overrules that, so the state is shown.)
+      var ph = el('span', 'row-thumb row-thumb--empty');
+      ph.setAttribute('aria-hidden', 'true');
+      ph.appendChild(el('span', null, 'No photo yet'));
+      row.appendChild(ph);
+      row.classList.add('has-thumb');
     }
 
     var h = el('h3');
@@ -187,6 +198,12 @@
         sl.textContent = sourceName(a.source);
         prov.appendChild(sl);
         verdict.appendChild(prov);
+      } else {
+        // Round 2: same honesty for the source. The extract's paste
+        // targeted a verdict element that only exists inside this
+        // tagline block, so the else sits here, not after it.
+        verdict.appendChild(document.createTextNode(' '));
+        verdict.appendChild(el('span', 'row-src row-src--none', ' \u00B7 Source: not listed yet'));
       }
       row.appendChild(verdict);
     }
