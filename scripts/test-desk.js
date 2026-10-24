@@ -145,11 +145,11 @@ ok(landing.includes('class="cal-days"'), 'landing: days-remaining marginalia pre
 ok(!landing.includes('desk-section'), 'landing: no desk grid on the home (rotation 21)');
 ok(!landing.includes('class="stat"'), 'landing: no stat tiles on the home (rotation 21)');
 ok(!landing.includes('season-promo'), 'landing: no stacked season promos (L11 collapse)');
-ok((landing.match(/class="contents-line"/g) || []).length === 9, 'landing: nine contents lines, five kinds plus four issues (rotation 23)');
+ok((landing.match(/class="contents-line"/g) || []).length === 47, 'landing: forty-seven contents lines, five kinds plus four issues plus two By where (R115) plus two By time (R116) plus two By group (R117) plus two By age (R118) plus three Ready to run (R119) plus three By kit (R120) plus three By length (R121) plus three By stretch (R122) plus three By flex (R123) plus three By span (R124) plus three By start (R125) plus three By end (R126) plus three By floor (R127) plus three By ceiling (R128)');
 for (const w of ['Make', 'Play', 'Celebrate', 'Learn', 'Calm'])
   ok(landing.includes('contents-word">' + w + '<'), 'landing: contents line ' + w);
 ok(!landing.includes('verb-door') && !landing.includes('verb-glyph'), 'landing: the five emoji cards are deleted (rotation 23)');
-ok(landing.includes('class="issue-num"'), 'landing: the day count set huge in the issue hero (rotation 23)');
+ok(landing.includes('class="plate-name"') && landing.includes('class="herbarium"'), 'landing: the season plate with its herbarium label leads the home (Field Guide, R137; the rotation-23 issue hero is retired by the graded design)');
 ok((landing.match(/<h1[ >]/g) || []).length === 1, 'landing: exactly one h1');
 const lids = [...landing.matchAll(/ id="([^"]+)"/g)].map(m => m[1]);
 ok(new Set(lids).size === lids.length, 'no duplicate ids in index.html', String(lids.length));

@@ -308,7 +308,7 @@
    "no_prep": true,
    "safety": "Stay off parking lots and driveways. Use a playground or courtyard with no vehicle traffic.",
    "setup": "Find a sunny paved spot where kids can stand safely. Bring chalk.",
-   "source": "https://en.wikipedia.org/wiki/Tracing_Shadow",
+   "source": "https://en.wikipedia.org/wiki/Shadow",
    "steps": [
     "Each kid picks a pose and stands still while a partner traces their shadow outline in chalk.",
     "Write the time next to the outline.",
@@ -453,7 +453,7 @@
    "no_prep": true,
    "safety": null,
    "setup": "Print a simple daily log: date, sky (sunny/cloudy/rainy), temperature guess, wind, one observation. Works as a recurring 10-minute opener.",
-   "source": "https://en.wikipedia.org/wiki/Weather_%28journal%29",
+   "source": "https://en.wikipedia.org/wiki/Surface_weather_observation",
    "steps": [
     "Each day, kids step outside (or look out the window) and record the sky, clouds, wind, and temperature.",
     "Add one free observation: birds, puddles, what people are wearing.",
@@ -21300,7 +21300,29 @@
     "credit": "Photo: U.S. Department of Agriculture, Public domain, via Wikimedia Commons",
     "file": "r27/pumpkin-bowling.webp",
     "licence": "Public domain",
-    "source_url": "https://commons.wikimedia.org/wiki/File:20171027-AMS-LSC-0338_(38068297471).jpg"
+    "source_url": "https://commons.wikimedia.org/wiki/File:20171027-AMS-LSC-0338_(38068297471).jpg",
+    "marks": [
+     {
+      "x": 0.45,
+      "y": 0.2,
+      "label": "The bowler: two rolls a turn"
+     },
+     {
+      "x": 0.82,
+      "y": 0.36,
+      "label": "The lane: hay bales or floor tape"
+     },
+     {
+      "x": 0.33,
+      "y": 0.46,
+      "label": "The ball: a small pumpkin"
+     },
+     {
+      "x": 0.58,
+      "y": 0.76,
+      "label": "The pins: ten weighted bottles"
+     }
+    ]
    },
    "safety": "Roll, don't throw - pumpkins stay on the floor. Mop up bottle leaks fast so nobody slips.",
    "setup": "Fill bottles one-third with water and cap them tight - these are the pins. Tape a lane on the floor, pins in a triangle at the end.",
@@ -37302,5 +37324,5 @@
   }
  ],
  "count": 778,
- "updated": "2026-10-15"
+ "updated": "2026-10-23"
 }

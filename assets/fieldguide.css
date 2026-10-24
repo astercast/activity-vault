@@ -1,0 +1,345 @@
+/* Activity Vault: The Field Guide (Aesthetics Round 368, GRADED PASS,
+   built R137). Sections 1 to 7 are the graded extraction's stylesheet,
+   verbatim except the two marked build fixes: the @view-transition rule
+   moved to the top level at the end (the extraction's own note), and
+   section 8, the key list the extraction's closing cut requires.
+   AV1 (binding): the extraction's head snippet carried a remote Google
+   Fonts css2 link; it does NOT ship. Source Serif 4 and Source Sans 3
+   are self-hosted from assets/fonts/ (Google Fonts distribution, SIL
+   Open Font License 1.1), latin subsets, variable files:
+   source-serif-4-latin-var.woff2 (opsz 8..60, wght 200..900),
+   source-serif-4-italic-latin-var.woff2 (opsz 8..60, wght 200..900,
+   italic range restricted to wght 400 per the extraction's request),
+   source-sans-3-latin-var.woff2 and source-sans-3-italic-latin-var.woff2
+   (wght 200..900; presented range 400..700). Fallback faces are
+   metric-adjusted from the shipped files with fontTools, measured
+   against the Liberation proxies for Georgia and Arial. */
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("fonts/source-serif-4-latin-var.woff2") format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/source-serif-4-italic-latin-var.woff2") format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Source Serif 4 Fallback";
+  font-style: normal;
+  src: local("Georgia");
+  size-adjust: 101.68%;
+  ascent-override: 103.60%;
+  descent-override: 33.50%;
+  line-gap-override: 0.00%;
+}
+@font-face {
+  font-family: "Source Serif 4 Fallback";
+  font-style: italic;
+  src: local("Georgia");
+  size-adjust: 99.24%;
+  ascent-override: 103.60%;
+  descent-override: 33.50%;
+  line-gap-override: 0.00%;
+}
+@font-face {
+  font-family: "Source Sans 3";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("fonts/source-sans-3-latin-var.woff2") format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Source Sans 3";
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("fonts/source-sans-3-italic-latin-var.woff2") format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Source Sans 3 Fallback";
+  font-style: normal;
+  src: local("Arial");
+  size-adjust: 85.06%;
+  ascent-override: 102.40%;
+  descent-override: 40.00%;
+  line-gap-override: 0.00%;
+}
+@font-face {
+  font-family: "Source Sans 3 Fallback";
+  font-style: italic;
+  src: local("Arial");
+  size-adjust: 82.44%;
+  ascent-override: 102.40%;
+  descent-override: 40.00%;
+  line-gap-override: 0.00%;
+}
+
+/* ============ 1. TOKENS: The Field Guide ============ */
+:root {
+  color-scheme: light;
+
+  --page:   #F3EEDF;
+  --ink:    #1F2A1F;
+  --pencil: #5D6355;
+  --label:  #FBF8EF;
+  --rule:   #CFC6AE;
+  --flag:   #E8457B;
+
+  --font-entry: "Source Serif 4", "Source Serif 4 Fallback", Georgia, "Times New Roman", serif;
+  --font-key:   "Source Sans 3", "Source Sans 3 Fallback", -apple-system, "Segoe UI", Arial, sans-serif;
+
+  --fs-h1:     clamp(2rem, 1.4rem + 2.4vw, 3.25rem);
+  --fs-name:   clamp(1.9rem, 1.2rem + 2.8vw, 3.4rem);
+  --fs-lede:   clamp(1.1rem, 1rem + .45vw, 1.3rem);
+  --fs-body:   clamp(1rem, .96rem + .2vw, 1.125rem);
+  --fs-key:    .8rem;
+  --fs-credit: .75rem;
+
+  /* space: 8px unit */
+  --s-1: .5rem;
+  --s-2: .75rem;   /* photo to label, always */
+  --s-3: 1rem;
+  --s-4: 1.5rem;
+  --s-5: 2.5rem;
+  --s-6: 4rem;
+  --s-7: 6rem;
+  --gutter: clamp(1rem, .4rem + 3vw, 2.75rem);
+  --page-w: 72rem;
+  --tab-w: 7rem;
+
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+
+  /* the old names: costume off, every page follows */
+  --paper: var(--page); --paper-deep: var(--label); --card: var(--label);
+  --desk: var(--page); --desk-deep: var(--rule);
+  --ink-soft: var(--pencil); --line: var(--rule);
+  --accent: var(--ink); --accent-ink: var(--page); --season: var(--ink);
+  --font-display: var(--font-entry); --font-body: var(--font-entry);
+  --font-hand: var(--font-entry); --font-type: var(--font-key); --font-stamp: var(--font-key);
+  --radius: 2px; --shadow: none; --shadow-lift: none;
+  --grain: none; --grunge: none;
+}
+
+/* ============ 2. BASE ============ */
+html, body { background: var(--page); background-image: none; color: var(--ink); }
+body { font-family: var(--font-entry); font-size: var(--fs-body); line-height: 1.55; }
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .2em; text-decoration-color: var(--pencil); }
+a:hover { text-decoration-color: var(--ink); text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+/* ============ 3. HEADER ============ */
+.site-header.guide-head {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: var(--s-1) var(--s-5);
+  padding: var(--s-3) var(--gutter);
+  padding-inline-end: calc(var(--gutter) + var(--tab-w));
+  background: var(--page);
+  border-bottom: 1px solid var(--ink);
+  box-shadow: none;
+}
+.guide-mark { display: grid; text-decoration: none; }
+.gm-name { font: 650 1.35rem/1.1 var(--font-entry); font-optical-sizing: auto; }
+.gm-sub { font: italic 400 .9rem/1.3 var(--font-entry); color: var(--pencil); }
+.guide-nav { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-1) var(--s-4); margin-inline-start: auto; }
+.guide-nav > a, .guide-nav summary {
+  font: 600 .9rem/1 var(--font-key);
+  color: var(--ink);
+  text-decoration: none;
+  padding-block: .6rem;
+  cursor: pointer;
+}
+.guide-nav > a:hover, .guide-nav summary:hover { text-decoration: underline; }
+
+/* ============ 4. THUMB INDEX ============ */
+.thumbs {
+  position: fixed; z-index: 30;
+  right: 0; top: 6.5rem;
+  display: grid; gap: 2px;
+}
+.thumbs a {
+  display: block;
+  inline-size: var(--tab-w);
+  padding: .32rem .6rem .32rem .75rem;
+  background: var(--tab);
+  color: var(--ink);
+  font: 600 .78rem/1.25 var(--font-key);
+  text-decoration: none;
+  border-radius: 3px 0 0 3px;
+  translate: .45rem 0;
+}
+.thumbs a:hover, .thumbs a:focus-visible { translate: 0 0; }
+
+@media (width < 60rem) {
+  .site-header.guide-head { padding-inline-end: var(--gutter); }
+  .thumbs {
+    position: static;
+    display: flex; gap: 2px;
+    overflow-x: auto; scrollbar-width: none;
+    padding-inline: var(--gutter);
+  }
+  .thumbs a { inline-size: auto; flex: none; translate: 0 0; border-radius: 0 0 3px 3px; }
+}
+
+/* ============ 5. COVER ============ */
+.guide-main {
+  max-inline-size: var(--page-w);
+  margin-inline: auto;
+  padding: var(--s-6) var(--gutter) var(--s-7);
+  padding-inline-end: calc(var(--gutter) + var(--tab-w));
+}
+@media (width < 60rem) { .guide-main { padding-inline-end: var(--gutter); padding-top: var(--s-5); } }
+
+.guide-cover { max-inline-size: 46rem; }
+.guide-cover h1 { margin: 0; font: 600 var(--fs-h1)/1.08 var(--font-entry); letter-spacing: -.01em; text-wrap: balance; }
+.cover-promise { margin: var(--s-3) 0 0; font-size: var(--fs-lede); line-height: 1.45; max-inline-size: 40ch; }
+.cover-ways { margin: var(--s-3) 0 0; font: 600 .9rem/1.4 var(--font-key); }
+
+/* ============ 6. THE PLATE ============ */
+.plate { margin-top: var(--s-6); padding-top: var(--s-4); border-top: 1px solid var(--ink); }
+.plate-no {
+  margin: 0;
+  font: 600 var(--fs-key)/1 var(--font-key);
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--pencil);
+}
+.plate-name { margin: var(--s-2) 0 0; font: 650 var(--fs-name)/1.02 var(--font-entry); letter-spacing: -.015em; }
+.plate-name a { text-decoration: none; }
+.plate-name a:hover { text-decoration: underline; text-decoration-thickness: 2px; }
+.plate-binomial { margin: .35rem 0 0; font: italic 400 var(--fs-lede)/1.3 var(--font-entry); color: var(--pencil); }
+
+.specimen { container: specimen / inline-size; margin: var(--s-5) 0 0; }
+.specimen-body {
+  --plate-w: min(24rem, 54cqi);
+  --plate-h: calc(var(--plate-w) * 1.498);   /* 1438 / 960 */
+  --key-gap: 2.5rem;
+  display: grid;
+  grid-template-columns: var(--plate-w) minmax(0, 1fr);
+  column-gap: var(--key-gap);
+}
+.specimen-frame { position: relative; inline-size: var(--plate-w); }
+.specimen-frame img {
+  display: block;
+  inline-size: 100%; block-size: auto;
+  aspect-ratio: 960 / 1438;
+  object-fit: cover;
+}
+.mark {
+  position: absolute;
+  left: calc(var(--x) * 100%); top: calc(var(--y) * 100%);
+  translate: -50% -50%;
+  display: grid; place-items: center;
+  inline-size: 1.55rem; block-size: 1.55rem;
+  border-radius: 50%;
+  background: var(--flag);
+  color: var(--ink);
+  box-shadow: 0 0 0 2px var(--label);
+  font: 700 .8rem/1 var(--font-key);
+}
+
+/* labels pinned at the height of their mark, with a leader line back to it */
+.marks-key { position: relative; list-style: none; margin: 0; padding: 0; block-size: var(--plate-h); counter-reset: mark; }
+.marks-key li {
+  counter-increment: mark;
+  position: absolute; left: 0;
+  top: calc(var(--y) * var(--plate-h));
+  translate: 0 -50%;
+  font: 500 .95rem/1.25 var(--font-key);
+  white-space: nowrap;
+}
+.marks-key li::before {
+  content: "";
+  position: absolute; right: calc(100% + .5rem); top: 50%;
+  inline-size: calc((1 - var(--x)) * var(--plate-w) + var(--key-gap) - 1.3rem);
+  block-size: 1px;
+  background: var(--ink);
+  box-shadow: 0 1px 0 color-mix(in oklab, var(--label) 70%, transparent);
+}
+.marks-key li::after {
+  content: counter(mark) " ";
+  order: -1;
+  font-weight: 700;
+  color: var(--pencil);
+}
+.marks-key li:hover::before { block-size: 2px; }
+
+/* small screens: no leader lines, the key becomes a numbered list */
+@container specimen (width < 40rem) {
+  .specimen-body { --plate-w: 100cqi; grid-template-columns: minmax(0, 1fr); row-gap: var(--s-3); }
+  .marks-key { block-size: auto; display: grid; gap: .35rem; }
+  .marks-key li { position: static; translate: none; white-space: normal; }
+  .marks-key li::before { content: counter(mark); position: static; display: inline-grid; place-items: center;
+    inline-size: 1.3rem; block-size: 1.3rem; margin-inline-end: .5rem; border-radius: 50%;
+    background: var(--flag); box-shadow: none; font: 700 .72rem/1 var(--font-key); }
+  .marks-key li::after { content: none; }
+}
+
+/* the herbarium label */
+.herbarium {
+  display: grid;
+  inline-size: min(var(--plate-w, 24rem), 100%);
+  max-inline-size: 24rem;
+  margin-top: var(--s-2);
+  background: var(--label);
+  border: 1px solid var(--ink);
+  font: 400 var(--fs-credit)/1.35 var(--font-key);
+}
+.hb-row { display: grid; grid-template-columns: 4.5rem minmax(0, 1fr); gap: var(--s-1); padding: .35rem .6rem; }
+.hb-row + .hb-row { border-top: 1px solid var(--rule); }
+.hb-k { font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--pencil); }
+
+/* field marks: the quick-ID line */
+.field-marks {
+  display: flex; flex-wrap: wrap;
+  margin: var(--s-5) 0 0;
+  border-block: 1px solid var(--ink);
+}
+.field-marks div { padding: .6rem var(--s-4) .55rem 0; margin-inline-end: var(--s-4); border-inline-end: 1px solid var(--rule); }
+.field-marks div:last-child { border-inline-end: 0; }
+.field-marks dt { font: 700 var(--fs-key)/1.2 var(--font-key); letter-spacing: .08em; text-transform: uppercase; color: var(--pencil); }
+.field-marks dd { margin: .15rem 0 0; font: 600 1.05rem/1.3 var(--font-entry); }
+
+.plate-go { margin: var(--s-4) 0 0; font: 700 1rem/1.3 var(--font-key); }
+
+/* ============ 7. MOTION: only what points ============ */
+@media (prefers-reduced-motion: no-preference) {
+  :root:not([data-calm="true"]) .mark {
+    animation: pin 320ms var(--ease-out) backwards;
+    animation-delay: calc(300ms + var(--i, 0) * 90ms);
+  }
+  :root:not([data-calm="true"]) .thumbs a { transition: translate 180ms var(--ease-out); }
+  :root:not([data-calm="true"]) .marks-key li::before { transition: block-size 120ms; }
+}
+@keyframes pin { from { scale: 0; opacity: 0; } }
+
+/* view transitions: top level, as the extraction's own note directs
+   (a build fix, not a design change; calm mode still gates the rest) */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+}
+
+/* ============ 8. THE KEY LIST (BUILD ADDITION, R137) ============
+   The extraction's closing cut: "The five doors" becomes a ruled key
+   list: door name, one line, and a small credited photo thumbnail.
+   Written in the guide's own vocabulary (rules, keys, pencil credits). */
+.doors-section { margin-top: var(--s-6); padding-top: var(--s-4); border-top: 1px solid var(--ink); }
+.doors-section h2 { margin: 0; font: 650 clamp(1.5rem, 1.1rem + 1.6vw, 2.2rem)/1.1 var(--font-entry); }
+.doors-line { margin: var(--s-2) 0 0; color: var(--pencil); font-size: var(--fs-lede); }
+.keys { list-style: none; margin: var(--s-4) 0 0; padding: 0; border-top: 1px solid var(--rule); }
+.key-row { display: flex; gap: var(--s-4); align-items: flex-start; padding: var(--s-3) 0; border-bottom: 1px solid var(--rule); }
+.key-thumb { flex: none; }
+.key-thumb img { display: block; inline-size: 6.5rem; block-size: 4.5rem; object-fit: cover; }
+.key-main { display: grid; gap: .15rem; }
+.key-name { font: 650 1.15rem/1.25 var(--font-entry); text-decoration: none; }
+.key-name:hover { text-decoration: underline; text-decoration-thickness: 2px; }
+.key-line { font-size: 1rem; }
+.key-count { font: 600 var(--fs-key)/1.3 var(--font-key); letter-spacing: .06em; text-transform: uppercase; color: var(--pencil); }
+.key-credit { font: 400 var(--fs-credit)/1.35 var(--font-key); color: var(--pencil); }

@@ -249,28 +249,37 @@ def _minimal_header(prefix, current_href, no_print):
         for h, label, gloss in tools)
     season_links = "\n          ".join(
         f'<a href="{prefix}{h}"{c(prefix + h)}>{label}</a>' for h, label in seasons)
-    cls = 'site-header no-print' if no_print else 'site-header'
+    cls = 'site-header guide-head no-print' if no_print else 'site-header guide-head'
     # VP-0046 (rotation 30): with "Browse" gone, the wordmark carries
     # home's current-location marking (it is the bar's one home door).
     brand_cur = ' aria-current="page"' if current_href == prefix + "index.html" else ''
+    # R137 (Field Guide, Aesthetics Round 368): the header takes the
+    # graded extraction's form: guide-mark wordmark with its italic sub,
+    # plain guide-nav labels (the glosses retire with the costume), the
+    # same five primary destinations and the same More panel contents.
+    prim_plain = "\n      ".join(
+        f'<a href="{prefix}{h}"{c(prefix + h)}>{label}</a>'
+        for h, label, gloss in links_primary)
+    tool_plain = "\n          ".join(
+        f'<a href="{prefix}{h}"{c(prefix + h)}>{label}</a>'
+        for h, label, gloss in tools)
     return f"""<header class="{cls}">
-  <div class="wrap header-inner">
-    <a class="brand" href="{prefix}index.html"{brand_cur} aria-label="Activity Vault home">
-      <span class="brand-text">Activity <strong>Vault</strong></span>
-    </a>
-    <nav aria-label="Primary" class="nav-primary">
-      {prim}
+  <a class="guide-mark" href="{prefix}index.html"{brand_cur} aria-label="Activity Vault home">
+    <span class="gm-name">Activity Vault</span>
+    <span class="gm-sub">A field guide for ages 3 to 14</span>
+  </a>
+  <nav class="guide-nav" aria-label="Primary">
+      {prim_plain}
       <details class="nav-more">
         <summary>More</summary>
         <div class="nav-more-panel">
           <p class="nav-more-h">Tools</p>
-          {tool_links}
+          {tool_plain}
           <p class="nav-more-h">Seasons</p>
           {season_links}
         </div>
       </details>
     </nav>
-  </div>
 </header>"""
 
 def inject_minimal_headers():
@@ -311,7 +320,7 @@ def inject_minimal_headers():
 # ---------------------------------------------------------------------------
 _GF_HOSTS = ("fonts." "googleapis.com", "fonts." "gstatic.com")
 _FONT_EXTERNAL_RE = re.compile(r"[^\n]*(?:" + "|".join(h.replace(".", r"\.") for h in _GF_HOSTS) + r")[^\n]*\n?")
-_FONT_PRELOAD_RE = re.compile(r"[^\n]*rel=\"preload\"[^\n]*fraunces-latin-var\.woff2[^\n]*\n?")
+_FONT_PRELOAD_RE = re.compile(r"[^\n]*rel=\"preload\"[^\n]*(?:fraunces|source-serif-4)-latin-var\.woff2[^\n]*\n?")
 
 
 def inject_font_delivery():
@@ -326,11 +335,14 @@ def inject_font_delivery():
         prefix = "../" if rel.startswith("activity" + os.sep) else ""
         page = _FONT_EXTERNAL_RE.sub("", page)
         page = _FONT_PRELOAD_RE.sub("", page)
-        preload = (f'<link rel="preload" href="{prefix}assets/fonts/fraunces-latin-var.woff2" '
+        preload = (f'<link rel="preload" href="{prefix}assets/fonts/source-serif-4-latin-var.woff2" '
                    f'as="font" type="font/woff2" crossorigin>\n')
         anchor = f'href="{prefix}assets/style.css">'
         assert anchor in page, f"font delivery: stylesheet link missing on {rel}"
         page = page.replace(anchor, anchor + "\n" + preload.rstrip("\n"), 1)
+        fg_anchor = f'href="{prefix}assets/fieldguide.css">'
+        if fg_anchor not in page:
+            page = page.replace(anchor, anchor + "\n" + f'<link rel="stylesheet" href="{prefix}assets/fieldguide.css">', 1)
         assert all(h not in page for h in _GF_HOSTS), \
             f"font delivery: external font reference survived on {rel}"
         open(path, "w").write(page)
@@ -1111,7 +1123,7 @@ def render_activity(a, catmap, acts):
             _credit += f' <a href="{esc(_ph["source_url"])}" rel="noopener">Photo source</a>'
         photo_block = (
             f'<figure class="activity-photo cover-photo no-print">'
-            f'<img src="../assets/photos/{esc(_ph["file"])}" alt="{esc(_ph["alt"])}" loading="lazy">'
+            f'<img src="../assets/photos/{esc(_ph["file"])}" alt="{esc(_ph["alt"])}" loading="lazy" style="view-transition-name: plate-{a["id"]}">'
             f'<figcaption>{esc(_ph.get("caption", ""))} '
             f'<span class="photo-credit">{_credit}</span></figcaption></figure>')
     mats_fact = (f'{len(a["materials"])} material' + ('s' if len(a["materials"]) != 1 else '')
@@ -1243,8 +1255,15 @@ def _easter(year):
 
 
 _MOVABLE = {  # (month, day) by year, for feasts with no short rule
-    'holiday:diwali': {2026: (10, 20), 2027: (11, 8), 2028: (10, 28), 2029: (11, 5)},
-    'holiday:hanukkah': {2026: (12, 15), 2027: (12, 5), 2028: (11, 24), 2029: (12, 13)},
+    # R137 (AV4, Aesthetics Round 368): the whole table rechecked. The
+    # 2026 entries had carried 2025's dates (Diwali Oct 20, Hanukkah
+    # Dec 15); corrected values verified 2026-10-23: Diwali (main day)
+    # 2026 Nov 8, 2027 Oct 29, 2028 Oct 17, 2029 Nov 5; Hanukkah begins
+    # at sunset 2026 Dec 4, 2027 Dec 24, 2028 Dec 12, 2029 Dec 1 (the
+    # table stores the sunset-start date). Lunar New Year verified
+    # correct as it stood.
+    'holiday:diwali': {2026: (11, 8), 2027: (10, 29), 2028: (10, 17), 2029: (11, 5)},
+    'holiday:hanukkah': {2026: (12, 4), 2027: (12, 24), 2028: (12, 12), 2029: (12, 1)},
     'holiday:lunar-new-year': {2026: (2, 17), 2027: (2, 6), 2028: (1, 26), 2029: (2, 13)},
 }
 
@@ -1406,7 +1425,7 @@ def render_home_identity(acts, cats, colls):
         else:
             when = f'<span class="cal-days"><span class="cal-num">{days}</span> days</span>'
         rows.append(
-            f'      <li class="cal-row">'
+            f'      <li class="cal-row" data-date="{d.isoformat()}">'
             f'<a class="cal-name" href="{occasion_href(tag)}">{esc(name)}</a>'
             f'<span class="cal-date">{d.strftime("%a %b %-d")}</span>'
             f'<span class="cal-count">{count} activities</span>'
@@ -1441,16 +1460,451 @@ def render_home_identity(acts, cats, colls):
             f'<span class="contents-num">{i:02d}</span>'
             f'<span class="contents-word">{sname}</span>'
             f'<span class="contents-count">{tag_counts.get(stag, 0)} activities filed{cur}</span></a></li>')
-    # PRO REWORK 2026-10-15: the five doors as chapter plates. Each plate's
-    # photograph belongs to a real record, is captioned as that record's
-    # plate with its licence credit, and links to the record; the door's
-    # own claim is carried by its name and promise line. The five picks
-    # were read against each door's subject before assignment (landing
-    # record, thinking phase): parachute-popcorn (a leader and her group,
-    # mid-activity), seed-library-opening-day (a curated library of
-    # labelled drawers), blanket-fort-book-nook (the rainy day indoors),
-    # dragon-parade (a handmade celebration), one-sheet-zine-workshop
-    # (the work spread across the desk).
+    # R115 headline (ruling 10c): the where-led twin of the intent-led
+    # grouping. Every activity carries a location list (indoor/outdoor);
+    # the home Contents gains a By where pair of shelves whose counts are
+    # computed here from the library itself. 153 activities work in both
+    # places and sit on both shelves; the note under the shelves says so,
+    # and carries one planning line scoped to the where.
+    loc_counts = {}
+    for a in acts:
+        for l in a.get("location", []):
+            loc_counts[l] = loc_counts.get(l, 0) + 1
+    both_count = sum(1 for a in acts if len(set(a.get("location", []))) > 1)
+    indoors_only = loc_counts.get("indoor", 0) - both_count
+    wheres = []
+    for i, (word, lkey) in enumerate([("Indoors", "indoor"), ("Outdoors", "outdoor")], 1):
+        wheres.append(
+            f'      <li><a class="contents-line" href="index.html?loc={lkey}#browse">'
+            f'<span class="contents-num">{i:02d}</span>'
+            f'<span class="contents-word">{word}</span>'
+            f'<span class="contents-count">{loc_counts.get(lkey, 0)} activities</span></a></li>')
+    where_note = (
+        f'    <p class="contents-note">Counted from the library itself. '
+        f'{both_count} activities work in both places, so they sit on both '
+        f'shelves. The overlap is on purpose. Good to know: {indoors_only} '
+        f'never need to go outside, so a rained-out day is still a full day.</p>\n')
+    # R116 headline (ruling 10c): the time-led twin of the By where
+    # shelves. The browse's own Time available filter matches an
+    # activity when its shortest run (time_min) fits the minutes picked,
+    # so each shelf's count is exactly what its ?time= link delivers:
+    # activities whose time_min is at or under the shelf's minutes.
+    time_counts = {}
+    for cap in (15, 30):
+        time_counts[cap] = sum(1 for a in acts if a.get("time_min", 9999) <= cap)
+    between_count = time_counts[30] - time_counts[15]
+    times = []
+    for i, (word, cap) in enumerate([("15 minutes or less", 15), ("30 minutes or less", 30)], 1):
+        times.append(
+            f'      <li><a class="contents-line" href="index.html?time={cap}#browse">'
+            f'<span class="contents-num">{i:02d}</span>'
+            f'<span class="contents-word">{word}</span>'
+            f'<span class="contents-count">{time_counts[cap]} activities</span></a></li>')
+    time_note = (
+        f'    <p class="contents-note">Counted from the library itself, by '
+        f'each activity\'s shortest run. Every 15-minute activity also '
+        f'sits on the 30-minute shelf, and {between_count} more fit '
+        f'between 16 and 30 minutes. Good to know: {time_counts[30]} of '
+        f'{len(acts)} activities fit in half an hour, so a short gap in '
+        f'the day is still a full choice.</p>\n')
+    # R117 headline (ruling 10c): the group-led twin of the By where /
+    # By time shelves. The browse's own Group size filter matches an
+    # activity when the picked size falls inside its group range
+    # (group_min..group_max), so each shelf's count is exactly what its
+    # ?group= link delivers: activities whose range covers the size the
+    # Group size select names (8 for Small, 25 for Large).
+    group_counts = {}
+    for size in (8, 25):
+        group_counts[size] = sum(
+            1 for a in acts
+            if a.get("group_min", 9999) <= size <= a.get("group_max", 0))
+    both_group = sum(
+        1 for a in acts
+        if a.get("group_min", 9999) <= 8 and a.get("group_max", 0) >= 25)
+    huge_count = sum(
+        1 for a in acts
+        if a.get("group_min", 9999) <= 40 <= a.get("group_max", 0))
+    groups = []
+    for i, (word, size) in enumerate(
+            [("Small (2–8 kids)", 8), ("Large (17–25 kids)", 25)], 1):
+        groups.append(
+            f'      <li><a class="contents-line" href="index.html?group={size}#browse">'
+            f'<span class="contents-num">{i:02d}</span>'
+            f'<span class="contents-word">{word}</span>'
+            f'<span class="contents-count">{group_counts[size]} activities</span></a></li>')
+    group_note = (
+        f'    <p class="contents-note">Counted from the library itself, by '
+        f'the group sizes each activity can take. {both_group} activities '
+        f'fit both a small group and a large one, so they sit on both '
+        f'shelves. Good to know: {huge_count} activities can stretch to '
+        f'40 kids, so the whole program in one room still has a '
+        f'choice.</p>\n')
+    # R118 headline (ruling 10c): the age-led twin of the By where /
+    # By time / By group shelves. The browse's own Age filter matches
+    # an activity when the picked age falls inside its age range
+    # (age_min..age_max), so each shelf's count is exactly what its
+    # ?age= link delivers: activities whose range covers the age the
+    # shelf names (5 for the little kids, 11 for the older ones).
+    age_counts = {}
+    for age in (5, 11):
+        age_counts[age] = sum(
+            1 for a in acts
+            if a.get("age_min", 9999) <= age <= a.get("age_max", 0))
+    both_age = sum(
+        1 for a in acts
+        if a.get("age_min", 9999) <= 5 and a.get("age_max", 0) >= 11)
+    ages = []
+    for i, (word, age) in enumerate(
+            [("5-year-olds", 5), ("11-year-olds", 11)], 1):
+        ages.append(
+            f'      <li><a class="contents-line" href="index.html?age={age}#browse">'
+            f'<span class="contents-num">{i:02d}</span>'
+            f'<span class="contents-word">{word}</span>'
+            f'<span class="contents-count">{age_counts[age]} activities</span></a></li>')
+    age_note = (
+        f'    <p class="contents-note">Counted from the library itself, by '
+        f'the ages each activity is written for. {both_age} activities '
+        f'fit both a 5-year-old and an 11-year-old, so they sit on both '
+        f'shelves. Good to know: a mixed-age group still has those '
+        f'{both_age} to choose from, little kids and big kids in the '
+        f'same room.</p>\n')
+    # R119 headline (ruling 10c): the first Contents-family GUIDANCE
+    # surface — the "Ready to run" shelves. The earlier Contents twins
+    # group the library by what the visitor brings (where, time, group,
+    # age); these group it by what the activity asks of the visitor
+    # before it can start, which is the browse's own three verified
+    # "only" toggles: no_prep ("Only no-prep"), copy_free ("Copy-free
+    # only", verified zero printing) and no_elimination
+    # ("No-elimination only"). Each shelf's count is exactly what its
+    # ?ready= link delivers, because the browse matches those toggles
+    # on the same three fields.
+    ready_counts = {
+        "noprep": sum(1 for a in acts if a.get("no_prep")),
+        "copyfree": sum(1 for a in acts if a.get("copy_free")),
+        "noelim": sum(1 for a in acts if a.get("no_elimination")),
+    }
+    ready_all = sum(
+        1 for a in acts
+        if a.get("no_prep") and a.get("copy_free") and a.get("no_elimination"))
+    readys = []
+    for i, (word, key) in enumerate(
+            [("No prep needed", "noprep"), ("Nothing to print", "copyfree"),
+             ("No one sits out", "noelim")], 1):
+        readys.append(
+            f'      <li><a class="contents-line" href="index.html?ready={key}#browse">'
+            f'<span class="contents-num">{i:02d}</span>'
+            f'<span class="contents-word">{word}</span>'
+            f'<span class="contents-count">{ready_counts[key]} activities</span></a></li>')
+    ready_note = (
+        f'    <p class="contents-note">Counted from the library itself, by '
+        f'what each activity asks of you before it starts. Good to know: '
+        f'{ready_all} activities need no prep, print nothing, and sit no '
+        f'one out, so they are ready the minute you are.</p>\n')
+    # R120 headline (ruling 10c): the second Contents-family GUIDANCE
+    # surface — the "By kit" shelves, the twin of Ready to run. Ready
+    # to run groups the library by what an activity asks of you before
+    # it starts; these group it by what you have to gather first,
+    # counted from each activity's own materials list. The browse's
+    # Kit to gather filter matches an activity when its materials
+    # count is at or under the cap picked, so each shelf's count is
+    # exactly what its ?kit= link delivers.
+    kit_counts = {}
+    for cap in (0, 2, 3):
+        kit_counts[cap] = sum(1 for a in acts if len(a.get("materials", [])) <= cap)
+    kit_five = sum(1 for a in acts if len(a.get("materials", [])) <= 5)
+    kits = []
+    for i, (word, cap) in enumerate(
+            [("Nothing to gather", 0), ("Two things or fewer", 2),
+             ("Three things or fewer", 3)], 1):
+        kits.append(
+            f'      <li><a class="contents-line" href="index.html?kit={cap}#browse">'
+            f'<span class="contents-num">{i:02d}</span>'
+            f'<span class="contents-word">{word}</span>'
+            f'<span class="contents-count">{kit_counts[cap]} activities</span></a></li>')
+    kit_note = (
+        f'    <p class="contents-note">Counted from the library itself, by '
+        f'how much each activity asks you to gather first. Every '
+        f'nothing-to-gather activity also sits on the other two shelves. '
+        f'Good to know: {kit_counts[0]} activities need nothing gathered '
+        f'at all, and {kit_five} need five things or fewer, so an empty '
+        f'cupboard is rarely the end of the day.</p>\n')
+    # R121 headline (ruling 10c): the third Contents-family GUIDANCE
+    # surface — the "By length" shelves, the long-run twin of By time.
+    # By time groups the library by each activity's shortest run (what
+    # fits the minutes you have); these group it by each activity's
+    # longest run (what can fill the stretch you have), counted from
+    # time_max. The browse's Can run for filter matches an activity
+    # when its longest run is at or over the minutes picked, so each
+    # shelf's count is exactly what its ?long= link delivers.
+    length_counts = {}
+    for cap in (30, 45, 60):
+        length_counts[cap] = sum(1 for a in acts if a.get("time_max", 0) >= cap)
+    lengths = []
+    for i, (word, cap) in enumerate(
+            [("Runs 30 minutes or more", 30), ("Runs 45 minutes or more", 45),
+             ("Runs an hour or more", 60)], 1):
+        lengths.append(
+            f'      <li><a class="contents-line" href="index.html?long={cap}#browse">'
+            f'<span class="contents-num">{i:02d}</span>'
+            f'<span class="contents-word">{word}</span>'
+            f'<span class="contents-count">{length_counts[cap]} activities</span></a></li>')
+    length_note = (
+        f'    <p class="contents-note">Counted from the library itself, by '
+        f'each activity\'s longest run. Every hour-long activity also '
+        f'sits on the other two shelves. Good to know: {length_counts[60]} '
+        f'activities can fill a whole hour, and {length_counts[30]} can '
+        f'fill half an hour or more, so a long open stretch in the day '
+        f'is covered too.</p>\n')
+    # R122 headline (ruling 10c): the fourth Contents-family GUIDANCE
+    # surface — the "By stretch" shelves, the window twin of By time
+    # and By length. By time groups the library by each activity's
+    # shortest run and By length by its longest run; these group it
+    # by the window between the two (time_max - time_min), which is
+    # what a leader whose timing slips needs: how far the activity
+    # itself can stretch or shrink. The browse's Can stretch by
+    # filter matches an activity when its window is at or over the
+    # minutes picked, so each shelf's count is exactly what its
+    # ?stretch= link delivers.
+    stretch_counts = {}
+    for cap in (10, 15, 20):
+        stretch_counts[cap] = sum(
+            1 for a in acts
+            if a.get("time_max", 0) - a.get("time_min", 0) >= cap)
+    stretch_half = sum(
+        1 for a in acts
+        if a.get("time_max", 0) - a.get("time_min", 0) >= 30)
+    stretches = []
+    for i, (word, cap) in enumerate(
+            [("Stretches 10 minutes or more", 10),
+             ("Stretches 15 minutes or more", 15),
+             ("Stretches 20 minutes or more", 20)], 1):
+        stretches.append(
+            f'      <li><a class="contents-line" href="index.html?stretch={cap}#browse">'
+            f'<span class="contents-num">{i:02d}</span>'
+            f'<span class="contents-word">{word}</span>'
+            f'<span class="contents-count">{stretch_counts[cap]} activities</span></a></li>')
+    stretch_note = (
+        f'    <p class="contents-note">Counted from the library itself, by '
+        f'the window between each activity\'s shortest and longest run. '
+        f'Every 20-minute stretcher also sits on the other two shelves. '
+        f'Good to know: {stretch_counts[15]} activities can stretch by '
+        f'15 minutes or more, and {stretch_half} can stretch by a whole '
+        f'half hour, so a plan that slips still holds.</p>\n')
+    # R123 headline (ruling 10c): the fifth Contents-family GUIDANCE
+    # surface — the "By flex" shelves, the group-window twin of By
+    # stretch. By group groups the library by the group size you
+    # bring; these group it by the window between each activity's
+    # smallest and largest group (group_max - group_min), which is
+    # what a leader whose group size changes needs: how far the
+    # activity itself can flex when half the class is out, or two
+    # classes join into one. The browse's Can flex by filter matches
+    # an activity when its group window is at or over the count
+    # picked, so each shelf's count is exactly what its ?flex=
+    # link delivers.
+    flex_counts = {}
+    for cap in (20, 25, 30):
+        flex_counts[cap] = sum(
+            1 for a in acts
+            if a.get("group_max", 0) - a.get("group_min", 0) >= cap)
+    flex_wide = sum(
+        1 for a in acts
+        if a.get("group_max", 0) - a.get("group_min", 0) >= 35)
+    flexes = []
+    for i, (word, cap) in enumerate(
+            [("Flexes 20 kids or more", 20),
+             ("Flexes 25 kids or more", 25),
+             ("Flexes 30 kids or more", 30)], 1):
+        flexes.append(
+            f'      <li><a class="contents-line" href="index.html?flex={cap}#browse">'
+            f'<span class="contents-num">{i:02d}</span>'
+            f'<span class="contents-word">{word}</span>'
+            f'<span class="contents-count">{flex_counts[cap]} activities</span></a></li>')
+    flex_note = (
+        f'    <p class="contents-note">Counted from the library itself, by '
+        f'the window between each activity\'s smallest and largest group. '
+        f'Every 30-kid flexer also sits on the other two shelves. '
+        f'Good to know: {flex_counts[25]} activities can flex by '
+        f'25 kids or more, and {flex_wide} can flex by 35 kids or '
+        f'more, so a group that shrinks or doubles still fits.</p>\n')
+    # R124 headline (ruling 10c): the sixth Contents-family GUIDANCE
+    # surface — the "By span" shelves, the age-window twin of By
+    # stretch and By flex. By age groups the library by the age you
+    # bring; these group it by the window between each activity's
+    # youngest and oldest age (age_max - age_min), which is what a
+    # leader with a mixed-age room needs: how wide an age range the
+    # activity itself can hold. The browse's Can span by filter
+    # matches an activity when its age window is at or over the
+    # years picked, so each shelf's count is exactly what its
+    # ?span= link delivers.
+    span_counts = {}
+    for cap in (5, 6, 7):
+        span_counts[cap] = sum(
+            1 for a in acts
+            if a.get("age_max", 0) - a.get("age_min", 0) >= cap)
+    span_wide = sum(
+        1 for a in acts
+        if a.get("age_max", 0) - a.get("age_min", 0) >= 8)
+    spans = []
+    for i, (word, cap) in enumerate(
+            [("Spans 5 years or more", 5),
+             ("Spans 6 years or more", 6),
+             ("Spans 7 years or more", 7)], 1):
+        spans.append(
+            f'      <li><a class="contents-line" href="index.html?span={cap}#browse">'
+            f'<span class="contents-num">{i:02d}</span>'
+            f'<span class="contents-word">{word}</span>'
+            f'<span class="contents-count">{span_counts[cap]} activities</span></a></li>')
+    span_note = (
+        f'    <p class="contents-note">Counted from the library itself, by '
+        f'the window between each activity\'s youngest and oldest age. '
+        f'Every 7-year spanner also sits on the other two shelves. '
+        f'Good to know: {span_counts[6]} activities can span '
+        f'6 years or more, and {span_wide} can span 8 years or '
+        f'more, so one room of little kids and big kids still fits.</p>\n')
+    # R125 headline (ruling 10c): the seventh Contents-family GUIDANCE
+    # surface — the "By start" shelves, the start-point twin of By
+    # age and By span. By age groups the library by an age inside
+    # each activity's window and By span by the window's width;
+    # these group it by the window's start (age_min), which is what
+    # a leader with a very young group needs first: what can my
+    # youngest kids join at all. The browse's Starts at filter
+    # matches an activity when its youngest age is at or under the
+    # years picked, so each shelf's count is exactly what its
+    # ?start= link delivers.
+    start_counts = {}
+    for cap in (4, 5, 6):
+        start_counts[cap] = sum(
+            1 for a in acts
+            if a.get("age_min", 9999) <= cap)
+    start_youngest = sum(
+        1 for a in acts
+        if a.get("age_min", 9999) <= 3)
+    starts = []
+    for i, (word, cap) in enumerate(
+            [("Starts at 4 or younger", 4),
+             ("Starts at 5 or younger", 5),
+             ("Starts at 6 or younger", 6)], 1):
+        starts.append(
+            f'      <li><a class="contents-line" href="index.html?start={cap}#browse">'
+            f'<span class="contents-num">{i:02d}</span>'
+            f'<span class="contents-word">{word}</span>'
+            f'<span class="contents-count">{start_counts[cap]} activities</span></a></li>')
+    start_note = (
+        f'    <p class="contents-note">Counted from the library itself, by '
+        f'the youngest age each activity starts at. Every activity that '
+        f'starts at 4 or younger also sits on the other two shelves. '
+        f'Good to know: {start_counts[5]} activities start at '
+        f'5 or younger, and {start_youngest} start at 3 or '
+        f'younger, so even the youngest group in the building has '
+        f'a real choice.</p>\n')
+    # R126 headline (ruling 10c): the eighth Contents-family GUIDANCE
+    # surface — the "By end" shelves, the end-point twin of By start.
+    # By start groups the library by where each activity's age window
+    # begins (age_min) and By span by the window's width; these group
+    # it by the window's end (age_max), which is what a leader with
+    # older kids needs first: what still holds my oldest kids. The
+    # browse's Ends at filter matches an activity when its oldest age
+    # is at or over the years picked, so each shelf's count is exactly
+    # what its ?end= link delivers. It is also the age-side twin of
+    # By length (R121), which does the same for time_max.
+    end_counts = {}
+    for cap in (10, 12, 14):
+        end_counts[cap] = sum(
+            1 for a in acts
+            if a.get("age_max", 0) >= cap)
+    ends = []
+    for i, (word, cap) in enumerate(
+            [("Ends at 10 or older", 10),
+             ("Ends at 12 or older", 12),
+             ("Ends at 14", 14)], 1):
+        ends.append(
+            f'      <li><a class="contents-line" href="index.html?end={cap}#browse">'
+            f'<span class="contents-num">{i:02d}</span>'
+            f'<span class="contents-word">{word}</span>'
+            f'<span class="contents-count">{end_counts[cap]} activities</span></a></li>')
+    end_note = (
+        f'    <p class="contents-note">Counted from the library itself, by '
+        f'the oldest age each activity ends at. Every activity that ends '
+        f'at 14 also sits on the other two shelves. '
+        f'Good to know: {end_counts[12]} activities end at '
+        f'12 or older, and {end_counts[14]} end at 14, so even '
+        f'the oldest group in the building has a real choice.</p>\n')
+    # R127 headline (ruling 10c): the ninth Contents-family GUIDANCE
+    # surface — the "By floor" shelves, the group-side twin of By
+    # start. By start groups the library by the youngest age each
+    # activity starts at (age_min); these group it by the smallest
+    # group each activity starts with (group_min), which is what a
+    # leader with only a few kids in the room asks first: what can
+    # start small. The browse's Starts with filter matches an
+    # activity when its smallest group is at or under the kids
+    # picked, so each shelf's count is exactly what its ?floor=
+    # link delivers. It is also the floor twin of By flex (R123),
+    # which reads the same group window's width.
+    floor_counts = {}
+    for cap in (2, 4, 6):
+        floor_counts[cap] = sum(
+            1 for a in acts
+            if a.get("group_min", 9999) <= cap)
+    floor_solo = sum(
+        1 for a in acts
+        if a.get("group_min", 9999) <= 1)
+    floors = []
+    for i, (word, cap) in enumerate(
+            [("Starts with 2 or fewer", 2),
+             ("Starts with 4 or fewer", 4),
+             ("Starts with 6 or fewer", 6)], 1):
+        floors.append(
+            f'      <li><a class="contents-line" href="index.html?floor={cap}#browse">'
+            f'<span class="contents-num">{i:02d}</span>'
+            f'<span class="contents-word">{word}</span>'
+            f'<span class="contents-count">{floor_counts[cap]} activities</span></a></li>')
+    floor_note = (
+        f'    <p class="contents-note">Counted from the library itself, by '
+        f'the smallest group each activity starts with. Every activity '
+        f'that starts with 2 or fewer also sits on the other two '
+        f'shelves. Good to know: {floor_counts[4]} activities start '
+        f'with 4 or fewer, and {floor_solo} start with just '
+        f'1 kid, so a nearly empty room still has a real choice.</p>\n')
+    # R128 headline (ruling 10c): the tenth Contents-family GUIDANCE
+    # surface — the "By ceiling" shelves, the group-side twin of By
+    # floor. By floor groups the library by the smallest group each
+    # activity starts with (group_min); these group it by the largest
+    # group each activity can hold (group_max), which is what a
+    # leader with a whole class in the room asks first: what still
+    # fits everyone. The browse's Fits filter matches an activity
+    # when its largest group is at or over the kids picked, so each
+    # shelf's count is exactly what its ?ceiling= link delivers. It
+    # is also the ceiling twin of By end (R126), which does the same
+    # for age_max.
+    ceiling_counts = {}
+    for cap in (10, 20, 30):
+        ceiling_counts[cap] = sum(
+            1 for a in acts
+            if a.get("group_max", 0) >= cap)
+    ceiling_big = sum(
+        1 for a in acts
+        if a.get("group_max", 0) >= 60)
+    ceilings = []
+    for i, (word, cap) in enumerate(
+            [("Fits 10 or more", 10),
+             ("Fits 20 or more", 20),
+             ("Fits 30 or more", 30)], 1):
+        ceilings.append(
+            f'      <li><a class="contents-line" href="index.html?ceiling={cap}#browse">'
+            f'<span class="contents-num">{i:02d}</span>'
+            f'<span class="contents-word">{word}</span>'
+            f'<span class="contents-count">{ceiling_counts[cap]} activities</span></a></li>')
+    ceiling_note = (
+        f'    <p class="contents-note">Counted from the library itself, by '
+        f'the largest group each activity can hold. Every activity '
+        f'that fits 30 or more also sits on the other two '
+        f'shelves. Good to know: {ceiling_counts[20]} activities fit '
+        f'20 or more, and {ceiling_big} fit 60, so even '
+        f'the biggest group in the building has a real choice.</p>\n')
+    # R137 (Field Guide, Aesthetics Round 368): the five doors become a
+    # ruled key list. Door name, one line, the generated count line, and
+    # a small credited photo thumbnail. Plate then key, never two
+    # plates or two lists back to back.
     _DOORS = [
         ("01", "Plan my week", "planner.html",
          "A week of activities, day by day.",
@@ -1480,52 +1934,94 @@ def render_home_identity(acts, cats, colls):
         if ph.get("source_url"):
             credit += f' <a href="{esc(ph["source_url"])}" rel="noopener">Photo source</a>'
         door_items.append(
-            f'      <li class="door">'
-            f'<a class="door-main" href="{href}">'
-            f'<span class="door-num">Door {num}</span>'
-            f'<span class="door-name">{dname}</span>'
-            f'<span class="door-promise">{promise}</span>'
-            f'<span class="door-count">{count_line}</span></a>'
-            f'<figure class="door-plate">'
-            f'<a class="door-plate-link" href="activity/{pid}.html" tabindex="-1">'
+            f'      <li class="key-row">'
+            f'<a class="key-thumb" href="activity/{pid}.html" tabindex="-1">'
             f'<img src="assets/photos/{esc(ph["file"])}" alt="" loading="lazy"></a>'
-            f'<figcaption>From <a href="activity/{pid}.html">{esc(rec["name"])}</a>. '
-            f'<span class="photo-credit">{credit}</span></figcaption></figure></li>')
+            f'<span class="key-main"><a class="key-name" href="{href}">{dname}</a>'
+            f'<span class="key-line">{promise}</span>'
+            f'<span class="key-count">{count_line}</span>'
+            f'<span class="key-credit">Photo from <a href="activity/{pid}.html">{esc(rec["name"])}</a>. {credit}</span></span></li>')
     doors_html = (
-        '  <section class="doors-section" aria-labelledby="doors-h">\n'
+        '  <section class="doors-section key-list" aria-labelledby="doors-h">\n'
         '    <h2 id="doors-h">The five doors</h2>\n'
         '    <p class="doors-line">Five ways in. Pick the one that matches the day you have.</p>\n'
-        '    <ol class="doors">\n' + '\n'.join(door_items) + '\n    </ol>\n'
+        '    <ol class="keys">\n' + '\n'.join(door_items) + '\n    </ol>\n'
         '  </section>\n'
     )
     cover = _cover_for(acts, season_tag, occ_tag)
     cover_html = ''
     if cover:
         ph = _photo_for(cover)
-        credit = esc(ph["credit"])
-        if ph.get("source_url"):
-            credit += f' <a href="{esc(ph["source_url"])}" rel="noopener">Photo source</a>'
+        # Herbarium label pieces: the data credit reads "Photo: X,
+        # <licence>, via Wikimedia Commons"; the label states Photo,
+        # Licence and Source as its own rows.
+        credit_text = ph.get("credit", "")
+        photo_who = credit_text
+        if photo_who.startswith("Photo: "):
+            photo_who = photo_who[len("Photo: "):]
+        for suffix in (f', {ph.get("licence", "")}, via Wikimedia Commons',
+                       f', {ph.get("licence", "")}', ', via Wikimedia Commons'):
+            if suffix and photo_who.endswith(suffix):
+                photo_who = photo_who[:-len(suffix)]
+                break
+        marks = ph.get("marks") or []
+        mark_spans = ''.join(
+            f'<span class="mark" style="--x:{m["x"]}; --y:{m["y"]}; --i:{i}" aria-hidden="true">{i + 1}</span>'
+            for i, m in enumerate(marks))
+        key_items = ''.join(
+            f'<li style="--x:{m["x"]}; --y:{m["y"]}">{esc(m["label"])}</li>'
+            for m in marks)
+        marks_html = ''
+        if marks:
+            marks_html = (f'<div class="specimen-frame">'
+                          f'<img src="assets/photos/{esc(ph["file"])}" alt="{esc(ph["alt"])}" width="960" height="1438" fetchpriority="high" style="view-transition-name: plate-{cover["id"]}">'
+                          f'{mark_spans}</div>'
+                          f'<ol class="marks-key" aria-label="Field marks in the photo">{key_items}</ol>')
+        else:
+            marks_html = (f'<div class="specimen-frame">'
+                          f'<img src="assets/photos/{esc(ph["file"])}" alt="{esc(ph["alt"])}" width="960" height="1438" fetchpriority="high" style="view-transition-name: plate-{cover["id"]}"></div>')
+        source_html = esc(ph.get("source_url", ""))
+        source_name = "Wikimedia Commons" if "wikimedia.org" in source_html or "commons.wikimedia" in source_html else "Source"
+        locs = cover.get("location", [])
+        where = " and ".join(w.capitalize() + "s" for w in locs) if locs else ""
+        turns_row = ('<div><dt>Turns</dt><dd>Nobody sits out</dd></div>'
+                     if cover.get("no_elimination") else '')
         cover_html = (
-            f'    <figure class="issue-cover">'
-            f'<img src="assets/photos/{esc(ph["file"])}" alt="{esc(ph["alt"])}">'
-            f'<figcaption><a href="activity/{cover["id"]}.html">{esc(cover["name"])}</a>: '
-            f'{esc(ph.get("caption", ""))} <span class="photo-credit">{credit}</span></figcaption></figure>\n')
+            f'  <section class="plate" aria-labelledby="plate-h">\n'
+            f'    <p class="plate-no">Plate 1 &middot; In season: {season}</p>\n'
+            f'    <h2 class="plate-name" id="plate-h"><a href="activity/{cover["id"]}.html">{esc(cover["name"])}</a></h2>\n'
+            f'    <p class="plate-binomial">{esc(cover.get("tagline", ""))}</p>\n'
+            f'    <figure class="specimen">\n'
+            f'      <div class="specimen-body">\n        {marks_html}\n      </div>\n'
+            f'      <figcaption class="herbarium">'
+            f'<span class="hb-row"><span class="hb-k">Photo</span><span>{esc(photo_who)}</span></span>'
+            f'<span class="hb-row"><span class="hb-k">Licence</span><span>{esc(ph.get("licence", ""))}</span></span>'
+            f'<span class="hb-row"><span class="hb-k">Source</span><a href="{source_html}" rel="noopener">{source_name}</a></span>'
+            f'</figcaption>\n'
+            f'    </figure>\n'
+            f'    <dl class="field-marks">'
+            f'<div><dt>Ages</dt><dd>{cover["age_min"]} to {cover["age_max"]}</dd></div>'
+            f'<div><dt>Group</dt><dd>{cover["group_min"]} to {cover["group_max"]}</dd></div>'
+            f'<div><dt>Time</dt><dd>{cover["time_min"]} to {cover["time_max"]} min</dd></div>'
+            + (f'<div><dt>Where</dt><dd>{where}</dd></div>' if where else '')
+            + turns_row +
+            f'</dl>\n'
+            f'    <p class="plate-go"><a href="activity/{cover["id"]}.html">Read the full entry <span aria-hidden="true">&rarr;</span></a></p>\n'
+            f'  </section>\n'
+        )
     season_filed = tag_counts.get(season_tag, 0)
-    return (
-        f'  <div class="almanac" style="--season:{season_color}">\n'
-        '  <section class="issue-hero" aria-labelledby="issue-h">\n'
-        f'    <p class="issue-kicker">Activity Vault &middot; the current issue &middot; {today.strftime("%B %Y")}</p>\n'
-        f'    <h1 class="issue-title" id="issue-h">{season}</h1>\n'
-        '    <div class="issue-count">\n'
-        f'      <span class="issue-num">{days0}</span>\n'
-        f'      <span class="issue-num-text"><span class="issue-num-kicker">days to</span>'
-        f'<a href="{occasion_href(occ_tag)}">{esc(occ_name)}</a>'
-        f'<span class="issue-num-date">{d0.strftime("%A, %B %-d")} &middot; {occ_count} activities filed for it</span></span>\n'
-        '    </div>\n'
-        + cover_html +
-        f'    <p class="issue-standfirst">{season_filed} activities are filed under {season.lower()}, '
-        f'and {len(acts)} in the year altogether.</p>\n'
+    halloween_count = tag_counts.get("holiday:halloween", 0)
+    guide_cover = (
+        '  <section class="guide-cover" aria-labelledby="cover-h">\n'
+        '    <h1 id="cover-h">A field guide to things kids can do.</h1>\n'
+        f'    <p class="cover-promise">{len(acts)} activities for ages 3 to 14. Each one has its steps, its materials, a photo where we have one, and where it came from.</p>\n'
+        f'    <p class="cover-ways"><a href="#browse">Search by name</a> &middot; <a href="halloween.html">Halloween: {halloween_count} entries</a></p>\n'
         '  </section>\n'
+    )
+    return (
+        f'  <div class="almanac">\n'
+        + guide_cover
+        + cover_html
         + doors_html +
         '  <section class="calendar-first" aria-labelledby="cal-h">\n'
         '    <h2 id="cal-h">What\'s coming up</h2>\n'
@@ -1536,6 +2032,48 @@ def render_home_identity(acts, cats, colls):
         '    <ol class="contents-lines">\n' + '\n'.join(contents) + '\n    </ol>\n'
         '    <h3 class="contents-sub">The year\'s issues</h3>\n'
         '    <ol class="contents-lines">\n' + '\n'.join(issues) + '\n    </ol>\n'
+        '    <h3 class="contents-sub">By where</h3>\n'
+        '    <ol class="contents-lines">\n' + '\n'.join(wheres) + '\n    </ol>\n'
+        + where_note +
+        '    <h3 class="contents-sub">By time</h3>\n'
+        '    <ol class="contents-lines">\n' + '\n'.join(times) + '\n    </ol>\n'
+        + time_note +
+        '    <h3 class="contents-sub">By group</h3>\n'
+        '    <ol class="contents-lines">\n' + '\n'.join(groups) + '\n    </ol>\n'
+        + group_note +
+        '    <h3 class="contents-sub">By age</h3>\n'
+        '    <ol class="contents-lines">\n' + '\n'.join(ages) + '\n    </ol>\n'
+        + age_note +
+        '    <h3 class="contents-sub">Ready to run</h3>\n'
+        '    <ol class="contents-lines">\n' + '\n'.join(readys) + '\n    </ol>\n'
+        + ready_note +
+        '    <h3 class="contents-sub">By kit</h3>\n'
+        '    <ol class="contents-lines">\n' + '\n'.join(kits) + '\n    </ol>\n'
+        + kit_note +
+        '    <h3 class="contents-sub">By length</h3>\n'
+        '    <ol class="contents-lines">\n' + '\n'.join(lengths) + '\n    </ol>\n'
+        + length_note +
+        '    <h3 class="contents-sub">By stretch</h3>\n'
+        '    <ol class="contents-lines">\n' + '\n'.join(stretches) + '\n    </ol>\n'
+        + stretch_note +
+        '    <h3 class="contents-sub">By flex</h3>\n'
+        '    <ol class="contents-lines">\n' + '\n'.join(flexes) + '\n    </ol>\n'
+        + flex_note +
+        '    <h3 class="contents-sub">By span</h3>\n'
+        '    <ol class="contents-lines">\n' + '\n'.join(spans) + '\n    </ol>\n'
+        + span_note +
+        '    <h3 class="contents-sub">By start</h3>\n'
+        '    <ol class="contents-lines">\n' + '\n'.join(starts) + '\n    </ol>\n'
+        + start_note +
+        '    <h3 class="contents-sub">By end</h3>\n'
+        '    <ol class="contents-lines">\n' + '\n'.join(ends) + '\n    </ol>\n'
+        + end_note +
+        '    <h3 class="contents-sub">By floor</h3>\n'
+        '    <ol class="contents-lines">\n' + '\n'.join(floors) + '\n    </ol>\n'
+        + floor_note +
+        '    <h3 class="contents-sub">By ceiling</h3>\n'
+        '    <ol class="contents-lines">\n' + '\n'.join(ceilings) + '\n    </ol>\n'
+        + ceiling_note +
         '  </section>\n'
         '  </div>\n'
     )
@@ -1552,7 +2090,7 @@ def inject_home_identity(acts, cats, colls):
     before, rest = html_text.split(start, 1)
     _, after = rest.split(end, 1)
     section = render_home_identity(acts, cats, colls)
-    assert 'cal-row' in section and 'contents-line' in section and 'issue-num' in section, "home identity render check failed"
+    assert 'cal-row' in section and 'contents-line' in section and 'plate-name' in section and 'herbarium' in section, "home identity render check failed"
     assert 'verb-door' not in section and 'verb-glyph' not in section, "home identity: emoji cards leaked back"
     assert 'desk-card' not in section and 'class="stat"' not in section, "home identity: desk/stat leaked"
     open(path, 'w').write(before + start + '\n' + section + '  ' + end + after)

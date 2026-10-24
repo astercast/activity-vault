@@ -5,10 +5,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Activity Vault · the live activity database for teachers</title>
 <meta name="description" content="A live database of activities for teachers and after-school programs: full-length records searchable by age, category, time, group size and materials, kept current by The Scout, growing every wave.">
+<meta name="theme-color" content="#F3EEDF">
 <link rel="stylesheet" href="assets/style.css">
-<link rel="preload" href="assets/fonts/fraunces-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/source-serif-4-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fieldguide.css">
 <script src="assets/site.js" defer></script>
 <script src="assets/desk.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -86,24 +106,24 @@
 <!-- PLACEMENT:END -->
 </head>
 <body>
-<a class="skip-link" href="#cards">Skip to activities</a>
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="brand" href="index.html" aria-current="page" aria-label="Activity Vault home">
-      <span class="brand-text">Activity <strong>Vault</strong></span>
-    </a>
-    <nav aria-label="Primary" class="nav-primary">
-      <a href="planner.html">Plan my week <span class="nav-gloss">a week of activities, day by day</span></a>
+<a class="skip-link" href="#browse">Skip to activities</a>
+<header class="site-header guide-head">
+  <a class="guide-mark" href="index.html" aria-current="page" aria-label="Activity Vault home">
+    <span class="gm-name">Activity Vault</span>
+    <span class="gm-sub">A field guide for ages 3 to 14</span>
+  </a>
+  <nav class="guide-nav" aria-label="Primary">
+      <a href="planner.html">Plan my week</a>
       <a href="collections.html">Collections</a>
-      <a href="kitbag.html">Kit Bag <span class="nav-gloss">pack one day's bag</span></a>
-      <a href="party.html">Party Planner <span class="nav-gloss">themes and the full party pack</span></a>
-      <a href="desk.html">The Desk <span class="nav-gloss">browse the vault by category drawers</span></a>
+      <a href="kitbag.html">Kit Bag</a>
+      <a href="party.html">Party Planner</a>
+      <a href="desk.html">The Desk</a>
       <details class="nav-more">
         <summary>More</summary>
         <div class="nav-more-panel">
           <p class="nav-more-h">Tools</p>
-          <a href="sub.html">Sub Tub <span class="nav-gloss">a ready day a substitute can run</span></a>
-          <a href="fieldtrip.html">Field Trips <span class="nav-gloss">plan a trip out</span></a>
+          <a href="sub.html">Sub Tub</a>
+          <a href="fieldtrip.html">Field Trips</a>
           <p class="nav-more-h">Seasons</p>
           <a href="halloween.html">Halloween</a>
           <a href="thanksgiving.html">Thanksgiving</a>
@@ -113,49 +133,66 @@
         </div>
       </details>
     </nav>
-  </div>
 </header>
 
-<main class="wrap">
-  <div class="home-masthead">
-    <p class="home-promise">An almanac of activities for teachers, parents, grandparents, and after-school programs, for children aged 3 to 14. Every record is complete: setup, materials, steps, and variations, in our own words, with its source named where it has one.</p>
-    <p class="home-search-note no-print">Know the name of the one you want? <a href="#browse">Search the directory by keyword</a>.</p>
-  </div>
+<nav class="thumbs" aria-label="Browse by kind">
+  <a href="index.html?cats=crafts#browse" style="--tab:#E8B4A0">Crafts</a>
+  <a href="index.html?cats=stem#browse" style="--tab:#A9C6D9">STEM</a>
+  <a href="index.html?cats=team-community#browse" style="--tab:#E9C46A">Team</a>
+  <a href="index.html?cats=pe-movement#browse" style="--tab:#F0A07A">Movement</a>
+  <a href="index.html?cats=quiet-focus#browse" style="--tab:#C9C2DE">Quiet</a>
+  <a href="index.html?cats=outdoor#browse" style="--tab:#A8C69F">Outdoor</a>
+  <a href="index.html?cats=holidays#browse" style="--tab:#E59C9C">Holidays</a>
+  <a href="index.html?cats=seasons#browse" style="--tab:#D9B97E">Seasons</a>
+  <a href="index.html?cats=icebreakers#browse" style="--tab:#9FD0C7">Icebreakers</a>
+  <a href="index.html?cats=rainy-day#browse" style="--tab:#B8C4CC">Rainy day</a>
+  <a href="index.html?cats=music-rhythm#browse" style="--tab:#E6B8D0">Music</a>
+</nav>
+
+<main class="wrap guide-main" id="main">
   <!-- BUILD:DESK -->
-  <div class="almanac" style="--season:#b7413c">
-  <section class="issue-hero" aria-labelledby="issue-h">
-    <p class="issue-kicker">Activity Vault &middot; the current issue &middot; October 2026</p>
-    <h1 class="issue-title" id="issue-h">Fall</h1>
-    <div class="issue-count">
-      <span class="issue-num">5</span>
-      <span class="issue-num-text"><span class="issue-num-kicker">days to</span><a href="index.html?tag=holiday:diwali#browse">Diwali</a><span class="issue-num-date">Tuesday, October 20 &middot; 7 activities filed for it</span></span>
-    </div>
-    <figure class="issue-cover"><img src="assets/photos/r27/pumpkin-bowling.webp" alt="A girl bowling down a hay-bale lane toward gourd pins, her ball rolling ahead of her"><figcaption><a href="activity/pumpkin-bowling.html">Pumpkin Bowling</a>: Pumpkin bowling on a hay-bale lane: the ball is away and the gourd pins are waiting. <span class="photo-credit">Photo: U.S. Department of Agriculture, Public domain, via Wikimedia Commons <a href="https://commons.wikimedia.org/wiki/File:20171027-AMS-LSC-0338_(38068297471).jpg" rel="noopener">Photo source</a></span></figcaption></figure>
-    <p class="issue-standfirst">55 activities are filed under fall, and 778 in the year altogether.</p>
+  <div class="almanac">
+  <section class="guide-cover" aria-labelledby="cover-h">
+    <h1 id="cover-h">A field guide to things kids can do.</h1>
+    <p class="cover-promise">778 activities for ages 3 to 14. Each one has its steps, its materials, a photo where we have one, and where it came from.</p>
+    <p class="cover-ways"><a href="#browse">Search by name</a> &middot; <a href="halloween.html">Halloween: 77 entries</a></p>
   </section>
-  <section class="doors-section" aria-labelledby="doors-h">
+  <section class="plate" aria-labelledby="plate-h">
+    <p class="plate-no">Plate 1 &middot; In season: Fall</p>
+    <h2 class="plate-name" id="plate-h"><a href="activity/pumpkin-bowling.html">Pumpkin Bowling</a></h2>
+    <p class="plate-binomial">Mini pumpkins vs. bottle pins: the indoor bowling alley builds itself.</p>
+    <figure class="specimen">
+      <div class="specimen-body">
+        <div class="specimen-frame"><img src="assets/photos/r27/pumpkin-bowling.webp" alt="A girl bowling down a hay-bale lane toward gourd pins, her ball rolling ahead of her" width="960" height="1438" fetchpriority="high" style="view-transition-name: plate-pumpkin-bowling"><span class="mark" style="--x:0.45; --y:0.2; --i:0" aria-hidden="true">1</span><span class="mark" style="--x:0.82; --y:0.36; --i:1" aria-hidden="true">2</span><span class="mark" style="--x:0.33; --y:0.46; --i:2" aria-hidden="true">3</span><span class="mark" style="--x:0.58; --y:0.76; --i:3" aria-hidden="true">4</span></div><ol class="marks-key" aria-label="Field marks in the photo"><li style="--x:0.45; --y:0.2">The bowler: two rolls a turn</li><li style="--x:0.82; --y:0.36">The lane: hay bales or floor tape</li><li style="--x:0.33; --y:0.46">The ball: a small pumpkin</li><li style="--x:0.58; --y:0.76">The pins: ten weighted bottles</li></ol>
+      </div>
+      <figcaption class="herbarium"><span class="hb-row"><span class="hb-k">Photo</span><span>U.S. Department of Agriculture</span></span><span class="hb-row"><span class="hb-k">Licence</span><span>Public domain</span></span><span class="hb-row"><span class="hb-k">Source</span><a href="https://commons.wikimedia.org/wiki/File:20171027-AMS-LSC-0338_(38068297471).jpg" rel="noopener">Wikimedia Commons</a></span></figcaption>
+    </figure>
+    <dl class="field-marks"><div><dt>Ages</dt><dd>4 to 12</dd></div><div><dt>Group</dt><dd>2 to 30</dd></div><div><dt>Time</dt><dd>15 to 25 min</dd></div><div><dt>Where</dt><dd>Indoors</dd></div><div><dt>Turns</dt><dd>Nobody sits out</dd></div></dl>
+    <p class="plate-go"><a href="activity/pumpkin-bowling.html">Read the full entry <span aria-hidden="true">&rarr;</span></a></p>
+  </section>
+  <section class="doors-section key-list" aria-labelledby="doors-h">
     <h2 id="doors-h">The five doors</h2>
     <p class="doors-line">Five ways in. Pick the one that matches the day you have.</p>
-    <ol class="doors">
-      <li class="door"><a class="door-main" href="planner.html"><span class="door-num">Door 01</span><span class="door-name">Plan my week</span><span class="door-promise">A week of activities, day by day.</span><span class="door-count">Dealt from all 778 activities</span></a><figure class="door-plate"><a class="door-plate-link" href="activity/parachute-popcorn.html" tabindex="-1"><img src="assets/photos/r24/parachute-popcorn.webp" alt="" loading="lazy"></a><figcaption>From <a href="activity/parachute-popcorn.html">Parachute Popcorn</a>. <span class="photo-credit">Photo: Unknown, Public domain, via Wikimedia Commons <a href="https://commons.wikimedia.org/wiki/File:USMC-120403-M-OT671-043.jpg" rel="noopener">Photo source</a></span></figcaption></figure></li>
-      <li class="door"><a class="door-main" href="collections.html"><span class="door-num">Door 02</span><span class="door-name">Collections</span><span class="door-promise">Teacher-ready bundles for the moments that matter.</span><span class="door-count">34 bundles, every pick with a curator's note</span></a><figure class="door-plate"><a class="door-plate-link" href="activity/seed-library-opening-day.html" tabindex="-1"><img src="assets/photos/r26/seed-library-opening-day.webp" alt="" loading="lazy"></a><figcaption>From <a href="activity/seed-library-opening-day.html">Seed Library Opening Day</a>. <span class="photo-credit">Photo: Aspensmonster, CC BY-SA 4.0, via Wikimedia Commons <a href="https://commons.wikimedia.org/wiki/File:Benbrook_Public_Library_Seed_Library.jpg" rel="noopener">Photo source</a></span></figcaption></figure></li>
-      <li class="door"><a class="door-main" href="kitbag.html"><span class="door-num">Door 03</span><span class="door-name">Kit Bag</span><span class="door-promise">Pack one day's bag.</span><span class="door-count">One whole rainy day, indoors, with its kit list</span></a><figure class="door-plate"><a class="door-plate-link" href="activity/blanket-fort-book-nook.html" tabindex="-1"><img src="assets/photos/r24/blanket-fort-book-nook.webp" alt="" loading="lazy"></a><figcaption>From <a href="activity/blanket-fort-book-nook.html">Blanket Fort Book Nook</a>. <span class="photo-credit">Photo: Personal Creations, CC BY 2.0, via Wikimedia Commons <a href="https://commons.wikimedia.org/wiki/File:Girls_in_an_indoor_fort_(15075739555).jpg" rel="noopener">Photo source</a></span></figcaption></figure></li>
-      <li class="door"><a class="door-main" href="party.html"><span class="door-num">Door 04</span><span class="door-name">Party Planner</span><span class="door-promise">Themes and the full party pack.</span><span class="door-count">A timed station plan for your class party</span></a><figure class="door-plate"><a class="door-plate-link" href="activity/dragon-parade.html" tabindex="-1"><img src="assets/photos/r23/dragon-parade.webp" alt="" loading="lazy"></a><figcaption>From <a href="activity/dragon-parade.html">Dragon Parade</a>. <span class="photo-credit">Photo: Zalasem1, CC BY 4.0, via Wikimedia Commons <a href="https://commons.wikimedia.org/wiki/File:Dragon,_Dragon_Parade_in_Krak%C3%B3w.jpg" rel="noopener">Photo source</a></span></figcaption></figure></li>
-      <li class="door"><a class="door-main" href="desk.html"><span class="door-num">Door 05</span><span class="door-name">The Desk</span><span class="door-promise">Browse the vault by category drawers.</span><span class="door-count">778 activities in 11 drawers</span></a><figure class="door-plate"><a class="door-plate-link" href="activity/one-sheet-zine-workshop.html" tabindex="-1"><img src="assets/photos/r24/one-sheet-zine-workshop.webp" alt="" loading="lazy"></a><figcaption>From <a href="activity/one-sheet-zine-workshop.html">One-Sheet Zine Workshop</a>. <span class="photo-credit">Photo: Fhwatson, CC BY 4.0, via Wikimedia Commons <a href="https://commons.wikimedia.org/wiki/File:Everyday_joy_zine_making.jpg" rel="noopener">Photo source</a></span></figcaption></figure></li>
+    <ol class="keys">
+      <li class="key-row"><a class="key-thumb" href="activity/parachute-popcorn.html" tabindex="-1"><img src="assets/photos/r24/parachute-popcorn.webp" alt="" loading="lazy"></a><span class="key-main"><a class="key-name" href="planner.html">Plan my week</a><span class="key-line">A week of activities, day by day.</span><span class="key-count">Dealt from all 778 activities</span><span class="key-credit">Photo from <a href="activity/parachute-popcorn.html">Parachute Popcorn</a>. Photo: Unknown, Public domain, via Wikimedia Commons <a href="https://commons.wikimedia.org/wiki/File:USMC-120403-M-OT671-043.jpg" rel="noopener">Photo source</a></span></span></li>
+      <li class="key-row"><a class="key-thumb" href="activity/seed-library-opening-day.html" tabindex="-1"><img src="assets/photos/r26/seed-library-opening-day.webp" alt="" loading="lazy"></a><span class="key-main"><a class="key-name" href="collections.html">Collections</a><span class="key-line">Teacher-ready bundles for the moments that matter.</span><span class="key-count">34 bundles, every pick with a curator's note</span><span class="key-credit">Photo from <a href="activity/seed-library-opening-day.html">Seed Library Opening Day</a>. Photo: Aspensmonster, CC BY-SA 4.0, via Wikimedia Commons <a href="https://commons.wikimedia.org/wiki/File:Benbrook_Public_Library_Seed_Library.jpg" rel="noopener">Photo source</a></span></span></li>
+      <li class="key-row"><a class="key-thumb" href="activity/blanket-fort-book-nook.html" tabindex="-1"><img src="assets/photos/r24/blanket-fort-book-nook.webp" alt="" loading="lazy"></a><span class="key-main"><a class="key-name" href="kitbag.html">Kit Bag</a><span class="key-line">Pack one day's bag.</span><span class="key-count">One whole rainy day, indoors, with its kit list</span><span class="key-credit">Photo from <a href="activity/blanket-fort-book-nook.html">Blanket Fort Book Nook</a>. Photo: Personal Creations, CC BY 2.0, via Wikimedia Commons <a href="https://commons.wikimedia.org/wiki/File:Girls_in_an_indoor_fort_(15075739555).jpg" rel="noopener">Photo source</a></span></span></li>
+      <li class="key-row"><a class="key-thumb" href="activity/dragon-parade.html" tabindex="-1"><img src="assets/photos/r23/dragon-parade.webp" alt="" loading="lazy"></a><span class="key-main"><a class="key-name" href="party.html">Party Planner</a><span class="key-line">Themes and the full party pack.</span><span class="key-count">A timed station plan for your class party</span><span class="key-credit">Photo from <a href="activity/dragon-parade.html">Dragon Parade</a>. Photo: Zalasem1, CC BY 4.0, via Wikimedia Commons <a href="https://commons.wikimedia.org/wiki/File:Dragon,_Dragon_Parade_in_Krak%C3%B3w.jpg" rel="noopener">Photo source</a></span></span></li>
+      <li class="key-row"><a class="key-thumb" href="activity/one-sheet-zine-workshop.html" tabindex="-1"><img src="assets/photos/r24/one-sheet-zine-workshop.webp" alt="" loading="lazy"></a><span class="key-main"><a class="key-name" href="desk.html">The Desk</a><span class="key-line">Browse the vault by category drawers.</span><span class="key-count">778 activities in 11 drawers</span><span class="key-credit">Photo from <a href="activity/one-sheet-zine-workshop.html">One-Sheet Zine Workshop</a>. Photo: Fhwatson, CC BY 4.0, via Wikimedia Commons <a href="https://commons.wikimedia.org/wiki/File:Everyday_joy_zine_making.jpg" rel="noopener">Photo source</a></span></span></li>
     </ol>
   </section>
   <section class="calendar-first" aria-labelledby="cal-h">
     <h2 id="cal-h">What's coming up</h2>
     <ol class="cal-rows">
-      <li class="cal-row"><a class="cal-name" href="index.html?tag=holiday:diwali#browse">Diwali</a><span class="cal-date">Tue Oct 20</span><span class="cal-count">7 activities</span><span class="cal-days"><span class="cal-num">5</span> days</span></li>
-      <li class="cal-row"><a class="cal-name" href="halloween.html">Halloween</a><span class="cal-date">Sat Oct 31</span><span class="cal-count">77 activities</span><span class="cal-days"><span class="cal-num">16</span> days</span></li>
-      <li class="cal-row"><a class="cal-name" href="index.html?tag=holiday:dia-de-muertos#browse">Day of the Dead</a><span class="cal-date">Mon Nov 2</span><span class="cal-count">6 activities</span><span class="cal-days"><span class="cal-num">18</span> days</span></li>
-      <li class="cal-row"><a class="cal-name" href="thanksgiving.html">Thanksgiving</a><span class="cal-date">Thu Nov 26</span><span class="cal-count">25 activities</span><span class="cal-days"><span class="cal-num">42</span> days</span></li>
-      <li class="cal-row"><a class="cal-name" href="index.html?tag=holiday:hanukkah#browse">Hanukkah</a><span class="cal-date">Tue Dec 15</span><span class="cal-count">8 activities</span><span class="cal-days"><span class="cal-num">61</span> days</span></li>
-      <li class="cal-row"><a class="cal-name" href="index.html?tag=holiday:christmas#browse">Christmas</a><span class="cal-date">Fri Dec 25</span><span class="cal-count">27 activities</span><span class="cal-days"><span class="cal-num">71</span> days</span></li>
-      <li class="cal-row"><a class="cal-name" href="index.html?tag=holiday:new-year#browse">New Year</a><span class="cal-date">Fri Jan 1</span><span class="cal-count">11 activities</span><span class="cal-days"><span class="cal-num">78</span> days</span></li>
-      <li class="cal-row"><a class="cal-name" href="index.html?tag=holiday:mlk-day#browse">Martin Luther King Jr. Day</a><span class="cal-date">Mon Jan 18</span><span class="cal-count">6 activities</span><span class="cal-days"><span class="cal-num">95</span> days</span></li>
-      <li class="cal-row"><a class="cal-name" href="index.html?tag=holiday:lunar-new-year#browse">Lunar New Year</a><span class="cal-date">Sat Feb 6</span><span class="cal-count">7 activities</span><span class="cal-days"><span class="cal-num">114</span> days</span></li>
+      <li class="cal-row" data-date="2026-10-31"><a class="cal-name" href="halloween.html">Halloween</a><span class="cal-date">Sat Oct 31</span><span class="cal-count">77 activities</span><span class="cal-days"><span class="cal-num">8</span> days</span></li>
+      <li class="cal-row" data-date="2026-11-02"><a class="cal-name" href="index.html?tag=holiday:dia-de-muertos#browse">Day of the Dead</a><span class="cal-date">Mon Nov 2</span><span class="cal-count">6 activities</span><span class="cal-days"><span class="cal-num">10</span> days</span></li>
+      <li class="cal-row" data-date="2026-11-08"><a class="cal-name" href="index.html?tag=holiday:diwali#browse">Diwali</a><span class="cal-date">Sun Nov 8</span><span class="cal-count">7 activities</span><span class="cal-days"><span class="cal-num">16</span> days</span></li>
+      <li class="cal-row" data-date="2026-11-26"><a class="cal-name" href="thanksgiving.html">Thanksgiving</a><span class="cal-date">Thu Nov 26</span><span class="cal-count">25 activities</span><span class="cal-days"><span class="cal-num">34</span> days</span></li>
+      <li class="cal-row" data-date="2026-12-04"><a class="cal-name" href="index.html?tag=holiday:hanukkah#browse">Hanukkah</a><span class="cal-date">Fri Dec 4</span><span class="cal-count">8 activities</span><span class="cal-days"><span class="cal-num">42</span> days</span></li>
+      <li class="cal-row" data-date="2026-12-25"><a class="cal-name" href="index.html?tag=holiday:christmas#browse">Christmas</a><span class="cal-date">Fri Dec 25</span><span class="cal-count">27 activities</span><span class="cal-days"><span class="cal-num">63</span> days</span></li>
+      <li class="cal-row" data-date="2027-01-01"><a class="cal-name" href="index.html?tag=holiday:new-year#browse">New Year</a><span class="cal-date">Fri Jan 1</span><span class="cal-count">11 activities</span><span class="cal-days"><span class="cal-num">70</span> days</span></li>
+      <li class="cal-row" data-date="2027-01-18"><a class="cal-name" href="index.html?tag=holiday:mlk-day#browse">Martin Luther King Jr. Day</a><span class="cal-date">Mon Jan 18</span><span class="cal-count">6 activities</span><span class="cal-days"><span class="cal-num">87</span> days</span></li>
+      <li class="cal-row" data-date="2027-02-06"><a class="cal-name" href="index.html?tag=holiday:lunar-new-year#browse">Lunar New Year</a><span class="cal-date">Sat Feb 6</span><span class="cal-count">7 activities</span><span class="cal-days"><span class="cal-num">106</span> days</span></li>
     </ol>
   </section>
   <section class="contents-section" aria-labelledby="contents-h">
@@ -174,6 +211,100 @@
       <li><a class="contents-line" href="index.html?tag=season:fall#browse"><span class="contents-num">03</span><span class="contents-word">Fall</span><span class="contents-count">55 activities filed <span class="contents-current">the current issue</span></span></a></li>
       <li><a class="contents-line" href="winter.html"><span class="contents-num">04</span><span class="contents-word">Winter</span><span class="contents-count">120 activities filed</span></a></li>
     </ol>
+    <h3 class="contents-sub">By where</h3>
+    <ol class="contents-lines">
+      <li><a class="contents-line" href="index.html?loc=indoor#browse"><span class="contents-num">01</span><span class="contents-word">Indoors</span><span class="contents-count">653 activities</span></a></li>
+      <li><a class="contents-line" href="index.html?loc=outdoor#browse"><span class="contents-num">02</span><span class="contents-word">Outdoors</span><span class="contents-count">278 activities</span></a></li>
+    </ol>
+    <p class="contents-note">Counted from the library itself. 153 activities work in both places, so they sit on both shelves. The overlap is on purpose. Good to know: 500 never need to go outside, so a rained-out day is still a full day.</p>
+    <h3 class="contents-sub">By time</h3>
+    <ol class="contents-lines">
+      <li><a class="contents-line" href="index.html?time=15#browse"><span class="contents-num">01</span><span class="contents-word">15 minutes or less</span><span class="contents-count">380 activities</span></a></li>
+      <li><a class="contents-line" href="index.html?time=30#browse"><span class="contents-num">02</span><span class="contents-word">30 minutes or less</span><span class="contents-count">712 activities</span></a></li>
+    </ol>
+    <p class="contents-note">Counted from the library itself, by each activity's shortest run. Every 15-minute activity also sits on the 30-minute shelf, and 332 more fit between 16 and 30 minutes. Good to know: 712 of 778 activities fit in half an hour, so a short gap in the day is still a full choice.</p>
+    <h3 class="contents-sub">By group</h3>
+    <ol class="contents-lines">
+      <li><a class="contents-line" href="index.html?group=8#browse"><span class="contents-num">01</span><span class="contents-word">Small (2–8 kids)</span><span class="contents-count">764 activities</span></a></li>
+      <li><a class="contents-line" href="index.html?group=25#browse"><span class="contents-num">02</span><span class="contents-word">Large (17–25 kids)</span><span class="contents-count">483 activities</span></a></li>
+    </ol>
+    <p class="contents-note">Counted from the library itself, by the group sizes each activity can take. 479 activities fit both a small group and a large one, so they sit on both shelves. Good to know: 91 activities can stretch to 40 kids, so the whole program in one room still has a choice.</p>
+    <h3 class="contents-sub">By age</h3>
+    <ol class="contents-lines">
+      <li><a class="contents-line" href="index.html?age=5#browse"><span class="contents-num">01</span><span class="contents-word">5-year-olds</span><span class="contents-count">340 activities</span></a></li>
+      <li><a class="contents-line" href="index.html?age=11#browse"><span class="contents-num">02</span><span class="contents-word">11-year-olds</span><span class="contents-count">478 activities</span></a></li>
+    </ol>
+    <p class="contents-note">Counted from the library itself, by the ages each activity is written for. 196 activities fit both a 5-year-old and an 11-year-old, so they sit on both shelves. Good to know: a mixed-age group still has those 196 to choose from, little kids and big kids in the same room.</p>
+    <h3 class="contents-sub">Ready to run</h3>
+    <ol class="contents-lines">
+      <li><a class="contents-line" href="index.html?ready=noprep#browse"><span class="contents-num">01</span><span class="contents-word">No prep needed</span><span class="contents-count">251 activities</span></a></li>
+      <li><a class="contents-line" href="index.html?ready=copyfree#browse"><span class="contents-num">02</span><span class="contents-word">Nothing to print</span><span class="contents-count">394 activities</span></a></li>
+      <li><a class="contents-line" href="index.html?ready=noelim#browse"><span class="contents-num">03</span><span class="contents-word">No one sits out</span><span class="contents-count">196 activities</span></a></li>
+    </ol>
+    <p class="contents-note">Counted from the library itself, by what each activity asks of you before it starts. Good to know: 62 activities need no prep, print nothing, and sit no one out, so they are ready the minute you are.</p>
+    <h3 class="contents-sub">By kit</h3>
+    <ol class="contents-lines">
+      <li><a class="contents-line" href="index.html?kit=0#browse"><span class="contents-num">01</span><span class="contents-word">Nothing to gather</span><span class="contents-count">91 activities</span></a></li>
+      <li><a class="contents-line" href="index.html?kit=2#browse"><span class="contents-num">02</span><span class="contents-word">Two things or fewer</span><span class="contents-count">294 activities</span></a></li>
+      <li><a class="contents-line" href="index.html?kit=3#browse"><span class="contents-num">03</span><span class="contents-word">Three things or fewer</span><span class="contents-count">483 activities</span></a></li>
+    </ol>
+    <p class="contents-note">Counted from the library itself, by how much each activity asks you to gather first. Every nothing-to-gather activity also sits on the other two shelves. Good to know: 91 activities need nothing gathered at all, and 724 need five things or fewer, so an empty cupboard is rarely the end of the day.</p>
+    <h3 class="contents-sub">By length</h3>
+    <ol class="contents-lines">
+      <li><a class="contents-line" href="index.html?long=30#browse"><span class="contents-num">01</span><span class="contents-word">Runs 30 minutes or more</span><span class="contents-count">417 activities</span></a></li>
+      <li><a class="contents-line" href="index.html?long=45#browse"><span class="contents-num">02</span><span class="contents-word">Runs 45 minutes or more</span><span class="contents-count">179 activities</span></a></li>
+      <li><a class="contents-line" href="index.html?long=60#browse"><span class="contents-num">03</span><span class="contents-word">Runs an hour or more</span><span class="contents-count">69 activities</span></a></li>
+    </ol>
+    <p class="contents-note">Counted from the library itself, by each activity's longest run. Every hour-long activity also sits on the other two shelves. Good to know: 69 activities can fill a whole hour, and 417 can fill half an hour or more, so a long open stretch in the day is covered too.</p>
+    <h3 class="contents-sub">By stretch</h3>
+    <ol class="contents-lines">
+      <li><a class="contents-line" href="index.html?stretch=10#browse"><span class="contents-num">01</span><span class="contents-word">Stretches 10 minutes or more</span><span class="contents-count">560 activities</span></a></li>
+      <li><a class="contents-line" href="index.html?stretch=15#browse"><span class="contents-num">02</span><span class="contents-word">Stretches 15 minutes or more</span><span class="contents-count">342 activities</span></a></li>
+      <li><a class="contents-line" href="index.html?stretch=20#browse"><span class="contents-num">03</span><span class="contents-word">Stretches 20 minutes or more</span><span class="contents-count">158 activities</span></a></li>
+    </ol>
+    <p class="contents-note">Counted from the library itself, by the window between each activity's shortest and longest run. Every 20-minute stretcher also sits on the other two shelves. Good to know: 342 activities can stretch by 15 minutes or more, and 26 can stretch by a whole half hour, so a plan that slips still holds.</p>
+    <h3 class="contents-sub">By flex</h3>
+    <ol class="contents-lines">
+      <li><a class="contents-line" href="index.html?flex=20#browse"><span class="contents-num">01</span><span class="contents-word">Flexes 20 kids or more</span><span class="contents-count">530 activities</span></a></li>
+      <li><a class="contents-line" href="index.html?flex=25#browse"><span class="contents-num">02</span><span class="contents-word">Flexes 25 kids or more</span><span class="contents-count">349 activities</span></a></li>
+      <li><a class="contents-line" href="index.html?flex=30#browse"><span class="contents-num">03</span><span class="contents-word">Flexes 30 kids or more</span><span class="contents-count">97 activities</span></a></li>
+    </ol>
+    <p class="contents-note">Counted from the library itself, by the window between each activity's smallest and largest group. Every 30-kid flexer also sits on the other two shelves. Good to know: 349 activities can flex by 25 kids or more, and 74 can flex by 35 kids or more, so a group that shrinks or doubles still fits.</p>
+    <h3 class="contents-sub">By span</h3>
+    <ol class="contents-lines">
+      <li><a class="contents-line" href="index.html?span=5#browse"><span class="contents-num">01</span><span class="contents-word">Spans 5 years or more</span><span class="contents-count">521 activities</span></a></li>
+      <li><a class="contents-line" href="index.html?span=6#browse"><span class="contents-num">02</span><span class="contents-word">Spans 6 years or more</span><span class="contents-count">392 activities</span></a></li>
+      <li><a class="contents-line" href="index.html?span=7#browse"><span class="contents-num">03</span><span class="contents-word">Spans 7 years or more</span><span class="contents-count">222 activities</span></a></li>
+    </ol>
+    <p class="contents-note">Counted from the library itself, by the window between each activity's youngest and oldest age. Every 7-year spanner also sits on the other two shelves. Good to know: 392 activities can span 6 years or more, and 96 can span 8 years or more, so one room of little kids and big kids still fits.</p>
+    <h3 class="contents-sub">By start</h3>
+    <ol class="contents-lines">
+      <li><a class="contents-line" href="index.html?start=4#browse"><span class="contents-num">01</span><span class="contents-word">Starts at 4 or younger</span><span class="contents-count">272 activities</span></a></li>
+      <li><a class="contents-line" href="index.html?start=5#browse"><span class="contents-num">02</span><span class="contents-word">Starts at 5 or younger</span><span class="contents-count">442 activities</span></a></li>
+      <li><a class="contents-line" href="index.html?start=6#browse"><span class="contents-num">03</span><span class="contents-word">Starts at 6 or younger</span><span class="contents-count">580 activities</span></a></li>
+    </ol>
+    <p class="contents-note">Counted from the library itself, by the youngest age each activity starts at. Every activity that starts at 4 or younger also sits on the other two shelves. Good to know: 442 activities start at 5 or younger, and 162 start at 3 or younger, so even the youngest group in the building has a real choice.</p>
+    <h3 class="contents-sub">By end</h3>
+    <ol class="contents-lines">
+      <li><a class="contents-line" href="index.html?end=10#browse"><span class="contents-num">01</span><span class="contents-word">Ends at 10 or older</span><span class="contents-count">601 activities</span></a></li>
+      <li><a class="contents-line" href="index.html?end=12#browse"><span class="contents-num">02</span><span class="contents-word">Ends at 12 or older</span><span class="contents-count">511 activities</span></a></li>
+      <li><a class="contents-line" href="index.html?end=14#browse"><span class="contents-num">03</span><span class="contents-word">Ends at 14</span><span class="contents-count">133 activities</span></a></li>
+    </ol>
+    <p class="contents-note">Counted from the library itself, by the oldest age each activity ends at. Every activity that ends at 14 also sits on the other two shelves. Good to know: 511 activities end at 12 or older, and 133 end at 14, so even the oldest group in the building has a real choice.</p>
+    <h3 class="contents-sub">By floor</h3>
+    <ol class="contents-lines">
+      <li><a class="contents-line" href="index.html?floor=2#browse"><span class="contents-num">01</span><span class="contents-word">Starts with 2 or fewer</span><span class="contents-count">381 activities</span></a></li>
+      <li><a class="contents-line" href="index.html?floor=4#browse"><span class="contents-num">02</span><span class="contents-word">Starts with 4 or fewer</span><span class="contents-count">633 activities</span></a></li>
+      <li><a class="contents-line" href="index.html?floor=6#browse"><span class="contents-num">03</span><span class="contents-word">Starts with 6 or fewer</span><span class="contents-count">733 activities</span></a></li>
+    </ol>
+    <p class="contents-note">Counted from the library itself, by the smallest group each activity starts with. Every activity that starts with 2 or fewer also sits on the other two shelves. Good to know: 633 activities start with 4 or fewer, and 52 start with just 1 kid, so a nearly empty room still has a real choice.</p>
+    <h3 class="contents-sub">By ceiling</h3>
+    <ol class="contents-lines">
+      <li><a class="contents-line" href="index.html?ceiling=10#browse"><span class="contents-num">01</span><span class="contents-word">Fits 10 or more</span><span class="contents-count">757 activities</span></a></li>
+      <li><a class="contents-line" href="index.html?ceiling=20#browse"><span class="contents-num">02</span><span class="contents-word">Fits 20 or more</span><span class="contents-count">620 activities</span></a></li>
+      <li><a class="contents-line" href="index.html?ceiling=30#browse"><span class="contents-num">03</span><span class="contents-word">Fits 30 or more</span><span class="contents-count">416 activities</span></a></li>
+    </ol>
+    <p class="contents-note">Counted from the library itself, by the largest group each activity can hold. Every activity that fits 30 or more also sits on the other two shelves. Good to know: 620 activities fit 20 or more, and 16 fit 60, so even the biggest group in the building has a real choice.</p>
   </section>
   </div>
   <!-- /BUILD:DESK -->

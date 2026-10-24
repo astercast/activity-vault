@@ -827,6 +827,46 @@ html[data-calm="true"] *, html[data-calm="true"] *::before, html[data-calm="true
 }
 .collection-actions { display: flex; gap: .7rem; flex-wrap: wrap; align-items: center; margin-top: 1.2rem; }
 
+/* ============ R113, verdict-led collections index (ruling (10)(c) fallback) ============
+   From the Aesthetics lane's seven paired index-surface teardowns: the
+   at-a-glance band first, the verdict-led short list before the tail,
+   intent-led grouping, one practical planning line, stated currency. */
+.coll-glance {
+  background: var(--card); border: 2px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 1rem 1.2rem; margin: 1.5rem 0 .5rem;
+}
+.coll-glance[hidden] { display: none; }
+.glance-facts { display: flex; flex-wrap: wrap; gap: .75rem 2rem; margin: 0; padding: 0; }
+.glance-facts div { min-width: 8rem; }
+.glance-facts dt { font-size: .78rem; text-transform: uppercase; letter-spacing: .04em;
+  color: var(--ink-soft); font-weight: 700; }
+.glance-facts dd { margin: .15rem 0 0; font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; }
+.glance-intents { margin: .8rem 0 0; font-size: .92rem; color: var(--ink-soft); font-weight: 600; }
+.glance-tip { margin: .6rem 0 0; font-size: .95rem; }
+.coll-top6 { margin: 2rem 0 2.5rem; }
+.coll-top6[hidden] { display: none; }
+.top6-heading { font-family: var(--font-display); font-size: 1.3rem; margin: 0 0 .2rem; }
+.top6-sub { margin: 0 0 1rem; color: var(--ink-soft); }
+.top6-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; grid-template-columns: 1fr; }
+@media (min-width: 700px) { .top6-list { grid-template-columns: repeat(2, 1fr); } }
+.top6-list a {
+  display: block; background: var(--card); border: 2px solid var(--line);
+  border-left: 6px solid var(--accent); border-radius: var(--radius);
+  padding: .7rem .9rem; color: var(--ink); text-decoration: none;
+}
+.top6-list a:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(42,36,28,.12); }
+.top6-list a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.top6-list strong { display: block; font-family: var(--font-display); font-size: 1.05rem; }
+.top6-list span { font-size: .92rem; color: var(--ink-soft); }
+/* the grid nav is now a plain container of intent groups; the cards live in .intent-cards */
+.collection-grid { display: block; margin: 1.5rem 0 2.5rem; }
+.collection-grid[hidden] { display: none; }
+.intent-heading { font-family: var(--font-display); font-size: 1.15rem; margin: 1.8rem 0 .8rem; }
+.intent-group:first-child .intent-heading { margin-top: .5rem; }
+.intent-cards { display: grid; gap: 1rem; grid-template-columns: 1fr; margin: 0 0 .5rem; }
+@media (min-width: 600px) { .intent-cards { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .intent-cards { grid-template-columns: repeat(3, 1fr); } }
+
 /* single-collection view: grid hides, deep-linkable sections */
 .collection-section[hidden] { display: none; }
 
@@ -2582,6 +2622,19 @@ html:not([data-calm="true"]) .collection-section { animation: none; }
   min-width: 5.2rem;
 }
 .act-row .tombstone { margin: 0; margin-left: auto; }
+/* R110 (ruling 10(c)): verdict-led index cards. The index surface is the
+   card grid: the tagline is the card's reason-to-care line, set right
+   under the name in the card's own voice, with the tombstone as the fixed
+   fact band after it and the source named on the card. (Infatuation #1,
+   Wirecutter #1-2, R293 #1, R292 #2, R294 #4, R295 #2.) This also retires
+   the ledger-era row rules above (wrap, baseline, auto margins), which
+   fought the card theme and clipped the fact band. */
+.act-row { flex-direction: column; align-items: flex-start; gap: .45rem; }
+.act-row .tagline { flex-basis: auto; margin: 0; }
+.act-row .tombstone { margin: .15rem 0 0; }
+.act-row .row-src { font-size: .85em; white-space: nowrap; }
+.act-row .row-src a { color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 2px; }
+.act-row .row-src a:hover { color: var(--accent); }
 .act-row .rate-badge { margin-left: auto; }
 .act-row .tombstone + .rate-badge { margin-left: 0; }
 
@@ -2743,6 +2796,7 @@ html:not([data-calm="true"]) .collection-section { animation: none; }
 .contents-word { font-family: var(--font-display); font-weight: 700; font-size: 1.45rem; }
 .contents-count { margin-left: auto; color: var(--ink-soft); font-size: 1rem; text-align: right; }
 .contents-current { color: var(--season, var(--accent)); font-weight: 700; }
+.contents-note { color: var(--ink-soft); font-size: 1rem; line-height: 1.55; margin: .9rem .2rem 0; max-width: 62ch; }
 
 /* ---- season hub banner (winter, spring, summer, halloween, thanksgiving) ---- */
 .issue-banner {

@@ -10,6 +10,46 @@
   var sectionsHost = document.getElementById('collection-sections');
   var statusEl = document.getElementById('coll-status');
   var allLinkWrap = document.getElementById('all-link-wrap');
+  var glanceEl = document.getElementById('collection-glance');
+  var top6El = document.getElementById('collection-top6');
+
+  /* R113, ruling (10)(c) fallback (Aesthetics lane filed no unfenced item):
+     intent-led grouping + verdict-led Top-6, from the seven paired teardown
+     batches. Groups keyed by collection id; the visitor's desire organizes
+     the page, never the data schema. */
+  var INTENTS = [
+    { label: 'When the plan breaks',
+      ids: ['rainy-day-rescue', 'last-10-minutes', 'no-prep-lifesavers', 'calm-down-corner'] },
+    { label: 'First days',
+      ids: ['first-day-of-program'] },
+    { label: 'Sub coverage',
+      ids: ['sub-tub-essentials'] },
+    { label: 'Seasons & parties',
+      ids: ['winter-party-night', 'spring-burst', 'summer-splash', 'haunted-halls',
+            'grateful-gathering', 'halloween-week', 'winter-lights', 'the-whole-calendar'] },
+    { label: 'The littles',
+      ids: ['little-hands-first-years', 'little-hands-next-steps', 'little-hands-third-shelf',
+            'little-hands-fourth-shelf', 'little-hands-just-three', 'little-hands-just-three-more',
+            'little-hands-just-three-again', 'little-hands-just-three-once-more',
+            'little-hands-just-three-fifth-time', 'little-hands-just-three-sixth-time',
+            'little-hands-just-three-seventh-time', 'little-hands-just-three-eighth-time'] },
+    { label: 'The teens',
+      ids: ['just-teens-first-time', 'just-teens-second-time', 'just-teens-third-time',
+            'just-teens-fourth-time', 'just-teens-fifth-time'] },
+    { label: 'Big days',
+      ids: ['field-trip-bus-ride', 'field-day-classics', 'filling-the-thin-drawers'] }
+  ];
+
+  /* The curator's short list: the six shelves teachers reach for first,
+     each with a one-line verdict (title specificity + the reason to care). */
+  var START_HERE = [
+    { id: 'rainy-day-rescue', verdict: 'Recess cancelled? This shelf holds the afternoon.' },
+    { id: 'first-day-of-program', verdict: 'New faces, new room: the order that lands the first day.' },
+    { id: 'sub-tub-essentials', verdict: 'The ten cards your sub folder cannot be without.' },
+    { id: 'last-10-minutes', verdict: 'The dying clock, handled: ten minutes, no chaos.' },
+    { id: 'the-whole-calendar', verdict: 'One shelf for the whole school year, twelve holidays.' },
+    { id: 'field-day-classics', verdict: 'Sports day on one shelf: the four races every field day runs.' }
+  ];
 
   /* Hand links: collections that tie to a tool get a "pairs with" callout. */
   var TIES = {
@@ -69,30 +109,127 @@
   /* Rotation 21: cards are distinguished by real content, the moment the
      bundle is for (when_to_use), its size, its age/time span, and the names
      of its first activities, never by an emoji glyph. */
+  function makeCard(c, ci, actmap) {
+    var card = el('a', 'collection-card');
+    card.style.setProperty('--cat', collColor(c, ci));
+    card.href = '#' + c.id;
+    var names = c.picks.slice(0, 3).map(function (p) {
+      var a = actmap[p.activity_id];
+      return a ? a.name : p.activity_id;
+    });
+    var more = c.picks.length - names.length;
+    card.setAttribute('aria-label', c.title + ': ' + c.picks.length +
+      ' activities, ages ' + c.age_span[0] + ' to ' + c.age_span[1] +
+      ', ' + c.time_span[0] + ' to ' + c.time_span[1] + ' minutes each. Includes ' +
+      names.join(', ') + (more > 0 ? ' and ' + more + ' more' : ''));
+    card.appendChild(el('span', 'collection-title', c.title));
+    card.appendChild(el('span', 'collection-count',
+      c.picks.length + ' activities · Ages ' + c.age_span[0] + '–' + c.age_span[1] +
+      ' · ' + c.time_span[0] + '–' + c.time_span[1] + ' min each'));
+    card.appendChild(el('span', 'collection-when-snippet', c.when_to_use));
+    card.appendChild(el('span', 'collection-includes',
+      'Includes: ' + names.join(', ') + (more > 0 ? ' · +' + more + ' more' : '')));
+    return card;
+  }
+
+  /* R113: the at-a-glance band comes FIRST, before the list. Decision facts
+     computed from the loaded data — never hardcoded, so it cannot go stale. */
+  function renderGlance(collections, actmap, updated) {
+    if (!glanceEl) return;
+    glanceEl.textContent = '';
+    var totalPicks = collections.reduce(function (n, c) { return n + c.picks.length; }, 0);
+    var factsList = el('dl', 'glance-facts');
+    var cells = [
+      ['Bundles', numberWord(collections.length)],
+      ['Activities', String(totalPicks)],
+      ['Every pick', 'a curator\u2019s one-line note'],
+      /* The label follows the data field's own name and semantics: build.py
+         rewrites this stamp on every regeneration, so it is the data's
+         refresh date, not a claim of human curation on that date. */
+      ['Data updated', fmtUpdated(updated)]
+    ];
+    cells.forEach(function (cell) {
+      var wrap = el('div');
+      wrap.appendChild(el('dt', null, cell[0]));
+      wrap.appendChild(el('dd', null, cell[1]));
+      factsList.appendChild(wrap);
+    });
+    glanceEl.appendChild(factsList);
+    glanceEl.appendChild(el('p', 'glance-intents',
+      'Rainy days · dying clocks · sub coverage · first days · seasons & parties · the littles · the teens · field days'));
+    var tip = el('p', 'glance-tip');
+    tip.appendChild(el('strong', null, 'Good to know: '));
+    tip.appendChild(document.createTextNode(
+      'print the bundle the night before. Every one is built to run from the printed page, no screen needed.'));
+    glanceEl.appendChild(tip);
+    glanceEl.hidden = false;
+  }
+
+  function fmtUpdated(iso) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || '');
+    if (!m) return 'see the data';
+    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    return months[Number(m[2]) - 1] + ' ' + Number(m[3]) + ', ' + m[1];
+  }
+
+  /* R113: the confident short list leads; the full grid follows. */
+  function renderTop6(collections, actmap) {
+    if (!top6El) return;
+    top6El.textContent = '';
+    top6El.appendChild(el('h2', 'top6-heading', 'Start here'));
+    top6El.appendChild(el('p', 'top6-sub',
+      'The six shelves teachers reach for first, with the curator\u2019s verdict on each.'));
+    var byId = {};
+    collections.forEach(function (c) { byId[c.id] = c; });
+    var list = el('ol', 'top6-list');
+    START_HERE.forEach(function (s) {
+      var c = byId[s.id];
+      if (!c) return; /* build-time validated; never happens */
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = '#' + c.id;
+      a.appendChild(el('strong', null, c.title));
+      a.appendChild(el('span', null, s.verdict));
+      li.appendChild(a);
+      list.appendChild(li);
+    });
+    top6El.appendChild(list);
+    top6El.hidden = false;
+  }
+
+  /* R113: the grid renders intent-led groups. Any collection not claimed by
+     a group falls into a named trailing group, so none can vanish silently. */
   function renderGrid(collections, actmap) {
     grid.textContent = '';
-    collections.forEach(function (c, ci) {
-      var card = el('a', 'collection-card');
-      card.style.setProperty('--cat', collColor(c, ci));
-      card.href = '#' + c.id;
-      var names = c.picks.slice(0, 3).map(function (p) {
-        var a = actmap[p.activity_id];
-        return a ? a.name : p.activity_id;
+    var byId = {};
+    collections.forEach(function (c, i) { byId[c.id] = { c: c, i: i }; });
+    var placed = {};
+    INTENTS.forEach(function (g) {
+      var items = g.ids.map(function (id) { return byId[id]; })
+                        .filter(function (it) { return it; });
+      if (!items.length) return;
+      var group = el('div', 'intent-group');
+      group.appendChild(el('h2', 'intent-heading', g.label));
+      var cards = el('div', 'intent-cards');
+      items.forEach(function (it) {
+        cards.appendChild(makeCard(it.c, it.i, actmap));
+        placed[it.c.id] = 1;
       });
-      var more = c.picks.length - names.length;
-      card.setAttribute('aria-label', c.title + ': ' + c.picks.length +
-        ' activities, ages ' + c.age_span[0] + ' to ' + c.age_span[1] +
-        ', ' + c.time_span[0] + ' to ' + c.time_span[1] + ' minutes each. Includes ' +
-        names.join(', ') + (more > 0 ? ' and ' + more + ' more' : ''));
-      card.appendChild(el('span', 'collection-title', c.title));
-      card.appendChild(el('span', 'collection-count',
-        c.picks.length + ' activities · Ages ' + c.age_span[0] + '–' + c.age_span[1] +
-        ' · ' + c.time_span[0] + '–' + c.time_span[1] + ' min each'));
-      card.appendChild(el('span', 'collection-when-snippet', c.when_to_use));
-      card.appendChild(el('span', 'collection-includes',
-        'Includes: ' + names.join(', ') + (more > 0 ? ' · +' + more + ' more' : '')));
-      grid.appendChild(card);
+      group.appendChild(cards);
+      grid.appendChild(group);
     });
+    var rest = collections.filter(function (c) { return !placed[c.id]; });
+    if (rest.length) {
+      var group = el('div', 'intent-group');
+      group.appendChild(el('h2', 'intent-heading', 'Everything else'));
+      var cards = el('div', 'intent-cards');
+      collections.forEach(function (c, i) {
+        if (!placed[c.id]) cards.appendChild(makeCard(c, i, actmap));
+      });
+      group.appendChild(cards);
+      grid.appendChild(group);
+    }
     grid.hidden = false;
   }
 
@@ -245,6 +382,10 @@
     var known = collections.some(function (c) { return c.id === hash; });
     var inSingle = known;
     grid.hidden = inSingle;
+    /* R113: the glance band and the short list live with the grid in
+       browse mode; a single collection routes alone. */
+    if (glanceEl) glanceEl.hidden = inSingle;
+    if (top6El) top6El.hidden = inSingle;
     var sections = sectionsHost.querySelectorAll('.collection-section');
     Array.prototype.forEach.call(sections, function (s) {
       /* Rotation 20 minimal pass: detail panels are on-demand only.
@@ -271,8 +412,11 @@
       fetch('data/v1/activities.json').then(function (r) { return r.json(); })
     ]).then(function (res) {
       var collections = res[0].collections || [];
+      var updated = res[0].updated || '';
       var actmap = {};
       (res[1].activities || []).forEach(function (a) { actmap[a.id] = a; });
+      renderGlance(collections, actmap, updated);
+      renderTop6(collections, actmap);
       renderGrid(collections, actmap);
       collections.forEach(function (c, ci) {
         sectionsHost.appendChild(renderSection(c, actmap, ci));
