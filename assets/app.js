@@ -1,6 +1,10 @@
 /* Activity Vault, filter browser.
-   Fetches data/activities.json + data/categories.json + data/v1/filters.json,
-   renders filterable card grid. Age bounds come from filters.json (QA-011). */
+   Fetches data/v1/activity-index.json (light index, bundle
+   2026-10-24 step 1) + data/categories.json + data/v1/filters.json,
+   renders filterable card grid. Age bounds come from filters.json
+   (QA-011). A single activity's full record is its own page
+   (activity/<id>.html), loaded only when that page opens; text
+   search here covers name + tagline, the fields the index carries. */
 (function () {
   'use strict';
 
@@ -86,7 +90,13 @@
     return e;
   }
 
+  function fitsMyClassOn() {
+    var t = document.getElementById('fits-my-class');
+    return !!(t && t.checked && window.VaultClass && window.VaultClass.load());
+  }
+
   function matches(a) {
+    if (fitsMyClassOn() && !window.VaultClass.fits(a)) return false;
     if (state.age != null && (a.age_min > state.age || a.age_max < state.age)) return false;
     if (state.maxTime != null && a.time_min > state.maxTime) return false;
     if (state.group != null && (a.group_min > state.group || a.group_max < state.group)) return false;
@@ -169,8 +179,16 @@
       // above this block called the plain row a designed absence; the
       // consult's own verdict overrules that, so the state is shown.)
       var ph = el('span', 'row-thumb row-thumb--empty');
-      ph.setAttribute('aria-hidden', 'true');
-      ph.appendChild(el('span', null, 'No photo yet'));
+      ph.appendChild(el('span', null, 'No photo yet. '));
+      var help = document.createElement('a');
+      help.href = 'https://github.com/astercast/activity-vault/issues/new?title=' +
+        encodeURIComponent('Photo needed: ' + a.name + ' (' + a.id + ')') +
+        '&body=' + encodeURIComponent('Activity: ' + a.name + ' (activity/' + a.id +
+          '.html) has no photo yet.\n\nA usable photo needs a public-domain or ' +
+          'CC0 / CC BY / CC BY-SA source page, the author name and the exact licence.');
+      help.rel = 'noopener';
+      help.textContent = 'Help us find one';
+      ph.appendChild(help);
       row.appendChild(ph);
       row.classList.add('has-thumb');
     }
@@ -238,7 +256,7 @@
   }
 
   function anyFilterActive() {
-    return !!(state.q || state.age != null || state.maxTime != null || state.group != null || state.kitMax != null || state.longMin != null || state.stretchMin != null || state.flexMin != null || state.spanMin != null || state.startMax != null || state.endMin != null || state.floorMax != null || state.ceilingMin != null ||
+    return !!(fitsMyClassOn() || state.q || state.age != null || state.maxTime != null || state.group != null || state.kitMax != null || state.longMin != null || state.stretchMin != null || state.flexMin != null || state.spanMin != null || state.startMax != null || state.endMin != null || state.floorMax != null || state.ceilingMin != null ||
       state.cats.size || state.tags.size || state.noPrepOnly || state.indoorOnly ||
       state.outdoorOnly || state.copyFreeOnly || state.noElimOnly ||
       state.sortByRating || state.topTen);
@@ -250,20 +268,8 @@
     // instead of pouring all 747 records onto the page. The full vault
     // renders the moment a visitor searches or picks any filter, and
     // every category/contents link above arrives with a filter set.
-    if (!anyFilterActive()) {
-      grid.innerHTML = '';
-      state.visible = [];
-      var door = el('div', 'empty');
-      door.innerHTML = '<span class="big" aria-hidden="true">§</span>' +
-        '<p><strong>' + state.activities.length + ' activities in the vault.</strong></p>' +
-        '<p>Search by name, material or keyword, or pick a category, age or season on the left. ' +
-        'The vault opens the moment you choose. Browsing shelf by shelf? ' +
-        '<a href="desk.html">The Desk</a> walks the categories one drawer at a time.</p>';
-      grid.appendChild(door);
-      if (countEl) countEl.textContent = state.activities.length + ' activities · search or filter to browse them';
-      return;
-    }
-    var list = state.activities.filter(matches);
+    var starter = !anyFilterActive();
+    var list = starter ? starterList() : state.activities.filter(matches);
     var ratingMode = state.sortByRating || state.topTen;
     if (state.topTen) {
       // "My top 10": only activities the visitor rated, best stars first.
@@ -305,7 +311,21 @@
         grid.appendChild(renderCard(a));
       });
     }
-    countEl.textContent = list.length + (list.length === 1 ? ' activity' : ' activities');
+    countEl.textContent = starter
+      ? 'Showing ' + list.length + ' of ' + state.activities.length + '. Search or pick a filter for the rest.'
+      : list.length + (list.length === 1 ? ' activity' : ' activities');
+  }
+
+  // Starter rows: 12 records that have a photo and a source, a new
+  // set each day, so the list is never empty and never the same.
+  function starterList() {
+    var good = state.activities.filter(function (a) { return a.photo && a.photo.file && a.source; });
+    var pool = good.length >= 12 ? good : state.activities;
+    var day = Math.floor(Date.now() / 86400000), out = [], i = 0, n = pool.length;
+    var step = 7919 % n || 1;
+    var at = (day * 31) % n;
+    while (out.length < 12 && i < n) { out.push(pool[at]); at = (at + step) % n; i++; }
+    return out;
   }
 
   // ---------- share a collection ----------
@@ -875,7 +895,7 @@
     countEl = document.getElementById('result-count');
     if (!grid) return;
     Promise.all([
-      fetch('data/activities.json').then(function (r) { return r.json(); }),
+      fetch('data/v1/activity-index.json').then(function (r) { return r.json(); }),
       fetch('data/categories.json').then(function (r) { return r.json(); }),
       // QA-011: the published filter declaration is the source of truth for
       // the Age control's bounds. A failed fetch must not break the browser:
@@ -885,7 +905,24 @@
         return r.json();
       }).catch(function () { return null; })
     ]).then(function (res) {
-      state.activities = res[0];
+      // Light index -> the full record shape the filters have always
+      // used. Materials arrive as a count (the index carries no item
+      // text); steps arrive empty, so text search covers name +
+      // tagline until the activity's own page is opened.
+      state.activities = (res[0].activities || []).map(function (e) {
+        var mats = [];
+        for (var i = 0; i < (e.mats || 0); i++) mats.push({ item: '' });
+        return {
+          id: e.id, name: e.name, tagline: e.tagline, categories: e.categories,
+          age_min: e.ages[0], age_max: e.ages[1],
+          group_min: e.group[0], group_max: e.group[1],
+          time_min: e.minutes[0], time_max: e.minutes[1],
+          location: e.location, materials: mats, steps: [],
+          no_prep: !!e.np, copy_free: !!e.cf, no_elimination: !!e.ne,
+          tags: e.tags || [], source: e.src || null,
+          photo: e.pf ? { file: e.pf } : null
+        };
+      });
       state.categories = res[1];
       // QA-011: derive Age bounds from filters.json; fallback = true span.
       var declaredAge = res[2] && res[2].filters && res[2].filters.age;
@@ -921,6 +958,12 @@
         });
       }
       buildFilters();
+      // "Fits my class" (bundle 2026-10-24 step 3): the toggle lives
+      // in the My Class form (assets/my-class.js owns the profile);
+      // re-render when it flips or the profile changes.
+      var fmc = document.getElementById('fits-my-class');
+      if (fmc) fmc.addEventListener('change', render);
+      document.addEventListener('vault:myclass', function () { if (fitsMyClassOn()) render(); });
       //?view=top-rated deep link (My top 10. Ratings live in the visitor's browser)
       try {
         var qtag = new URLSearchParams(window.location.search).get('tag');

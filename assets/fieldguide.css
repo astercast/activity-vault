@@ -384,3 +384,58 @@ a:hover { text-decoration-color: var(--ink); text-decoration-thickness: 2px; }
   }
   .guide-head .guide-nav > a { flex: none; scroll-snap-align: start }
 }
+
+/* ===== Round 3 fixes ===== */
+/* photo key: number sits before the label, not glued after it */
+/* bundle 2026-10-24 step 1: the one-line callout fix, verbatim —
+   flex so the key numbers lead, .5ch gap, baseline aligned */
+.marks-key li { display: flex; gap: .5ch; align-items: baseline; }
+.marks-key li::after { order: -1; content: counter(mark); }
+
+/* filters: plain text toggles, no pills, no tilt */
+.chip-row { gap: .15rem .9rem; }
+button.chip, button.chip.cat-chip, button.chip.tag-chip {
+  background: none; border: 0; border-bottom: 2px solid transparent; border-radius: 0;
+  box-shadow: none; rotate: none; transform: none; padding: .2rem 0;
+  font: 600 .95rem/1.3 var(--font-key); color: var(--ink); cursor: pointer;
+}
+button.chip:hover { border-bottom-color: var(--rule); }
+button.chip[aria-pressed="true"] { background: none; color: var(--ink); border-bottom-color: var(--cat, var(--ink)); }
+/* season list is long: show about 8 lines, scroll the rest */
+#filters .chip-row:last-of-type { max-block-size: 9.5rem; overflow-y: auto; }
+
+/* rows without a photo keep the same size as rows with one */
+.row-thumb--empty { display: grid; place-items: center; font: 600 .75rem/1.2 var(--font-key);
+  color: var(--ink); background: color-mix(in oklab, var(--cat, #888) 14%, var(--paper, #fff));
+  border: 1px dashed color-mix(in oklab, var(--cat, #888) 55%, transparent); }
+
+/* phone: nav wraps and the header scrolls away instead of eating the screen */
+@media (max-width: 640px) {
+  .site-header.guide-head { position: static; }
+  .guide-head .guide-nav { flex-wrap: wrap; overflow: visible; mask-image: none; }
+  .thumbs { mask-image: linear-gradient(90deg, #000 90%, transparent); }
+}
+
+/* ===== Bundle 2026-10-24: dateline, weather picks, My Class ===== */
+/* The dateline: mono small caps, hairline above + below, ink colour. */
+.dateline-wrap { border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink);
+  padding: .45rem 0; margin: 0 0 1.2rem; display: flex; flex-wrap: wrap;
+  gap: .3rem 1rem; align-items: baseline; }
+.dateline { font: 600 .8rem/1.4 var(--font-type, "Courier Prime", monospace);
+  text-transform: uppercase; letter-spacing: .08em; color: var(--ink); margin: 0; }
+.set-city { font: 600 .8rem/1.4 var(--font-type, "Courier Prime", monospace);
+  text-transform: uppercase; letter-spacing: .08em; color: var(--ink); }
+.city-form { display: flex; gap: .5rem; align-items: baseline; margin: 0; }
+.city-form input { font: inherit; padding: .15rem .4rem; border: 1px solid var(--ink);
+  background: var(--paper, #fff); color: var(--ink); }
+.city-form button { font: inherit; padding: .15rem .6rem; border: 1px solid var(--ink);
+  background: transparent; color: var(--ink); cursor: pointer; }
+.weather-picks { font: italic 400 .95rem/1.4 var(--font-entry); color: var(--ink); margin: 0 0 1.2rem; }
+.my-class { border: 1px solid var(--ink); padding: 1rem 1.2rem; margin: 0 0 1.5rem; }
+.my-class h2 { margin: 0 0 .4rem; font: 600 1.05rem/1.25 var(--font-entry); }
+.my-class p { margin: 0 0 .7rem; }
+.my-class-fields { display: flex; flex-wrap: wrap; gap: .6rem 1.2rem; align-items: end; }
+.my-class-fields label { display: grid; gap: .2rem; font: 600 .8rem/1.3 var(--font-key); }
+.my-class-fields input { inline-size: 6rem; font: inherit; padding: .2rem .4rem;
+  border: 1px solid var(--ink); background: var(--paper, #fff); color: var(--ink); }
+.my-class-fits { display: flex; gap: .5ch; align-items: baseline; font: 600 .9rem/1.3 var(--font-key); }

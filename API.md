@@ -162,7 +162,7 @@ When a function is unreachable, the frontend falls back to the static
 `data` carries per-instance `uptime_s`, the function roster, `data_freshness`
 for `review-queue.json` / `decided.json` / `activities.json` (24h SLA), and
 `checks` booleans (static fallback present, `CRON_SECRET` configured,
-`GITHUB_REPO_TOKEN` configured, booleans only, never secret values).
+Retired 2026-10-24 (fleet-data migration): no GITHUB_REPO_TOKEN is used anywhere. Live data refreshes through the astercast/fleet-data repo; the fleet watchdog does the checking.
 
 ### `GET /api/review-queue`. The Scout's review queue (human-in-the-loop, READ side)
 
@@ -216,7 +216,7 @@ commits to `pipeline/seen.json` + `pipeline/review-queue.json` +
 `pipeline/decided.json` on change. Responds
 `{checked, changed, committed, new_candidates[]}` with per-feed
 `meta.upstream` results. 60s duplicate-delivery cooldown.
-Requires `GITHUB_REPO_TOKEN` to persist; without it the job computes honestly
+Retired 2026-10-24 (fleet-data migration): no GITHUB_REPO_TOKEN is used anywhere. Live data refreshes through the astercast/fleet-data repo; the fleet watchdog does the checking.
 and returns `degraded:true` (read-only mode) until the token is set.
 
 ## Filtering recipes

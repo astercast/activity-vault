@@ -172,7 +172,7 @@ assumption is stated, not hidden.
 ## Env vars (Vercel dashboard only, never in repo)
 
 - `CRON_SECRET` (required): missing → cron + decide fail closed 401
-- `GITHUB_REPO_TOKEN` (pending user's call): missing → cron read-only,
+Retired 2026-10-24 (fleet-data migration): no GITHUB_REPO_TOKEN is used anywhere. Live data refreshes through the astercast/fleet-data repo; the fleet watchdog does the checking.
   returns `degraded:true`; static fallback keeps serving
 - `GITHUB_REPO`, `REPO_STATIC_PREFIX`: cron commit targeting
 

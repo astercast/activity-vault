@@ -2,6 +2,14 @@
 
 Running record of build waves. Newest first.
 
+## Build fix, 2026-10-24: builder accepts both source shapes
+
+**Defect:** `scripts/build.py` failed validation and exited 1 with 381 "source must be an http(s) URL" errors, which held the evening live push. The Asset Foundry source batches (R858-R864) wrote `source` as a {label, url} object on 381 of 778 activities, while the validator and the detail-page source render expected a plain URL string (the other 397 records).
+
+**Fix (builder adapts to the data; no data files rewritten):** a new `source_url_and_label()` helper in `scripts/build.py` normalizes both shapes. The validator now accepts a plain http(s) URL string unchanged, or an object whose url member is an http(s) URL and whose label, when present, is a non-empty string. The detail-page render keeps the exact old output for string sources and, for object sources, links the url with the label itself as the visible link text (example: spaghetti-tower now reads Source: "Wikipedia: Spaghetti bridge" linking to its article, where the last good build said "not listed yet"). The compact `activity-index.json` keeps its URL-string contract for the browse cards, so an object source contributes its url there, while the full {label, url} record still ships unchanged in `data/v1/activities.json`. The published activity schema now describes both shapes.
+
+**Proof:** `scripts/build.py` exits 0, BUILD OK, zero validation errors, 778 activities and 778 pages rendered. All 778 detail pages carry a working source line whose href matches the record's URL (0 mismatches after HTML unescaping; the raw apostrophe and ampersand encodings are the renderer's standard escaping, same as before). A string-source page (paper-airplane-challenge) is byte-identical to the previous build. Pictured count unchanged: 360 activities carry a photo in the data and every photo file is present under assets/photos/ (361 rendered covers, the one extra being board-game-prototype's long-standing hard-coded Commons plate). `scripts/check_api.py`: ALL CHECKS PASSED, link check 0 broken across 1594 pages. No malformed entries of any other kind were found: all 381 object sources carry exactly {label, url} with an https url, and every label is a Wikipedia attribution.
+
 ## Wave 44 + the completeness run — 2026-10-15 — the canon arrives, the thin drawers fill
 
 Two builds landed in one commit, both answering the user's fleet-wide completeness order, each sized from the same measured audit at base `01fa354` (747 activities, 222 with a photo, 105 with a source, 32 collections). The full research record: `~/workspace/fleet-ops/research-audits/activity-completeness-2026-10-15.md`.

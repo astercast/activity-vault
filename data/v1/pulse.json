@@ -1,0 +1,376 @@
+{
+ "format": "pulse/1",
+ "generated_at": "2026-10-24T13:40:07Z",
+ "healthy": true,
+ "sources_ok": 7,
+ "sources_total": 7,
+ "sources": [
+  {
+   "id": "commons-photo-scout",
+   "label": "Wikimedia Commons photo scout",
+   "url": "https://commons.wikimedia.org/w/api.php",
+   "ok": true,
+   "items": 2,
+   "checked_at": "2026-10-24T13:40:07Z",
+   "last_ok_at": "2026-10-24T13:40:07Z",
+   "error": null,
+   "fails_in_a_row": 0
+  },
+  {
+   "id": "feed-buggyandbuddy",
+   "label": "Buggy and Buddy",
+   "url": "https://buggyandbuddy.com/feed/",
+   "ok": true,
+   "items": 12,
+   "checked_at": "2026-10-24T13:39:54Z",
+   "last_ok_at": "2026-10-24T13:39:54Z",
+   "error": null,
+   "fails_in_a_row": 0
+  },
+  {
+   "id": "feed-handsonaswegrow",
+   "label": "Hands On As We Grow",
+   "url": "https://handsonaswegrow.com/feed/",
+   "ok": true,
+   "items": 7,
+   "checked_at": "2026-10-24T13:39:40Z",
+   "last_ok_at": "2026-10-24T13:39:40Z",
+   "error": null,
+   "fails_in_a_row": 0
+  },
+  {
+   "id": "feed-kidsactivitiesblog",
+   "label": "Kids Activities Blog",
+   "url": "https://kidsactivitiesblog.com/feed/",
+   "ok": true,
+   "items": 10,
+   "checked_at": "2026-10-24T13:39:50Z",
+   "last_ok_at": "2026-10-24T13:39:50Z",
+   "error": null,
+   "fails_in_a_row": 0
+  },
+  {
+   "id": "feed-littlebins",
+   "label": "Little Bins for Little Hands",
+   "url": "https://littlebinsforlittlehands.com/feed/",
+   "ok": true,
+   "items": 10,
+   "checked_at": "2026-10-24T13:39:47Z",
+   "last_ok_at": "2026-10-24T13:39:47Z",
+   "error": null,
+   "fails_in_a_row": 0
+  },
+  {
+   "id": "feed-teachbesideme",
+   "label": "Teach Beside Me",
+   "url": "https://teachbesideme.com/feed/",
+   "ok": true,
+   "items": 10,
+   "checked_at": "2026-10-24T13:39:44Z",
+   "last_ok_at": "2026-10-24T13:39:44Z",
+   "error": null,
+   "fails_in_a_row": 0
+  },
+  {
+   "id": "feed-weareteachers",
+   "label": "WeAreTeachers",
+   "url": "https://www.weareteachers.com/feed/",
+   "ok": true,
+   "items": 16,
+   "checked_at": "2026-10-24T13:39:35Z",
+   "last_ok_at": "2026-10-24T13:39:35Z",
+   "error": null,
+   "fails_in_a_row": 0
+  }
+ ],
+ "changes": [
+  {
+   "at": "2026-10-24T13:39:35Z",
+   "kind": "post",
+   "title": "Deal of the Day: Get $500 Off With Subaru",
+   "ref": "https://www.weareteachers.com/subaru-teacher-discount/?utm_source=rss&utm_medium=rss&utm_campaign=subaru-teacher-discount"
+  },
+  {
+   "at": "2026-10-24T13:39:35Z",
+   "kind": "post",
+   "title": "Deal of the Day: Enjoy 5% off Canyon",
+   "ref": "https://www.weareteachers.com/canyon-teacher-discount/?utm_source=rss&utm_medium=rss&utm_campaign=canyon-teacher-discount"
+  },
+  {
+   "at": "2026-10-24T13:39:35Z",
+   "kind": "post",
+   "title": "60+ College Essay Prompts, Plus Helpful Writing Tips",
+   "ref": "https://www.weareteachers.com/college-essay-prompts/?utm_source=rss&utm_medium=rss&utm_campaign=college-essay-prompts"
+  },
+  {
+   "at": "2026-10-24T13:39:35Z",
+   "kind": "post",
+   "title": "How One Teacher Turned Everyday Art Supplies From School Smart Into Powerful Learning Tools",
+   "ref": "https://www.weareteachers.com/teacher-picks-school-smart/?utm_source=rss&utm_medium=rss&utm_campaign=teacher-picks-school-smart"
+  },
+  {
+   "at": "2026-10-24T13:39:35Z",
+   "kind": "post",
+   "title": "30 High-Paying Jobs That Don’t Require a College Degree",
+   "ref": "https://www.weareteachers.com/best-jobs-without-a-college-degree/?utm_source=rss&utm_medium=rss&utm_campaign=best-jobs-without-a-college-degree"
+  },
+  {
+   "at": "2026-10-24T13:39:35Z",
+   "kind": "post",
+   "title": "50+ Conclusion Sentence Starters (Plus Free Printable)",
+   "ref": "https://www.weareteachers.com/conclusion-sentence-starters/?utm_source=rss&utm_medium=rss&utm_campaign=conclusion-sentence-starters"
+  },
+  {
+   "at": "2026-10-24T13:39:35Z",
+   "kind": "post",
+   "title": "How One Teacher Uses ViewSonic To Bring Student Thinking to the Front of the Classroom",
+   "ref": "https://www.weareteachers.com/teacher-picks-viewsonic-viewboard/?utm_source=rss&utm_medium=rss&utm_campaign=teacher-picks-viewsonic-viewboard"
+  },
+  {
+   "at": "2026-10-24T13:39:35Z",
+   "kind": "post",
+   "title": "120+ Winter Words for Writing, Vocab, and More (Free Printable)",
+   "ref": "https://www.weareteachers.com/winter-words/?utm_source=rss&utm_medium=rss&utm_campaign=winter-words"
+  },
+  {
+   "at": "2026-10-24T13:39:35Z",
+   "kind": "post",
+   "title": "200+ Festive Holiday Words for Writing and More (Free Printable)",
+   "ref": "https://www.weareteachers.com/holiday-words/?utm_source=rss&utm_medium=rss&utm_campaign=holiday-words"
+  },
+  {
+   "at": "2026-10-24T13:39:35Z",
+   "kind": "post",
+   "title": "Free Printable Argumentative & Persuasive Essay Graphic Organizers",
+   "ref": "https://www.weareteachers.com/argumentative-persuasive-essay-graphic-organizers/?utm_source=rss&utm_medium=rss&utm_campaign=argumentative-persuasive-essay-graphic-organizers"
+  },
+  {
+   "at": "2026-10-24T13:39:35Z",
+   "kind": "post",
+   "title": "Favorite ’90s Children’s Books That Teachers Still Love",
+   "ref": "https://www.weareteachers.com/90s-childrens-books/?utm_source=rss&utm_medium=rss&utm_campaign=90s-childrens-books"
+  },
+  {
+   "at": "2026-10-24T13:39:35Z",
+   "kind": "post",
+   "title": "Deal of the Day: Get 50% Off Your First Two Months of BetterHelp",
+   "ref": "https://www.weareteachers.com/betterhelp-teacher-discount/?utm_source=rss&utm_medium=rss&utm_campaign=betterhelp-teacher-discount"
+  },
+  {
+   "at": "2026-10-24T13:39:35Z",
+   "kind": "post",
+   "title": "How Get Ready! Helped This Teacher Stop Piecing Together Resources for Multilingual Learners",
+   "ref": "https://www.weareteachers.com/teacher-picks-get-ready-program/?utm_source=rss&utm_medium=rss&utm_campaign=teacher-picks-get-ready-program"
+  },
+  {
+   "at": "2026-10-24T13:39:35Z",
+   "kind": "post",
+   "title": "The Best Student Writing Contests for 2026-2027",
+   "ref": "https://www.weareteachers.com/student-writing-contests/?utm_source=rss&utm_medium=rss&utm_campaign=student-writing-contests"
+  },
+  {
+   "at": "2026-10-24T13:39:40Z",
+   "kind": "post",
+   "title": "45 Fall Tree Crafts that are Gorgeous for Kids to Make",
+   "ref": "https://handsonaswegrow.com/fall-tree-crafts-art/"
+  },
+  {
+   "at": "2026-10-24T13:39:40Z",
+   "kind": "post",
+   "title": "Simple Q-Tip Painting for Kids",
+   "ref": "https://handsonaswegrow.com/q-tip-painting/"
+  },
+  {
+   "at": "2026-10-24T13:39:40Z",
+   "kind": "post",
+   "title": "Cute Potato Stamping Jack-O-Lanterns for Fall",
+   "ref": "https://handsonaswegrow.com/potato-stamping-jack-o-lantern/"
+  },
+  {
+   "at": "2026-10-24T13:39:40Z",
+   "kind": "post",
+   "title": "25 Easy Christmas Crafts for Kids to Make",
+   "ref": "https://handsonaswegrow.com/easy-christmas-crafts-kids/"
+  },
+  {
+   "at": "2026-10-24T13:39:40Z",
+   "kind": "post",
+   "title": "Listening Activity with Blocks",
+   "ref": "https://handsonaswegrow.com/listening-activity-with-blocks/"
+  },
+  {
+   "at": "2026-10-24T13:39:40Z",
+   "kind": "post",
+   "title": "Toddler Craft: Wrapping Paper Stocking",
+   "ref": "https://handsonaswegrow.com/toddler-craft-wrapping-paper-stocking/"
+  },
+  {
+   "at": "2026-10-24T13:39:44Z",
+   "kind": "post",
+   "title": "Halloween Would You Rather Questions for Kids",
+   "ref": "https://teachbesideme.com/halloween-would-you-rather-questions-for-kids/"
+  },
+  {
+   "at": "2026-10-24T13:39:44Z",
+   "kind": "post",
+   "title": "Halloween Charades for Kids: Free Printable Game Cards",
+   "ref": "https://teachbesideme.com/halloween-charades-for-kids-free-printable-game-cards/"
+  },
+  {
+   "at": "2026-10-24T13:39:44Z",
+   "kind": "post",
+   "title": "Michigan State Geography for Kids: Printable Learning Pack",
+   "ref": "https://teachbesideme.com/michigan-state-geography-for-kids-printable-learning-pack/"
+  },
+  {
+   "at": "2026-10-24T13:39:44Z",
+   "kind": "post",
+   "title": "Halloween Pattern Block Mats: Fun Printable Shape Activities",
+   "ref": "https://teachbesideme.com/halloween-pattern-block-mats-10-fun-printable-shape-activities/"
+  },
+  {
+   "at": "2026-10-24T13:39:44Z",
+   "kind": "post",
+   "title": "Pumpkin CSI: Hands-on STEM Mystery for Kids",
+   "ref": "https://teachbesideme.com/pumpkin-csi-a-pumpkin-stem-activity-science-mystery/"
+  },
+  {
+   "at": "2026-10-24T13:39:44Z",
+   "kind": "post",
+   "title": "Addition Games for Kids: Fun Hands-On Math Activities",
+   "ref": "https://teachbesideme.com/addition-games-for-kids/"
+  },
+  {
+   "at": "2026-10-24T13:39:44Z",
+   "kind": "post",
+   "title": "Spider Life Cycle for Kids + Free Printable Worksheets",
+   "ref": "https://teachbesideme.com/spider-life-cycle-for-kids-free-printable-worksheets/"
+  },
+  {
+   "at": "2026-10-24T13:39:47Z",
+   "kind": "post",
+   "title": "Free Halloween Printables for Kids",
+   "ref": "https://littlebinsforlittlehands.com/halloween-printables/"
+  },
+  {
+   "at": "2026-10-24T13:39:47Z",
+   "kind": "post",
+   "title": "Creative Turkey Disguise Ideas for Kids",
+   "ref": "https://littlebinsforlittlehands.com/disguise-a-turkey/"
+  },
+  {
+   "at": "2026-10-24T13:39:47Z",
+   "kind": "post",
+   "title": "Turkey Hide and Seek Art Project for Kids",
+   "ref": "https://littlebinsforlittlehands.com/turkey-hide-and-seek-art-project-for-kids/"
+  },
+  {
+   "at": "2026-10-24T13:39:47Z",
+   "kind": "post",
+   "title": "Turkey Camouflage Art Project for Kids",
+   "ref": "https://littlebinsforlittlehands.com/turkey-camouflage-art/"
+  },
+  {
+   "at": "2026-10-24T13:39:47Z",
+   "kind": "post",
+   "title": "Turkey Lapbook",
+   "ref": "https://littlebinsforlittlehands.com/turkey-lapbook/"
+  },
+  {
+   "at": "2026-10-24T13:39:47Z",
+   "kind": "post",
+   "title": "Turkey Agamograph Art Project for Kids",
+   "ref": "https://littlebinsforlittlehands.com/turkey-agamograph/"
+  },
+  {
+   "at": "2026-10-24T13:39:47Z",
+   "kind": "post",
+   "title": "Disguise a Turkey Printable Craft for Kids",
+   "ref": "https://littlebinsforlittlehands.com/turkey-disguise-printable/"
+  },
+  {
+   "at": "2026-10-24T13:39:47Z",
+   "kind": "post",
+   "title": "Easy Thanksgiving Art Projects for Kids",
+   "ref": "https://littlebinsforlittlehands.com/thanksgiving-crafts-for-kids/"
+  },
+  {
+   "at": "2026-10-24T13:39:47Z",
+   "kind": "post",
+   "title": "Bubbling Halloween Slime Recipe (Witch’s Brew)",
+   "ref": "https://littlebinsforlittlehands.com/bubbling-halloween-slime/"
+  },
+  {
+   "at": "2026-10-24T13:39:47Z",
+   "kind": "post",
+   "title": "Candy Catapult For Halloween STEM",
+   "ref": "https://littlebinsforlittlehands.com/halloween-popsicle-stick-catapult-stem-activity/"
+  },
+  {
+   "at": "2026-10-24T13:39:50Z",
+   "kind": "post",
+   "title": "Roll A Story: Halloween Edition",
+   "ref": "https://kidsactivitiesblog.com/310882/roll-a-story-halloween-edition/"
+  },
+  {
+   "at": "2026-10-24T13:39:50Z",
+   "kind": "post",
+   "title": "Black Cat Handprint Craft For Preschoolers",
+   "ref": "https://kidsactivitiesblog.com/18891/halloween-crafts-for-kids/"
+  },
+  {
+   "at": "2026-10-24T13:39:50Z",
+   "kind": "post",
+   "title": "Free Printable Cute Spider Template",
+   "ref": "https://kidsactivitiesblog.com/285124/spider-template/"
+  },
+  {
+   "at": "2026-10-24T13:39:50Z",
+   "kind": "post",
+   "title": "Most Interesting Scorpio Facts",
+   "ref": "https://kidsactivitiesblog.com/237007/scorpio-facts/"
+  },
+  {
+   "at": "2026-10-24T13:39:50Z",
+   "kind": "post",
+   "title": "Free Printable Puzzle for Kids to Celebrate Day of the Dead",
+   "ref": "https://kidsactivitiesblog.com/151575/get-these-printable-puzzles-to-celebrate-day-of-the-dead/"
+  },
+  {
+   "at": "2026-10-24T13:39:50Z",
+   "kind": "post",
+   "title": "Make an Easy Pumpkin Window Cling Craft for Halloween",
+   "ref": "https://kidsactivitiesblog.com/18519/pumpkin/"
+  },
+  {
+   "at": "2026-10-24T13:39:50Z",
+   "kind": "post",
+   "title": "Video Game Supply Drop Costume",
+   "ref": "https://kidsactivitiesblog.com/130149/video-game-supply-drop-costume/"
+  },
+  {
+   "at": "2026-10-24T13:39:50Z",
+   "kind": "post",
+   "title": "Gingerbread Playdough Recipe with Gingerbread Activities",
+   "ref": "https://kidsactivitiesblog.com/21858/christmas-preschool-craft/"
+  },
+  {
+   "at": "2026-10-24T13:39:50Z",
+   "kind": "post",
+   "title": "Homemade Christmas Ornaments Kids Can Make",
+   "ref": "https://kidsactivitiesblog.com/77922/ornaments-kids-can-make/"
+  },
+  {
+   "at": "2026-10-24T13:39:50Z",
+   "kind": "post",
+   "title": "Pumpkin Decorating Ideas for Kids",
+   "ref": "https://kidsactivitiesblog.com/95084/no-carve-pumpkin-ideas/"
+  },
+  {
+   "at": "2026-10-24T13:39:57Z",
+   "kind": "photo-candidate",
+   "title": "Halloween This-or-That",
+   "ref": "https://commons.wikimedia.org/wiki/File:020251011_Halloween_mask.jpg"
+  }
+ ]
+}

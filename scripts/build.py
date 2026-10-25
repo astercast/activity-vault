@@ -7,7 +7,7 @@ Generates: activity/*.html, data/v1/*.json, data/v1/schema/*.schema.json,
 Validates: schema, ids, categories, required fields, render check for every activity.
 """
 import json, os, re, shutil, sys, html
-from urllib.parse import urlparse
+from urllib.parse import urlparse, quote as _urlquote
 from datetime import date, datetime, timezone
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -449,6 +449,25 @@ def load_skills():
         out.append({'id': sid, 'description': desc, 'file': 'skills/' + fn})
     return sorted(out, key=lambda s: s['id'])
 
+def source_url_and_label(src):
+    """Normalize an activity's source to (url, label).
+
+    Two shapes live in data/activities.json and both are valid:
+    a plain URL string (397 records), and a {label, url} object
+    (381 records, Asset Foundry source batches R858-R864), where the
+    label is the visible attribution text, e.g. "Wikipedia: Spaghetti
+    bridge". Returns (None, None) for any other shape so callers can
+    reject it instead of guessing."""
+    if isinstance(src, str):
+        return src, None
+    if isinstance(src, dict):
+        url = src.get('url')
+        label = src.get('label')
+        if not (isinstance(label, str) and label.strip()):
+            label = None
+        return (url if isinstance(url, str) else None), label
+    return None, None
+
 def validate(acts, cats):
     errs = []
     cat_ids = {c['id'] for c in cats}
@@ -490,8 +509,17 @@ def validate(acts, cats):
                     if t not in TAG_IDS:
                         errs.append(f"{tag}: unknown tag '{t}'")
         src = a.get('source')
-        if src is not None and (not isinstance(src, str) or not src.startswith('http')):
-            errs.append(f"{tag}: source must be an http(s) URL")
+        if src is not None:
+            # Both source shapes are valid (see source_url_and_label):
+            # a plain URL string, or a {label, url} object whose url
+            # member must be an http(s) URL and whose label, when
+            # present, must be a non-empty string.
+            _src_url, _src_label = source_url_and_label(src)
+            if _src_url is None or not (_src_url.startswith('http://')
+                                         or _src_url.startswith('https://')):
+                errs.append(f"{tag}: source must be an http(s) URL")
+            elif isinstance(src, dict) and 'label' in src and _src_label is None:
+                errs.append(f"{tag}: source label must be a non-empty string")
         ph = a.get('photo')
         if ph is not None:
             if not isinstance(ph, dict) or not all(isinstance(ph.get(k), str) and ph[k] for k in ('file', 'alt', 'caption', 'credit', 'licence', 'source_url')):
@@ -1108,11 +1136,18 @@ def render_activity(a, catmap, acts):
                   f'<h2 id="h-safety">Safety</h2><p>{esc(a["safety"])}</p></section>')
     source = ''
     if a.get('source'):
-        _host = urlparse(a['source']).netloc.removeprefix('www.')
-        if 'wikipedia.org' in _host:
-            _label = f'Source: <a href="{esc(a["source"])}" rel="noopener">Wikipedia, {_host}</a>'
+        # String sources keep the exact rendering they have always had.
+        # Object sources ({label, url}) link to the url with the label
+        # itself as the visible link text, so the richer attribution
+        # the Foundry batches recorded is what the reader sees.
+        _src_url, _src_label = source_url_and_label(a['source'])
+        _host = urlparse(_src_url).netloc.removeprefix('www.')
+        if _src_label:
+            _label = f'Source: <a href="{esc(_src_url)}" rel="noopener">{esc(_src_label)}</a>'
+        elif 'wikipedia.org' in _host:
+            _label = f'Source: <a href="{esc(_src_url)}" rel="noopener">Wikipedia, {_host}</a>'
         else:
-            _label = f'Source: <a href="{esc(a["source"])}" rel="noopener">source post at {_host}</a>, adapted in our own words'
+            _label = f'Source: <a href="{esc(_src_url)}" rel="noopener">source post at {_host}</a>, adapted in our own words'
         source = f'<p class="source-line">{_label}</p>'
     else:
         # Round 2 (Claude consult 2026-10-24): honest empty state. A page
@@ -1156,13 +1191,16 @@ def render_activity(a, catmap, acts):
             _credit += f' <a href="{esc(_ph["source_url"])}" rel="noopener">Photo source</a>'
         photo_block = (
             f'<figure class="activity-photo cover-photo no-print">'
-            f'<img src="../assets/photos/{esc(_ph["file"])}" alt="{esc(_ph["alt"])}" loading="lazy" style="view-transition-name: plate-{a["id"]}">'
+            f'<img src="../assets/photos/{esc(_ph["file"])}"{_plate_srcset(_ph["file"], "../")} alt="{esc(_ph["alt"])}" loading="lazy" style="view-transition-name: plate-{a["id"]}">'
             f'<figcaption>{esc(_ph.get("caption", ""))} '
             f'<span class="photo-credit">{_credit}</span></figcaption></figure>')
     else:
         # Round 2: honest empty state where the photo figure goes.
+        # Bundle 2026-10-24 step 3: the empty state asks for help,
+        # with a prefilled GitHub issue link.
         photo_block = ('<figure class="activity-photo activity-photo--empty no-print">'
-                       '<p>No photo yet for this one.</p></figure>')
+                       '<p>No photo yet. <a href="' + esc(_photo_issue_url(a)) +
+                       '" rel="noopener">Help us find one</a></p></figure>')
     mats_fact = (f'{len(a["materials"])} material' + ('s' if len(a["materials"]) != 1 else '')
                  ) if a["materials"] else 'no materials'
     return ACTIVITY_TEMPLATE.format(
@@ -1396,6 +1434,34 @@ def _photo_for(a):
                 "caption": legacy["caption"], "credit": legacy["credit"],
                 "licence": "", "source_url": ""}
     return None
+
+
+def _plate_srcset(photo_file, prefix):
+    """srcset for a plate photo (bundle 2026-10-24 step 1): the
+    480/960 WebP variants written by scripts/plate_images.py.
+    DEVIATION: the brief asked for AVIF; this environment's Pillow
+    has no AVIF encoder, so variants are WebP with the same srcset
+    shape and the original .webp stays as the fallback src.
+    Only variants that exist on disk are advertised."""
+    stem = photo_file[:-len('.webp')] if photo_file.endswith('.webp') else photo_file
+    parts = []
+    for w in (480, 960):
+        rel = f"{stem}-{w}.webp"
+        if os.path.exists(os.path.join(ROOT, 'assets', 'photos', rel)):
+            parts.append(f"{prefix}assets/photos/{rel} {w}w")
+    return ' srcset="' + ', '.join(parts) + '" sizes="(max-width: 40rem) 92vw, 480px"' if parts else ''
+
+
+def _photo_issue_url(a):
+    """Prefilled GitHub issue asking for a photo for a photo-less
+    activity (bundle 2026-10-24 step 3)."""
+    title = f"Photo needed: {a['name']} ({a['id']})"
+    body = (f"Activity: {a['name']} (activity/{a['id']}.html) has no photo yet.\n\n"
+            "A usable photo needs: a public-domain or CC0 / CC BY / CC BY-SA "
+            "source page (Wikimedia Commons is ideal), the author name and "
+            "the exact licence, copied from the source page.")
+    return ("https://github.com/astercast/activity-vault/issues/new"
+            f"?title={_urlquote(title)}&body={_urlquote(body)}")
 
 
 def _cover_for(acts, season_tag, occasion_tag):
@@ -2011,12 +2077,12 @@ def render_home_identity(acts, cats, colls):
         marks_html = ''
         if marks:
             marks_html = (f'<div class="specimen-frame">'
-                          f'<img src="assets/photos/{esc(ph["file"])}" alt="{esc(ph["alt"])}" width="960" height="1438" fetchpriority="high" style="view-transition-name: plate-{cover["id"]}">'
+                          f'<img src="assets/photos/{esc(ph["file"])}"{_plate_srcset(ph["file"], "")} alt="{esc(ph["alt"])}" width="960" height="1438" fetchpriority="high" style="view-transition-name: plate-{cover["id"]}">'
                           f'{mark_spans}</div>'
                           f'<ol class="marks-key" aria-label="Field marks in the photo">{key_items}</ol>')
         else:
             marks_html = (f'<div class="specimen-frame">'
-                          f'<img src="assets/photos/{esc(ph["file"])}" alt="{esc(ph["alt"])}" width="960" height="1438" fetchpriority="high" style="view-transition-name: plate-{cover["id"]}"></div>')
+                          f'<img src="assets/photos/{esc(ph["file"])}"{_plate_srcset(ph["file"], "")} alt="{esc(ph["alt"])}" width="960" height="1438" fetchpriority="high" style="view-transition-name: plate-{cover["id"]}"></div>')
         source_html = esc(ph.get("source_url", ""))
         source_name = "Wikimedia Commons" if "wikimedia.org" in source_html or "commons.wikimedia" in source_html else "Source"
         locs = cover.get("location", [])
@@ -2025,7 +2091,7 @@ def render_home_identity(acts, cats, colls):
                      if cover.get("no_elimination") else '')
         cover_html = (
             f'  <section class="plate" aria-labelledby="plate-h">\n'
-            f'    <p class="plate-no">Plate 1 &middot; In season: {season}</p>\n'
+            f'    <p class="plate-no">Plate 1 &middot; In season: <span data-season-name>{season}</span></p>\n'
             f'    <h2 class="plate-name" id="plate-h"><a href="activity/{cover["id"]}.html">{esc(cover["name"])}</a></h2>\n'
             f'    <p class="plate-binomial">{esc(cover.get("tagline", ""))}</p>\n'
             f'    <figure class="specimen">\n'
@@ -2051,7 +2117,7 @@ def render_home_identity(acts, cats, colls):
     guide_cover = (
         '  <section class="guide-cover" aria-labelledby="cover-h">\n'
         '    <h1 id="cover-h">A field guide to things kids can do.</h1>\n'
-        f'    <p class="cover-promise">{len(acts)} activities for ages 3 to 14. Every one has its steps and materials. {sum(1 for a in acts if _photo_for(a))} have a photo and {sum(1 for a in acts if a.get("source"))} name where the idea came from. We are adding the rest.</p>\n'
+        f'    <p class="cover-promise">{len(acts)} activities for ages 3 to 14. Every one has its steps and materials. {sum(1 for a in acts if a.get("photo"))} have a photo and {sum(1 for a in acts if a.get("source"))} name where the idea came from. We are adding the rest.</p>\n'
         f'    <p class="cover-ways"><a href="#browse">Search by name</a> &middot; <a href="halloween.html">Halloween: {halloween_count} entries</a></p>\n'
         '  </section>\n'
     )
@@ -2331,6 +2397,69 @@ def main():
     os.makedirs(schemadir, exist_ok=True)
     json.dump({'activities': acts, 'count': len(acts), 'updated': today},
               open(os.path.join(api, 'activities.json'), 'w'), indent=1, ensure_ascii=False)
+    # Bundle 2026-10-24 step 1 (light first screen): the home page and
+    # its filters load this compact index, not the 2.1 MB full file.
+    # One entry per activity: id, name, tagline, categories, ages,
+    # group, minutes, location, photo flag — plus the few fields the
+    # existing filters honestly need (tags, no-prep / copy-free /
+    # no-elimination flags, materials count, photo file, source URL).
+    # A single activity's full record is its own static page
+    # (activity/<id>.html); it is only loaded when that page opens.
+    _index_entries = []
+    for _a in acts:
+        _ph = _photo_for(_a)
+        _e = {
+            'id': _a['id'], 'name': _a['name'], 'tagline': _a['tagline'],
+            'categories': _a['categories'],
+            'ages': [_a['age_min'], _a['age_max']],
+            'group': [_a['group_min'], _a['group_max']],
+            'minutes': [_a['time_min'], _a['time_max']],
+            'location': _a['location'],
+            'photo': bool(_ph),
+            'mats': len(_a.get('materials') or []),
+        }
+        if _ph:
+            _e['pf'] = _ph['file']
+        if _a.get('source'):
+            # The compact index's src is a URL string by contract
+            # (assets/app.js sets it as a link href and derives the
+            # host label from it), so an object source contributes
+            # its url member here; the full {label, url} record still
+            # ships unchanged in data/v1/activities.json.
+            _src_url, _src_label = source_url_and_label(_a['source'])
+            if _src_url:
+                _e['src'] = _src_url
+        if _a.get('tags'):
+            _e['tags'] = _a['tags']
+        if _a.get('no_prep'):
+            _e['np'] = 1
+        if _a.get('copy_free'):
+            _e['cf'] = 1
+        if _a.get('no_elimination'):
+            _e['ne'] = 1
+        _index_entries.append(_e)
+    with open(os.path.join(api, 'activity-index.json'), 'w') as _f:
+        json.dump({'activities': _index_entries, 'count': len(_index_entries),
+                   'updated': today}, _f, separators=(',', ':'), ensure_ascii=False)
+    _index_bytes = os.path.getsize(os.path.join(api, 'activity-index.json'))
+    print(f"activity-index.json: {_index_bytes} bytes for {len(_index_entries)} activities "
+          f"(full activities.json is {os.path.getsize(os.path.join(api, 'activities.json'))} bytes)")
+    # Bundle 2026-10-24 step 3: season packs. Source of truth is the
+    # hand-authored data/calendar.json; the build validates the pack
+    # shape and publishes it at data/v1/calendar.json unchanged, so
+    # assets/season.js can switch home/hubs/nav by the visitor's own
+    # date with no deploy.
+    _cal = json.load(open(os.path.join(DATA, 'calendar.json')))
+    _packs = _cal.get('packs') or []
+    assert _packs, "calendar.json: no packs"
+    for _p in _packs:
+        assert all(_p.get(k) for k in ('id', 'name', 'start', 'end', 'hub')), \
+            f"calendar pack missing fields: {_p}"
+        assert _p['start'] <= _p['end'], f"calendar pack {_p['id']}: start after end"
+        assert os.path.exists(os.path.join(ROOT, _p['hub'])), \
+            f"calendar pack {_p['id']}: hub page missing: {_p['hub']}"
+    json.dump(_cal, open(os.path.join(api, 'calendar.json'), 'w'), indent=1, ensure_ascii=False)
+    print(f"calendar.json: {len(_packs)} season packs published")
     json.dump({'categories': cats, 'count': len(cats), 'updated': today},
               open(os.path.join(api, 'categories.json'), 'w'), indent=1, ensure_ascii=False)
     # QA-011: age declaration derives from the catalogue's true span so it
@@ -2572,6 +2701,31 @@ def main():
                         "setup, steps, variations, safety, optional season/occasion tags, optional source URL.",
          "schema": "data/v1/schema/activities.schema.json",
          "updated": today, "records": len(acts), "stability": "stable"},
+        {"path": "data/v1/activity-index.json",
+         "title": "Light activity index",
+         "description": "Compact per-activity index (id, name, tagline, categories, age/group/time "
+                        "ranges, location, photo flag) that the home page and its filters load. "
+                        "Full records live at data/v1/activities.json and on each activity page.",
+         "schema": None,
+         "updated": today, "records": len(acts), "stability": "stable"},
+        {"path": "data/v1/calendar.json",
+         "title": "Season packs",
+         "description": "Dated season packs (start/end, hub page) that switch the home page, "
+                        "hubs and nav by the visitor's own date, with no deploy.",
+         "schema": None,
+         "updated": today, "records": len(_packs), "stability": "stable"},
+        {"path": "data/v1/pulse.json",
+         "title": "Heartbeat pulse",
+         "description": "Heartbeat health: per-source ok/last-ok/failure counts and recent "
+                        "changes, written by scripts/heartbeat/run.py. The health endpoint "
+                        "reads this file from the bundle.",
+         "schema": None, "stability": "stable"},
+        {"path": "data/v1/photo-queue.json",
+         "title": "Photo scout queue",
+         "description": "Commons photo candidates for photo-less activities (PD/CC0/CC BY/"
+                        "CC BY-SA only, author + licence copied exactly), queued for owner "
+                        "approval. Nothing here is published by the job.",
+         "schema": None, "stability": "stable"},
         {"path": "data/v1/categories.json",
          "title": "Category definitions",
          "description": "The 11 categories: id, name, blurb, color, glyph.",
@@ -2671,8 +2825,12 @@ def main():
                      "description": "One-line inclusion notes (access, language, assessment)."},
             "tags": {"type": "array", "items": {"enum": TAG_IDS},
                      "description": "Optional season/occasion tags for filtering."},
-            "source": {"type": ["string", "null"], "format": "uri",
-                       "description": "Optional inspiration source URL (RSS pipeline)."},
+            "source": {"anyOf": [{"type": "string", "format": "uri"},
+                                  {"type": "object", "required": ["url"],
+                                   "properties": {"url": {"type": "string", "format": "uri"},
+                                                  "label": {"type": "string"}}},
+                                  {"type": "null"}],
+                       "description": "Optional inspiration source (RSS pipeline / Foundry batches): a plain URL string, or a {label, url} object whose label is the visible attribution text."},
             "photo": {"type": ["object", "null"],
                       "description": "Optional real photograph (rotation 23): file under assets/photos/, alt text, caption, credit line, licence, and the photo's own source page URL. Public/CC-licensed sources only; provenance travels with the record.",
                       "required": ["file", "alt", "caption", "credit", "licence", "source_url"],

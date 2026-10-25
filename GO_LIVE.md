@@ -48,7 +48,7 @@ Spec: `~/workspace/server-program/ARCHITECTURE.md` §7.6 ("The Scout").
 - Secrets generated, stored only in the Vercel dashboard (never in the repo):
   - `CRON_SECRET`, 32+ random hex chars:
     `node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"`
-  - `GITHUB_REPO_TOKEN`. Fine-grained PAT, **contents:write on this repo
+Retired 2026-10-24 (fleet-data migration): no GITHUB_REPO_TOKEN is used anywhere. Live data refreshes through the astercast/fleet-data repo; the fleet watchdog does the checking.
     only**, no other scopes. **PENDING the user's decision** (spec §14.1):
     until it is set, the cron job runs **read-only** (computes honestly,
     returns `degraded:true`, commits nothing) and `POST /api/review-decide`
@@ -65,7 +65,7 @@ Spec: `~/workspace/server-program/ARCHITECTURE.md` §7.6 ("The Scout").
 3. **Environment Variables (Production scope):**
    - `CRON_SECRET` = the generated secret (required. Cron + decide fail
      closed 401 without it)
-   - `GITHUB_REPO_TOKEN` = the fine-grained PAT (pending decision; read-only
+Retired 2026-10-24 (fleet-data migration): no GITHUB_REPO_TOKEN is used anywhere. Live data refreshes through the astercast/fleet-data repo; the fleet watchdog does the checking.
      mode until set)
    - `GITHUB_REPO` = `owner/activity-vault` (the repo the cron commits to)
    - `REPO_STATIC_PREFIX` = `` (empty. Static JSON lives at `data/v1/` from
@@ -102,7 +102,7 @@ Spec: `~/workspace/server-program/ARCHITECTURE.md` §7.6 ("The Scout").
 | name | required? | where set | rotation notes |
 |---|---|---|---|
 | `CRON_SECRET` | yes | Vercel → Project → Settings → Environment Variables (Production) | 32+ hex chars; authorizes cron + `POST /api/review-decide`. Rotate in dashboard; no code changes needed. |
-| `GITHUB_REPO_TOKEN` | no (read-only mode until set) | same | Fine-grained PAT, contents:write on this repo only. Pending the user's call (spec §14.1). |
+Retired 2026-10-24 (fleet-data migration): no GITHUB_REPO_TOKEN is used anywhere. Live data refreshes through the astercast/fleet-data repo; the fleet watchdog does the checking.
 | `GITHUB_REPO` | no (cron only) | same | `owner/activity-vault`; the repo cron commits land in. |
 | `REPO_STATIC_PREFIX` | no (cron only) | same | Empty for this repo (`data/v1/` at root). |
 
@@ -149,7 +149,7 @@ fixtures, ever.
   `writeJsonIfChanged` commits `pipeline/seen.json`, `pipeline/review-queue.json`,
   `pipeline/decided.json` → redeploy re-runs `scripts/build.py`, which
   re-publishes the static fallbacks (fallback and store stay the same bytes).
-- **Read-only mode** (until `GITHUB_REPO_TOKEN` is set): the job still runs,
+Retired 2026-10-24 (fleet-data migration): no GITHUB_REPO_TOKEN is used anywhere. Live data refreshes through the astercast/fleet-data repo; the fleet watchdog does the checking.
   computes real candidates, and returns them in the envelope with
   `degraded:true` + a plain-words note. It just doesn't commit.
 - **Alerting is logs-only**, fixed prefixes, reviewed in the Vercel
@@ -202,5 +202,5 @@ and the next deploy re-publishes them atomically.
    minting an activity record (PIPELINE.md requires a human to adapt ideas
    into original words; minting steps/materials server-side would be
    fabricated data).
-3. Without `GITHUB_REPO_TOKEN`, cron and decide run read-only (honest
+Retired 2026-10-24 (fleet-data migration): no GITHUB_REPO_TOKEN is used anywhere. Live data refreshes through the astercast/fleet-data repo; the fleet watchdog does the checking.
    `degraded:true` / 500 `REFRESH_FAILED`) until the user decides (spec §14.1).

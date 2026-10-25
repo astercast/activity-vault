@@ -20,6 +20,10 @@ group size, materials, and category. Plan-my-week planner. Printable one-page ca
 ## API. Start at data/v1/index.json (self-describing manifest)
 - data/v1/index.json, api manifest
 - data/v1/activities.json, full activity library
+- data/v1/activity-index.json, light activity index
+- data/v1/calendar.json, season packs
+- data/v1/pulse.json, heartbeat pulse
+- data/v1/photo-queue.json, photo scout queue
 - data/v1/categories.json, category definitions
 - data/v1/filters.json, filter configuration
 - data/v1/skills.json, skills registry

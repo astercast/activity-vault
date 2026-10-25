@@ -1,0 +1,29 @@
+{
+ "format": "photo-queue/1",
+ "generated_at": "2026-10-24T13:40:07Z",
+ "note": "Owner approval only. Nothing here is published or downloaded into the site by this job.",
+ "candidates": [
+  {
+   "commons_title": "File:020251011 Halloween mask.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:020251011_Halloween_mask.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/020251011_Halloween_mask.jpg/500px-020251011_Halloween_mask.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "author": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Marsilar&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Marsilar (page does not exist)\">Marsilar</a>",
+   "licence": "CC BY-SA 4.0",
+   "status": "pending",
+   "activity_id": "halloween-this-or-that",
+   "activity_name": "Halloween This-or-That",
+   "queued_at": "2026-10-24T13:39:57Z"
+  },
+  {
+   "commons_title": "File:02025 0023 Halloween parades.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:02025_0023_Halloween_parades.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/02025_0023_Halloween_parades.jpg/500px-02025_0023_Halloween_parades.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "author": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Marsilar&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Marsilar (page does not exist)\">Marsilar</a>",
+   "licence": "CC BY-SA 4.0",
+   "status": "pending",
+   "activity_id": "halloween-this-or-that",
+   "activity_name": "Halloween This-or-That",
+   "queued_at": "2026-10-24T13:39:57Z"
+  }
+ ]
+}
