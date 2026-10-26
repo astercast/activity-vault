@@ -7888,6 +7888,14 @@
   ],
   "name": "Paper Bridge Challenge",
   "no_prep": true,
+  "photo": {
+   "alt": "Paper bridge holding coins between two books",
+   "caption": "Students test a paper bridge loaded with coins in a classroom.",
+   "credit": "Photo: Oregon Department of Transportation, CC BY 2.0, via Wikimedia Commons",
+   "file": "r52/paper-bridge-challenge.webp",
+   "licence": "CC BY 2.0",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Building_Bridges_in_Nyssa_(8638270224).jpg"
+  },
   "safety": "No running with scissors if you cut paper, and keep the testing area clear so bridges do not get stepped on.",
   "setup": "Set two stacks of books about 8 inches apart as the 'river banks.' Hand out paper and a short strip of tape each.",
   "steps": [

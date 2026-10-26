@@ -5,7 +5,7 @@
   "open": 0,
   "decided_90d": 62
  },
- "generated_at": "2026-10-25T01:01:38Z",
+ "generated_at": "2026-10-25T07:53:43Z",
  "meta": {
   "source": "pipeline/review-queue.json (open candidates only)",
   "note": "detected_at for pre-scout items mirrors published (best available). Decided items live in data/v1/decided.json (90-day retention)."

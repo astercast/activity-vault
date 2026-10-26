@@ -69,6 +69,27 @@ check("0 duplicate ids", len({a['id'] for a in acts}) == len(acts))
 check("tags use fixed vocabulary",
       all(t in TAG_IDS for a in acts for t in a.get('tags', [])))
 
+# ---------- 2d. Face freshness: the published snapshot must match the
+# source data, record for record and photo for photo. A photo landing
+# that edits data/activities.json without re-running scripts/build.py
+# leaves the committed face stale (found 2026-10-25: face carried 360
+# photos against 365 in the source data, five Foundry binds missing
+# from the face). This check makes that drift fail loudly here instead
+# of shipping silently.
+_src_acts = json.load(open(os.path.join(ROOT, 'data', 'activities.json')))
+_src_by_id = {a['id']: a for a in _src_acts}
+_face_by_id = {a['id']: a for a in acts}
+check("face carries every source activity",
+      set(_face_by_id) == set(_src_by_id),
+      f"face {len(_face_by_id)} vs source {len(_src_by_id)}")
+_photo_drift = [i for i in _src_by_id
+                if bool(_src_by_id[i].get('photo')) != bool(_face_by_id.get(i, {}).get('photo'))
+                or (_src_by_id[i].get('photo') or {}).get('file')
+                   != (_face_by_id.get(i, {}).get('photo') or {}).get('file')]
+check("face photos match source photos (after data changes, re-run scripts/build.py)",
+      not _photo_drift, str(_photo_drift[:5]) if _photo_drift else
+      f"{sum(1 for a in acts if a.get('photo'))} photos on both sides")
+
 # ---------- 2b. Wave 9: collections — every pick resolves to a real activity id ----------
 coll_payload = json.load(open(os.path.join(API, 'collections.json')))
 colls = coll_payload['collections']

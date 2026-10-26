@@ -2,6 +2,16 @@
 
 Running record of build waves. Newest first.
 
+## Face freshness fix, 2026-10-25: the published face re-built to the data, with a guard so it cannot silently lag again
+
+**Defect:** the committed face (data/v1/activities.json and every surface generated from it) carried 360 photos while the source data carried 365, a lag the Visitor Panel counted for 38 consecutive rounds. Pictured in the data but missing from the face: paper-bridge-challenge, nature-color-scavenger, cloud-drift-race, roll-it-bigger-snowball, big-beach-ball-keep-it-floating.
+
+**Cause:** the face is build output, and no build had run since the last build commit (e96e5dd6, 2026-10-25 01:05 UTC), at which data and face matched at 360 photos exactly. Four Foundry landing commits after it (photos batches 19, 24, 26 and 32) edited data/activities.json and added the image files under assets/photos/ without running scripts/build.py, so the generated surfaces froze at 360. The generator itself drops nothing: it dumps the loaded records into data/v1/activities.json verbatim, all five photo records pass its validation, all five image files are present on disk, and each stale face record is identical to its source record apart from the missing photo key.
+
+**Fix:** one run of `python3 scripts/build.py` from the committed state (BUILD OK, 778 activities, 778 pages rendered), plus a freshness guard in scripts/check_api.py (new section 2d): the checker now loads data/activities.json beside the published snapshot and fails unless the face carries every source activity and every source photo, matched by id and file. Proven both ways: the guard passes on the rebuilt face, and with the stale face restored from HEAD it fails naming exactly the five drifted ids.
+
+**Proof:** instrument counts after the rebuild: source data 778 activities / 365 photos / 778 sources; face 778 / 365 / 778; zero record-level diffs between data and face. The five activity pages now render their photo figure (image, caption, credit) in place of the "No photo yet" empty state. Served locally over HTTP: all five pages return 200 carrying the photo img and credit, all five .webp files return 200 image/webp, the face JSON serves 365 photos, and the index cover promise reads "365 have a photo". scripts/check_api.py: ALL CHECKS PASSED (link check 0 broken across 1594 pages). scripts/test-desk.js: 272 assertions passed. node --check clean on assets/*.js. One generator wart noticed and left for its own fix: the placement injection is not idempotent on the static root pages (each build run adds one blank line before the PLACEMENT block); this commit ships exactly one build run's output.
+
 ## Build fix, 2026-10-24: builder accepts both source shapes
 
 **Defect:** `scripts/build.py` failed validation and exited 1 with 381 "source must be an http(s) URL" errors, which held the evening live push. The Asset Foundry source batches (R858-R864) wrote `source` as a {label, url} object on 381 of 778 activities, while the validator and the detail-page source render expected a plain URL string (the other 397 records).
