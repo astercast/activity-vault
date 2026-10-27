@@ -85,7 +85,10 @@ ACTIVITY_PHOTOS = {
     # audited MATCH and stays.
 }
 
-_PLACEMENT_RE = re.compile(r"\n<!-- PLACEMENT:BEGIN -->.*?<!-- PLACEMENT:END -->", re.S)
+# R304: consume ALL leading newlines and the trailing one — the old pattern
+# left one newline behind per build, so every run added a blank line to
+# every page (non-idempotent). This form normalizes the block in place.
+_PLACEMENT_RE = re.compile(r"\n*<!-- PLACEMENT:BEGIN -->.*?<!-- PLACEMENT:END -->\n?", re.S)
 _TITLE_RE = re.compile(r"<title>(.*?)</title>", re.S)
 _DESC_RE = re.compile(r'<meta name="description" content="(.*?)"', re.S)
 
@@ -291,6 +294,8 @@ def inject_minimal_headers():
     for rel in pages:
         path = os.path.join(SITE, rel)
         page = open(path).read()
+        if rel == "index.html" and "<!--REGISTER:BEGIN-->" in page:
+            continue        # the Register home writes its own header
         m = _HEADER_RE.search(page)
         assert m, f"minimal-header: no site header on {rel}"
         old = m.group(0)
@@ -2187,6 +2192,8 @@ def inject_home_identity(acts, cats, colls):
     BUILD:DESK markers. Hand edits outside the markers survive the build."""
     path = os.path.join(SITE, 'index.html')
     html_text = open(path).read()
+    if '<!--REGISTER:BEGIN-->' in html_text:
+        return          # the Register home (scripts/build_register.py) owns index.html now
     start = '<!-- BUILD:DESK -->'
     end = '<!-- /BUILD:DESK -->'
     assert start in html_text and end in html_text, "index.html missing BUILD:DESK markers"
@@ -3150,6 +3157,8 @@ def main():
     # public on purpose: API.md and AGENT.md document it as the public
     # full catalog for agents. site/ is gitignored build output; the
     # Vercel build command regenerates it on every deploy.
+    import build_register           # the Register home: proof beside every record
+    build_register.main()
     n_site = assemble_public_site()
     print(f"public site assembly (round 2): {n_site} files copied into site/")
 
