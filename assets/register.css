@@ -62,7 +62,7 @@ body.rg-page {
 
 /* ---------- 5. PROOF BAR ---------- */
 .rg-proofbar { margin-top: calc(var(--u) * 4); }
-.bar { display: flex; height: 1.25rem; gap: 2px; }
+.bar { display: flex; height: 1.5rem; gap: 2px; }
 .seg { flex: var(--w) 1 0; min-width: 4px; border: 0; padding: 0; cursor: pointer; transform-origin: left; animation: grow 900ms var(--ease) both; }
 .seg-both { background: var(--ok); }
 .seg-ph   { background: color-mix(in srgb, var(--ok) 45%, var(--paper)); }
@@ -72,6 +72,7 @@ body.rg-page {
 .seg:hover { filter: brightness(.9); }
 @keyframes grow { from { transform: scaleX(0); } }
 .legend { list-style: none; display: flex; flex-wrap: wrap; gap: var(--u) calc(var(--u) * 3); margin: calc(var(--u) * 1.5) 0 0; padding: 0; font-size: var(--t-s); color: var(--ink-2); }
+.legend li { min-height: 1.5rem; padding-block: .16rem; }
 .legend b { color: var(--ink); font-variant-numeric: tabular-nums; }
 .legend li::before { content: ""; display: inline-block; width: .75em; height: .75em; margin-right: .4em; vertical-align: -.05em; }
 .k-both::before { background: var(--ok); } .k-ph::before { background: color-mix(in srgb, var(--ok) 45%, var(--paper)); }
@@ -128,4 +129,13 @@ body.rg-page {
 }
 @media (prefers-reduced-motion: reduce) { .seg, .rg-row { animation: none !important; } }
 html[data-calm="true"] .seg, html[data-calm="true"] .rg-row { animation: none !important; }
+/* ---------- 9. PHONE TARGETS ---------- */
+/* Touch targets meet the fleet standard on phone widths: 44px for the
+   wordmark, the nav links and the proof-bar filter segments. The legend
+   items under the bar are labels, not controls, and stay label-sized. */
+@media (max-width: 40rem) {
+  .rg-mark { display: inline-flex; align-items: center; min-height: 2.75rem; }
+  .rg-nav > a, .rg-nav summary { display: inline-flex; align-items: center; min-height: 2.75rem; }
+  .bar { height: 2.75rem; }
+}
 @media print { .rg-filters, .rg-find, .rg-more, .rg-proofbar { display: none; } }

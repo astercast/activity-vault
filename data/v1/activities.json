@@ -25815,6 +25815,14 @@
    ],
    "name": "Board Game Prototype",
    "no_prep": false,
+   "photo": {
+    "alt": "The party game Just One spread out on a table, box, rulebook, cards and pieces",
+    "caption": "A finished game, out on a real table: box, rules, cards, pieces. Yours will look different. That is the point of a prototype.",
+    "credit": "Photo: Harrison Keely, CC BY 4.0, via Wikimedia Commons",
+    "file": "board-game.webp",
+    "licence": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Just_One_party_game_box,_rules,_cards,_and_pieces_01.jpg"
+   },
    "safety": "Small game pieces are a choking hazard for younger siblings, bag them at cleanup.",
    "setup": "Set out the build supplies. Each pair or trio claims a table.",
    "source": "https://en.wikipedia.org/wiki/Board_game",

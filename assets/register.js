@@ -53,7 +53,9 @@
   function render() {
     var r = all.filter(match).sort(function (a, b) { return rank(a) - rank(b) || a.name.localeCompare(b.name); });
     list.innerHTML = r.slice(0, shown).map(row).join("") || '<li class="rg-empty">Nothing matches. Try fewer words or press Clear.</li>';
-    count.textContent = r.length + (r.length === 1 ? " record" : " records") + (state.q || state.cat || state.proof || state.age || state.time ? "." : ". Proven ones first.");
+    count.textContent = r.length === 0
+      ? "No activity matches. Press Clear to see all " + all.length + "."
+      : r.length + (r.length === 1 ? " record" : " records") + (state.q || state.cat || state.proof || state.age || state.time ? "." : ". Proven ones first.");
     more.hidden = r.length <= shown;
     more.textContent = "Show " + Math.min(40, r.length - shown) + " more";
     $("#clear").hidden = !(state.q || state.cat || state.proof || state.age || state.time);
